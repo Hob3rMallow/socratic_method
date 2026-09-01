@@ -5,14 +5,11 @@ Our fitting schedule is PHerc0139-only and may encode scroll-specific material
 or acquisition properties.
 Fine-teacher predictions are model-derived soft supervision rather than human
 ground truth.
-Two held-out calibration scrolls, 16 locked slices, and six blind cubes provide
-guards but do not establish broad robustness.
+Two held-out scrolls provide a guard but do not establish broad robustness.
 The M7 trust projection is saturated, and its radius was selected under an
 earlier objective rather than the final loss in Eq.~\ref{eq:objective}.
-Our overlap-calibration sweep also fails to bracket its optimum; threshold 0.45
-is a morphology-gated operating choice, not the maximizer of that curve. Human
-review is necessarily less reducible than a scalar and should be repeated by
-independent readers before a public model claim.
+The ordinary Dice sweep also fails to bracket its optimum; threshold 0.45 is an
+independent morphology operating point, not the Dice optimum.
 
 The line fitter has a different failure mode.
 A completion may be locally smooth and persistent across slices but still join
@@ -22,15 +19,19 @@ global correctness.
 The postprocess must remain independently measured and its additions must remain
 recoverable during qualification.
 
-\begin{figure}[t]
+\begin{figure*}[t]
   \centering
-  \figureasset{figure_4_failure_cases}{0.94\columnwidth}{1.45in}
-  \caption{Reserved failure cases: faint-sheet loss, residual blobs,
-  cross-wrap risk, and examples whose morphology changes near the selected
-  operating threshold.}
-  \Description{Reserved examples of model and postprocess failure cases.}
+  \figureasset{figure_4_failure_cases}{0.96\linewidth}{2.6in}
+  \caption{Known edge cases at $t=\releaseThreshold$: a component-count proxy
+  that disagrees with the visible structure, mild drift or thinning on locked
+  sheets, and blind PHerc1447 views that remain undergrown or fragmented.
+  Every row includes CT, released M7, the available model-derived reference,
+  raw M7-XR, and a two-sided comparison. Yellow reference masks are not ground
+  truth.}
+  \Description{Selected-model edge cases showing topology-metric disagreement,
+  mild drift or thinning, and residual undergrowth.}
   \label{fig:limitations}
-\end{figure}
+\end{figure*}
 
 Finally, exact replay requires large, separately licensed artifacts.
 The training code, recipes, hashes, and export scaffolding are public-repository

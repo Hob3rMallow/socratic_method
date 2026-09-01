@@ -10,6 +10,8 @@ DEFAULT_LIVE = Path(
     r"D:\work\vesuvius-c\output\crossres_data\m7_xr_v31_pherc0139_dynamic_medial_duration_8192_20260831"
 )
 TARGET_SAMPLES = 8192
+SELECTED_SAMPLES = 8192
+OPERATING_THRESHOLD = 0.45
 
 
 def _root() -> Path:
@@ -66,35 +68,29 @@ def _decimal(value: float) -> str:
 def _write_metrics(root: Path, metrics: list[dict[str, Any]]) -> None:
     best = max(metrics, key=lambda row: float(row["calibrated_macro_scroll_dice"]))
     maximum = max(int(row["samples"]) for row in metrics)
-    selection_path = root / "recipes" / "v31" / "selection.json"
-    selection = (
-        json.loads(selection_path.read_text(encoding="utf-8"))
-        if selection_path.is_file()
-        else None
-    )
-    selected = bool(selection and selection.get("status") == "release-candidate-selected")
     value = {
         "schema": "socratic-method-observed-milestones-v1",
         "run": "m7_xr_v31_pherc0139_dynamic_medial_duration_8192_20260831/dynconn_w0p03125_n8192_duration",
-        "status": (
-            "training-complete-release-candidate-selected"
-            if maximum >= TARGET_SAMPLES and selected
-            else "training-complete-qualification-pending"
-            if maximum >= TARGET_SAMPLES
-            else "in-progress"
-        ),
+        "status": "training-complete-release-candidate-selected"
+        if maximum >= TARGET_SAMPLES
+        else "in-progress",
         "selection_warning": (
             "The calibrated threshold is at the 0.25 lower boundary and is "
-            "censored. It is a duration diagnostic, not the selected operating "
-            "point; the independent morphology decision is recorded in selection.json."
+            "censored. It is retained as a training observation, but is not "
+            "the selected operating threshold."
         ),
         "best_observed_by_calibrated_macro_scroll_dice": int(best["samples"]),
+        "release_selection": {
+            "checkpoint_samples": SELECTED_SAMPLES,
+            "operating_threshold": OPERATING_THRESHOLD,
+            "basis": (
+                "registered locked-16 morphology, blind PHerc1447 anti-blob "
+                "behavior, and human review"
+            ),
+            "qualification": "release_qualification.json",
+        },
         "milestones": metrics,
     }
-    if selected:
-        value["selection_record"] = "recipes/v31/selection.json"
-        value["selected_samples"] = int(selection["samples"])
-        value["selected_threshold"] = float(selection["threshold"])
     destination = root / "recipes" / "v31" / "observed_metrics.json"
     destination.write_text(
         json.dumps(value, indent=2) + "\n", encoding="utf-8", newline="\n"
@@ -113,24 +109,22 @@ def _write_metrics(root: Path, metrics: list[dict[str, Any]]) -> None:
         if is_best:
             values = [values[0], *(f"\\textbf{{{item}}}" for item in values[1:])]
         rows.append(" & ".join(values) + r" \\")
-    tex_lines = [
+    tex = "\n".join(
+        [
             "% Generated from the live v31 history by scripts/snapshot_live_v31.py.",
             f"\\newcommand{{\\observedSamples}}{{{maximum}}}",
             f"\\newcommand{{\\observedSamplesText}}{{{maximum:,}}}",
             f"\\newcommand{{\\bestSamples}}{{{int(best['samples'])}}}",
             f"\\newcommand{{\\bestSamplesText}}{{{int(best['samples']):,}}}",
             f"\\newcommand{{\\bestMacro}}{{{float(best['calibrated_macro_scroll_dice']):.5f}}}",
-    ]
-    if selected:
-        tex_lines.extend(
-            [
-                f"\\newcommand{{\\selectedSamples}}{{{int(selection['samples'])}}}",
-                f"\\newcommand{{\\selectedSamplesText}}{{{int(selection['samples']):,}}}",
-                f"\\newcommand{{\\selectedThreshold}}{{{float(selection['threshold']):.2f}}}",
-            ]
-        )
-    tex = "\n".join(
-        [*tex_lines, "\\newcommand{\\durationRows}{%", *rows, "}", ""]
+            f"\\newcommand{{\\releaseSamples}}{{{SELECTED_SAMPLES}}}",
+            f"\\newcommand{{\\releaseSamplesText}}{{{SELECTED_SAMPLES:,}}}",
+            f"\\newcommand{{\\releaseThreshold}}{{{OPERATING_THRESHOLD:.2f}}}",
+            "\\newcommand{\\durationRows}{%",
+            *rows,
+            "}",
+            "",
+        ]
     )
     (root / "submissions" / "2026-09" / "src" / "generated_run.tex").write_text(
         tex, encoding="utf-8", newline="\n"

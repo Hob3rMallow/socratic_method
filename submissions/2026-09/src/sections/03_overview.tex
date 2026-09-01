@@ -10,23 +10,23 @@ all parameters under a small global trust region. The output is one ordinary M7 
 At inference we use only its raw class-1 probability; there is no teacher and no
 M7 probability blend.
 
-At the selected threshold, an optional C postprocess operates on each axial
+After selecting a threshold, an optional C postprocess operates on each axial
 slice (Sec.~\ref{sec:fitter}). It proposes Bezier completions between skeleton endpoints, but paints a join
 only when local curve geometry, radial displacement, neighboring slices, and
 connection-track support agree. Segmentation training and curve completion are measured separately so an
 improvement in one stage cannot hide a failure in the other.
-All segmentation qualification numbers in Sec.~\ref{sec:results} use the raw
-student without morphology or line fitting.
 
 \begin{figure*}[t]
   \centering
   \figureasset{figure_1_method_overview}{0.96\linewidth}{2.05in}
-  \caption{Method overview. The final figure will separate training-only
-  components (fine teacher, projection, auxiliary losses, and frozen M7 anchor)
-  from deployed components (raw student and optional 2D fitter). It will also
-  show that the parameter trust-region projection acts after every optimizer
-  update.}
-  \Description{Reserved schematic of training-only and deployed pipeline components.}
+  \caption{Method overview with a registered crop. The released M7 appears both
+  as the frozen initializer and as the state-of-the-art visual baseline.
+  Training-only components (fine teacher, projection, medial and separation
+  losses, and post-update trust projection) are separated from the deployed raw
+  student. The optional 2D fitter is outside the learned model and is evaluated
+  separately.}
+  \Description{Data-backed schematic separating teacher-supervised training
+  from raw-student inference and the optional line-fitter postprocess.}
   \label{fig:overview}
 \end{figure*}
 

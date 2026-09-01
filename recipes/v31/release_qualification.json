@@ -1,0 +1,70 @@
+{
+  "schema": "socratic-method-release-qualification-v1",
+  "created_at_utc": "2026-09-01T05:40:36Z",
+  "selection": {
+    "status": "selected-with-known-edge-cases",
+    "checkpoint_samples": 8192,
+    "checkpoint_sha256": "8de376f8a3ad1b14e25a57db1f8dd20e8c505ceb169a49bc006b2903d1ccb3c1",
+    "checkpoint_bytes": 409675375,
+    "operating_threshold": 0.45,
+    "model_composition": "raw-student-only-no-m7-blend-no-teacher",
+    "risk_preference": "prefer bounded undergrowth to foreground inflation because the later tangential cross-slice linker can repair short gaps"
+  },
+  "registered_pherc0139_locked16": {
+    "slice_count": 16,
+    "anti_blob_passes": 16,
+    "automated_component_matches": 15,
+    "mean_dice": 0.7546077032677794,
+    "mean_assd_vox": 0.6256919947853636,
+    "human_review": "selected; morphology is good throughout, with documented rank-26 and rank-64 edge cases",
+    "known_metric_exception": {
+      "rank": 26,
+      "reason": "the teacher has four components, while two top blobs and touching student strokes make the scalar connected-component count report five despite recovering the intended structures"
+    },
+    "legacy_gate_status": "not used for release selection",
+    "legacy_gate_reason": "the one-voxel M7-preservation and learned-growth scalars reject smooth, shifted, and sometimes visually better surfaces; they do not measure longitudinal medial growth"
+  },
+  "blind_pherc1447_six_cube": {
+    "cube_count": 6,
+    "fixed_human_review_views": 18,
+    "anti_blob_passed": true,
+    "interior_regression_cubes": 0,
+    "thickness_regression_cubes": 0,
+    "foreground_ratio_vs_v15": 0.9505083124717324,
+    "dice_vs_v15": 0.9344477298036563,
+    "precision_vs_v15": 0.9587754471145541,
+    "recall_vs_v15": 0.9113240322761855,
+    "maximum_cube_foreground_ratio_vs_v15": 1.0490335618596465,
+    "minimum_cube_foreground_ratio_vs_v15": 0.7626207785037269,
+    "reference_semantics": "v15 is an anti-blob comparison model, not ground truth"
+  },
+  "flip_teacher_similarity_audit": {
+    "implementation": "FLIP v1.0",
+    "pixels_per_degree": 67.0206,
+    "comparison_count": 1120,
+    "selected_flip_mean_macro": 0.2333100625,
+    "selected_flip_weighted_median_macro": 0.599963625,
+    "selected_teacher_dice_macro": 0.7540191792617377,
+    "eligible_rank_by_flip_mean": 18,
+    "eligible_candidate_count": 45,
+    "strict_flip_mean_winner": {
+      "checkpoint_samples": 4096,
+      "threshold": 0.42,
+      "flip_mean_macro": 0.2283595625
+    },
+    "selection_interpretation": "FLIP narrowly prefers 4096 at 0.42 for teacher resemblance; human morphology review and PHerc1447 de-blob behavior prefer 8192 at 0.45. FLIP weighted-median pooling also narrowly favors 8192 at 0.45 within the fixed-threshold duration comparison.",
+    "8192_vs_2048_at_0p45": {
+      "flip_improved_slices": 12,
+      "flip_worsened_or_tied_slices": 4,
+      "erosion_pixels_2048": 4283,
+      "erosion_pixels_8192": 4270,
+      "addition_pixels_2048": 1201,
+      "addition_pixels_8192": 1155
+    }
+  },
+  "source_artifacts": {
+    "joint_evaluation": "m7_xr_v31_duration_ladder_joint_evaluation_20260831/result.json",
+    "human_report": "m7_xr_v31_duration_ladder_human_report_20260831/report.json",
+    "flip_audit": "m7_xr_v31_duration_ladder_flip_audit_20260901/audit.json"
+  }
+}

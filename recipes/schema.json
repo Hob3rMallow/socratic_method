@@ -3,7 +3,7 @@
   "$id": "https://example.invalid/socratic-method/recipe.schema.json",
   "title": "Socratic Method training recipe",
   "type": "object",
-  "required": ["schema", "name", "version", "artifacts", "model", "objective", "optimization", "evaluation", "training"],
+  "required": ["schema", "name", "version", "artifacts", "model", "release", "objective", "optimization", "evaluation", "training"],
   "properties": {
     "schema": {"const": "socratic-method-training-recipe-v1"},
     "name": {"type": "string"},
@@ -11,6 +11,28 @@
     "status": {"type": "string"},
     "artifacts": {"type": "object"},
     "model": {"type": "object"},
+    "release": {
+      "type": "object",
+      "required": ["status", "selected_checkpoint", "operating_threshold", "threshold_selection_contract", "inference", "selection", "qualification"],
+      "properties": {
+        "status": {"const": "selected"},
+        "selected_checkpoint": {
+          "type": "object",
+          "required": ["samples", "sha256", "bytes"],
+          "properties": {
+            "samples": {"type": "integer", "minimum": 1},
+            "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "bytes": {"type": "integer", "minimum": 1}
+          }
+        },
+        "operating_threshold": {"type": "number", "exclusiveMinimum": 0, "exclusiveMaximum": 1},
+        "threshold_selection_contract": {"type": "string", "minLength": 1},
+        "inference": {"const": "raw-student-only-no-m7-blend-no-teacher"},
+        "selection": {"type": "string", "minLength": 1},
+        "qualification": {"type": "string", "minLength": 1},
+        "known_limits": {"type": "array", "items": {"type": "string"}}
+      }
+    },
     "objective": {"type": "object"},
     "optimization": {"type": "object"},
     "evaluation": {"type": "object"},

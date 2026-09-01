@@ -60,13 +60,11 @@ gaps after segmentation.
 Our completed duration study improves both held-out scrolls over released M7 at
 every measured interval through \observedSamplesText\ samples, with a best
 calibrated macro-scroll Dice of $\bestMacro$ at \bestSamplesText\ samples.
-Because its calibrated threshold lies at the lower boundary of the sweep, we
-select the operating point using independent morphology evidence instead:
-the raw \selectedSamplesText-sample student at threshold \selectedThreshold.
-It passes the blinded anti-blob gate with no interior- or thickness-regression
-cubes, and an independent FLIP audit favors it over the 2,048-sample model on
-12 of 16 locked slices. We release the recipe and selected candidate identity;
-weight redistribution remains subject to upstream terms.
+An independent registered-morphology and blind anti-blob review selects the raw
+\releaseSamplesText-sample student at threshold $\releaseThreshold$. It passes
+the six-cube PHerc1447 anti-blob gate and matches teacher component count on 15
+of 16 locked PHerc0139 slices; the remaining scalar exception and the difference
+between perceptual and overlap-based rankings are reported explicitly.
 \end{abstract}
 
 \begin{CCSXML}
@@ -84,13 +82,16 @@ topology-aware learning, curve completion}
 
 \begin{teaserfigure}
   \centering
-  \figureasset{teaser}{0.98\linewidth}{1.65in}
-  \caption{The intended visual argument. Given coarse CT and released M7, our
-  selected cross-resolution student retains faint longitudinal sheet structure
-  while removing cross-wrap blobs; the separately gated 2D fitter then repairs
-  only short, geometrically supported gaps. The final registered crop will
-  replace this reserved panel.}
-  \Description{Reserved teaser panel for a registered qualitative comparison.}
+  \figureasset{teaser}{0.98\linewidth}{3.0in}
+  \caption{One raw checkpoint answers two opposing failure modes. Both rows
+  begin with the identical CT crop and released M7 state-of-the-art baseline.
+  The top row shows blind PHerc1447 de-blob behavior; the bottom row adds the
+  projected fine teacher and shows longitudinal growth on locked PHerc0139.
+  Every M7-XR panel uses the selected \releaseSamplesText-sample student at
+  $t=\releaseThreshold$, without blending.}
+  \Description{Two-row comparison. Each row shows CT, released M7, and the raw
+  M7-XR student; the locked longitudinal-growth row also shows its projected
+  fine-teacher target.}
   \label{fig:teaser}
 \end{teaserfigure}
 
@@ -104,6 +105,7 @@ topology-aware learning, curve completion}
 \input{submissions/2026-09/src/sections/06_results}
 \input{submissions/2026-09/src/sections/07_limitations}
 \input{submissions/2026-09/src/sections/08_conclusion}
+\input{submissions/2026-09/src/sections/09_gallery}
 
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{submissions/2026-09/src/references}

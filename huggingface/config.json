@@ -9,9 +9,11 @@
     "deep_supervision": true
   },
   "parameter_count": 102349770,
+  "selected_checkpoint_samples": 8192,
+  "operating_threshold": 0.45,
+  "threshold_selection_contract": "registered-morphology-plus-blind-antiblob-human-review-v1",
+  "source_checkpoint_sha256": "8de376f8a3ad1b14e25a57db1f8dd20e8c505ceb169a49bc006b2903d1ccb3c1",
   "student_only_inference": true,
   "teacher_required_at_inference": false,
-  "m7_blend_at_inference": false,
-  "selected_training_samples": 8192,
-  "operating_threshold": 0.45
+  "m7_blend_at_inference": false
 }

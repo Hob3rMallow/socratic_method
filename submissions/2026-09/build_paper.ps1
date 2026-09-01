@@ -11,6 +11,7 @@ $outputDirectory = Join-Path $submissionRoot "output"
 $paperStem = Join-Path $outputDirectory "paper"
 $releaseDirectory = Join-Path $repositoryRoot "output\pdf"
 $releasePdf = Join-Path $releaseDirectory "socratic_method_siggraph_draft.pdf"
+$stablePdf = Join-Path $repositoryRoot "submission.pdf"
 
 New-Item -ItemType Directory -Force -Path $outputDirectory | Out-Null
 New-Item -ItemType Directory -Force -Path $releaseDirectory | Out-Null
@@ -49,5 +50,7 @@ finally {
 }
 
 Copy-Item -LiteralPath "$paperStem.pdf" -Destination $releasePdf -Force
+Copy-Item -LiteralPath "$paperStem.pdf" -Destination $stablePdf -Force
 Write-Output "Built $paperStem.pdf"
 Write-Output "Copied release draft to $releasePdf"
+Write-Output "Copied stable draft to $stablePdf"

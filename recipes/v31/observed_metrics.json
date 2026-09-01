@@ -2,11 +2,14 @@
   "schema": "socratic-method-observed-milestones-v1",
   "run": "m7_xr_v31_pherc0139_dynamic_medial_duration_8192_20260831/dynconn_w0p03125_n8192_duration",
   "status": "training-complete-release-candidate-selected",
-  "selection_warning": "The calibrated threshold is at the 0.25 lower boundary and is censored. It is a duration diagnostic, not the selected operating point; the independent morphology decision is recorded in selection.json.",
+  "selection_warning": "The Dice-calibrated threshold is at the 0.25 lower boundary and is censored. It is retained as a training observation, but is not the selected operating threshold.",
   "best_observed_by_calibrated_macro_scroll_dice": 7168,
-  "selection_record": "recipes/v31/selection.json",
-  "selected_samples": 8192,
-  "selected_threshold": 0.45,
+  "release_selection": {
+    "checkpoint_samples": 8192,
+    "operating_threshold": 0.45,
+    "basis": "registered locked-16 morphology, blind PHerc1447 anti-blob behavior, and human review",
+    "qualification": "release_qualification.json"
+  },
   "milestones": [
     {
       "samples": 1024,

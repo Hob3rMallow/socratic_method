@@ -3,7 +3,7 @@
   "schema": "socratic-method-training-recipe-v1",
   "name": "M7-XR v31 PHerc0139 dynamic-medial duration 8192",
   "version": "v31.1-pherc0139-dynamic-medial-duration-8192",
-  "status": "qualification-in-progress",
+  "status": "release-candidate-selected",
   "source_recipe_sha256": "3d42f3268ee8fa6d25a4949d9ae12145ff9447eccd795900fa02e857e659d0de",
   "artifacts": {
     "train_manifest": {
@@ -42,6 +42,25 @@
     "classes": 2,
     "parameters": 102349770,
     "inference": "raw-student-only-no-m7-blend-no-teacher"
+  },
+  "release": {
+    "status": "selected",
+    "selected_checkpoint": {
+      "samples": 8192,
+      "sha256": "8de376f8a3ad1b14e25a57db1f8dd20e8c505ceb169a49bc006b2903d1ccb3c1",
+      "bytes": 409675375
+    },
+    "operating_threshold": 0.45,
+    "threshold_selection_contract": "registered-morphology-plus-blind-antiblob-human-review-v1",
+    "inference": "raw-student-only-no-m7-blend-no-teacher",
+    "selection": "selection.json",
+    "qualification": "release_qualification.json",
+    "known_limits": [
+      "the legacy learned-growth scalar is invalid for visually correct smooth or shifted outputs",
+      "locked rank 26 is a connected-component metric exception at threshold 0.45",
+      "PHerc0139-only fitting does not establish broad cross-scroll generalization",
+      "the optional line fitter remains a separately gated postprocess"
+    ]
   },
   "objective": {
     "contract": "soft-occupancy-ce-dice-villa-medial-crest-shell-kl-corridor-m7-preservation-dynamic-widest-path-v9",
@@ -88,7 +107,7 @@
       "blind-PHerc1447-antiblob-review",
       "two-sided-morphology-and-coverage-gates"
     ],
-    "boundary_warning": "A selected threshold of 0.25 is censored, not approved for deployment."
+    "boundary_warning": "The Dice calibration optimum at 0.25 is censored and fails the PHerc1447 anti-blob gate. The independent registered-morphology operating point is 0.45."
   },
   "environment": {
     "OMP_NUM_THREADS": "16",

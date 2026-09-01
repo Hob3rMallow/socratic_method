@@ -24,13 +24,16 @@ of our improved, ScrollFiesta-targeting segmentation method and a frozen recipe:
    geometry pipeline consumes the prediction.
 
 The canonical recipe is [recipes/v31/recipe.json](recipes/v31/recipe.json).
-It describes the completed 8,192-sample duration ladder exactly. Training is
-complete, and the locked/blinded morphology review selects the raw 8,192-sample
-checkpoint at threshold 0.45. The overlap-only duration diagnostic still peaks
-at 7,168 samples and the tested lower boundary of 0.25; that censored result is
-retained as evidence that calibration alone would choose an overgrown operating
-point. The final selection and gate measurements are recorded in
-[recipes/v31/selection.json](recipes/v31/selection.json).
+It describes the completed 8,192-sample duration ladder and the selected release
+candidate exactly. The deployed artifact is the raw 8,192-sample student at
+threshold 0.45, checkpoint SHA-256
+`8de376f8a3ad1b14e25a57db1f8dd20e8c505ceb169a49bc006b2903d1ccb3c1`.
+The 0.25 Dice-calibration boundary remains a useful censoring warning, but it
+fails the independent anti-blob gate and is not the operating threshold.
+The concise decision record is
+[recipes/v31/selection.json](recipes/v31/selection.json); its complete locked,
+blind-corpus, and FLIP evidence is
+[recipes/v31/release_qualification.json](recipes/v31/release_qualification.json).
 
 ## Quick start
 
@@ -65,16 +68,15 @@ bytes by setting `original_root` and `artifact_root` in the paths file; see
 - `src/crossres_pred/`: frozen training, teacher, medial-axis, evaluation, and
   inference engine needed by v31.
 - `src/socratic_method/`: portable recipe and artifact-export wrappers.
-- `recipes/v31/`: executable recipe, path template, environment lock, and
-  measured milestones.
+- `recipes/v31/`: executable recipe, path template, environment lock, measured
+  milestones, concise selection record, and detailed release qualification.
 - `native/line_fitter/`: isolated additive 2D gap-joining postprocessor.
 - `huggingface/`: model-card and export templates; weights are intentionally not
   committed to Git.
 - `provenance/source/`: verbatim plans, live-run records, and research drivers
   copied from `vesuvius-c`.
 - `submission.pdf`: the current paper at a stable, top-level path.
-- `submissions/2026-09/`: the paper sources, build script, and dated submission
-  workspace.
+- `submissions/2026-09/`: the new paper/submission workspace and generated draft.
 
 ## Reproducibility boundary
 
@@ -88,7 +90,14 @@ and [docs/line_fitter.md](docs/line_fitter.md) for the full contracts.
 
 ## Release status
 
-This is a reproducibility snapshot with a selected release candidate, not yet a
-public weight release. Before publishing, select a license, resolve upstream
-artifact terms, export the selected checkpoint, and fill in the model-card
-ownership/citation fields.
+The model artifact and operating point are selected: raw student only, 8,192
+training samples, threshold 0.45. On the locked PHerc0139 set it passes all 16
+anti-blob checks and matches the teacher component count on 15 of 16 slices; the
+rank-26 scalar mismatch is documented. On the blind six-cube PHerc1447 audit it
+passes the anti-blob gate with no interior or thickness regressions. See
+[recipes/v31/release_qualification.json](recipes/v31/release_qualification.json)
+for the full evidence and FLIP-selection nuance.
+
+The weights can now be exported locally with `socratic-export`. Public upload is
+still blocked on choosing a license and resolving upstream data, teacher, and M7
+artifact terms; the exporter never uploads anything.

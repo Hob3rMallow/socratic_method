@@ -1,0 +1,910 @@
+{
+  "schema": "socratic-method-release-figures-v1",
+  "selection": {
+    "checkpoint_samples": 8192,
+    "operating_threshold": 0.45,
+    "model_composition": "raw-student-only-no-m7-blend-no-teacher"
+  },
+  "palette": {
+    "background": [
+      3,
+      7,
+      18
+    ],
+    "released_m7": [
+      55,
+      220,
+      255
+    ],
+    "teacher_or_reference": [
+      250,
+      204,
+      21
+    ],
+    "raw_student": [
+      255,
+      55,
+      190
+    ],
+    "shared": [
+      80,
+      255,
+      130
+    ],
+    "medial": [
+      167,
+      139,
+      250
+    ],
+    "pins_or_shell": [
+      251,
+      146,
+      60
+    ]
+  },
+  "discrete_inputs": [
+    {
+      "path": "changelog.md",
+      "bytes": 998764,
+      "sha256": "62acb004819ed135a4dc05dd64c60156e96059dc4b9ddacd69e9f8819a626c9d"
+    },
+    {
+      "path": "output/crossres_data/coarse_teacher_atlas_v16_250k/pherc0139/atlas_state.json",
+      "bytes": 3375,
+      "sha256": "6aaaf7e1c2e0908235e583f0c2072ff78dccb3e657bb071cc1d6d56f27854f50"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_flip_audit_20260901/audit.json",
+      "bytes": 935843,
+      "sha256": "0d139d43ecaadb1397a13d440c8757b2b08b9b5652fbae6c518131a489e2263e"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_023/ct.png",
+      "bytes": 5958,
+      "sha256": "302ad5877f7167ac47440bab8cc68207c3761d6f41005ac26477c19f9b8073a1"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_023/m7.png",
+      "bytes": 509,
+      "sha256": "1835f0ee29f50a8c0c3c701bd51018105ab6a9c12b6496415f5ccf3f57032a06"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_023/n008192/t0.45.png",
+      "bytes": 471,
+      "sha256": "04c4f015aee4a727279fd86ac14598cb9e6fabbc886e56a9d358f63ba2d88f46"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_023/teacher.png",
+      "bytes": 487,
+      "sha256": "5d42159ee381274cade8b0568c3cf1540a87d26920025502ae01c8803447c62f"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_024/ct.png",
+      "bytes": 5888,
+      "sha256": "e641fafd79dff197167ebc0190707138bbbb9d56daa5a6313368d52a73b3546a"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_024/m7.png",
+      "bytes": 509,
+      "sha256": "4817dd3425e04905986ecb19bc45df020a1d57d69d2e22b15b21c0837c8f6c38"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_024/n008192/t0.45.png",
+      "bytes": 470,
+      "sha256": "44469682e0f5e4007644e1ba62b16f2d02a23ea2cdc94358b39d9ebe95b6a3fd"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_024/teacher.png",
+      "bytes": 501,
+      "sha256": "8ba1c662651b897e85975e96b0d925169676ed2811a4e942a24a242d0f508327"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_026/ct.png",
+      "bytes": 6405,
+      "sha256": "e12b7b2d595af25fc7a3c25e7209567fbe1099742f9bf15057e85cf5c93604fc"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_026/m7.png",
+      "bytes": 367,
+      "sha256": "3271e746905d8578fad10d86712b7b8a977ec9991afb65889632e84f5e7fa6c2"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_026/n008192/t0.45.png",
+      "bytes": 342,
+      "sha256": "6963a23647e09464c1414c8e3d6002300cfb878fb6970686038311b2e850424e"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_026/teacher.png",
+      "bytes": 423,
+      "sha256": "81d33f99ed9f38c182d9d310e38700e0e2e19f44532dff6ad1adcb49609b7dc2"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_037/ct.png",
+      "bytes": 6561,
+      "sha256": "98184e495df50aa4be8f4dd23c7f91647e6ce8440cc8414b28c63034f26c1c94"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_037/m7.png",
+      "bytes": 486,
+      "sha256": "5f9a5c1cb46a4481182fdbde697af87afbd771de96d7e5de181950fb204f9605"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_037/n008192/t0.45.png",
+      "bytes": 488,
+      "sha256": "f5309ccf5726000df2ef743bc9b7cc385e2d7ddc5bbe631bc40476d7c600d241"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_037/teacher.png",
+      "bytes": 474,
+      "sha256": "c361a0d692c328ec9f0a9fc49facb6a921f713423749b974bc9be2648f2a4149"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_039/ct.png",
+      "bytes": 5717,
+      "sha256": "c80229c41890af2944164d740d9cb12dd5a152eead0e0409b6eaf7f7989e027b"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_039/m7.png",
+      "bytes": 517,
+      "sha256": "45ad01f1d656d0fc5fbd19e391c2eef66f3786801bb7a1ff7f8b65ba61585d1a"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_039/n008192/t0.45.png",
+      "bytes": 492,
+      "sha256": "64a8a862ab5faf85573be270dd9cdfcd29b1b1cdcd40235e8dbc9f765354add6"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_039/teacher.png",
+      "bytes": 466,
+      "sha256": "3f656c436b17e51194e1526cbcaa8711800fbbe193539b7249cb9a7c008f8f5b"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_040/ct.png",
+      "bytes": 5828,
+      "sha256": "6b19df3d8d665b4ee7e841a7d0a032116565fb4f78c0295d85d05b7a585402ed"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_040/m7.png",
+      "bytes": 506,
+      "sha256": "d9d4aa9d687de28bcceebfe25551e8dccfa59807b5ababbc0edfaad199edfd90"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_040/n008192/t0.45.png",
+      "bytes": 506,
+      "sha256": "db029a53bbe3adacc84b9a1d3e54599ae4ec5b5439ac7a01b6ba16da123040ee"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_040/teacher.png",
+      "bytes": 495,
+      "sha256": "1605aff6718f35c9a8112988fb59accd6b4cb0de446ee4f8db5597a1d39811ce"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_041/ct.png",
+      "bytes": 6432,
+      "sha256": "67becfaea72b75e585b78098499cf6ae2dc813d31d8c951c88c41fbdc6fc436b"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_041/m7.png",
+      "bytes": 464,
+      "sha256": "e3b2a2dc3872d27b705a99c8c24d58ce4f270d399e35912e1635ac9557661321"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_041/n008192/t0.45.png",
+      "bytes": 482,
+      "sha256": "bfa070072700ae09fe1c372c610bc5b04ea47db856637d22d4ee6308b1540bd0"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_041/teacher.png",
+      "bytes": 474,
+      "sha256": "d7859cdbb717e62592e80b00672a01a13db2cedb686bf0d43281d934c9c3839a"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_042/ct.png",
+      "bytes": 5722,
+      "sha256": "20984cca74918c6d732c5e17e4299b355e71ba00f36b243ea48f76d96bee2327"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_042/m7.png",
+      "bytes": 509,
+      "sha256": "0afd582000155d084d65e3c69911da0a939dd795f710c736da04c02635bcdf49"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_042/n008192/t0.45.png",
+      "bytes": 486,
+      "sha256": "889cf8a2a3d51e428160f8bf54306dc1452e31d5fd9c5df8994dfbdfef8259b7"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_042/teacher.png",
+      "bytes": 464,
+      "sha256": "ec6c0ececeba8714f829862347c2a5b3bfaf5297929fff7e55bfb6cb1b8de6ea"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_043/ct.png",
+      "bytes": 6377,
+      "sha256": "d4c2ea2bcbf0acf3e5b53400f49a7270a830d318ea09a1c5eff7d35af34be090"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_043/m7.png",
+      "bytes": 458,
+      "sha256": "c2e482adc5b22cc2f8c2ed8ac54f6799b208f2e7c3f30f316189d0235aec408e"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_043/n008192/t0.45.png",
+      "bytes": 465,
+      "sha256": "13c81f16a2fcc747223ed667a33301a7245b9ff6ac9fc5885f4fec510a92f672"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_043/teacher.png",
+      "bytes": 467,
+      "sha256": "b3bd9d9e16ce866655af2d88cc5b4f4c64776aefcce20a5c05e596861d87cafc"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_044/ct.png",
+      "bytes": 6524,
+      "sha256": "33ed3d0a3e17e49d237348c164661a0074c18210fe9226b7aec808f0828d5fa5"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_044/m7.png",
+      "bytes": 461,
+      "sha256": "f777655e0caaaeaf5a2d94b3231563721b350ac227ffaf4cca7b009d29ceb1be"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_044/n008192/t0.45.png",
+      "bytes": 471,
+      "sha256": "e28624cdb34950e7dbfe408afb2fdef69a49cbf89f26fa5bfbd597f9c655667c"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_044/teacher.png",
+      "bytes": 473,
+      "sha256": "af05b2331b58bd447c66f4ab41666f97cb95c39761fe1064397b2a84c812bd52"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_045/ct.png",
+      "bytes": 5970,
+      "sha256": "4d11a025ffb4aaeaa0eca6abbd34cd187f4debe90a1ed6d3b59e2b6d59dba3b7"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_045/m7.png",
+      "bytes": 542,
+      "sha256": "a6fdcfba5b369ff060a2b8bb2b26b9b51e98fe54bd746ab1452092c56d3d5fd2"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_045/n008192/t0.45.png",
+      "bytes": 534,
+      "sha256": "479d0a9dcadb0fbb19728cfcab7535bb818e2b2bdaec0daba93bfcc4af3c16db"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_045/teacher.png",
+      "bytes": 571,
+      "sha256": "3f21fa38db084b5f5de1a498e5b6ff34be2f5ef748c553daf3dbbd2acf44f8f0"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_046/ct.png",
+      "bytes": 5598,
+      "sha256": "51783405bb454de08b46e1b265eec85e12a5caf77381a49558a5b56b53d7f02a"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_046/m7.png",
+      "bytes": 463,
+      "sha256": "3ff2d3a80b9c0928bd01f73dd89c60d810f15eb78e519a601d5bf315c5586559"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_046/n008192/t0.45.png",
+      "bytes": 494,
+      "sha256": "24036ee97f9127b18e1e2659cd583c2e7fc3e1c442a91f28ec6de43dca7202c0"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_046/teacher.png",
+      "bytes": 488,
+      "sha256": "3d513c0e961275c84954b4a1cc82645c2599da3f7f606421d3481a545bee7cec"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_047/ct.png",
+      "bytes": 6431,
+      "sha256": "44cd552979698a69d618c9862a46c1064d281ee1f56fda6815996446ec9ee5d6"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_047/m7.png",
+      "bytes": 461,
+      "sha256": "341a3d458a485969e15cab3ba48de250437d1724d3e04bad4cc525d69048fb21"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_047/n008192/t0.45.png",
+      "bytes": 466,
+      "sha256": "23a25b7335577dd3342ab0944a8d21e8a86bc90609ff51588298b08dc780aae6"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_047/teacher.png",
+      "bytes": 470,
+      "sha256": "55fedf2642975e04ce3fb94741098625003faa301aceabc4d1892485f5963836"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_064/ct.png",
+      "bytes": 6066,
+      "sha256": "4868bc71ce5a69da3d291fa24ab2c06c29760ea55847dc17d3916b9991d54443"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_064/m7.png",
+      "bytes": 537,
+      "sha256": "7d6382146adbf6485c66c9a6a97a8f1f13380a62378b7fb820ae3138122edb02"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_064/n008192/t0.45.png",
+      "bytes": 543,
+      "sha256": "f8b6a012ca2c9e6485d88203a91c6931505df6c7a40a0a4a7f2a95c0178dd203"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_064/teacher.png",
+      "bytes": 565,
+      "sha256": "2d40930f0f9766fd8a14d635770fae4824518d78dc4da675ef6c9fa4b99d9386"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_066/ct.png",
+      "bytes": 6613,
+      "sha256": "449dc90edb8eb3c6ed76ccd516f24696afdbf8e1e95f829772bde088dee32235"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_066/m7.png",
+      "bytes": 501,
+      "sha256": "d16804d547d3ada9daad02503f1fd3ebd945411851ba8681b7efd6899f5381dc"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_066/n008192/t0.45.png",
+      "bytes": 487,
+      "sha256": "b408038dc31dd55a39a81438dd74c23dd09e1c686b61e8f8e7421c3646c1b146"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_066/teacher.png",
+      "bytes": 473,
+      "sha256": "c888bca462bfa9c3dbd5ef027fa1d94ff1c14d7238e0894bc2428df68677bd5c"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_070/ct.png",
+      "bytes": 5808,
+      "sha256": "e372a84c8c535860e87e439d23b48b7637a27dc05f338a7b1f082bfc3a46f504"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_070/m7.png",
+      "bytes": 498,
+      "sha256": "b76efa410c72acadef87d4fdeb910104d468ab2021c777fc17be2ee8ca378b3f"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_070/n008192/t0.45.png",
+      "bytes": 481,
+      "sha256": "9028aeee36180488f99bf19423dd951f288bb779490a1991d3a70a0385266a46"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/locked16/rank_070/teacher.png",
+      "bytes": 475,
+      "sha256": "78468b8c32122cc98d03a6d9101350bca8ec42ec70afbb2c63296d30e21110c4"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_00_z12032_y03968_x03072_z/ct.png",
+      "bytes": 20092,
+      "sha256": "35d77781b886d1f32375e2733d3d008effd73265a1d243cc0e30d1ecf556fa7a"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_00_z12032_y03968_x03072_z/m7.png",
+      "bytes": 1959,
+      "sha256": "7672f19b94a9eab8bcec9345734208872e1e89e827d110d1757e05427512fb89"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_00_z12032_y03968_x03072_z/n008192/t0.45.png",
+      "bytes": 1004,
+      "sha256": "cb555ba8969ac8db58805d1391a1b42274880ecafaba57a21c666312f1c05525"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_00_z12032_y03968_x03072_z/v15.png",
+      "bytes": 1176,
+      "sha256": "33eba4109986776b0dff562308a1ed90e1c6d841d22448afe9421f05dd3be9c4"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_01_z12032_y03968_x03072_z/ct.png",
+      "bytes": 19678,
+      "sha256": "2a50e3708ef25f675eff7b11200b3d4dee4c1eb77cacc53166c940ce7d53eb35"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_01_z12032_y03968_x03072_z/m7.png",
+      "bytes": 1839,
+      "sha256": "19f1b660fc759081d0a76f34f773d160ff388f70d102ce9862d9b00aff501135"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_01_z12032_y03968_x03072_z/n008192/t0.45.png",
+      "bytes": 1144,
+      "sha256": "03b1374984bf1e01ac78e655c7653478ea8b7f931dadb523194cf05005e018ec"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_01_z12032_y03968_x03072_z/v15.png",
+      "bytes": 1351,
+      "sha256": "eb578adf23e0d898ce6c26755aa12227d98269b378f49224891637283be738c8"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_02_z12032_y03968_x03072_z/ct.png",
+      "bytes": 19750,
+      "sha256": "26d7faf7cca4c910067b0bdcab7f2aa8b1d1be48cc32485cc08fc1c26276ec20"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_02_z12032_y03968_x03072_z/m7.png",
+      "bytes": 1925,
+      "sha256": "eb21af6c5f983d1735bb6720d98c041c55946711e54d512dcea35debae80e9ee"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_02_z12032_y03968_x03072_z/n008192/t0.45.png",
+      "bytes": 1154,
+      "sha256": "a93c811596ae604b80461bca21d3ab7ff6175c7f59bfb1e7e0275bf76df72fc0"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_02_z12032_y03968_x03072_z/v15.png",
+      "bytes": 1298,
+      "sha256": "8661c971a8538de9b212cb8f6df46b522627f95a021cc09d3631aa525e050cf6"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_03_z12032_y03968_x03072_z/ct.png",
+      "bytes": 19601,
+      "sha256": "59e981fa26f35419b61d8b47039d4e25f6c973bb7972e0ceea1cd551719bb1e9"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_03_z12032_y03968_x03072_z/m7.png",
+      "bytes": 1749,
+      "sha256": "6d1da55124c014924b68514ca208bd73b8055ddeb3b294d06689ec012f31afec"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_03_z12032_y03968_x03072_z/n008192/t0.45.png",
+      "bytes": 1147,
+      "sha256": "56f7843b9d458db7875f2410a5e17c37187c9559597c4dd60eafb868c2c002c5"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_03_z12032_y03968_x03072_z/v15.png",
+      "bytes": 1249,
+      "sha256": "a306ac82d615b0001d9c3cdf8041b1511e5d2e9afe17fdc4d25e2619ed49ff41"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_04_z12032_y03968_x03072_z/ct.png",
+      "bytes": 19794,
+      "sha256": "d14a8b31274e8cd3550866e0f64d965515b4c88731d4df1fbec80178a9bf33b3"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_04_z12032_y03968_x03072_z/m7.png",
+      "bytes": 1579,
+      "sha256": "a714fb360ef68b3d13bf2c02292b29c67824db54c5858741b10ec30e71aa6c96"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_04_z12032_y03968_x03072_z/n008192/t0.45.png",
+      "bytes": 1208,
+      "sha256": "106be59d0437630ad7daa8642dc66acfa937ad0f65c2fad830c3191e391aa654"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_04_z12032_y03968_x03072_z/v15.png",
+      "bytes": 1305,
+      "sha256": "4c6797e99d1d3281b0f6e31e89cae5efd0cfaf93785637ec8ca6085cf72e8006"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_05_z12032_y03968_x03072_z/ct.png",
+      "bytes": 19899,
+      "sha256": "09cd9f0fba87fdff08d8935020dbf4ad4eeb0d479e1825564daec4146a60b952"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_05_z12032_y03968_x03072_z/m7.png",
+      "bytes": 1191,
+      "sha256": "31ef69ec81db19ffd1dda3cb498878bbd4ed23ec1fbf84d005c2499d1c875d38"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_05_z12032_y03968_x03072_z/n008192/t0.45.png",
+      "bytes": 1106,
+      "sha256": "d7681ade390fe611265429e9fd6d9cdf8896cf401e263b7922742ece9d095ecc"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_05_z12032_y03968_x03072_z/v15.png",
+      "bytes": 1135,
+      "sha256": "0474032b743e13f87f2c2533bac2e5448bb4694d126d44fcd7001cc5d4866fbb"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_06_z12032_y03968_x03072_z/ct.png",
+      "bytes": 19935,
+      "sha256": "dfe253408a8ca83823319ec3f02f53e103b8cd7e3c580a49a6c7508ddc632799"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_06_z12032_y03968_x03072_z/m7.png",
+      "bytes": 1029,
+      "sha256": "bb16af282dd40428225cc3bf1df4dc5308994bb5e831a019617b167287b59346"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_06_z12032_y03968_x03072_z/n008192/t0.45.png",
+      "bytes": 986,
+      "sha256": "15b4526231031cf8dff0a5430fd0e0a4709ff11fb74eb5d2db1e6e57e17a9185"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_06_z12032_y03968_x03072_z/v15.png",
+      "bytes": 989,
+      "sha256": "8c1b0c992b18cc5260dfc110c0c5ad0e80a7ab8238ac87b0f27435f4b50ae1b2"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_07_z12160_y03968_x03200_z/ct.png",
+      "bytes": 18729,
+      "sha256": "6bddb39f98588335de04683b1c6f33db641d87cb1859259e7a047cf930c025ec"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_07_z12160_y03968_x03200_z/m7.png",
+      "bytes": 1555,
+      "sha256": "cb8c79a672f765f5dd6215636621dc33cb63cfe779c88628e179e51da381fd46"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_07_z12160_y03968_x03200_z/n008192/t0.45.png",
+      "bytes": 464,
+      "sha256": "f0f5bbf5cf656eade37fa5534c2f6a5cce17e3d229a9d3758396b23ba8695364"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_07_z12160_y03968_x03200_z/v15.png",
+      "bytes": 555,
+      "sha256": "13bd1c2650e23649d86765f5ad993030ab0d0c8fa0f970e345a7a7b4c8b4f8b5"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_08_z12160_y03968_x03200_z/ct.png",
+      "bytes": 18745,
+      "sha256": "fa40a8c540b4eed3466dcf69f4bd1a901ed4bdfad9fadfa36515adcdfa090735"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_08_z12160_y03968_x03200_z/m7.png",
+      "bytes": 1640,
+      "sha256": "ae7c673bb81a7ac691d9a2ce00b96557ad5da2a4e49a827b3dbd15c25870cbd1"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_08_z12160_y03968_x03200_z/n008192/t0.45.png",
+      "bytes": 422,
+      "sha256": "b74a34b55008e978e07a208fe1f5f9aa8796caff9824900108736aef4873a3df"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_08_z12160_y03968_x03200_z/v15.png",
+      "bytes": 440,
+      "sha256": "b250efff6ae62d8f21aa872736d8d069e6ac312f76c6e3f98577926c0088f3fd"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_09_z12160_y03968_x03200_z/ct.png",
+      "bytes": 18559,
+      "sha256": "d28ed614d5306f053d71563d869266bcb356c7a91a65a2cdcb46abb86534d3c4"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_09_z12160_y03968_x03200_z/m7.png",
+      "bytes": 1758,
+      "sha256": "4e3385c009e9ed554bc218e1442bb304e63a979f6450eee07bfbd9e68589199d"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_09_z12160_y03968_x03200_z/n008192/t0.45.png",
+      "bytes": 470,
+      "sha256": "4e69548d3d226687f3120cdedb7f5b011e3cd76ad5aac62ece20019ebe1797fd"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_09_z12160_y03968_x03200_z/v15.png",
+      "bytes": 522,
+      "sha256": "b4f411952fb7f4a8ad5fb4aaa4298cd8020bf0553eb9babc8fb63b37015370bc"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_10_z12160_y04224_x02944_z/ct.png",
+      "bytes": 21438,
+      "sha256": "4a7078ac9b3be70c8cd75cf924c1baff2aee0e4408b2f252e5c80c3b628af74f"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_10_z12160_y04224_x02944_z/m7.png",
+      "bytes": 1206,
+      "sha256": "d1fe9858e801e7c0ac90aeecae2e1a05441ad2652cbf204edcb3438c3507e1e4"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_10_z12160_y04224_x02944_z/n008192/t0.45.png",
+      "bytes": 968,
+      "sha256": "b82d14e4794fcc38f5606efe944a556677fa94bea5046e82dbe4d21398b9c884"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_10_z12160_y04224_x02944_z/v15.png",
+      "bytes": 1013,
+      "sha256": "ff27b64c045bf8263760e6827170af648c4a7add57b37e16f4789ca9d3b5eea1"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_11_z12160_y04224_x02944_z/ct.png",
+      "bytes": 21669,
+      "sha256": "186616f686a7283cd310a92f0f1c2f0e582aa910c3d88fb53e4d321386156bd3"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_11_z12160_y04224_x02944_z/m7.png",
+      "bytes": 1160,
+      "sha256": "e676c6dca36957ba99596ef349bfba8fe312d3c37348349ea68befa9a6739154"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_11_z12160_y04224_x02944_z/n008192/t0.45.png",
+      "bytes": 961,
+      "sha256": "e57c9f1c0b2ee1631235473099db7e15bc15834a070378ceb0e515025a74abdb"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_11_z12160_y04224_x02944_z/v15.png",
+      "bytes": 940,
+      "sha256": "583e12b1450d112d90ff79b2fa1c6edfb8729f084bda19a802cf5f7b0a190c04"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_12_z12160_y04224_x02944_z/ct.png",
+      "bytes": 19471,
+      "sha256": "75f3ffc8128facc01b6162fab2c37098b79b315406e43c6cc15a4815f7627319"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_12_z12160_y04224_x02944_z/m7.png",
+      "bytes": 1814,
+      "sha256": "9ca44f924ab8980b7b504cb391c6a4e199b955aa3b8dad4cf9d23c0a1b6f2a5a"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_12_z12160_y04224_x02944_z/n008192/t0.45.png",
+      "bytes": 681,
+      "sha256": "b3a4f809d205b8da27e9d82c1bdfed8b210a95ca42ab6d45c1d65cf330de13d0"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_12_z12160_y04224_x02944_z/v15.png",
+      "bytes": 706,
+      "sha256": "d8907def87f5bfc74a13b22f25ee9033ce1901ec3b3b32d9a71fef45b63cea5a"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_13_z12160_y04224_x02944_z/ct.png",
+      "bytes": 19176,
+      "sha256": "74ec5f631bc931d3580dd15366efd6b7f0833cbc3f2a29e36ba72ea16b534c06"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_13_z12160_y04224_x02944_z/m7.png",
+      "bytes": 1806,
+      "sha256": "bfebdbab816a75b1b7837f71e0614ccf4de1259a635a2326cfabca33c4912b75"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_13_z12160_y04224_x02944_z/n008192/t0.45.png",
+      "bytes": 611,
+      "sha256": "6dd226c09d77bcbae588b93f8f877c39896a6e0e4af393999fad0df658183304"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_13_z12160_y04224_x02944_z/v15.png",
+      "bytes": 674,
+      "sha256": "58a3f9aa58889a91f250c641667a3e1416d2e9f3cf8de064169cbf81b3a18017"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_14_z12800_y04096_x03456_z/ct.png",
+      "bytes": 19287,
+      "sha256": "c17f209ec0ca50b630140b9689b6fe8f19aa30bc8de5a709de3e8034ebcc7424"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_14_z12800_y04096_x03456_z/m7.png",
+      "bytes": 1590,
+      "sha256": "6d301e6ba48603ba16234ad01da9e2a42702f39c2b2512e15ef474c12dedf548"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_14_z12800_y04096_x03456_z/n008192/t0.45.png",
+      "bytes": 700,
+      "sha256": "552b09ae66cba3ad2a3c6d65042efc9d31842d1fa6fbceb315a41bc0afb337fa"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_14_z12800_y04096_x03456_z/v15.png",
+      "bytes": 851,
+      "sha256": "1fa3fbc55a8695033fc2066788c3462b8486314d907f512e90f9b16a532b3c3e"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_15_z12928_y04096_x03328_z/ct.png",
+      "bytes": 21338,
+      "sha256": "7904a1e7b6ef7eb84343f64eba6ac30a555ccb49e68ff470bc48a041d07fbb2c"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_15_z12928_y04096_x03328_z/m7.png",
+      "bytes": 1224,
+      "sha256": "d5e331e57639d3305a4322fd29e28e606fc576ee20f5f4860c6c87b8ab3670f4"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_15_z12928_y04096_x03328_z/n008192/t0.45.png",
+      "bytes": 1149,
+      "sha256": "44eb2420763e22d09b12b931670b18dd8aa86aded7ddefeed83caa1256fce438"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_15_z12928_y04096_x03328_z/v15.png",
+      "bytes": 1133,
+      "sha256": "0ef020381f9f86637ea3ed6ead30a56e970036e572db88e6a1b973408b7a0ec9"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_16_z12928_y04096_x03328_z/ct.png",
+      "bytes": 21289,
+      "sha256": "3487cfd20d65809c81eb70dfde36e4138070cb85cb7692155ba59cba354af808"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_16_z12928_y04096_x03328_z/m7.png",
+      "bytes": 1200,
+      "sha256": "f1f3aceacb1f11854f81878d5963f6eb569f621b5b609e70c5cd7360ac64867e"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_16_z12928_y04096_x03328_z/n008192/t0.45.png",
+      "bytes": 1151,
+      "sha256": "c748f910e2e3e434f5b9c1ec8f487ff44e700a9b4569eeb6c11e5d5732deb182"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_16_z12928_y04096_x03328_z/v15.png",
+      "bytes": 1117,
+      "sha256": "4fd386c0ebfdba71128690008f3b858c80d90725c6dc3bb58082e50131de5fb5"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_17_z12928_y04096_x03328_z/ct.png",
+      "bytes": 21320,
+      "sha256": "306cb8a0ee13f61e83dd677cef58f1c74212cc3ace479f39b2c7486c6ad1587f"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_17_z12928_y04096_x03328_z/m7.png",
+      "bytes": 1021,
+      "sha256": "b5fc1d8423c53b1421e22ea5e9883498318b5f746cf4e65171e3927f42201162"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_17_z12928_y04096_x03328_z/n008192/t0.45.png",
+      "bytes": 989,
+      "sha256": "341d9973fecad51b73925300627d9ca3de285cc6de2e1fb394f5a610071541b2"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/assets/pherc1447/view_17_z12928_y04096_x03328_z/v15.png",
+      "bytes": 956,
+      "sha256": "326c1894fb06efecd857563cf511d4bf80bf854345aaa24c9b92abaa24688419"
+    },
+    {
+      "path": "output/crossres_data/m7_xr_v31_duration_ladder_human_report_20260831/report.json",
+      "bytes": 421292,
+      "sha256": "e9c98071b5133dfe449a01d7705cd173601307952c7fe047f6e5e9abc73a4562"
+    },
+    {
+      "path": "output/crossres_data/pherc0139_training_dynamic_medial_connectivity_v28b_fullowner_20260831/connectivity_state.json",
+      "bytes": 129830,
+      "sha256": "5489a6dce515aacbd980392ecd6326711a05a4758f3554e521f65db30959a8f8"
+    },
+    {
+      "path": "output/fixup_4x5x5/report_assets/manifest.json",
+      "bytes": 2221,
+      "sha256": "b231105c6e30e55bc0b31d0be5d2bce0fb7bbb63c53eb475917ab22bfcb138f4"
+    },
+    {
+      "path": "output/fixup_4x5x5/report_assets/run4_far1_z4840.png",
+      "bytes": 30245,
+      "sha256": "19513d9502c01babf4aa71955cb2e1c350a5cea0910ee1bda6003949c93432e8"
+    },
+    {
+      "path": "output/fixup_4x5x5/report_assets/run4_site_z4377.png",
+      "bytes": 38324,
+      "sha256": "f1662bf9d87a8255f8e5d7ca474da83b549c87d7d46e72feafce789fec150c9e"
+    },
+    {
+      "path": "output/fixup_4x5x5/report_assets/track_persistence.png",
+      "bytes": 48817,
+      "sha256": "a42084c3939ea1854967fd0d153985fbd7724fe7f76a812e2a1909df38fa98d5"
+    },
+    {
+      "path": "output/fixup_4x5x5/report_assets/val_CONNECTED_join_z4353_a3471_2913_b3473_2911.png",
+      "bytes": 12519,
+      "sha256": "85acbb1e160cbd8379c716a560cced61af39215bd09bb83250235508f29afab2"
+    },
+    {
+      "path": "output/fixup_4x5x5/report_assets/val_SEPARATE_join_z4652_a3304_2826_b3306_2823.png",
+      "bytes": 12198,
+      "sha256": "e72ae4b2db29d0848fa5799c0b360a6710465f41d97aa36934b0f711b7b2fd9e"
+    },
+    {
+      "path": "output/fixup_4x5x5/run4/fixup_report.json",
+      "bytes": 730,
+      "sha256": "66d6244cc515ba2dd17ae49e5e50b5d66f023318ba43c8298d6c8be9dd75603f"
+    },
+    {
+      "path": "PHerc0139-full/20250728140407-9.362um-1.2m-113keV-masked.zarr/.zattrs",
+      "bytes": 3018,
+      "sha256": "97e968dbbf11cc856dc57648aaaa9e6cade5e6575472dcfdeac7cfa50f546dd9"
+    },
+    {
+      "path": "PHerc0139-full/20250728140407-surface-20260413222639-surface-m7-L0-th0.2.zarr/.zattrs",
+      "bytes": 3018,
+      "sha256": "97e968dbbf11cc856dc57648aaaa9e6cade5e6575472dcfdeac7cfa50f546dd9"
+    }
+  ],
+  "zarr_sources": [
+    {
+      "store": "D:\\work\\vesuvius-c\\output\\crossres_data\\pherc0139_training_dynamic_medial_connectivity_v28b_fullowner_20260831\\event_ids.zarr",
+      "identity_file": "D:\\work\\vesuvius-c\\output\\crossres_data\\pherc0139_training_dynamic_medial_connectivity_v28b_fullowner_20260831\\connectivity_state.json",
+      "identity_sha256": "5489a6dce515aacbd980392ecd6326711a05a4758f3554e521f65db30959a8f8",
+      "description": "dynamic medial event IDs"
+    },
+    {
+      "store": "D:\\work\\vesuvius-c\\output\\crossres_data\\pherc0139_training_dynamic_medial_connectivity_v28b_fullowner_20260831\\pin_membership.zarr",
+      "identity_file": "D:\\work\\vesuvius-c\\output\\crossres_data\\pherc0139_training_dynamic_medial_connectivity_v28b_fullowner_20260831\\connectivity_state.json",
+      "identity_sha256": "5489a6dce515aacbd980392ecd6326711a05a4758f3554e521f65db30959a8f8",
+      "description": "dynamic medial component-contact pin bitsets"
+    },
+    {
+      "store": "D:\\work\\vesuvius-c\\output\\crossres_data\\pherc0139_training_dynamic_medial_connectivity_v28b_fullowner_20260831\\free_anchors.zarr",
+      "identity_file": "D:\\work\\vesuvius-c\\output\\crossres_data\\pherc0139_training_dynamic_medial_connectivity_v28b_fullowner_20260831\\connectivity_state.json",
+      "identity_sha256": "5489a6dce515aacbd980392ecd6326711a05a4758f3554e521f65db30959a8f8",
+      "description": "dynamic medial unit-capacity anchors"
+    },
+    {
+      "store": "D:\\work\\vesuvius-c\\output\\crossres_data\\coarse_teacher_atlas_v16_250k\\pherc0139\\teacher_q.zarr",
+      "identity_file": "D:\\work\\vesuvius-c\\output\\crossres_data\\coarse_teacher_atlas_v16_250k\\pherc0139\\atlas_state.json",
+      "identity_sha256": "6aaaf7e1c2e0908235e583f0c2072ff78dccb3e657bb071cc1d6d56f27854f50",
+      "description": "projected fine-teacher soft occupancy"
+    },
+    {
+      "store": "D:\\work\\vesuvius-c\\output\\crossres_data\\coarse_teacher_atlas_v16_250k\\pherc0139\\teacher_crest.zarr",
+      "identity_file": "D:\\work\\vesuvius-c\\output\\crossres_data\\coarse_teacher_atlas_v16_250k\\pherc0139\\atlas_state.json",
+      "identity_sha256": "6aaaf7e1c2e0908235e583f0c2072ff78dccb3e657bb071cc1d6d56f27854f50",
+      "description": "projected fine-teacher medial crest"
+    },
+    {
+      "store": "D:\\work\\vesuvius-c\\output\\crossres_data\\coarse_teacher_atlas_v16_250k\\pherc0139\\teacher_crest_valid.zarr",
+      "identity_file": "D:\\work\\vesuvius-c\\output\\crossres_data\\coarse_teacher_atlas_v16_250k\\pherc0139\\atlas_state.json",
+      "identity_sha256": "6aaaf7e1c2e0908235e583f0c2072ff78dccb3e657bb071cc1d6d56f27854f50",
+      "description": "medial crest validity"
+    },
+    {
+      "store": "D:\\work\\vesuvius-c\\output\\crossres_data\\coarse_teacher_atlas_v16_250k\\pherc0139\\target_valid.zarr",
+      "identity_file": "D:\\work\\vesuvius-c\\output\\crossres_data\\coarse_teacher_atlas_v16_250k\\pherc0139\\atlas_state.json",
+      "identity_sha256": "6aaaf7e1c2e0908235e583f0c2072ff78dccb3e657bb071cc1d6d56f27854f50",
+      "description": "projected occupancy validity"
+    },
+    {
+      "store": "D:\\work\\vesuvius-c\\PHerc0139-full\\20250728140407-9.362um-1.2m-113keV-masked.zarr",
+      "identity_file": "D:\\work\\vesuvius-c\\PHerc0139-full\\20250728140407-9.362um-1.2m-113keV-masked.zarr\\.zattrs",
+      "identity_sha256": "97e968dbbf11cc856dc57648aaaa9e6cade5e6575472dcfdeac7cfa50f546dd9",
+      "description": "PHerc0139 9.362 \u00b5m CT"
+    },
+    {
+      "store": "D:\\work\\vesuvius-c\\PHerc0139-full\\20250728140407-surface-20260413222639-surface-m7-L0-th0.2.zarr",
+      "identity_file": "D:\\work\\vesuvius-c\\PHerc0139-full\\20250728140407-surface-20260413222639-surface-m7-L0-th0.2.zarr\\.zattrs",
+      "identity_sha256": "97e968dbbf11cc856dc57648aaaa9e6cade5e6575472dcfdeac7cfa50f546dd9",
+      "description": "released M7 PHerc0139 segmentation"
+    }
+  ],
+  "generated": [
+    {
+      "path": "figure_1_method_overview.png",
+      "bytes": 132617,
+      "sha256": "6e6491a35b3e3af0228c2988a055682e5b2557735dfdb5a04b3be5acbc0ded44"
+    },
+    {
+      "path": "figure_2_registered_examples.png",
+      "bytes": 211503,
+      "sha256": "5f7c93c22a7eb4192e0409b9aa9f05b8138f0ddedd2be20a8cea6d6d1197aee7"
+    },
+    {
+      "path": "figure_3_line_fitter_examples.png",
+      "bytes": 222029,
+      "sha256": "312ca8331591a6d0b6eed0a02e61f18abb39857a8f884178291e5b6e4fac22e1"
+    },
+    {
+      "path": "figure_4_failure_cases.png",
+      "bytes": 170968,
+      "sha256": "b7f03fcc0cd08f25d0eb3f2d10f1bef13ddc7269fbbf9a1fb0fa5be064ca5532"
+    },
+    {
+      "path": "figure_crossres_supervision.png",
+      "bytes": 136575,
+      "sha256": "dfddd0e546790bcb0cc6e9944addfeb679c22cbd79768c92b9b212f497e91eae"
+    },
+    {
+      "path": "figure_duration_selection.png",
+      "bytes": 80113,
+      "sha256": "20e2d25c11885409ac70beb23ae45436646819e16f9c7338669b0cac6e20127d"
+    },
+    {
+      "path": "gallery_blind_antiblob.png",
+      "bytes": 567983,
+      "sha256": "5dcb4636d0087f05426e5712f2d07db261618546e70cd335408e445ce6ff6980"
+    },
+    {
+      "path": "gallery_locked_growth.png",
+      "bytes": 265180,
+      "sha256": "a0ea3cb7f41f7bab0ef250232b5ecfd82832df88374bf71db0b8da1558db4709"
+    },
+    {
+      "path": "locked16_release_grid.png",
+      "bytes": 488800,
+      "sha256": "d6e01b2ad60107cb3c0f2e2e1dd3a9a6381353f75efd1e18a925864a383357bc"
+    },
+    {
+      "path": "pherc1447_release_grid.png",
+      "bytes": 1416435,
+      "sha256": "6d6dfc29d6bd90feb6b6b2a85a4ed2a9ef8c1241d02eae56c8a22315d8362ee2"
+    },
+    {
+      "path": "teaser.png",
+      "bytes": 124415,
+      "sha256": "c8f19d870686a382764ff30ee939d50d47848c3a92533b834be26c0da3770a98"
+    }
+  ]
+}

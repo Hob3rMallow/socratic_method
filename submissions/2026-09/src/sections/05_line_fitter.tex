@@ -17,9 +17,9 @@ Before a pair enters deterministic greedy matching it must satisfy the following
 \begin{enumerate}
   \item it does not close the same skeleton or mask component;
   \item its tangents face the gap and are sufficiently opposed;
-  \item its reach is at most 12 pixels, and joins beyond six pixels have
-  supporting evidence;
-  \item if an umbilicus is available, its radial displacement is at most four
+  \item its reach is at most 21 pixels, while the calibrated safe regime at six
+  pixels or less requires less supporting evidence;
+  \item if an umbilicus is available, its radial displacement is at most three
   pixels;
   \item its cubic Bezier has a bounded arc-to-chord ratio and does not approach
   a third component;
@@ -35,12 +35,16 @@ We then paint a cubic Bezier disk stroke and record every added pixel.
 
 \begin{figure*}[t]
   \centering
-  \figureasset{figure_3_line_fitter_examples}{0.96\linewidth}{2.0in}
-  \caption{Reserved line-fitter examples. We will show the thresholded input,
-  traced endpoints and tangents, accepted and rejected proposals, connection
-  support across $z$, painted pixels, and a registered high-resolution view.
-  Rejections will include radial, third-component, cross-sheet, and crossing
-  cases rather than only successful joins.}
-  \Description{Reserved comparison of accepted and rejected line-fitter proposals.}
+  \figureasset{figure_3_line_fitter_examples}{0.96\linewidth}{2.9in}
+  \caption{Measured line-fitter behavior on the released M7 baseline. Left:
+  representative M7 masks before and after additive accepted joins. Center:
+  the same connection persists across neighboring $z$-slices. Right:
+  registered fine-CT evidence distinguishes a supported connection from a
+  required separation. The calibration accepted 481 of 772 proposals, added
+  12,697 pixels, reached 92.5\% registered fine-CT precision, and produced no
+  observed full-turn fusion. Cyan is released M7 and green is fitted addition.}
+  \Description{Released M7 before-and-after curve fitting, cross-slice track
+  persistence, connected and separate fine-CT validation examples, and measured
+  calibration statistics.}
   \label{fig:fitter}
 \end{figure*}

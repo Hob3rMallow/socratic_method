@@ -35,18 +35,25 @@ samples and validates every 1,024 samples. To recover the same run after a
 crash, repeat with `--resume`. Never use `--resume` to initialize a new candidate
 from an older student: fresh candidates must begin from the exact released M7.
 
-## 5. Qualify and export
+## 5. Verify and export the selected checkpoint
 
-Do not select solely from the threshold sweep. The completed review of
-registered held-out metrics, PHerc1447 blind anti-blob behavior, shrink-side
-coverage, and false mergers is recorded in `recipes/v31/selection.json`; the 2D
-fitter remains a separate qualification. Export the selected raw checkpoint:
+The selected checkpoint is the 8,192-sample raw student with SHA-256
+`8de376f8a3ad1b14e25a57db1f8dd20e8c505ceb169a49bc006b2903d1ccb3c1`
+and byte size `409675375`. Its operating threshold is 0.45. The complete
+registered, blind anti-blob, and FLIP record is
+`recipes/v31/release_qualification.json`; the shorter human decision record is
+`recipes/v31/selection.json`.
 
 ```bash
-socratic-export path/to/checkpoint.pt huggingface/export
+socratic-export path/to/checkpoint_milestone_00008192.pt huggingface/export
 ```
 
-The exporter fails closed unless the checkpoint SHA-256 matches the selection
-record. It writes `model.safetensors`, `config.json`, checkpoint metadata, the
-selected threshold, recipe, metrics, selection record, and model card.
-Publishing is intentionally a separate, explicit `hf upload` action.
+The exporter fails closed unless checkpoint size, SHA-256, sample counters,
+recipe selection, and qualification selection all agree. It writes
+`model.safetensors`, `config.json`, preprocessing metadata, checkpoint metadata,
+the recipe, observed metrics, release qualification, concise selection record,
+and model card. Publishing remains a separate, explicit `hf upload` action.
+
+Do not substitute the 7,168-sample best-Dice interval or the censored threshold
+0.25. Those answer the ordinary validation ranking, not the independent
+morphology and anti-blob release criterion.

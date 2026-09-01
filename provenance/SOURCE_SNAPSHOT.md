@@ -30,3 +30,18 @@ executable recipe corrects the scope based on the actual bytes.
 
 Run `python scripts/build_source_manifest.py` to regenerate
 `provenance/SHA256SUMS` after intentionally updating a source snapshot.
+
+## Release qualification update (2026-09-01)
+
+The public release now selects the raw 8,192-sample v31 checkpoint at an
+operating threshold of 0.45.  It does not blend the checkpoint with M7 or use
+the fine teacher at inference.  The exact selected checkpoint is identified by
+byte size and SHA-256 in `recipes/v31/recipe.json`; the locked-gate, blind
+PHerc1447, and FLIP evidence used for that decision is recorded in
+`recipes/v31/release_qualification.json`.
+
+Verbatim machine-readable evaluation outputs and the audit/report programs are
+preserved under `provenance/source/evaluation/v31_release`.  The release and
+paper figures are regenerated from those outputs and the original registered
+report imagery by `scripts/generate_release_figures.py`; each generated figure
+and every discrete source it reads is hashed in the adjacent figure manifest.

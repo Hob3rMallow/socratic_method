@@ -2,9 +2,9 @@
 
 ## Cross-resolution teacher supervision and topology-aware repair for papyrus surface segmentation
 
-**Authors:** to be confirmed\
-**Affiliations:** to be confirmed\
-**Status:** working draft, September 2026\
+**Authors:** to be confirmed<br>
+**Affiliations:** to be confirmed<br>
+**Status:** working draft, September 2026<br>
 **Repository:** <https://github.com/ubc-nvining/socratic_method>
 
 ### Abstract
@@ -21,12 +21,11 @@ line fitter reconnects short, geometrically credible gaps after segmentation.
 The completed v31 duration ladder shows positive held-out per-scroll gains over
 M7 at all eight measured milestones. The best calibrated macro-scroll Dice,
 0.58293, occurs at 7,168 samples; the 8,192-sample result is 0.58037.
-Because calibration remains at the lower boundary of the tested range, it is a
-duration diagnostic rather than the operating-point decision. Locked and
-blinded morphology review instead selects the raw 8,192-sample checkpoint at
-threshold 0.45. It passes the PHerc1447 hard anti-blob gate with no interior- or
-thickness-regression cubes; weight redistribution still depends on upstream
-terms.
+The ordinary Dice calibration remains censored at the lower boundary, but an
+independent registered-morphology and blind anti-blob review selects the raw
+8,192-sample checkpoint at threshold 0.45. It passes the six-cube PHerc1447
+anti-blob gate and matches teacher component count on 15 of 16 locked PHerc0139
+slices; the remaining scalar exception is documented.
 
 ### 1. Introduction
 
@@ -62,6 +61,13 @@ and thereby points toward a better one. Here the fine teacher is not deployed as
 a superior replacement. It asks local questions of the expert coarse model.
 The answer is a revised M7 architecture that stands alone at inference.
 
+> “I neither know nor think that I know.” — Socrates, in Plato's *Apology* 21d
+>
+> **SOCRATES:** I am wiser than this man; he fancies he knows something,
+> although he knows nothing—<br>
+> **DARRYL, SOCRATES' FRIEND:** *fuck him up socrates*<br>
+> — leon (@leyawn), April 8, 2015
+
 Our contributions are:
 
 1. a hash-pinned and machine-executable 2 um-to-9 um supervision recipe;
@@ -72,10 +78,11 @@ Our contributions are:
 4. an independently measured additive 2D postprocess that reconnects only short
    gaps passing geometric and cross-plane objections.
 
-> **Figure 1 reserved - method overview.** File:
-> `figures/figure_1_method_overview.png`. Show the 2.399 um Villa teacher,
-> projection into the 9.362 um frame, student loss terms and trust region, then
-> the raw student-only inference boundary and separate 2D fitter.
+> **Figure 1 - method overview.** File:
+> `figures/figure_1_method_overview.png`. It shows the released M7 baseline,
+> 2.399 um Villa teacher, projection into the 9.362 um frame, student loss terms
+> and trust region, then the raw student-only inference boundary and separate
+> 2D fitter.
 
 ### 2. Cross-resolution student
 
@@ -210,8 +217,9 @@ gain guard against released M7.
 
 Thresholds are swept from 0.25 through 0.60 in increments of 0.01. Every
 milestone selects 0.25, the lower boundary. Those calibrated scores compare
-duration within this experiment, but the optimum is censored and visibly
-restores blob material. It is not the selected operating threshold.
+duration within this experiment, but the optimum is censored and 0.25 inflates
+foreground on blind PHerc1447. The independent morphology operating point is
+therefore 0.45.
 
 Checkpoint promotion is deliberately stricter than held-out Dice. Five
 durations and thresholds 0.38--0.50, with 0.25 retained as a failure control,
@@ -219,12 +227,13 @@ were evaluated on 16 locked PHerc0139 slices and six blinded PHerc1447 cubes.
 The locked locations are evaluation-only and spatially separated from the
 PHerc0139 training boxes. The gate includes two-sided morphology and coverage,
 false-merger inspection, and human review. An older raw v29 candidate failed the
-PHerc1447 anti-blob gate and is retained as a negative result.
+PHerc1447 anti-blob gate and is retained as a negative result rather than
+represented as the model.
 
-> **Figure 2 reserved - registered model examples.** File:
-> `figures/figure_2_registered_examples.png`. Use aligned crops from PHerc0814,
-> PHerc1451, and the blind PHerc1447 gate. Columns should include CT, released
-> M7, fine-teacher target, selected v31 output, and two-sided add/remove errors.
+> **Figure 2 - registered model examples.** File:
+> `figures/figure_2_registered_examples.png`. Locked PHerc0139 rows show aligned
+> CT, released M7, projected teacher, selected raw student, and two-sided
+> differences in the recovered cyan/yellow/magenta/green visual grammar.
 
 ### 4. Completed duration-ladder result
 
@@ -236,22 +245,25 @@ interval scores 0.58037, with a minimum per-scroll gain of 0.02031. Trust-region
 projection is active for 97.7% of updates in the first interval and 100%
 thereafter.
 
-More training is not automatically better, which validates retaining the full
-ladder. The overlap-only diagnostic prefers 7,168 samples at censored threshold
-0.25, but morphology review selects the raw 8,192-sample checkpoint at 0.45.
-At this point 15/16 locked slices have exact component counts. On PHerc1447 the
-foreground ratio is 0.950508 relative to the v15 anti-blob reference, reference
-recall is 0.911324, no cube has an interior or thickness regression, and the
-hard anti-blob gate passes. At 0.42 the machine count is 16/16; 0.45 is retained
-because visual review finds the cleaner useful-structure/de-blob balance and the
-single count exception is a known topology-accounting ambiguity.
+The best ordinary-validation row is not automatically the best geometric model,
+which validates retaining the ladder. Registered morphology and blind de-blob
+review select the raw 8,192-sample checkpoint at threshold 0.45. At this point
+15/16 locked slices have exact teacher component counts and all 16 pass the
+anti-blob check. On PHerc1447 the foreground ratio is 0.950508 relative to the
+v15 comparison, reference recall is 0.911324, no cube has an interior or
+thickness regression, and the hard anti-blob gate passes. At 0.42 the machine
+component count is 16/16; 0.45 is retained because visual review finds the
+cleaner useful-structure/de-blob balance and the lone rank-26 mismatch is a
+known topology-accounting ambiguity.
 
 An independent FLIP audit evaluates all 1,120 displayed pairs at 67.0206 pixels
 per degree. At threshold 0.45, 8,192 samples improves 12/16 locked slices over
 2,048; teacher-only erosion falls from 4,283 to 4,270 pixels and additions from
-1,201 to 1,155. Mean FLIP narrowly prefers 4,096 to 8,192, while weighted-median
-pooling narrowly prefers 8,192. This disagreement is retained because teacher
-resemblance does not encode the full penalty for refilling adjacent wraps.
+1,201 to 1,155. Mean FLIP narrowly prefers 4,096 at 0.42 for literal teacher
+resemblance, while weighted-median pooling narrowly prefers the longer 8,192
+checkpoint at 0.45 within the fixed-threshold duration comparison. This
+disagreement is retained because teacher resemblance does not encode the full
+penalty for refilling adjacent wraps.
 
 The generated PDF includes a duration table produced from
 `recipes/v31/observed_metrics.json`.
@@ -286,10 +298,10 @@ mesh-stage slab splitter separated zero of 246 fused runs. It remains in the
 source tree as a measured negative result and is not part of the recommended
 pipeline.
 
-> **Figure 3 reserved - line-fitter decisions.** File:
-> `figures/figure_3_line_fitter_examples.png`. Show accepted short joins,
-> radial/cross-sheet rejections, connection-track support across z, the painted
-> pixels, and matched high-resolution confirmation.
+> **Figure 3 - measured line-fitter decisions.** File:
+> `figures/figure_3_line_fitter_examples.png`. It shows the released M7 mask
+> before and after accepted additions, connection-track support across z,
+> registered fine-CT connected and separate checks, and run-4 measurements.
 
 ### 6. Reproducibility and release
 
@@ -307,10 +319,9 @@ artifact hosting, but no upload should occur until ownership and upstream terms
 are resolved. The repository currently uses an explicit license hold rather
 than guessing a permissive license.
 
-> **Figure 4 reserved - failure cases.** File:
-> `figures/figure_4_failure_cases.png`. Show remaining faint-sheet misses,
-> residual blobs, cross-wrap risks, and examples whose morphology changes near
-> the selected operating threshold.
+> **Figure 4 - known edge cases.** File:
+> `figures/figure_4_failure_cases.png`. It preserves the rank-26 scalar topology
+> exception, rank-64 thinning/drift, and PHerc1447 undergrowth or fragmentation.
 
 ### 7. Limitations
 
@@ -319,14 +330,16 @@ or acquisition characteristics. Fine-teacher predictions are model-derived soft
 supervision rather than human ground truth. Two held-out scrolls, 16 locked
 slices, and six blind cubes establish guards but not broad robustness. The
 trust-region projection is saturated and its radius was not selected under the
-final objective. The overlap-calibration sweep does not bracket an optimum;
-0.45 is a morphology-gated choice that should receive independent human review.
-Finally, a geometrically plausible 2D join can still be globally wrong near the
-core; downstream repair must remain separately measured and reversible.
+final objective. The Dice threshold search does not bracket an optimum; 0.45 is
+an independent morphology operating point that received human review.
+Finally, a geometrically plausible 2D join can still be
+globally wrong near the core; downstream repair must remain separately measured
+and reversible during qualification.
 
 ### 8. Conclusion
 
-The current evidence supports a selected raw-model candidate. A
+The current evidence supports a selected raw model artifact with explicitly
+bounded evidence. A
 fine-resolution teacher can productively question a coarse expert when its
 evidence is represented as soft occupancy, medial continuity, explicit de-blob
 pressure, and falsifiable preservation constraints. The same principle extends
@@ -334,10 +347,20 @@ downstream: the line fitter may propose a connection, but radial, merger,
 cross-sheet, crossing, and persistence gates force that proposal to answer a
 sequence of geometric objections before any pixel is added.
 
-The selected checkpoint has SHA-256
-`8de376f8a3ad1b14e25a57db1f8dd20e8c505ceb169a49bc006b2903d1ccb3c1`.
-The next revision will insert the reserved figures and complete authorship,
-licenses, artifact export, and public URLs.
+The remaining release work is authorship, licensing, and artifact hosting—not
+checkpoint, threshold, or line-fitter-figure selection.
+
+### 9. Qualitative galleries
+
+The final pages show the strongest locked longitudinal-growth examples and the
+blind PHerc1447 anti-blob examples as separate, registered panels. Every pink
+panel is the raw 8,192-sample student at threshold 0.45; no panel contains an M7
+or teacher blend. Released M7 is shown alongside every model result as the
+state-of-the-art baseline.
+
+![Locked longitudinal-growth gallery](../figures/gallery_locked_growth.png)
+
+![Blind PHerc1447 anti-blob gallery](../figures/gallery_blind_antiblob.png)
 
 ### References
 

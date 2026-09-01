@@ -253,13 +253,13 @@ corridor.
 \begin{figure*}[t]
   \centering
   \figureasset{figure_crossres_supervision}{0.96\linewidth}{2.0in}
-  \caption{Reserved cross-resolution supervision detail. The upper row will
-  show a fine teacher mask, its LSMAT-style centers and radii, projected
-  occupancy $q$, binary crest $C$, and the radius-two background shell $S$.
-  The lower row will show a thin teacher component, disconnected M7 fragments,
-  their contact pins, free anchors, the admissible medial corridor, and the
-  dynamically selected widest path before and after its bottleneck is raised.}
-  \Description{Reserved diagram of the LSMAT-style center-radius representation, de-blob shell, and dynamic widest-path connectivity loss.}
+  \caption{Actual PHerc0139 training data at dynamic event 138. Projected soft
+  occupancy, its sparse medial crest, and the radius-two separation shell encode
+  center/radius geometry without rewarding girth. The lower panels show the M7
+  fragments, teacher-medial corridor, component-contact pins, and free anchors
+  supplied to the max--min connectivity recurrence.}
+  \Description{Training slice with projected teacher occupancy, medial crest,
+  de-blob shell, M7 fragments, and dynamic-connectivity metadata.}
   \label{fig:supervision}
 \end{figure*}
 

@@ -18,14 +18,6 @@ manifest contains only PHerc0139 even though an inherited field in the original
 v31 recipe lists four scrolls. The corrected executable recipe follows the
 hashed manifest bytes; the verbatim original remains under `provenance/source`.
 
-The medial representation is LSMAT-inspired: slice-wise centers and physical
-2D radii separate longitudinal continuation from radial thickness. The released
-Villa center extraction is retained; this recipe does not claim to run LSMAT's
-continuous least-squares solver. Connectivity pins are the contact sets between
-an eligible thin teacher component and disconnected released-M7 components.
-The admissible region is the complete minimum-dilation teacher-medial corridor
-that joins those pins, rather than one prescribed centerline.
-
 The objective contract is
 `soft-occupancy-ce-dice-villa-medial-crest-shell-kl-corridor-m7-preservation-dynamic-widest-path-v9`:
 
@@ -55,14 +47,33 @@ the student is projected into a global relative-L2 ball of radius
 all of the observed schedule, so it is part of the effective method rather than
 an inactive guardrail.
 
-## Evaluation contract
+## Evaluation and release selection
 
-Validation uses held-out PHerc0814 and PHerc1451. A checkpoint must retain the
-minimum per-scroll M7 gain and is ranked by calibrated macro-scroll Dice. The
-threshold sweep is 0.25 through 0.60 in 0.01 steps. Every observed v31 milestone
-selects 0.25, the lower boundary, so this score is used only as a duration
-diagnostic. Independent review of 16 locked PHerc0139 slices and six blinded
-PHerc1447 cubes selects the raw 8,192-sample checkpoint at threshold 0.45. It
-passes the hard anti-blob gate with zero interior- and thickness-regression
-cubes. Exact candidate identity and qualification measurements are in
-[`recipes/v31/selection.json`](../recipes/v31/selection.json).
+Ordinary validation uses held-out PHerc0814 and PHerc1451. A checkpoint must
+retain the minimum per-scroll M7 gain and is ranked by calibrated macro-scroll
+Dice. Every observed v31 milestone selects 0.25 at the lower edge of the sweep.
+That censored optimum is retained as a training observation, but it fails the
+PHerc1447 anti-blob gate and is not a valid operating point.
+
+The release candidate is the raw 8,192-sample checkpoint at threshold 0.45.
+Selection combines the registered 16-slice PHerc0139 review, the blind six-cube
+PHerc1447 anti-blob audit, and the deliberate preference for mild undergrowth
+over foreground inflation. At 0.45, all 16 locked slices pass the anti-blob
+check, 15 match the teacher component count, and mean ASSD is 0.626 voxels. The
+PHerc1447 aggregate has foreground ratio 0.951 and recall 0.911 relative to the
+v15 comparison model, with no interior or thickness regressions.
+
+The component-count exception is locked rank 26: the teacher really has four
+components, while two top blobs and touching student strokes make the scalar
+count five. Several other legacy failures are visually correct but rejected by
+the one-voxel M7-preservation proxy because the student smooths or shifts a
+surface. Consequently, the legacy `learned_growth` scalar is recorded for
+diagnosis but is not the release gate. A future replacement should decompose
+displacement along and normal to the teacher medial center/radius field.
+
+FLIP mean narrowly prefers 4,096 samples at threshold 0.42 for literal teacher
+resemblance. The selected 8,192/0.45 candidate ranks 18 of 45 anti-blob-eligible
+settings by that statistic, but improves 12 of 16 slices over 2,048 samples and
+reduces total erosion and additions. Weighted-median FLIP, blind morphology, and
+human review support the longer checkpoint. The complete, non-sanitized record
+is in `recipes/v31/release_qualification.json`.
