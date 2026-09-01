@@ -1,0 +1,46 @@
+{
+  "schema": "crossres-pherc0139-dynamic-medial-duration-plan-v1",
+  "version": "v30.1-pherc0139-dynamic-medial-duration",
+  "seed": 1203,
+  "scientific_question": "Does exposing the winning raw dynamic-medial model to the complete 4096-row training corpus improve longitudinal probability separation without changing its anti-blob behavior?",
+  "single_axis": {
+    "field": "training_samples",
+    "baseline": 1024,
+    "target": 4096,
+    "observation_milestones": [1024, 2048, 3072, 4096],
+    "rule": "Start again from the released M7 checkpoint and change only total training duration. Dynamic-medial weight 0.03125, corpus, sample order, objective, optimizer, learning rate, batch, accumulation, trust radius, validation cadence, threshold band, and raw no-blend inference remain fixed."
+  },
+  "base_weight_sweep": {
+    "path": "crossres_pred/configs/m7_xr_v28_pherc0139_dynamic_medial_connectivity_weight_sweep_20260831.json",
+    "sha256": "aef9f87a17e07e613780c91280679806860dac147031a7bae4fbb0d398b98d00"
+  },
+  "base_candidate": {
+    "label": "dynconn_w0p03125_n1024",
+    "recipe": "output/crossres_data/m7_xr_v28_pherc0139_dynamic_medial_connectivity_weight_sweep_20260831/recipes/dynconn_w0p03125_n1024.json",
+    "recipe_sha256": "b0f020b490b72241ab1b5fa60a53f1b7350e981b3bf495bfa19154a9c97bdf4c",
+    "checkpoint": "output/crossres_data/m7_xr_v28_pherc0139_dynamic_medial_connectivity_weight_sweep_20260831/candidates/dynconn_w0p03125_n1024/checkpoint_milestone_00001024.pt",
+    "checkpoint_sha256": "829e93f96488b0b21ab17bc6c20d542c8fc3d10ffe9d3d3c80e5229a2cfeac11",
+    "dynamic_medial_connectivity_weight": 0.03125,
+    "training_samples": 1024,
+    "raw_no_blend": true
+  },
+  "pilot": {
+    "training_samples": 4096,
+    "validation_interval_samples": 1024,
+    "snapshot_samples": [1024, 2048, 3072, 4096],
+    "fresh_released_m7_initialization": true,
+    "full_corpus_passes": 1.0,
+    "dynamic_medial_connectivity_weight": 0.03125
+  },
+  "candidate": {
+    "label": "dynconn_w0p03125_n4096_duration",
+    "hypothesis": "The 1024-sample pilot saw only one quarter of the corpus and 99 scheduled event-bearing rows. A complete deterministic corpus pass should expose the remaining training geometry and sharpen valid-strip confidence before any loss or architecture change is justified."
+  },
+  "evaluation": {
+    "locked_pherc0139": "all four milestones, raw student only, common thresholds 0.38 through 0.50",
+    "heldout_pherc1447": "all four milestones, raw student only, common thresholds 0.38 through 0.50",
+    "anti_blob_rule": "hard promotion constraint at every operating threshold",
+    "human_report": "plain side-by-side panels at identical crop and scale; no overlays"
+  },
+  "output": "output/crossres_data/m7_xr_v30_pherc0139_dynamic_medial_duration_20260831"
+}

@@ -1,0 +1,46 @@
+\section{Additive 2D Curve Fitting}
+\label{sec:fitter}
+Following re-training, we introduce a downstream postprocess that repairs short omissions
+in the thresholded predictions. It is additive only: accepted joins set foreground pixels, but never erase
+the model output. This restriction makes every intervention easy to localize and prevents a
+gap-repair stage from quietly becoming a second segmentation method.
+
+For each $z$-slice, we apply Zhang--Suen thinning~\cite{zhang1984fast}, remove short spurs, label
+the 8-connected skeleton and mask components, and extract curve endpoints with
+outward tangents. We then snap endpoints to the mask edge so distances describe the visible gap rather
+than skeleton retraction. Endpoints clipped by the volume or missing data are retained for audit but may
+not be matched.
+
+We score endpoint pairs using distance, facing, adjacent-plane evidence, and cross-slice track support.
+Before a pair enters deterministic greedy matching it must satisfy the following requirements:
+
+\begin{enumerate}
+  \item it does not close the same skeleton or mask component;
+  \item its tangents face the gap and are sufficiently opposed;
+  \item its reach is at most 12 pixels, and joins beyond six pixels have
+  supporting evidence;
+  \item if an umbilicus is available, its radial displacement is at most four
+  pixels;
+  \item its cubic Bezier has a bounded arc-to-chord ratio and does not approach
+  a third component;
+  \item the path corridor does not cross another sheet on nearby slices; and
+  \item it neither crosses nor touches an already accepted join, and neither
+  endpoint has taken a better match.
+\end{enumerate}
+
+A first matching pass seeds endpoint and connection tracks.
+A second pass follows each new track through $z$, uses connection confidence, and retains
+only joins supported across at least three slices.
+We then paint a cubic Bezier disk stroke and record every added pixel.
+
+\begin{figure*}[t]
+  \centering
+  \figureasset{figure_3_line_fitter_examples}{0.96\linewidth}{2.0in}
+  \caption{Reserved line-fitter examples. We will show the thresholded input,
+  traced endpoints and tangents, accepted and rejected proposals, connection
+  support across $z$, painted pixels, and a registered high-resolution view.
+  Rejections will include radial, third-component, cross-sheet, and crossing
+  cases rather than only successful joins.}
+  \Description{Reserved comparison of accepted and rejected line-fitter proposals.}
+  \label{fig:fitter}
+\end{figure*}

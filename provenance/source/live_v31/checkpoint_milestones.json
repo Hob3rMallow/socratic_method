@@ -1,0 +1,29 @@
+{
+  "records": [
+    {
+      "actual_samples": 1024,
+      "bytes": 409675375,
+      "checkpoint": "checkpoint_milestone_00001024.pt",
+      "requested_samples": 1024
+    },
+    {
+      "actual_samples": 2048,
+      "bytes": 409675375,
+      "checkpoint": "checkpoint_milestone_00002048.pt",
+      "requested_samples": 2048
+    },
+    {
+      "actual_samples": 4096,
+      "bytes": 409675375,
+      "checkpoint": "checkpoint_milestone_00004096.pt",
+      "requested_samples": 4096
+    },
+    {
+      "actual_samples": 8192,
+      "bytes": 409675375,
+      "checkpoint": "checkpoint_milestone_00008192.pt",
+      "requested_samples": 8192
+    }
+  ],
+  "schema": "post-optimizer-model-only-sample-milestone-v1"
+}

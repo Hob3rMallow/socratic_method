@@ -1,0 +1,73 @@
+{
+  "schema": "crossres-pherc0139-dynamic-medial-connectivity-design-v1",
+  "version": "v28.0-pherc0139-dynamic-medial-connectivity",
+  "scientific_question": "Does replacing one arbitrary pinned route with an existential widest-path objective on the same training-only teacher-medial corridor teach longitudinal M7-fragment joins without increasing radial girth?",
+  "round4_evidence": {
+    "sweep_result": "output/crossres_data/m7_xr_v27_pherc0139_pinned_axial_weight_sweep_20260831/result.json",
+    "visual_diagnostics": "output/crossres_data/pherc0139_growth_failure_visual_diagnostics_v27_axial_20260831/diagnostics.json",
+    "human_report": "output/crossres_data/pherc0139_round4_axial_report_20260831/index.html",
+    "finding": "The fixed-route floor tied the 9-of-16 incumbent at weight 0.03125, fell to 8-of-16 at larger weights, monotonically degraded ordinary validation, and reduced anti-blob passes at weight 0.25."
+  },
+  "single_model_change": {
+    "from": "one-sided floor on the weakest ten percent of one fixed minimum-off-axis path",
+    "to": "one-sided floor on the maximum bottleneck connectivity of any path through the audited teacher-medial corridor",
+    "unchanged": [
+      "released M7 initialization",
+      "teacher and training corpus",
+      "training sample schedule",
+      "optimizer and trust region",
+      "all non-connectivity losses",
+      "M7 inference blend",
+      "strict 16-slice held-out gate and every gate tolerance"
+    ]
+  },
+  "loss_contract": {
+    "name": "teacher-medial-dynamic-widest-path-connectivity-v1",
+    "event": "one audited training-only teacher component that joins two to four published-M7 components",
+    "corridor": "the complete minimum-dilation teacher-medial corridor already computed for that event",
+    "pins": "the published-M7 component contact sets inside the corridor",
+    "free_anchors": "corridor voxels within one voxel of published M7 plus every pin voxel; their path capacity is clamped to one and they receive no growth pressure",
+    "recurrence": "reach[0]=source pins; reach[t+1]=max(reach[t], min(student foreground probability, 26-neighbor max-pool(reach[t]))) within the corridor",
+    "score": "the minimum, over non-source pin sets, of their maximum reached capacity; equivalently the bottleneck of the best set of source-to-pin paths",
+    "penalty": "one-sided foreground-logit hinge below the independently fixed probability floor",
+    "probability_floor": 0.2,
+    "maximum_propagation_steps": 96,
+    "event_weighting": "one vote per event regardless of corridor size or number of pins",
+    "direct_gradient_outside_corridor": false,
+    "uses_teacher_at_inference": false
+  },
+  "anti_blob_scope": {
+    "new_radial_penalty_in_this_round": false,
+    "teacher_event_screen": {
+      "maximum_radius_vox": 3.0,
+      "maximum_interior_fraction_r2": 0.02
+    },
+    "reason": "Keep the comparison single-axis. The existing separation losses and unchanged held-out anti-blob gate remain active; a center-to-shell contrast is reserved for a later isolated intervention only if dynamic connectivity opens joins by thickening them."
+  },
+  "split_contract": {
+    "construction_inputs": "training-manifest-boxes-only",
+    "coordinate_frame_bound_to_record_id": "pherc0139-native-fine-teacher-2p399-to-9p362-v11p1",
+    "heldout_gate_used_for_construction": false,
+    "heldout_gate_used_for_weight_selection": true,
+    "teacher_trained_in_or_around_gate": false
+  },
+  "preflight_requirements": [
+    "Every materialized corridor contains all of its pins and connects them within 96 propagation steps.",
+    "Spatial augmentation transforms event IDs, pin memberships, and free-anchor masks identically.",
+    "A stronger alternative route suppresses loss even when the former fixed route is weak.",
+    "Disconnected or sub-floor best paths retain a positive gradient on a bottleneck corridor voxel.",
+    "No direct connectivity gradient appears outside the corridor or on free M7 anchors.",
+    "The exact 1024-sample schedule and CUDA checkpoint are audited before selecting weights."
+  ],
+  "run_policy": {
+    "candidate_axis": "dynamic_medial_connectivity_weight",
+    "candidate_values": "set only after the exact-schedule CUDA loss-scale audit",
+    "fresh_released_m7_for_every_candidate": true,
+    "run_candidates_one_at_a_time": true,
+    "standard_corpus_requires_strict_gate": "16/16"
+  },
+  "next_report_layout": {
+    "primary_view": "one held-out slice per row with plain CT, teacher, published M7, incumbent, and every candidate side by side",
+    "overlays": "optional diagnostic appendix only"
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "schema": "crossres-pherc0139-dynamic-medial-connectivity-weight-sweep-plan-v1",
+  "version": "v28.1-pherc0139-dynamic-medial-connectivity-weight-sweep",
+  "seed": 1203,
+  "scientific_question": "Can an existential widest-path loss through a training-only teacher-medial corridor teach longitudinal M7-fragment joins without increasing radial girth?",
+  "single_axis": {
+    "field": "dynamic_medial_connectivity_weight",
+    "values": [0.03125, 0.0625, 0.125, 0.25],
+    "rule": "Every candidate starts from the same released M7 checkpoint and varies only dynamic_medial_connectivity_weight; the dynamic corridor, pins, free anchors, floor, propagation steps, corpus, optimizer, trust region, schedule, postprocessing, and all strict gate tolerances are fixed."
+  },
+  "design": {
+    "path": "crossres_pred/configs/m7_xr_v28_pherc0139_dynamic_medial_connectivity_design_20260831.json",
+    "sha256": "f71d860821c27be8348118a3523a7790c07a4069b4dc955b6e899f168c74cb33"
+  },
+  "base_cutoff_plan": {
+    "path": "crossres_pred/configs/m7_xr_v21_pherc0139_preservation_cutoff_sweep_20260831.json",
+    "sha256": "a08e71c48eae7bb59aaac50fabb864fc2ad5d0ee869f319b260a63fec510d40e"
+  },
+  "incumbent": {
+    "checkpoint": "output/crossres_data/m7_xr_v21_pherc0139_preservation_cutoff_sweep_20260831/candidates/prescut0p50_n1024/checkpoint_milestone_00001024.pt",
+    "checkpoint_sha256": "87142904f01babe8beb028da4bcbe8e272af4ffc937b0b97a180eb7936fbaa71",
+    "retention_blend_result": "output/crossres_data/m7_xr_v25_pherc0139_retention_blend_refinement_20260831/result.json",
+    "retention_blend_result_sha256": "f3704513f806743612489114d1acdd70f51e36c1623d20dafdf0e4d0e9c9b0ce",
+    "strict_gate_evaluation": "output/crossres_data/pherc0139_growth_gate_candidate_v25_m7blend0p12_v21_prescut0p50_n1024_strict_20260831/evaluation.json",
+    "strict_gate_evaluation_sha256": "1640fb91db87545bf142c4df139e2d60682479d93776184846573d1dde55e9ca",
+    "m7_base_blend": 0.12,
+    "selected_threshold": 0.17,
+    "slices_passed": 9,
+    "component_matches": 16,
+    "anti_blob_passes": 14,
+    "distance_passes": 13,
+    "learned_growth_passes": 9
+  },
+  "round4_control": {
+    "result": "output/crossres_data/m7_xr_v27_pherc0139_pinned_axial_weight_sweep_20260831/result.json",
+    "human_report": "output/crossres_data/pherc0139_round4_axial_report_20260831/index.html",
+    "finding": "The fixed arbitrary path tied the 9-of-16 incumbent at its weakest weight, fell to 8-of-16 at larger weights, degraded ordinary validation monotonically, and lost anti-blob passes at the upper weight."
+  },
+  "auxiliary_supervision": {
+    "contract": "teacher-medial-dynamic-widest-path-connectivity-v1",
+    "geometry_audit": "output/crossres_data/pherc0139_training_medial_bridge_audit_v27c_ownerbound_20260831/full.json",
+    "geometry_audit_sha256": "5c997f2d7dcc7faae8cfc176d7f361b7cbb3278abe5d2f02960c110ee3dc2489",
+    "dynamic_medial_connectivity_state": "output/crossres_data/pherc0139_training_dynamic_medial_connectivity_v28b_fullowner_20260831/connectivity_state.json",
+    "dynamic_medial_connectivity_state_sha256": "5489a6dce515aacbd980392ecd6326711a05a4758f3554e521f65db30959a8f8",
+    "construction_inputs": "training-manifest-boxes-only",
+    "coordinate_frame_bound_to_record_id": "pherc0139-native-fine-teacher-2p399-to-9p362-v11p1",
+    "heldout_gate_used_for_construction": false,
+    "events": 149,
+    "fully_owned_events": 149,
+    "full_owner_observations": 5357,
+    "eligible_training_rows": 477,
+    "exact_schedule_event_rows": 99,
+    "maximum_required_connectivity_steps": 44,
+    "maximum_propagation_steps": 96
+  },
+  "loss_scale_audit": {
+    "path": "output/crossres_data/pherc0139_dynamic_medial_connectivity_loss_scale_v28b_preflight_20260831/audit.json",
+    "sha256": "ac00d893b3d19401e1a246f91545c28b5527756c483a4cb9ee0a1832308036e7",
+    "cuda": true,
+    "heldout_gate_used": false,
+    "event_bearing_samples": 99,
+    "event_observations": 1062,
+    "schedule_mean_unweighted_connectivity_loss": 0.3311812723400652,
+    "historical_mean_train_loss": 1.9886225369590067,
+    "autograd_nonzero_corridor_voxels": 17,
+    "autograd_nonzero_outside_corridor_voxels": 0,
+    "autograd_nonzero_free_anchor_voxels": 0
+  },
+  "pilot": {
+    "training_samples": 1024,
+    "validation_interval_samples": 1024,
+    "snapshot_samples": [1024],
+    "fresh_m7_for_every_candidate": true,
+    "run_candidates_one_at_a_time": true,
+    "fixed_objective": {
+      "soft_cross_entropy_weight": 1.0,
+      "soft_dice_weight": 0.25,
+      "medial_recall_weight": 1.0,
+      "teacher_background_separation_weight": 2.0,
+      "teacher_background_separation_radius": 2,
+      "teacher_background_max_q": 0.1,
+      "m7_function_kl_weight": 0.5,
+      "m7_function_kl_known_agreement": true,
+      "m7_function_kl_confident_agreement": true,
+      "m7_function_kl_unknown_corridor_radius": 2,
+      "m7_preservation_weight": 1.0,
+      "m7_preservation_radius": 2,
+      "m7_preservation_anchor_threshold": 0.5,
+      "m7_preservation_soft_floor": false,
+      "dynamic_medial_connectivity_probability_floor": 0.2,
+      "dynamic_medial_connectivity_steps": 96
+    },
+    "m7_trust_region_relative_l2": 0.0027535421730275947
+  },
+  "candidates": [
+    {
+      "label": "dynconn_w0p03125_n1024",
+      "dynamic_medial_connectivity_weight": 0.03125,
+      "hypothesis": "A 0.52-percent schedule-average contribution tests whether changing route selection alone is sufficient at the former winning weight."
+    },
+    {
+      "label": "dynconn_w0p0625_n1024",
+      "dynamic_medial_connectivity_weight": 0.0625,
+      "hypothesis": "A 1.04-percent schedule-average contribution tests a conservative doubling without changing the corridor or floor."
+    },
+    {
+      "label": "dynconn_w0p125_n1024",
+      "dynamic_medial_connectivity_weight": 0.125,
+      "hypothesis": "A 2.08-percent schedule-average contribution tests whether sequential bottleneck opening needs moderate pressure."
+    },
+    {
+      "label": "dynconn_w0p25_n1024",
+      "dynamic_medial_connectivity_weight": 0.25,
+      "hypothesis": "A 4.16-percent upper bracket tests under-strength while the unchanged anti-blob gate guards against thickening."
+    }
+  ],
+  "gate": {
+    "evaluator": "crossres_pred/scripts/evaluate_pherc0139_growth_gates.py",
+    "evaluation_role": "candidate",
+    "m7_base_blend": 0.12,
+    "threshold_min": 0.1,
+    "threshold_max": 0.6,
+    "threshold_step": 0.01,
+    "minimum_component_voxels": 12,
+    "maximum_symmetric_boundary_mean_vox": 1.0,
+    "maximum_symmetric_boundary_p95_vox": 2.0,
+    "minimum_preservation_fraction": 0.95,
+    "preservation_radius": 1,
+    "minimum_growth_recall": 0.5,
+    "teacher_match_radius": 2,
+    "maximum_radius": 3.0,
+    "maximum_interior_fraction_r2": 0.02
+  },
+  "report_layout": {
+    "primary_view": "one held-out slice per row with plain CT, teacher, published M7, incumbent, and all candidates in separate side-by-side columns at identical crop and scale",
+    "overlays": "optional diagnostic appendix only"
+  },
+  "output": "output/crossres_data/m7_xr_v28_pherc0139_dynamic_medial_connectivity_weight_sweep_20260831"
+}

@@ -1,0 +1,158 @@
+{
+  "architecture": {
+    "inference_model": "ordinary-single-m7-nnunet",
+    "mapping": "coarse-ct-voxel-volume-to-coarse-surface-logits",
+    "preset": "m7-resenc-l",
+    "student_parameters": "all"
+  },
+  "auxiliary_supervision": {
+    "construction_inputs": "training-manifest-boxes-only",
+    "contract": "teacher-medial-dynamic-widest-path-connectivity-v1",
+    "coordinate_frame_bound_to_record_id": "pherc0139-native-fine-teacher-2p399-to-9p362-v11p1",
+    "dynamic_medial_connectivity_state": "output/crossres_data/pherc0139_training_dynamic_medial_connectivity_v28b_fullowner_20260831/connectivity_state.json",
+    "dynamic_medial_connectivity_state_sha256": "5489a6dce515aacbd980392ecd6326711a05a4758f3554e521f65db30959a8f8",
+    "eligible_training_rows": 477,
+    "events": 149,
+    "exact_schedule_event_rows": 99,
+    "full_owner_observations": 5357,
+    "fully_owned_events": 149,
+    "geometry_audit": "output/crossres_data/pherc0139_training_medial_bridge_audit_v27c_ownerbound_20260831/full.json",
+    "geometry_audit_sha256": "5c997f2d7dcc7faae8cfc176d7f361b7cbb3278abe5d2f02960c110ee3dc2489",
+    "heldout_gate_used_for_construction": false,
+    "maximum_propagation_steps": 96,
+    "maximum_required_connectivity_steps": 44
+  },
+  "corpus": {
+    "excluded": [
+      "PHerc0500P2",
+      "PHerc0846a",
+      "PHerc1203",
+      "PHerc1447"
+    ],
+    "expected_train_rows": 4096,
+    "identity_policy": "v19 v2 atlas rows require independent teacher_crest and teacher_crest_valid sidecars pinned by each medial_state SHA",
+    "independent_fine_teacher_anchors": 39801,
+    "manifest": "output/crossres_data/voxel_atlas_native_v19_medial_micro_pherc0139_4096_20260830/patches.jsonl",
+    "manifest_sha256": "dd2d3d84d890be484ee4279b004992e23bfed8ffed233a504d6184b3244f0177",
+    "train_scrolls": [
+      "PHerc0139",
+      "PHerc0332",
+      "PHerc1667",
+      "PHercParis4"
+    ],
+    "validation_manifest": "output/crossres_data/voxel_balanced_native_v14p2_registered_antialias_softtarget_corpus/patches.jsonl",
+    "validation_manifest_sha256": "a995787032eb446f71759a4dbd510396273b93c65f65863bac8fe9587e12b714",
+    "validation_scrolls": [
+      "PHerc0814",
+      "PHerc1451"
+    ]
+  },
+  "evaluation": {
+    "blind_review_note": "Blind gates must include a shrink-side coverage floor versus the incumbent before any promotion; the v16 interval01 report passed one-sided anti-blob gates while removing 6x more voxels than it added.",
+    "checkpoint_policy": "retain every declared sample milestone; select on held-out calibrated macro Dice plus blinded PHerc1447 visual review with two-sided morphology gates",
+    "threshold_band_change_note": "v16 clamped calibration to [0.40, 0.60] and every measured model calibrated at exactly 0.40, the clamp boundary; the widened band makes the sub-0.40 probability reserve measurable. A calibrated optimum sitting at 0.25 must be treated as a censoring alarm, not an operating point.",
+    "threshold_max": 0.6,
+    "threshold_min": 0.25,
+    "threshold_step": 0.01
+  },
+  "initialization": {
+    "checkpoint": "output/crossres_data/models/surface_m7_nnunet/fold_0/checkpoint_best.pth",
+    "contract": "fresh-released-m7-sha256-strict-v1",
+    "sha256": "17465b77591b794638e671f1a9f79c4cf1e79821f302e6fc235e3725e5da7d7e"
+  },
+  "model_name": "M7-XR",
+  "objective": {
+    "confident_agreement_note": "Teacher-confident means q <= teacher_background_max_q or q >= 0.5. Hard-vote background agreement inside the partial-volume band anchored exactly the voxels the fine teacher wants grown; shrink-side dynamics (separation shell, blob-disagreement CE) are unchanged.",
+    "contract": "soft-occupancy-ce-dice-villa-medial-crest-shell-kl-corridor-m7-preservation-dynamic-widest-path-v9",
+    "dynamic_medial_connectivity_probability_floor": 0.2,
+    "dynamic_medial_connectivity_steps": 96,
+    "dynamic_medial_connectivity_weight": 0.03125,
+    "m7_function_kl_confident_agreement": true,
+    "m7_function_kl_known_agreement": true,
+    "m7_function_kl_unknown_corridor_radius": 2,
+    "m7_function_kl_weight": 0.5,
+    "m7_preservation_anchor_threshold": 0.5,
+    "m7_preservation_radius": 2,
+    "m7_preservation_soft_floor": false,
+    "m7_preservation_weight": 1.0,
+    "medial_note": "Crest recall is per-sample normalized with Villa smooth=1; the crest-keyed shell falls back to occupancy positives where crest validity is absent.",
+    "medial_recall_weight": 1.0,
+    "soft_cross_entropy_weight": 1.0,
+    "soft_dice_weight": 0.25,
+    "teacher_background_max_q": 0.1,
+    "teacher_background_separation_radius": 2,
+    "teacher_background_separation_weight": 2.0
+  },
+  "optimization": {
+    "amp_dtype": "bfloat16",
+    "batch_size": 3,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "contract": "pinned-v16-optimizer-selection-radius16x-lr2em05-v1",
+    "corpus_passes": 2.0,
+    "epsilon": 1e-08,
+    "gradient_accumulation": 8,
+    "learning_rate": 2e-05,
+    "max_cpu_threads": 16,
+    "num_workers": 2,
+    "optimizer": "adam",
+    "schedule": "constant",
+    "selected_run": "radius16x_lr2em05",
+    "selection": "output/crossres_data/m7_xr_v16_optimizer_sweep_20260825/selection.json",
+    "selection_sha256": "c211eb6561ad008939cacb86828fbc9c19a1bb5c0b0de70b4a75369fae40a9d1",
+    "snapshot_samples": [
+      1024,
+      2048,
+      4096,
+      8192
+    ],
+    "training_samples": 8192,
+    "validation_interval_samples": 1024,
+    "warmup_samples": 0,
+    "weight_decay": 0.0
+  },
+  "output": {
+    "training_run": "D:\\work\\vesuvius-c\\output\\crossres_data\\m7_xr_v31_pherc0139_dynamic_medial_duration_8192_20260831\\candidates\\dynconn_w0p03125_n8192_duration"
+  },
+  "parameter_trust_region": {
+    "contract": "projected-global-relative-l2-to-m7-v1",
+    "provenance_note": "Radius and learning rate carried unchanged from the approved v16 optimizer selection. That selection was measured under the v2 objective whose unconstrained direction was net-shrink; projection-active fraction must be logged and reviewed, and radius re-screening under the v3 objective is expected follow-up, not part of this single-variable run.",
+    "radius_multiplier_vs_v14": 16.0,
+    "relative_l2_radius": 0.0027535421730275947
+  },
+  "schema": "crossres-m7-xr-recipe-v1",
+  "scientific_change": {
+    "base_candidate": {
+      "checkpoint": "output/crossres_data/m7_xr_v28_pherc0139_dynamic_medial_connectivity_weight_sweep_20260831/candidates/dynconn_w0p03125_n1024/checkpoint_milestone_00001024.pt",
+      "checkpoint_sha256": "829e93f96488b0b21ab17bc6c20d542c8fc3d10ffe9d3d3c80e5229a2cfeac11",
+      "dynamic_medial_connectivity_weight": 0.03125,
+      "label": "dynconn_w0p03125_n1024",
+      "raw_no_blend": true,
+      "recipe": "output/crossres_data/m7_xr_v28_pherc0139_dynamic_medial_connectivity_weight_sweep_20260831/recipes/dynconn_w0p03125_n1024.json",
+      "recipe_sha256": "b0f020b490b72241ab1b5fa60a53f1b7350e981b3bf495bfa19154a9c97bdf4c",
+      "training_samples": 1024
+    },
+    "candidate": {
+      "hypothesis": "Two complete deterministic corpus passes test whether additional exposure and repetition recover faint longitudinal strips and hard de-blobbed structure before changing the medial formulation or its weight.",
+      "label": "dynconn_w0p03125_n8192_duration"
+    },
+    "contract": "training-duration-only-from-v28-winner-v2",
+    "description": "Restart the winning raw weight-0.03125 candidate from released M7 and vary only cumulative training duration through 8192 samples.",
+    "single_axis": {
+      "baseline": 1024,
+      "field": "training_samples",
+      "observation_milestones": [
+        1024,
+        2048,
+        4096,
+        8192
+      ],
+      "rule": "Start from released M7 once and change only cumulative training duration. Dynamic-medial weight 0.03125, corpus, deterministic sample order, objective, optimizer, constant learning rate, batch, accumulation, trust radius, validation cadence, threshold evaluation, and raw no-blend inference remain fixed.",
+      "target": 8192
+    }
+  },
+  "seed": 1203,
+  "version": "v31.1-pherc0139-dynamic-medial-duration-8192"
+}

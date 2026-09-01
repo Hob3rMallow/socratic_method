@@ -1,0 +1,61 @@
+\section{Introduction}
+\label{sec:introduction}
+
+The objects behind this work are the Herculaneum papyri, a library of scrolls
+carbonized by the AD~79 eruption of Mount Vesuvius.
+Carbonization preserved the rolls but left them too brittle to open and the
+writing trapped inside tightly wound coils.
+Synchrotron micro-CT can record their internal structure without touching the
+object; recovering a page then requires locating the papyrus sheet in three
+dimensions and \emph{virtually unwrapping} it to a plane
+\cite{seales2016damage,vesuviusChallenge}.
+A scroll is one continuous sheet, metres long, visiting many adjacent turns.
+Consequently, two pieces separated by only a few CT voxels may be distant along
+the page, while a short gap in the volume may interrupt one continuous line of
+text.
+
+Segmenting the papyrus surface is the first geometric commitment in a
+scroll-unwrapping pipeline.
+A missed surface interrupts a sheet that may otherwise be traceable over a long
+distance.
+An overgrown prediction is at least as dangerous: it can weld nearby turns into
+one component and make a locally plausible surface globally wrong.
+A useful segmentation method must therefore recover faint structure and remove
+false connections at the same time.
+An overlap score alone does not adequately describe this tension.
+
+The Vesuvius data provides a second, complementary source of information.
+A model operating on finer CT can resolve local evidence that is ambiguous after
+downsampling, while the deployed segmentation and geometry stack still consumes
+the coarser grid.
+We treat this mismatch as a cross-resolution dialogue.
+The fine model proposes soft occupancy and medial evidence; the released M7
+model contributes a function that is already effective; explicit loss terms
+expose where those views are inconsistent.
+The student must reconcile them without moving far from M7.
+
+This is the origin of our title.
+In the Socratic account, a speaker who professes little knowledge reveals
+inconsistencies in an expert's position and thereby points toward a better one.
+Our fine teacher is similarly not deployed as a superior replacement.
+It asks local questions of the expert coarse model.
+The answer is a revised M7 that stands alone at inference.
+
+We present four contributions:
+\begin{itemize}
+  \item a hash-pinned $2\,\mu$m-to-$9\,\mu$m teacher-supervision recipe that
+  can be executed independently of our geometry repository;
+  \item an objective that balances soft occupancy, de-blob separation, medial
+  recall, dynamic connectivity, and two forms of M7 preservation;
+  \item a duration-ladder protocol that retains each declared observation rather
+  than assuming the longest run is best; and
+  \item an independently measured, additive 2D curve fitter that reconnects
+  only short gaps able to answer geometric and cross-plane objections.
+\end{itemize}
+
+The 8,192-sample duration experiment and its locked morphology audit are
+complete. Although an overlap-only calibration prefers 7,168 samples at the
+censored lower threshold of 0.25, the independent anti-blob and human review
+select the raw 8,192-sample checkpoint at threshold 0.45. This disagreement is
+informative: the model is selected for retaining useful longitudinal structure
+without refilling nearby wraps, not for maximizing one overlap scalar.

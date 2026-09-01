@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/socratic-method/recipe.schema.json",
+  "title": "Socratic Method training recipe",
+  "type": "object",
+  "required": ["schema", "name", "version", "artifacts", "model", "objective", "optimization", "evaluation", "training"],
+  "properties": {
+    "schema": {"const": "socratic-method-training-recipe-v1"},
+    "name": {"type": "string"},
+    "version": {"type": "string"},
+    "status": {"type": "string"},
+    "artifacts": {"type": "object"},
+    "model": {"type": "object"},
+    "objective": {"type": "object"},
+    "optimization": {"type": "object"},
+    "evaluation": {"type": "object"},
+    "environment": {"type": "object", "additionalProperties": {"type": "string"}},
+    "training": {
+      "type": "object",
+      "required": ["argv"],
+      "properties": {"argv": {"type": "array", "items": {"type": "string"}}}
+    }
+  }
+}

@@ -1,0 +1,122 @@
+\section{Results}
+\label{sec:results}
+
+\subsection{Evaluation Protocol}
+
+We calibrate thresholds from 0.25 through 0.60 in increments of 0.01 on
+registered PHerc0814 and PHerc1451 patches.
+Checkpoint ranking uses calibrated macro-scroll Dice with a minimum per-scroll
+gain guard against released M7.
+Final qualification evaluates the raw student at five durations
+($1{,}024$, $2{,}048$, $3{,}072$, $4{,}096$, and $8{,}192$ samples) and
+thresholds 0.38--0.50, with 0.25 retained as a failure control. Its evidence is
+16 locked PHerc0139 slices and six blinded PHerc1447 cubes. These locations are
+evaluation-only and spatially separated from the PHerc0139 training boxes.
+Promotion requires anti-blob behavior, two-sided morphology and coverage, and
+human review; no morphology, M7 blend, or line fitter is included in these
+model measurements.
+An earlier raw v29 candidate failed the PHerc1447 gate; we do not consider it a
+viable model.
+
+\subsection{Duration Study}
+
+Table~\ref{tab:duration} reports every committed validation interval through the
+completed \observedSamplesText-sample schedule.
+All intervals improve both held-out scrolls over released M7.
+The response is shallow and non-monotonic; the best is the
+\bestSamplesText-sample interval at $\bestMacro$ calibrated macro-scroll Dice.
+This behavior justifies retaining the full ladder instead of exposing only the
+longest checkpoint.
+
+\begin{table}[t]
+\caption{Completed v31 duration ladder. ``Cal.'' is calibrated macro-scroll Dice;
+``$t=.40$'' uses a fixed threshold; ``gain'' is calibrated macro gain over the
+M7 initial model. All calibrated thresholds equal the 0.25 search boundary.}
+\label{tab:duration}
+\centering
+\small
+\begin{tabular}{rrrrr}
+\toprule
+Samples & Cal. & $t=.40$ & Gain & Min. gain \\
+\midrule
+\durationRows
+\bottomrule
+\end{tabular}
+\end{table}
+
+The trust-region projection is active for 97.7\% of optimizer updates in the
+first interval and 100\% thereafter.
+The method therefore reaches its best observed validation score while remaining
+on the boundary of its allowed parameter neighborhood.
+
+Every interval selects threshold 0.25, the lower edge of our sweep.
+The calibrated scores therefore compare duration, but do not determine the
+operating point: the apparent optimum is censored and 0.25 visibly refills the
+blobs that the independent gate is designed to catch.
+
+\subsection{Morphology-Gated Selection}
+
+Joint review selects the raw \selectedSamplesText-sample checkpoint at
+$T=\selectedThreshold$. At $T=0.42$ it obtains 16/16 exact component-count
+matches and already passes the PHerc1447 anti-blob gate. We nevertheless select
+0.45 for its cleaner useful-structure/de-blob balance. At that operating point,
+15/16 locked slices have exact component counts; the remaining case is a known
+scalar ambiguity in which the intended structures are present but one feature
+splits while two strokes touch.
+
+On the six PHerc1447 cubes, the selected model has foreground ratio 0.950508
+relative to the v15 anti-blob reference, reference recall 0.911324, zero
+interior-regression cubes, zero thickness-regression cubes, and a hard
+anti-blob pass. Human review finds useful line recovery in difficult views
+without restoration of the released-M7 blobs, although several undergrown
+views remain explicit failure watches. The full checkpoint hash is in the
+machine-readable release recipe.
+
+\paragraph{Independent perceptual audit.}
+We also run FLIP~\cite{andersson2020flip} at 67.0206 pixels per degree on the
+exact 1,120 displayed candidate/teacher pairs. At $T=0.45$, the 8,192-sample
+model improves FLIP on 12/16 locked slices relative to 2,048 samples; total
+teacher-only erosion falls from 4,283 to 4,270 pixels and false additions from
+1,201 to 1,155. The audit is not unanimous: mean FLIP narrowly prefers 4,096
+samples (0.232073 versus 0.233310), while weighted-median pooling narrowly
+prefers 8,192 (0.599964 versus 0.600288). We retain this disagreement. FLIP
+rewards teacher resemblance, whereas the blind gate and human review also
+penalize the teacher-like girth that can weld adjacent wraps.
+
+\begin{figure*}[t]
+  \centering
+  \figureasset{figure_2_registered_examples}{0.96\linewidth}{2.2in}
+  \caption{Reserved registered comparison. Columns will show CT, released M7,
+  projected fine-teacher supervision, the selected 8,192-sample output at
+  $T=0.45$, and two-sided
+  add/remove errors. Rows will cover PHerc0814, PHerc1451, and the blinded
+  PHerc1447 gate, with identical crops and thresholds clearly reported.}
+  \Description{Reserved registered comparison across held-out and blind scrolls.}
+  \label{fig:registered}
+\end{figure*}
+
+\subsection{Line-Fitter Evaluation}
+
+In a calibrated $4\!\times\!5\!\times\!5$ study, the line fitter accepted 481
+joins and added 12,697 pixels.
+Registered high-resolution precision was 92.5\% overall and 98.4\% for joins no
+longer than six pixels.
+We observed no full-turn fusion and measured a 21\% reduction in atlas overlap.
+A larger 21-cube census measured 98.3\% weighted precision.
+
+Adjacent high-resolution connectivity is useful confirmation but is not, by
+itself, proof that a join remains on one wrap.
+The umbilicus-aware radial gate is our primary cross-wrap safeguard.
+The postprocessor evaluation therefore reports false joins by gate, distance, and
+radial regime rather than only an aggregate precision.
+
+\subsection{Interpretation}
+
+The duration experiment establishes consistent positive held-out gains under a
+saturated M7 trust constraint, while the completed morphology audit establishes
+a release candidate. Their different choices are the central result:
+overlap-only calibration prefers 7,168 samples and threshold 0.25, but the
+de-blob-aware evidence selects 8,192 and 0.45. Table~\ref{tab:duration} is
+generated only from committed run artifacts, and the selection record preserves
+the independent locked, blind, and perceptual evidence rather than collapsing
+them into one score.

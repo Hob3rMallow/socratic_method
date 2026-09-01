@@ -1,0 +1,51 @@
+{
+  "schema": "crossres-v16-expanded-pair-plan-v1",
+  "created_utc": "2026-08-25T00:00:00Z",
+  "purpose": "Build a balanced 250,000-origin corpus from registered native-fine teachers while retaining the v14 held-out contract.",
+  "base_pair_manifest": {
+    "path": "output/crossres_data/official/native_teacher_pairs.registration_v14p1_20260824.jsonl",
+    "sha256": "44b5e558e8c3e6471c122927c180ca959dbd3ba5eb86dd1c7fd565b0d4368774"
+  },
+  "teacher_checkpoint_sha256": "dd36b3a89b2f4e21a6cafa14fea459f775f846a6ed036f75fb8e6b65aee3137b",
+  "train": [
+    {
+      "record_id": "pherc0139-native-fine-teacher-2p399-to-9p362-v11p1",
+      "patch_count": 62500,
+      "replacement_target": "output/crossres_data/teachers/pherc0139_surface_recto_l0_7000.zarr",
+      "expected_teacher_chunks": 7000
+    },
+    {
+      "record_id": "pherc0332-native-fine-teacher-2p399-to-7p91-v11p1",
+      "patch_count": 62500,
+      "replacement_target": "output/crossres_data/teachers/pherc0332_surface_recto_l0_7000.zarr",
+      "expected_teacher_chunks": 7000
+    },
+    {
+      "record_id": "pherc1667-native-fine-teacher-2p399-to-7p91-v11p1",
+      "patch_count": 62500,
+      "replacement_target": "output/crossres_data/teachers/pherc1667_surface_recto_l0_7000.zarr",
+      "expected_teacher_chunks": 7000
+    },
+    {
+      "record_id": "phercparis4-native-fine-teacher-2p4-to-7p91",
+      "patch_count": 62500
+    }
+  ],
+  "heldout_record_ids": [
+    "pherc0814-native-fine-teacher-2p399-to-9p362",
+    "pherc1451-native-teacher-registered-8.64um",
+    "pherc1451-native-teacher-synthetic-l2"
+  ],
+  "output": "output/crossres_data/official/native_teacher_pairs.v16_250k_20260825.jsonl",
+  "report": "output/crossres_data/official/native_teacher_pairs.v16_250k_20260825.report.json",
+  "corpus_contract": {
+    "candidate_train_rows": 250000,
+    "minimum_final_train_rows": 250000,
+    "minimum_distinct_coarse_origins": 250000,
+    "balance_train_scrolls": true,
+    "patch_shape_zyx": [192, 192, 192],
+    "fine_support_accounting": "Report independent fine-support anchors separately from distinct jittered coarse origins.",
+    "exclude_prize_scrolls": ["PHerc1203", "PHerc0846a", "PHerc1447"],
+    "exclude_circular_qualification": ["PHerc0500P2"]
+  }
+}

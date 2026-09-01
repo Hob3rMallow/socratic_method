@@ -1,0 +1,17 @@
+{
+  "model_type": "socratic-m7-xr",
+  "architectures": ["VoxelNNUNet"],
+  "implementation": "crossres_pred.voxel.model.VoxelNNUNet",
+  "model_config": {
+    "preset": "m7-resenc-l",
+    "input_channels": 1,
+    "num_classes": 2,
+    "deep_supervision": true
+  },
+  "parameter_count": 102349770,
+  "student_only_inference": true,
+  "teacher_required_at_inference": false,
+  "m7_blend_at_inference": false,
+  "selected_training_samples": 8192,
+  "operating_threshold": 0.45
+}

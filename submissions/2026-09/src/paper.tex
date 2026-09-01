@@ -1,0 +1,111 @@
+%!TeX program = pdflatex
+\documentclass[acmtog,review,anonymous]{acmart}
+
+\AtBeginDocument{\providecommand\BibTeX{{Bib\TeX}}}
+\citestyle{acmauthoryear}
+\setcopyright{none}
+\settopmatter{printacmref=true}
+\renewcommand\footnotetextcopyrightpermission[1]{}
+\acmSubmissionID{TBD}
+\acmJournal{TOG}
+\acmVolume{XX}
+\acmNumber{X}
+\acmArticle{XX}
+\acmYear{2026}
+\acmMonth{9}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{xspace}
+
+\graphicspath{{submissions/2026-09/figures/}{figures/}{../figures/}}
+
+\newcommand{\method}{Socratic Method\xspace}
+\newcommand{\model}{M7-XR\xspace}
+\newcommand{\todo}[1]{\textcolor{red}{\textbf{TODO: #1}}}
+\newcommand{\placeholder}[3]{%
+  \fbox{\begin{minipage}[c][#2][c]{#1}
+  \centering\small\textbf{FIGURE RESERVED}\\[0.6em]
+  \texttt{\detokenize{#3}.pdf} or \texttt{\detokenize{#3}.png}
+  \end{minipage}}}
+\newcommand{\figureasset}[3]{%
+  \IfFileExists{submissions/2026-09/figures/#1.pdf}%
+    {\includegraphics[width=#2]{submissions/2026-09/figures/#1.pdf}}%
+    {\IfFileExists{submissions/2026-09/figures/#1.png}%
+      {\includegraphics[width=#2]{submissions/2026-09/figures/#1.png}}%
+      {\placeholder{#2}{#3}{#1}}}}
+
+\input{submissions/2026-09/src/generated_run}
+
+\begin{document}
+
+\title{The Socratic Method: Cross-Resolution Supervision for Papyrus Surface Segmentation}
+
+\begin{abstract}
+Coarse-resolution papyrus surface segmentation fails in two opposing ways:
+faint sheets disappear, while nearby wraps merge into blobs.
+We present a teacher-student method for Herculaneum papyrus data in which an
+approximately $2.399\,\mu$m native-fine model interrogates the released
+$9.362\,\mu$m M7 segmenter.
+The resulting student remains an ordinary, single M7 residual-encoder nnU-Net
+at inference.
+During training, projected soft occupancy is combined with medial-crest recall,
+teacher-background separation, M7 function preservation, a global parameter
+trust region, and dynamic widest-path connectivity.
+A separate additive 2D curve fitter reconnects short, geometrically credible
+gaps after segmentation.
+Our completed duration study improves both held-out scrolls over released M7 at
+every measured interval through \observedSamplesText\ samples, with a best
+calibrated macro-scroll Dice of $\bestMacro$ at \bestSamplesText\ samples.
+Because its calibrated threshold lies at the lower boundary of the sweep, we
+select the operating point using independent morphology evidence instead:
+the raw \selectedSamplesText-sample student at threshold \selectedThreshold.
+It passes the blinded anti-blob gate with no interior- or thickness-regression
+cubes, and an independent FLIP audit favors it over the 2,048-sample model on
+12 of 16 locked slices. We release the recipe and selected candidate identity;
+weight redistribution remains subject to upstream terms.
+\end{abstract}
+
+\begin{CCSXML}
+<ccs2012>
+ <concept>
+  <concept_id>10010147.10010257.10010293.10010294</concept_id>
+  <concept_desc>Computing methodologies~Neural networks</concept_desc>
+  <concept_significance>500</concept_significance>
+ </concept>
+</ccs2012>
+\end{CCSXML}
+\ccsdesc[500]{Computing methodologies~Neural networks}
+\keywords{volumetric segmentation, knowledge distillation, papyrus,
+topology-aware learning, curve completion}
+
+\begin{teaserfigure}
+  \centering
+  \figureasset{teaser}{0.98\linewidth}{1.65in}
+  \caption{The intended visual argument. Given coarse CT and released M7, our
+  selected cross-resolution student retains faint longitudinal sheet structure
+  while removing cross-wrap blobs; the separately gated 2D fitter then repairs
+  only short, geometrically supported gaps. The final registered crop will
+  replace this reserved panel.}
+  \Description{Reserved teaser panel for a registered qualitative comparison.}
+  \label{fig:teaser}
+\end{teaserfigure}
+
+\maketitle
+
+\input{submissions/2026-09/src/sections/01_introduction}
+\input{submissions/2026-09/src/sections/02_related_work}
+\input{submissions/2026-09/src/sections/03_overview}
+\input{submissions/2026-09/src/sections/04_cross_resolution}
+\input{submissions/2026-09/src/sections/05_line_fitter}
+\input{submissions/2026-09/src/sections/06_results}
+\input{submissions/2026-09/src/sections/07_limitations}
+\input{submissions/2026-09/src/sections/08_conclusion}
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{submissions/2026-09/src/references}
+
+\end{document}

@@ -1,0 +1,108 @@
+{
+  "schema": "socratic-method-observed-milestones-v1",
+  "run": "m7_xr_v31_pherc0139_dynamic_medial_duration_8192_20260831/dynconn_w0p03125_n8192_duration",
+  "status": "training-complete-release-candidate-selected",
+  "selection_warning": "The calibrated threshold is at the 0.25 lower boundary and is censored. It is a duration diagnostic, not the selected operating point; the independent morphology decision is recorded in selection.json.",
+  "best_observed_by_calibrated_macro_scroll_dice": 7168,
+  "selection_record": "recipes/v31/selection.json",
+  "selected_samples": 8192,
+  "selected_threshold": 0.45,
+  "milestones": [
+    {
+      "samples": 1024,
+      "calibrated_threshold": 0.25,
+      "calibrated_dice": 0.5849008052947673,
+      "calibrated_macro_scroll_dice": 0.5794387134615484,
+      "fixed_0p40_macro_scroll_dice": 0.5713613882301573,
+      "PHerc0814_calibrated_dice": 0.5972274265073981,
+      "PHerc1451_calibrated_dice": 0.5616500004156986,
+      "calibrated_macro_gain_vs_m7": 0.019683691054131147,
+      "minimum_scroll_gain_vs_m7": 0.01917113259152159,
+      "trust_projection_active_fraction": 0.9767441860465116
+    },
+    {
+      "samples": 2048,
+      "calibrated_threshold": 0.25,
+      "calibrated_dice": 0.5842730401458951,
+      "calibrated_macro_scroll_dice": 0.5788550029389801,
+      "fixed_0p40_macro_scroll_dice": 0.5708570895569656,
+      "PHerc0814_calibrated_dice": 0.5965549092779526,
+      "PHerc1451_calibrated_dice": 0.5611550966000076,
+      "calibrated_macro_gain_vs_m7": 0.01909998053156281,
+      "minimum_scroll_gain_vs_m7": 0.01867622877583064,
+      "trust_projection_active_fraction": 1.0
+    },
+    {
+      "samples": 3072,
+      "calibrated_threshold": 0.25,
+      "calibrated_dice": 0.5855993657109255,
+      "calibrated_macro_scroll_dice": 0.5803725266192066,
+      "fixed_0p40_macro_scroll_dice": 0.5725308571774324,
+      "PHerc0814_calibrated_dice": 0.5973996219119887,
+      "PHerc1451_calibrated_dice": 0.5633454313264245,
+      "calibrated_macro_gain_vs_m7": 0.020617504211789317,
+      "minimum_scroll_gain_vs_m7": 0.020368444921331053,
+      "trust_projection_active_fraction": 1.0
+    },
+    {
+      "samples": 4096,
+      "calibrated_threshold": 0.25,
+      "calibrated_dice": 0.5854582392320792,
+      "calibrated_macro_scroll_dice": 0.5802212563098645,
+      "fixed_0p40_macro_scroll_dice": 0.5719605984848726,
+      "PHerc0814_calibrated_dice": 0.5972674342463974,
+      "PHerc1451_calibrated_dice": 0.5631750783733317,
+      "calibrated_macro_gain_vs_m7": 0.020466233902447284,
+      "minimum_scroll_gain_vs_m7": 0.020236257255739742,
+      "trust_projection_active_fraction": 1.0
+    },
+    {
+      "samples": 5120,
+      "calibrated_threshold": 0.25,
+      "calibrated_dice": 0.5837791551200394,
+      "calibrated_macro_scroll_dice": 0.5787262967109005,
+      "fixed_0p40_macro_scroll_dice": 0.5701429009520065,
+      "PHerc0814_calibrated_dice": 0.5951583810936314,
+      "PHerc1451_calibrated_dice": 0.5622942123281696,
+      "calibrated_macro_gain_vs_m7": 0.01897127430348322,
+      "minimum_scroll_gain_vs_m7": 0.01812720410297375,
+      "trust_projection_active_fraction": 1.0
+    },
+    {
+      "samples": 6144,
+      "calibrated_threshold": 0.25,
+      "calibrated_dice": 0.5863554712764134,
+      "calibrated_macro_scroll_dice": 0.581038865602821,
+      "fixed_0p40_macro_scroll_dice": 0.573286138899317,
+      "PHerc0814_calibrated_dice": 0.5983551717725784,
+      "PHerc1451_calibrated_dice": 0.5637225594330637,
+      "calibrated_macro_gain_vs_m7": 0.021283843195403773,
+      "minimum_scroll_gain_vs_m7": 0.021243691608886728,
+      "trust_projection_active_fraction": 1.0
+    },
+    {
+      "samples": 7168,
+      "calibrated_threshold": 0.25,
+      "calibrated_dice": 0.5883612485822177,
+      "calibrated_macro_scroll_dice": 0.5829286630020443,
+      "fixed_0p40_macro_scroll_dice": 0.5753655434571907,
+      "PHerc0814_calibrated_dice": 0.6006208264128314,
+      "PHerc1451_calibrated_dice": 0.5652364995912571,
+      "calibrated_macro_gain_vs_m7": 0.02317364059462701,
+      "minimum_scroll_gain_vs_m7": 0.022757631767080122,
+      "trust_projection_active_fraction": 1.0
+    },
+    {
+      "samples": 8192,
+      "calibrated_threshold": 0.25,
+      "calibrated_dice": 0.5857734974780818,
+      "calibrated_macro_scroll_dice": 0.5803681890475003,
+      "fixed_0p40_macro_scroll_dice": 0.5722597443146828,
+      "PHerc0814_calibrated_dice": 0.5979488772676868,
+      "PHerc1451_calibrated_dice": 0.562787500827314,
+      "calibrated_macro_gain_vs_m7": 0.020613166640083058,
+      "minimum_scroll_gain_vs_m7": 0.02030863300313701,
+      "trust_projection_active_fraction": 1.0
+    }
+  ]
+}

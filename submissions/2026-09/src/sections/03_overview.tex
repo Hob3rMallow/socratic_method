@@ -1,0 +1,36 @@
+\section{Overview}
+\label{sec:overview}
+
+Fig.~\ref{fig:overview} summarizes our pipeline.
+We first run a native-fine teacher in its approximately $2.399\,\mu$m CT frame.
+Its probabilities, support, and medial crest are projected into the
+$9.362\,\mu$m grid as soft training fields (Sec.~\ref{sec:crossres}).
+We initialize every candidate from the exact released M7 checkpoint and train
+all parameters under a small global trust region. The output is one ordinary M7 network.
+At inference we use only its raw class-1 probability; there is no teacher and no
+M7 probability blend.
+
+At the selected threshold, an optional C postprocess operates on each axial
+slice (Sec.~\ref{sec:fitter}). It proposes Bezier completions between skeleton endpoints, but paints a join
+only when local curve geometry, radial displacement, neighboring slices, and
+connection-track support agree. Segmentation training and curve completion are measured separately so an
+improvement in one stage cannot hide a failure in the other.
+All segmentation qualification numbers in Sec.~\ref{sec:results} use the raw
+student without morphology or line fitting.
+
+\begin{figure*}[t]
+  \centering
+  \figureasset{figure_1_method_overview}{0.96\linewidth}{2.05in}
+  \caption{Method overview. The final figure will separate training-only
+  components (fine teacher, projection, auxiliary losses, and frozen M7 anchor)
+  from deployed components (raw student and optional 2D fitter). It will also
+  show that the parameter trust-region projection acts after every optimizer
+  update.}
+  \Description{Reserved schematic of training-only and deployed pipeline components.}
+  \label{fig:overview}
+\end{figure*}
+
+Two engineering details prevent accidental leakage or model substitution. First, the dynamic connectivity atlas is built only from boxes in the training
+manifest; held-out morphology is used only for evaluation. Second, the M7 initializer is accepted only if both its byte size and SHA-256
+match the released artifact. A new candidate may resume its own interrupted optimizer state, but may not use
+an earlier student as learned initialization.

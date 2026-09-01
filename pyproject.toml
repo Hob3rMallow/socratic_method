@@ -1,0 +1,63 @@
+[project]
+name = "socratic-method"
+version = "0.1.0"
+description = "Reproducible 2 um to 9 um teacher supervision for M7 surface segmentation"
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+    "imagecodecs>=2024.1",
+    "numpy>=1.26",
+    "scikit-image>=0.26",
+    "scipy>=1.11",
+    "tensorboard>=2.18",
+    "tifffile>=2024.2",
+    "torch>=2.4",
+]
+
+[project.urls]
+Repository = "https://github.com/ubc-nvining/socratic_method"
+Documentation = "https://github.com/ubc-nvining/socratic_method/tree/main/docs"
+
+[project.optional-dependencies]
+zarr = [
+    "fsspec>=2024.2",
+    "numcodecs>=0.12",
+    "s3fs>=2024.2",
+    "zarr>=2.17",
+]
+baseline = [
+    "dynamic-network-architectures==0.4.4",
+    "nnunetv2==2.8.1",
+]
+publish = [
+    "huggingface-hub>=0.35",
+    "safetensors>=0.5",
+]
+dev = [
+    "pytest>=8",
+    "ruff>=0.12",
+]
+
+[project.scripts]
+socratic-train = "socratic_method.recipe:main"
+socratic-export = "socratic_method.hf_export:main"
+crossres-pred = "crossres_pred.cli:main"
+crossres-voxel = "crossres_pred.voxel.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/socratic_method", "src/crossres_pred"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+markers = [
+    "torch: requires PyTorch",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"

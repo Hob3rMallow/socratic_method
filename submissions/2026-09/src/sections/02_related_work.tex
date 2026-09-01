@@ -1,0 +1,43 @@
+\section{Related Work}
+\label{sec:related}
+
+\paragraph{Segmentation.}
+U-Net architectures and their self-configuring nnU-Net variants are widely used for dense volumetric segmentation
+\cite{ronneberger2015unet,isensee2021nnunet}. Our deployed network follows the released M7 residual-encoder nnU-Net from the
+Vesuvius Challenge project exactly; we alter its supervision and optimization rather than adding an inference-time branch.
+This preserves compatibility with the existing coarse-volume pipeline.
+
+\paragraph{Teacher supervision.}
+Knowledge distillation transfers information from a teacher into a student by matching soft outputs or intermediate functions \cite{hinton2015distilling}.
+Most such methods assume teacher and student predictions share a sampling grid. Our teacher observes a finer CT volume, so its occupancy and validity must be
+pulled back into the student's physical frame. The resulting targets represent partial volume rather than only a hard class.
+
+\paragraph{Topology-aware Objectives.}
+Skeleton and centerline losses preserve thin connected structures that can be under-represented by region overlap metrics
+\cite{shit2021cldice}. The medial axis transform (MAT) instead describes a
+shape by centers and the radii of their maximally inscribed disks or spheres.
+LSMAT casts this construction as a least-squares problem to make the resulting
+representation less brittle under noisy or perturbed boundaries
+\cite{rebain2019lsmat}. This center--radius factorization is especially useful
+for papyrus: motion along the medial set extends a sheet, whereas increasing
+radius thickens it toward a neighboring wrap. We use that distinction to derive
+thin training corridors and M7 contact pins. Unlike a conventional skeleton
+overlap loss, our final connectivity term does not prescribe every voxel of one
+centerline. It raises the bottleneck of whichever admissible medial path the
+student currently supports. The atlas is constructed only from fully owned
+training events and never from held-out data.
+
+\paragraph{Curve completion.}
+Classical thinning extracts one-pixel skeletons from binary images
+\cite{zhang1984fast}. Curve completion can then be posed as endpoint pairing under geometric
+continuity. For wound papyrus, however, a locally smooth completion can cross from one wrap
+to the next. Our postprocess therefore combines 2D tangents with an umbilicus-aware radial
+test, neighboring-plane corridors, explicit anti-merger and crossing gates, and
+connection persistence across slices.
+
+\paragraph{Vesuvius models and data.}
+Our experiments build on the public Vesuvius Challenge CT data, the released M7
+surface model, and a Villa native-fine teacher
+\cite{vesuviusChallenge,m7Artifact,villaTeacher}.
+The final paper will replace these artifact-level entries with the authoritative
+model and dataset citations associated with the public release.

@@ -1,0 +1,71 @@
+{
+  "schema": "crossres-m7-xr-model-definition-v1",
+  "version": "m7-xr-v29-dynamic-medial-raw",
+  "research_only": true,
+  "promotion_status": "not-promoted-pherc1447-antiblob-failed",
+  "definition": {
+    "checkpoint": "output/crossres_data/m7_xr_v28_pherc0139_dynamic_medial_connectivity_weight_sweep_20260831/candidates/dynconn_w0p03125_n1024/checkpoint_milestone_00001024.pt",
+    "checkpoint_sha256": "829e93f96488b0b21ab17bc6c20d542c8fc3d10ffe9d3d3c80e5229a2cfeac11",
+    "training_intervention": "teacher-medial-dynamic-widest-path-connectivity-v1",
+    "dynamic_medial_connectivity_weight": 0.03125,
+    "selection_reason": "Highest calibrated validation Dice and highest held-out mean Dice among the four dynamic-connectivity weights.",
+    "inference": {
+      "contract": "student-probability-only-v1",
+      "threshold": 0.25,
+      "threshold_source": "checkpoint ordinary-validation Dice calibration",
+      "m7_base_blend": 0.0,
+      "preserve_m7_base": false,
+      "uses_teacher_at_inference": false,
+      "postprocessing": "none"
+    }
+  },
+  "retired_inference_contract": {
+    "contract": "published-m7-voxel-retention-blend-v1",
+    "m7_base_blend": 0.12,
+    "status": "retired",
+    "reason": "The blend confounds learned checkpoint geometry with inherited M7 foreground and can reintroduce the blobby morphology the model is intended to remove."
+  },
+  "locked_pherc0139": {
+    "evaluation": "output/crossres_data/pherc0139_growth_gate_candidate_v29_dynconn_w0p03125_n1024_raw_t025_20260831/evaluation.json",
+    "evaluation_sha256": "9e33a3fe25c791aa5a4149edb953a156acc77969f95eab749f7b12a7d7878089",
+    "prediction_composition": "student-probability-only-v1",
+    "threshold": 0.25,
+    "summary": {
+      "slices_passed_under_legacy_gate": 1,
+      "component_matches": 15,
+      "distance_passes": 13,
+      "anti_blob_passes": 15,
+      "learned_growth_passes_under_legacy_gate": 1,
+      "mean_assd_vox": 0.5357661750577513,
+      "mean_dice": 0.7891476111081877
+    },
+    "interpretation": "Legacy pass count is dominated by preservation and join bookkeeping that the human review identified as inconsistent with visible output quality; retain the raw measurements but do not treat the count as a sufficient quality judgment."
+  },
+  "blind_pherc1447": {
+    "source": "output/crossres_data/pherc1447_blind_audit/six_cube_subset",
+    "inference": "output/crossres_data/pherc1447_blind_audit/m7_xr_v29_dynconn_w0p03125_n1024_raw_t025_report_20260831/inference",
+    "inference_provenance_sha256": "0916fc06e006276947f9786f21d1f1221946649a367f27b25c4307345681a724",
+    "machine_report": "output/crossres_data/pherc1447_blind_audit/m7_xr_v29_dynconn_w0p03125_n1024_raw_t025_report_20260831/report/report.json",
+    "machine_report_sha256": "cd328d5ce01bfbb707348f79fb4dade81565ef9c5fe084809f5ef5ac914d660e",
+    "cuda": true,
+    "mirror_tta": true,
+    "threshold": 0.25,
+    "summary": {
+      "foreground_ratio_vs_incumbent": 2.7334110662030544,
+      "dice_vs_incumbent": 0.5356792114664227,
+      "dice_vs_published_m7": 0.6796277232891881,
+      "interior_regression_gate": false,
+      "maximum_thickness_regression_gate": false,
+      "foreground_regression_gate": false,
+      "anti_blob_contract_passed": false
+    }
+  },
+  "rejected_threshold_control": {
+    "threshold": 0.17,
+    "prediction_composition": "student-probability-only-v1",
+    "pherc1447_machine_report": "output/crossres_data/pherc1447_blind_audit/m7_xr_v28_dynconn_w0p03125_n1024_t017_report_20260831/report/report.json",
+    "pherc1447_machine_report_sha256": "18ec0dbd41ba1c2a8d64c6ca1b4f901ec25cb8f2a1745b1686a7efad63ef3cc5",
+    "foreground_ratio_vs_incumbent": 3.7994297508995216,
+    "reason_rejected": "Threshold 0.17 came from the blended gate candidate and is not calibrated for raw checkpoint inference."
+  }
+}

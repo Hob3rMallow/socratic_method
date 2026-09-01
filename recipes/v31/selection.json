@@ -1,0 +1,44 @@
+{
+  "schema": "socratic-method-v31-selection-v1",
+  "status": "release-candidate-selected",
+  "decision_date": "2026-09-01",
+  "samples": 8192,
+  "threshold": 0.45,
+  "model_composition": "raw-student-probability-only; no teacher, M7 blend, morphology, or line fitting",
+  "checkpoint_sha256": "8de376f8a3ad1b14e25a57db1f8dd20e8c505ceb169a49bc006b2903d1ccb3c1",
+  "selection_basis": "human morphology review constrained by the locked PHerc0139 and blinded PHerc1447 gates",
+  "qualification": {
+    "locked_pherc0139_slices": 16,
+    "locked_component_matches": 15,
+    "blind_pherc1447_cubes": 6,
+    "pherc1447_foreground_ratio_vs_v15": 0.9505083124717324,
+    "pherc1447_reference_recall": 0.9113240322761855,
+    "pherc1447_interior_regression_cubes": 0,
+    "pherc1447_thickness_regression_cubes": 0,
+    "pherc1447_hard_anti_blob_passed": true
+  },
+  "flip_audit": {
+    "displayed_pairs": 1120,
+    "ppd": 67.0206,
+    "comparison_at_threshold": 0.45,
+    "right_samples": 8192,
+    "left_samples": 2048,
+    "right_better_slices": 12,
+    "slice_count": 16,
+    "left_erosion_pixels": 4283,
+    "right_erosion_pixels": 4270,
+    "left_addition_pixels": 1201,
+    "right_addition_pixels": 1155,
+    "flip_mean_macro_4096": 0.2320731875,
+    "flip_mean_macro_8192": 0.2333100625,
+    "flip_weighted_median_macro_4096": 0.6002876875,
+    "flip_weighted_median_macro_8192": 0.599963625
+  },
+  "source_evidence": {
+    "decision": "vesuvius-c changelog entry 2026-09-01",
+    "joint_evaluation": "m7_xr_v31_duration_ladder_joint_evaluation_20260831/result.json",
+    "human_report": "m7_xr_v31_duration_ladder_human_report_20260831/index.html",
+    "flip_audit": "m7_xr_v31_duration_ladder_flip_audit_20260901/audit.json"
+  },
+  "release_note": "The candidate is selected, but redistribution still depends on ownership, license, and upstream artifact terms."
+}

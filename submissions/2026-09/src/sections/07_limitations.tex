@@ -1,0 +1,39 @@
+\section{Limitations}
+\label{sec:limitations}
+
+Our fitting schedule is PHerc0139-only and may encode scroll-specific material
+or acquisition properties.
+Fine-teacher predictions are model-derived soft supervision rather than human
+ground truth.
+Two held-out calibration scrolls, 16 locked slices, and six blind cubes provide
+guards but do not establish broad robustness.
+The M7 trust projection is saturated, and its radius was selected under an
+earlier objective rather than the final loss in Eq.~\ref{eq:objective}.
+Our overlap-calibration sweep also fails to bracket its optimum; threshold 0.45
+is a morphology-gated operating choice, not the maximizer of that curve. Human
+review is necessarily less reducible than a scalar and should be repeated by
+independent readers before a public model claim.
+
+The line fitter has a different failure mode.
+A completion may be locally smooth and persistent across slices but still join
+the wrong wrap near the core.
+Radial, third-component, and cross-sheet gates reduce this risk but cannot prove
+global correctness.
+The postprocess must remain independently measured and its additions must remain
+recoverable during qualification.
+
+\begin{figure}[t]
+  \centering
+  \figureasset{figure_4_failure_cases}{0.94\columnwidth}{1.45in}
+  \caption{Reserved failure cases: faint-sheet loss, residual blobs,
+  cross-wrap risk, and examples whose morphology changes near the selected
+  operating threshold.}
+  \Description{Reserved examples of model and postprocess failure cases.}
+  \label{fig:limitations}
+\end{figure}
+
+Finally, exact replay requires large, separately licensed artifacts.
+The training code, recipes, hashes, and export scaffolding are public-repository
+material, but the approximately 31 GB validation corpus, teacher atlases, M7
+weights, and student checkpoints require dedicated artifact hosting and resolved
+upstream terms.

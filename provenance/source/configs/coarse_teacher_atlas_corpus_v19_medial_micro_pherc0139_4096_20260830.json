@@ -1,0 +1,25 @@
+{
+  "schema": "crossres-atlas-patch-corpus-plan-v1",
+  "created_utc": "2026-08-30T20:00:00Z",
+  "purpose": "Early directional v19 crest pilot: 4,096 PHerc0139-only rows built from the exact production medial sidecar after it reaches a complete hash-bound state.",
+  "pair_manifest": "../../output/crossres_data/official/native_teacher_pairs.v16_250k_20260825.jsonl",
+  "output": "../../output/crossres_data/voxel_atlas_native_v19_medial_micro_pherc0139_4096_20260830",
+  "seed": 1203,
+  "patch_shape_zyx": [192, 192, 192],
+  "minimum_ct_nonzero_fraction": 0.95,
+  "minimum_known_fraction": 0.001,
+  "minimum_positive_voxels": 32,
+  "require_teacher_crest": true,
+  "minimum_crest_voxels": 32,
+  "validation_voxel_checks": 4096,
+  "max_cpu_threads": 16,
+  "workers": 8,
+  "sources": [
+    {
+      "record_id": "pherc0139-native-fine-teacher-2p399-to-9p362-v11p1",
+      "atlas": "../../output/crossres_data/coarse_teacher_atlas_v16_250k/pherc0139",
+      "patch_count": 4096,
+      "independent_fine_anchors": 7000
+    }
+  ]
+}

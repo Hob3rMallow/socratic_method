@@ -1,0 +1,19 @@
+# Observed environment for the live v31 run (2026-09-01).
+# Install torch using the CUDA wheel/index appropriate for the target machine.
+python==3.12.9
+torch==2.13.0+cu130
+numpy==2.4.6
+scipy==1.17.1
+scikit-image==0.26.0
+tifffile==2026.6.1
+imagecodecs==2026.6.26
+tensorboard==2.21.0
+zarr==3.2.1
+numcodecs==0.16.5
+fsspec==2026.4.0
+s3fs==2026.4.0
+nnunetv2==2.8.1
+dynamic-network-architectures==0.4.4
+safetensors==0.8.0
+pytest==9.0.3
+ruff==0.16.1

@@ -1,0 +1,38 @@
+{
+  "completed_samples": 8192,
+  "created_at_utc": "2026-09-01T04:52:13.656580+00:00",
+  "gpu_power_limit_w": 600.0,
+  "human_report_created": false,
+  "milestones": [
+    {
+      "checkpoint": "D:\\work\\vesuvius-c\\output\\crossres_data\\m7_xr_v31_pherc0139_dynamic_medial_duration_8192_20260831\\candidates\\dynconn_w0p03125_n8192_duration\\checkpoint_milestone_00001024.pt",
+      "checkpoint_sha256": "1307c8f3bed115c0adc5fb4bb19a293dcecb33e7fe39ac2638c7d0b620b890df",
+      "samples": 1024
+    },
+    {
+      "checkpoint": "D:\\work\\vesuvius-c\\output\\crossres_data\\m7_xr_v31_pherc0139_dynamic_medial_duration_8192_20260831\\candidates\\dynconn_w0p03125_n8192_duration\\checkpoint_milestone_00002048.pt",
+      "checkpoint_sha256": "459e0edad0dc4c3917421736fce730f83eb0936d9a26faa0d726caf7c6de9638",
+      "samples": 2048
+    },
+    {
+      "checkpoint": "D:\\work\\vesuvius-c\\output\\crossres_data\\m7_xr_v31_pherc0139_dynamic_medial_duration_8192_20260831\\candidates\\dynconn_w0p03125_n8192_duration\\checkpoint_milestone_00004096.pt",
+      "checkpoint_sha256": "dc80fa0df89a1abc8f3723ae4c971b009d56a0e59b7d3077b4264fe42ee0028f",
+      "samples": 4096
+    },
+    {
+      "checkpoint": "D:\\work\\vesuvius-c\\output\\crossres_data\\m7_xr_v31_pherc0139_dynamic_medial_duration_8192_20260831\\candidates\\dynconn_w0p03125_n8192_duration\\checkpoint_milestone_00008192.pt",
+      "checkpoint_sha256": "8de376f8a3ad1b14e25a57db1f8dd20e8c505ceb169a49bc006b2903d1ccb3c1",
+      "samples": 8192
+    }
+  ],
+  "plan": "D:\\work\\vesuvius-c\\crossres_pred\\configs\\m7_xr_v31_pherc0139_dynamic_medial_duration_8192_20260831.json",
+  "plan_sha256": "1fc9a90d7712ea29f46afa0e9f64fb5a029f2c101d5aa7795926629a5d42fcf3",
+  "recipe": "D:\\work\\vesuvius-c\\output\\crossres_data\\m7_xr_v31_pherc0139_dynamic_medial_duration_8192_20260831\\recipes\\dynconn_w0p03125_n8192_duration.json",
+  "recipe_sha256": "3d42f3268ee8fa6d25a4949d9ae12145ff9447eccd795900fa02e857e659d0de",
+  "result": "D:\\work\\vesuvius-c\\output\\crossres_data\\m7_xr_v31_pherc0139_dynamic_medial_duration_8192_20260831\\result.json",
+  "run_provenance": "D:\\work\\vesuvius-c\\output\\crossres_data\\m7_xr_v31_pherc0139_dynamic_medial_duration_8192_20260831\\candidates\\dynconn_w0p03125_n8192_duration\\run.json",
+  "run_provenance_sha256": "c493cf7ac5dec661b871c7fdac1ab520b73964e19f1ca380613e99ccbae5559e",
+  "schema": "crossres-pherc0139-dynamic-medial-duration-8192-result-v1",
+  "state": "checkpoints-ready-for-full-validation",
+  "updated_at_utc": "2026-09-01T04:52:29.680082+00:00"
+}

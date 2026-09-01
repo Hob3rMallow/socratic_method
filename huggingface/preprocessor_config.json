@@ -1,0 +1,11 @@
+{
+  "input_layout": "NCDHW",
+  "input_channels": 1,
+  "ct_clip": [0.0, 212.0],
+  "ct_mean": 87.54424285888672,
+  "ct_std": 47.74376678466797,
+  "spatial_divisor": 32,
+  "output": "softmax surface probability from class index 1",
+  "operating_threshold": 0.45,
+  "threshold_status": "selected by locked and blinded morphology review"
+}

@@ -1,0 +1,284 @@
+\section{Cross-Resolution Supervision}
+\label{sec:crossres}
+
+\subsection{Student Architecture and Data}
+
+Our student is a six-stage 3D residual-encoder nnU-Net with feature counts
+$(32,64,128,256,320,320)$, one CT input channel, and two output classes.
+It has $102{,}349{,}770$ trainable parameters.
+The frozen training schedule contains 4,096 deterministic $192^3$ patches from
+PHerc0139 and a single native-fine teacher record. We traverse this schedule
+twice for 8,192 samples.
+The small corpus reflects the time available before this progress submission,
+not the extent of the registered data. Our broader pair plan contains three
+additional non-prize training scrolls---PHerc0332, PHerc1667, and PHercParis4---
+with 62,500 candidate origins allocated to each. None of the four training
+scrolls is eligible for a Herculaneum prize.
+
+Our held-out validation manifest contains registered PHerc0814 and PHerc1451
+patches. We evaluate every 1,024 samples and retain model-only checkpoints at 1,024,
+2,048, 4,096, and 8,192 samples. Because the measured duration response is not monotonic
+(Sec.~\ref{sec:results}), we do not assume the final checkpoint is best.
+
+\subsection{Fine-Teacher Occupancy and Medial Geometry}
+
+The fine teacher provides two complementary targets in the student's physical
+frame. The first is soft occupancy $q\in[0,1]$, obtained by an anti-aliased
+pullback from the $2.399\,\mu$m grid. It estimates how much of a $9.362\,\mu$m
+voxel is occupied by papyrus. The second is a binary medial crest $c$, projected
+with an OR/max operator so that the existence of a fine-scale center survives
+downsampling. Occupancy and crest have independent validity masks.
+
+This separation follows a concrete failure of occupancy-only supervision. A
+thin but real continuation commonly occupies only 25--45\% of a coarse voxel.
+Soft cross-entropy is correctly calibrated when it drives such a voxel toward
+$p=0.25$--$0.45$, but the result may remain below the segmentation threshold.
+Reducing background separation moved both the center and its shoulders upward,
+recovering length while reintroducing thick blobs. We therefore retain $q$ as
+an amount-of-material target and use $c$ as an independent sheet-existence
+target.
+
+\paragraph{LSMAT-style center--radius representation.}
+LSMAT represents a shape using medial centers and their maximally inscribed
+radii rather than boundary samples alone~\cite{rebain2019lsmat}. We use that
+center--radius view while retaining the released Villa teacher's center
+construction. For each native-fine axial slice $T_z$, the teacher skeletonizes
+the slice in 2D; the stacked centerlines receive one 3D morphological closing
+and are intersected with the original foreground. We pair every surviving
+center $u\in C_z$ with a physical 2D Euclidean-distance radius
+\begin{equation}
+ r_z(u)=\min_{y\notin T_z}\lVert u-y\rVert_{\mathrm{phys}},
+ \qquad
+ \widehat T_z=\bigcup_{u\in C_z} B^{\circ}(u,r_z(u)).
+ \label{eq:center-radius}
+\end{equation}
+The disks are open because the stored distance reaches the nearest background
+voxel center. Slice-wise radii are deliberate: pairing 2D centers with a 3D
+distance transform would mix disks and spheres and collapse the desired medial
+surface toward a curve. We audit reconstruction, component count, false-positive
+girth, and halo stability before using these centers for supervision.
+
+The representation gives us two independent geometric coordinates. Moving
+along $C_z$ extends the papyrus sheet tangentially; increasing $r_z$ grows it
+radially toward another wrap. That distinction is the reason for introducing
+the LSMAT view: the connectivity loss should act along the first coordinate,
+while the separation loss and radius screens police the second.
+
+\paragraph{From medial centers to pins.}
+We construct events only on training slices with at least 95\% valid teacher
+support. Components smaller than 12 voxels are removed. A slice qualifies when
+one thin teacher component $H_e$ contacts at least two disconnected M7
+components $M_{e,i}$ and contains at least two teacher voxels absent from the
+one-voxel M7 neighborhood. Both teacher and M7 must have maximum in-plane EDT
+radius at most three voxels, and no more than 2\% of their foreground may
+survive a two-voxel erosion; these checks reject blobs before they can define a
+positive connectivity target.
+
+Let $C_e$ be the projected medial centers inside $H_e$, and let $D_r$ denote
+radius-$r$ dilation. We choose the smallest $d\in\{0,1,2,3\}$ for which
+\begin{equation}
+ \Omega_e = H_e\cap D_d(C_e),
+ \qquad
+ A_{e,i}=\Omega_e\cap D_2(M_{e,i})
+ \label{eq:pins}
+\end{equation}
+contains every nonempty contact set $A_{e,i}$ in one connected component. The
+sets $A_{e,i}$ are the \emph{pins}: they are where distinct released-M7
+fragments meet the LSMAT-style teacher-medial corridor, not arbitrary endpoints
+chosen from a student prediction. Corridor voxels within one voxel of M7, plus
+all pin voxels, form the free-anchor set $F_e$. Events touching their owning
+tile boundary are discarded, so every retained corridor is transformed and
+loaded as one unit.
+
+\subsection{Objective}
+
+Let $p$ be the student's surface probability, $q$ the projected fine-teacher
+occupancy, $c$ its binary medial-crest field,
+$C=\{x:c_x=1\}$ the corresponding valid crest set, and $p_0$ the released M7
+probability.
+Our loss is
+\begin{align}
+\mathcal{L} ={}& \mathcal{L}_{\mathrm{CE}}(p,q)
+ + 0.25\mathcal{L}_{\mathrm{Dice}}(p,q)
+ + \mathcal{L}_{\mathrm{crest}}(p,c) \nonumber\\
+&+2\mathcal{L}_{\mathrm{sep}}(p,q)
+ +0.5\mathcal{L}_{\mathrm{KL}}(p,p_0)
+ +\mathcal{L}_{\mathrm{pres}}(p,p_0) \nonumber\\
+&+0.03125\mathcal{L}_{\mathrm{conn}}(p).
+\label{eq:objective}
+\end{align}
+All terms are evaluated only where their corresponding validity fields permit.
+
+\paragraph{Soft Occupancy and Crest Recall.}
+Our cross-entropy and Dice targets retain fractional occupancy created by
+fine-to-coarse projection. For a nonempty valid crest $C$, the additional term is
+\begin{equation}
+ \mathcal{L}_{\mathrm{crest}}
+ = 1-\frac{\sum_{x\in C}p_x+1}{|C|+1}.
+ \label{eq:crest-loss}
+\end{equation}
+We average Eq.~\ref{eq:crest-loss} over crest-bearing samples rather than over
+all voxels. The normalization prevents sparse medial evidence from disappearing
+into the background count, and the additive one is the smoothing constant used
+by the released teacher loss. Because only crest voxels receive its gradient,
+the term asks for longitudinal sheet evidence without defining a thick target.
+
+\paragraph{De-Blob Separation.}
+Thick predictions need explicit shrink pressure. An M7 blob can overlap the
+fine sheet and still score well against an anti-aliased occupancy target.
+Let $V$ and $V_c$ denote occupancy and crest validity. We form the thin positive
+seed
+\begin{equation}
+ P=C\cup\bigl(\{q\geq0.5\}\cap(V\setminus V_c)\bigr),
+ \label{eq:separation-positive}
+\end{equation}
+using the crest wherever it is known and falling back voxelwise to hard
+occupancy only where it is not. We dilate $P$ by two voxels and retain only
+occupancy-valid locations where the teacher is confidently background:
+\begin{equation}
+  S = \bigl(\operatorname{dilate}_2(P)\setminus P\bigr)
+      \cap V\cap \{q\leq0.1\}.
+  \label{eq:separation-shell}
+\end{equation}
+The separation loss is the mean background cross-entropy
+\begin{equation}
+  \mathcal{L}_{\mathrm{sep}}
+  = -\frac{1}{|S|}\sum_{x\in S}\log(1-p_x).
+  \label{eq:separation-loss}
+\end{equation}
+We weight this term by 2 in Eq.~\ref{eq:objective}. Because $S$ is a local fence around supported medial
+structure rather than arbitrary background, the term attacks thickness and
+short cross-wrap welds while the soft occupancy and crest terms remain free to
+grow a faint sheet elsewhere.
+
+\paragraph{M7 function and positive preservation.}
+The teacher is locally more informative, not globally complete. We therefore
+freeze a copy of released M7 during training and use its probability $p_0$ in
+two differently masked terms. Let
+$H=C\cup(\{q\geq0.5\}\cap V)$, $h_x=\mathbf{1}[x\in H]$, and
+$m_x=\mathbf{1}[p_{0,x}\geq0.5]$. The KL mask is
+\begin{align}
+ K={}&\bigl((\overline V)\setminus D_2(H)\bigr) \nonumber\\
+ &{}\cup\{x\in V:h_x=m_x\ \wedge\ (q_x\leq0.1\ \vee\ h_x=1)\}.
+ \label{eq:kl-mask}
+\end{align}
+Thus unknown space is anchored except for a radius-two corridor around known
+teacher positives. In known space, M7 is anchored only where its hard decision
+agrees with a confident teacher decision; ambiguous partial occupancy is not
+misclassified as agreement on background. We use
+\begin{equation}
+ \mathcal{L}_{\mathrm{KL}}
+ =\frac{1}{|K|}\sum_{x\in K}
+ D_{\mathrm{KL}}\!\left(\operatorname{Ber}(p_{0,x})\,
+ \middle\|\,\operatorname{Ber}(p_x)\right).
+ \label{eq:m7-kl}
+\end{equation}
+
+KL preservation alone can still allow a correct M7 foreground fragment to
+shrink under the separation term. We therefore define
+$R=V\cap D_2(H)\cap\{p_0\geq0.5\}$ and add the positive-only loss
+\begin{equation}
+ \mathcal{L}_{\mathrm{pres}}
+ =-\frac{1}{|R|}\sum_{x\in R}\log p_x.
+ \label{eq:m7-preservation}
+\end{equation}
+The two terms have separate roles: Eq.~\ref{eq:m7-kl} retains M7's foreground
+and background function away from justified edits, while
+Eq.~\ref{eq:m7-preservation} prevents de-blobbing from deleting M7-supported
+sheet near the teacher. Teacher disagreement remains free to correct M7.
+
+\paragraph{Dynamic medial connectivity.}
+Separation supplies the desired shrink pressure, but without a complementary
+topological term it can also sever the same faint longitudinal connections we
+want to retain. Our first LSMAT axial loss connected the same pins with a
+minimum-off-axis spanning tree, then raised the weakest 10\% of voxels on that
+fixed route toward probability 0.2. This proved that a thin, center-biased route
+could be supervised without using held-out geometry, but it also froze one of
+many equally valid paths. The lowest weight only tied the incumbent; larger
+weights monotonically reduced ordinary validation quality, and the strongest
+weight also reduced anti-blob passes. The final loss therefore retains the
+audited LSMAT corridor and pins but makes the path existential.
+
+For event $e$, define the path capacity
+\begin{equation}
+ a_e(x)=
+ \begin{cases}
+ 1, & x\in F_e,\\
+ p_x, & x\in\Omega_e\setminus F_e,\\
+ 0, & x\notin\Omega_e.
+ \end{cases}
+ \label{eq:path-capacity}
+\end{equation}
+Taking $A_{e,0}$ as a source pin, initialize
+$r_e^0(x)=\mathbf{1}[x\in A_{e,0}]$ and iterate
+\begin{align}
+ r_e^{t+1}(x)=\mathbf{1}[x\in\Omega_e]\max\!\Bigl(&r_e^t(x),
+ \min\bigl(a_e(x),\max_{y\in\mathcal{N}_{26}(x)}r_e^t(y)\bigr)\Bigr).
+ \label{eq:widest-recurrence}
+\end{align}
+This max--min recurrence computes the greatest bottleneck capacity among paths
+of at most $t$ steps. After 96 steps, the event score and loss are
+\begin{align}
+ b_e & = \min_{i>0}\max_{x\in A_{e,i}} r_e^{96}(x), \nonumber\\
+ \mathcal{L}_{\mathrm{conn}}
+ & = \frac{1}{|E|}\sum_{e\in E}
+ \max\bigl(0,\operatorname{logit}(0.2)-\operatorname{logit}(b_e)\bigr).
+ \label{eq:connectivity-loss}
+\end{align}
+Each event receives one vote regardless of corridor size or pin count. Max/min
+back-propagation places pressure on the current best path's limiting capacity,
+not on every corridor voxel. Free M7 anchors have unit capacity and no direct
+gradient; no connectivity gradient exists outside $\Omega_e$. The loss becomes
+exactly zero when every pin is reachable through some path with bottleneck at
+least 0.2.
+
+The frozen atlas contains 149 fully owned events. Ninety-nine rows in the exact
+schedule encounter an event, 477 rows are eligible, and the longest audited
+event needs 44 of the allocated 96 propagation steps. Of these events, 135 have
+two pins, 13 have three, and one has four; 122 need no crest dilation and 27 need
+one voxel. The loss is evaluated only at the full-resolution output and has
+weight 0.03125. Together, the separation shell and existential path constraint
+express the two sides of de-blobbing: remove unsupported girth without deleting
+sheet existence.
+
+\paragraph{Deep supervision.}
+The occupancy, crest, separation, KL, and preservation terms are applied at the
+standard nnU-Net decoder outputs with normalized weights proportional to
+$1,1/2,1/4,\ldots$ and zero weight on the coarsest output. Soft occupancy is
+resized trilinearly. The sparse crest is max-pooled, while its validity is true
+only if every contributing fine cell is valid. Connectivity is intentionally
+excluded from lower-resolution outputs so resampling cannot broaden its medial
+corridor.
+
+\begin{figure*}[t]
+  \centering
+  \figureasset{figure_crossres_supervision}{0.96\linewidth}{2.0in}
+  \caption{Reserved cross-resolution supervision detail. The upper row will
+  show a fine teacher mask, its LSMAT-style centers and radii, projected
+  occupancy $q$, binary crest $C$, and the radius-two background shell $S$.
+  The lower row will show a thin teacher component, disconnected M7 fragments,
+  their contact pins, free anchors, the admissible medial corridor, and the
+  dynamically selected widest path before and after its bottleneck is raised.}
+  \Description{Reserved diagram of the LSMAT-style center-radius representation, de-blob shell, and dynamic widest-path connectivity loss.}
+  \label{fig:supervision}
+\end{figure*}
+
+\subsection{Optimization and Trust Region}
+
+We use Adam with constant learning rate $2\times10^{-5}$, betas $(0.9,0.999)$,
+$\epsilon=10^{-8}$, and zero weight decay.
+The batch size is three with eight-step gradient accumulation and bfloat16
+autocast.
+Seed 1203 fixes the sample order and augmentation sequence.
+
+After each optimizer update, we project the complete parameter vector $\theta$
+into a relative-$L^2$ ball around released parameters $\theta_0$:
+\begin{equation}
+\theta \leftarrow \theta_0 +
+\min\!\left(1,\frac{r\lVert\theta_0\rVert_2}
+{\lVert\theta-\theta_0\rVert_2}\right)(\theta-\theta_0),
+\qquad r=0.0027535422.
+\label{eq:trust}
+\end{equation}
+The projection is active on essentially every observed update.
+It is thus part of the effective method rather than an inactive guardrail.

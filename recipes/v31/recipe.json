@@ -1,0 +1,149 @@
+{
+  "$schema": "../schema.json",
+  "schema": "socratic-method-training-recipe-v1",
+  "name": "M7-XR v31 PHerc0139 dynamic-medial duration 8192",
+  "version": "v31.1-pherc0139-dynamic-medial-duration-8192",
+  "status": "qualification-in-progress",
+  "source_recipe_sha256": "3d42f3268ee8fa6d25a4949d9ae12145ff9447eccd795900fa02e857e659d0de",
+  "artifacts": {
+    "train_manifest": {
+      "sha256": "dd2d3d84d890be484ee4279b004992e23bfed8ffed233a504d6184b3244f0177",
+      "bytes": 15515046,
+      "rows": 4096,
+      "scrolls": ["PHerc0139"],
+      "record_ids": ["pherc0139-native-fine-teacher-2p399-to-9p362-v11p1"]
+    },
+    "validation_manifest": {
+      "sha256": "a995787032eb446f71759a4dbd510396273b93c65f65863bac8fe9587e12b714",
+      "bytes": 20344063,
+      "scrolls": ["PHerc0814", "PHerc1451"]
+    },
+    "m7_checkpoint": {
+      "sha256": "17465b77591b794638e671f1a9f79c4cf1e79821f302e6fc235e3725e5da7d7e",
+      "bytes": 820473701,
+      "contract": "fresh-released-m7-sha256-strict-v1"
+    },
+    "dynamic_medial_connectivity_state": {
+      "sha256": "5489a6dce515aacbd980392ecd6326711a05a4758f3554e521f65db30959a8f8",
+      "bytes": 129830,
+      "contract": "teacher-medial-dynamic-widest-path-connectivity-v1",
+      "event_count": 149,
+      "fully_owned_event_count": 149,
+      "eligible_training_rows": 477,
+      "exact_schedule_event_rows": 99,
+      "maximum_propagation_steps": 96,
+      "maximum_required_connectivity_steps": 44
+    }
+  },
+  "model": {
+    "architecture": "ordinary-single-m7-nnunet",
+    "preset": "m7-resenc-l",
+    "input_channels": 1,
+    "classes": 2,
+    "parameters": 102349770,
+    "inference": "raw-student-only-no-m7-blend-no-teacher"
+  },
+  "objective": {
+    "contract": "soft-occupancy-ce-dice-villa-medial-crest-shell-kl-corridor-m7-preservation-dynamic-widest-path-v9",
+    "soft_cross_entropy_weight": 1.0,
+    "soft_dice_weight": 0.25,
+    "medial_recall_weight": 1.0,
+    "teacher_background_separation_weight": 2.0,
+    "teacher_background_separation_radius": 2,
+    "teacher_background_max_q": 0.1,
+    "m7_function_kl_weight": 0.5,
+    "m7_function_kl_known_agreement": true,
+    "m7_function_kl_confident_agreement": true,
+    "m7_function_kl_unknown_corridor_radius": 2,
+    "m7_preservation_weight": 1.0,
+    "m7_preservation_radius": 2,
+    "m7_preservation_anchor_threshold": 0.5,
+    "m7_preservation_soft_floor": false,
+    "dynamic_medial_connectivity_weight": 0.03125,
+    "dynamic_medial_connectivity_probability_floor": 0.2,
+    "dynamic_medial_connectivity_steps": 96
+  },
+  "optimization": {
+    "optimizer": "adam",
+    "learning_rate": 0.00002,
+    "schedule": "constant",
+    "betas": [0.9, 0.999],
+    "epsilon": 1e-8,
+    "weight_decay": 0.0,
+    "batch_size": 3,
+    "gradient_accumulation": 8,
+    "amp_dtype": "bfloat16",
+    "seed": 1203,
+    "training_samples": 8192,
+    "samples_per_evaluation": 1024,
+    "snapshot_samples": [1024, 2048, 4096, 8192],
+    "relative_l2_trust_radius": 0.0027535421730275947
+  },
+  "evaluation": {
+    "thresholds": {"minimum": 0.25, "maximum": 0.6, "step": 0.01},
+    "minimum_scroll_gain": -0.01,
+    "selection": "held-out-calibrated-macro-scroll-dice-with-scroll-guard",
+    "promotion_requires": [
+      "registered-heldout-gates",
+      "blind-PHerc1447-antiblob-review",
+      "two-sided-morphology-and-coverage-gates"
+    ],
+    "boundary_warning": "A selected threshold of 0.25 is censored, not approved for deployment."
+  },
+  "environment": {
+    "OMP_NUM_THREADS": "16",
+    "MKL_NUM_THREADS": "16",
+    "OPENBLAS_NUM_THREADS": "16",
+    "NUMEXPR_MAX_THREADS": "16"
+  },
+  "training": {
+    "argv": [
+      "-m", "crossres_pred.voxel", "train",
+      "--patches", "{train_manifest}",
+      "--validation-patches", "{validation_manifest}",
+      "--output", "{output}",
+      "--m7-checkpoint", "{m7_checkpoint}",
+      "--preset", "m7-resenc-l",
+      "--epochs", "8",
+      "--samples-per-epoch", "1024",
+      "--max-train-samples", "8192",
+      "--snapshot-samples", "1024", "2048", "4096", "8192",
+      "--batch-size", "3",
+      "--accumulate", "8",
+      "--learning-rate", "2e-05",
+      "--lr-schedule", "constant",
+      "--warmup-samples", "0",
+      "--weight-decay", "0.0",
+      "--optimizer", "adam",
+      "--adamw-beta1", "0.9",
+      "--adamw-beta2", "0.999",
+      "--adamw-eps", "1e-08",
+      "--m7-trust-region-relative-l2", "0.0027535421730275947",
+      "--loss-ce-weight", "1.0",
+      "--loss-dice-weight", "0.25",
+      "--loss-medial-recall-weight", "1.0",
+      "--loss-separation-weight", "2.0",
+      "--loss-separation-radius", "2",
+      "--loss-separation-max-teacher-q", "0.1",
+      "--loss-m7-anchor-weight", "0.5",
+      "--loss-m7-anchor-unknown-corridor-radius", "2",
+      "--loss-m7-preservation-weight", "1.0",
+      "--loss-m7-preservation-radius", "2",
+      "--loss-m7-preservation-anchor-threshold", "0.5",
+      "--num-workers", "2",
+      "--max-cpu-threads", "16",
+      "--seed", "1203",
+      "--device", "cuda",
+      "--amp-dtype", "bfloat16",
+      "--stratified-sampling",
+      "--validation-thresholds", "0.25", "0.26", "0.27", "0.28", "0.29", "0.30", "0.31", "0.32", "0.33", "0.34", "0.35", "0.36", "0.37", "0.38", "0.39", "0.40", "0.41", "0.42", "0.43", "0.44", "0.45", "0.46", "0.47", "0.48", "0.49", "0.50", "0.51", "0.52", "0.53", "0.54", "0.55", "0.56", "0.57", "0.58", "0.59", "0.60",
+      "--minimum-scroll-gain", "-0.01",
+      "--loss-m7-anchor-known-agreement",
+      "--loss-m7-anchor-confident-agreement",
+      "--loss-dynamic-medial-connectivity-weight", "0.03125",
+      "--loss-dynamic-medial-connectivity-probability-floor", "0.2",
+      "--loss-dynamic-medial-connectivity-steps", "96",
+      "--dynamic-medial-connectivity-state", "{dynamic_medial_connectivity_state}"
+    ]
+  }
+}

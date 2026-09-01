@@ -1,0 +1,9 @@
+{
+  "original_root": "D:/work/vesuvius-c",
+  "artifact_root": "D:/datasets/vesuvius-c",
+  "train_manifest": "D:/datasets/vesuvius-c/output/crossres_data/voxel_atlas_native_v19_medial_micro_pherc0139_4096_20260830/patches.jsonl",
+  "validation_manifest": "D:/datasets/vesuvius-c/output/crossres_data/voxel_balanced_native_v14p2_registered_antialias_softtarget_corpus/patches.jsonl",
+  "m7_checkpoint": "D:/datasets/vesuvius-c/output/crossres_data/models/surface_m7_nnunet/fold_0/checkpoint_best.pth",
+  "dynamic_medial_connectivity_state": "D:/datasets/vesuvius-c/output/crossres_data/pherc0139_training_dynamic_medial_connectivity_v28b_fullowner_20260831/connectivity_state.json",
+  "output": "../../runs/m7_xr_v31_8192"
+}
