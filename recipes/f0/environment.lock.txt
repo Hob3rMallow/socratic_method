@@ -1,0 +1,26 @@
+# Observed environment of the C3-F0 run (launched 2026-09-06, completed 2026-09-07).
+# uv-managed venv D:/work/vesuvius-c/crossres_pred/.venv on Windows 11; the
+# RTX PRO 6000 (Blackwell, 96 GB) was capped at 450 W for the whole run.
+# Install torch using the CUDA wheel/index appropriate for the target machine.
+python==3.12.9
+torch==2.11.0+cu128
+numpy==2.5.1
+scipy==1.18.0
+scikit-image==0.26.0
+tifffile==2026.7.31
+imagecodecs==2026.6.26
+pillow==12.3.0
+tensorboard==2.21.0
+zarr==3.3.0
+numcodecs==0.16.5
+fsspec==2026.7.0
+s3fs==2026.7.0
+nnunetv2==2.8.1
+dynamic-network-architectures==0.4.4
+acvl-utils==0.2.6
+batchgenerators==0.25.3
+blosc2==4.10.0
+safetensors==0.8.0
+huggingface-hub==1.26.0
+pytest==9.1.1
+ruff==0.16.1

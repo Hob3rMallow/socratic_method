@@ -22,22 +22,70 @@ and [hash inventory](../recipes/final_c3_250k_20260907/files.json).
 The record's `runtime/` tree contains all 63 preregistered source/configuration
 files in their original relative layout, verified against the sealed pins.
 
-This archive is not a freshly tested portable F0 build, environment lock,
-launcher or exporter. Embedded original D:/G: artifact paths remain evidence,
-not automatically relocatable inputs. A portable F0 release requires a separate
-packaging task and verification against the frozen model identity. **Do not use
-the existing v31 wrappers as an F0 launcher or exporter.** They still enforce
-v31's model hash, counters and recipe.
-
 The exact 250k endpoint, final optimizer checkpoint, all earlier checkpoints
 and full cached HTML/image reports remain retained in the original workspace.
 The freeze does not authorize another training run, threshold change, filler
 experiment, production deployment or public upload.
 
+## Reproduce F0
+
+The executable recipe is [recipes/f0/recipe.json](../recipes/f0/recipe.json)
+(`c3-f0-200k-20260907`). Its `training.argv` is the sealed F0 command from
+[provenance/recipe.json](../recipes/final_c3_250k_20260907/provenance/recipe.json)
+with placeholders for exactly the three staged inputs; a test asserts the two
+are token-identical after substitution. This is a **same-seed recipe repeat**
+(seed 1203 on the same corpus), not a promise of bitwise reproduction across
+software or hardware.
+
+0. **Environment.** `recipes/f0/environment.lock.txt` records the observed
+   packages (Python 3.12.9, torch 2.11.0+cu128, nnU-Net v2 2.8.1). The engine
+   needs `nvidia-smi` on PATH, a CUDA device whose power limit is at most
+   600.5 W, and at least 100 GiB free under the output directory. Run
+   `socratic-engine-pins --check` once: it verifies the snapshot against the
+   63 sealed code pins.
+1. **Stage the three artifacts** named in `recipes/f0/paths.example.json`: the
+   wide15 anti-aliased manifest with its archive trees (110.1 GB), the released
+   M7 checkpoint and, for the audit only, the frozen v14p2 manifest with its
+   patch tree (32.7 GB). Every wide15 row path is absolute under the original
+   workspace, so set `original_root`/`artifact_root` (see [data.md](data.md)).
+2. **Verify before spending GPU time:**
+
+   ```bash
+   socratic-train --paths recipes/f0/paths.local.json --check --print-command
+   ```
+
+   The check verifies SHA-256 and byte size of the staged inputs, the corpus
+   scope (16,200 rows, 15,432 train / 768 val, twelve training scrolls, 26
+   record ids) and the frozen validation scope when staged, then prints the
+   command.
+3. **Train:** `socratic-train --paths recipes/f0/paths.local.json --run`.
+   Expect about 22 h on an RTX PRO 6000 at 450 W for 250,000 exposures with a
+   milestone every 10,000. After an interruption repeat with `--resume`; never
+   use `--resume` to start a new candidate from an older student. The
+   selected artifact is `<output>/checkpoint_milestone_00200000.pt`, not
+   `checkpoint_best.pt` or `checkpoint_last.pt`.
+4. **Audit on the frozen harness** (no `--tta`; the frozen macro Dice is a
+   no-TTA number, eight-way TTA was used only for the blind six-cube exports):
+
+   ```bash
+   crossres-voxel audit-checkpoint --checkpoint <output>/checkpoint_milestone_00200000.pt --patches <frozen_validation_manifest> --output <audit dir> --split val --device cuda
+   ```
+
+   For the sealed weights the sweep row at T=0.35 reads
+   `macro_scroll_dice = 0.680787428136385`; a fresh training run lands in
+   the seed band, not on that exact value.
+5. **Export:** `socratic-export <output>/checkpoint_milestone_00200000.pt huggingface/export/f0`
+   fails closed unless the checkpoint bytes, SHA-256, sample counters and the
+   recipe's selection/qualification records agree; it writes
+   `model.safetensors`, `config.json`, preprocessing metadata, the recipe,
+   observed milestones, qualification, selection and the model card from
+   `huggingface/f0/README.md`. Publishing remains a separate `hf upload`.
+
 ## Historical v31 reproduction
 
 Everything below documents the earlier v31 environment, recipe and exporter.
-It is retained for reproducibility and does not describe F0.
+It is retained for reproducibility and does not describe F0; pass
+`--recipe recipes/v31/recipe.json` to both wrappers.
 
 ## 1. Environment
 
@@ -55,7 +103,7 @@ five paths. Do not edit `recipe.json` for machine-specific locations.
 ## 3. Verify before spending GPU time
 
 ```bash
-socratic-train --paths recipes/v31/paths.local.json --check --print-command
+socratic-train --recipe recipes/v31/recipe.json --paths recipes/v31/paths.local.json --check --print-command
 ```
 
 The check verifies regular-file existence, SHA-256, M7 byte size, manifest row
@@ -66,7 +114,7 @@ runner.
 ## 4. Train
 
 ```bash
-socratic-train --paths recipes/v31/paths.local.json --run
+socratic-train --recipe recipes/v31/recipe.json --paths recipes/v31/paths.local.json --run
 ```
 
 This creates checkpoints after 1,024, 2,048, 4,096, and 8,192 cumulative
@@ -84,7 +132,7 @@ registered, blind anti-blob, and FLIP record is
 `recipes/v31/selection.json`.
 
 ```bash
-socratic-export path/to/checkpoint_milestone_00008192.pt huggingface/export
+socratic-export --recipe recipes/v31/recipe.json path/to/checkpoint_milestone_00008192.pt huggingface/export/v31
 ```
 
 The exporter fails closed unless checkpoint size, SHA-256, sample counters,

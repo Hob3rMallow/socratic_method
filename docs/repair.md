@@ -56,8 +56,9 @@ The legacy internal preset name `extended_safe` is not a safety certification.
 ## Checked command
 
 After installing this repository, `socratic-repair` is available. The equivalent
-module entry point is `python -m socratic_method.repair`. Existing
-`socratic-train` and `socratic-export` still describe historical v31.
+module entry point is `python -m socratic_method.repair`. `socratic-train`
+and `socratic-export` default to the executable F0 recipe (see
+[reproduction.md](reproduction.md)).
 
 First check the input and print a plan; without `--run` no native worker or
 output directory is created:

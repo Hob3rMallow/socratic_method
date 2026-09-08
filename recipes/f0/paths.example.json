@@ -1,0 +1,11 @@
+{
+  "original_root": "D:/work/vesuvius-c",
+  "artifact_root": "D:/datasets/vesuvius-c",
+  "train_manifest": "D:/datasets/vesuvius-c/output/crossres_data/voxel_wide15_antialias_corpus_20260901/patches.jsonl",
+  "m7_checkpoint": "D:/datasets/vesuvius-c/output/crossres_data/models/surface_m7_nnunet/fold_0/checkpoint_best.pth",
+  "frozen_validation_manifest": "D:/datasets/vesuvius-c/output/crossres_data/voxel_balanced_native_v14p2_registered_antialias_softtarget_corpus/patches.jsonl",
+  "output": "../../runs/c3_f0_250k",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "GPU-00000000-0000-0000-0000-000000000000"
+  }
+}

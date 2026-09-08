@@ -1,0 +1,23 @@
+{
+  "model_type": "socratic-c3-f0",
+  "architectures": ["VoxelNNUNet"],
+  "implementation": "crossres_pred.voxel.model.VoxelNNUNet",
+  "model_config": {
+    "preset": "m7-resenc-l",
+    "input_channels": 1,
+    "num_classes": 2,
+    "deep_supervision": true
+  },
+  "parameter_count": 102349770,
+  "stored_tensors": 264,
+  "tied_keys": 692,
+  "state_dict_loader": "socratic_method.hf_export.load_exported_state_dict",
+  "recipe_version": "c3-f0-200k-20260907",
+  "selected_checkpoint_samples": 200000,
+  "operating_threshold": 0.35,
+  "threshold_selection_contract": "preregistered-fixed-operating-threshold-0p35-late-checkpoint-rule-v1",
+  "source_checkpoint_sha256": "54db9a59cb602ff08e3dda0acc1195ad980ab05fb660332d32fb436a0d49a175",
+  "student_only_inference": true,
+  "teacher_required_at_inference": false,
+  "m7_blend_at_inference": false
+}

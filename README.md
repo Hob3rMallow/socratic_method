@@ -69,10 +69,26 @@ See [the continuity evidence record](recipes/f0_continuity_20260907/README.md).
 ## Frozen recipe reproduction
 
 The exact F0 configuration, run identity, copied evaluation evidence and 63
-sealed runtime files are preserved in the new record. This is a provenance
-snapshot, **not a newly ported/tested F0 launcher or exporter**. Existing
-`socratic-train`, `socratic-export`, and Hugging Face templates still target
-historical v31; they must not be used as if they implement F0.
+sealed runtime files are preserved in the record, and the engine snapshot under
+`src/crossres_pred/voxel` is byte-verified against those sealed pins
+(`socratic-engine-pins --check`). The executable recipe
+[recipes/f0/recipe.json](recipes/f0/recipe.json) transcribes the sealed F0
+command with placeholders for the three staged inputs, and `socratic-train`,
+`socratic-export` and the `huggingface/f0` templates now default to it:
+
+```powershell
+socratic-engine-pins --check
+socratic-train --paths recipes/f0/paths.local.json --check --print-command
+socratic-train --paths recipes/f0/paths.local.json --run
+crossres-voxel audit-checkpoint --checkpoint <run>/checkpoint_milestone_00200000.pt --patches <frozen v14p2 manifest> --output <audit dir> --split val
+socratic-export <run>/checkpoint_milestone_00200000.pt huggingface/export/f0
+```
+
+`--check` verifies the SHA-256 of every staged input, the wide15 corpus scope
+(16,200 rows, 15,432 train / 768 val, twelve training scrolls, 26 record ids)
+and prints a command whose tokens equal the sealed F0 argv. See
+[docs/reproduction.md](docs/reproduction.md) for the full walkthrough and its
+limits (same-seed recipe repeat, not bitwise reproduction).
 
 ## Coherent local 3D patches
 
@@ -95,11 +111,11 @@ Copy [recipes/v31/paths.example.json](recipes/v31/paths.example.json), stage the
 pinned inputs, then verify identities before any historical reproduction:
 
 ```powershell
-socratic-train --paths recipes/v31/paths.local.json --check --print-command
+socratic-train --recipe recipes/v31/recipe.json --paths recipes/v31/paths.local.json --check --print-command
 ```
 
 A new training run is a separate explicit action. See
-[docs/reproduction.md](docs/reproduction.md) for the current F0 boundary and
+[docs/reproduction.md](docs/reproduction.md) for the F0 walkthrough and
 the preserved v31 instructions. The old
 [v31 selection](recipes/v31/selection.json) and
 [qualification](recipes/v31/release_qualification.json) remain intact.
@@ -108,16 +124,20 @@ the preserved v31 instructions. The old
 
 - `recipes/final_c3_250k_20260907/`: current frozen model identity, complete
   post-run review, observed evidence and sealed F0 runtime-file snapshot.
+- `recipes/f0/`: the executable F0 recipe (sealed argv with placeholders,
+  artifact pins, observed milestones, selection and qualification records,
+  environment lock, paths example).
 - `recipes/v31/`: historical executable recipe, environment lock and release evidence.
 - `recipes/f0_repair_20260907/`: measured contiguous repair profile and evidence,
   implemented by the separate `socratic-repair` command.
-- `src/crossres_pred/` and `src/socratic_method/`: the existing v31 engine and
-  portable recipe/export wrappers; not silently replaced by this record update.
+- `src/crossres_pred/`: the engine snapshot, byte-synced to the 63 sealed F0
+  code pins (with the documented read-time path-relocation hook);
+  `src/socratic_method/`: the portable recipe/export/postprocessor wrappers.
 - `native/line_fitter/`: additive gap-joining postprocessor. Its
   [README](native/line_fitter/README.md) distinguishes source defaults from
   the conservative preset used in the F0 report.
-- `huggingface/`: historical v31 model-card/export templates; weights are not
-  committed to Git.
+- `huggingface/`: model-card/export templates per recipe (`f0/` current,
+  `v31/` historical); weights are not committed to Git.
 - `provenance/source/`: preserved earlier plans, run records and research drivers.
 - `submission.pdf` and `submissions/2026-09/`: existing paper/submission
   artifacts, predating this F0 freeze; not rewritten by this record update.

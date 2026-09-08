@@ -1,6 +1,25 @@
 # Data and artifact layout
 
-## Required replay inputs
+## F0 replay inputs
+
+The executable F0 recipe (`recipes/f0/recipe.json`) needs three staged inputs;
+the third is only read by the post-training audit:
+
+| Key | Expected identity | Purpose |
+|---|---|---|
+| `train_manifest` | `f18c4efb...31128`, 44,773,698 bytes, 16,200 rows (15,432 train / 768 val) | wide15 anti-aliased corpus: 10,072 native soft rows + 6,128 human hard rows over twelve training scrolls plus the two in-corpus validation scrolls |
+| `m7_checkpoint` | `17465b...d7d7e`, 820,473,701 bytes | released M7 initializer and function anchor |
+| `frozen_validation_manifest` | `a995787...714`, 20,344,063 bytes, 4,361 rows (689 val) | frozen v14p2 audit harness (PHerc0814 + PHerc1451) |
+
+The wide15 manifest points at five archive trees totalling 110.1 GB
+(`voxel_wide15_antialias_corpus_20260901/native` 72.7 GB plus the four
+human-row trees under `voxel_wide15_corpus_20260901/`); the frozen validation
+tree is 32.7 GB. Every one of the 16,200 row paths is absolute under
+`D:/work/vesuvius-c/output/crossres_data/`, so relocating the corpus requires
+the root mapping described below. Publish the complete directory trees, not
+just the JSONL files.
+
+## Historical v31 replay inputs
 
 The v31 training command needs four pinned files/bundles:
 
