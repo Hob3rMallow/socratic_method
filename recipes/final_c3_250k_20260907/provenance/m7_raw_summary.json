@@ -1,0 +1,129 @@
+{
+  "arm_id": "M7RAW",
+  "arm_score_macro": 0.5606687358084226,
+  "audit_tta": false,
+  "best_checkpoint": "D:\\work\\vesuvius-c\\output\\crossres_data\\unified_ladder_20260902\\baselines\\m7_raw\\checkpoint_milestone_00000000.pt",
+  "best_milestone": 0,
+  "blind_report": "D:\\work\\vesuvius-c\\output\\crossres_data\\unified_ladder_20260902\\baselines\\m7_raw\\ladder_eval\\blind_report_00000000",
+  "calibrated_threshold": 0.19999998807907104,
+  "ceiling_diagnostic": null,
+  "created": "2026-09-01T21:11:47",
+  "gate_verdicts": {
+    "calibrated": {
+      "blob_score": 2.5,
+      "dice_vs_reference": 0.5238724177182503,
+      "fg_lower_advisory": false,
+      "fg_lower_pass": true,
+      "fg_upper_pass": true,
+      "foreground_ratio_vs_reference": 0.9158262385554959,
+      "interior_pass": false,
+      "passed": false,
+      "recall_vs_reference": 0.5018242617600646,
+      "thickness_pass": false,
+      "threshold": 0.2
+    },
+    "fixed": {
+      "blob_score": 0.0,
+      "dice_vs_reference": 0.38719961197503505,
+      "fg_lower_advisory": false,
+      "fg_lower_pass": false,
+      "fg_upper_pass": true,
+      "foreground_ratio_vs_reference": 0.4077826466844145,
+      "interior_pass": true,
+      "passed": false,
+      "recall_vs_reference": 0.2725464472706966,
+      "thickness_pass": true,
+      "threshold": 0.45
+    }
+  },
+  "kaggle": {
+    "p0500p2_val": {
+      "calibrated": {
+        "mean_elapsed_s": 14.661875,
+        "mean_leaderboard": 0.49375040000000026,
+        "mean_surface_dice": 0.7124856968750001,
+        "mean_topoF1_0": 0.2854221093749999,
+        "mean_topoF1_1": 0.0010448875,
+        "mean_topoF1_2": 0.11480720714285704,
+        "mean_toposcore": 0.14639959374999986,
+        "mean_voi_merge": 1.0488378781250003,
+        "mean_voi_score": 0.5727443406249996,
+        "mean_voi_split": 1.4847895312500006,
+        "mean_voi_total": 2.5336274031249997,
+        "n_cases": 320,
+        "threshold": 0.19999998807907104
+      },
+      "fixed": {
+        "mean_elapsed_s": 13.194062500000006,
+        "mean_leaderboard": 0.4828047156250004,
+        "mean_surface_dice": 0.6989583031250002,
+        "mean_topoF1_0": 0.28757755625,
+        "mean_topoF1_1": 0.0011916656250000007,
+        "mean_topoF1_2": 0.0500506170212766,
+        "mean_toposcore": 0.14191786875000006,
+        "mean_voi_merge": 1.0947908531250015,
+        "mean_voi_score": 0.5588397781250001,
+        "mean_voi_split": 1.5872604343749999,
+        "mean_voi_total": 2.6820512343749985,
+        "n_cases": 320,
+        "threshold": 0.45
+      },
+      "rows": 320
+    },
+    "v14p2_val": {
+      "calibrated": {
+        "mean_elapsed_s": 10.508853410740198,
+        "mean_leaderboard": 0.6012354121915817,
+        "mean_surface_dice": 0.8152858055152398,
+        "mean_topoF1_0": 0.5910612313323581,
+        "mean_topoF1_1": 0.03374907023411368,
+        "mean_topoF1_2": 0.21770753968253947,
+        "mean_toposcore": 0.35775558635703897,
+        "mean_voi_merge": 1.1827771988388975,
+        "mean_voi_score": 0.5958820391872277,
+        "mean_voi_split": 1.1620243178519596,
+        "mean_voi_total": 2.3448015195936143,
+        "n_cases": 689,
+        "threshold": 0.19999998807907104
+      },
+      "fixed": {
+        "mean_elapsed_s": 11.145718432510886,
+        "mean_leaderboard": 0.5899580783744559,
+        "mean_surface_dice": 0.7909149129172718,
+        "mean_topoF1_0": 0.5875573557833095,
+        "mean_topoF1_1": 0.029495170854271342,
+        "mean_topoF1_2": 0.02777775,
+        "mean_toposcore": 0.3524339579100144,
+        "mean_voi_merge": 1.319575969521045,
+        "mean_voi_score": 0.5925932743105957,
+        "mean_voi_split": 1.0623406008708267,
+        "mean_voi_total": 2.3819165573294634,
+        "n_cases": 689,
+        "threshold": 0.45
+      },
+      "rows": 689
+    }
+  },
+  "lowest_fg_upper_passing_threshold": 0.11,
+  "milestone_audits": {
+    "0": {
+      "calibrated_threshold": 0.19999998807907104,
+      "macro_scroll_dice": 0.5606687358084226,
+      "minimum_scroll_dice_gain": -0.011408570377197114,
+      "scrolls": {
+        "PHerc0814": {
+          "dice": 0.578025322372068,
+          "dice_gain_vs_baseline": -0.011408570377197114
+        },
+        "PHerc1451": {
+          "dice": 0.5433121492447771,
+          "dice_gain_vs_baseline": -0.006387317856453301
+        }
+      }
+    }
+  },
+  "report_tta": false,
+  "run_dir": "D:\\work\\vesuvius-c\\output\\crossres_data\\unified_ladder_20260902\\baselines\\m7_raw",
+  "schema": "crossres-unified-ladder-arm-evaluation-v1",
+  "soft_arm": false
+}

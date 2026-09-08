@@ -1,0 +1,385 @@
+{
+  "schema": "f0-continuity-official-evidence-inventory-v1",
+  "files": [
+    {
+      "relative_path": ".gitattributes",
+      "original_path": "D:\\work\\socratic_method\\recipes\\f0_continuity_20260907\\.gitattributes",
+      "bytes": 8,
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+    },
+    {
+      "relative_path": "PLAN.md",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\PLAN.md",
+      "bytes": 2361,
+      "sha256": "9e7ab620aca80245aa930c734665c77e6cb982127694b692370ee8266aef3a39"
+    },
+    {
+      "relative_path": "README.md",
+      "original_path": "D:\\work\\socratic_method\\recipes\\f0_continuity_20260907\\README.md",
+      "bytes": 1932,
+      "sha256": "c2e9d5b097a0ef3b653051f26d94b2ac6d2f348380108c8adfc0dc8957c7a4a4"
+    },
+    {
+      "relative_path": "decision.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\decision.json",
+      "bytes": 1024,
+      "sha256": "ba161c17a4f4795bc91dc2eacaba62a0339617866f5015b6a1c8ea7a59069d95"
+    },
+    {
+      "relative_path": "final_check_only_plan.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\final_check_only_plan.json",
+      "bytes": 26314,
+      "sha256": "1c7721f84d4a176b01aaf129c234d96e2a7ff9b8b48412923fdcaaa06b8fae3a"
+    },
+    {
+      "relative_path": "package_tests.xml",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\package_tests.xml",
+      "bytes": 10036,
+      "sha256": "b68a740510fe16ea31bd38faf2664777d68e3ed07edd940cd74a7594671c0efc"
+    },
+    {
+      "relative_path": "package_tests_attempt1.xml",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\package_tests_attempt1.xml",
+      "bytes": 48414,
+      "sha256": "0c75447f17ad3b69cedf377edc76b3c4c4c9790b0440bedcbb525e19c15425d6"
+    },
+    {
+      "relative_path": "package_tests_before_apron_audit.xml",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\package_tests_before_apron_audit.xml",
+      "bytes": 9901,
+      "sha256": "0d9e560dc9fe26f9f58c6fada2ad15abb41d95b102afda0f40c83f82517e1102"
+    },
+    {
+      "relative_path": "provenance/development_candidate_v1/components.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\development_candidate_v1\\components.json",
+      "bytes": 140883,
+      "sha256": "522ad893af9d59fc248247ff09c309322f71377be75a06a1271129b1e9b7abfc"
+    },
+    {
+      "relative_path": "provenance/development_candidate_v1/contact_audit.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\development_candidate_v1\\contact_audit.json",
+      "bytes": 283796,
+      "sha256": "05417d910f6566332bbf25ab4ea38ea34a1ee745abcce7fd43e136b93ff5f3c7"
+    },
+    {
+      "relative_path": "provenance/development_candidate_v1/corridors.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\development_candidate_v1\\corridors.json",
+      "bytes": 11203789,
+      "sha256": "88c15987e4fca8eaa5dd2e6c8f3ac6b4d1d2e9f67da09cdff67c8cb4c44f390e"
+    },
+    {
+      "relative_path": "provenance/development_candidate_v1/request.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\development_candidate_v1\\request.json",
+      "bytes": 31948,
+      "sha256": "2d7ae21585a01332188ae6d63cd2afd8d87d6ca9fef36d71d5c5e99da3fdf9a3"
+    },
+    {
+      "relative_path": "provenance/development_candidate_v1/state.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\development_candidate_v1\\state.json",
+      "bytes": 482,
+      "sha256": "ea4187c1fa173201ca21140f02e7c9c106a7c249cc889727678837321c4e2292"
+    },
+    {
+      "relative_path": "provenance/development_candidate_v1/summary.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\development_candidate_v1\\summary.json",
+      "bytes": 11587,
+      "sha256": "0f101893d8d5711b0956187ed25c394234ccefb1b0cb81b3fc2fde52e32b2158"
+    },
+    {
+      "relative_path": "provenance/development_candidate_v2/components.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\development_candidate_v2\\components.json",
+      "bytes": 164080,
+      "sha256": "20aee0a1803a1afc539f944ba5316ec0dd91ac7212871dbacc53b970d1f80c3e"
+    },
+    {
+      "relative_path": "provenance/development_candidate_v2/contact_audit.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\development_candidate_v2\\contact_audit.json",
+      "bytes": 313508,
+      "sha256": "22122b2df08c10885740a12e586f8ec2fd45ddc2c49a06b249726c76b60ef333"
+    },
+    {
+      "relative_path": "provenance/development_candidate_v2/corridors.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\development_candidate_v2\\corridors.json",
+      "bytes": 16596942,
+      "sha256": "bf48bae28b6b7aa301b66cc35543fbad544c723bd926d197f2f24218d23f5a9a"
+    },
+    {
+      "relative_path": "provenance/development_candidate_v2/request.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\development_candidate_v2\\request.json",
+      "bytes": 32239,
+      "sha256": "291530bbfc1ad1a6b237090e0af8175d84a359c533178ac519c368a52295750b"
+    },
+    {
+      "relative_path": "provenance/development_candidate_v2/state.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\development_candidate_v2\\state.json",
+      "bytes": 481,
+      "sha256": "ffa8c44aa7709bb730a31e6a53b55642664d2ba1b8eeb12ca91e2d4fe432b1ba"
+    },
+    {
+      "relative_path": "provenance/development_candidate_v2/summary.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\development_candidate_v2\\summary.json",
+      "bytes": 11769,
+      "sha256": "f913b3ffcb86d5bd70d17c2fb73e55d2cda1efbff3b4f60a6227e44c71147304"
+    },
+    {
+      "relative_path": "provenance/development_probe_p0.15/proposals.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\development_probe_p0.15\\proposals.json",
+      "bytes": 1025010,
+      "sha256": "4dba247848b51fd8f3745e6f1019638cd03ee3d3a70f6aeca1c1935ebc93c28e"
+    },
+    {
+      "relative_path": "provenance/development_probe_p0.20/proposals.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\development_probe_p0.20\\proposals.json",
+      "bytes": 717807,
+      "sha256": "586d2746589839ac3a6ae986274d6a4cb57d2fd211487f7a5f4b085d288f1528"
+    },
+    {
+      "relative_path": "provenance/fresh_control/inference/provenance.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\provenance.json",
+      "bytes": 2225,
+      "sha256": "095e6d3249ff5a3d1be971b2e3c4331bfb31d650ba22b5701cc6ea8b9905abaa"
+    },
+    {
+      "relative_path": "provenance/fresh_control/inference/source_manifest.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\source_manifest.json",
+      "bytes": 452,
+      "sha256": "209ebf6a0734f8cb72a38d05f8e669cae3872d821a7b23ef71286cbc1c7bb09f"
+    },
+    {
+      "relative_path": "provenance/fresh_control/native_repair_receipt.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\native_baseline\\repair_receipt.json",
+      "bytes": 20211,
+      "sha256": "6c294b1c57f2b729557a4229a96850a6b5643ba6f574d641f27211e15e0648db"
+    },
+    {
+      "relative_path": "provenance/fresh_control/request.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\request.json",
+      "bytes": 39283,
+      "sha256": "53e9bd4d7db72cd716d8c6e795ca9ee0a1758ba52f06ccf7877af136bc9ea938"
+    },
+    {
+      "relative_path": "provenance/fresh_control/state.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\state.json",
+      "bytes": 15330,
+      "sha256": "0551891dd0ae3d27536163f573b1b48859800bec14192c04e0dd72c4e6666810"
+    },
+    {
+      "relative_path": "provenance/fresh_control_candidate_v2/components.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control_candidate_v2\\components.json",
+      "bytes": 96110,
+      "sha256": "8cfcea9f0c168279c47fd7f6cc5ec70a90ec935eb92820de23eadd85c8defa84"
+    },
+    {
+      "relative_path": "provenance/fresh_control_candidate_v2/contact_audit.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control_candidate_v2\\contact_audit.json",
+      "bytes": 235883,
+      "sha256": "a9b1f3c6430e1515a0cecfd4523295ce2a4e88688b5416d2bc4cbb9207637896"
+    },
+    {
+      "relative_path": "provenance/fresh_control_candidate_v2/corridors.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control_candidate_v2\\corridors.json",
+      "bytes": 5243271,
+      "sha256": "0cf10e150621e3b3760a964647dc39616fa642671361e3c1014da460afc4bbb6"
+    },
+    {
+      "relative_path": "provenance/fresh_control_candidate_v2/request.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control_candidate_v2\\request.json",
+      "bytes": 39125,
+      "sha256": "7834ab4ea18e59ee189b0b78d0704014fbb7968f6761751ed27f0048ea1e5c1f"
+    },
+    {
+      "relative_path": "provenance/fresh_control_candidate_v2/state.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control_candidate_v2\\state.json",
+      "bytes": 484,
+      "sha256": "1fa4a936ce80e0daa1a9a11310f07595f201eb758fbb825f705dad3a98930dc5"
+    },
+    {
+      "relative_path": "provenance/fresh_control_candidate_v2/summary.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control_candidate_v2\\summary.json",
+      "bytes": 11778,
+      "sha256": "446b6a22db6778bd94cebd0e041bdf439dbfdf19ae63ff50c7dfc2d4822f2edb"
+    },
+    {
+      "relative_path": "provenance/initial_package_audit_failure/failure.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\package_control.partial-57780\\failure.json",
+      "bytes": 128,
+      "sha256": "114ed0d4795a7cdb401269752513956f3e4a6a362ccadb988edecbbec9a4fd39"
+    },
+    {
+      "relative_path": "provenance/initial_package_audit_failure/plan.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\package_control.partial-57780\\plan.json",
+      "bytes": 26833,
+      "sha256": "6b41f99763f44d567ed576297710fcdbab3c691ee2cb7ac6e945ba540e8f4bde"
+    },
+    {
+      "relative_path": "provenance/package_control/continuity_receipt.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\package_control_verified\\continuity_receipt.json",
+      "bytes": 37602,
+      "sha256": "a1bc51777ae9ae95db0164f71fe48bb46acf26088e1fa24fe2f4d172dbb5fd8c"
+    },
+    {
+      "relative_path": "provenance/package_control/plan.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\package_control_verified\\plan.json",
+      "bytes": 26842,
+      "sha256": "d4f4150b4dc5bd5a7d0dd8da3d0474a491ae8047fd178b914b2b66b3dedbea11"
+    },
+    {
+      "relative_path": "provenance/package_control/progress.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\package_control_verified\\progress.json",
+      "bytes": 58,
+      "sha256": "f3aafc580ee715d8d042ac1a8b7107f4b76134d1049dc41dc07a762f8db3af07"
+    },
+    {
+      "relative_path": "results.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\results.json",
+      "bytes": 4601,
+      "sha256": "72a51cb65340373eb834f64f1e9fc1da10b751c902ee422de5c33ea030fd04b8"
+    },
+    {
+      "relative_path": "selected_policy.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\selected_policy.json",
+      "bytes": 3545,
+      "sha256": "899342b2d367ac63db2e2a9a17d50976403aca8906477bdef9c4087c373d2459"
+    },
+    {
+      "relative_path": "source/experiment/build_f0_continuity_report.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\build_f0_continuity_report.py",
+      "bytes": 25434,
+      "sha256": "c5d1a80ace47463b4ca06d04bcea265ab00a522d98f24a9a5f73bb129cbbeb52"
+    },
+    {
+      "relative_path": "source/experiment/evaluate_probability_continuity.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\evaluate_probability_continuity.py",
+      "bytes": 13233,
+      "sha256": "16c9f5fcae8753e157ee6f8f8dcfbd3396427fd5893df100e35df2722e835362"
+    },
+    {
+      "relative_path": "source/experiment/probability_continuity.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\probability_continuity.py",
+      "bytes": 14447,
+      "sha256": "ec5e4147e9b146c270c42852684043acaeacce7301557edb53fec99c66d18d86"
+    },
+    {
+      "relative_path": "source/experiment/probability_continuity_v2.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\probability_continuity_v2.py",
+      "bytes": 4354,
+      "sha256": "ddc7070fa919ed0a08b15396928e3d1503c71ab3382926500ec77ecb17393edf"
+    },
+    {
+      "relative_path": "source/experiment/probe_probability_continuity.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\probe_probability_continuity.py",
+      "bytes": 4038,
+      "sha256": "0c22bc299685161b075f722e9689fa9e6ab8919e59398624921a611f21ca0c53"
+    },
+    {
+      "relative_path": "source/experiment/record_f0_continuity_evidence.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\record_f0_continuity_evidence.py",
+      "bytes": 5785,
+      "sha256": "4e97cf10626cc4a2a1f446b2bb876190333cb8d102e17e21859a65cd819d7033"
+    },
+    {
+      "relative_path": "source/experiment/run_continuity_fresh_control.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\run_continuity_fresh_control.py",
+      "bytes": 5673,
+      "sha256": "fdcef8202d78379fa9490098bf02d7814afd4b70fdd395d4d78b2e46f83d310f"
+    },
+    {
+      "relative_path": "source/experiment_tests/test_probability_continuity.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\tests\\test_probability_continuity.py",
+      "bytes": 4494,
+      "sha256": "28c77a1ea4799ddb8a930febd306d6a3e2099ad8513b18c91cbf8cda375f6188"
+    },
+    {
+      "relative_path": "source/experiment_tests/test_probability_continuity_v2.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\tests\\test_probability_continuity_v2.py",
+      "bytes": 2056,
+      "sha256": "9164807a35c4f0dba26746f99762722dc429079d00fa55d1c394931714fe03e4"
+    },
+    {
+      "relative_path": "source/original_v1/evaluate_probability_continuity.py",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\development_candidate_v1\\source\\evaluate_probability_continuity.py",
+      "bytes": 12772,
+      "sha256": "2b06ddfd44888d6eb9671ac9b93563a831e3df9b5ecda4d408ce3c3562e9c8d5"
+    },
+    {
+      "relative_path": "source/original_v1/probability_continuity.py",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\development_candidate_v1\\source\\probability_continuity.py",
+      "bytes": 14447,
+      "sha256": "ec5e4147e9b146c270c42852684043acaeacce7301557edb53fec99c66d18d86"
+    },
+    {
+      "relative_path": "source/package/continuity.py",
+      "original_path": "D:\\work\\socratic_method\\src\\socratic_method\\continuity.py",
+      "bytes": 17839,
+      "sha256": "ee74295e32e2a6d4f56d66dcb1eecf82cca8bac5289a917a1e1e5e5d345d23e8"
+    },
+    {
+      "relative_path": "source/package/continuity_core.py",
+      "original_path": "D:\\work\\socratic_method\\src\\socratic_method\\continuity_core.py",
+      "bytes": 15446,
+      "sha256": "4736b2e37d572ae2b28b852e5639a63eb95c99edea1aab03dc44846483176de0"
+    },
+    {
+      "relative_path": "source/package/continuity_paths.py",
+      "original_path": "D:\\work\\socratic_method\\src\\socratic_method\\continuity_paths.py",
+      "bytes": 4614,
+      "sha256": "6fd22c5dbccee8b0c393d8a1d5a5e804976dbb6cb298baea46f23e225f09c541"
+    },
+    {
+      "relative_path": "source/package_tests/test_continuity.py",
+      "original_path": "D:\\work\\socratic_method\\tests\\test_continuity.py",
+      "bytes": 9096,
+      "sha256": "75c122b4fe168d2fc609e11a6524394a06eba4327d8a797ea9bd32e5450b501b"
+    },
+    {
+      "relative_path": "source/package_tests/test_continuity_core.py",
+      "original_path": "D:\\work\\socratic_method\\tests\\test_continuity_core.py",
+      "bytes": 4557,
+      "sha256": "3478c1a4be1729f990a40f45ab020882bab846c88438ab95fe378ede36d6b7db"
+    },
+    {
+      "relative_path": "source/package_tests/test_continuity_paths.py",
+      "original_path": "D:\\work\\socratic_method\\tests\\test_continuity_paths.py",
+      "bytes": 2073,
+      "sha256": "ba646145057c247eec8057d85c0016aa836d222adbabf74d0a0116d8dbb03dc0"
+    },
+    {
+      "relative_path": "source/repository/README.md",
+      "original_path": "D:\\work\\socratic_method\\README.md",
+      "bytes": 6612,
+      "sha256": "364fe4678cbd3b06edc4ebc3bc69d6cf02b406da78b90d3e680dec125e967842"
+    },
+    {
+      "relative_path": "source/repository/docs/continuity.md",
+      "original_path": "D:\\work\\socratic_method\\docs\\continuity.md",
+      "bytes": 4990,
+      "sha256": "7e1b43c439b6442c032a790a8333e64acb6166a29cd48ac8dee3573756a47e09"
+    },
+    {
+      "relative_path": "source/repository/pyproject.toml",
+      "original_path": "D:\\work\\socratic_method\\pyproject.toml",
+      "bytes": 1511,
+      "sha256": "60a50ea51a8e229d63bc5fd8105c2f7932dcd65b4176336225b4f9ea18ff07ff"
+    },
+    {
+      "relative_path": "verification.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\verification.json",
+      "bytes": 14040,
+      "sha256": "8f858ef8d7935ccef8607a86135fea48005d08f72d7daf36bd392b75fd345094"
+    },
+    {
+      "relative_path": "visual_review.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\visual_review.json",
+      "bytes": 2987,
+      "sha256": "2b94c20604e46a0d60f14075b275123538caf303dc267e80a9ac715d9a701c8b"
+    }
+  ],
+  "verified_utc": "2026-09-07T20:34:27.857966+00:00",
+  "local_report": {
+    "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\index.html",
+    "bytes": 30596,
+    "sha256": "670c2373c65cbe00c94bd7fc0499f54f0e079e84686e02f4f6f03beb40cb71f5"
+  },
+  "model_and_image_arrays_copied": false,
+  "git_commit_or_public_upload": false
+}

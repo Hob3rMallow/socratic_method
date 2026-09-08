@@ -1,0 +1,129 @@
+{
+  "arm_id": "M7TTA",
+  "arm_score_macro": 0.5925770672592173,
+  "audit_tta": true,
+  "best_checkpoint": "D:\\work\\vesuvius-c\\output\\crossres_data\\unified_ladder_20260902\\baselines\\m7_tta\\checkpoint_milestone_00000000.pt",
+  "best_milestone": 0,
+  "blind_report": "D:\\work\\vesuvius-c\\output\\crossres_data\\unified_ladder_20260902\\baselines\\m7_tta\\ladder_eval\\blind_report_00000000",
+  "calibrated_threshold": 0.19999998807907104,
+  "ceiling_diagnostic": null,
+  "created": "2026-09-01T22:21:55",
+  "gate_verdicts": {
+    "calibrated": {
+      "blob_score": 2.5,
+      "dice_vs_reference": 0.5782206628533181,
+      "fg_lower_advisory": false,
+      "fg_lower_pass": true,
+      "fg_upper_pass": true,
+      "foreground_ratio_vs_reference": 1.040309581929776,
+      "interior_pass": false,
+      "passed": false,
+      "recall_vs_reference": 0.5898745794447058,
+      "thickness_pass": false,
+      "threshold": 0.2
+    },
+    "fixed": {
+      "blob_score": 0.0,
+      "dice_vs_reference": 0.35563727250864363,
+      "fg_lower_advisory": false,
+      "fg_lower_pass": false,
+      "fg_upper_pass": true,
+      "foreground_ratio_vs_reference": 0.31108116173329436,
+      "interior_pass": true,
+      "passed": false,
+      "recall_vs_reference": 0.23313466419814635,
+      "thickness_pass": true,
+      "threshold": 0.45
+    }
+  },
+  "kaggle": {
+    "p0500p2_val": {
+      "calibrated": {
+        "mean_elapsed_s": 15.14624999999999,
+        "mean_leaderboard": 0.5014585937500002,
+        "mean_surface_dice": 0.7212727937500002,
+        "mean_topoF1_0": 0.31633379062499983,
+        "mean_topoF1_1": 0.0008250093749999999,
+        "mean_topoF1_2": 0.12217838607594927,
+        "mean_toposcore": 0.16060201562500004,
+        "mean_voi_merge": 1.0027566625000002,
+        "mean_voi_score": 0.5738071968749998,
+        "mean_voi_split": 1.5216821968750003,
+        "mean_voi_total": 2.524438868749999,
+        "n_cases": 320,
+        "threshold": 0.19999998807907104
+      },
+      "fixed": {
+        "mean_elapsed_s": 15.0334375,
+        "mean_leaderboard": 0.48115015937499994,
+        "mean_surface_dice": 0.6953464718749995,
+        "mean_topoF1_0": 0.3054990687499999,
+        "mean_topoF1_1": 0.001012262500000001,
+        "mean_topoF1_2": 0.03462529069767443,
+        "mean_toposcore": 0.14938946874999998,
+        "mean_voi_merge": 1.0800769499999991,
+        "mean_voi_score": 0.5513202125000001,
+        "mean_voi_split": 1.684519600000002,
+        "mean_voi_total": 2.7645965343749994,
+        "n_cases": 320,
+        "threshold": 0.45
+      },
+      "rows": 320
+    },
+    "v14p2_val": {
+      "calibrated": {
+        "mean_elapsed_s": 10.279245283018863,
+        "mean_leaderboard": 0.6162138040638608,
+        "mean_surface_dice": 0.8368682539912917,
+        "mean_topoF1_0": 0.6198163060029293,
+        "mean_topoF1_1": 0.027824578313252996,
+        "mean_topoF1_2": 0.17293755319148935,
+        "mean_toposcore": 0.3776448287373004,
+        "mean_voi_merge": 1.1146066937590706,
+        "mean_voi_score": 0.6000469811320759,
+        "mean_voi_split": 1.1853135457184334,
+        "mean_voi_total": 2.2999202249637127,
+        "n_cases": 689,
+        "threshold": 0.19999998807907104
+      },
+      "fixed": {
+        "mean_elapsed_s": 10.38113207547171,
+        "mean_leaderboard": 0.5891154136429614,
+        "mean_surface_dice": 0.7847734455732942,
+        "mean_topoF1_0": 0.5825716998535883,
+        "mean_topoF1_1": 0.01938221043771043,
+        "mean_topoF1_2": 0.0,
+        "mean_toposcore": 0.348813168359942,
+        "mean_voi_merge": 1.339638156748911,
+        "mean_voi_score": 0.599430686502177,
+        "mean_voi_split": 0.9824048084179975,
+        "mean_voi_total": 2.322042988388971,
+        "n_cases": 689,
+        "threshold": 0.45
+      },
+      "rows": 689
+    }
+  },
+  "lowest_fg_upper_passing_threshold": 0.16,
+  "milestone_audits": {
+    "0": {
+      "calibrated_threshold": 0.19999998807907104,
+      "macro_scroll_dice": 0.5925770672592173,
+      "minimum_scroll_dice_gain": 0.017519704151500726,
+      "scrolls": {
+        "PHerc0814": {
+          "dice": 0.6069535969007659,
+          "dice_gain_vs_baseline": 0.017519704151500726
+        },
+        "PHerc1451": {
+          "dice": 0.5782005376176688,
+          "dice_gain_vs_baseline": 0.026413897528615338
+        }
+      }
+    }
+  },
+  "report_tta": true,
+  "run_dir": "D:\\work\\vesuvius-c\\output\\crossres_data\\unified_ladder_20260902\\baselines\\m7_tta",
+  "schema": "crossres-unified-ladder-arm-evaluation-v1",
+  "soft_arm": false
+}

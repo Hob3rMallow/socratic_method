@@ -1,0 +1,222 @@
+{
+  "added_2d_strokes": 97,
+  "added_3d_components": 65,
+  "block": "control",
+  "detached_2d_strokes": 0,
+  "interpretation": "Independent geometric contact diagnostics, not anatomical labels or a proof that all multi-join paths preserve wrap identity.",
+  "maximum_axial_span_planes": 7,
+  "maximum_radial_span_px": 8.542360825364085,
+  "multiway_2d_strokes": 0,
+  "planes": 384,
+  "schema": "f0-independent-repair-contact-audit-v1",
+  "worst_case_chain_images": [
+    {
+      "bounds_world_zyx": [
+        [
+          12828,
+          12833
+        ],
+        [
+          4268,
+          4277
+        ],
+        [
+          3434,
+          3443
+        ]
+      ],
+      "component": 40,
+      "image": "chain_0040.png",
+      "radial_span_px": 8.542360825364085,
+      "view_center_local": [
+        158,
+        303,
+        238
+      ],
+      "voxels": 68,
+      "z_span": 5
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          13043,
+          13050
+        ],
+        [
+          4140,
+          4149
+        ],
+        [
+          3540,
+          3548
+        ]
+      ],
+      "component": 65,
+      "image": "chain_0065.png",
+      "radial_span_px": 8.090152234614152,
+      "view_center_local": [
+        374,
+        178,
+        341
+      ],
+      "voxels": 121,
+      "z_span": 7
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12692,
+          12695
+        ],
+        [
+          4180,
+          4187
+        ],
+        [
+          3461,
+          3468
+        ]
+      ],
+      "component": 4,
+      "image": "chain_0004.png",
+      "radial_span_px": 7.333456660781053,
+      "view_center_local": [
+        22,
+        212,
+        263
+      ],
+      "voxels": 37,
+      "z_span": 3
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          13039,
+          13042
+        ],
+        [
+          4147,
+          4152
+        ],
+        [
+          3540,
+          3548
+        ]
+      ],
+      "component": 63,
+      "image": "chain_0063.png",
+      "radial_span_px": 5.467796276907848,
+      "view_center_local": [
+        368,
+        181,
+        343
+      ],
+      "voxels": 62,
+      "z_span": 3
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12835,
+          12837
+        ],
+        [
+          4300,
+          4304
+        ],
+        [
+          3424,
+          3431
+        ]
+      ],
+      "component": 43,
+      "image": "chain_0043.png",
+      "radial_span_px": 4.821552500142843,
+      "view_center_local": [
+        163,
+        334,
+        229
+      ],
+      "voxels": 28,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12751,
+          12754
+        ],
+        [
+          4340,
+          4345
+        ],
+        [
+          3389,
+          3395
+        ]
+      ],
+      "component": 16,
+      "image": "chain_0016.png",
+      "radial_span_px": 4.795019004669484,
+      "view_center_local": [
+        80,
+        374,
+        190
+      ],
+      "voxels": 39,
+      "z_span": 3
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12780,
+          12783
+        ],
+        [
+          4184,
+          4190
+        ],
+        [
+          3221,
+          3225
+        ]
+      ],
+      "component": 28,
+      "image": "chain_0028.png",
+      "radial_span_px": 4.770978772869512,
+      "view_center_local": [
+        109,
+        219,
+        22
+      ],
+      "voxels": 23,
+      "z_span": 3
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12806,
+          12809
+        ],
+        [
+          4344,
+          4351
+        ],
+        [
+          3250,
+          3262
+        ]
+      ],
+      "component": 38,
+      "image": "chain_0038.png",
+      "radial_span_px": 4.455220259260614,
+      "view_center_local": [
+        135,
+        380,
+        55
+      ],
+      "voxels": 102,
+      "z_span": 3
+    }
+  ]
+}

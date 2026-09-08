@@ -1,0 +1,4 @@
+{
+  "status": "failed_or_interrupted",
+  "error": "ValueError('addition does not touch exactly two baseline components')"
+}

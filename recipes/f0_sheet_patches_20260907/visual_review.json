@@ -1,0 +1,208 @@
+{
+  "all_patch_cards_manually_inspected": false,
+  "all_patches_numerically_audited": 189,
+  "diagnostic_cards_inspected": [
+    {
+      "bytes": 119642,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\development_probe_v1\\assets\\seed_01934_ct_profile.png",
+      "sha256": "47d38b2c355eb10ea43e22197fa4c3987cfed467ec716a25a9b03e526f7d89d7"
+    },
+    {
+      "bytes": 116403,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\development_probe_v1\\assets\\seed_01039_ct_profile.png",
+      "sha256": "d85ff9e347b50ef6ec71be4f4286f4d3f2c2d497bf524d786bc72a3a00600763"
+    },
+    {
+      "bytes": 115961,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\development_probe_v2\\assets\\seed_01039_ct_profile.png",
+      "sha256": "4d3022490a47baffd56a92fe80f0542ec1ebdbbeaccf4eff48b10c522dd8bb51"
+    },
+    {
+      "bytes": 108698,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\development_probe_v2\\assets\\seed_03671_ct_profile.png",
+      "sha256": "6b71acefb2a555ca310d43905d3312322f7262f2250055b37eae7ef4c81d8479"
+    },
+    {
+      "bytes": 118193,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\development_probe_v3\\assets\\seed_03752_ct_profile.png",
+      "sha256": "2a16f5a8e335e1c877ba658366d0efb6ca3ff1f1a211a341d483ae97550cd7b5"
+    },
+    {
+      "bytes": 124602,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\competition_probe_v2\\assets\\seed_03752_side_+1.png",
+      "sha256": "78e557da35c3a5e7be6ca1ea991584c7d51b36b922696d19331f4e845ccc4624"
+    }
+  ],
+  "full_field_planes_inspected": [
+    {
+      "bytes": 268834,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\development_growth_v2\\assets\\overview_z12192.png",
+      "sha256": "fc965a48b91d40fbcc9268c5810bd2a048646870c4f5909825f0b2ee4070aa3e"
+    },
+    {
+      "bytes": 280203,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\report_assets\\development_overview_Y4032.png",
+      "sha256": "055ce2183f7e6b899a7be6cf055e9d648db3963a0e381c8de0ba9a569f055edc"
+    },
+    {
+      "bytes": 311568,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\report_assets\\development_overview_X3136.png",
+      "sha256": "19996c9d764c89c1397d2b26e8aa4015cd04116a1f74b7f4afac7b19613f0d53"
+    },
+    {
+      "bytes": 370559,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\report_assets\\fresh_overview_Z12864.png",
+      "sha256": "f76521441f102798068288153520915148c3793cd2303ae998f6924870a2961a"
+    },
+    {
+      "bytes": 334946,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\report_assets\\fresh_overview_Y4672.png",
+      "sha256": "91db025045074317c118d26a53df15672b90eef73cfae7594388323b76f7b9ed"
+    },
+    {
+      "bytes": 327476,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\report_assets\\fresh_overview_X2752.png",
+      "sha256": "79cf71013cae54b25ffd14047410f9002f14111a5ce36a2ef05d91918b5bd0f9"
+    }
+  ],
+  "method": "Direct view_image inspection of CT-aligned numerical PNGs; no functioning in-app browser backend",
+  "no_visual_assessment_based_tuning": true,
+  "observations": [
+    "Development patch 5 shows curved continuation through a missing arch across Z, Y and X; compatible with local CT, not ground-truth-certified.",
+    "Development 4, 7, 26, 37, 42, 50 and 70 show local continuations or missing ribbons; larger old foreground and holes remain unchanged.",
+    "Development 68/100 and fresh 7/25/30/48 are useful crowded/neighbor-modeled examples but still require anatomical adjudication; oblique intersections can look broad or stepped.",
+    "Fresh 1/2/3/4/20/23/38/77 mostly extend existing curving tracks; improvements are local rather than wholesale filling of missing sheets.",
+    "Full-field planes show sparse selective additions, not a global expansion of every mask boundary.",
+    "The real component-301 diagnostic remains ambiguous; its final three seeds are refused. High alternative-cost margins do not resolve its identity.",
+    "No blinded human anatomical labels or local GT precision are available. Visual compatibility is not proof of correct sheet assignment."
+  ],
+  "patch_cards_inspected": [
+    {
+      "bytes": 113652,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\development_growth_v2\\assets\\patch_0004.png",
+      "sha256": "d1d851312a5daac289f7d14eced0a5b88392c77ad8491831ba6354049e19127d"
+    },
+    {
+      "bytes": 111945,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\development_growth_v2\\assets\\patch_0005.png",
+      "sha256": "2a1cd42ff80334988630397367cad9833ed9b753eb0dbc91fef20cc20eeba9c7"
+    },
+    {
+      "bytes": 112100,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\development_growth_v2\\assets\\patch_0007.png",
+      "sha256": "a4c75fcb5e7d00ad975b34b89e218d1b84a26e115a3a740d5f7386f53f9f66c2"
+    },
+    {
+      "bytes": 111810,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\development_growth_v2\\assets\\patch_0026.png",
+      "sha256": "4e1560ef37000215f7147caa46c478fde994ddaf5031cef52ad4850c6ddce563"
+    },
+    {
+      "bytes": 115643,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\development_growth_v2\\assets\\patch_0037.png",
+      "sha256": "a119f748f6c7cbee6096f86732570466c6daf95342a9e207d93e19dbb4fc573d"
+    },
+    {
+      "bytes": 109993,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\development_growth_v2\\assets\\patch_0042.png",
+      "sha256": "f169e420445e69879d8ba9b4e408852f8f8078db8a5695d0528fdd8e0ed0dae7"
+    },
+    {
+      "bytes": 121022,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\development_growth_v2\\assets\\patch_0050.png",
+      "sha256": "a05fc45cd672520e0049cbf16539cafdc9ea69fa5da16604aec9fb6ba773b4e1"
+    },
+    {
+      "bytes": 124180,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\development_growth_v2\\assets\\patch_0068.png",
+      "sha256": "eba4f6801c9010bd5aa71222707807617a8f0b39c46971e1e1d2511287737c5a"
+    },
+    {
+      "bytes": 127627,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\development_growth_v2\\assets\\patch_0070.png",
+      "sha256": "e01e2bd3473f613dbfc569ea17af9f2003f87238002c0baaf82e413cdcb59bf4"
+    },
+    {
+      "bytes": 118343,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\development_growth_v2\\assets\\patch_0100.png",
+      "sha256": "72259e7d2282b23e5f25e84f5e56c3191091605a97e28b73cca79e9fb3486be2"
+    },
+    {
+      "bytes": 118820,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\development_growth_v2\\assets\\patch_0105.png",
+      "sha256": "99aa9b78fb2b115b5205ab5495d55e26abc3bba7e86e1b63880ab8866b4a82eb"
+    },
+    {
+      "bytes": 115919,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\development_growth_v1\\assets\\patch_0001.png",
+      "sha256": "ee817ce68d8f401723e32b9cc3803fd2ef9a3a3bff3500a8ba0592c3b3cb5cf0"
+    },
+    {
+      "bytes": 112670,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\development_growth_v1\\assets\\patch_0002.png",
+      "sha256": "93038c6a80ae17e56ac12a4b18f6feb70c4f3a84e24002dc24e3ef1654db2589"
+    },
+    {
+      "bytes": 133341,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\report_assets\\fresh_patch_0001.png",
+      "sha256": "ddab84c54a624abf103c138c11d0cc013dd1903f873472efadd5d99c973e812a"
+    },
+    {
+      "bytes": 139747,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\report_assets\\fresh_patch_0002.png",
+      "sha256": "29176892a0cfada3b66210b6becf7c238ccc44798bc27d1176998190ca6114ff"
+    },
+    {
+      "bytes": 136246,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\report_assets\\fresh_patch_0003.png",
+      "sha256": "1afd8b2095c11713f9fe110b7ecdf1a98660d4c292d4773ebc14511ddfee82b9"
+    },
+    {
+      "bytes": 139763,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\report_assets\\fresh_patch_0004.png",
+      "sha256": "8e2374d46f8cff76a36293df98edca6ee389dbc38c9f0611a8450415ea32f795"
+    },
+    {
+      "bytes": 132665,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\report_assets\\fresh_patch_0007.png",
+      "sha256": "49b3c7161636823c86264e370466f3b5ca11006380114104ca869732368a4cd0"
+    },
+    {
+      "bytes": 129949,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\report_assets\\fresh_patch_0020.png",
+      "sha256": "6b1da8734e2df102c90f93c1148810e0a10fb0e620fc5aa5aa8a5663ac742be8"
+    },
+    {
+      "bytes": 140549,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\report_assets\\fresh_patch_0023.png",
+      "sha256": "7a01affcc251aac314673eae9fbdb046c3f726f09af57b508eb821a02cb9f012"
+    },
+    {
+      "bytes": 126254,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\report_assets\\fresh_patch_0025.png",
+      "sha256": "740a05cb284d4e45ff11d2b26b6b52d46b47e0147a83c9af2fda9ad030e6e76e"
+    },
+    {
+      "bytes": 131575,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\report_assets\\fresh_patch_0030.png",
+      "sha256": "b653c2603428998c4f14627b45c5b3f60159584db8fe76be5e46f7dcefe825ba"
+    },
+    {
+      "bytes": 136220,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\report_assets\\fresh_patch_0038.png",
+      "sha256": "cd213ea0adbcd9c4447e07ba0f1bb2ab967de5106c5595b1e9ab04639923688f"
+    },
+    {
+      "bytes": 129459,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\report_assets\\fresh_patch_0048.png",
+      "sha256": "0df6dd26f6832e453b7023d805b95bd78e0c32e2d76b41f2aa4fdaed749acf1d"
+    },
+    {
+      "bytes": 140899,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\report_assets\\fresh_patch_0077.png",
+      "sha256": "45c4e49fea06eed3daae5d9b92f3069c01a8f559d152fefcf550f2a6888f21b7"
+    }
+  ],
+  "reviewed_utc": "2026-09-07T22:19:47.230039+00:00",
+  "schema": "f0-sheet-visual-review-v1"
+}

@@ -1,0 +1,12 @@
+{
+  "at_utc": "2026-09-07T09:43:24.613303+00:00",
+  "committed_samples": 250000,
+  "config_sha256": "af9d74dbf9f4c0fc978d6b9756fc92f6750fec211705c08be0a05e970c496cbc",
+  "learning_rate": 0.0,
+  "nonfinite_loss": false,
+  "snapshot_samples": 250000,
+  "stage": "operator_review_pause",
+  "total_samples": 250000,
+  "train_loss": 0.7916000167195069,
+  "validated_intervals": 25
+}

@@ -1,0 +1,547 @@
+{
+  "schema": "f0-sheet-official-evidence-v1",
+  "files": [
+    {
+      "relative_path": "PLAN.md",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\PLAN.md",
+      "bytes": 3572,
+      "sha256": "7ccc0e7f19cb83917dd0221af25af01665e185d8945f529534c689dd2b37e990"
+    },
+    {
+      "relative_path": "README.md",
+      "original_path": "D:\\work\\socratic_method\\recipes\\f0_sheet_patches_20260907\\README.md",
+      "bytes": 3822,
+      "sha256": "c5d11ca03fa6f76c2ee7654db9585ddf8de3eb943132b68a2fe0aab49ed72257"
+    },
+    {
+      "relative_path": "assessment_check_only_plan.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\assessment_check_only_plan.json",
+      "bytes": 43076,
+      "sha256": "eb2272f919bfb6d676ea21095630c6f42181b5cc38557961d209d157db2354ad"
+    },
+    {
+      "relative_path": "assessment_execution_request.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\assessment_execution_request.json",
+      "bytes": 1022,
+      "sha256": "8d30ed0cd6ed7784e40f7d734bd55d3eb5a939d0f3c90f98083c97f7bee8bdce"
+    },
+    {
+      "relative_path": "decision.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\decision.json",
+      "bytes": 1631,
+      "sha256": "4320d3cc06afbbd33ca260790f5fe5c9a85298e0c8158fcfefbe48814dcafaef"
+    },
+    {
+      "relative_path": "external_report_assets.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\external_report_assets.json",
+      "bytes": 153143,
+      "sha256": "8774e6500e69305658940d444b2566fb90158cf5f058181ed9d12f2b08d272e8"
+    },
+    {
+      "relative_path": "growth_tests_v2.xml",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\growth_tests_v2.xml",
+      "bytes": 7251,
+      "sha256": "1ca858f4f4bbf95dd3c0cd307cd6662d9c1044864566db6f99a9b1c8a8670f8d"
+    },
+    {
+      "relative_path": "independent_contact_audit.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\independent_contact_audit.json",
+      "bytes": 746,
+      "sha256": "0269a2a0eddc995949192bcce92a596f408ec3c267e2cb291eb05a7d72209c72"
+    },
+    {
+      "relative_path": "package_tests.xml",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\package_tests.xml",
+      "bytes": 9296,
+      "sha256": "f7de707ef0632dde33924e6dd91c0d90da07eb009f4f466f5afd85363158bb44"
+    },
+    {
+      "relative_path": "package_tests_final.xml",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\package_tests_final.xml",
+      "bytes": 18465,
+      "sha256": "a28e7cbb6ea8154c72b8be1330700b9e748ed0e272d4fd43ae0b44134c6509d7"
+    },
+    {
+      "relative_path": "provenance/competition_probe_v1/request.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\competition_probe_v1\\request.json",
+      "bytes": 1465,
+      "sha256": "ed9d7c3a7c9f8dd89e471dffb8c32f2e5550ba6c61a9480d141df678b08c64b1"
+    },
+    {
+      "relative_path": "provenance/competition_probe_v1/results.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\competition_probe_v1\\results.json",
+      "bytes": 8165,
+      "sha256": "943024e0a3ae3adadfedb042cef71281fd0663c84f7a2b97b9a50e489a5dff2a"
+    },
+    {
+      "relative_path": "provenance/competition_probe_v2/request.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\competition_probe_v2\\request.json",
+      "bytes": 1471,
+      "sha256": "e7f47a13d1a4881cd4439e981a5afdfede48fc0213ac99320d06e8442aef6a5f"
+    },
+    {
+      "relative_path": "provenance/competition_probe_v2/results.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\competition_probe_v2\\results.json",
+      "bytes": 9346,
+      "sha256": "0699121d6f01e9783d0f04430346a8cbcd4c337d654d73f1708527824522907f"
+    },
+    {
+      "relative_path": "provenance/development_growth_v1/failure.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\development_growth_v1\\failure.json",
+      "bytes": 536,
+      "sha256": "0bf47db85db9bcbc1014aede94235b0bd410a36da86b9eea5a3c96c62b4d3edb"
+    },
+    {
+      "relative_path": "provenance/development_growth_v1/request.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\development_growth_v1\\request.json",
+      "bytes": 11107,
+      "sha256": "f615a1691b1c39bdebf68be7d07dae5470c961361eda961bdf9b19bd0dafe60a"
+    },
+    {
+      "relative_path": "provenance/development_growth_v1/state.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\development_growth_v1\\state.json",
+      "bytes": 202,
+      "sha256": "3d7dbd9563b88d7cd7c5baf2d4d989cba7dd1bf9d63c72cd38098615d5b454a6"
+    },
+    {
+      "relative_path": "provenance/development_growth_v2/independent_audit.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\development_growth_v2\\independent_audit.json",
+      "bytes": 36325,
+      "sha256": "97a0bb9bf5a97a26c7c8f99d6f44c0ccb65d7f34b234ffe9461a385091178699"
+    },
+    {
+      "relative_path": "provenance/development_growth_v2/ledger.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\development_growth_v2\\ledger.json",
+      "bytes": 1360367,
+      "sha256": "81ce40b4e7ad60c45acc19521083270ed9d84eda6400835ea7183016e2fbc5cc"
+    },
+    {
+      "relative_path": "provenance/development_growth_v2/patches.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\development_growth_v2\\patches.json",
+      "bytes": 1267782,
+      "sha256": "af281c31d26c5c0711fd8496f0dff58d5c25f4335b9cd65e0e470fd4812638f9"
+    },
+    {
+      "relative_path": "provenance/development_growth_v2/request.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\development_growth_v2\\request.json",
+      "bytes": 11113,
+      "sha256": "5616966984bbde17e73a9a107b683356970c176494e74649e6cd3b39941efa31"
+    },
+    {
+      "relative_path": "provenance/development_growth_v2/state.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\development_growth_v2\\state.json",
+      "bytes": 166,
+      "sha256": "d1fd902cae853cd0850c7d42913b52439cf614e09703bbb1f9964c1a80f62784"
+    },
+    {
+      "relative_path": "provenance/development_growth_v2/summary.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\development_growth_v2\\summary.json",
+      "bytes": 10836,
+      "sha256": "136e90d166b62cb918aba8c77c2520a79a49e85a34916b79f44215bd59416a43"
+    },
+    {
+      "relative_path": "provenance/development_probe_v1/request.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\development_probe_v1\\request.json",
+      "bytes": 1074,
+      "sha256": "3bb7da9bf70ee0bfad0eaa9a9c3a570b63e192b3cba7c79c49997fa99fecfb58"
+    },
+    {
+      "relative_path": "provenance/development_probe_v1/results.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\development_probe_v1\\results.json",
+      "bytes": 144798,
+      "sha256": "78514cb8c6ed8ae88f884f864b64ff2b9e0272b83af7f9ee01f24123f5abf0ff"
+    },
+    {
+      "relative_path": "provenance/development_probe_v2/request.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\development_probe_v2\\request.json",
+      "bytes": 1077,
+      "sha256": "7719f40d836ace5a32538530a082ca88910151abed8c8fb67261054030e6c95a"
+    },
+    {
+      "relative_path": "provenance/development_probe_v2/results.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\development_probe_v2\\results.json",
+      "bytes": 145035,
+      "sha256": "db25e268d2d7e4643a98cc927b86697118c2255387ebbddda41bb1efcf5b9afb"
+    },
+    {
+      "relative_path": "provenance/development_probe_v3/request.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\development_probe_v3\\request.json",
+      "bytes": 1077,
+      "sha256": "460d319ce645c2f65e9f6bfe31f07cabc321ff852692c008e12a2aa3b62a0eb8"
+    },
+    {
+      "relative_path": "provenance/development_probe_v3/results.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\development_probe_v3\\results.json",
+      "bytes": 226889,
+      "sha256": "3518fc615f57432ce0f201153290c3efb62ac60c29f9f4ab26d986b1ffbe956c"
+    },
+    {
+      "relative_path": "provenance/fresh_assessment/continuity_v2/continuity_receipt.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\fresh_assessment\\continuity_v2\\continuity_receipt.json",
+      "bytes": 38115,
+      "sha256": "1cd9f7e24758fd7445b6348b8f28d1fe886023415c691caf5b73e1b8c121d7dd"
+    },
+    {
+      "relative_path": "provenance/fresh_assessment/continuity_v2/corridors.jsonl",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\fresh_assessment\\continuity_v2\\corridors.jsonl",
+      "bytes": 4014442,
+      "sha256": "738fbaae3a129b91f1e071c655012a31a6d494045565209ffd4442bbb22a06c9"
+    },
+    {
+      "relative_path": "provenance/fresh_assessment/inference/provenance.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\fresh_assessment\\inference\\provenance.json",
+      "bytes": 2225,
+      "sha256": "1fb52465e2c48b38425dd434613a114c101fdd8d6fa19c47194a3d7ce27ef51e"
+    },
+    {
+      "relative_path": "provenance/fresh_assessment/inference/source_manifest.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\fresh_assessment\\inference\\source_manifest.json",
+      "bytes": 452,
+      "sha256": "209ebf6a0734f8cb72a38d05f8e669cae3872d821a7b23ef71286cbc1c7bb09f"
+    },
+    {
+      "relative_path": "provenance/fresh_assessment/native_baseline/repair_receipt.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\fresh_assessment\\native_baseline\\repair_receipt.json",
+      "bytes": 20432,
+      "sha256": "8bd0df75f40cb3d64588f84a4fcb4290749a36b4a538ed561eb7fba1687aae6d"
+    },
+    {
+      "relative_path": "provenance/fresh_assessment/request.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\fresh_assessment\\request.json",
+      "bytes": 31203,
+      "sha256": "23c7ce886ac4ff137a59bb511eb86b9f9c915adad38eaf07f58a15603ec568f0"
+    },
+    {
+      "relative_path": "provenance/fresh_assessment/state.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\fresh_assessment\\state.json",
+      "bytes": 15310,
+      "sha256": "c1dc40328faa707a4d5bb7924ee75c912f5a226f0d55c331f64400e07279eddd"
+    },
+    {
+      "relative_path": "provenance/fresh_assessment_growth/independent_audit.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\fresh_assessment_growth\\independent_audit.json",
+      "bytes": 27921,
+      "sha256": "8b0b9490e3b8a205668f9f9b9037af44f8d8431f07008026e731277556cd44a4"
+    },
+    {
+      "relative_path": "provenance/fresh_assessment_growth/ledger.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\fresh_assessment_growth\\ledger.json",
+      "bytes": 1156916,
+      "sha256": "3e798e2182888d30e00cc02853dc77e0cee8d2a91766ebed805b4cbb5d895ff8"
+    },
+    {
+      "relative_path": "provenance/fresh_assessment_growth/patches.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\fresh_assessment_growth\\patches.json",
+      "bytes": 1031200,
+      "sha256": "ac00fa90f885c0ff64d66cff86f62d9f1244bf39677e82a1c4c27e98e32633a3"
+    },
+    {
+      "relative_path": "provenance/fresh_assessment_growth/request.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\fresh_assessment_growth\\request.json",
+      "bytes": 43938,
+      "sha256": "93fd9fcd666531de7685e0fd34a19d3ed6d69daf16645a9f06af96d5f72476d8"
+    },
+    {
+      "relative_path": "provenance/fresh_assessment_growth/state.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\fresh_assessment_growth\\state.json",
+      "bytes": 103,
+      "sha256": "ad4befcc376cb7a0bbd9a929195a63dcee308997dbb7583f3fde2825e29d1b4a"
+    },
+    {
+      "relative_path": "provenance/fresh_assessment_growth/summary.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\fresh_assessment_growth\\summary.json",
+      "bytes": 11116,
+      "sha256": "a6f617d524178c2d44389849f052703d4a61e128fe0e84ea382344d0babe177d"
+    },
+    {
+      "relative_path": "provenance/package_development/receipt.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\package_development_verified\\receipt.json",
+      "bytes": 9295,
+      "sha256": "526f1480c76ece359e0b80427d91bbf391b5af8870f882121c966f0042c50c39"
+    },
+    {
+      "relative_path": "report_integrity_inputs.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\report_integrity_inputs.json",
+      "bytes": 4395,
+      "sha256": "abea05640113c1829b4ae44e06dfcba8757f11740438b4011122a97723d24e0c"
+    },
+    {
+      "relative_path": "results.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\results.json",
+      "bytes": 98885,
+      "sha256": "e9b4fadabcba4900073bd2342e37e74898f7b526953cf322f55ccc66ddc9d2fc"
+    },
+    {
+      "relative_path": "selected_policy.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\selected_policy.json",
+      "bytes": 33390,
+      "sha256": "6c388a8dfbf813bcc148e611e4e33da1db3f30fe213dae76a76338abd313f688"
+    },
+    {
+      "relative_path": "source/experiment/audit_sheet_contacts.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\audit_sheet_contacts.py",
+      "bytes": 2786,
+      "sha256": "ce76aa0039c84c175bf51d001c9ad165ffe568e3deed15845b75017d14bec71c"
+    },
+    {
+      "relative_path": "source/experiment/audit_sheet_patch_outputs.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\audit_sheet_patch_outputs.py",
+      "bytes": 8328,
+      "sha256": "6a2be8108565ebd65e452f2c1598d896e4053a0ca85076f39a25971925ec6c6f"
+    },
+    {
+      "relative_path": "source/experiment/build_sheet_patch_report.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\build_sheet_patch_report.py",
+      "bytes": 22528,
+      "sha256": "a44d08990217ee9fc2b20c087bb15e5b095b256c1644c586abb13389699231fd"
+    },
+    {
+      "relative_path": "source/experiment/evaluate_sheet_patch_growth.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\evaluate_sheet_patch_growth.py",
+      "bytes": 11468,
+      "sha256": "9ebd199e5c67b2f67213e1d9ac39b9df08d513c5927742dc55c869938c744648"
+    },
+    {
+      "relative_path": "source/experiment/evaluate_sheet_patch_growth_v2.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\evaluate_sheet_patch_growth_v2.py",
+      "bytes": 11477,
+      "sha256": "c4364c7bb746d69cb83302fe0246e39710b0e66123497a87657dc623a4843a2a"
+    },
+    {
+      "relative_path": "source/experiment/finalize_sheet_evidence.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\finalize_sheet_evidence.py",
+      "bytes": 8069,
+      "sha256": "351b3af75662520a6a261097ac2c820af162f0fb6046bb546af9e123b2b6aa50"
+    },
+    {
+      "relative_path": "source/experiment/probe_sheet_competition.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\probe_sheet_competition.py",
+      "bytes": 5942,
+      "sha256": "6f14cb2676a38849f52969800fad0584b0facff0cffe681f7b399e87a350761e"
+    },
+    {
+      "relative_path": "source/experiment/probe_sheet_competition_v2.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\probe_sheet_competition_v2.py",
+      "bytes": 5951,
+      "sha256": "e9bda98efb75d747958475a4eeb30e5827c391d34cbb25f7f16cc8376f75dad2"
+    },
+    {
+      "relative_path": "source/experiment/probe_sheet_patches.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\probe_sheet_patches.py",
+      "bytes": 5036,
+      "sha256": "23b6d7dfeac557b70c7531b008d8d207e914dceb9ed0e2c1baa92a9371a7a3eb"
+    },
+    {
+      "relative_path": "source/experiment/probe_sheet_patches_v2.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\probe_sheet_patches_v2.py",
+      "bytes": 5041,
+      "sha256": "fa50328d0800d46784deaeb098dedc7bddf682a566c95054cb38678526c77734"
+    },
+    {
+      "relative_path": "source/experiment/probe_sheet_patches_v3.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\probe_sheet_patches_v3.py",
+      "bytes": 5046,
+      "sha256": "f184dc7559c09f264c4bd62c12cbb02c511713c68892b13d2e732d0ec8bdbdb5"
+    },
+    {
+      "relative_path": "source/experiment/record_sheet_evidence.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\record_sheet_evidence.py",
+      "bytes": 5538,
+      "sha256": "d6c9606bdb9376a54a5ec481c52a501b3f111f92cc2979c736edd6615cf4efa1"
+    },
+    {
+      "relative_path": "source/experiment/run_checked_sheet_assessment.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\run_checked_sheet_assessment.py",
+      "bytes": 1862,
+      "sha256": "464054030bdd9d017ad7ecec2692034cf9da120b9e7abc09a4f1f0cc4b5221e3"
+    },
+    {
+      "relative_path": "source/experiment/run_sheet_fresh_assessment.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\run_sheet_fresh_assessment.py",
+      "bytes": 8291,
+      "sha256": "1535b214bea7e193af00df741e64fe0b3e73542bea8548c4495f48d88e4dd42c"
+    },
+    {
+      "relative_path": "source/experiment/sheet_patch_bundle.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\sheet_patch_bundle.py",
+      "bytes": 4642,
+      "sha256": "10841d94922b78bdf7bed203add4f2766a812396ce8e2f22be9a9e98944026e5"
+    },
+    {
+      "relative_path": "source/experiment/sheet_patch_chart_v2.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\sheet_patch_chart_v2.py",
+      "bytes": 10163,
+      "sha256": "d942a259cdb8bf4b6f5dbde3270ca68a5ffe7121e20d632891ba9fa42df007d3"
+    },
+    {
+      "relative_path": "source/experiment/sheet_patch_chart_v3.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\sheet_patch_chart_v3.py",
+      "bytes": 11137,
+      "sha256": "297ca274d1ba3818b0597f67c138ecc0e710957f6b8c1a49d31f0d6d1b101fdf"
+    },
+    {
+      "relative_path": "source/experiment/sheet_patch_competition.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\sheet_patch_competition.py",
+      "bytes": 6030,
+      "sha256": "1b0d3e05dc8b901422707c11676ad5360b9cd731083c20bf6171c77bbee1bb16"
+    },
+    {
+      "relative_path": "source/experiment/sheet_patch_competition_v2.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\sheet_patch_competition_v2.py",
+      "bytes": 6514,
+      "sha256": "5ac5a8c0c1350150b32c0af452d659683bd83ffdd93dc0eadba60fe1ae0bbdb9"
+    },
+    {
+      "relative_path": "source/experiment/sheet_patch_growth.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\sheet_patch_growth.py",
+      "bytes": 9428,
+      "sha256": "d4599a6c146ba37ececa50f8c7e4ee6a9b457f50e996e07c10fe06aeeed86969"
+    },
+    {
+      "relative_path": "source/experiment/sheet_patch_growth_v2.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\sheet_patch_growth_v2.py",
+      "bytes": 9433,
+      "sha256": "f224c480c306f98bff44f499d1da6ce6f7362f159df8bf6f64b4d2a78cd2fcde"
+    },
+    {
+      "relative_path": "source/experiment/sheet_patch_prototype.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\sheet_patch_prototype.py",
+      "bytes": 8844,
+      "sha256": "8d0f524dc61c019a76aff438d7201a01f18eeaefe33f92be07416df27654c156"
+    },
+    {
+      "relative_path": "source/experiment/sheet_surface_graph.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\sheet_surface_graph.py",
+      "bytes": 6637,
+      "sha256": "c0d25592c5045a3b4e9dfd1848fc78c6c052c914d575fa86e03b4e716c7fe36e"
+    },
+    {
+      "relative_path": "source/experiment/sheet_surface_ordered_graph.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\sheet_surface_ordered_graph.py",
+      "bytes": 7445,
+      "sha256": "04bfc83763df377652460a0c118fafd8d2449cedf5a444429a09376ead27b54f"
+    },
+    {
+      "relative_path": "source/experiment/sheet_surface_ordered_graph_v2.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\sheet_surface_ordered_graph_v2.py",
+      "bytes": 7445,
+      "sha256": "a1ec621d5f2abebbfe4dec608c39d015484bd6d688f3da79d32af9afadc8a940"
+    },
+    {
+      "relative_path": "source/experiment/verify_sheet_package_development.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\verify_sheet_package_development.py",
+      "bytes": 3636,
+      "sha256": "5b5aa04effd8eeae15951bf9ddb67c1b0068339af6550f110e653be15bebf242"
+    },
+    {
+      "relative_path": "source/package/sheet_bundle.py",
+      "original_path": "D:\\work\\socratic_method\\src\\socratic_method\\sheet_bundle.py",
+      "bytes": 5816,
+      "sha256": "37db368a7b8b5aac8d3e9c16cdff6d77d7cc7e799a289f26d76466c037fa5f04"
+    },
+    {
+      "relative_path": "source/package/sheet_chart.py",
+      "original_path": "D:\\work\\socratic_method\\src\\socratic_method\\sheet_chart.py",
+      "bytes": 12744,
+      "sha256": "08c174355684db1c1a95c192f2829b3a79a9b6fa826439e537c4725be00f771b"
+    },
+    {
+      "relative_path": "source/package/sheet_graph.py",
+      "original_path": "D:\\work\\socratic_method\\src\\socratic_method\\sheet_graph.py",
+      "bytes": 7057,
+      "sha256": "5a59bdf1a6604808e361f7e01bd69e34880cda59d5fc502798aa1eef39e87b3e"
+    },
+    {
+      "relative_path": "source/package/sheet_growth.py",
+      "original_path": "D:\\work\\socratic_method\\src\\socratic_method\\sheet_growth.py",
+      "bytes": 10864,
+      "sha256": "4fe98c2db436f1d8ae566d76d08e6759e01bc22f2aad54380e6a40d388b8ed3f"
+    },
+    {
+      "relative_path": "source/package/sheet_identity.py",
+      "original_path": "D:\\work\\socratic_method\\src\\socratic_method\\sheet_identity.py",
+      "bytes": 579,
+      "sha256": "12b7f17d6576201e3a1c3c47b6028a8a450502d086f462d3bfc04277bfe627d3"
+    },
+    {
+      "relative_path": "source/package/sheet_ordered.py",
+      "original_path": "D:\\work\\socratic_method\\src\\socratic_method\\sheet_ordered.py",
+      "bytes": 8071,
+      "sha256": "f787d2bcca6687031f43fdd8117922af99b61c53531c4b5f17f14045a0a8d3c7"
+    },
+    {
+      "relative_path": "source/package/sheet_patches.py",
+      "original_path": "D:\\work\\socratic_method\\src\\socratic_method\\sheet_patches.py",
+      "bytes": 22192,
+      "sha256": "e170ba6e092a683ae6c2fa435fbbf3d468b35a30be7d895cb825745b3f0b4274"
+    },
+    {
+      "relative_path": "source/package_tests/test_sheet_chart.py",
+      "original_path": "D:\\work\\socratic_method\\tests\\test_sheet_chart.py",
+      "bytes": 3832,
+      "sha256": "54e6486fed1dd2df332d409bc6cb9ceb7b50c0a7450b94b2be73fcc2757417cc"
+    },
+    {
+      "relative_path": "source/package_tests/test_sheet_graph.py",
+      "original_path": "D:\\work\\socratic_method\\tests\\test_sheet_graph.py",
+      "bytes": 3062,
+      "sha256": "fb570a8dd6fc4899a38431b1b163347a662f37dd5c6b1443446fe2d70c109f14"
+    },
+    {
+      "relative_path": "source/package_tests/test_sheet_growth.py",
+      "original_path": "D:\\work\\socratic_method\\tests\\test_sheet_growth.py",
+      "bytes": 3134,
+      "sha256": "2039fa227f2caa0218902a2c1377bae6a2b16425824abc96ff7fe3979dc82cf5"
+    },
+    {
+      "relative_path": "source/package_tests/test_sheet_ordered.py",
+      "original_path": "D:\\work\\socratic_method\\tests\\test_sheet_ordered.py",
+      "bytes": 2313,
+      "sha256": "6ab7053d87858dd86d1b6f33feae4e901a9f09cfc066e502e7b0a0fa7fb648da"
+    },
+    {
+      "relative_path": "source/package_tests/test_sheet_patches.py",
+      "original_path": "D:\\work\\socratic_method\\tests\\test_sheet_patches.py",
+      "bytes": 6014,
+      "sha256": "fcc07d2682f88f1f499c654619c26894a1467ba47edb9cd577c8c79c0881642d"
+    },
+    {
+      "relative_path": "source/repository/README.md",
+      "original_path": "D:\\work\\socratic_method\\README.md",
+      "bytes": 7059,
+      "sha256": "ec5efd7cc86a6b14412dddc0a0e00c58cc8e24266460075e0d649ea3e49782cd"
+    },
+    {
+      "relative_path": "source/repository/docs/sheet_patches.md",
+      "original_path": "D:\\work\\socratic_method\\docs\\sheet_patches.md",
+      "bytes": 4448,
+      "sha256": "404c8f947c53cc440a9ae34e9b63e8180b24c13729b2c432e03cebe34e123c33"
+    },
+    {
+      "relative_path": "source/repository/pyproject.toml",
+      "original_path": "D:\\work\\socratic_method\\pyproject.toml",
+      "bytes": 1573,
+      "sha256": "1695b42ddb525e1b56109a5e5c387ccb63062a55049e57792177e3d609e45fc6"
+    },
+    {
+      "relative_path": "verification.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\verification.json",
+      "bytes": 2476,
+      "sha256": "c2d10a4d6dd5922695da3db8b01d67a68a7ba3c468a6339deea68432d1778d22"
+    },
+    {
+      "relative_path": "visual_review.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\visual_review.json",
+      "bytes": 10821,
+      "sha256": "4c158d44c64e54182797cbc9004f6e0896e21d82c90744b40967986b0d14ed17"
+    }
+  ],
+  "created_utc": "2026-09-07T22:20:16.620874+00:00",
+  "local_html_report": {
+    "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\index.html",
+    "bytes": 107397,
+    "sha256": "c703cc7cf4b4ba3c18621f4078e75cbdc3f049adc073aa4ad0cbcdd3841fce41"
+  },
+  "no_arrays_or_weights_copied": true,
+  "no_commit_or_public_upload": true
+}

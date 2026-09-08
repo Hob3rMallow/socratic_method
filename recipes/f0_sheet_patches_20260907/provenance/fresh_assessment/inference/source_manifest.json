@@ -1,0 +1,25 @@
+{
+ "chunk_size": 128,
+ "bbox_l0_zyx": [
+  11904,
+  13184,
+  3712,
+  4992,
+  2432,
+  3712
+ ],
+ "n_chunks": [
+  10,
+  10,
+  10
+ ],
+ "sources": {
+  "pred": "PHerc1447-full\\20250521151220-surface-20260413222639-surface-m7-L0-th0.2.zarr",
+  "raw": "s3://vesuvius-challenge-open-data/PHerc1447/volumes/20250521151220-8.640um-1.2m-116keV-masked.zarr"
+ },
+ "umbilicus_yx": [
+  3287.0,
+  3784.0
+ ],
+ "created_by": "carve_grid_tifs.py"
+}

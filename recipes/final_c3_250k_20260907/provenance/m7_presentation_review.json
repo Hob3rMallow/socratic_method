@@ -1,0 +1,47 @@
+{
+  "status": "passed",
+  "request": "Compare versus M7; drop jackpot and C3 columns",
+  "html_sha256": "5c95c6514a819bae4419457016620627a4990710b80a99b5462f5398b8f32009",
+  "manifest_sha256": "88944660c41e532844c6d56758cf3319c86e1441e5fe58ad4c783a2a9a5c2907",
+  "previous_html_sha256": "ce8b7ff4e735e6ad2be94d403c7c6108509ca371c52b203c508ab46cdad28bf1",
+  "display_columns": ["shared CT", "published M7", "F0 @200k", "F0 @250k"],
+  "palette": "Published M7 cyan; both F0 checkpoints magenta; unchanged white/purple-magenta F0 filler-addition panels",
+  "published_m7": {
+    "threshold": 0.2,
+    "source": "PHerc1447-full/20250521151220-surface-20260413222639-surface-m7-L0-th0.2.zarr",
+    "cube_hashes_verified_against_sealed_audit": 6,
+    "source_manifest_sha256": "5c337610186feef2800cb76fe2e05cbc4d99186b61e42a3b6af26ec96371d96e",
+    "M7_panels_pixel_identical_to_prior_QC": 19,
+    "matched_F0_inference_or_threshold_claimed": false,
+    "filler_applied": false,
+    "ground_truth": false
+  },
+  "evidence_preservation": {
+    "unchanged_F0_subpanels_verified_pixelwise": 126,
+    "existing_raw_and_filled_masks_unchanged": true,
+    "old_geometry_metrics_and_visual_assessment_unchanged": true,
+    "historical_audit_display": "Retained in a closed, explicitly historical section; not relabelled as M7-relative",
+    "new_geometry_metrics": "Separately labelled M7-relative descriptive counters, recomputed only from cached masks; not new gates or official scores",
+    "C3_filler_example_removed_from_current_display": true,
+    "old_images_retained": true,
+    "checkpoint_selection_unchanged": true,
+    "evaluation_summary_sha256": "2a3b4fa9364c6dc648b00e1e1041f0e486d6426b5e69b7f9a93258bfc9268503",
+    "filler_manifest_sha256": "fedabe4b91efac9291d8ca07d23b3907f17efb5c80d1a97cdf1b02157c4a8e4c",
+    "sealed_code_pins_verified": 63,
+    "sealed_code_pin_mismatches": 0
+  },
+  "qa": {
+    "unit_tests_passed": 20,
+    "browser_receipt": "browser_qa.json",
+    "browser_checks_passed": 2,
+    "displayed_images": 21,
+    "fixed_and_context_views": 19,
+    "F0_filler_examples": 2,
+    "broken_images": 0,
+    "page_overflow_failures": 0,
+    "local_links_verified": 50,
+    "missing_local_links": 0,
+    "visual_review": "Inspected the first named M7/F0 comparison, the 200k filler example and the desktop report screenshot. Correct column order, cyan baseline, thresholds, shared CT and explicit raw-only M7 annotation."
+  },
+  "new_training_inference_native_scoring_or_filler_runs": 0
+}

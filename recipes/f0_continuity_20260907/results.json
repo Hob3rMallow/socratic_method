@@ -1,0 +1,131 @@
+{
+  "development_candidate_v1": {
+    "accepted_corridors": 675,
+    "accepted_longer_than_21px": 318,
+    "accepted_with_axial_p_rejection": 0,
+    "added_3d_components": 316,
+    "added_voxels": 43424,
+    "base_foreground": 10088555,
+    "census": {
+      "accepted": 675,
+      "ambiguous_endpoint_shape": 193,
+      "crossing_or_shared_gap": 8,
+      "endpoint_direction": 2944,
+      "excessive_detour": 127,
+      "off_probability_ridge": 507,
+      "proposal_boundary_routes": 591,
+      "proposal_fewer_than_two_anchor_components": 24174,
+      "proposal_missing_skeleton_regions": 29448,
+      "proposal_proposed_corridors": 4614,
+      "third_component_or_missing_anchor": 51,
+      "tiny_gap": 92,
+      "weak_mean_probability": 17
+    },
+    "core_added_voxels": 799,
+    "detached_2d_strokes": 0,
+    "erased_base_voxels": 0,
+    "maximum_corridor_length_px": 93.84062043356595,
+    "multiway_2d_strokes": 0,
+    "source_summary": {
+      "bytes": 11587,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\development_candidate_v1\\summary.json",
+      "sha256": "0f101893d8d5711b0956187ed25c394234ccefb1b0cb81b3fc2fde52e32b2158"
+    },
+    "sum_accepted_path_lengths_px": 16800.664566122647
+  },
+  "development_candidate_v2": {
+    "accepted_corridors": 764,
+    "accepted_longer_than_21px": 357,
+    "accepted_with_axial_p_rejection": 0,
+    "added_3d_components": 369,
+    "added_voxels": 48337,
+    "base_foreground": 10088555,
+    "census": {
+      "abrupt_local_turn": 6,
+      "accepted": 764,
+      "ambiguous_endpoint_shape": 192,
+      "backwards_anchor_approach": 39,
+      "crossing_or_shared_gap": 16,
+      "endpoint_direction": 2885,
+      "excessive_detour": 67,
+      "off_probability_ridge": 456,
+      "proposal_boundary_routes": 591,
+      "proposal_fewer_than_two_anchor_components": 24174,
+      "proposal_missing_skeleton_regions": 29448,
+      "proposal_proposed_corridors": 4614,
+      "proposal_refined_corridors": 4597,
+      "proposal_refinement_failed": 16,
+      "proposal_refinement_over_reach": 1,
+      "third_component_or_missing_anchor": 64,
+      "tiny_gap": 99,
+      "weak_mean_probability": 9
+    },
+    "core_added_voxels": 825,
+    "detached_2d_strokes": 0,
+    "erased_base_voxels": 0,
+    "independent_audit": {
+      "added_voxels": 48337,
+      "anchor_apron_voxels": 43,
+      "two_contact_strokes": 764
+    },
+    "maximum_corridor_length_px": 91.9827560572969,
+    "multiway_2d_strokes": 0,
+    "native_added_voxels": 3970,
+    "native_core_added_voxels": 42,
+    "raw_foreground": 10084585,
+    "source_summary": {
+      "bytes": 11769,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\development_candidate_v2\\summary.json",
+      "sha256": "f913b3ffcb86d5bd70d17c2fb73e55d2cda1efbff3b4f60a6227e44c71147304"
+    },
+    "sum_accepted_path_lengths_px": 18928.21203953026,
+    "total_added_over_raw": 52307
+  },
+  "fresh_control_candidate_v2": {
+    "accepted_corridors": 515,
+    "accepted_longer_than_21px": 210,
+    "accepted_with_axial_p_rejection": 0,
+    "added_3d_components": 214,
+    "added_voxels": 31951,
+    "base_foreground": 8122003,
+    "census": {
+      "abrupt_local_turn": 2,
+      "accepted": 515,
+      "ambiguous_endpoint_shape": 19,
+      "backwards_anchor_approach": 25,
+      "crossing_or_shared_gap": 20,
+      "endpoint_direction": 659,
+      "excessive_detour": 24,
+      "off_probability_ridge": 142,
+      "proposal_boundary_routes": 281,
+      "proposal_fewer_than_two_anchor_components": 14470,
+      "proposal_missing_skeleton_regions": 16168,
+      "proposal_proposed_corridors": 1530,
+      "proposal_refined_corridors": 1528,
+      "proposal_refinement_failed": 2,
+      "third_component_or_missing_anchor": 41,
+      "tiny_gap": 73,
+      "weak_mean_probability": 8
+    },
+    "core_added_voxels": 2004,
+    "detached_2d_strokes": 0,
+    "erased_base_voxels": 0,
+    "independent_audit": {
+      "added_voxels": 31951,
+      "anchor_apron_voxels": 52,
+      "two_contact_strokes": 515
+    },
+    "maximum_corridor_length_px": 91.04163056034261,
+    "multiway_2d_strokes": 0,
+    "native_added_voxels": 3783,
+    "native_core_added_voxels": 124,
+    "raw_foreground": 8118220,
+    "source_summary": {
+      "bytes": 11778,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control_candidate_v2\\summary.json",
+      "sha256": "446b6a22db6778bd94cebd0e041bdf439dbfdf19ae63ff50c7dfc2d4822f2edb"
+    },
+    "sum_accepted_path_lengths_px": 12351.429575724742,
+    "total_added_over_raw": 35734
+  }
+}

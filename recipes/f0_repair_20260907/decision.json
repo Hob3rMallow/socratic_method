@@ -1,0 +1,21 @@
+{
+  "anatomical_ground_truth_precision": null,
+  "automatic_deployment": false,
+  "control_used_for_tuning": false,
+  "new_training": false,
+  "pre_control_selection": {
+    "bytes": 2187,
+    "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\selected_policy.json",
+    "sha256": "c356d6149959e2cf3ec7c76c0f6c20c5abc3be25bb1fa36e32778cd8a669689d"
+  },
+  "profile": "f0-contiguous-gap-repair-v1",
+  "residual_work": "Broad missing-sheet recovery remains a separate probability-guided proposal problem.",
+  "schema": "f0-repair-final-decision-v1",
+  "selected_preset": "extended_safe",
+  "status": "Implemented and locally verified; reserved control confirms increased local repair activity.",
+  "visual_review": {
+    "bytes": 2766,
+    "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\visual_review.json",
+    "sha256": "55bb5624909d76e7c3d9b4ba5f423c56cdf67f0b1238bd72b6eb3e780f3122ab"
+  }
+}

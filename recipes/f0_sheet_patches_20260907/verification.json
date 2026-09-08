@@ -1,0 +1,56 @@
+{
+  "automatic_deployment": false,
+  "browser_render_verified": false,
+  "development_audit": {
+    "bytes": 36325,
+    "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\development_growth_v2\\independent_audit.json",
+    "sha256": "97a0bb9bf5a97a26c7c8f99d6f44c0ccb65d7f34b234ffe9461a385091178699"
+  },
+  "direct_image_review": {
+    "bytes": 10821,
+    "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\visual_review.json",
+    "sha256": "4c158d44c64e54182797cbc9004f6e0896e21d82c90744b40967986b0d14ed17"
+  },
+  "entry_points": {
+    "socratic-continuity": "socratic_method.continuity:main",
+    "socratic-repair": "socratic_method.repair:main",
+    "socratic-sheet-patches": "socratic_method.sheet_patches:main",
+    "socratic-train": "socratic_method.recipe:main"
+  },
+  "final_report": {
+    "bytes": 107397,
+    "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\index.html",
+    "sha256": "c703cc7cf4b4ba3c18621f4078e75cbdc3f049adc073aa4ad0cbcdd3841fce41"
+  },
+  "fresh_audit": {
+    "bytes": 27921,
+    "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\fresh_assessment_growth\\independent_audit.json",
+    "sha256": "8b0b9490e3b8a205668f9f9b9037af44f8d8431f07008026e731277556cd44a4"
+  },
+  "git_commit_or_upload": false,
+  "independent_contact_audit": {
+    "bytes": 746,
+    "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\independent_contact_audit.json",
+    "sha256": "0269a2a0eddc995949192bcce92a596f408ec3c267e2cb291eb05a7d72209c72"
+  },
+  "metadata_only_fix_byte_identical_cubes": 27,
+  "package_exact_cubes": 27,
+  "package_exact_meshes": 107,
+  "prior_model_and_evidence_integrity": {
+    "bytes": 4395,
+    "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\report_integrity_inputs.json",
+    "sha256": "abea05640113c1829b4ae44e06dfcba8757f11740438b4011122a97723d24e0c"
+  },
+  "regression_tests_passed": 151,
+  "schema": "f0-sheet-verification-v1",
+  "static_in_page_anchors_checked": true,
+  "static_local_links_checked": 840,
+  "status": "passed",
+  "tests": {
+    "bytes": 18465,
+    "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\package_tests_final.xml",
+    "sha256": "a28e7cbb6ea8154c72b8be1330700b9e748ed0e272d4fd43ae0b44134c6509d7"
+  },
+  "unique_linked_pngs_decoded": 220,
+  "verified_utc": "2026-09-07T22:19:47.605500+00:00"
+}

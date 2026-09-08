@@ -1,79 +1,62 @@
-# Model and objective
+# Current model: C3-F0
 
-## Architecture
+As of 7 September 2026, the current frozen model is **F0 at 200,000 sample
+exposures, operating threshold 0.35**, selected after the complete 250k run.
+It improves matched frozen macro Dice from released M7's **0.554140 to
+0.680787**: **+0.126647 Dice / 12.7 percentage points / 22.9% relative**.
 
-The deployed model is a single 3D residual-encoder nnU-Net with one CT channel,
-two output classes, six stages, features `(32, 64, 128, 256, 320, 320)`, and
-102,349,770 trainable parameters. It is initialized strictly from the released
-M7 checkpoint and all parameters are retrained. The fine teacher appears only
-in corpus construction; inference uses the raw student probability, not an M7
-blend and not the teacher.
+The authoritative [manifest](../recipes/final_c3_250k_20260907/manifest.json)
+and [full evidence review](../recipes/final_c3_250k_20260907/review.md) distinguish
+this selected milestone from the retained exact 250k endpoint.
 
-## Cross-resolution supervision
+## Architecture and training
 
-The current training schedule uses 4,096 deterministic PHerc0139 patches from a
-native-fine-teacher atlas, traversed twice for 8,192 samples. Fine predictions
-are pulled back into the 9.362 um grid as soft occupancy targets. The actual
-manifest contains only PHerc0139 even though an inherited field in the original
-v31 recipe lists four scrolls. The corrected executable recipe follows the
-hashed manifest bytes; the verbatim original remains under `provenance/source`.
+The model is one 3D residual-encoder nnU-Net, initialized from the exact released
+M7 checkpoint: one CT channel, two classes, six stages, features
+`(32, 64, 128, 256, 320, 320)`, and 102,349,770 parameters. Inference uses the
+raw student, not a teacher ensemble or an M7 blend.
 
-The objective contract is
-`soft-occupancy-ce-dice-villa-medial-crest-shell-kl-corridor-m7-preservation-dynamic-widest-path-v9`:
+Training uses the wide15 anti-aliased mixed corpus: 15,432 training rows and
+768 validation rows, over 12 training and two validation scrolls. Across all
+16,200 rows, 10,072 native rows carry soft targets and 6,128 human rows are
+hard passthrough. The 250k budget counts sample exposures, not unique rows.
 
-- soft cross-entropy: 1.0;
-- soft Dice: 0.25;
-- Villa medial-crest recall: 1.0;
-- teacher-background separation: 2.0, radius 2, `q <= 0.1`;
-- M7 function KL: 0.5 on known, teacher-confident agreement and an unknown
-  corridor of radius 2;
-- one-sided M7 preservation: 1.0, radius 2, anchor threshold 0.5, with no soft
-  floor; and
-- dynamic medial connectivity: 0.03125, probability floor 0.2, 96 widest-path
-  propagation steps.
+The objective is CE 1 + Dice 1 + M7-KL 0.5, with known-agreement,
+confident-agreement and unknown-corridor radius 2. All additional loss terms
+are zero. Optimization is SGD 1e-3, momentum 0.99/Nesterov, weight decay 3e-5,
+gradient clip 12, and a poly exponent of 0.9 over the full 250k horizon.
+Batch size is 3, accumulation 1, BF16, seed 1203 and augmentation enabled.
+**There is no trust ball or projection.**
 
-The connectivity atlas contains 149 fully owned events. Ninety-nine manifest
-rows encounter an event in the exact schedule, 477 rows are eligible, and the
-largest event needs 44 of the configured 96 propagation steps. It is constructed
-from training-manifest boxes only and does not use a held-out gate.
+The exact settings and identities are in the byte-preserved
+[preregistered recipe](../recipes/final_c3_250k_20260907/provenance/recipe.json)
+and [run record](../recipes/final_c3_250k_20260907/provenance/run.json).
 
-## Optimization
+## Selection and evidence
 
-Adam runs at a constant learning rate of `2e-5`, betas `(0.9, 0.999)`, epsilon
-`1e-8`, zero weight decay, batch size 3, accumulation 8, bfloat16 autocast,
-seed 1203, two workers, and at most 16 CPU threads. After every optimizer update,
-the student is projected into a global relative-L2 ball of radius
-`0.0027535421730275947` around released M7. The projection is active essentially
-all of the observed schedule, so it is part of the effective method rather than
-an inactive guardrail.
+All 25 checkpoints completed their frozen audits and were eligible at T=.35.
+The preregistered late-selection rule chooses 200k (macro Dice 0.680787);
+110k is the global maximum (0.681556), and the exact 250k endpoint is 0.669299.
+The late-versus-early hypothesis is met, but the +0.003935 over original
+C3/30k is not evidence of duration superiority beyond seed noise.
 
-## Evaluation and release selection
+At the selected operating point, v14p2 native composite is 0.630391,
+topology 0.375646 and surface Dice 0.855518. Composite improves over the
+stronger calibrated M7+TTA baseline; topology narrowly trails it. PHerc0500P2
+results are absolute-only evidence, not an unseen-M7 gain claim.
 
-Ordinary validation uses held-out PHerc0814 and PHerc1451. A checkpoint must
-retain the minimum per-scroll M7 gain and is ranked by calibrated macro-scroll
-Dice. Every observed v31 milestone selects 0.25 at the lower edge of the sweep.
-That censored optimum is retained as a training observation, but it fails the
-PHerc1447 anti-blob gate and is not a valid operating point.
+Visual review supports cleaner paths through broad merged regions. The
+selected 200k weights retain more weak geometry than the exact endpoint.
+Postprocessing remains separate: the conservative six-cube filler added only
+81 voxels through one tracked connection, and is not a validated production
+repair policy. The [review](../recipes/final_c3_250k_20260907/review.md)
+details its context, support-filter and safety constraints.
 
-The release candidate is the raw 8,192-sample checkpoint at threshold 0.45.
-Selection combines the registered 16-slice PHerc0139 review, the blind six-cube
-PHerc1447 anti-blob audit, and the deliberate preference for mild undergrowth
-over foreground inflation. At 0.45, all 16 locked slices pass the anti-blob
-check, 15 match the teacher component count, and mean ASSD is 0.626 voxels. The
-PHerc1447 aggregate has foreground ratio 0.951 and recall 0.911 relative to the
-v15 comparison model, with no interior or thickness regressions.
+## Historical model
 
-The component-count exception is locked rank 26: the teacher really has four
-components, while two top blobs and touching student strokes make the scalar
-count five. Several other legacy failures are visually correct but rejected by
-the one-voxel M7-preservation proxy because the student smooths or shifts a
-surface. Consequently, the legacy `learned_growth` scalar is recorded for
-diagnosis but is not the release gate. A future replacement should decompose
-displacement along and normal to the teacher medial center/radius field.
-
-FLIP mean narrowly prefers 4,096 samples at threshold 0.42 for literal teacher
-resemblance. The selected 8,192/0.45 candidate ranks 18 of 45 anti-blob-eligible
-settings by that statistic, but improves 12 of 16 slices over 2,048 samples and
-reduces total erosion and additions. Weighted-median FLIP, blind morphology, and
-human review support the longer checkpoint. The complete, non-sanitized record
-is in `recipes/v31/release_qualification.json`.
+The earlier 8,192-sample v31 model at T=.45 is preserved as historical evidence,
+not erased or relabeled. Its complete former model documentation is
+[archived here](archive/v31_model.md), and its recipe/selection remain under
+[recipes/v31](../recipes/v31/recipe.json). Existing portable training/export
+wrappers still target that historical recipe. Freezing F0 does not silently
+retarget those commands or claim public deployment.

@@ -1,0 +1,23 @@
+pred_fixup: 6 cubes, chunk 128, grid 1024x512x640 (world z12032 y3840 x2944), vol 320 MB
+pred_fixup: 6/160 cells present, absent mask armed
+pred_fixup: loaded, fg 0.81% (0.1s)
+pred_fixup: labeled 1024 planes (0.1s)
+pred_fixup: radial gate ARMED, umbilicus plane (-553.0, 840.0), dr_max 4.0
+pred_fixup: support filter min_support=3
+pred_fixup: round 1 — 9328 endpoints, 31 joins (1.5s)
+pred_fixup: round-1 tracks — 529 endpoint tracks, 24 connection tracks
+pred_fixup: round 2 — 31 joins; final tracks 529/24 (0.0s)
+pred_fixup: bridges — 332 necks, 1 radial-certified, 0 persistent (support>=3) [report only]
+pred_fixup: kept 5/31 joins (26 dropped by support<3), painted 81 px
+pred_fixup: wrote 24 overlays, 5 join crops, 12 reject crops, 0 bridge crops + summary -> D:/work/vesuvius-c/output/crossres_data/final_c3_250k_20260905/operator_report/filler/outputs/f0_00200000/viz
+
+=== pred_fixup summary ===
+  grid          1024x512x640 (6 cubes, chunk 128)
+  planes        [0, 1024) of 1024
+  endpoints     9328
+  candidates    31
+  joins kept    5 / 31 (3 far-tier, 26 dropped by support<3)
+  painted px    81 (0.0030% of fg)
+  weld necks    332 found, 1 radial-certified, 0 persistent, 0 cut (0 px)
+  output        D:/work/vesuvius-c/output/crossres_data/final_c3_250k_20260905/operator_report/filler/outputs/f0_00200000
+  total         5.0s (load 0.1, label 0.1, match 1.5, paint 0.0, write 0.0)

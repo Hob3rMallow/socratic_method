@@ -1,0 +1,14 @@
+{
+  "observed_at_utc": "2026-09-07T05:25:20.6326713Z",
+  "scope": "Read-only post-training checkpoint and identity verification; not final report completion",
+  "snapshot_count": 25,
+  "snapshot_samples": [10000, 20000, 30000, 40000, 50000, 60000, 70000, 80000, 90000, 100000, 110000, 120000, 130000, 140000, 150000, 160000, 170000, 180000, 190000, 200000, 210000, 220000, 230000, 240000, 250000],
+  "each_snapshot_bytes": 409674095,
+  "snapshot_sha256_mismatches_against_evaluation_receipts": [],
+  "optimizer_checkpoint_sha256": "b7a0aef72a266d664b980672d81c675e5c9e4d518a61143f3be67940c84f60cf",
+  "optimizer_checkpoint_matches_training_commit": true,
+  "run_identity_sha256": "3d7f17a78e5463d748e030e5762b6cab691a2ed3048a77e2f220cd8a3c545825",
+  "run_identity_matches_sealed_journal": true,
+  "all_25_fixed_t035_evaluations_eligible": true,
+  "training_or_evaluation_artifacts_modified": false
+}

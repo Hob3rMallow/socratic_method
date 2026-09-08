@@ -1,0 +1,193 @@
+{
+  "schema": "socratic-method-frozen-model-v1",
+  "release_id": "c3-f0-200k-20260907",
+  "status": "operator-authorized local freeze; current official model record",
+  "frozen_at_utc": "2026-09-07 17:39:54 UTC",
+  "model": {
+    "name": "C3-F0",
+    "arm": "F0",
+    "selected_sample_exposures": 200000,
+    "completed_training_horizon": 250000,
+    "checkpoint_file": "checkpoint_f0_00200000.pt",
+    "local_artifact": "D:/work/vesuvius-c/output/crossres_data/releases/c3-f0-200k-20260907/checkpoint_f0_00200000.pt",
+    "original_artifact": "D:/work/vesuvius-c/output/crossres_data/final_c3_250k_20260905/arms/F0/checkpoint_milestone_00200000.pt",
+    "sha256": "54db9a59cb602ff08e3dda0acc1195ad980ab05fb660332d32fb436a0d49a175",
+    "bytes": 409674095,
+    "format": "PyTorch model-only milestone",
+    "operating_threshold": 0.35,
+    "student_only": true,
+    "teacher_at_inference": false,
+    "m7_blend_at_inference": false,
+    "architecture": "M7 residual-encoder 3D nnU-Net (m7-resenc-l)",
+    "parameters": 102349770,
+    "input_channels": 1,
+    "output_classes": 2,
+    "features": [
+      32,
+      64,
+      128,
+      256,
+      320,
+      320
+    ],
+    "copy_verification": {
+      "source_and_destination_sha256_match": true,
+      "verified_at_utc": "2026-09-07T17:27:05.5035013Z",
+      "destination_read_only": true
+    },
+    "protection_note": "Separate hash-verified read-only copy. The Windows read-only attribute is an accidental-write guard, not WORM storage."
+  },
+  "training": {
+    "fresh_released_m7_sha256": "17465b77591b794638e671f1a9f79c4cf1e79821f302e6fc235e3725e5da7d7e",
+    "config": "provenance/recipe.json",
+    "config_sha256": "af9d74dbf9f4c0fc978d6b9756fc92f6750fec211705c08be0a05e970c496cbc",
+    "run_identity": "provenance/run.json",
+    "run_identity_sha256": "3d7f17a78e5463d748e030e5762b6cab691a2ed3048a77e2f220cd8a3c545825",
+    "corpus": "wide15 anti-aliased mixed soft/native and hard/human corpus",
+    "corpus_manifest_sha256": "f18c4efbb0de1e2576f6d3900d1e0994b0159dbddb0f3ba7305ea22724031128",
+    "corpus_rows": 16200,
+    "train_rows": 15432,
+    "val_rows": 768,
+    "train_scrolls": 12,
+    "val_scrolls": 2,
+    "native_soft_rows": 10072,
+    "human_hard_passthrough_rows": 6128,
+    "exposures_not_unique_corpus_rows": true,
+    "objective": {
+      "cross_entropy": 1,
+      "dice": 1,
+      "m7_kl_anchor": 0.5,
+      "known_agreement": true,
+      "confident_agreement": true,
+      "unknown_corridor_radius": 2,
+      "other_loss_weights": 0
+    },
+    "optimizer": {
+      "name": "SGD",
+      "initial_learning_rate": 0.001,
+      "momentum": 0.99,
+      "nesterov": true,
+      "weight_decay": 0.00003,
+      "gradient_clip_norm": 12,
+      "schedule": "poly",
+      "poly_exponent": 0.9,
+      "horizon_samples": 250000,
+      "warmup_samples": 0,
+      "floor_ratio": 0
+    },
+    "batch_size": 3,
+    "accumulate": 1,
+    "precision": "bfloat16",
+    "seed": 1203,
+    "augmentation": true,
+    "stratified_sampling": false,
+    "trust_ball": false,
+    "trust_region_relative_l2": 0,
+    "completion": {
+      "natural_completion": true,
+      "samples": 250000,
+      "validated_intervals": 25,
+      "snapshots": 25,
+      "training_attempts": 3,
+      "final_learning_rate": 0,
+      "final_train_loss": 0.7916000167195069,
+      "nonfinite_loss": false
+    },
+    "selected_checkpoint_is_not_final_endpoint": true,
+    "selected_checkpoint_is_not_in_run_best_file": true
+  },
+  "selection": {
+    "rule": "Highest fixed-T=0.35 frozen macro Dice among eligible checkpoints at >=150k; ties to later. Selected after full 250k completion.",
+    "selected_samples": 200000,
+    "best_early_samples": 30000,
+    "global_best_samples": 110000,
+    "exact_final_samples": 250000,
+    "all_25_eligible_at_035": true,
+    "H1": true,
+    "delta_vs_original_C3_30k": 0.003934756627647862,
+    "duration_superiority_beyond_seed_noise": "unresolved; one seed, correlated checkpoints",
+    "fixed_035_gate_pass": true,
+    "matched_coverage_frontier_pass": true,
+    "readiness_composite_pass": true,
+    "readiness_topology_pass": false,
+    "threshold_changed_by_this_freeze": false
+  },
+  "results": {
+    "benchmark": "Frozen v14p2, 689 rows, macro-scroll Dice; no TTA for matched raw comparison",
+    "validation_manifest_sha256": "a995787032eb446f71759a4dbd510396273b93c65f65863bac8fe9587e12b714",
+    "F0_200k_035_macro_dice": 0.680787428136385,
+    "M7_raw_035_macro_dice": 0.5541400563365637,
+    "matched_absolute_dice_gain": 0.12664737179982133,
+    "matched_percentage_point_gain": 12.664737179982133,
+    "matched_relative_dice_gain": 0.22854758531099673,
+    "M7_raw_calibrated_020_macro_dice": 0.5606687358084226,
+    "M7_8way_TTA_calibrated_020_macro_dice": 0.5925770672592173,
+    "F0_250k_035_macro_dice": 0.6692986483939892,
+    "F0_200k_035_native_composite": 0.6303910406386075,
+    "F0_200k_035_native_topology": 0.3756456211901307,
+    "F0_200k_035_native_surface_dice": 0.8555178243831637,
+    "PHerc0500P2": "320 rows; absolute results only, not an unseen-M7 gain claim",
+    "filled_official_scores_claimed": false
+  },
+  "postprocessor": {
+    "part_of_frozen_model": false,
+    "observed_report_preset": {
+      "min_score": 0.3,
+      "min_support": 3,
+      "paint_radius": 1,
+      "radial_armed": 1,
+      "radial_dr": 4,
+      "reach_max": 12,
+      "reach_safe": 6,
+      "tracks": 1
+    },
+    "observed_200k_added_voxels": 81,
+    "observed_200k_per_plane_joins": 5,
+    "observed_200k_connection_tracks": 1,
+    "observed_200k_erased_voxels": 0,
+    "limitation": "Conservative six-cube diagnostic, not a validated production filler; support/scale/context review remains separate."
+  },
+  "provenance": {
+    "inventory": "files.json",
+    "analysis": "analysis.json",
+    "review": "review.md",
+    "copied_evidence_and_source_files": 96,
+    "sealed_runtime_files": 63,
+    "sealed_runtime_mismatches": 0,
+    "summary": "provenance/evaluation_summary.json",
+    "summary_sha256": "2a3b4fa9364c6dc648b00e1e1041f0e486d6426b5e69b7f9a93258bfc9268503",
+    "official_repository_head_before_record_update": "9d0ad981efa78dbda18ef89f520414b98ffdf2a2",
+    "reproducibility_boundary": "Exact preregistered files and evidence are archived. This is not a tested portable F0 launcher/exporter; existing socratic-train and socratic-export target historical v31."
+  },
+  "related_artifacts": {
+    "exact_250k": {
+      "path": "D:/work/vesuvius-c/output/crossres_data/final_c3_250k_20260905/arms/F0/checkpoint_milestone_00250000.pt",
+      "sha256": "dc295f429bce62768c9bcdd43ed252aa78b018fe0b846884b65bb275629bfccc",
+      "bytes": 409674095,
+      "status": "retained research endpoint; not selected"
+    },
+    "optimizer_last": {
+      "path": "D:/work/vesuvius-c/output/crossres_data/final_c3_250k_20260905/arms/F0/checkpoint_last.pt",
+      "sha256": "b7a0aef72a266d664b980672d81c675e5c9e4d518a61143f3be67940c84f60cf",
+      "bytes": 819186905
+    },
+    "operator_html": {
+      "path": "D:/work/vesuvius-c/output/crossres_data/final_c3_250k_20260905/operator_report/index.html",
+      "sha256": "5c95c6514a819bae4419457016620627a4990710b80a99b5462f5398b8f32009"
+    },
+    "sealed_html": {
+      "path": "D:/work/vesuvius-c/output/crossres_data/final_c3_250k_20260905/evaluation/index.html",
+      "sha256": "127f0cc82e5d720e20a88067b0ef9144b19685321c50d4402a5b181b91507488"
+    }
+  },
+  "actions": {
+    "local_model_freeze": true,
+    "official_record_update_authorized": true,
+    "new_training": false,
+    "new_inference": false,
+    "new_metric_runs": false,
+    "new_filler_runs": false,
+    "production_deployment": false,
+    "public_upload": false
+  }
+}

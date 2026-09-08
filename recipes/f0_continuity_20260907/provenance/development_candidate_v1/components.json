@@ -1,0 +1,9212 @@
+{
+  "components": [
+    {
+      "bounds_world_zyx": [
+        [
+          12040,
+          12047
+        ],
+        [
+          3968,
+          3984
+        ],
+        [
+          2996,
+          3023
+        ]
+      ],
+      "corridor_ids": [
+        14,
+        63,
+        103,
+        151,
+        195,
+        239,
+        282
+      ],
+      "id": 1,
+      "radial_extent_px": 15.448347239080704,
+      "view_center_local": [
+        10,
+        131,
+        63
+      ],
+      "voxels": 316,
+      "z_span": 7
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12040,
+          12041
+        ],
+        [
+          4035,
+          4039
+        ],
+        [
+          3196,
+          3203
+        ]
+      ],
+      "corridor_ids": [
+        2
+      ],
+      "id": 2,
+      "radial_extent_px": 2.19156634005833,
+      "view_center_local": [
+        8,
+        196,
+        255
+      ],
+      "voxels": 13,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12041,
+          12042
+        ],
+        [
+          3878,
+          3889
+        ],
+        [
+          3082,
+          3091
+        ]
+      ],
+      "corridor_ids": [
+        56
+      ],
+      "id": 3,
+      "radial_extent_px": 3.0170642379098354,
+      "view_center_local": [
+        9,
+        43,
+        143
+      ],
+      "voxels": 28,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12041,
+          12042
+        ],
+        [
+          4028,
+          4031
+        ],
+        [
+          3176,
+          3186
+        ]
+      ],
+      "corridor_ids": [
+        62
+      ],
+      "id": 4,
+      "radial_extent_px": 6.597448916181179,
+      "view_center_local": [
+        9,
+        189,
+        236
+      ],
+      "voxels": 26,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12041,
+          12043
+        ],
+        [
+          4063,
+          4071
+        ],
+        [
+          3085,
+          3105
+        ]
+      ],
+      "corridor_ids": [
+        61,
+        101
+      ],
+      "id": 5,
+      "radial_extent_px": 8.928734423909873,
+      "view_center_local": [
+        9,
+        229,
+        160
+      ],
+      "voxels": 101,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12042,
+          12044
+        ],
+        [
+          3920,
+          3935
+        ],
+        [
+          3083,
+          3092
+        ]
+      ],
+      "corridor_ids": [
+        104,
+        165
+      ],
+      "id": 6,
+      "radial_extent_px": 9.038004188358286,
+      "view_center_local": [
+        11,
+        82,
+        143
+      ],
+      "voxels": 55,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12042,
+          12043
+        ],
+        [
+          4029,
+          4038
+        ],
+        [
+          3047,
+          3063
+        ]
+      ],
+      "corridor_ids": [
+        109
+      ],
+      "id": 7,
+      "radial_extent_px": 7.693360618150109,
+      "view_center_local": [
+        10,
+        194,
+        107
+      ],
+      "voxels": 48,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12043,
+          12044
+        ],
+        [
+          3856,
+          3860
+        ],
+        [
+          3068,
+          3074
+        ]
+      ],
+      "corridor_ids": [
+        149
+      ],
+      "id": 8,
+      "radial_extent_px": 3.2773063980079087,
+      "view_center_local": [
+        11,
+        18,
+        124
+      ],
+      "voxels": 12,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12043,
+          12045
+        ],
+        [
+          4110,
+          4127
+        ],
+        [
+          3009,
+          3072
+        ]
+      ],
+      "corridor_ids": [
+        182,
+        231
+      ],
+      "id": 9,
+      "radial_extent_px": 39.28286685358603,
+      "view_center_local": [
+        12,
+        272,
+        91
+      ],
+      "voxels": 404,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12043,
+          12045
+        ],
+        [
+          4125,
+          4135
+        ],
+        [
+          3081,
+          3102
+        ]
+      ],
+      "corridor_ids": [
+        155,
+        204
+      ],
+      "id": 10,
+      "radial_extent_px": 11.282977682855517,
+      "view_center_local": [
+        11,
+        293,
+        155
+      ],
+      "voxels": 108,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12044,
+          12045
+        ],
+        [
+          3953,
+          3960
+        ],
+        [
+          2976,
+          2987
+        ]
+      ],
+      "corridor_ids": [
+        222
+      ],
+      "id": 11,
+      "radial_extent_px": 5.7594769690970224,
+      "view_center_local": [
+        12,
+        115,
+        39
+      ],
+      "voxels": 29,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12044,
+          12047
+        ],
+        [
+          4162,
+          4176
+        ],
+        [
+          2971,
+          2982
+        ]
+      ],
+      "corridor_ids": [
+        196,
+        240,
+        283
+      ],
+      "id": 12,
+      "radial_extent_px": 5.488986899225438,
+      "view_center_local": [
+        13,
+        328,
+        33
+      ],
+      "voxels": 98,
+      "z_span": 3
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12046,
+          12047
+        ],
+        [
+          3915,
+          3926
+        ],
+        [
+          3085,
+          3088
+        ]
+      ],
+      "corridor_ids": [
+        300
+      ],
+      "id": 13,
+      "radial_extent_px": 6.855685998989429,
+      "view_center_local": [
+        14,
+        80,
+        142
+      ],
+      "voxels": 31,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12046,
+          12047
+        ],
+        [
+          4033,
+          4048
+        ],
+        [
+          3171,
+          3193
+        ]
+      ],
+      "corridor_ids": [
+        305
+      ],
+      "id": 14,
+      "radial_extent_px": 5.97160831629094,
+      "view_center_local": [
+        14,
+        197,
+        239
+      ],
+      "voxels": 62,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12046,
+          12050
+        ],
+        [
+          4181,
+          4206
+        ],
+        [
+          3053,
+          3100
+        ]
+      ],
+      "corridor_ids": [
+        301,
+        323,
+        351,
+        380
+      ],
+      "id": 15,
+      "radial_extent_px": 12.214367931909692,
+      "view_center_local": [
+        15,
+        362,
+        145
+      ],
+      "voxels": 486,
+      "z_span": 4
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12046,
+          12047
+        ],
+        [
+          4203,
+          4211
+        ],
+        [
+          3105,
+          3134
+        ]
+      ],
+      "corridor_ids": [
+        297
+      ],
+      "id": 16,
+      "radial_extent_px": 13.605159916130106,
+      "view_center_local": [
+        14,
+        366,
+        176
+      ],
+      "voxels": 86,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12047,
+          12048
+        ],
+        [
+          4191,
+          4202
+        ],
+        [
+          2975,
+          2983
+        ]
+      ],
+      "corridor_ids": [
+        316
+      ],
+      "id": 17,
+      "radial_extent_px": 3.178556580681743,
+      "view_center_local": [
+        15,
+        356,
+        35
+      ],
+      "voxels": 23,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12048,
+          12049
+        ],
+        [
+          4029,
+          4043
+        ],
+        [
+          3174,
+          3189
+        ]
+      ],
+      "corridor_ids": [
+        363
+      ],
+      "id": 18,
+      "radial_extent_px": 4.124317509876846,
+      "view_center_local": [
+        16,
+        194,
+        238
+      ],
+      "voxels": 48,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12048,
+          12049
+        ],
+        [
+          4162,
+          4175
+        ],
+        [
+          2970,
+          2980
+        ]
+      ],
+      "corridor_ids": [
+        347
+      ],
+      "id": 19,
+      "radial_extent_px": 3.375019154187612,
+      "view_center_local": [
+        16,
+        328,
+        30
+      ],
+      "voxels": 33,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12048,
+          12050
+        ],
+        [
+          4203,
+          4211
+        ],
+        [
+          3111,
+          3129
+        ]
+      ],
+      "corridor_ids": [
+        352,
+        386
+      ],
+      "id": 20,
+      "radial_extent_px": 10.651835459107588,
+      "view_center_local": [
+        16,
+        370,
+        182
+      ],
+      "voxels": 99,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12049,
+          12050
+        ],
+        [
+          4141,
+          4145
+        ],
+        [
+          3128,
+          3148
+        ]
+      ],
+      "corridor_ids": [
+        377
+      ],
+      "id": 21,
+      "radial_extent_px": 12.252737561166214,
+      "view_center_local": [
+        17,
+        302,
+        200
+      ],
+      "voxels": 57,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12050,
+          12056
+        ],
+        [
+          4024,
+          4034
+        ],
+        [
+          3027,
+          3040
+        ]
+      ],
+      "corridor_ids": [
+        396,
+        416,
+        433,
+        453,
+        479,
+        491
+      ],
+      "id": 22,
+      "radial_extent_px": 6.369223446502929,
+      "view_center_local": [
+        20,
+        192,
+        94
+      ],
+      "voxels": 138,
+      "z_span": 6
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12050,
+          12051
+        ],
+        [
+          4106,
+          4111
+        ],
+        [
+          3199,
+          3204
+        ]
+      ],
+      "corridor_ids": [
+        395
+      ],
+      "id": 23,
+      "radial_extent_px": 2.4455217967432645,
+      "view_center_local": [
+        18,
+        268,
+        256
+      ],
+      "voxels": 11,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12051,
+          12052
+        ],
+        [
+          3856,
+          3871
+        ],
+        [
+          3108,
+          3112
+        ]
+      ],
+      "corridor_ids": [
+        413
+      ],
+      "id": 24,
+      "radial_extent_px": 10.720003267418974,
+      "view_center_local": [
+        19,
+        22,
+        165
+      ],
+      "voxels": 39,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12051,
+          12052
+        ],
+        [
+          4085,
+          4090
+        ],
+        [
+          3140,
+          3150
+        ]
+      ],
+      "corridor_ids": [
+        415
+      ],
+      "id": 25,
+      "radial_extent_px": 4.213521736641383,
+      "view_center_local": [
+        19,
+        246,
+        202
+      ],
+      "voxels": 23,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12056,
+          12057
+        ],
+        [
+          4002,
+          4009
+        ],
+        [
+          3165,
+          3170
+        ]
+      ],
+      "corridor_ids": [
+        506
+      ],
+      "id": 26,
+      "radial_extent_px": 3.7959044513822846,
+      "view_center_local": [
+        24,
+        165,
+        223
+      ],
+      "voxels": 15,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12059,
+          12060
+        ],
+        [
+          3976,
+          3977
+        ],
+        [
+          2953,
+          2954
+        ]
+      ],
+      "corridor_ids": [],
+      "id": 27,
+      "radial_extent_px": 0.0,
+      "view_center_local": [
+        27,
+        136,
+        9
+      ],
+      "voxels": 1,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12059,
+          12060
+        ],
+        [
+          3977,
+          4027
+        ],
+        [
+          2953,
+          3016
+        ]
+      ],
+      "corridor_ids": [
+        570
+      ],
+      "id": 28,
+      "radial_extent_px": 15.585753672756255,
+      "view_center_local": [
+        27,
+        158,
+        40
+      ],
+      "voxels": 190,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12059,
+          12062
+        ],
+        [
+          4066,
+          4078
+        ],
+        [
+          3034,
+          3061
+        ]
+      ],
+      "corridor_ids": [
+        571,
+        597,
+        611
+      ],
+      "id": 29,
+      "radial_extent_px": 13.479956346144036,
+      "view_center_local": [
+        28,
+        231,
+        104
+      ],
+      "voxels": 178,
+      "z_span": 3
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12059,
+          12060
+        ],
+        [
+          4077,
+          4119
+        ],
+        [
+          3066,
+          3114
+        ]
+      ],
+      "corridor_ids": [
+        578
+      ],
+      "id": 30,
+      "radial_extent_px": 16.28840783415353,
+      "view_center_local": [
+        27,
+        251,
+        154
+      ],
+      "voxels": 194,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12059,
+          12063
+        ],
+        [
+          4101,
+          4115
+        ],
+        [
+          3071,
+          3096
+        ]
+      ],
+      "corridor_ids": [
+        566,
+        592,
+        610,
+        625
+      ],
+      "id": 31,
+      "radial_extent_px": 10.374663352361267,
+      "view_center_local": [
+        28,
+        267,
+        136
+      ],
+      "voxels": 182,
+      "z_span": 4
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12060,
+          12061
+        ],
+        [
+          4185,
+          4193
+        ],
+        [
+          3243,
+          3254
+        ]
+      ],
+      "corridor_ids": [
+        589
+      ],
+      "id": 32,
+      "radial_extent_px": 2.7624552385250354,
+      "view_center_local": [
+        28,
+        349,
+        305
+      ],
+      "voxels": 27,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12060,
+          12061
+        ],
+        [
+          4191,
+          4198
+        ],
+        [
+          3256,
+          3274
+        ]
+      ],
+      "corridor_ids": [
+        591
+      ],
+      "id": 33,
+      "radial_extent_px": 6.601763243952973,
+      "view_center_local": [
+        28,
+        354,
+        319
+      ],
+      "voxels": 50,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12060,
+          12061
+        ],
+        [
+          4195,
+          4200
+        ],
+        [
+          3283,
+          3297
+        ]
+      ],
+      "corridor_ids": [
+        590
+      ],
+      "id": 34,
+      "radial_extent_px": 8.363682185282414,
+      "view_center_local": [
+        28,
+        357,
+        349
+      ],
+      "voxels": 37,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12061,
+          12062
+        ],
+        [
+          4013,
+          4019
+        ],
+        [
+          3000,
+          3007
+        ]
+      ],
+      "corridor_ids": [
+        609
+      ],
+      "id": 35,
+      "radial_extent_px": 1.5678051888739901,
+      "view_center_local": [
+        29,
+        175,
+        60
+      ],
+      "voxels": 13,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12061,
+          12062
+        ],
+        [
+          4129,
+          4132
+        ],
+        [
+          3147,
+          3159
+        ]
+      ],
+      "corridor_ids": [
+        608
+      ],
+      "id": 36,
+      "radial_extent_px": 6.3950393048330625,
+      "view_center_local": [
+        29,
+        290,
+        207
+      ],
+      "voxels": 29,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12065,
+          12068
+        ],
+        [
+          4110,
+          4118
+        ],
+        [
+          3065,
+          3073
+        ]
+      ],
+      "corridor_ids": [
+        680,
+        705,
+        732
+      ],
+      "id": 37,
+      "radial_extent_px": 5.541801665920502,
+      "view_center_local": [
+        34,
+        274,
+        125
+      ],
+      "voxels": 48,
+      "z_span": 3
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12066,
+          12070
+        ],
+        [
+          4087,
+          4102
+        ],
+        [
+          3055,
+          3089
+        ]
+      ],
+      "corridor_ids": [
+        706,
+        733,
+        755,
+        772
+      ],
+      "id": 38,
+      "radial_extent_px": 15.419333837932072,
+      "view_center_local": [
+        36,
+        249,
+        113
+      ],
+      "voxels": 306,
+      "z_span": 4
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12066,
+          12067
+        ],
+        [
+          4089,
+          4095
+        ],
+        [
+          3116,
+          3122
+        ]
+      ],
+      "corridor_ids": [
+        704
+      ],
+      "id": 39,
+      "radial_extent_px": 2.6849900633674224,
+      "view_center_local": [
+        34,
+        251,
+        174
+      ],
+      "voxels": 15,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12070,
+          12072
+        ],
+        [
+          4169,
+          4182
+        ],
+        [
+          3059,
+          3080
+        ]
+      ],
+      "corridor_ids": [
+        789,
+        807
+      ],
+      "id": 40,
+      "radial_extent_px": 8.280739812217234,
+      "view_center_local": [
+        38,
+        340,
+        131
+      ],
+      "voxels": 109,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12072,
+          12073
+        ],
+        [
+          4102,
+          4106
+        ],
+        [
+          3154,
+          3159
+        ]
+      ],
+      "corridor_ids": [
+        823
+      ],
+      "id": 41,
+      "radial_extent_px": 2.194692987764256,
+      "view_center_local": [
+        40,
+        264,
+        211
+      ],
+      "voxels": 9,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12074,
+          12075
+        ],
+        [
+          4124,
+          4129
+        ],
+        [
+          3282,
+          3294
+        ]
+      ],
+      "corridor_ids": [
+        854
+      ],
+      "id": 42,
+      "radial_extent_px": 5.445992013514797,
+      "view_center_local": [
+        42,
+        286,
+        339
+      ],
+      "voxels": 33,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12075,
+          12076
+        ],
+        [
+          4139,
+          4144
+        ],
+        [
+          3082,
+          3091
+        ]
+      ],
+      "corridor_ids": [
+        866
+      ],
+      "id": 43,
+      "radial_extent_px": 3.7970479650180096,
+      "view_center_local": [
+        43,
+        301,
+        141
+      ],
+      "voxels": 19,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12076,
+          12077
+        ],
+        [
+          4146,
+          4150
+        ],
+        [
+          3098,
+          3106
+        ]
+      ],
+      "corridor_ids": [
+        875
+      ],
+      "id": 44,
+      "radial_extent_px": 4.673274690931748,
+      "view_center_local": [
+        44,
+        308,
+        157
+      ],
+      "voxels": 19,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12077,
+          12078
+        ],
+        [
+          4097,
+          4107
+        ],
+        [
+          3196,
+          3216
+        ]
+      ],
+      "corridor_ids": [
+        892
+      ],
+      "id": 45,
+      "radial_extent_px": 8.127903799078126,
+      "view_center_local": [
+        45,
+        260,
+        258
+      ],
+      "voxels": 58,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12077,
+          12079
+        ],
+        [
+          4211,
+          4216
+        ],
+        [
+          3152,
+          3173
+        ]
+      ],
+      "corridor_ids": [
+        887,
+        899
+      ],
+      "id": 46,
+      "radial_extent_px": 14.472018748474738,
+      "view_center_local": [
+        45,
+        373,
+        215
+      ],
+      "voxels": 81,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12080,
+          12083
+        ],
+        [
+          4213,
+          4217
+        ],
+        [
+          3121,
+          3134
+        ]
+      ],
+      "corridor_ids": [
+        922,
+        930,
+        937
+      ],
+      "id": 47,
+      "radial_extent_px": 8.803726884226307,
+      "view_center_local": [
+        49,
+        374,
+        178
+      ],
+      "voxels": 88,
+      "z_span": 3
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12082,
+          12083
+        ],
+        [
+          4154,
+          4165
+        ],
+        [
+          3210,
+          3214
+        ]
+      ],
+      "corridor_ids": [
+        939
+      ],
+      "id": 48,
+      "radial_extent_px": 7.264558053089331,
+      "view_center_local": [
+        50,
+        319,
+        267
+      ],
+      "voxels": 28,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12082,
+          12083
+        ],
+        [
+          4168,
+          4210
+        ],
+        [
+          3200,
+          3222
+        ]
+      ],
+      "corridor_ids": [
+        942
+      ],
+      "id": 49,
+      "radial_extent_px": 42.07906636299276,
+      "view_center_local": [
+        50,
+        354,
+        277
+      ],
+      "voxels": 157,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12082,
+          12084
+        ],
+        [
+          4183,
+          4192
+        ],
+        [
+          2994,
+          3000
+        ]
+      ],
+      "corridor_ids": [
+        938,
+        947
+      ],
+      "id": 50,
+      "radial_extent_px": 3.9584710541787445,
+      "view_center_local": [
+        50,
+        350,
+        55
+      ],
+      "voxels": 36,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12091,
+          12092
+        ],
+        [
+          4104,
+          4110
+        ],
+        [
+          3065,
+          3072
+        ]
+      ],
+      "corridor_ids": [
+        984
+      ],
+      "id": 51,
+      "radial_extent_px": 2.1633646619852698,
+      "view_center_local": [
+        59,
+        266,
+        124
+      ],
+      "voxels": 18,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12091,
+          12093
+        ],
+        [
+          4169,
+          4181
+        ],
+        [
+          3195,
+          3202
+        ]
+      ],
+      "corridor_ids": [
+        986,
+        997
+      ],
+      "id": 52,
+      "radial_extent_px": 7.52307581376931,
+      "view_center_local": [
+        59,
+        338,
+        256
+      ],
+      "voxels": 53,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12092,
+          12093
+        ],
+        [
+          4131,
+          4135
+        ],
+        [
+          3065,
+          3078
+        ]
+      ],
+      "corridor_ids": [
+        998
+      ],
+      "id": 53,
+      "radial_extent_px": 7.738582833419059,
+      "view_center_local": [
+        60,
+        293,
+        124
+      ],
+      "voxels": 36,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12094,
+          12095
+        ],
+        [
+          4165,
+          4176
+        ],
+        [
+          2963,
+          2979
+        ]
+      ],
+      "corridor_ids": [
+        1024
+      ],
+      "id": 54,
+      "radial_extent_px": 5.327901645264774,
+      "view_center_local": [
+        62,
+        330,
+        23
+      ],
+      "voxels": 43,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12095,
+          12096
+        ],
+        [
+          4135,
+          4155
+        ],
+        [
+          3063,
+          3095
+        ]
+      ],
+      "corridor_ids": [
+        1034
+      ],
+      "id": 55,
+      "radial_extent_px": 9.361378963015113,
+      "view_center_local": [
+        63,
+        301,
+        136
+      ],
+      "voxels": 98,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12097,
+          12100
+        ],
+        [
+          4109,
+          4150
+        ],
+        [
+          3097,
+          3163
+        ]
+      ],
+      "corridor_ids": [
+        1058,
+        1063,
+        1067
+      ],
+      "id": 56,
+      "radial_extent_px": 18.279257060289638,
+      "view_center_local": [
+        66,
+        293,
+        181
+      ],
+      "voxels": 615,
+      "z_span": 3
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12101,
+          12102
+        ],
+        [
+          4119,
+          4150
+        ],
+        [
+          3126,
+          3161
+        ]
+      ],
+      "corridor_ids": [
+        1076
+      ],
+      "id": 57,
+      "radial_extent_px": 7.475117370189992,
+      "view_center_local": [
+        69,
+        292,
+        200
+      ],
+      "voxels": 125,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12102,
+          12104
+        ],
+        [
+          4189,
+          4205
+        ],
+        [
+          2958,
+          2975
+        ]
+      ],
+      "corridor_ids": [
+        1079,
+        1088
+      ],
+      "id": 58,
+      "radial_extent_px": 3.8023160931809343,
+      "view_center_local": [
+        71,
+        350,
+        16
+      ],
+      "voxels": 86,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12102,
+          12103
+        ],
+        [
+          4201,
+          4211
+        ],
+        [
+          3079,
+          3126
+        ]
+      ],
+      "corridor_ids": [
+        1085
+      ],
+      "id": 59,
+      "radial_extent_px": 28.480602858809334,
+      "view_center_local": [
+        70,
+        365,
+        141
+      ],
+      "voxels": 135,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12105,
+          12110
+        ],
+        [
+          4155,
+          4188
+        ],
+        [
+          3104,
+          3167
+        ]
+      ],
+      "corridor_ids": [
+        1116,
+        1122,
+        1127,
+        1134,
+        1141
+      ],
+      "id": 60,
+      "image": "assets/component_0060.png",
+      "radial_extent_px": 29.050200288887936,
+      "view_center_local": [
+        75,
+        322,
+        173
+      ],
+      "voxels": 856,
+      "z_span": 5
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12105,
+          12106
+        ],
+        [
+          4197,
+          4210
+        ],
+        [
+          3080,
+          3132
+        ]
+      ],
+      "corridor_ids": [
+        1113
+      ],
+      "id": 61,
+      "radial_extent_px": 31.634022334626934,
+      "view_center_local": [
+        73,
+        362,
+        171
+      ],
+      "voxels": 151,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12110,
+          12113
+        ],
+        [
+          4109,
+          4124
+        ],
+        [
+          3065,
+          3087
+        ]
+      ],
+      "corridor_ids": [
+        1151,
+        1163,
+        1174
+      ],
+      "id": 62,
+      "radial_extent_px": 7.104250646337732,
+      "view_center_local": [
+        79,
+        278,
+        132
+      ],
+      "voxels": 180,
+      "z_span": 3
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12110,
+          12112
+        ],
+        [
+          4123,
+          4130
+        ],
+        [
+          3091,
+          3108
+        ]
+      ],
+      "corridor_ids": [
+        1149,
+        1161
+      ],
+      "id": 63,
+      "radial_extent_px": 10.274532613576639,
+      "view_center_local": [
+        78,
+        285,
+        159
+      ],
+      "voxels": 61,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12111,
+          12112
+        ],
+        [
+          4213,
+          4217
+        ],
+        [
+          3167,
+          3177
+        ]
+      ],
+      "corridor_ids": [
+        1162
+      ],
+      "id": 64,
+      "radial_extent_px": 6.913752895076641,
+      "view_center_local": [
+        79,
+        375,
+        225
+      ],
+      "voxels": 27,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12113,
+          12114
+        ],
+        [
+          4064,
+          4079
+        ],
+        [
+          3033,
+          3052
+        ]
+      ],
+      "corridor_ids": [
+        1190
+      ],
+      "id": 65,
+      "radial_extent_px": 21.167594091089768,
+      "view_center_local": [
+        81,
+        233,
+        100
+      ],
+      "voxels": 72,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12113,
+          12115
+        ],
+        [
+          4209,
+          4214
+        ],
+        [
+          3167,
+          3175
+        ]
+      ],
+      "corridor_ids": [
+        1181,
+        1195
+      ],
+      "id": 66,
+      "radial_extent_px": 5.544489804693512,
+      "view_center_local": [
+        81,
+        372,
+        230
+      ],
+      "voxels": 36,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12114,
+          12115
+        ],
+        [
+          4114,
+          4122
+        ],
+        [
+          3064,
+          3077
+        ]
+      ],
+      "corridor_ids": [
+        1196
+      ],
+      "id": 67,
+      "radial_extent_px": 4.569994553402694,
+      "view_center_local": [
+        82,
+        277,
+        126
+      ],
+      "voxels": 34,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12114,
+          12116
+        ],
+        [
+          4172,
+          4211
+        ],
+        [
+          3014,
+          3064
+        ]
+      ],
+      "corridor_ids": [
+        1202,
+        1209
+      ],
+      "id": 68,
+      "radial_extent_px": 12.36680917361241,
+      "view_center_local": [
+        82,
+        353,
+        108
+      ],
+      "voxels": 230,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12114,
+          12122
+        ],
+        [
+          4207,
+          4214
+        ],
+        [
+          3135,
+          3156
+        ]
+      ],
+      "corridor_ids": [
+        1194,
+        1207,
+        1219,
+        1233,
+        1250,
+        1261,
+        1271,
+        1277
+      ],
+      "id": 69,
+      "radial_extent_px": 14.115162666729702,
+      "view_center_local": [
+        86,
+        370,
+        198
+      ],
+      "voxels": 314,
+      "z_span": 8
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12116,
+          12117
+        ],
+        [
+          4119,
+          4124
+        ],
+        [
+          3069,
+          3078
+        ]
+      ],
+      "corridor_ids": [
+        1218
+      ],
+      "id": 70,
+      "radial_extent_px": 2.7083232576298997,
+      "view_center_local": [
+        84,
+        280,
+        130
+      ],
+      "voxels": 15,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12118,
+          12119
+        ],
+        [
+          4099,
+          4130
+        ],
+        [
+          2980,
+          3000
+        ]
+      ],
+      "corridor_ids": [
+        1251
+      ],
+      "id": 71,
+      "radial_extent_px": 32.03818648676224,
+      "view_center_local": [
+        86,
+        275,
+        48
+      ],
+      "voxels": 111,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12118,
+          12119
+        ],
+        [
+          4100,
+          4101
+        ],
+        [
+          3001,
+          3002
+        ]
+      ],
+      "corridor_ids": [],
+      "id": 72,
+      "radial_extent_px": 0.0,
+      "view_center_local": [
+        86,
+        260,
+        57
+      ],
+      "voxels": 1,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12119,
+          12120
+        ],
+        [
+          4212,
+          4215
+        ],
+        [
+          3117,
+          3120
+        ]
+      ],
+      "corridor_ids": [
+        1258
+      ],
+      "id": 73,
+      "radial_extent_px": 2.7914449086147215,
+      "view_center_local": [
+        87,
+        373,
+        174
+      ],
+      "voxels": 9,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12120,
+          12121
+        ],
+        [
+          4089,
+          4098
+        ],
+        [
+          3085,
+          3095
+        ]
+      ],
+      "corridor_ids": [
+        1270
+      ],
+      "id": 74,
+      "radial_extent_px": 2.95471051258869,
+      "view_center_local": [
+        88,
+        253,
+        145
+      ],
+      "voxels": 27,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12124,
+          12125
+        ],
+        [
+          4180,
+          4200
+        ],
+        [
+          3196,
+          3205
+        ]
+      ],
+      "corridor_ids": [
+        1303
+      ],
+      "id": 75,
+      "radial_extent_px": 19.458955968481632,
+      "view_center_local": [
+        92,
+        350,
+        256
+      ],
+      "voxels": 56,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12126,
+          12128
+        ],
+        [
+          4208,
+          4214
+        ],
+        [
+          3057,
+          3072
+        ]
+      ],
+      "corridor_ids": [
+        1314,
+        1327
+      ],
+      "id": 76,
+      "radial_extent_px": 5.803748567425828,
+      "view_center_local": [
+        95,
+        369,
+        116
+      ],
+      "voxels": 57,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12130,
+          12132
+        ],
+        [
+          4202,
+          4210
+        ],
+        [
+          3055,
+          3072
+        ]
+      ],
+      "corridor_ids": [
+        1350,
+        1360
+      ],
+      "id": 77,
+      "radial_extent_px": 9.430977650059276,
+      "view_center_local": [
+        98,
+        369,
+        127
+      ],
+      "voxels": 95,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12138,
+          12139
+        ],
+        [
+          3868,
+          3874
+        ],
+        [
+          3018,
+          3026
+        ]
+      ],
+      "corridor_ids": [
+        1405
+      ],
+      "id": 78,
+      "radial_extent_px": 3.131223472740089,
+      "view_center_local": [
+        106,
+        30,
+        79
+      ],
+      "voxels": 20,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12140,
+          12142
+        ],
+        [
+          3968,
+          3973
+        ],
+        [
+          2977,
+          2982
+        ]
+      ],
+      "corridor_ids": [
+        1431,
+        1443
+      ],
+      "id": 79,
+      "radial_extent_px": 2.2869738882243382,
+      "view_center_local": [
+        109,
+        128,
+        34
+      ],
+      "voxels": 19,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12141,
+          12147
+        ],
+        [
+          4043,
+          4070
+        ],
+        [
+          2997,
+          3049
+        ]
+      ],
+      "corridor_ids": [
+        1448,
+        1461,
+        1469,
+        1487,
+        1495,
+        1511
+      ],
+      "id": 80,
+      "radial_extent_px": 17.525257726688096,
+      "view_center_local": [
+        111,
+        209,
+        71
+      ],
+      "voxels": 555,
+      "z_span": 6
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12141,
+          12142
+        ],
+        [
+          4191,
+          4196
+        ],
+        [
+          3209,
+          3214
+        ]
+      ],
+      "corridor_ids": [
+        1442
+      ],
+      "id": 81,
+      "radial_extent_px": 4.98433913466215,
+      "view_center_local": [
+        109,
+        353,
+        269
+      ],
+      "voxels": 12,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12145,
+          12146
+        ],
+        [
+          3968,
+          3973
+        ],
+        [
+          2982,
+          2986
+        ]
+      ],
+      "corridor_ids": [
+        1496
+      ],
+      "id": 82,
+      "radial_extent_px": 2.7073427783332136,
+      "view_center_local": [
+        113,
+        129,
+        40
+      ],
+      "voxels": 11,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12145,
+          12147
+        ],
+        [
+          4152,
+          4157
+        ],
+        [
+          3307,
+          3314
+        ]
+      ],
+      "corridor_ids": [
+        1493,
+        1510
+      ],
+      "id": 83,
+      "radial_extent_px": 5.028776161481119,
+      "view_center_local": [
+        113,
+        316,
+        366
+      ],
+      "voxels": 31,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12147,
+          12148
+        ],
+        [
+          4014,
+          4015
+        ],
+        [
+          2956,
+          2957
+        ]
+      ],
+      "corridor_ids": [],
+      "id": 84,
+      "radial_extent_px": 0.0,
+      "view_center_local": [
+        115,
+        174,
+        12
+      ],
+      "voxels": 1,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12147,
+          12148
+        ],
+        [
+          4016,
+          4030
+        ],
+        [
+          2956,
+          2976
+        ]
+      ],
+      "corridor_ids": [
+        1521
+      ],
+      "id": 85,
+      "radial_extent_px": 6.055934051418262,
+      "view_center_local": [
+        115,
+        181,
+        19
+      ],
+      "voxels": 48,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12150,
+          12154
+        ],
+        [
+          4145,
+          4151
+        ],
+        [
+          3292,
+          3303
+        ]
+      ],
+      "corridor_ids": [
+        1553,
+        1564,
+        1573,
+        1580
+      ],
+      "id": 86,
+      "radial_extent_px": 6.551166808908306,
+      "view_center_local": [
+        120,
+        306,
+        357
+      ],
+      "voxels": 85,
+      "z_span": 4
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12152,
+          12153
+        ],
+        [
+          3939,
+          3943
+        ],
+        [
+          2970,
+          2973
+        ]
+      ],
+      "corridor_ids": [
+        1571
+      ],
+      "id": 87,
+      "radial_extent_px": 2.1853394248839777,
+      "view_center_local": [
+        120,
+        101,
+        26
+      ],
+      "voxels": 9,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12154,
+          12155
+        ],
+        [
+          3918,
+          3932
+        ],
+        [
+          2964,
+          2972
+        ]
+      ],
+      "corridor_ids": [
+        1588
+      ],
+      "id": 88,
+      "radial_extent_px": 5.5269358430298325,
+      "view_center_local": [
+        122,
+        85,
+        21
+      ],
+      "voxels": 39,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12156,
+          12159
+        ],
+        [
+          3968,
+          3981
+        ],
+        [
+          2999,
+          3015
+        ]
+      ],
+      "corridor_ids": [
+        1604,
+        1608,
+        1618
+      ],
+      "id": 89,
+      "radial_extent_px": 6.513807105208116,
+      "view_center_local": [
+        125,
+        132,
+        61
+      ],
+      "voxels": 130,
+      "z_span": 3
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12158,
+          12159
+        ],
+        [
+          4113,
+          4143
+        ],
+        [
+          3129,
+          3150
+        ]
+      ],
+      "corridor_ids": [
+        1623
+      ],
+      "id": 90,
+      "radial_extent_px": 12.070618062977246,
+      "view_center_local": [
+        126,
+        287,
+        196
+      ],
+      "voxels": 86,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12158,
+          12159
+        ],
+        [
+          4131,
+          4142
+        ],
+        [
+          3031,
+          3049
+        ]
+      ],
+      "corridor_ids": [
+        1619
+      ],
+      "id": 91,
+      "radial_extent_px": 5.378488269810987,
+      "view_center_local": [
+        126,
+        295,
+        96
+      ],
+      "voxels": 49,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12158,
+          12159
+        ],
+        [
+          4140,
+          4151
+        ],
+        [
+          3005,
+          3022
+        ]
+      ],
+      "corridor_ids": [
+        1620
+      ],
+      "id": 92,
+      "radial_extent_px": 4.298007464445618,
+      "view_center_local": [
+        126,
+        305,
+        69
+      ],
+      "voxels": 46,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12158,
+          12159
+        ],
+        [
+          4144,
+          4154
+        ],
+        [
+          3054,
+          3066
+        ]
+      ],
+      "corridor_ids": [
+        1617
+      ],
+      "id": 93,
+      "radial_extent_px": 2.273623551471701,
+      "view_center_local": [
+        126,
+        308,
+        117
+      ],
+      "voxels": 29,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12159,
+          12160
+        ],
+        [
+          3893,
+          3901
+        ],
+        [
+          3297,
+          3301
+        ]
+      ],
+      "corridor_ids": [
+        1630
+      ],
+      "id": 94,
+      "radial_extent_px": 5.477439565255963,
+      "view_center_local": [
+        127,
+        56,
+        355
+      ],
+      "voxels": 21,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12160,
+          12161
+        ],
+        [
+          4110,
+          4134
+        ],
+        [
+          3126,
+          3152
+        ]
+      ],
+      "corridor_ids": [
+        1644
+      ],
+      "id": 95,
+      "radial_extent_px": 4.2874487171900455,
+      "view_center_local": [
+        128,
+        281,
+        197
+      ],
+      "voxels": 72,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12161,
+          12162
+        ],
+        [
+          3960,
+          3968
+        ],
+        [
+          3009,
+          3014
+        ]
+      ],
+      "corridor_ids": [
+        1656
+      ],
+      "id": 96,
+      "radial_extent_px": 4.7012994059230095,
+      "view_center_local": [
+        129,
+        124,
+        67
+      ],
+      "voxels": 22,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12161,
+          12162
+        ],
+        [
+          4100,
+          4113
+        ],
+        [
+          3002,
+          3014
+        ]
+      ],
+      "corridor_ids": [
+        1655
+      ],
+      "id": 97,
+      "radial_extent_px": 1.822917033063959,
+      "view_center_local": [
+        129,
+        266,
+        64
+      ],
+      "voxels": 33,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12173,
+          12176
+        ],
+        [
+          3897,
+          3936
+        ],
+        [
+          3049,
+          3064
+        ]
+      ],
+      "corridor_ids": [
+        1727,
+        1732,
+        1739
+      ],
+      "id": 98,
+      "radial_extent_px": 22.453500984079483,
+      "view_center_local": [
+        142,
+        79,
+        115
+      ],
+      "voxels": 324,
+      "z_span": 3
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12175,
+          12176
+        ],
+        [
+          3928,
+          3934
+        ],
+        [
+          3008,
+          3019
+        ]
+      ],
+      "corridor_ids": [
+        1737
+      ],
+      "id": 99,
+      "radial_extent_px": 5.74828697611656,
+      "view_center_local": [
+        143,
+        91,
+        69
+      ],
+      "voxels": 25,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12179,
+          12180
+        ],
+        [
+          4121,
+          4124
+        ],
+        [
+          3232,
+          3236
+        ]
+      ],
+      "corridor_ids": [
+        1755
+      ],
+      "id": 100,
+      "radial_extent_px": 2.770380840999337,
+      "view_center_local": [
+        147,
+        282,
+        289
+      ],
+      "voxels": 10,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12180,
+          12181
+        ],
+        [
+          3890,
+          3891
+        ],
+        [
+          3056,
+          3057
+        ]
+      ],
+      "corridor_ids": [],
+      "id": 101,
+      "radial_extent_px": 0.0,
+      "view_center_local": [
+        148,
+        50,
+        112
+      ],
+      "voxels": 1,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12180,
+          12184
+        ],
+        [
+          3890,
+          3915
+        ],
+        [
+          3056,
+          3082
+        ]
+      ],
+      "corridor_ids": [
+        1763,
+        1773,
+        1778,
+        1785
+      ],
+      "id": 102,
+      "radial_extent_px": 8.785049683834018,
+      "view_center_local": [
+        149,
+        68,
+        130
+      ],
+      "voxels": 260,
+      "z_span": 4
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12180,
+          12181
+        ],
+        [
+          3921,
+          3939
+        ],
+        [
+          3046,
+          3066
+        ]
+      ],
+      "corridor_ids": [
+        1766
+      ],
+      "id": 103,
+      "radial_extent_px": 9.510436278993438,
+      "view_center_local": [
+        148,
+        85,
+        117
+      ],
+      "voxels": 80,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12187,
+          12188
+        ],
+        [
+          3883,
+          3908
+        ],
+        [
+          3062,
+          3089
+        ]
+      ],
+      "corridor_ids": [
+        1821
+      ],
+      "id": 104,
+      "radial_extent_px": 8.376710585446176,
+      "view_center_local": [
+        155,
+        53,
+        135
+      ],
+      "voxels": 104,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12188,
+          12194
+        ],
+        [
+          4045,
+          4056
+        ],
+        [
+          3139,
+          3167
+        ]
+      ],
+      "corridor_ids": [
+        1826,
+        1845,
+        1858,
+        1871,
+        1882,
+        1897
+      ],
+      "id": 105,
+      "radial_extent_px": 16.7275916309992,
+      "view_center_local": [
+        159,
+        209,
+        206
+      ],
+      "voxels": 359,
+      "z_span": 6
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12189,
+          12190
+        ],
+        [
+          4192,
+          4215
+        ],
+        [
+          3213,
+          3228
+        ]
+      ],
+      "corridor_ids": [
+        1843
+      ],
+      "id": 106,
+      "radial_extent_px": 25.5494504802582,
+      "view_center_local": [
+        157,
+        363,
+        274
+      ],
+      "voxels": 68,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12191,
+          12192
+        ],
+        [
+          4051,
+          4056
+        ],
+        [
+          3313,
+          3320
+        ]
+      ],
+      "corridor_ids": [
+        1868
+      ],
+      "id": 107,
+      "radial_extent_px": 6.021178404307648,
+      "view_center_local": [
+        159,
+        213,
+        370
+      ],
+      "voxels": 15,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12193,
+          12196
+        ],
+        [
+          3870,
+          3890
+        ],
+        [
+          3041,
+          3097
+        ]
+      ],
+      "corridor_ids": [
+        1903,
+        1917,
+        1934
+      ],
+      "id": 108,
+      "radial_extent_px": 35.85349323786045,
+      "view_center_local": [
+        162,
+        43,
+        132
+      ],
+      "voxels": 432,
+      "z_span": 3
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12195,
+          12196
+        ],
+        [
+          3912,
+          3934
+        ],
+        [
+          3123,
+          3142
+        ]
+      ],
+      "corridor_ids": [
+        1926
+      ],
+      "id": 109,
+      "radial_extent_px": 5.090202329109843,
+      "view_center_local": [
+        163,
+        83,
+        188
+      ],
+      "voxels": 73,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12196,
+          12198
+        ],
+        [
+          3999,
+          4040
+        ],
+        [
+          3084,
+          3117
+        ]
+      ],
+      "corridor_ids": [
+        1946,
+        1956
+      ],
+      "id": 110,
+      "radial_extent_px": 10.5830991733784,
+      "view_center_local": [
+        164,
+        185,
+        156
+      ],
+      "voxels": 155,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12196,
+          12198
+        ],
+        [
+          4007,
+          4017
+        ],
+        [
+          2981,
+          2998
+        ]
+      ],
+      "corridor_ids": [
+        1938,
+        1958
+      ],
+      "id": 111,
+      "radial_extent_px": 7.099733571577644,
+      "view_center_local": [
+        165,
+        169,
+        40
+      ],
+      "voxels": 73,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12197,
+          12201
+        ],
+        [
+          3870,
+          3921
+        ],
+        [
+          3179,
+          3205
+        ]
+      ],
+      "corridor_ids": [
+        1963,
+        1975,
+        1989,
+        2006
+      ],
+      "id": 112,
+      "image": "assets/component_0112.png",
+      "radial_extent_px": 51.16787717047055,
+      "view_center_local": [
+        167,
+        49,
+        254
+      ],
+      "voxels": 411,
+      "z_span": 4
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12199,
+          12200
+        ],
+        [
+          4061,
+          4067
+        ],
+        [
+          3059,
+          3072
+        ]
+      ],
+      "corridor_ids": [
+        1983
+      ],
+      "id": 113,
+      "radial_extent_px": 7.478925209122281,
+      "view_center_local": [
+        167,
+        224,
+        118
+      ],
+      "voxels": 38,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12199,
+          12201
+        ],
+        [
+          4096,
+          4099
+        ],
+        [
+          3199,
+          3208
+        ]
+      ],
+      "corridor_ids": [
+        1981,
+        2005
+      ],
+      "id": 114,
+      "radial_extent_px": 6.2879388642214735,
+      "view_center_local": [
+        167,
+        258,
+        261
+      ],
+      "voxels": 43,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12200,
+          12201
+        ],
+        [
+          3968,
+          3975
+        ],
+        [
+          3104,
+          3107
+        ]
+      ],
+      "corridor_ids": [
+        1998
+      ],
+      "id": 115,
+      "radial_extent_px": 5.6671858476288435,
+      "view_center_local": [
+        168,
+        131,
+        160
+      ],
+      "voxels": 18,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12201,
+          12204
+        ],
+        [
+          4208,
+          4215
+        ],
+        [
+          3159,
+          3175
+        ]
+      ],
+      "corridor_ids": [
+        2015,
+        2023,
+        2032
+      ],
+      "id": 116,
+      "radial_extent_px": 9.173217967120081,
+      "view_center_local": [
+        170,
+        370,
+        218
+      ],
+      "voxels": 105,
+      "z_span": 3
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12205,
+          12206
+        ],
+        [
+          3861,
+          3871
+        ],
+        [
+          3067,
+          3098
+        ]
+      ],
+      "corridor_ids": [
+        2059
+      ],
+      "id": 117,
+      "radial_extent_px": 18.427174916276158,
+      "view_center_local": [
+        173,
+        25,
+        135
+      ],
+      "voxels": 89,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12206,
+          12207
+        ],
+        [
+          4206,
+          4210
+        ],
+        [
+          3144,
+          3151
+        ]
+      ],
+      "corridor_ids": [
+        2067
+      ],
+      "id": 118,
+      "radial_extent_px": 5.881192391433842,
+      "view_center_local": [
+        174,
+        368,
+        202
+      ],
+      "voxels": 16,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12207,
+          12209
+        ],
+        [
+          4180,
+          4198
+        ],
+        [
+          3212,
+          3230
+        ]
+      ],
+      "corridor_ids": [
+        2078,
+        2089
+      ],
+      "id": 119,
+      "radial_extent_px": 22.89430899162835,
+      "view_center_local": [
+        176,
+        340,
+        285
+      ],
+      "voxels": 99,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12209,
+          12210
+        ],
+        [
+          3858,
+          3868
+        ],
+        [
+          3066,
+          3095
+        ]
+      ],
+      "corridor_ids": [
+        2102
+      ],
+      "id": 120,
+      "radial_extent_px": 18.512501513630127,
+      "view_center_local": [
+        177,
+        22,
+        135
+      ],
+      "voxels": 84,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12209,
+          12210
+        ],
+        [
+          3864,
+          3879
+        ],
+        [
+          3164,
+          3171
+        ]
+      ],
+      "corridor_ids": [
+        2097
+      ],
+      "id": 121,
+      "radial_extent_px": 13.291666601082852,
+      "view_center_local": [
+        177,
+        31,
+        223
+      ],
+      "voxels": 42,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12210,
+          12211
+        ],
+        [
+          4188,
+          4194
+        ],
+        [
+          3210,
+          3217
+        ]
+      ],
+      "corridor_ids": [
+        2106
+      ],
+      "id": 122,
+      "radial_extent_px": 7.432097786338545,
+      "view_center_local": [
+        178,
+        350,
+        270
+      ],
+      "voxels": 14,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12212,
+          12214
+        ],
+        [
+          3854,
+          3866
+        ],
+        [
+          3066,
+          3099
+        ]
+      ],
+      "corridor_ids": [
+        2152,
+        2178
+      ],
+      "id": 123,
+      "radial_extent_px": 21.63693026354065,
+      "view_center_local": [
+        181,
+        14,
+        123
+      ],
+      "voxels": 188,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12213,
+          12214
+        ],
+        [
+          3892,
+          3932
+        ],
+        [
+          2957,
+          3006
+        ]
+      ],
+      "corridor_ids": [
+        2170
+      ],
+      "id": 124,
+      "radial_extent_px": 26.282968713712194,
+      "view_center_local": [
+        181,
+        65,
+        43
+      ],
+      "voxels": 214,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12213,
+          12215
+        ],
+        [
+          4162,
+          4199
+        ],
+        [
+          3217,
+          3233
+        ]
+      ],
+      "corridor_ids": [
+        2168,
+        2193
+      ],
+      "id": 125,
+      "radial_extent_px": 35.81999838348793,
+      "view_center_local": [
+        182,
+        332,
+        275
+      ],
+      "voxels": 174,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12213,
+          12214
+        ],
+        [
+          4193,
+          4198
+        ],
+        [
+          3310,
+          3317
+        ]
+      ],
+      "corridor_ids": [
+        2157
+      ],
+      "id": 126,
+      "radial_extent_px": 5.854142504297897,
+      "view_center_local": [
+        181,
+        355,
+        368
+      ],
+      "voxels": 18,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12216,
+          12218
+        ],
+        [
+          3904,
+          3918
+        ],
+        [
+          3001,
+          3024
+        ]
+      ],
+      "corridor_ids": [
+        2240,
+        2269
+      ],
+      "id": 127,
+      "radial_extent_px": 13.110797845575462,
+      "view_center_local": [
+        184,
+        73,
+        76
+      ],
+      "voxels": 127,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12216,
+          12219
+        ],
+        [
+          4119,
+          4136
+        ],
+        [
+          3259,
+          3300
+        ]
+      ],
+      "corridor_ids": [
+        2243,
+        2278,
+        2311
+      ],
+      "id": 128,
+      "radial_extent_px": 20.07118525342446,
+      "view_center_local": [
+        185,
+        289,
+        342
+      ],
+      "voxels": 289,
+      "z_span": 3
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12217,
+          12220
+        ],
+        [
+          4028,
+          4046
+        ],
+        [
+          2979,
+          3017
+        ]
+      ],
+      "corridor_ids": [
+        2263,
+        2300,
+        2338
+      ],
+      "id": 129,
+      "radial_extent_px": 16.41077423572301,
+      "view_center_local": [
+        186,
+        199,
+        60
+      ],
+      "voxels": 260,
+      "z_span": 3
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12222,
+          12223
+        ],
+        [
+          3966,
+          3990
+        ],
+        [
+          3218,
+          3222
+        ]
+      ],
+      "corridor_ids": [
+        2395
+      ],
+      "id": 130,
+      "radial_extent_px": 17.81248731228004,
+      "view_center_local": [
+        190,
+        137,
+        276
+      ],
+      "voxels": 65,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12223,
+          12224
+        ],
+        [
+          3917,
+          3932
+        ],
+        [
+          3073,
+          3079
+        ]
+      ],
+      "corridor_ids": [
+        2410
+      ],
+      "id": 131,
+      "radial_extent_px": 8.851546658089205,
+      "view_center_local": [
+        191,
+        84,
+        131
+      ],
+      "voxels": 44,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12224,
+          12225
+        ],
+        [
+          4103,
+          4107
+        ],
+        [
+          3278,
+          3284
+        ]
+      ],
+      "corridor_ids": [
+        2427
+      ],
+      "id": 132,
+      "radial_extent_px": 2.425820622217543,
+      "view_center_local": [
+        192,
+        264,
+        336
+      ],
+      "voxels": 13,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12224,
+          12225
+        ],
+        [
+          4106,
+          4113
+        ],
+        [
+          3289,
+          3301
+        ]
+      ],
+      "corridor_ids": [
+        2428
+      ],
+      "id": 133,
+      "radial_extent_px": 3.9149096481954757,
+      "view_center_local": [
+        192,
+        270,
+        349
+      ],
+      "voxels": 32,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12224,
+          12225
+        ],
+        [
+          4130,
+          4136
+        ],
+        [
+          3260,
+          3274
+        ]
+      ],
+      "corridor_ids": [
+        2434
+      ],
+      "id": 134,
+      "radial_extent_px": 10.525738819556182,
+      "view_center_local": [
+        192,
+        292,
+        327
+      ],
+      "voxels": 39,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12225,
+          12226
+        ],
+        [
+          4027,
+          4030
+        ],
+        [
+          3273,
+          3285
+        ]
+      ],
+      "corridor_ids": [
+        2449
+      ],
+      "id": 135,
+      "radial_extent_px": 7.851082310616107,
+      "view_center_local": [
+        193,
+        188,
+        336
+      ],
+      "voxels": 34,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12225,
+          12226
+        ],
+        [
+          4032,
+          4045
+        ],
+        [
+          3134,
+          3154
+        ]
+      ],
+      "corridor_ids": [
+        2458
+      ],
+      "id": 136,
+      "radial_extent_px": 7.302435935481981,
+      "view_center_local": [
+        193,
+        200,
+        196
+      ],
+      "voxels": 59,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12227,
+          12228
+        ],
+        [
+          4125,
+          4129
+        ],
+        [
+          3262,
+          3267
+        ]
+      ],
+      "corridor_ids": [
+        2485
+      ],
+      "id": 137,
+      "radial_extent_px": 3.8059460637098255,
+      "view_center_local": [
+        195,
+        286,
+        322
+      ],
+      "voxels": 11,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12227,
+          12228
+        ],
+        [
+          4208,
+          4214
+        ],
+        [
+          3184,
+          3189
+        ]
+      ],
+      "corridor_ids": [
+        2483
+      ],
+      "id": 138,
+      "radial_extent_px": 5.82761346062216,
+      "view_center_local": [
+        195,
+        370,
+        243
+      ],
+      "voxels": 12,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12228,
+          12229
+        ],
+        [
+          3977,
+          3981
+        ],
+        [
+          3179,
+          3194
+        ]
+      ],
+      "corridor_ids": [
+        2503
+      ],
+      "id": 139,
+      "radial_extent_px": 10.769354584290113,
+      "view_center_local": [
+        196,
+        139,
+        238
+      ],
+      "voxels": 40,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12229,
+          12230
+        ],
+        [
+          4037,
+          4049
+        ],
+        [
+          3027,
+          3059
+        ]
+      ],
+      "corridor_ids": [
+        2521
+      ],
+      "id": 140,
+      "radial_extent_px": 16.025708578645663,
+      "view_center_local": [
+        197,
+        203,
+        96
+      ],
+      "voxels": 89,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12229,
+          12230
+        ],
+        [
+          4120,
+          4123
+        ],
+        [
+          3273,
+          3286
+        ]
+      ],
+      "corridor_ids": [
+        2517
+      ],
+      "id": 141,
+      "radial_extent_px": 6.551364072460956,
+      "view_center_local": [
+        197,
+        281,
+        332
+      ],
+      "voxels": 31,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12232,
+          12233
+        ],
+        [
+          3854,
+          3857
+        ],
+        [
+          3059,
+          3065
+        ]
+      ],
+      "corridor_ids": [
+        2560
+      ],
+      "id": 142,
+      "radial_extent_px": 5.166815795045068,
+      "view_center_local": [
+        200,
+        15,
+        119
+      ],
+      "voxels": 16,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12235,
+          12236
+        ],
+        [
+          4155,
+          4159
+        ],
+        [
+          3248,
+          3254
+        ]
+      ],
+      "corridor_ids": [
+        2602
+      ],
+      "id": 143,
+      "radial_extent_px": 4.648174316574114,
+      "view_center_local": [
+        203,
+        317,
+        305
+      ],
+      "voxels": 15,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12237,
+          12239
+        ],
+        [
+          4147,
+          4156
+        ],
+        [
+          3241,
+          3274
+        ]
+      ],
+      "corridor_ids": [
+        2632,
+        2646
+      ],
+      "id": 144,
+      "radial_extent_px": 21.620855913006494,
+      "view_center_local": [
+        206,
+        307,
+        316
+      ],
+      "voxels": 181,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12241,
+          12242
+        ],
+        [
+          4142,
+          4146
+        ],
+        [
+          3254,
+          3265
+        ]
+      ],
+      "corridor_ids": [
+        2678
+      ],
+      "id": 145,
+      "radial_extent_px": 7.783663406119558,
+      "view_center_local": [
+        209,
+        303,
+        316
+      ],
+      "voxels": 28,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12241,
+          12242
+        ],
+        [
+          4170,
+          4173
+        ],
+        [
+          3118,
+          3128
+        ]
+      ],
+      "corridor_ids": [
+        2676
+      ],
+      "id": 146,
+      "radial_extent_px": 6.396213813958866,
+      "view_center_local": [
+        209,
+        331,
+        179
+      ],
+      "voxels": 27,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12243,
+          12244
+        ],
+        [
+          3887,
+          3890
+        ],
+        [
+          3072,
+          3080
+        ]
+      ],
+      "corridor_ids": [
+        2701
+      ],
+      "id": 147,
+      "radial_extent_px": 5.334395251817227,
+      "view_center_local": [
+        211,
+        48,
+        133
+      ],
+      "voxels": 20,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12244,
+          12245
+        ],
+        [
+          3940,
+          3947
+        ],
+        [
+          3030,
+          3053
+        ]
+      ],
+      "corridor_ids": [
+        2722
+      ],
+      "id": 148,
+      "radial_extent_px": 15.155547085892294,
+      "view_center_local": [
+        212,
+        103,
+        91
+      ],
+      "voxels": 62,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12245,
+          12246
+        ],
+        [
+          3880,
+          3885
+        ],
+        [
+          3304,
+          3318
+        ]
+      ],
+      "corridor_ids": [
+        2736
+      ],
+      "id": 149,
+      "radial_extent_px": 7.476945368531005,
+      "view_center_local": [
+        213,
+        42,
+        364
+      ],
+      "voxels": 36,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12245,
+          12247
+        ],
+        [
+          4206,
+          4211
+        ],
+        [
+          3237,
+          3248
+        ]
+      ],
+      "corridor_ids": [
+        2739,
+        2754
+      ],
+      "id": 150,
+      "radial_extent_px": 7.65562506792844,
+      "view_center_local": [
+        213,
+        369,
+        299
+      ],
+      "voxels": 43,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12246,
+          12247
+        ],
+        [
+          3883,
+          3887
+        ],
+        [
+          3072,
+          3077
+        ]
+      ],
+      "corridor_ids": [
+        2757
+      ],
+      "id": 151,
+      "radial_extent_px": 4.226896248638582,
+      "view_center_local": [
+        214,
+        44,
+        131
+      ],
+      "voxels": 13,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12247,
+          12249
+        ],
+        [
+          4186,
+          4193
+        ],
+        [
+          3162,
+          3172
+        ]
+      ],
+      "corridor_ids": [
+        2774,
+        2792
+      ],
+      "id": 152,
+      "radial_extent_px": 9.20867113921031,
+      "view_center_local": [
+        215,
+        350,
+        225
+      ],
+      "voxels": 48,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12247,
+          12248
+        ],
+        [
+          4193,
+          4198
+        ],
+        [
+          3148,
+          3157
+        ]
+      ],
+      "corridor_ids": [
+        2771
+      ],
+      "id": 153,
+      "radial_extent_px": 6.710684418990695,
+      "view_center_local": [
+        215,
+        355,
+        208
+      ],
+      "voxels": 23,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12248,
+          12249
+        ],
+        [
+          3849,
+          3852
+        ],
+        [
+          3060,
+          3066
+        ]
+      ],
+      "corridor_ids": [
+        2791
+      ],
+      "id": 154,
+      "radial_extent_px": 3.3283713304749654,
+      "view_center_local": [
+        216,
+        10,
+        118
+      ],
+      "voxels": 9,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12248,
+          12249
+        ],
+        [
+          4193,
+          4201
+        ],
+        [
+          3260,
+          3281
+        ]
+      ],
+      "corridor_ids": [
+        2804
+      ],
+      "id": 155,
+      "radial_extent_px": 15.436552421451779,
+      "view_center_local": [
+        216,
+        356,
+        327
+      ],
+      "voxels": 59,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12249,
+          12252
+        ],
+        [
+          4089,
+          4096
+        ],
+        [
+          3264,
+          3285
+        ]
+      ],
+      "corridor_ids": [
+        2816,
+        2834,
+        2843
+      ],
+      "id": 156,
+      "radial_extent_px": 12.691756549524712,
+      "view_center_local": [
+        218,
+        252,
+        332
+      ],
+      "voxels": 169,
+      "z_span": 3
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12250,
+          12254
+        ],
+        [
+          4134,
+          4150
+        ],
+        [
+          3122,
+          3138
+        ]
+      ],
+      "corridor_ids": [
+        2825,
+        2842,
+        2854,
+        2864
+      ],
+      "id": 157,
+      "radial_extent_px": 16.172575954611148,
+      "view_center_local": [
+        220,
+        298,
+        191
+      ],
+      "voxels": 117,
+      "z_span": 4
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12250,
+          12251
+        ],
+        [
+          4201,
+          4205
+        ],
+        [
+          3184,
+          3192
+        ]
+      ],
+      "corridor_ids": [
+        2826
+      ],
+      "id": 158,
+      "radial_extent_px": 6.334863448274291,
+      "view_center_local": [
+        218,
+        363,
+        241
+      ],
+      "voxels": 18,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12250,
+          12251
+        ],
+        [
+          4203,
+          4208
+        ],
+        [
+          3200,
+          3207
+        ]
+      ],
+      "corridor_ids": [
+        2831
+      ],
+      "id": 159,
+      "radial_extent_px": 3.8320578457100964,
+      "view_center_local": [
+        218,
+        364,
+        261
+      ],
+      "voxels": 20,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12251,
+          12252
+        ],
+        [
+          3882,
+          3896
+        ],
+        [
+          3072,
+          3080
+        ]
+      ],
+      "corridor_ids": [
+        2841
+      ],
+      "id": 160,
+      "radial_extent_px": 4.188847520810555,
+      "view_center_local": [
+        219,
+        49,
+        131
+      ],
+      "voxels": 36,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12253,
+          12256
+        ],
+        [
+          3997,
+          4007
+        ],
+        [
+          3101,
+          3116
+        ]
+      ],
+      "corridor_ids": [
+        2866,
+        2873,
+        2885
+      ],
+      "id": 161,
+      "radial_extent_px": 12.643699343612184,
+      "view_center_local": [
+        222,
+        160,
+        164
+      ],
+      "voxels": 96,
+      "z_span": 3
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12253,
+          12254
+        ],
+        [
+          4194,
+          4197
+        ],
+        [
+          3250,
+          3255
+        ]
+      ],
+      "corridor_ids": [
+        2861
+      ],
+      "id": 162,
+      "radial_extent_px": 2.73608619136121,
+      "view_center_local": [
+        221,
+        355,
+        307
+      ],
+      "voxels": 11,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12255,
+          12257
+        ],
+        [
+          4183,
+          4188
+        ],
+        [
+          3297,
+          3308
+        ]
+      ],
+      "corridor_ids": [
+        2882,
+        2897
+      ],
+      "id": 163,
+      "radial_extent_px": 6.428016933555,
+      "view_center_local": [
+        224,
+        344,
+        359
+      ],
+      "voxels": 43,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12257,
+          12258
+        ],
+        [
+          3855,
+          3872
+        ],
+        [
+          3218,
+          3302
+        ]
+      ],
+      "corridor_ids": [
+        2920
+      ],
+      "id": 164,
+      "image": "assets/component_0164.png",
+      "radial_extent_px": 44.14051388869677,
+      "view_center_local": [
+        225,
+        20,
+        315
+      ],
+      "voxels": 242,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12257,
+          12258
+        ],
+        [
+          3874,
+          3881
+        ],
+        [
+          3072,
+          3078
+        ]
+      ],
+      "corridor_ids": [
+        2914
+      ],
+      "id": 165,
+      "radial_extent_px": 2.177898069046705,
+      "view_center_local": [
+        225,
+        38,
+        129
+      ],
+      "voxels": 18,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12257,
+          12258
+        ],
+        [
+          3973,
+          3982
+        ],
+        [
+          3003,
+          3009
+        ]
+      ],
+      "corridor_ids": [
+        2911
+      ],
+      "id": 166,
+      "radial_extent_px": 9.048121868986527,
+      "view_center_local": [
+        225,
+        137,
+        60
+      ],
+      "voxels": 24,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12257,
+          12259
+        ],
+        [
+          4201,
+          4207
+        ],
+        [
+          3131,
+          3142
+        ]
+      ],
+      "corridor_ids": [
+        2909,
+        2925
+      ],
+      "id": 167,
+      "radial_extent_px": 8.703753955071079,
+      "view_center_local": [
+        226,
+        362,
+        195
+      ],
+      "voxels": 29,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12258,
+          12259
+        ],
+        [
+          3960,
+          3969
+        ],
+        [
+          2997,
+          3019
+        ]
+      ],
+      "corridor_ids": [
+        2929
+      ],
+      "id": 168,
+      "radial_extent_px": 11.885258629485406,
+      "view_center_local": [
+        226,
+        122,
+        56
+      ],
+      "voxels": 63,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12258,
+          12259
+        ],
+        [
+          3963,
+          3964
+        ],
+        [
+          2996,
+          2997
+        ]
+      ],
+      "corridor_ids": [],
+      "id": 169,
+      "radial_extent_px": 0.0,
+      "view_center_local": [
+        226,
+        123,
+        52
+      ],
+      "voxels": 1,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12259,
+          12262
+        ],
+        [
+          3850,
+          3863
+        ],
+        [
+          3211,
+          3273
+        ]
+      ],
+      "corridor_ids": [
+        2950,
+        2962,
+        2978
+      ],
+      "id": 170,
+      "radial_extent_px": 33.54797049184583,
+      "view_center_local": [
+        228,
+        16,
+        292
+      ],
+      "voxels": 466,
+      "z_span": 3
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12259,
+          12262
+        ],
+        [
+          3863,
+          3872
+        ],
+        [
+          3278,
+          3300
+        ]
+      ],
+      "corridor_ids": [
+        2941,
+        2957,
+        2971
+      ],
+      "id": 171,
+      "radial_extent_px": 8.754627891408973,
+      "view_center_local": [
+        228,
+        27,
+        341
+      ],
+      "voxels": 156,
+      "z_span": 3
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12259,
+          12260
+        ],
+        [
+          3958,
+          3965
+        ],
+        [
+          3163,
+          3169
+        ]
+      ],
+      "corridor_ids": [
+        2939
+      ],
+      "id": 172,
+      "radial_extent_px": 3.74461273269867,
+      "view_center_local": [
+        227,
+        121,
+        221
+      ],
+      "voxels": 19,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12261,
+          12262
+        ],
+        [
+          4201,
+          4210
+        ],
+        [
+          3120,
+          3137
+        ]
+      ],
+      "corridor_ids": [
+        2974
+      ],
+      "id": 173,
+      "radial_extent_px": 15.811294526349457,
+      "view_center_local": [
+        229,
+        364,
+        187
+      ],
+      "voxels": 47,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12263,
+          12264
+        ],
+        [
+          3849,
+          3859
+        ],
+        [
+          3220,
+          3251
+        ]
+      ],
+      "corridor_ids": [
+        3003
+      ],
+      "id": 174,
+      "radial_extent_px": 15.187486619728134,
+      "view_center_local": [
+        231,
+        14,
+        293
+      ],
+      "voxels": 87,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12263,
+          12264
+        ],
+        [
+          3877,
+          3891
+        ],
+        [
+          3165,
+          3191
+        ]
+      ],
+      "corridor_ids": [
+        3005
+      ],
+      "id": 175,
+      "radial_extent_px": 11.512017730289244,
+      "view_center_local": [
+        231,
+        47,
+        236
+      ],
+      "voxels": 79,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12264,
+          12266
+        ],
+        [
+          3865,
+          3876
+        ],
+        [
+          3133,
+          3156
+        ]
+      ],
+      "corridor_ids": [
+        3019,
+        3027
+      ],
+      "id": 176,
+      "radial_extent_px": 11.476054887884516,
+      "view_center_local": [
+        232,
+        31,
+        208
+      ],
+      "voxels": 112,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12264,
+          12266
+        ],
+        [
+          3925,
+          3928
+        ],
+        [
+          3005,
+          3015
+        ]
+      ],
+      "corridor_ids": [
+        3015,
+        3025
+      ],
+      "id": 177,
+      "radial_extent_px": 8.21498701701205,
+      "view_center_local": [
+        232,
+        87,
+        63
+      ],
+      "voxels": 41,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12265,
+          12266
+        ],
+        [
+          4175,
+          4178
+        ],
+        [
+          3305,
+          3311
+        ]
+      ],
+      "corridor_ids": [
+        3026
+      ],
+      "id": 178,
+      "radial_extent_px": 3.653533430968878,
+      "view_center_local": [
+        233,
+        337,
+        361
+      ],
+      "voxels": 12,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12265,
+          12270
+        ],
+        [
+          4177,
+          4186
+        ],
+        [
+          3285,
+          3293
+        ]
+      ],
+      "corridor_ids": [
+        3028,
+        3036,
+        3041,
+        3047,
+        3052
+      ],
+      "id": 179,
+      "radial_extent_px": 7.47932194121347,
+      "view_center_local": [
+        234,
+        343,
+        343
+      ],
+      "voxels": 76,
+      "z_span": 5
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12266,
+          12267
+        ],
+        [
+          3869,
+          3887
+        ],
+        [
+          3173,
+          3214
+        ]
+      ],
+      "corridor_ids": [
+        3038
+      ],
+      "id": 180,
+      "radial_extent_px": 19.10293819800893,
+      "view_center_local": [
+        234,
+        35,
+        250
+      ],
+      "voxels": 122,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12268,
+          12269
+        ],
+        [
+          3868,
+          3877
+        ],
+        [
+          3180,
+          3204
+        ]
+      ],
+      "corridor_ids": [
+        3049
+      ],
+      "id": 181,
+      "radial_extent_px": 12.15752505433818,
+      "view_center_local": [
+        236,
+        32,
+        247
+      ],
+      "voxels": 66,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12268,
+          12269
+        ],
+        [
+          3877,
+          3878
+        ],
+        [
+          3203,
+          3204
+        ]
+      ],
+      "corridor_ids": [],
+      "id": 182,
+      "radial_extent_px": 0.0,
+      "view_center_local": [
+        236,
+        37,
+        259
+      ],
+      "voxels": 1,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12268,
+          12270
+        ],
+        [
+          4174,
+          4179
+        ],
+        [
+          3273,
+          3280
+        ]
+      ],
+      "corridor_ids": [
+        3046,
+        3054
+      ],
+      "id": 183,
+      "radial_extent_px": 5.085937140259148,
+      "view_center_local": [
+        237,
+        334,
+        331
+      ],
+      "voxels": 24,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12269,
+          12273
+        ],
+        [
+          3978,
+          3995
+        ],
+        [
+          2998,
+          3014
+        ]
+      ],
+      "corridor_ids": [
+        3058,
+        3068,
+        3079,
+        3089
+      ],
+      "id": 184,
+      "radial_extent_px": 12.712425094748369,
+      "view_center_local": [
+        239,
+        142,
+        64
+      ],
+      "voxels": 110,
+      "z_span": 4
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12269,
+          12279
+        ],
+        [
+          4080,
+          4103
+        ],
+        [
+          3274,
+          3302
+        ]
+      ],
+      "corridor_ids": [
+        3057,
+        3067,
+        3081,
+        3091,
+        3100,
+        3108,
+        3116,
+        3130,
+        3137,
+        3146
+      ],
+      "id": 185,
+      "image": "assets/component_0185.png",
+      "radial_extent_px": 23.98489288871008,
+      "view_center_local": [
+        243,
+        248,
+        354
+      ],
+      "voxels": 514,
+      "z_span": 10
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12270,
+          12272
+        ],
+        [
+          3972,
+          3980
+        ],
+        [
+          3022,
+          3044
+        ]
+      ],
+      "corridor_ids": [
+        3066,
+        3080
+      ],
+      "id": 186,
+      "radial_extent_px": 18.059361871404235,
+      "view_center_local": [
+        239,
+        133,
+        96
+      ],
+      "voxels": 114,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12271,
+          12274
+        ],
+        [
+          3887,
+          3896
+        ],
+        [
+          3072,
+          3084
+        ]
+      ],
+      "corridor_ids": [
+        3077,
+        3086,
+        3097
+      ],
+      "id": 187,
+      "radial_extent_px": 6.407619538923541,
+      "view_center_local": [
+        240,
+        53,
+        133
+      ],
+      "voxels": 84,
+      "z_span": 3
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12272,
+          12281
+        ],
+        [
+          3863,
+          3873
+        ],
+        [
+          3186,
+          3206
+        ]
+      ],
+      "corridor_ids": [
+        3088,
+        3095,
+        3105,
+        3113,
+        3124,
+        3133,
+        3141,
+        3147,
+        3155
+      ],
+      "id": 188,
+      "image": "assets/component_0188.png",
+      "radial_extent_px": 12.814277095134912,
+      "view_center_local": [
+        244,
+        30,
+        257
+      ],
+      "voxels": 372,
+      "z_span": 9
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12272,
+          12275
+        ],
+        [
+          4166,
+          4172
+        ],
+        [
+          3309,
+          3318
+        ]
+      ],
+      "corridor_ids": [
+        3090,
+        3098,
+        3107
+      ],
+      "id": 189,
+      "radial_extent_px": 7.707105867967016,
+      "view_center_local": [
+        241,
+        330,
+        366
+      ],
+      "voxels": 56,
+      "z_span": 3
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12274,
+          12275
+        ],
+        [
+          3947,
+          3985
+        ],
+        [
+          3030,
+          3106
+        ]
+      ],
+      "corridor_ids": [
+        3110
+      ],
+      "id": 190,
+      "image": "assets/component_0190.png",
+      "radial_extent_px": 79.19472279729302,
+      "view_center_local": [
+        242,
+        136,
+        123
+      ],
+      "voxels": 243,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12277,
+          12278
+        ],
+        [
+          3884,
+          3897
+        ],
+        [
+          3072,
+          3095
+        ]
+      ],
+      "corridor_ids": [
+        3134
+      ],
+      "id": 191,
+      "radial_extent_px": 11.460719026243737,
+      "view_center_local": [
+        245,
+        50,
+        137
+      ],
+      "voxels": 67,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12278,
+          12279
+        ],
+        [
+          4017,
+          4020
+        ],
+        [
+          2979,
+          2986
+        ]
+      ],
+      "corridor_ids": [
+        3140
+      ],
+      "id": 192,
+      "radial_extent_px": 5.781649592225449,
+      "view_center_local": [
+        246,
+        178,
+        37
+      ],
+      "voxels": 19,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12280,
+          12281
+        ],
+        [
+          4064,
+          4071
+        ],
+        [
+          3159,
+          3168
+        ]
+      ],
+      "corridor_ids": [
+        3154
+      ],
+      "id": 193,
+      "radial_extent_px": 8.893547582502833,
+      "view_center_local": [
+        248,
+        227,
+        217
+      ],
+      "voxels": 22,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12281,
+          12288
+        ],
+        [
+          3880,
+          3893
+        ],
+        [
+          3071,
+          3113
+        ]
+      ],
+      "corridor_ids": [
+        3163,
+        3173,
+        3182,
+        3188,
+        3197,
+        3203,
+        3209
+      ],
+      "id": 194,
+      "radial_extent_px": 26.262173582999594,
+      "view_center_local": [
+        252,
+        49,
+        153
+      ],
+      "voxels": 598,
+      "z_span": 7
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12282,
+          12286
+        ],
+        [
+          3861,
+          3871
+        ],
+        [
+          3187,
+          3207
+        ]
+      ],
+      "corridor_ids": [
+        3168,
+        3177,
+        3184,
+        3193
+      ],
+      "id": 195,
+      "radial_extent_px": 10.726749049913565,
+      "view_center_local": [
+        251,
+        30,
+        261
+      ],
+      "voxels": 218,
+      "z_span": 4
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12284,
+          12286
+        ],
+        [
+          4067,
+          4081
+        ],
+        [
+          3266,
+          3309
+        ]
+      ],
+      "corridor_ids": [
+        3189,
+        3198
+      ],
+      "id": 196,
+      "radial_extent_px": 24.998358023877472,
+      "view_center_local": [
+        253,
+        229,
+        355
+      ],
+      "voxels": 232,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12288,
+          12294
+        ],
+        [
+          3890,
+          3909
+        ],
+        [
+          3084,
+          3138
+        ]
+      ],
+      "corridor_ids": [
+        3214,
+        3223,
+        3227,
+        3237,
+        3249,
+        3258
+      ],
+      "id": 197,
+      "image": "assets/component_0197.png",
+      "radial_extent_px": 36.38997363192743,
+      "view_center_local": [
+        258,
+        64,
+        173
+      ],
+      "voxels": 903,
+      "z_span": 6
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12290,
+          12292
+        ],
+        [
+          4074,
+          4088
+        ],
+        [
+          3010,
+          3042
+        ]
+      ],
+      "corridor_ids": [
+        3229,
+        3241
+      ],
+      "id": 198,
+      "radial_extent_px": 15.65957636496205,
+      "view_center_local": [
+        258,
+        247,
+        95
+      ],
+      "voxels": 178,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12296,
+          12299
+        ],
+        [
+          3898,
+          3909
+        ],
+        [
+          3228,
+          3250
+        ]
+      ],
+      "corridor_ids": [
+        3277,
+        3284,
+        3290
+      ],
+      "id": 199,
+      "radial_extent_px": 10.328627722781675,
+      "view_center_local": [
+        265,
+        63,
+        295
+      ],
+      "voxels": 170,
+      "z_span": 3
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12297,
+          12298
+        ],
+        [
+          3886,
+          3892
+        ],
+        [
+          3081,
+          3128
+        ]
+      ],
+      "corridor_ids": [
+        3285
+      ],
+      "id": 200,
+      "radial_extent_px": 34.43738443764016,
+      "view_center_local": [
+        265,
+        49,
+        138
+      ],
+      "voxels": 139,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12299,
+          12303
+        ],
+        [
+          3883,
+          3890
+        ],
+        [
+          3081,
+          3130
+        ]
+      ],
+      "corridor_ids": [
+        3301,
+        3310,
+        3317,
+        3327
+      ],
+      "id": 201,
+      "radial_extent_px": 35.85311739586166,
+      "view_center_local": [
+        268,
+        49,
+        178
+      ],
+      "voxels": 529,
+      "z_span": 4
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12299,
+          12300
+        ],
+        [
+          3927,
+          3928
+        ],
+        [
+          3043,
+          3044
+        ]
+      ],
+      "corridor_ids": [],
+      "id": 202,
+      "radial_extent_px": 0.0,
+      "view_center_local": [
+        267,
+        87,
+        99
+      ],
+      "voxels": 1,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12299,
+          12302
+        ],
+        [
+          3928,
+          3935
+        ],
+        [
+          3008,
+          3043
+        ]
+      ],
+      "corridor_ids": [
+        3300,
+        3308,
+        3316
+      ],
+      "id": 203,
+      "radial_extent_px": 29.152015805388146,
+      "view_center_local": [
+        268,
+        90,
+        81
+      ],
+      "voxels": 225,
+      "z_span": 3
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12300,
+          12304
+        ],
+        [
+          4043,
+          4061
+        ],
+        [
+          2956,
+          2996
+        ]
+      ],
+      "corridor_ids": [
+        3312,
+        3319,
+        3328,
+        3337
+      ],
+      "id": 204,
+      "radial_extent_px": 34.51956901960534,
+      "view_center_local": [
+        270,
+        206,
+        41
+      ],
+      "voxels": 380,
+      "z_span": 4
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12302,
+          12303
+        ],
+        [
+          3893,
+          3906
+        ],
+        [
+          3218,
+          3249
+        ]
+      ],
+      "corridor_ids": [
+        3325
+      ],
+      "id": 205,
+      "radial_extent_px": 14.222344138481276,
+      "view_center_local": [
+        270,
+        58,
+        285
+      ],
+      "voxels": 91,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12302,
+          12306
+        ],
+        [
+          3918,
+          3924
+        ],
+        [
+          3021,
+          3038
+        ]
+      ],
+      "corridor_ids": [
+        3323,
+        3333,
+        3341,
+        3348
+      ],
+      "id": 206,
+      "radial_extent_px": 14.191290365856617,
+      "view_center_local": [
+        272,
+        81,
+        82
+      ],
+      "voxels": 104,
+      "z_span": 4
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12302,
+          12304
+        ],
+        [
+          4203,
+          4208
+        ],
+        [
+          3019,
+          3035
+        ]
+      ],
+      "corridor_ids": [
+        3322,
+        3331
+      ],
+      "id": 207,
+      "radial_extent_px": 9.94226436466397,
+      "view_center_local": [
+        270,
+        366,
+        82
+      ],
+      "voxels": 68,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12303,
+          12305
+        ],
+        [
+          4200,
+          4207
+        ],
+        [
+          2984,
+          3011
+        ]
+      ],
+      "corridor_ids": [
+        3332,
+        3340
+      ],
+      "id": 208,
+      "radial_extent_px": 20.084687037700405,
+      "view_center_local": [
+        271,
+        364,
+        48
+      ],
+      "voxels": 122,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12303,
+          12304
+        ],
+        [
+          4204,
+          4205
+        ],
+        [
+          3010,
+          3011
+        ]
+      ],
+      "corridor_ids": [],
+      "id": 209,
+      "radial_extent_px": 0.0,
+      "view_center_local": [
+        271,
+        364,
+        66
+      ],
+      "voxels": 1,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12304,
+          12308
+        ],
+        [
+          3878,
+          3889
+        ],
+        [
+          3082,
+          3135
+        ]
+      ],
+      "corridor_ids": [
+        3343,
+        3350,
+        3353,
+        3356
+      ],
+      "id": 210,
+      "radial_extent_px": 39.64545792880358,
+      "view_center_local": [
+        274,
+        39,
+        147
+      ],
+      "voxels": 595,
+      "z_span": 4
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12305,
+          12306
+        ],
+        [
+          3883,
+          3887
+        ],
+        [
+          3174,
+          3186
+        ]
+      ],
+      "corridor_ids": [
+        3347
+      ],
+      "id": 211,
+      "radial_extent_px": 7.812434619953706,
+      "view_center_local": [
+        273,
+        45,
+        234
+      ],
+      "voxels": 32,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12307,
+          12308
+        ],
+        [
+          4000,
+          4015
+        ],
+        [
+          2977,
+          3030
+        ]
+      ],
+      "corridor_ids": [
+        3357
+      ],
+      "id": 212,
+      "radial_extent_px": 34.90478534723957,
+      "view_center_local": [
+        275,
+        167,
+        76
+      ],
+      "voxels": 162,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12308,
+          12309
+        ],
+        [
+          4005,
+          4010
+        ],
+        [
+          3185,
+          3189
+        ]
+      ],
+      "corridor_ids": [
+        3358
+      ],
+      "id": 213,
+      "radial_extent_px": 4.2245534411144945,
+      "view_center_local": [
+        276,
+        167,
+        244
+      ],
+      "voxels": 10,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12310,
+          12314
+        ],
+        [
+          3876,
+          3890
+        ],
+        [
+          3162,
+          3210
+        ]
+      ],
+      "corridor_ids": [
+        3363,
+        3366,
+        3368,
+        3372
+      ],
+      "id": 214,
+      "radial_extent_px": 26.982464369556283,
+      "view_center_local": [
+        280,
+        37,
+        221
+      ],
+      "voxels": 538,
+      "z_span": 4
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12310,
+          12314
+        ],
+        [
+          3928,
+          3938
+        ],
+        [
+          3235,
+          3260
+        ]
+      ],
+      "corridor_ids": [
+        3362,
+        3365,
+        3367,
+        3371
+      ],
+      "id": 215,
+      "radial_extent_px": 11.504211960017983,
+      "view_center_local": [
+        280,
+        90,
+        299
+      ],
+      "voxels": 206,
+      "z_span": 4
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12313,
+          12314
+        ],
+        [
+          3927,
+          3928
+        ],
+        [
+          3234,
+          3235
+        ]
+      ],
+      "corridor_ids": [],
+      "id": 216,
+      "radial_extent_px": 0.0,
+      "view_center_local": [
+        281,
+        87,
+        290
+      ],
+      "voxels": 1,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12314,
+          12317
+        ],
+        [
+          3915,
+          3930
+        ],
+        [
+          3194,
+          3241
+        ]
+      ],
+      "corridor_ids": [
+        3374,
+        3376,
+        3377,
+        3382
+      ],
+      "id": 217,
+      "radial_extent_px": 23.604734971214953,
+      "view_center_local": [
+        284,
+        77,
+        257
+      ],
+      "voxels": 242,
+      "z_span": 3
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12318,
+          12319
+        ],
+        [
+          3875,
+          3887
+        ],
+        [
+          3165,
+          3213
+        ]
+      ],
+      "corridor_ids": [
+        3394
+      ],
+      "id": 218,
+      "radial_extent_px": 27.649027822781136,
+      "view_center_local": [
+        286,
+        40,
+        241
+      ],
+      "voxels": 139,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12319,
+          12326
+        ],
+        [
+          4172,
+          4178
+        ],
+        [
+          3264,
+          3286
+        ]
+      ],
+      "corridor_ids": [
+        3400,
+        3407,
+        3419,
+        3430,
+        3437,
+        3449,
+        3458
+      ],
+      "id": 219,
+      "radial_extent_px": 10.347861466334962,
+      "view_center_local": [
+        291,
+        332,
+        321
+      ],
+      "voxels": 339,
+      "z_span": 7
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12320,
+          12322
+        ],
+        [
+          3958,
+          3984
+        ],
+        [
+          3231,
+          3277
+        ]
+      ],
+      "corridor_ids": [
+        3415,
+        3424
+      ],
+      "id": 220,
+      "radial_extent_px": 20.069694054694082,
+      "view_center_local": [
+        288,
+        142,
+        320
+      ],
+      "voxels": 238,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12320,
+          12323
+        ],
+        [
+          4049,
+          4061
+        ],
+        [
+          3246,
+          3275
+        ]
+      ],
+      "corridor_ids": [
+        3408,
+        3423,
+        3431
+      ],
+      "id": 221,
+      "radial_extent_px": 9.718629570474036,
+      "view_center_local": [
+        289,
+        216,
+        318
+      ],
+      "voxels": 189,
+      "z_span": 3
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12321,
+          12322
+        ],
+        [
+          3964,
+          3973
+        ],
+        [
+          2959,
+          3034
+        ]
+      ],
+      "corridor_ids": [
+        3422
+      ],
+      "id": 222,
+      "image": "assets/component_0222.png",
+      "radial_extent_px": 55.86843529368434,
+      "view_center_local": [
+        289,
+        128,
+        39
+      ],
+      "voxels": 228,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12321,
+          12330
+        ],
+        [
+          4036,
+          4050
+        ],
+        [
+          2958,
+          3004
+        ]
+      ],
+      "corridor_ids": [
+        3417,
+        3427,
+        3435,
+        3447,
+        3459,
+        3472,
+        3485,
+        3497,
+        3508
+      ],
+      "id": 223,
+      "radial_extent_px": 41.009340976044086,
+      "view_center_local": [
+        294,
+        203,
+        28
+      ],
+      "voxels": 655,
+      "z_span": 9
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12323,
+          12324
+        ],
+        [
+          3892,
+          3896
+        ],
+        [
+          3311,
+          3317
+        ]
+      ],
+      "corridor_ids": [
+        3436
+      ],
+      "id": 224,
+      "radial_extent_px": 4.209213514615499,
+      "view_center_local": [
+        291,
+        53,
+        371
+      ],
+      "voxels": 13,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12324,
+          12325
+        ],
+        [
+          4008,
+          4012
+        ],
+        [
+          3244,
+          3267
+        ]
+      ],
+      "corridor_ids": [
+        3446
+      ],
+      "id": 225,
+      "radial_extent_px": 12.02420509888259,
+      "view_center_local": [
+        292,
+        170,
+        305
+      ],
+      "voxels": 62,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12324,
+          12325
+        ],
+        [
+          4011,
+          4015
+        ],
+        [
+          3282,
+          3287
+        ]
+      ],
+      "corridor_ids": [
+        3445
+      ],
+      "id": 226,
+      "radial_extent_px": 1.957635823022997,
+      "view_center_local": [
+        292,
+        173,
+        341
+      ],
+      "voxels": 10,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12324,
+          12325
+        ],
+        [
+          4012,
+          4013
+        ],
+        [
+          3266,
+          3267
+        ]
+      ],
+      "corridor_ids": [],
+      "id": 227,
+      "radial_extent_px": 0.0,
+      "view_center_local": [
+        292,
+        172,
+        322
+      ],
+      "voxels": 1,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12325,
+          12326
+        ],
+        [
+          3885,
+          3919
+        ],
+        [
+          3098,
+          3167
+        ]
+      ],
+      "corridor_ids": [
+        3469
+      ],
+      "id": 228,
+      "radial_extent_px": 36.67673604966956,
+      "view_center_local": [
+        293,
+        53,
+        198
+      ],
+      "voxels": 235,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12325,
+          12326
+        ],
+        [
+          3963,
+          3973
+        ],
+        [
+          2978,
+          3030
+        ]
+      ],
+      "corridor_ids": [
+        3465
+      ],
+      "id": 229,
+      "radial_extent_px": 43.5898948405694,
+      "view_center_local": [
+        293,
+        127,
+        58
+      ],
+      "voxels": 153,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12325,
+          12326
+        ],
+        [
+          3977,
+          3980
+        ],
+        [
+          3056,
+          3064
+        ]
+      ],
+      "corridor_ids": [
+        3457
+      ],
+      "id": 230,
+      "radial_extent_px": 5.7541548297059535,
+      "view_center_local": [
+        293,
+        138,
+        115
+      ],
+      "voxels": 19,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12325,
+          12326
+        ],
+        [
+          4025,
+          4035
+        ],
+        [
+          3045,
+          3064
+        ]
+      ],
+      "corridor_ids": [
+        3461
+      ],
+      "id": 231,
+      "radial_extent_px": 19.037080256664694,
+      "view_center_local": [
+        293,
+        191,
+        112
+      ],
+      "voxels": 53,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12327,
+          12328
+        ],
+        [
+          3964,
+          3973
+        ],
+        [
+          2984,
+          3027
+        ]
+      ],
+      "corridor_ids": [
+        3486
+      ],
+      "id": 232,
+      "radial_extent_px": 36.12468579197798,
+      "view_center_local": [
+        295,
+        127,
+        76
+      ],
+      "voxels": 126,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12328,
+          12331
+        ],
+        [
+          3943,
+          3950
+        ],
+        [
+          3009,
+          3029
+        ]
+      ],
+      "corridor_ids": [
+        3491,
+        3501,
+        3511
+      ],
+      "id": 233,
+      "radial_extent_px": 16.367735578662632,
+      "view_center_local": [
+        297,
+        106,
+        72
+      ],
+      "voxels": 138,
+      "z_span": 3
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12329,
+          12335
+        ],
+        [
+          3966,
+          3973
+        ],
+        [
+          2987,
+          3025
+        ]
+      ],
+      "corridor_ids": [
+        3504,
+        3516,
+        3520,
+        3524,
+        3529,
+        3533
+      ],
+      "id": 234,
+      "radial_extent_px": 29.691398698559397,
+      "view_center_local": [
+        299,
+        129,
+        52
+      ],
+      "voxels": 388,
+      "z_span": 6
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12330,
+          12340
+        ],
+        [
+          3863,
+          3871
+        ],
+        [
+          3077,
+          3098
+        ]
+      ],
+      "corridor_ids": [
+        3512,
+        3518,
+        3523,
+        3530,
+        3534,
+        3536,
+        3540,
+        3546,
+        3552,
+        3556
+      ],
+      "id": 235,
+      "image": "assets/component_0235.png",
+      "radial_extent_px": 15.394776638048938,
+      "view_center_local": [
+        304,
+        24,
+        138
+      ],
+      "voxels": 341,
+      "z_span": 10
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12331,
+          12332
+        ],
+        [
+          3966,
+          3967
+        ],
+        [
+          3021,
+          3022
+        ]
+      ],
+      "corridor_ids": [],
+      "id": 236,
+      "radial_extent_px": 0.0,
+      "view_center_local": [
+        299,
+        126,
+        77
+      ],
+      "voxels": 1,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12332,
+          12333
+        ],
+        [
+          3966,
+          3967
+        ],
+        [
+          3024,
+          3025
+        ]
+      ],
+      "corridor_ids": [],
+      "id": 237,
+      "radial_extent_px": 0.0,
+      "view_center_local": [
+        300,
+        126,
+        80
+      ],
+      "voxels": 1,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12336,
+          12341
+        ],
+        [
+          3863,
+          3870
+        ],
+        [
+          3100,
+          3110
+        ]
+      ],
+      "corridor_ids": [
+        3539,
+        3544,
+        3549,
+        3554,
+        3557
+      ],
+      "id": 238,
+      "radial_extent_px": 9.219505259797074,
+      "view_center_local": [
+        306,
+        26,
+        159
+      ],
+      "voxels": 97,
+      "z_span": 5
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12341,
+          12343
+        ],
+        [
+          4003,
+          4017
+        ],
+        [
+          3016,
+          3030
+        ]
+      ],
+      "corridor_ids": [
+        3563,
+        3571
+      ],
+      "id": 239,
+      "radial_extent_px": 17.690227316842538,
+      "view_center_local": [
+        309,
+        171,
+        77
+      ],
+      "voxels": 59,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12342,
+          12345
+        ],
+        [
+          3888,
+          3894
+        ],
+        [
+          3088,
+          3129
+        ]
+      ],
+      "corridor_ids": [
+        3572,
+        3583,
+        3595
+      ],
+      "id": 240,
+      "radial_extent_px": 31.854193483749214,
+      "view_center_local": [
+        311,
+        50,
+        153
+      ],
+      "voxels": 273,
+      "z_span": 3
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12343,
+          12345
+        ],
+        [
+          3958,
+          3962
+        ],
+        [
+          2988,
+          3002
+        ]
+      ],
+      "corridor_ids": [
+        3579,
+        3591
+      ],
+      "id": 241,
+      "radial_extent_px": 11.195755763437546,
+      "view_center_local": [
+        312,
+        119,
+        48
+      ],
+      "voxels": 55,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12343,
+          12348
+        ],
+        [
+          4125,
+          4139
+        ],
+        [
+          2953,
+          3022
+        ]
+      ],
+      "corridor_ids": [
+        3581,
+        3593,
+        3602,
+        3613,
+        3621
+      ],
+      "id": 242,
+      "radial_extent_px": 41.57945139408071,
+      "view_center_local": [
+        314,
+        287,
+        32
+      ],
+      "voxels": 660,
+      "z_span": 5
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12343,
+          12345
+        ],
+        [
+          4166,
+          4170
+        ],
+        [
+          3254,
+          3262
+        ]
+      ],
+      "corridor_ids": [
+        3580,
+        3590
+      ],
+      "id": 243,
+      "radial_extent_px": 4.792996114615448,
+      "view_center_local": [
+        311,
+        329,
+        315
+      ],
+      "voxels": 37,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12344,
+          12345
+        ],
+        [
+          3962,
+          3963
+        ],
+        [
+          2988,
+          2989
+        ]
+      ],
+      "corridor_ids": [],
+      "id": 244,
+      "radial_extent_px": 0.0,
+      "view_center_local": [
+        312,
+        122,
+        44
+      ],
+      "voxels": 1,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12347,
+          12357
+        ],
+        [
+          4165,
+          4172
+        ],
+        [
+          3208,
+          3252
+        ]
+      ],
+      "corridor_ids": [
+        3618,
+        3625,
+        3633,
+        3644,
+        3651,
+        3659,
+        3665,
+        3672,
+        3682,
+        3696
+      ],
+      "id": 245,
+      "image": "assets/component_0245.png",
+      "radial_extent_px": 27.460031121963766,
+      "view_center_local": [
+        320,
+        327,
+        283
+      ],
+      "voxels": 784,
+      "z_span": 10
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12350,
+          12351
+        ],
+        [
+          3961,
+          3965
+        ],
+        [
+          3009,
+          3015
+        ]
+      ],
+      "corridor_ids": [
+        3638
+      ],
+      "id": 246,
+      "radial_extent_px": 5.738728288972311,
+      "view_center_local": [
+        318,
+        123,
+        66
+      ],
+      "voxels": 16,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12351,
+          12353
+        ],
+        [
+          3888,
+          3896
+        ],
+        [
+          2962,
+          3031
+        ]
+      ],
+      "corridor_ids": [
+        3653,
+        3657
+      ],
+      "id": 247,
+      "image": "assets/component_0247.png",
+      "radial_extent_px": 57.0162107363401,
+      "view_center_local": [
+        319,
+        53,
+        26
+      ],
+      "voxels": 383,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12351,
+          12352
+        ],
+        [
+          3895,
+          3896
+        ],
+        [
+          2962,
+          2963
+        ]
+      ],
+      "corridor_ids": [],
+      "id": 248,
+      "radial_extent_px": 0.0,
+      "view_center_local": [
+        319,
+        55,
+        18
+      ],
+      "voxels": 1,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12353,
+          12366
+        ],
+        [
+          3955,
+          3968
+        ],
+        [
+          3144,
+          3174
+        ]
+      ],
+      "corridor_ids": [
+        3664,
+        3671,
+        3689,
+        3700,
+        3709,
+        3716,
+        3724,
+        3730,
+        3748,
+        3764,
+        3779,
+        3796,
+        3813
+      ],
+      "id": 249,
+      "image": "assets/component_0249.png",
+      "radial_extent_px": 24.282216293149304,
+      "view_center_local": [
+        328,
+        120,
+        223
+      ],
+      "voxels": 850,
+      "z_span": 13
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12353,
+          12356
+        ],
+        [
+          3967,
+          3972
+        ],
+        [
+          3071,
+          3091
+        ]
+      ],
+      "corridor_ids": [
+        3667,
+        3678,
+        3693
+      ],
+      "id": 250,
+      "radial_extent_px": 15.725712966216747,
+      "view_center_local": [
+        322,
+        130,
+        134
+      ],
+      "voxels": 109,
+      "z_span": 3
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12354,
+          12359
+        ],
+        [
+          3891,
+          3898
+        ],
+        [
+          2973,
+          3014
+        ]
+      ],
+      "corridor_ids": [
+        3673,
+        3686,
+        3697,
+        3707,
+        3714
+      ],
+      "id": 251,
+      "radial_extent_px": 34.183356610176816,
+      "view_center_local": [
+        324,
+        53,
+        50
+      ],
+      "voxels": 485,
+      "z_span": 5
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12354,
+          12355
+        ],
+        [
+          3966,
+          3967
+        ],
+        [
+          3084,
+          3085
+        ]
+      ],
+      "corridor_ids": [],
+      "id": 252,
+      "radial_extent_px": 0.0,
+      "view_center_local": [
+        322,
+        126,
+        140
+      ],
+      "voxels": 1,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12355,
+          12356
+        ],
+        [
+          3966,
+          3967
+        ],
+        [
+          3090,
+          3091
+        ]
+      ],
+      "corridor_ids": [],
+      "id": 253,
+      "radial_extent_px": 0.0,
+      "view_center_local": [
+        323,
+        126,
+        146
+      ],
+      "voxels": 1,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12356,
+          12357
+        ],
+        [
+          3959,
+          3964
+        ],
+        [
+          3034,
+          3043
+        ]
+      ],
+      "corridor_ids": [
+        3695
+      ],
+      "id": 254,
+      "radial_extent_px": 8.617617973306665,
+      "view_center_local": [
+        324,
+        121,
+        97
+      ],
+      "voxels": 21,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12360,
+          12361
+        ],
+        [
+          4169,
+          4173
+        ],
+        [
+          3183,
+          3200
+        ]
+      ],
+      "corridor_ids": [
+        3731
+      ],
+      "id": 255,
+      "radial_extent_px": 11.407563775034305,
+      "view_center_local": [
+        328,
+        330,
+        255
+      ],
+      "voxels": 48,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12361,
+          12376
+        ],
+        [
+          3932,
+          3948
+        ],
+        [
+          3285,
+          3308
+        ]
+      ],
+      "corridor_ids": [
+        3743,
+        3762,
+        3777,
+        3798,
+        3814,
+        3827,
+        3837,
+        3848,
+        3863,
+        3875,
+        3890,
+        3924,
+        3941,
+        3957,
+        3976
+      ],
+      "id": 256,
+      "image": "assets/component_0256.png",
+      "radial_extent_px": 17.386691570357584,
+      "view_center_local": [
+        335,
+        101,
+        354
+      ],
+      "voxels": 593,
+      "z_span": 15
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12362,
+          12364
+        ],
+        [
+          3964,
+          3985
+        ],
+        [
+          2957,
+          3047
+        ]
+      ],
+      "corridor_ids": [
+        3767,
+        3790
+      ],
+      "id": 257,
+      "image": "assets/component_0257.png",
+      "radial_extent_px": 79.32173613573093,
+      "view_center_local": [
+        330,
+        140,
+        78
+      ],
+      "voxels": 333,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12363,
+          12364
+        ],
+        [
+          3913,
+          3920
+        ],
+        [
+          3104,
+          3115
+        ]
+      ],
+      "corridor_ids": [
+        3784
+      ],
+      "id": 258,
+      "radial_extent_px": 5.267105455384694,
+      "view_center_local": [
+        331,
+        76,
+        167
+      ],
+      "voxels": 30,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12365,
+          12366
+        ],
+        [
+          4090,
+          4096
+        ],
+        [
+          3241,
+          3255
+        ]
+      ],
+      "corridor_ids": [
+        3812
+      ],
+      "id": 259,
+      "radial_extent_px": 11.36779727003227,
+      "view_center_local": [
+        333,
+        254,
+        298
+      ],
+      "voxels": 32,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12366,
+          12367
+        ],
+        [
+          4169,
+          4172
+        ],
+        [
+          3190,
+          3200
+        ]
+      ],
+      "corridor_ids": [
+        3825
+      ],
+      "id": 260,
+      "radial_extent_px": 4.723877138001626,
+      "view_center_local": [
+        334,
+        330,
+        251
+      ],
+      "voxels": 24,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12366,
+          12367
+        ],
+        [
+          4172,
+          4173
+        ],
+        [
+          3190,
+          3191
+        ]
+      ],
+      "corridor_ids": [],
+      "id": 261,
+      "radial_extent_px": 0.0,
+      "view_center_local": [
+        334,
+        332,
+        246
+      ],
+      "voxels": 1,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12367,
+          12368
+        ],
+        [
+          4129,
+          4150
+        ],
+        [
+          3017,
+          3040
+        ]
+      ],
+      "corridor_ids": [
+        3839
+      ],
+      "id": 262,
+      "radial_extent_px": 28.233991500436332,
+      "view_center_local": [
+        335,
+        297,
+        85
+      ],
+      "voxels": 73,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12369,
+          12370
+        ],
+        [
+          4129,
+          4134
+        ],
+        [
+          3032,
+          3037
+        ]
+      ],
+      "corridor_ids": [
+        3859
+      ],
+      "id": 263,
+      "radial_extent_px": 4.982652293916999,
+      "view_center_local": [
+        337,
+        291,
+        88
+      ],
+      "voxels": 12,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12370,
+          12375
+        ],
+        [
+          3945,
+          3961
+        ],
+        [
+          3135,
+          3168
+        ]
+      ],
+      "corridor_ids": [
+        3876,
+        3891,
+        3927,
+        3944,
+        3960
+      ],
+      "id": 264,
+      "radial_extent_px": 17.90602673832325,
+      "view_center_local": [
+        339,
+        115,
+        215
+      ],
+      "voxels": 327,
+      "z_span": 5
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12371,
+          12373
+        ],
+        [
+          3975,
+          3996
+        ],
+        [
+          3140,
+          3167
+        ]
+      ],
+      "corridor_ids": [
+        3899,
+        3930
+      ],
+      "id": 265,
+      "radial_extent_px": 6.395927689164523,
+      "view_center_local": [
+        339,
+        154,
+        220
+      ],
+      "voxels": 148,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12371,
+          12372
+        ],
+        [
+          3995,
+          3996
+        ],
+        [
+          3166,
+          3167
+        ]
+      ],
+      "corridor_ids": [],
+      "id": 266,
+      "radial_extent_px": 0.0,
+      "view_center_local": [
+        339,
+        155,
+        222
+      ],
+      "voxels": 1,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12372,
+          12373
+        ],
+        [
+          3942,
+          3947
+        ],
+        [
+          3125,
+          3131
+        ]
+      ],
+      "corridor_ids": [
+        3923
+      ],
+      "id": 267,
+      "radial_extent_px": 2.1226621914045154,
+      "view_center_local": [
+        340,
+        104,
+        183
+      ],
+      "voxels": 15,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12372,
+          12377
+        ],
+        [
+          3958,
+          3983
+        ],
+        [
+          3181,
+          3245
+        ]
+      ],
+      "corridor_ids": [
+        3932,
+        3951,
+        3970,
+        3986,
+        3999
+      ],
+      "id": 268,
+      "image": "assets/component_0268.png",
+      "radial_extent_px": 29.52588238462181,
+      "view_center_local": [
+        342,
+        126,
+        260
+      ],
+      "voxels": 836,
+      "z_span": 5
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12372,
+          12377
+        ],
+        [
+          3976,
+          3982
+        ],
+        [
+          3068,
+          3091
+        ]
+      ],
+      "corridor_ids": [
+        3925,
+        3942,
+        3961,
+        3981,
+        3996
+      ],
+      "id": 269,
+      "radial_extent_px": 18.502043200920298,
+      "view_center_local": [
+        343,
+        139,
+        126
+      ],
+      "voxels": 193,
+      "z_span": 5
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12372,
+          12375
+        ],
+        [
+          4076,
+          4089
+        ],
+        [
+          2991,
+          3019
+        ]
+      ],
+      "corridor_ids": [
+        3918,
+        3939,
+        3956
+      ],
+      "id": 270,
+      "radial_extent_px": 26.767765047826742,
+      "view_center_local": [
+        341,
+        246,
+        53
+      ],
+      "voxels": 175,
+      "z_span": 3
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12374,
+          12375
+        ],
+        [
+          3852,
+          3858
+        ],
+        [
+          3212,
+          3222
+        ]
+      ],
+      "corridor_ids": [
+        3958
+      ],
+      "id": 271,
+      "radial_extent_px": 5.651832882705776,
+      "view_center_local": [
+        342,
+        15,
+        270
+      ],
+      "voxels": 27,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12375,
+          12380
+        ],
+        [
+          4097,
+          4107
+        ],
+        [
+          3137,
+          3168
+        ]
+      ],
+      "corridor_ids": [
+        3979,
+        3997,
+        4016,
+        4039,
+        4067
+      ],
+      "id": 272,
+      "radial_extent_px": 18.396842164346594,
+      "view_center_local": [
+        346,
+        262,
+        208
+      ],
+      "voxels": 241,
+      "z_span": 5
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12376,
+          12378
+        ],
+        [
+          3849,
+          3861
+        ],
+        [
+          3198,
+          3227
+        ]
+      ],
+      "corridor_ids": [
+        4000,
+        4024
+      ],
+      "id": 273,
+      "radial_extent_px": 14.960137649627882,
+      "view_center_local": [
+        345,
+        10,
+        257
+      ],
+      "voxels": 161,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12376,
+          12379
+        ],
+        [
+          3952,
+          3962
+        ],
+        [
+          3066,
+          3121
+        ]
+      ],
+      "corridor_ids": [
+        3998,
+        4018,
+        4040
+      ],
+      "id": 274,
+      "image": "assets/component_0274.png",
+      "radial_extent_px": 44.33222135070616,
+      "view_center_local": [
+        345,
+        115,
+        170
+      ],
+      "voxels": 453,
+      "z_span": 3
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12377,
+          12380
+        ],
+        [
+          3957,
+          3964
+        ],
+        [
+          3138,
+          3148
+        ]
+      ],
+      "corridor_ids": [
+        4013,
+        4034,
+        4059
+      ],
+      "id": 275,
+      "radial_extent_px": 5.654845506921106,
+      "view_center_local": [
+        346,
+        119,
+        195
+      ],
+      "voxels": 57,
+      "z_span": 3
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12377,
+          12380
+        ],
+        [
+          3961,
+          3968
+        ],
+        [
+          3049,
+          3058
+        ]
+      ],
+      "corridor_ids": [
+        4007,
+        4035,
+        4061
+      ],
+      "id": 276,
+      "radial_extent_px": 9.266277934437767,
+      "view_center_local": [
+        346,
+        127,
+        105
+      ],
+      "voxels": 52,
+      "z_span": 3
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12377,
+          12379
+        ],
+        [
+          3962,
+          3964
+        ],
+        [
+          3147,
+          3149
+        ]
+      ],
+      "corridor_ids": [],
+      "id": 277,
+      "radial_extent_px": 1.4135891678230337,
+      "view_center_local": [
+        346,
+        123,
+        203
+      ],
+      "voxels": 2,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12379,
+          12381
+        ],
+        [
+          3967,
+          3979
+        ],
+        [
+          3167,
+          3217
+        ]
+      ],
+      "corridor_ids": [
+        4065,
+        4087
+      ],
+      "id": 278,
+      "radial_extent_px": 26.20296722377384,
+      "view_center_local": [
+        348,
+        128,
+        227
+      ],
+      "voxels": 240,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12379,
+          12382
+        ],
+        [
+          3979,
+          3988
+        ],
+        [
+          3221,
+          3241
+        ]
+      ],
+      "corridor_ids": [
+        4057,
+        4082,
+        4114
+      ],
+      "id": 279,
+      "radial_extent_px": 8.57960679248572,
+      "view_center_local": [
+        348,
+        140,
+        285
+      ],
+      "voxels": 98,
+      "z_span": 3
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12379,
+          12380
+        ],
+        [
+          3987,
+          4003
+        ],
+        [
+          3152,
+          3164
+        ]
+      ],
+      "corridor_ids": [
+        4062
+      ],
+      "id": 280,
+      "radial_extent_px": 6.493120021360824,
+      "view_center_local": [
+        347,
+        154,
+        214
+      ],
+      "voxels": 47,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12380,
+          12381
+        ],
+        [
+          4125,
+          4129
+        ],
+        [
+          3066,
+          3072
+        ]
+      ],
+      "corridor_ids": [
+        4081
+      ],
+      "id": 281,
+      "radial_extent_px": 4.877496489269788,
+      "view_center_local": [
+        348,
+        286,
+        126
+      ],
+      "voxels": 16,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12381,
+          12383
+        ],
+        [
+          3847,
+          3865
+        ],
+        [
+          3178,
+          3229
+        ]
+      ],
+      "corridor_ids": [
+        4126,
+        4150
+      ],
+      "id": 282,
+      "radial_extent_px": 25.852119959752258,
+      "view_center_local": [
+        350,
+        8,
+        235
+      ],
+      "voxels": 294,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12382,
+          12386
+        ],
+        [
+          3944,
+          3949
+        ],
+        [
+          3110,
+          3126
+        ]
+      ],
+      "corridor_ids": [
+        4145,
+        4165,
+        4186,
+        4206
+      ],
+      "id": 283,
+      "radial_extent_px": 12.058710738421269,
+      "view_center_local": [
+        351,
+        105,
+        171
+      ],
+      "voxels": 107,
+      "z_span": 4
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12382,
+          12383
+        ],
+        [
+          3959,
+          3963
+        ],
+        [
+          3102,
+          3111
+        ]
+      ],
+      "corridor_ids": [
+        4138
+      ],
+      "id": 284,
+      "radial_extent_px": 7.081471939819039,
+      "view_center_local": [
+        350,
+        121,
+        160
+      ],
+      "voxels": 24,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12382,
+          12384
+        ],
+        [
+          3960,
+          3968
+        ],
+        [
+          3071,
+          3095
+        ]
+      ],
+      "corridor_ids": [
+        4141,
+        4163
+      ],
+      "id": 285,
+      "radial_extent_px": 21.41459886079224,
+      "view_center_local": [
+        350,
+        125,
+        127
+      ],
+      "voxels": 133,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12382,
+          12383
+        ],
+        [
+          3965,
+          3976
+        ],
+        [
+          3045,
+          3066
+        ]
+      ],
+      "corridor_ids": [
+        4143
+      ],
+      "id": 286,
+      "radial_extent_px": 19.384020314313943,
+      "view_center_local": [
+        350,
+        128,
+        113
+      ],
+      "voxels": 58,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12382,
+          12393
+        ],
+        [
+          4205,
+          4216
+        ],
+        [
+          3177,
+          3212
+        ]
+      ],
+      "corridor_ids": [
+        4154,
+        4179,
+        4191,
+        4220,
+        4238,
+        4254,
+        4270,
+        4293,
+        4309,
+        4328,
+        4351
+      ],
+      "id": 287,
+      "image": "assets/component_0287.png",
+      "radial_extent_px": 12.17822031445462,
+      "view_center_local": [
+        355,
+        367,
+        240
+      ],
+      "voxels": 747,
+      "z_span": 11
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12384,
+          12388
+        ],
+        [
+          3974,
+          3984
+        ],
+        [
+          3169,
+          3213
+        ]
+      ],
+      "corridor_ids": [
+        4187,
+        4209,
+        4230,
+        4247
+      ],
+      "id": 288,
+      "radial_extent_px": 23.132894468103586,
+      "view_center_local": [
+        353,
+        136,
+        248
+      ],
+      "voxels": 327,
+      "z_span": 4
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12384,
+          12389
+        ],
+        [
+          4101,
+          4107
+        ],
+        [
+          3071,
+          3096
+        ]
+      ],
+      "corridor_ids": [
+        4196,
+        4216,
+        4233,
+        4249,
+        4266
+      ],
+      "id": 289,
+      "radial_extent_px": 18.663394981026386,
+      "view_center_local": [
+        354,
+        262,
+        144
+      ],
+      "voxels": 312,
+      "z_span": 5
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12387,
+          12393
+        ],
+        [
+          4203,
+          4212
+        ],
+        [
+          3137,
+          3168
+        ]
+      ],
+      "corridor_ids": [
+        4248,
+        4269,
+        4298,
+        4321,
+        4342,
+        4360
+      ],
+      "id": 290,
+      "radial_extent_px": 23.57978065228417,
+      "view_center_local": [
+        358,
+        365,
+        215
+      ],
+      "voxels": 473,
+      "z_span": 6
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12388,
+          12393
+        ],
+        [
+          3918,
+          3934
+        ],
+        [
+          3183,
+          3210
+        ]
+      ],
+      "corridor_ids": [
+        4263,
+        4290,
+        4313,
+        4331,
+        4352
+      ],
+      "id": 291,
+      "radial_extent_px": 12.187847448198795,
+      "view_center_local": [
+        359,
+        81,
+        246
+      ],
+      "voxels": 258,
+      "z_span": 5
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12389,
+          12391
+        ],
+        [
+          3971,
+          3980
+        ],
+        [
+          3057,
+          3068
+        ]
+      ],
+      "corridor_ids": [
+        4286,
+        4307
+      ],
+      "id": 292,
+      "radial_extent_px": 12.758313016229977,
+      "view_center_local": [
+        357,
+        137,
+        117
+      ],
+      "voxels": 45,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12394,
+          12399
+        ],
+        [
+          3851,
+          3872
+        ],
+        [
+          3157,
+          3225
+        ]
+      ],
+      "corridor_ids": [
+        4393,
+        4410,
+        4427,
+        4440,
+        4454
+      ],
+      "id": 293,
+      "image": "assets/component_0293.png",
+      "radial_extent_px": 38.28753594630325,
+      "view_center_local": [
+        364,
+        18,
+        239
+      ],
+      "voxels": 930,
+      "z_span": 5
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12394,
+          12402
+        ],
+        [
+          3967,
+          3979
+        ],
+        [
+          3188,
+          3230
+        ]
+      ],
+      "corridor_ids": [
+        4381,
+        4398,
+        4415,
+        4433,
+        4448,
+        4465,
+        4483,
+        4502
+      ],
+      "id": 294,
+      "radial_extent_px": 21.267057404176512,
+      "view_center_local": [
+        366,
+        137,
+        281
+      ],
+      "voxels": 547,
+      "z_span": 8
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12394,
+          12408
+        ],
+        [
+          4201,
+          4211
+        ],
+        [
+          3136,
+          3176
+        ]
+      ],
+      "corridor_ids": [
+        4387,
+        4408,
+        4426,
+        4441,
+        4458,
+        4473,
+        4491,
+        4509,
+        4525,
+        4541,
+        4558,
+        4579,
+        4593,
+        4611
+      ],
+      "id": 295,
+      "image": "assets/component_0295.png",
+      "radial_extent_px": 25.00493185108826,
+      "view_center_local": [
+        369,
+        363,
+        225
+      ],
+      "voxels": 1462,
+      "z_span": 14
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12395,
+          12396
+        ],
+        [
+          3971,
+          3974
+        ],
+        [
+          3313,
+          3318
+        ]
+      ],
+      "corridor_ids": [
+        4397
+      ],
+      "id": 296,
+      "radial_extent_px": 2.215354065709562,
+      "view_center_local": [
+        363,
+        132,
+        371
+      ],
+      "voxels": 9,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12396,
+          12399
+        ],
+        [
+          3892,
+          3898
+        ],
+        [
+          3006,
+          3032
+        ]
+      ],
+      "corridor_ids": [
+        4421,
+        4436,
+        4450
+      ],
+      "id": 297,
+      "radial_extent_px": 19.711451093130336,
+      "view_center_local": [
+        365,
+        54,
+        80
+      ],
+      "voxels": 187,
+      "z_span": 3
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12396,
+          12397
+        ],
+        [
+          3953,
+          3956
+        ],
+        [
+          3305,
+          3314
+        ]
+      ],
+      "corridor_ids": [
+        4414
+      ],
+      "id": 298,
+      "radial_extent_px": 6.26974122694503,
+      "view_center_local": [
+        364,
+        114,
+        365
+      ],
+      "voxels": 25,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12399,
+          12400
+        ],
+        [
+          3889,
+          3893
+        ],
+        [
+          3097,
+          3106
+        ]
+      ],
+      "corridor_ids": [
+        4462
+      ],
+      "id": 299,
+      "radial_extent_px": 6.657114111587589,
+      "view_center_local": [
+        367,
+        50,
+        161
+      ],
+      "voxels": 24,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12399,
+          12400
+        ],
+        [
+          3955,
+          3958
+        ],
+        [
+          3307,
+          3314
+        ]
+      ],
+      "corridor_ids": [
+        4460
+      ],
+      "id": 300,
+      "radial_extent_px": 5.100605008457364,
+      "view_center_local": [
+        367,
+        116,
+        366
+      ],
+      "voxels": 19,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12400,
+          12403
+        ],
+        [
+          3855,
+          3861
+        ],
+        [
+          3158,
+          3167
+        ]
+      ],
+      "corridor_ids": [
+        4476,
+        4496,
+        4511
+      ],
+      "id": 301,
+      "radial_extent_px": 5.833023790088191,
+      "view_center_local": [
+        369,
+        17,
+        220
+      ],
+      "voxels": 60,
+      "z_span": 3
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12400,
+          12402
+        ],
+        [
+          3858,
+          3871
+        ],
+        [
+          3174,
+          3213
+        ]
+      ],
+      "corridor_ids": [
+        4482,
+        4500
+      ],
+      "id": 302,
+      "radial_extent_px": 21.607219980116383,
+      "view_center_local": [
+        368,
+        29,
+        266
+      ],
+      "voxels": 224,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12400,
+          12403
+        ],
+        [
+          3939,
+          3950
+        ],
+        [
+          3248,
+          3277
+        ]
+      ],
+      "corridor_ids": [
+        4489,
+        4505,
+        4520
+      ],
+      "id": 303,
+      "radial_extent_px": 12.900208598307927,
+      "view_center_local": [
+        369,
+        103,
+        315
+      ],
+      "voxels": 221,
+      "z_span": 3
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12400,
+          12401
+        ],
+        [
+          3950,
+          3953
+        ],
+        [
+          3283,
+          3289
+        ]
+      ],
+      "corridor_ids": [
+        4477
+      ],
+      "id": 304,
+      "radial_extent_px": 4.00192157285494,
+      "view_center_local": [
+        368,
+        111,
+        342
+      ],
+      "voxels": 14,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12400,
+          12401
+        ],
+        [
+          3997,
+          4002
+        ],
+        [
+          3072,
+          3101
+        ]
+      ],
+      "corridor_ids": [
+        4478
+      ],
+      "id": 305,
+      "radial_extent_px": 17.506972757963922,
+      "view_center_local": [
+        368,
+        159,
+        132
+      ],
+      "voxels": 83,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12401,
+          12402
+        ],
+        [
+          3898,
+          3903
+        ],
+        [
+          3004,
+          3025
+        ]
+      ],
+      "corridor_ids": [
+        4501
+      ],
+      "id": 306,
+      "radial_extent_px": 18.138204811211835,
+      "view_center_local": [
+        369,
+        60,
+        66
+      ],
+      "voxels": 60,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12402,
+          12403
+        ],
+        [
+          3940,
+          3943
+        ],
+        [
+          3240,
+          3246
+        ]
+      ],
+      "corridor_ids": [
+        4514
+      ],
+      "id": 307,
+      "radial_extent_px": 4.729226306164719,
+      "view_center_local": [
+        370,
+        101,
+        298
+      ],
+      "voxels": 15,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12403,
+          12408
+        ],
+        [
+          3899,
+          3909
+        ],
+        [
+          3006,
+          3039
+        ]
+      ],
+      "corridor_ids": [
+        4526,
+        4543,
+        4564,
+        4582,
+        4606
+      ],
+      "id": 308,
+      "radial_extent_px": 28.201995167932523,
+      "view_center_local": [
+        373,
+        64,
+        92
+      ],
+      "voxels": 450,
+      "z_span": 5
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12403,
+          12405
+        ],
+        [
+          3967,
+          3985
+        ],
+        [
+          3151,
+          3235
+        ]
+      ],
+      "corridor_ids": [
+        4533,
+        4549
+      ],
+      "id": 309,
+      "image": "assets/component_0309.png",
+      "radial_extent_px": 43.732590098829746,
+      "view_center_local": [
+        372,
+        128,
+        230
+      ],
+      "voxels": 409,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12403,
+          12407
+        ],
+        [
+          4170,
+          4180
+        ],
+        [
+          3135,
+          3152
+        ]
+      ],
+      "corridor_ids": [
+        4536,
+        4553,
+        4575,
+        4591
+      ],
+      "id": 310,
+      "radial_extent_px": 6.511116105514702,
+      "view_center_local": [
+        372,
+        339,
+        203
+      ],
+      "voxels": 174,
+      "z_span": 4
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12405,
+          12406
+        ],
+        [
+          3859,
+          3864
+        ],
+        [
+          3159,
+          3169
+        ]
+      ],
+      "corridor_ids": [
+        4562
+      ],
+      "id": 311,
+      "radial_extent_px": 6.60665274732753,
+      "view_center_local": [
+        373,
+        21,
+        215
+      ],
+      "voxels": 28,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12405,
+          12406
+        ],
+        [
+          4089,
+          4093
+        ],
+        [
+          3293,
+          3305
+        ]
+      ],
+      "corridor_ids": [
+        4563
+      ],
+      "id": 312,
+      "radial_extent_px": 4.142229748291811,
+      "view_center_local": [
+        373,
+        250,
+        358
+      ],
+      "voxels": 28,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12406,
+          12407
+        ],
+        [
+          4055,
+          4061
+        ],
+        [
+          3022,
+          3032
+        ]
+      ],
+      "corridor_ids": [
+        4581
+      ],
+      "id": 313,
+      "radial_extent_px": 9.875064733950012,
+      "view_center_local": [
+        374,
+        217,
+        86
+      ],
+      "voxels": 28,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12407,
+          12408
+        ],
+        [
+          3865,
+          3872
+        ],
+        [
+          3183,
+          3200
+        ]
+      ],
+      "corridor_ids": [
+        4599
+      ],
+      "id": 314,
+      "radial_extent_px": 10.028779081029143,
+      "view_center_local": [
+        375,
+        27,
+        249
+      ],
+      "voxels": 49,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12407,
+          12408
+        ],
+        [
+          3970,
+          3986
+        ],
+        [
+          3151,
+          3228
+        ]
+      ],
+      "corridor_ids": [
+        4607
+      ],
+      "id": 315,
+      "radial_extent_px": 40.62678327876381,
+      "view_center_local": [
+        375,
+        134,
+        234
+      ],
+      "voxels": 226,
+      "z_span": 1
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12407,
+          12408
+        ],
+        [
+          4051,
+          4055
+        ],
+        [
+          3043,
+          3055
+        ]
+      ],
+      "corridor_ids": [
+        4597
+      ],
+      "id": 316,
+      "radial_extent_px": 8.370593971181961,
+      "view_center_local": [
+        375,
+        213,
+        101
+      ],
+      "voxels": 24,
+      "z_span": 1
+    }
+  ]
+}

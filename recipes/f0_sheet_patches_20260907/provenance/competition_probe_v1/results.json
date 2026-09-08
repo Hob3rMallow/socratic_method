@@ -1,0 +1,246 @@
+{
+  "no_acceptance_or_anatomical_claim": true,
+  "results": [
+    {
+      "alternatives": {
+        "forced_alternatives": [
+          {
+            "column": 26,
+            "energy_delta": 9.312577306716776,
+            "energy_delta_per_changed_column": 0.29101804083489924,
+            "forced_label": 3,
+            "normal_change_at_probe_px": -4,
+            "surface_columns_moved_at_least_2px": 32,
+            "z_local": 156
+          },
+          {
+            "column": 26,
+            "energy_delta": 1.6857283019935494,
+            "energy_delta_per_changed_column": 0.2809547169989249,
+            "forced_label": 11,
+            "normal_change_at_probe_px": 4,
+            "surface_columns_moved_at_least_2px": 6,
+            "z_local": 156
+          },
+          {
+            "column": 26,
+            "energy_delta": 2.293005310910303,
+            "energy_delta_per_changed_column": 0.1091907290909668,
+            "forced_label": 4,
+            "normal_change_at_probe_px": -4,
+            "surface_columns_moved_at_least_2px": 21,
+            "z_local": 172
+          },
+          {
+            "column": 26,
+            "energy_delta": 6.797633256392146,
+            "energy_delta_per_changed_column": 0.10621301963112728,
+            "forced_label": 12,
+            "normal_change_at_probe_px": 4,
+            "surface_columns_moved_at_least_2px": 64,
+            "z_local": 172
+          }
+        ],
+        "interpretation": "Model/CT objective sensitivity, not anatomical confidence or a validated rejection threshold.",
+        "seed_release_energy_gain": 0.21710661627639638,
+        "seed_release_fraction_moved_at_least_3px": 0.0,
+        "seed_release_mean_displacement": 0.11538461538461539
+      },
+      "component": 141,
+      "ordered": [
+        {
+          "error": "no independently strong neighboring seed ridge",
+          "side": -1
+        },
+        {
+          "error": "no independently strong neighboring seed ridge",
+          "side": 1
+        }
+      ],
+      "seed": 1934,
+      "single_new_voxels": 502,
+      "single_z_span": 4
+    },
+    {
+      "alternatives": {
+        "forced_alternatives": [
+          {
+            "column": 35,
+            "energy_delta": 12.267925397920408,
+            "energy_delta_per_changed_column": 0.9436865690708006,
+            "forced_label": 1,
+            "normal_change_at_probe_px": -4,
+            "surface_columns_moved_at_least_2px": 13,
+            "z_local": 311
+          },
+          {
+            "column": 35,
+            "energy_delta": 10.113587529051074,
+            "energy_delta_per_changed_column": 0.24079970307264462,
+            "forced_label": 9,
+            "normal_change_at_probe_px": 4,
+            "surface_columns_moved_at_least_2px": 42,
+            "z_local": 311
+          },
+          {
+            "column": 35,
+            "energy_delta": 16.51256507956259,
+            "energy_delta_per_changed_column": 0.8256282539781296,
+            "forced_label": 8,
+            "normal_change_at_probe_px": -4,
+            "surface_columns_moved_at_least_2px": 20,
+            "z_local": 327
+          },
+          {
+            "column": 35,
+            "energy_delta": 10.90992572187406,
+            "energy_delta_per_changed_column": 1.090992572187406,
+            "forced_label": 16,
+            "normal_change_at_probe_px": 4,
+            "surface_columns_moved_at_least_2px": 10,
+            "z_local": 327
+          }
+        ],
+        "interpretation": "Model/CT objective sensitivity, not anatomical confidence or a validated rejection threshold.",
+        "seed_release_energy_gain": 0.0,
+        "seed_release_fraction_moved_at_least_3px": 0.0,
+        "seed_release_mean_displacement": 0.0
+      },
+      "component": 292,
+      "ordered": [
+        {
+          "error": "no independently strong neighboring seed ridge",
+          "side": -1
+        },
+        {
+          "error": "no independently strong neighboring seed ridge",
+          "side": 1
+        }
+      ],
+      "seed": 3637,
+      "single_new_voxels": 913,
+      "single_z_span": 8
+    },
+    {
+      "alternatives": {
+        "forced_alternatives": [
+          {
+            "column": 34,
+            "energy_delta": 11.896795129964175,
+            "energy_delta_per_changed_column": 1.6995421614234536,
+            "forced_label": 4,
+            "normal_change_at_probe_px": -4,
+            "surface_columns_moved_at_least_2px": 7,
+            "z_local": 322
+          },
+          {
+            "column": 34,
+            "energy_delta": 11.781857819103152,
+            "energy_delta_per_changed_column": 1.6831225455861645,
+            "forced_label": 12,
+            "normal_change_at_probe_px": 4,
+            "surface_columns_moved_at_least_2px": 7,
+            "z_local": 322
+          },
+          {
+            "column": 34,
+            "energy_delta": 9.672777824184323,
+            "energy_delta_per_changed_column": 1.9345555648368644,
+            "forced_label": 5,
+            "normal_change_at_probe_px": -4,
+            "surface_columns_moved_at_least_2px": 5,
+            "z_local": 338
+          },
+          {
+            "column": 34,
+            "energy_delta": 16.271156507507385,
+            "energy_delta_per_changed_column": 1.479196046137035,
+            "forced_label": 13,
+            "normal_change_at_probe_px": 4,
+            "surface_columns_moved_at_least_2px": 11,
+            "z_local": 338
+          }
+        ],
+        "interpretation": "Model/CT objective sensitivity, not anatomical confidence or a validated rejection threshold.",
+        "seed_release_energy_gain": 4.072018591188225,
+        "seed_release_fraction_moved_at_least_3px": 0.0,
+        "seed_release_mean_displacement": 0.18840579710144928
+      },
+      "component": 301,
+      "ordered": [
+        {
+          "error": "no independently strong neighboring seed ridge",
+          "side": -1
+        },
+        {
+          "error": "no independently strong neighboring seed ridge",
+          "side": 1
+        }
+      ],
+      "seed": 3752,
+      "single_new_voxels": 6543,
+      "single_z_span": 33
+    },
+    {
+      "alternatives": {
+        "forced_alternatives": [
+          {
+            "column": 43,
+            "energy_delta": 8.704794024967669,
+            "energy_delta_per_changed_column": 0.6217710017834049,
+            "forced_label": 7,
+            "normal_change_at_probe_px": -4,
+            "surface_columns_moved_at_least_2px": 14,
+            "z_local": 56
+          },
+          {
+            "column": 43,
+            "energy_delta": 8.508208645162085,
+            "energy_delta_per_changed_column": 1.418034774193681,
+            "forced_label": 15,
+            "normal_change_at_probe_px": 4,
+            "surface_columns_moved_at_least_2px": 6,
+            "z_local": 56
+          },
+          {
+            "column": 43,
+            "energy_delta": 9.030978375300037,
+            "energy_delta_per_changed_column": 0.7525815312750032,
+            "forced_label": 3,
+            "normal_change_at_probe_px": -4,
+            "surface_columns_moved_at_least_2px": 12,
+            "z_local": 72
+          },
+          {
+            "column": 43,
+            "energy_delta": 11.583557544144242,
+            "energy_delta_per_changed_column": 1.6547939348777487,
+            "forced_label": 11,
+            "normal_change_at_probe_px": 4,
+            "surface_columns_moved_at_least_2px": 7,
+            "z_local": 72
+          }
+        ],
+        "interpretation": "Model/CT objective sensitivity, not anatomical confidence or a validated rejection threshold.",
+        "seed_release_energy_gain": 0.758339119147422,
+        "seed_release_fraction_moved_at_least_3px": 0.0,
+        "seed_release_mean_displacement": 0.08139534883720931
+      },
+      "component": 79,
+      "ordered": [
+        {
+          "error": "no independently strong neighboring seed ridge",
+          "side": -1
+        },
+        {
+          "error": "no independently strong neighboring seed ridge",
+          "side": 1
+        }
+      ],
+      "seed": 1039,
+      "single_new_voxels": 6419,
+      "single_z_span": 20
+    }
+  ],
+  "status": "diagnostic_complete"
+}

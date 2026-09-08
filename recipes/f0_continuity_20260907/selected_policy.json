@@ -1,0 +1,59 @@
+{
+  "schema": "f0-continuity-development-selection-v1",
+  "status": "development selected; fresh control pending",
+  "version": 2,
+  "model": "Frozen F0/200k",
+  "threshold": 0.35,
+  "proposal": {
+    "probability_floor": 0.2,
+    "maximum_length": 96,
+    "boundary_margin": 8,
+    "maximum_region_nodes": 6000,
+    "maximum_anchors": 24,
+    "minimum_component_size": 12
+  },
+  "acceptance": {
+    "minimum_mean_probability": 0.25,
+    "minimum_axis_alignment": 0.7,
+    "minimum_axis_anisotropy": 2,
+    "maximum_arc_ratio": 1.5,
+    "minimum_ridge_fraction": 0.6,
+    "minimum_gap_pixels": 3,
+    "minimum_neighbor_probability_coverage": 0.8,
+    "minimum_supported_neighbor_planes": 2,
+    "minimum_outward_alignment": 0.25,
+    "maximum_local_turn_degrees": 60
+  },
+  "engine_sha256": "ddc7070fa919ed0a08b15396928e3d1503c71ab3382926500ec77ecb17393edf",
+  "base_engine_sha256": "ec5e4147e9b146c270c42852684043acaeacce7301557edb53fec99c66d18d86",
+  "development": {
+    "accepted_corridors": 764,
+    "accepted_longer_than_21_px": 357,
+    "added_voxels_over_native_filler": 48337,
+    "core_added_voxels_over_native_filler": 825,
+    "erased_native_filler_foreground": 0,
+    "detached_2d_strokes": 0,
+    "multiway_2d_strokes": 0
+  },
+  "selection_basis": [
+    "The new stage recovers longer and curved probability-supported continuations that the native endpoint matcher does not propose or admit.",
+    "Version 2 refines paths using continuous probability costs, rejects backward approaches and sharp local kinks, and retains more useful-looking continuation evidence than the coarse skeleton-only version.",
+    "The v1 risk cases at corridor IDs 1116, 2920 and 3110 are rejected by the refined policy; the promising central-cube case 1946 remains as v2 corridor 1934.",
+    "All 20 risk-first v2 orthogonal component cards were inspected, plus the long central-cube corridor and earlier development probe comparisons.",
+    "Twenty-four focused tests pass, including long/bent positive cases, no-corridor and unseeded negatives, wrong-side attachments, third-fragment contacts, interacting paint, and discontinuous probability support."
+  ],
+  "reviewed_v2_added_component_ids": [79,93,144,164,228,237,263,264,290,292,294,298,301,303,314,319,333,340,342,361],
+  "explicit_review_cautions": [
+    "Packed-fold component 301 has alternative-looking structure in CT; retain it as ambiguous operator-review evidence, not certified anatomical truth.",
+    "Crowded/grazing views around components 290 and 333 need caution; new foreground can look broad in a plane grazing the repaired sheet.",
+    "The images show all nearby additions around the selected component center, not only the named component.",
+    "These image assessments are qualitative and do not provide an anatomical precision rate or a proof of global wrap identity.",
+    "The real neighboring-probability check rejected no development proposals; it is self-consistency evidence, not an independently demonstrated safety veto.",
+    "The native 3-pixel global radial endpoint limit does not apply to this new curved stage. Local direction, ridge, contact and turn constraints replace it; do not imply the old radial certificate was retained.",
+    "Large fully missing or ambiguous regions remain unchanged. This is still a prototype pending fresh-control verification and operational qualification."
+  ],
+  "fresh_control_center_zyx": [12544,4480,3072],
+  "control_based_parameter_tuning": false,
+  "automatic_deployment": false,
+  "official_profile_changed": false
+}

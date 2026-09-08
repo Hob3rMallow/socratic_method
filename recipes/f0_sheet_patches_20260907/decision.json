@@ -1,0 +1,34 @@
+{
+  "anatomical_correctness_established": false,
+  "browser_render_verified": false,
+  "crowded_fold_result": "Ordered neighbors prevent a synthetic switch and change the real crowded proposal, but do not prove identity. Component 301 remains refused; energy margin is not a confidence gate.",
+  "development_added_voxels": 75661,
+  "development_patches": 107,
+  "do_not_do": [
+    "Relax global contact count and call it safe",
+    "Treat repeated CT/model evidence as independent validation",
+    "Turn old ambiguous v2 paths into trusted supervision",
+    "Change model or threshold as part of this postprocessor"
+  ],
+  "existing_foreground_erased": 0,
+  "fresh_added_voxels": 46780,
+  "fresh_patches": 82,
+  "fresh_policy_tuning": false,
+  "local_image_and_static_html_verification": true,
+  "model_sha256": "54db9a59cb602ff08e3dda0acc1195ad980ab05fb660332d32fb436a0d49a175",
+  "next_steps_proposed_not_executed": [
+    "3D sheet ownership plus sparse manual same/different-sheet anchors at ambiguous junctions",
+    "Overlap-consistent chart partition for genuine local fold-backs",
+    "Larger-area tiling and seam qualification only after identity review"
+  ],
+  "schema": "f0-sheet-decision-v1",
+  "selected_profile": "f0-joint-sheet-patches-v1",
+  "selection": {
+    "bytes": 33390,
+    "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\selected_policy.json",
+    "sha256": "6c388a8dfbf813bcc148e611e4e33da1db3f30fe213dae76a76338abd313f688"
+  },
+  "status": "completed local assessment; opt-in research implementation; no deployment",
+  "threshold": 0.35,
+  "whole_scroll_rollout": false
+}

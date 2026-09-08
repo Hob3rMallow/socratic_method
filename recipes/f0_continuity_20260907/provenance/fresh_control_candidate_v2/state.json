@@ -1,0 +1,14 @@
+{
+  "accepted": 494,
+  "completed_planes": 368,
+  "completed_utc": "2026-09-07T20:06:23.907954+00:00",
+  "elapsed_seconds": 15.971104299998842,
+  "pid": 53736,
+  "started_utc": "2026-09-07T20:06:07.059606+00:00",
+  "status": "complete",
+  "summary": {
+    "bytes": 11778,
+    "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control_candidate_v2\\summary.json",
+    "sha256": "446b6a22db6778bd94cebd0e041bdf439dbfdf19ae63ff50c7dfc2d4822f2edb"
+  }
+}

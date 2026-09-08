@@ -1,0 +1,155 @@
+{
+  "records": [
+    {
+      "actual_samples": 10000,
+      "bytes": 409674095,
+      "checkpoint": "checkpoint_milestone_00010000.pt",
+      "requested_samples": 10000
+    },
+    {
+      "actual_samples": 20000,
+      "bytes": 409674095,
+      "checkpoint": "checkpoint_milestone_00020000.pt",
+      "requested_samples": 20000
+    },
+    {
+      "actual_samples": 30000,
+      "bytes": 409674095,
+      "checkpoint": "checkpoint_milestone_00030000.pt",
+      "requested_samples": 30000
+    },
+    {
+      "actual_samples": 40000,
+      "bytes": 409674095,
+      "checkpoint": "checkpoint_milestone_00040000.pt",
+      "requested_samples": 40000
+    },
+    {
+      "actual_samples": 50000,
+      "bytes": 409674095,
+      "checkpoint": "checkpoint_milestone_00050000.pt",
+      "requested_samples": 50000
+    },
+    {
+      "actual_samples": 60000,
+      "bytes": 409674095,
+      "checkpoint": "checkpoint_milestone_00060000.pt",
+      "requested_samples": 60000
+    },
+    {
+      "actual_samples": 70000,
+      "bytes": 409674095,
+      "checkpoint": "checkpoint_milestone_00070000.pt",
+      "requested_samples": 70000
+    },
+    {
+      "actual_samples": 80000,
+      "bytes": 409674095,
+      "checkpoint": "checkpoint_milestone_00080000.pt",
+      "requested_samples": 80000
+    },
+    {
+      "actual_samples": 90000,
+      "bytes": 409674095,
+      "checkpoint": "checkpoint_milestone_00090000.pt",
+      "requested_samples": 90000
+    },
+    {
+      "actual_samples": 100000,
+      "bytes": 409674095,
+      "checkpoint": "checkpoint_milestone_00100000.pt",
+      "requested_samples": 100000
+    },
+    {
+      "actual_samples": 110000,
+      "bytes": 409674095,
+      "checkpoint": "checkpoint_milestone_00110000.pt",
+      "requested_samples": 110000
+    },
+    {
+      "actual_samples": 120000,
+      "bytes": 409674095,
+      "checkpoint": "checkpoint_milestone_00120000.pt",
+      "requested_samples": 120000
+    },
+    {
+      "actual_samples": 130000,
+      "bytes": 409674095,
+      "checkpoint": "checkpoint_milestone_00130000.pt",
+      "requested_samples": 130000
+    },
+    {
+      "actual_samples": 140000,
+      "bytes": 409674095,
+      "checkpoint": "checkpoint_milestone_00140000.pt",
+      "requested_samples": 140000
+    },
+    {
+      "actual_samples": 150000,
+      "bytes": 409674095,
+      "checkpoint": "checkpoint_milestone_00150000.pt",
+      "requested_samples": 150000
+    },
+    {
+      "actual_samples": 160000,
+      "bytes": 409674095,
+      "checkpoint": "checkpoint_milestone_00160000.pt",
+      "requested_samples": 160000
+    },
+    {
+      "actual_samples": 170000,
+      "bytes": 409674095,
+      "checkpoint": "checkpoint_milestone_00170000.pt",
+      "requested_samples": 170000
+    },
+    {
+      "actual_samples": 180000,
+      "bytes": 409674095,
+      "checkpoint": "checkpoint_milestone_00180000.pt",
+      "requested_samples": 180000
+    },
+    {
+      "actual_samples": 190000,
+      "bytes": 409674095,
+      "checkpoint": "checkpoint_milestone_00190000.pt",
+      "requested_samples": 190000
+    },
+    {
+      "actual_samples": 200000,
+      "bytes": 409674095,
+      "checkpoint": "checkpoint_milestone_00200000.pt",
+      "requested_samples": 200000
+    },
+    {
+      "actual_samples": 210000,
+      "bytes": 409674095,
+      "checkpoint": "checkpoint_milestone_00210000.pt",
+      "requested_samples": 210000
+    },
+    {
+      "actual_samples": 220000,
+      "bytes": 409674095,
+      "checkpoint": "checkpoint_milestone_00220000.pt",
+      "requested_samples": 220000
+    },
+    {
+      "actual_samples": 230000,
+      "bytes": 409674095,
+      "checkpoint": "checkpoint_milestone_00230000.pt",
+      "requested_samples": 230000
+    },
+    {
+      "actual_samples": 240000,
+      "bytes": 409674095,
+      "checkpoint": "checkpoint_milestone_00240000.pt",
+      "requested_samples": 240000
+    },
+    {
+      "actual_samples": 250000,
+      "bytes": 409674095,
+      "checkpoint": "checkpoint_milestone_00250000.pt",
+      "requested_samples": 250000
+    }
+  ],
+  "schema": "post-optimizer-model-only-sample-milestone-v1"
+}

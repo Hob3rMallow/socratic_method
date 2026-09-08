@@ -1,4 +1,43 @@
-# Reproduction recipe
+# Reproduction and frozen artifacts
+
+## Current C3-F0 record — 7 September 2026
+
+The current selected model is F0/200k at T=.35, from the naturally completed
+250k run. Its [manifest](../recipes/final_c3_250k_20260907/manifest.json)
+pins the 409,674,095-byte checkpoint and the exact operating point.
+
+The local frozen artifact is:
+
+```text
+D:/work/vesuvius-c/output/crossres_data/releases/c3-f0-200k-20260907/checkpoint_f0_00200000.pt
+SHA256: 54db9a59cb602ff08e3dda0acc1195ad980ab05fb660332d32fb436a0d49a175
+```
+
+The official record preserves the exact
+[configuration](../recipes/final_c3_250k_20260907/provenance/recipe.json),
+[run identity](../recipes/final_c3_250k_20260907/provenance/run.json),
+[training history](../recipes/final_c3_250k_20260907/provenance/history.jsonl),
+[evaluation summary](../recipes/final_c3_250k_20260907/provenance/evaluation_summary.json),
+and [hash inventory](../recipes/final_c3_250k_20260907/files.json).
+The record's `runtime/` tree contains all 63 preregistered source/configuration
+files in their original relative layout, verified against the sealed pins.
+
+This archive is not a freshly tested portable F0 build, environment lock,
+launcher or exporter. Embedded original D:/G: artifact paths remain evidence,
+not automatically relocatable inputs. A portable F0 release requires a separate
+packaging task and verification against the frozen model identity. **Do not use
+the existing v31 wrappers as an F0 launcher or exporter.** They still enforce
+v31's model hash, counters and recipe.
+
+The exact 250k endpoint, final optimizer checkpoint, all earlier checkpoints
+and full cached HTML/image reports remain retained in the original workspace.
+The freeze does not authorize another training run, threshold change, filler
+experiment, production deployment or public upload.
+
+## Historical v31 reproduction
+
+Everything below documents the earlier v31 environment, recipe and exporter.
+It is retained for reproducibility and does not describe F0.
 
 ## 1. Environment
 

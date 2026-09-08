@@ -1,0 +1,817 @@
+{
+  "blocks": {
+    "control": {
+      "contact_audit": {
+        "added_2d_strokes": 97,
+        "added_3d_components": 65,
+        "block": "control",
+        "detached_2d_strokes": 0,
+        "interpretation": "Independent geometric contact diagnostics, not anatomical labels or a proof that all multi-join paths preserve wrap identity.",
+        "maximum_axial_span_planes": 7,
+        "maximum_radial_span_px": 8.542360825364085,
+        "multiway_2d_strokes": 0,
+        "planes": 384,
+        "schema": "f0-independent-repair-contact-audit-v1",
+        "worst_case_chain_images": [
+          {
+            "bounds_world_zyx": [
+              [
+                12828,
+                12833
+              ],
+              [
+                4268,
+                4277
+              ],
+              [
+                3434,
+                3443
+              ]
+            ],
+            "component": 40,
+            "image": "chain_0040.png",
+            "radial_span_px": 8.542360825364085,
+            "view_center_local": [
+              158,
+              303,
+              238
+            ],
+            "voxels": 68,
+            "z_span": 5
+          },
+          {
+            "bounds_world_zyx": [
+              [
+                13043,
+                13050
+              ],
+              [
+                4140,
+                4149
+              ],
+              [
+                3540,
+                3548
+              ]
+            ],
+            "component": 65,
+            "image": "chain_0065.png",
+            "radial_span_px": 8.090152234614152,
+            "view_center_local": [
+              374,
+              178,
+              341
+            ],
+            "voxels": 121,
+            "z_span": 7
+          },
+          {
+            "bounds_world_zyx": [
+              [
+                12692,
+                12695
+              ],
+              [
+                4180,
+                4187
+              ],
+              [
+                3461,
+                3468
+              ]
+            ],
+            "component": 4,
+            "image": "chain_0004.png",
+            "radial_span_px": 7.333456660781053,
+            "view_center_local": [
+              22,
+              212,
+              263
+            ],
+            "voxels": 37,
+            "z_span": 3
+          },
+          {
+            "bounds_world_zyx": [
+              [
+                13039,
+                13042
+              ],
+              [
+                4147,
+                4152
+              ],
+              [
+                3540,
+                3548
+              ]
+            ],
+            "component": 63,
+            "image": "chain_0063.png",
+            "radial_span_px": 5.467796276907848,
+            "view_center_local": [
+              368,
+              181,
+              343
+            ],
+            "voxels": 62,
+            "z_span": 3
+          },
+          {
+            "bounds_world_zyx": [
+              [
+                12835,
+                12837
+              ],
+              [
+                4300,
+                4304
+              ],
+              [
+                3424,
+                3431
+              ]
+            ],
+            "component": 43,
+            "image": "chain_0043.png",
+            "radial_span_px": 4.821552500142843,
+            "view_center_local": [
+              163,
+              334,
+              229
+            ],
+            "voxels": 28,
+            "z_span": 2
+          },
+          {
+            "bounds_world_zyx": [
+              [
+                12751,
+                12754
+              ],
+              [
+                4340,
+                4345
+              ],
+              [
+                3389,
+                3395
+              ]
+            ],
+            "component": 16,
+            "image": "chain_0016.png",
+            "radial_span_px": 4.795019004669484,
+            "view_center_local": [
+              80,
+              374,
+              190
+            ],
+            "voxels": 39,
+            "z_span": 3
+          },
+          {
+            "bounds_world_zyx": [
+              [
+                12780,
+                12783
+              ],
+              [
+                4184,
+                4190
+              ],
+              [
+                3221,
+                3225
+              ]
+            ],
+            "component": 28,
+            "image": "chain_0028.png",
+            "radial_span_px": 4.770978772869512,
+            "view_center_local": [
+              109,
+              219,
+              22
+            ],
+            "voxels": 23,
+            "z_span": 3
+          },
+          {
+            "bounds_world_zyx": [
+              [
+                12806,
+                12809
+              ],
+              [
+                4344,
+                4351
+              ],
+              [
+                3250,
+                3262
+              ]
+            ],
+            "component": 38,
+            "image": "chain_0038.png",
+            "radial_span_px": 4.455220259260614,
+            "view_center_local": [
+              135,
+              380,
+              55
+            ],
+            "voxels": 102,
+            "z_span": 3
+          }
+        ]
+      },
+      "presets": {
+        "extended_safe": {
+          "added_voxel_probability": {
+            "fraction_ge_020": 0.9982964224872232,
+            "fraction_ge_025": 0.9914821124361158,
+            "fraction_ge_030": 0.8875638841567292,
+            "mean": 0.32577624917030334,
+            "minimum": 0.1343994140625,
+            "p10": 0.29833984375
+          },
+          "added_voxels": 1174,
+          "census": {
+            "candidates": 97,
+            "in_reach": 1702,
+            "joins": 97,
+            "kept": 97,
+            "n_eps": 23445,
+            "n_excluded": 15494,
+            "painted_px": 1174,
+            "rej_arc": 0,
+            "rej_cross_sheet": 20,
+            "rej_crossing": 0,
+            "rej_evidence": 0,
+            "rej_merger": 4,
+            "rej_occupied": 0,
+            "rej_radial": 394,
+            "rej_same_cc": 294,
+            "rej_score": 0,
+            "rej_tangent": 893
+          },
+          "connection_tracks": 55,
+          "core_added_voxels": 25,
+          "erased_raw_voxels": 0,
+          "new_over_old_filled_voxels": 522,
+          "old_repair_voxels_not_retained": 309,
+          "parameters": {
+            "min_score": 0.3,
+            "min_support": 0,
+            "paint_radius": 1,
+            "radial_armed": 1,
+            "radial_dr": 3.0,
+            "reach_max": 21.0,
+            "reach_safe": 6.0,
+            "tracks": 1
+          },
+          "per_plane_joins": 97,
+          "raw_foreground_voxels": 10296795,
+          "source": {
+            "bytes": 13775,
+            "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\control\\extended_safe_summary.json",
+            "sha256": "201af40cd14621e60cf5e081cd77200f5d0ce3c5d138480bfb022c1fdcb86a8e"
+          }
+        },
+        "report_baseline": {
+          "added_voxel_probability": {
+            "fraction_ge_020": 1.0,
+            "fraction_ge_025": 0.9937565036420395,
+            "fraction_ge_030": 0.8293444328824141,
+            "mean": 0.32066258788108826,
+            "minimum": 0.2203369140625,
+            "p10": 0.29052734375
+          },
+          "added_voxels": 961,
+          "census": {
+            "candidates": 129,
+            "in_reach": 649,
+            "joins": 129,
+            "kept": 59,
+            "n_eps": 23445,
+            "n_excluded": 15494,
+            "painted_px": 961,
+            "rej_arc": 0,
+            "rej_cross_sheet": 29,
+            "rej_crossing": 0,
+            "rej_evidence": 0,
+            "rej_merger": 7,
+            "rej_occupied": 0,
+            "rej_radial": 164,
+            "rej_same_cc": 102,
+            "rej_score": 0,
+            "rej_tangent": 218
+          },
+          "connection_tracks": 12,
+          "core_added_voxels": 0,
+          "erased_raw_voxels": 0,
+          "new_over_old_filled_voxels": 0,
+          "old_repair_voxels_not_retained": 0,
+          "parameters": {
+            "min_score": 0.3,
+            "min_support": 3,
+            "paint_radius": 1,
+            "radial_armed": 1,
+            "radial_dr": 4.0,
+            "reach_max": 12.0,
+            "reach_safe": 6.0,
+            "tracks": 1
+          },
+          "per_plane_joins": 59,
+          "raw_foreground_voxels": 10296795,
+          "source": {
+            "bytes": 13814,
+            "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\control\\report_baseline_summary.json",
+            "sha256": "9946416052b4cf5dfa1df2c05ac40c095cacbcb44cf39058dcd78314ecc2e078"
+          }
+        }
+      }
+    },
+    "development": {
+      "contact_audit": {
+        "added_2d_strokes": 286,
+        "added_3d_components": 206,
+        "block": "development",
+        "detached_2d_strokes": 0,
+        "interpretation": "Independent geometric contact diagnostics, not anatomical labels or a proof that all multi-join paths preserve wrap identity.",
+        "maximum_axial_span_planes": 8,
+        "maximum_radial_span_px": 7.788759596155614,
+        "multiway_2d_strokes": 0,
+        "planes": 384,
+        "schema": "f0-independent-repair-contact-audit-v1",
+        "worst_case_chain_images": [
+          {
+            "bounds_world_zyx": [
+              [
+                12339,
+                12347
+              ],
+              [
+                3886,
+                3893
+              ],
+              [
+                3199,
+                3206
+              ]
+            ],
+            "component": 154,
+            "image": "chain_0154.png",
+            "radial_span_px": 7.788759596155614,
+            "view_center_local": [
+              310,
+              49,
+              257
+            ],
+            "voxels": 74,
+            "z_span": 8
+          },
+          {
+            "bounds_world_zyx": [
+              [
+                12097,
+                12099
+              ],
+              [
+                4110,
+                4119
+              ],
+              [
+                3062,
+                3068
+              ]
+            ],
+            "component": 52,
+            "image": "chain_0052.png",
+            "radial_span_px": 7.346951336431857,
+            "view_center_local": [
+              65,
+              275,
+              121
+            ],
+            "voxels": 26,
+            "z_span": 2
+          },
+          {
+            "bounds_world_zyx": [
+              [
+                12033,
+                12037
+              ],
+              [
+                4070,
+                4084
+              ],
+              [
+                3120,
+                3138
+              ]
+            ],
+            "component": 5,
+            "image": "chain_0005.png",
+            "radial_span_px": 7.1537210435776615,
+            "view_center_local": [
+              2,
+              235,
+              185
+            ],
+            "voxels": 141,
+            "z_span": 4
+          },
+          {
+            "bounds_world_zyx": [
+              [
+                12215,
+                12217
+              ],
+              [
+                3987,
+                3998
+              ],
+              [
+                3196,
+                3202
+              ]
+            ],
+            "component": 108,
+            "image": "chain_0108.png",
+            "radial_span_px": 7.053985750485708,
+            "view_center_local": [
+              184,
+              149,
+              253
+            ],
+            "voxels": 31,
+            "z_span": 2
+          },
+          {
+            "bounds_world_zyx": [
+              [
+                12258,
+                12261
+              ],
+              [
+                4188,
+                4199
+              ],
+              [
+                3274,
+                3290
+              ]
+            ],
+            "component": 123,
+            "image": "chain_0123.png",
+            "radial_span_px": 6.976364062114953,
+            "view_center_local": [
+              227,
+              352,
+              337
+            ],
+            "voxels": 132,
+            "z_span": 3
+          },
+          {
+            "bounds_world_zyx": [
+              [
+                12049,
+                12057
+              ],
+              [
+                4162,
+                4172
+              ],
+              [
+                2970,
+                2978
+              ]
+            ],
+            "component": 25,
+            "image": "chain_0025.png",
+            "radial_span_px": 5.206967446057661,
+            "view_center_local": [
+              20,
+              327,
+              29
+            ],
+            "voxels": 138,
+            "z_span": 8
+          },
+          {
+            "bounds_world_zyx": [
+              [
+                12078,
+                12082
+              ],
+              [
+                4166,
+                4174
+              ],
+              [
+                2954,
+                2960
+              ]
+            ],
+            "component": 44,
+            "image": "chain_0044.png",
+            "radial_span_px": 5.107743032601093,
+            "view_center_local": [
+              48,
+              328,
+              12
+            ],
+            "voxels": 39,
+            "z_span": 4
+          },
+          {
+            "bounds_world_zyx": [
+              [
+                12079,
+                12083
+              ],
+              [
+                4089,
+                4098
+              ],
+              [
+                3199,
+                3212
+              ]
+            ],
+            "component": 45,
+            "image": "chain_0045.png",
+            "radial_span_px": 6.403498713558065,
+            "view_center_local": [
+              49,
+              252,
+              259
+            ],
+            "voxels": 126,
+            "z_span": 4
+          },
+          {
+            "bounds_world_zyx": [
+              [
+                12140,
+                12143
+              ],
+              [
+                4162,
+                4174
+              ],
+              [
+                3110,
+                3122
+              ]
+            ],
+            "component": 73,
+            "image": "chain_0073.png",
+            "radial_span_px": 6.186114049403841,
+            "view_center_local": [
+              109,
+              330,
+              173
+            ],
+            "voxels": 85,
+            "z_span": 3
+          }
+        ]
+      },
+      "presets": {
+        "extended_safe": {
+          "added_voxel_probability": {
+            "fraction_ge_020": 0.9750629722921914,
+            "fraction_ge_025": 0.9536523929471032,
+            "fraction_ge_030": 0.8297229219143577,
+            "mean": 0.3193962574005127,
+            "minimum": 0.124267578125,
+            "p10": 0.283447265625
+          },
+          "added_voxels": 3970,
+          "census": {
+            "candidates": 286,
+            "in_reach": 3893,
+            "joins": 286,
+            "kept": 286,
+            "n_eps": 25902,
+            "n_excluded": 13423,
+            "painted_px": 3970,
+            "rej_arc": 0,
+            "rej_cross_sheet": 27,
+            "rej_crossing": 0,
+            "rej_evidence": 0,
+            "rej_merger": 24,
+            "rej_occupied": 0,
+            "rej_radial": 524,
+            "rej_same_cc": 1045,
+            "rej_score": 16,
+            "rej_tangent": 1969
+          },
+          "connection_tracks": 195,
+          "core_added_voxels": 42,
+          "erased_raw_voxels": 0,
+          "new_over_old_filled_voxels": 2925,
+          "old_repair_voxels_not_retained": 319,
+          "parameters": {
+            "min_score": 0.3,
+            "min_support": 0,
+            "paint_radius": 1,
+            "radial_armed": 1,
+            "radial_dr": 3.0,
+            "reach_max": 21.0,
+            "reach_safe": 6.0,
+            "tracks": 1
+          },
+          "per_plane_joins": 286,
+          "raw_foreground_voxels": 10084585,
+          "source": {
+            "bytes": 13947,
+            "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\development\\extended_safe_summary.json",
+            "sha256": "a4cde12643453e1cab5ff5b1c23af4709c81249003a3cca0dbb3d6841aa4ff7f"
+          }
+        },
+        "radial_safe": {
+          "added_voxel_probability": {
+            "fraction_ge_020": 0.9808806488991889,
+            "fraction_ge_025": 0.9719003476245655,
+            "fraction_ge_030": 0.8722479721900348,
+            "mean": 0.3238019645214081,
+            "minimum": 0.13916015625,
+            "p10": 0.29443359375
+          },
+          "added_voxels": 3452,
+          "census": {
+            "candidates": 274,
+            "in_reach": 1432,
+            "joins": 274,
+            "kept": 274,
+            "n_eps": 25902,
+            "n_excluded": 13423,
+            "painted_px": 3452,
+            "rej_arc": 0,
+            "rej_cross_sheet": 24,
+            "rej_crossing": 0,
+            "rej_evidence": 0,
+            "rej_merger": 16,
+            "rej_occupied": 0,
+            "rej_radial": 240,
+            "rej_same_cc": 327,
+            "rej_score": 2,
+            "rej_tangent": 547
+          },
+          "connection_tracks": 191,
+          "core_added_voxels": 42,
+          "erased_raw_voxels": 0,
+          "new_over_old_filled_voxels": 2407,
+          "old_repair_voxels_not_retained": 319,
+          "parameters": {
+            "min_score": 0.3,
+            "min_support": 0,
+            "paint_radius": 1,
+            "radial_armed": 1,
+            "radial_dr": 3.0,
+            "reach_max": 12.0,
+            "reach_safe": 6.0,
+            "tracks": 1
+          },
+          "per_plane_joins": 274,
+          "raw_foreground_voxels": 10084585,
+          "source": {
+            "bytes": 13873,
+            "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\development\\radial_safe_summary.json",
+            "sha256": "97fc3d20d97cf3fa9f4dd64de5c8d2fbefa03aeee54823947d184059538757cc"
+          }
+        },
+        "report_baseline": {
+          "added_voxel_probability": {
+            "fraction_ge_020": 0.9523460410557185,
+            "fraction_ge_025": 0.9391495601173021,
+            "fraction_ge_030": 0.8497067448680352,
+            "mean": 0.3182056248188019,
+            "minimum": 0.13916015625,
+            "p10": 0.2822265625
+          },
+          "added_voxels": 1364,
+          "census": {
+            "candidates": 328,
+            "in_reach": 1432,
+            "joins": 328,
+            "kept": 96,
+            "n_eps": 25902,
+            "n_excluded": 13423,
+            "painted_px": 1364,
+            "rej_arc": 0,
+            "rej_cross_sheet": 30,
+            "rej_crossing": 0,
+            "rej_evidence": 0,
+            "rej_merger": 25,
+            "rej_occupied": 0,
+            "rej_radial": 171,
+            "rej_same_cc": 327,
+            "rej_score": 2,
+            "rej_tangent": 547
+          },
+          "connection_tracks": 23,
+          "core_added_voxels": 0,
+          "erased_raw_voxels": 0,
+          "new_over_old_filled_voxels": 0,
+          "old_repair_voxels_not_retained": 0,
+          "parameters": {
+            "min_score": 0.3,
+            "min_support": 3,
+            "paint_radius": 1,
+            "radial_armed": 1,
+            "radial_dr": 4.0,
+            "reach_max": 12.0,
+            "reach_safe": 6.0,
+            "tracks": 1
+          },
+          "per_plane_joins": 96,
+          "raw_foreground_voxels": 10084585,
+          "source": {
+            "bytes": 13968,
+            "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\development\\report_baseline_summary.json",
+            "sha256": "792c3d3bbedb4d2a2735886d39e2ca35c2d2394347a6e2e8a2254876e52438c8"
+          }
+        },
+        "support_only": {
+          "added_voxel_probability": {
+            "fraction_ge_020": 0.9849897657493746,
+            "fraction_ge_025": 0.9774846486240618,
+            "fraction_ge_030": 0.8735501478280646,
+            "mean": 0.3241611421108246,
+            "minimum": 0.13916015625,
+            "p10": 0.295166015625
+          },
+          "added_voxels": 4397,
+          "census": {
+            "candidates": 328,
+            "in_reach": 1432,
+            "joins": 328,
+            "kept": 328,
+            "n_eps": 25902,
+            "n_excluded": 13423,
+            "painted_px": 4397,
+            "rej_arc": 0,
+            "rej_cross_sheet": 30,
+            "rej_crossing": 0,
+            "rej_evidence": 0,
+            "rej_merger": 25,
+            "rej_occupied": 0,
+            "rej_radial": 171,
+            "rej_same_cc": 327,
+            "rej_score": 2,
+            "rej_tangent": 547
+          },
+          "connection_tracks": 216,
+          "core_added_voxels": 93,
+          "erased_raw_voxels": 0,
+          "new_over_old_filled_voxels": 3033,
+          "old_repair_voxels_not_retained": 0,
+          "parameters": {
+            "min_score": 0.3,
+            "min_support": 0,
+            "paint_radius": 1,
+            "radial_armed": 1,
+            "radial_dr": 4.0,
+            "reach_max": 12.0,
+            "reach_safe": 6.0,
+            "tracks": 1
+          },
+          "per_plane_joins": 328,
+          "raw_foreground_voxels": 10084585,
+          "source": {
+            "bytes": 13904,
+            "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\development\\support_only_summary.json",
+            "sha256": "5acce418634efe1050a3f177af4c8cd79ec6ed83a924a1901dcb23c2b9fb9633"
+          }
+        }
+      }
+    }
+  },
+  "new_official_filled_mask_scores": null,
+  "pooled": {
+    "extended_safe": {
+      "added_voxels": 5144,
+      "connection_tracks": 250,
+      "core_added_voxels": 67,
+      "erased_raw_voxels": 0,
+      "old_repair_voxels_not_retained": 628,
+      "per_plane_joins": 383,
+      "raw_foreground_voxels": 20381380
+    },
+    "report_baseline": {
+      "added_voxels": 2325,
+      "connection_tracks": 35,
+      "core_added_voxels": 0,
+      "erased_raw_voxels": 0,
+      "old_repair_voxels_not_retained": 0,
+      "per_plane_joins": 155,
+      "raw_foreground_voxels": 20381380
+    }
+  },
+  "schema": "f0-repair-final-results-v1",
+  "unit_note": "Per-plane joins and connection tracks are distinct counts, not anatomical correctness labels."
+}

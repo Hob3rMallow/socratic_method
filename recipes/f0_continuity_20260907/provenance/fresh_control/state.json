@@ -1,0 +1,289 @@
+{
+  "baseline_receipt": {
+    "bytes": 20211,
+    "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\native_baseline\\repair_receipt.json",
+    "sha256": "6c294b1c57f2b729557a4229a96850a6b5643ba6f574d641f27211e15e0648db"
+  },
+  "completed_utc": "2026-09-07T20:04:11.138801+00:00",
+  "input_artifacts": [
+    {
+      "bytes": 2225,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\provenance.json",
+      "sha256": "095e6d3249ff5a3d1be971b2e3c4331bfb31d650ba22b5701cc6ea8b9905abaa"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\cubes_PRED\\z12416_y04352_x02944.tif",
+      "sha256": "93d30de09da35ee792b1c35f985edb8d11683c6d98f60b5d21d625c2b665c108"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\cubes_PRED\\z12416_y04352_x03072.tif",
+      "sha256": "03518ab30da71af7b636e94124fd6da324dda91b15fa204d969c2257b8298de0"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\cubes_PRED\\z12416_y04352_x03200.tif",
+      "sha256": "52433cb4b421a9e7f2c5d633a15ef4413375e974f234f80220232cdb5de08920"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\cubes_PRED\\z12416_y04480_x02944.tif",
+      "sha256": "4009748b2a362572f4119dc7b19fcfb90fcdc497a33c45c665c288edac5e46b1"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\cubes_PRED\\z12416_y04480_x03072.tif",
+      "sha256": "3b4d97b6ee45cf041b3c1a70975dba9015e3513dcf36f36396fee7c64edd38ad"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\cubes_PRED\\z12416_y04480_x03200.tif",
+      "sha256": "25f93dadf34e9c9c9bff873eac912f4ae85229a9171fba3492154670b0270dc1"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\cubes_PRED\\z12416_y04608_x02944.tif",
+      "sha256": "2f70e9dc1e331915e76c19e9ec4124090f5681aa7a9f2fc0f0fd8be196c1272d"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\cubes_PRED\\z12416_y04608_x03072.tif",
+      "sha256": "5e18bc1c8614e22642fe8e26a410e8c7d3fae1fe303c1adccc13815efb690639"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\cubes_PRED\\z12416_y04608_x03200.tif",
+      "sha256": "5af5a940caf0d0f4c250ce6e3fefd8342fab3246fc5f5b926b984b45ad23f95c"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\cubes_PRED\\z12544_y04352_x02944.tif",
+      "sha256": "b77d0f3f4088cc3801ab693e9f23980a25f8d1b60f31dc62b30b23ad7f42d336"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\cubes_PRED\\z12544_y04352_x03072.tif",
+      "sha256": "620fae3bdebefb330e55b619f68c4544c8c76acc3dedfde0bb65ecf43284d79d"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\cubes_PRED\\z12544_y04352_x03200.tif",
+      "sha256": "305fbbc4ed9f3a61e72615625b712846b4943a1160b6d55dbb8d668315204c0f"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\cubes_PRED\\z12544_y04480_x02944.tif",
+      "sha256": "8029f290fbf1f522b9f0ed6e852cf445aac9e9195173c6f891595b329c22b968"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\cubes_PRED\\z12544_y04480_x03072.tif",
+      "sha256": "217a257ebb5240cebcc468d8d26bd1b4cb5c974d04a6620c031ebccce36796d2"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\cubes_PRED\\z12544_y04480_x03200.tif",
+      "sha256": "bc5d6a7a823ff5de4d36cb153a7d0296234f92e7ec646d5eb9ffb9dbba4bef2c"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\cubes_PRED\\z12544_y04608_x02944.tif",
+      "sha256": "2902fca094ac128f3bf3c9a129f493ec2e77e708ff65ed4401795e84a3c00dfa"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\cubes_PRED\\z12544_y04608_x03072.tif",
+      "sha256": "b41375fc6222848fa6fdff1c2f9db109e8c004f5092eb157e01fe8291726a694"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\cubes_PRED\\z12544_y04608_x03200.tif",
+      "sha256": "c08397ccaa46aae996c32b4810101d8b65a33143d94f5445ac786bfa66361b5c"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\cubes_PRED\\z12672_y04352_x02944.tif",
+      "sha256": "486078706444ffeb9f2be2631f6b1b640960b3617e09c4c779a77610828a8d7e"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\cubes_PRED\\z12672_y04352_x03072.tif",
+      "sha256": "8dae5ee7d4c573a0478f466a7d1f802065c8e6596ac2a5872c2a96ea04cf9774"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\cubes_PRED\\z12672_y04352_x03200.tif",
+      "sha256": "533f983cd7dbe6d93e90587988e514aea57d9202b529ebf7e51b78912e21c27a"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\cubes_PRED\\z12672_y04480_x02944.tif",
+      "sha256": "6a1b8ebbce1055dcbb23cfe772f9e64144a22fd534a8f492501d0db1c1d5317a"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\cubes_PRED\\z12672_y04480_x03072.tif",
+      "sha256": "c8d14649f281a7d1a395b678b0cfb7ecb1cf7bf1d88dc9ea14a8872952cbeddf"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\cubes_PRED\\z12672_y04480_x03200.tif",
+      "sha256": "8626d5d22f8ed1a7ecf75bcbaacdad6c41ceb18cf3b348bbaab32f1c5216d679"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\cubes_PRED\\z12672_y04608_x02944.tif",
+      "sha256": "cc3c8fb23ab2e3a58d267c58400eadc82710483bfc3cfc93cdeea737adacb762"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\cubes_PRED\\z12672_y04608_x03072.tif",
+      "sha256": "094732d123c5e9cd34c74137a0ebfbdb91fa801624242b3fbf7c06a95567b510"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\cubes_PRED\\z12672_y04608_x03200.tif",
+      "sha256": "4e22c28ee22179113667b998525d134c726487832547f945fba68a70461474ea"
+    },
+    {
+      "bytes": 4217182,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\probability\\z12416_y04352_x02944.tif",
+      "sha256": "50680218f18d9aa51630e158ad2c0e6f12ef3dc0423399abaf179253edcb33bf"
+    },
+    {
+      "bytes": 4217182,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\probability\\z12416_y04352_x03072.tif",
+      "sha256": "7c7a2e690301b1706dc75edc1331e00b285082ea0d3a1061c54269d756e7715d"
+    },
+    {
+      "bytes": 4217182,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\probability\\z12416_y04352_x03200.tif",
+      "sha256": "0ff1894fbe5012b9bd43d94bfdb985bac7abadcf0bc8e3144ad33a9c66810a12"
+    },
+    {
+      "bytes": 4217182,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\probability\\z12416_y04480_x02944.tif",
+      "sha256": "8ba7d4fd1caa0b3a6ed140a7bb173e20ad802b7c7077b5aed5e9660be53d953f"
+    },
+    {
+      "bytes": 4217182,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\probability\\z12416_y04480_x03072.tif",
+      "sha256": "e3477be109a36e937cb66e934ac2e904031fc71b4a71d429d1d10863a07d9498"
+    },
+    {
+      "bytes": 4217182,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\probability\\z12416_y04480_x03200.tif",
+      "sha256": "4e6dcaa21124a632f674dd04275b91b4e89d20c4f6d59e01a06529fb5000b5fc"
+    },
+    {
+      "bytes": 4217182,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\probability\\z12416_y04608_x02944.tif",
+      "sha256": "1f562fc7a4edefb372ea1f0bd04429c95f108dd49417e943147fe74b84191a82"
+    },
+    {
+      "bytes": 4217182,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\probability\\z12416_y04608_x03072.tif",
+      "sha256": "91aec86176d6e4af738c524987cb0ca8c4c3e6f83d6f8c1303e18cae569518f0"
+    },
+    {
+      "bytes": 4217182,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\probability\\z12416_y04608_x03200.tif",
+      "sha256": "c4d4d8a173c1b6689ef3711e3f6542080f4918a5241658e8ed13d4e6f2860113"
+    },
+    {
+      "bytes": 4217182,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\probability\\z12544_y04352_x02944.tif",
+      "sha256": "b264a168e1b1b9f9ad1642f1e2fa2489393a2e259860716958236f2b0158e1de"
+    },
+    {
+      "bytes": 4217182,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\probability\\z12544_y04352_x03072.tif",
+      "sha256": "c6704c69020ca31f6f1ff8acf26c0df0ed628bdb258d25ed8e6dd464eb08c969"
+    },
+    {
+      "bytes": 4217182,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\probability\\z12544_y04352_x03200.tif",
+      "sha256": "898a687ec7a0ffbd67fe45442d1aecc0f96ea75af3eef03036684cbb31665a23"
+    },
+    {
+      "bytes": 4217182,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\probability\\z12544_y04480_x02944.tif",
+      "sha256": "fc22db8aade21d12f5a2a913b1f2057267d40b493da85eeb413e7f979f8e42ae"
+    },
+    {
+      "bytes": 4217182,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\probability\\z12544_y04480_x03072.tif",
+      "sha256": "a2b95eea10555601b5649548815f15e916929a31300877ca9a87b42ef2d511fb"
+    },
+    {
+      "bytes": 4217182,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\probability\\z12544_y04480_x03200.tif",
+      "sha256": "4d5d4356fdbb62fd42c67a174875947f2b81115105eb1e74649578a0ce0c88e1"
+    },
+    {
+      "bytes": 4217182,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\probability\\z12544_y04608_x02944.tif",
+      "sha256": "0553f96bd053dda4c0e9ea63bd18925b1fe4cdf2f251f97c0af22d26d4defea7"
+    },
+    {
+      "bytes": 4217182,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\probability\\z12544_y04608_x03072.tif",
+      "sha256": "4a24f4b1236641e94137458dfb3f2762c9fb19f8df9361c9f3757cbf02c53677"
+    },
+    {
+      "bytes": 4217182,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\probability\\z12544_y04608_x03200.tif",
+      "sha256": "034332b8312700c64a2dee333178fbe6c1c215ca19164827436d823511928bc6"
+    },
+    {
+      "bytes": 4217182,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\probability\\z12672_y04352_x02944.tif",
+      "sha256": "3633fcac78b0b08c1929df7fa548ed05d3aedb0bc90cc699ec803bcc381bf2a2"
+    },
+    {
+      "bytes": 4217182,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\probability\\z12672_y04352_x03072.tif",
+      "sha256": "a1613cded06511a6d79c89805281bc8811a9aa14d1a3cf4aaa8406c874bd97e2"
+    },
+    {
+      "bytes": 4217182,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\probability\\z12672_y04352_x03200.tif",
+      "sha256": "4fb07abf7a8c444f2fce999629b6e2b14e581badafed5287d401981c587dc185"
+    },
+    {
+      "bytes": 4217182,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\probability\\z12672_y04480_x02944.tif",
+      "sha256": "cf5266baed3bfb5c986e45cc5d76629770d2691185c189080b8257f6bef00e85"
+    },
+    {
+      "bytes": 4217182,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\probability\\z12672_y04480_x03072.tif",
+      "sha256": "c1e44916a760c1cd96f9b6ffabb8de08bad5f50448654f4d4754fb61dad19eb1"
+    },
+    {
+      "bytes": 4217182,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\probability\\z12672_y04480_x03200.tif",
+      "sha256": "7c2ba768f3dcadfe8972f3f897ab74c61ff86b20d261d9ffb0a81b8e40f3becd"
+    },
+    {
+      "bytes": 4217182,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\probability\\z12672_y04608_x02944.tif",
+      "sha256": "9291b79e36dcac35bd9b0c35646c3d8f342eb2a6331321317a65bee547eafc70"
+    },
+    {
+      "bytes": 4217182,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\probability\\z12672_y04608_x03072.tif",
+      "sha256": "e9430414c4c609528d3c60ae6e0c2d260b4384bc9c1c9bb49ac14f2c4f8a4b9e"
+    },
+    {
+      "bytes": 4217182,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control\\inference\\probability\\z12672_y04608_x03200.tif",
+      "sha256": "a5b75882248a0d422715c2d622d4bfdb544b43e6b0b640e045af43c32db1d82a"
+    }
+  ],
+  "pid": 53080,
+  "request_sha256": "53e9bd4d7db72cd716d8c6e795ca9ee0a1758ba52f06ccf7877af136bc9ea938",
+  "started_utc": "2026-09-07T20:03:40.071335+00:00",
+  "status": "complete"
+}

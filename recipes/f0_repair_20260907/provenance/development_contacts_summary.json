@@ -1,0 +1,248 @@
+{
+  "added_2d_strokes": 286,
+  "added_3d_components": 206,
+  "block": "development",
+  "detached_2d_strokes": 0,
+  "interpretation": "Independent geometric contact diagnostics, not anatomical labels or a proof that all multi-join paths preserve wrap identity.",
+  "maximum_axial_span_planes": 8,
+  "maximum_radial_span_px": 7.788759596155614,
+  "multiway_2d_strokes": 0,
+  "planes": 384,
+  "schema": "f0-independent-repair-contact-audit-v1",
+  "worst_case_chain_images": [
+    {
+      "bounds_world_zyx": [
+        [
+          12339,
+          12347
+        ],
+        [
+          3886,
+          3893
+        ],
+        [
+          3199,
+          3206
+        ]
+      ],
+      "component": 154,
+      "image": "chain_0154.png",
+      "radial_span_px": 7.788759596155614,
+      "view_center_local": [
+        310,
+        49,
+        257
+      ],
+      "voxels": 74,
+      "z_span": 8
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12097,
+          12099
+        ],
+        [
+          4110,
+          4119
+        ],
+        [
+          3062,
+          3068
+        ]
+      ],
+      "component": 52,
+      "image": "chain_0052.png",
+      "radial_span_px": 7.346951336431857,
+      "view_center_local": [
+        65,
+        275,
+        121
+      ],
+      "voxels": 26,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12033,
+          12037
+        ],
+        [
+          4070,
+          4084
+        ],
+        [
+          3120,
+          3138
+        ]
+      ],
+      "component": 5,
+      "image": "chain_0005.png",
+      "radial_span_px": 7.1537210435776615,
+      "view_center_local": [
+        2,
+        235,
+        185
+      ],
+      "voxels": 141,
+      "z_span": 4
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12215,
+          12217
+        ],
+        [
+          3987,
+          3998
+        ],
+        [
+          3196,
+          3202
+        ]
+      ],
+      "component": 108,
+      "image": "chain_0108.png",
+      "radial_span_px": 7.053985750485708,
+      "view_center_local": [
+        184,
+        149,
+        253
+      ],
+      "voxels": 31,
+      "z_span": 2
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12258,
+          12261
+        ],
+        [
+          4188,
+          4199
+        ],
+        [
+          3274,
+          3290
+        ]
+      ],
+      "component": 123,
+      "image": "chain_0123.png",
+      "radial_span_px": 6.976364062114953,
+      "view_center_local": [
+        227,
+        352,
+        337
+      ],
+      "voxels": 132,
+      "z_span": 3
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12049,
+          12057
+        ],
+        [
+          4162,
+          4172
+        ],
+        [
+          2970,
+          2978
+        ]
+      ],
+      "component": 25,
+      "image": "chain_0025.png",
+      "radial_span_px": 5.206967446057661,
+      "view_center_local": [
+        20,
+        327,
+        29
+      ],
+      "voxels": 138,
+      "z_span": 8
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12078,
+          12082
+        ],
+        [
+          4166,
+          4174
+        ],
+        [
+          2954,
+          2960
+        ]
+      ],
+      "component": 44,
+      "image": "chain_0044.png",
+      "radial_span_px": 5.107743032601093,
+      "view_center_local": [
+        48,
+        328,
+        12
+      ],
+      "voxels": 39,
+      "z_span": 4
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12079,
+          12083
+        ],
+        [
+          4089,
+          4098
+        ],
+        [
+          3199,
+          3212
+        ]
+      ],
+      "component": 45,
+      "image": "chain_0045.png",
+      "radial_span_px": 6.403498713558065,
+      "view_center_local": [
+        49,
+        252,
+        259
+      ],
+      "voxels": 126,
+      "z_span": 4
+    },
+    {
+      "bounds_world_zyx": [
+        [
+          12140,
+          12143
+        ],
+        [
+          4162,
+          4174
+        ],
+        [
+          3110,
+          3122
+        ]
+      ],
+      "component": 73,
+      "image": "chain_0073.png",
+      "radial_span_px": 6.186114049403841,
+      "view_center_local": [
+        109,
+        330,
+        173
+      ],
+      "voxels": 85,
+      "z_span": 3
+    }
+  ]
+}

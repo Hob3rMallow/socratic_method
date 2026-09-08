@@ -1,0 +1,389 @@
+{
+  "added_voxel_probability": {
+    "fraction_ge_020": 0.9523460410557185,
+    "fraction_ge_025": 0.9391495601173021,
+    "fraction_ge_030": 0.8497067448680352,
+    "mean": 0.3182056248188019,
+    "minimum": 0.13916015625,
+    "p10": 0.2822265625
+  },
+  "anatomical_quality_review_required": true,
+  "artifact_files": [
+    {
+      "bytes": 2117896,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\development\\report_baseline\\cubes_PRED\\z12032_y03840_x02944.tif",
+      "sha256": "da37ea5cddbc498de37ea5f9479b5284409def2f308a070a21fa6b66e04e755f"
+    },
+    {
+      "bytes": 2117896,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\development\\report_baseline\\cubes_PRED\\z12032_y03840_x03072.tif",
+      "sha256": "c08efb1ec999900f3bb256c825acc91e8ab9c358296332b9e4e1061a869ce7c7"
+    },
+    {
+      "bytes": 2117896,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\development\\report_baseline\\cubes_PRED\\z12032_y03840_x03200.tif",
+      "sha256": "62c8b5710ac7552c3f6c34607d79237685a8461a21d334188ed028a0788671cc"
+    },
+    {
+      "bytes": 2117896,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\development\\report_baseline\\cubes_PRED\\z12032_y03968_x02944.tif",
+      "sha256": "066c93d3629837665e1ef4227b414f627397d2e7b02c4acf4e64c3fea526c1a7"
+    },
+    {
+      "bytes": 2117896,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\development\\report_baseline\\cubes_PRED\\z12032_y03968_x03072.tif",
+      "sha256": "374ca5e3521851e4713a582236640425f503722195a3fd530a0c5d31a9b73726"
+    },
+    {
+      "bytes": 2117896,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\development\\report_baseline\\cubes_PRED\\z12032_y03968_x03200.tif",
+      "sha256": "aaea2ce8dda4f3e4a4fd5b0e551dc6c79794d771d8558a9d73009807e227f0f2"
+    },
+    {
+      "bytes": 2117896,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\development\\report_baseline\\cubes_PRED\\z12032_y04096_x02944.tif",
+      "sha256": "9232a6bd07f9cc0c89fe02d1cda02642437f665a6484b556a23bb634fbc49889"
+    },
+    {
+      "bytes": 2117896,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\development\\report_baseline\\cubes_PRED\\z12032_y04096_x03072.tif",
+      "sha256": "e36fc357ebe86d23aa94047009bf47981ba63ef7d3aff7f68b3b4aa56ee41ad9"
+    },
+    {
+      "bytes": 2117896,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\development\\report_baseline\\cubes_PRED\\z12032_y04096_x03200.tif",
+      "sha256": "4765f0d571f6f2501faa05a4b1e6e5eee59649ea79a438e1085776a5ebe3a4cd"
+    },
+    {
+      "bytes": 2117896,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\development\\report_baseline\\cubes_PRED\\z12160_y03840_x02944.tif",
+      "sha256": "8cf2bae6d574accc3a355b2ad13b2fd471eae5a1911aca1c5b039dacf60543c9"
+    },
+    {
+      "bytes": 2117896,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\development\\report_baseline\\cubes_PRED\\z12160_y03840_x03072.tif",
+      "sha256": "d7bf37310a0ad9fb0b9b58ac959183f25c1e807495e128da18274fdce27c2257"
+    },
+    {
+      "bytes": 2117896,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\development\\report_baseline\\cubes_PRED\\z12160_y03840_x03200.tif",
+      "sha256": "89803cfef1bc3cbacb3dce68151bb43b910f5cc34891f964a0e8a575fe6f0f27"
+    },
+    {
+      "bytes": 2117896,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\development\\report_baseline\\cubes_PRED\\z12160_y03968_x02944.tif",
+      "sha256": "760ad5e30806edc52cc873506e49f327b68ab61e75259b95f6bcf32817b949fd"
+    },
+    {
+      "bytes": 2117896,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\development\\report_baseline\\cubes_PRED\\z12160_y03968_x03072.tif",
+      "sha256": "1d136354dafc50981930f247ef9b7efb5c4e2dd71ea1eecc243e63d310c2210e"
+    },
+    {
+      "bytes": 2117896,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\development\\report_baseline\\cubes_PRED\\z12160_y03968_x03200.tif",
+      "sha256": "c541b0c8f5ad64373cdddaa50364f8fda644c5600d6d881b9b3fb6c751ebff81"
+    },
+    {
+      "bytes": 2117896,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\development\\report_baseline\\cubes_PRED\\z12160_y04096_x02944.tif",
+      "sha256": "c9ada99b316f0087e595620fcd14197e10e1b91b22ac0d63cc1ab47b1153046b"
+    },
+    {
+      "bytes": 2117896,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\development\\report_baseline\\cubes_PRED\\z12160_y04096_x03072.tif",
+      "sha256": "c14e1565cc68aa62fc37f7e4a23393deea7b765e631d08776d9135a36f4fd192"
+    },
+    {
+      "bytes": 2117896,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\development\\report_baseline\\cubes_PRED\\z12160_y04096_x03200.tif",
+      "sha256": "845de8c880295efd5c95a3e1880e8b53ca7d6901dda05718f90867dce1e1520e"
+    },
+    {
+      "bytes": 2117896,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\development\\report_baseline\\cubes_PRED\\z12288_y03840_x02944.tif",
+      "sha256": "e330fd0088409977f74ee7e2acf02502d2e13335ff756f9a416a2ba23243ba3e"
+    },
+    {
+      "bytes": 2117896,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\development\\report_baseline\\cubes_PRED\\z12288_y03840_x03072.tif",
+      "sha256": "58cae6613559b2d6cba6eecace3568d9bbfd769ed04bcc08dd45ab42c13b1219"
+    },
+    {
+      "bytes": 2117896,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\development\\report_baseline\\cubes_PRED\\z12288_y03840_x03200.tif",
+      "sha256": "4a48d615b0a4a726b8a583ab975e8e7436dc0c60f48449e7f3ae590693b233c7"
+    },
+    {
+      "bytes": 2117896,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\development\\report_baseline\\cubes_PRED\\z12288_y03968_x02944.tif",
+      "sha256": "92570c87058a37144bfc54f53ec175f110cef7c8cbceb9e760e0d2d12c6f7447"
+    },
+    {
+      "bytes": 2117896,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\development\\report_baseline\\cubes_PRED\\z12288_y03968_x03072.tif",
+      "sha256": "f98dfb0e560816af3c554880e578fcbc98b8be20bfda676765203a063e4b3ef0"
+    },
+    {
+      "bytes": 2117896,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\development\\report_baseline\\cubes_PRED\\z12288_y03968_x03200.tif",
+      "sha256": "d51a2f270c128d46820a9ff2cc13cff5356413b487722d2af6737f106376cbee"
+    },
+    {
+      "bytes": 2117896,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\development\\report_baseline\\cubes_PRED\\z12288_y04096_x02944.tif",
+      "sha256": "546b2afd50c68fafea15314f7e771e96788950e7796dbcb5c75a1979af5d7e50"
+    },
+    {
+      "bytes": 2117896,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\development\\report_baseline\\cubes_PRED\\z12288_y04096_x03072.tif",
+      "sha256": "1d5e65295e3925c8935ee1daf39a22726cc7f1916399f39f581f49d7b77cea66"
+    },
+    {
+      "bytes": 2117896,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\development\\report_baseline\\cubes_PRED\\z12288_y04096_x03200.tif",
+      "sha256": "acd6c86aaacf5c2b253a42eb0dc729922c65f93e8a57352b116d8ed375cc2884"
+    },
+    {
+      "bytes": 781,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\development\\report_baseline\\fixup_report.json",
+      "sha256": "fb6ece3eadeb18d9e18f1e7fbc51a681755ef5d91a3c9f89941da25b08031f51"
+    },
+    {
+      "bytes": 58978,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\development\\report_baseline\\joins.jsonl",
+      "sha256": "c4eb418e7fd811f91538b6a21751e0a61b529bcf0b0c7b96ade41067a5bdd223"
+    },
+    {
+      "bytes": 88080,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\development\\report_baseline\\rejected.jsonl",
+      "sha256": "01f71649562232689826304c3554d5cd5b3798c6d0fa9cce14930b0a110397a5"
+    },
+    {
+      "bytes": 16780,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\development\\report_baseline\\planes.csv",
+      "sha256": "b315cedd0f27633bae48a4e285ed617503650439ce4f0955f846c62c6a0ae20f"
+    }
+  ],
+  "baseline_repair_voxels_not_retained": 0,
+  "block": "development",
+  "core": {
+    "added_voxels": 0,
+    "erased_voxels": 0,
+    "foreground_before": 455155
+  },
+  "core_cube": "z12160_y03968_x03072",
+  "cubes": {
+    "z12032_y03840_x02944": {
+      "added_voxels": 42,
+      "erased_voxels": 0,
+      "foreground_before": 441002
+    },
+    "z12032_y03840_x03072": {
+      "added_voxels": 0,
+      "erased_voxels": 0,
+      "foreground_before": 417665
+    },
+    "z12032_y03840_x03200": {
+      "added_voxels": 0,
+      "erased_voxels": 0,
+      "foreground_before": 545655
+    },
+    "z12032_y03968_x02944": {
+      "added_voxels": 0,
+      "erased_voxels": 0,
+      "foreground_before": 304372
+    },
+    "z12032_y03968_x03072": {
+      "added_voxels": 3,
+      "erased_voxels": 0,
+      "foreground_before": 460358
+    },
+    "z12032_y03968_x03200": {
+      "added_voxels": 66,
+      "erased_voxels": 0,
+      "foreground_before": 501943
+    },
+    "z12032_y04096_x02944": {
+      "added_voxels": 252,
+      "erased_voxels": 0,
+      "foreground_before": 162138
+    },
+    "z12032_y04096_x03072": {
+      "added_voxels": 52,
+      "erased_voxels": 0,
+      "foreground_before": 238834
+    },
+    "z12032_y04096_x03200": {
+      "added_voxels": 115,
+      "erased_voxels": 0,
+      "foreground_before": 446489
+    },
+    "z12160_y03840_x02944": {
+      "added_voxels": 71,
+      "erased_voxels": 0,
+      "foreground_before": 432462
+    },
+    "z12160_y03840_x03072": {
+      "added_voxels": 69,
+      "erased_voxels": 0,
+      "foreground_before": 538922
+    },
+    "z12160_y03840_x03200": {
+      "added_voxels": 59,
+      "erased_voxels": 0,
+      "foreground_before": 424484
+    },
+    "z12160_y03968_x02944": {
+      "added_voxels": 0,
+      "erased_voxels": 0,
+      "foreground_before": 358288
+    },
+    "z12160_y03968_x03072": {
+      "added_voxels": 0,
+      "erased_voxels": 0,
+      "foreground_before": 455155
+    },
+    "z12160_y03968_x03200": {
+      "added_voxels": 0,
+      "erased_voxels": 0,
+      "foreground_before": 495989
+    },
+    "z12160_y04096_x02944": {
+      "added_voxels": 0,
+      "erased_voxels": 0,
+      "foreground_before": 386203
+    },
+    "z12160_y04096_x03072": {
+      "added_voxels": 0,
+      "erased_voxels": 0,
+      "foreground_before": 452439
+    },
+    "z12160_y04096_x03200": {
+      "added_voxels": 0,
+      "erased_voxels": 0,
+      "foreground_before": 442581
+    },
+    "z12288_y03840_x02944": {
+      "added_voxels": 0,
+      "erased_voxels": 0,
+      "foreground_before": 407166
+    },
+    "z12288_y03840_x03072": {
+      "added_voxels": 54,
+      "erased_voxels": 0,
+      "foreground_before": 393202
+    },
+    "z12288_y03840_x03200": {
+      "added_voxels": 246,
+      "erased_voxels": 0,
+      "foreground_before": 479260
+    },
+    "z12288_y03968_x02944": {
+      "added_voxels": 33,
+      "erased_voxels": 0,
+      "foreground_before": 215023
+    },
+    "z12288_y03968_x03072": {
+      "added_voxels": 204,
+      "erased_voxels": 0,
+      "foreground_before": 240174
+    },
+    "z12288_y03968_x03200": {
+      "added_voxels": 0,
+      "erased_voxels": 0,
+      "foreground_before": 213605
+    },
+    "z12288_y04096_x02944": {
+      "added_voxels": 0,
+      "erased_voxels": 0,
+      "foreground_before": 192086
+    },
+    "z12288_y04096_x03072": {
+      "added_voxels": 0,
+      "erased_voxels": 0,
+      "foreground_before": 250887
+    },
+    "z12288_y04096_x03200": {
+      "added_voxels": 98,
+      "erased_voxels": 0,
+      "foreground_before": 188203
+    }
+  },
+  "kept_connection_tracks": 23,
+  "native": {
+    "bridges": {
+      "certified": 3,
+      "cut": 0,
+      "cut_px": 0,
+      "necks": 1305,
+      "persistent": 2
+    },
+    "candidates": 328,
+    "cubes": 27,
+    "cubes_written": 27,
+    "dims": [
+      384,
+      384,
+      384
+    ],
+    "endpoints": 25902,
+    "fg_in": 10084585,
+    "grid": "D:/work/vesuvius-c/output/crossres_data/f0_repair_20260907/input_development",
+    "joins": 328,
+    "kept": 96,
+    "painted_px": 1364,
+    "params": {
+      "min_score": 0.3,
+      "min_support": 3,
+      "paint_radius": 1,
+      "radial_armed": 1,
+      "radial_dr": 4.0,
+      "reach_max": 12.0,
+      "reach_safe": 6.0,
+      "tracks": 1
+    },
+    "rejects": {
+      "arc": 0,
+      "cross_sheet": 30,
+      "crossing": 0,
+      "evidence": 0,
+      "merger": 25,
+      "occupied": 0,
+      "radial": 171,
+      "same_cc": 327,
+      "score": 2,
+      "tangent": 547
+    },
+    "seconds": 3.7,
+    "support_dropped": 232,
+    "world_origin": [
+      12032,
+      3840,
+      2944
+    ]
+  },
+  "new_over_baseline_voxels": 0,
+  "plane_census": {
+    "candidates": 328,
+    "in_reach": 1432,
+    "joins": 328,
+    "kept": 96,
+    "n_eps": 25902,
+    "n_excluded": 13423,
+    "painted_px": 1364,
+    "rej_arc": 0,
+    "rej_cross_sheet": 30,
+    "rej_crossing": 0,
+    "rej_evidence": 0,
+    "rej_merger": 25,
+    "rej_occupied": 0,
+    "rej_radial": 171,
+    "rej_same_cc": 327,
+    "rej_score": 2,
+    "rej_tangent": 547
+  },
+  "preset": "report_baseline",
+  "probability_is_not_ground_truth": true,
+  "schema": "f0-repair-preset-result-v1"
+}

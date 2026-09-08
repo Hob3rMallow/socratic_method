@@ -1,0 +1,30 @@
+{
+  "schema": "f0-continuity-visual-review-v1",
+  "method": "Direct inspection of CT-aligned PNGs, including orthogonal Z/Y/X cards; no ground-truth annotation campaign",
+  "development_v2_risk_component_ids": [79,93,144,164,228,237,263,264,290,292,294,298,301,303,314,319,333,340,342,361],
+  "fresh_control_v2_risk_component_ids": [153,137,106,109,116,151,129,176,205,13,81,173,213,211,83,55,203,88,9,8],
+  "development_v2_extra_corridors": [1934],
+  "fresh_control_v2_extra_corridors": [1123],
+  "fresh_control_overview_planes": [12608],
+  "observations": [
+    "Development component 292 and control components 153 and 137 show useful-looking long continuations following visible CT tissue interfaces.",
+    "Development core corridor 1934 is a roughly 54-pixel curved connection. Fresh-control core corridor 1123 is a roughly 65-pixel connection along a visible tissue boundary; both exceed the native 21-pixel maximum.",
+    "Fresh-control components 106, 109, 129, 176, 205 and 55 show local additions aligned with visible sheet structure in the displayed orthogonal cuts.",
+    "Fresh-control component 116 has additions over 18 Z planes. Orthogonal views demonstrate patch extension, but this does not prove all of the same anatomical sheet was recovered.",
+    "The full fresh-control overview remains dominated by unchanged foreground and unfilled geometry; this is selective recovery, not a global .20 mask."
+  ],
+  "cautions": [
+    "Development component 301 remains ambiguous in a packed fold with alternative-looking CT structure. Components 290 and 333 are crowded/grazing views. Do not present them as certified anatomical successes.",
+    "Fresh-control components 13, 81 and 88 attach around fragmented or broad pre-existing foreground; the X/Y cuts are sparse and do not settle sheet identity.",
+    "Fresh-control components 8, 9 and 88 span only one Z plane. A single-plane connection is not a reconstructed 3D sheet patch.",
+    "Displayed component-centered cards include all nearby additions, not only the named added component.",
+    "All 40 risk-first component cards were inspected, but not every one of the 1279 accepted v2 per-plane corridors was individually adjudicated.",
+    "Probability is evidence from the same model, not independent anatomy. The neighboring-probability gate rejected zero real proposals in both blocks.",
+    "The new stage intentionally uses local evidence instead of the native 3-pixel global radial endpoint restriction. No global wrap-identity certificate is claimed.",
+    "An independent package audit initially misclassified one-voxel brush aprons behind anchors as failed two-ended bridges. The control has 52 such attached voxels. The final verifier separately checks their size and exact adjacency to declared anchors; it does not count them as additional bridges."
+  ],
+  "policy_adjusted_on_control": false,
+  "anatomical_precision_or_new_dice": null,
+  "browser_render_verified": false,
+  "browser_unavailable": true
+}

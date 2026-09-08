@@ -1,0 +1,256 @@
+{
+  "comparison_jobs_complete": true,
+  "final_report": {
+    "bytes": 21255,
+    "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\index.html",
+    "sha256": "1e7bba123039ff7ff78b3f312e7c617a7780b996b5d1eb7eaba737d3075f6211"
+  },
+  "html": {
+    "browser_render_verified": false,
+    "browser_unavailable": true,
+    "external_dependencies": 0,
+    "html_pages_checked": 3,
+    "local_references_checked": 322,
+    "png_assets_decoded": 283
+  },
+  "no_training_or_native_job_launched_by_report_builder": true,
+  "official_text_and_code": [
+    {
+      "bytes": 14483,
+      "path": "D:\\work\\socratic_method\\src\\socratic_method\\repair.py",
+      "sha256": "2158cb60c367d31e72fe2101f61b7da8fb53e14932156cc0a1639427f7a2c36c"
+    },
+    {
+      "bytes": 10411,
+      "path": "D:\\work\\socratic_method\\tests\\test_repair.py",
+      "sha256": "8e0cc00c78e6bf31e5819d27b1a6463d8f1c046b23b5ae75f2f7aca9f30b6b2c"
+    },
+    {
+      "bytes": 1455,
+      "path": "D:\\work\\socratic_method\\pyproject.toml",
+      "sha256": "a157b7f03f23c72f79dc791b1683e20c1b180609d476c7006040ae4b4da57c72"
+    },
+    {
+      "bytes": 6561,
+      "path": "D:\\work\\socratic_method\\docs\\repair.md",
+      "sha256": "785e1079d80fa81e834a4d49d20643677329f8882a3a759a3a7b8ac0159a8f8c"
+    },
+    {
+      "bytes": 5941,
+      "path": "D:\\work\\socratic_method\\README.md",
+      "sha256": "7a5419bd4bc6836226dc2a2f04a6ff5583f150f1a47586527544c8be4c81b2cc"
+    },
+    {
+      "bytes": 4359,
+      "path": "D:\\work\\socratic_method\\native\\line_fitter\\README.md",
+      "sha256": "7c666d08331c72c2c66b80ff2318d9eb9e9b9c8e99830ff2b103af541461cf30"
+    }
+  ],
+  "report_generator": {
+    "bytes": 29382,
+    "path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\build_f0_repair_report.py",
+    "sha256": "f02a070cc8ba0f71eda37a3bdd3544dd79cf4fc1ad932b6a7b3e429f405b7a87"
+  },
+  "schema": "f0-repair-completion-verification-v1",
+  "sources": {
+    "byte_identical_prior_probability_cubes": [
+      {
+        "new": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_development\\probability\\z12032_y03968_x03072.tif",
+        "old": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\evaluation\\milestone_00200000\\blind_t035\\inference\\probability\\z12032_y03968_x03072.tif",
+        "sha256": "3dd1fdc6222902aeb846e9280868cbc4a55ce41a75f582a43db5f52290fd0528"
+      },
+      {
+        "new": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_development\\probability\\z12160_y03968_x03200.tif",
+        "old": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\evaluation\\milestone_00200000\\blind_t035\\inference\\probability\\z12160_y03968_x03200.tif",
+        "sha256": "64c552a5cd4199fddc7dfcb04ebb18f49111a365acc8ac7bb7365deb6ef7c96b"
+      },
+      {
+        "new": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_control\\probability\\z12800_y04096_x03456.tif",
+        "old": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\evaluation\\milestone_00200000\\blind_t035\\inference\\probability\\z12800_y04096_x03456.tif",
+        "sha256": "bc9581fd86ef6bd53dc71bc8db2f531f1a426454e27493a5b30d60e33de9c213"
+      },
+      {
+        "new": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_control\\probability\\z12928_y04096_x03328.tif",
+        "old": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\evaluation\\milestone_00200000\\blind_t035\\inference\\probability\\z12928_y04096_x03328.tif",
+        "sha256": "18cc6d540032c1dd4e4ef60df10823ea49b2fb833bed776c1a180117f26041da"
+      }
+    ],
+    "frozen_evidence_files_verified_in_each_copy": 96,
+    "frozen_model_read_only": true,
+    "historical_artifacts_unchanged": [
+      {
+        "bytes": 25106,
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\operator_report\\index.html",
+        "sha256": "5c95c6514a819bae4419457016620627a4990710b80a99b5462f5398b8f32009"
+      },
+      {
+        "bytes": 190483,
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\operator_report\\filler\\manifest.json",
+        "sha256": "fedabe4b91efac9291d8ca07d23b3907f17efb5c80d1a97cdf1b02157c4a8e4c"
+      },
+      {
+        "bytes": 1651,
+        "path": "D:\\work\\socratic_method\\docs\\line_fitter.md",
+        "sha256": "bef61cce483f1d42d53a8c52909be8eb4568ff7abff76558163f1a261ef5702e"
+      },
+      {
+        "bytes": 24920,
+        "path": "D:\\work\\vesuvius-c\\crossres_pred\\configs\\final_c3_250k_20260905.json",
+        "sha256": "af9d74dbf9f4c0fc978d6b9756fc92f6750fec211705c08be0a05e970c496cbc"
+      }
+    ],
+    "model": {
+      "bytes": 409674095,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\releases\\c3-f0-200k-20260907\\checkpoint_f0_00200000.pt",
+      "sha256": "54db9a59cb602ff08e3dda0acc1195ad980ab05fb660332d32fb436a0d49a175"
+    },
+    "native_binary": {
+      "bytes": 809472,
+      "path": "D:\\work\\vesuvius-c\\build\\c3-human-line-fitter_20260905\\extracted\\Release\\pred_fixup.exe",
+      "sha256": "54fe434f76beb8c1eff58cdb1bd72200e4630497e23539cd467e4e64360f1e13"
+    },
+    "raw_context_cubes_verified": 250,
+    "sealed_runtime_files_verified": 63
+  },
+  "status": "passed",
+  "verified_utc": "2026-09-07T18:58:58.040415+00:00",
+  "wrapper": {
+    "byte_identical_control_outputs": [
+      {
+        "cube": "z12672_y03968_x03200",
+        "sha256": "6aea15dbcd05400d1efad32cf72c5494e0a5f41056f04388f83be76e4f2faabb"
+      },
+      {
+        "cube": "z12672_y03968_x03328",
+        "sha256": "cf11dd17146afd5de0b8d7b61e0cd7a8544212ce0164e952b8581afb5870cc96"
+      },
+      {
+        "cube": "z12672_y03968_x03456",
+        "sha256": "9ba217a4c5e6bdd3f317a58f20439fa1bd65a49987efdc755ac4f3d8480a54d4"
+      },
+      {
+        "cube": "z12672_y04096_x03200",
+        "sha256": "5d8a88ab97cf6c2c380ac44f1bb9bd00317af0ad970eae5c41b3ef0edc34b6bc"
+      },
+      {
+        "cube": "z12672_y04096_x03328",
+        "sha256": "1692d27b0beee5ccc7b80a62eb26f37787cc05d51e3d2797907a74b600e202c4"
+      },
+      {
+        "cube": "z12672_y04096_x03456",
+        "sha256": "cf8d9de2b568b09d6261c1887ec85d19865b8e5593fa533969d1f183b51f7f98"
+      },
+      {
+        "cube": "z12672_y04224_x03200",
+        "sha256": "a5366568a59a6ff43fa1890ce53ebfd439772736a1de7da74eab815b75d0565f"
+      },
+      {
+        "cube": "z12672_y04224_x03328",
+        "sha256": "4e2ea77f1ef2266f8ac11c2b21361d150e57cafcb8446896bbb6212abfa1edc0"
+      },
+      {
+        "cube": "z12672_y04224_x03456",
+        "sha256": "e92fb3b574c358861f596928416441a7198c204d759194b877f020820914bd66"
+      },
+      {
+        "cube": "z12800_y03968_x03200",
+        "sha256": "b9a65236ae9ae40935bede38acc988f8e3b4c7adc2ef580093c47d4229951bba"
+      },
+      {
+        "cube": "z12800_y03968_x03328",
+        "sha256": "cb67221987d99c271ce0798f6d067dd535ab6e280a0f99f337dd48f92aeb745f"
+      },
+      {
+        "cube": "z12800_y03968_x03456",
+        "sha256": "d868b96d80b0c88e9e357023c1695a21e6551a22d3718807c479219262655bf8"
+      },
+      {
+        "cube": "z12800_y04096_x03200",
+        "sha256": "9fd43dfb4bc3bc32371237605e741a6a1e626196ed2cb717a61b40293dad78a7"
+      },
+      {
+        "cube": "z12800_y04096_x03328",
+        "sha256": "01b7ceda4e8a339b3f5169aafd3415de12c7f414cb99d0ed053f0b24d6626a9a"
+      },
+      {
+        "cube": "z12800_y04096_x03456",
+        "sha256": "4e094e3c8a8e9031fe9525e7b9195454d34a46c716d0e0d6b869844fc7582584"
+      },
+      {
+        "cube": "z12800_y04224_x03200",
+        "sha256": "e6241e3a10f9260c85106bd647fbe6e41f0f581c5cb1bc1dfd76bf4014fcc220"
+      },
+      {
+        "cube": "z12800_y04224_x03328",
+        "sha256": "9b726a61f2ecdac36f64f07a929bccd08560054a6657ed13e046cbee7174076b"
+      },
+      {
+        "cube": "z12800_y04224_x03456",
+        "sha256": "694342f8c4f837bba5552e4b0f23f00e7aa6dba2b7276e0c8d663f059cad9f9e"
+      },
+      {
+        "cube": "z12928_y03968_x03200",
+        "sha256": "3d2242cf0771da9c3d5af047104e41557e17f138e4a69123af1043782a3ca29c"
+      },
+      {
+        "cube": "z12928_y03968_x03328",
+        "sha256": "86825171ecd94f939f5a10972ff74029051ce487795a8cdeb00cf1dc83d07809"
+      },
+      {
+        "cube": "z12928_y03968_x03456",
+        "sha256": "7af2a5baa000e39bdcfaec2e49cdbd9b28e611a664a21f567ba6f7b187cc5128"
+      },
+      {
+        "cube": "z12928_y04096_x03200",
+        "sha256": "ae87d84bc24a4e52a4831c44bfed0172fe6e6e9d9cfb2a27270e5ca271f700f2"
+      },
+      {
+        "cube": "z12928_y04096_x03328",
+        "sha256": "9319ee1e5975ff5889c63f550276e3773cc336041aeabc5acedccbe384a7d807"
+      },
+      {
+        "cube": "z12928_y04096_x03456",
+        "sha256": "d9638a8f2b69ecee5bbc8dc5ee0abdea07482edf6a9e242e247e1ec1f457c61c"
+      },
+      {
+        "cube": "z12928_y04224_x03200",
+        "sha256": "50324a94e995918b8ca45fc79c9a6b8533eea3d26e8dd675a61c883b22fd6ad2"
+      },
+      {
+        "cube": "z12928_y04224_x03328",
+        "sha256": "b440709e3f193d46b18a97c86828401a698798d8ed30cf3906d73620db9f65c1"
+      },
+      {
+        "cube": "z12928_y04224_x03456",
+        "sha256": "2775da9add39f586b8a53aabe4b414f49805ed55d20138b704bd0db1b261b931"
+      }
+    ],
+    "check_only_creates_no_output": true,
+    "entry_points": {
+      "crossres-pred": "crossres_pred.cli:main",
+      "crossres-voxel": "crossres_pred.voxel.cli:main",
+      "socratic-export": "socratic_method.hf_export:main",
+      "socratic-repair": "socratic_method.repair:main",
+      "socratic-train": "socratic_method.recipe:main"
+    },
+    "failed_first_integration_preserved": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\wrapper_control.partial-47716",
+    "focused_tests_passed": 52,
+    "installed_module": {
+      "bytes": 14483,
+      "path": "D:\\work\\socratic_method\\src\\socratic_method\\repair.py",
+      "sha256": "2158cb60c367d31e72fe2101f61b7da8fb53e14932156cc0a1639427f7a2c36c"
+    },
+    "native_command_identical_to_real_integration": true,
+    "native_integration_note": "Real integration precedes final transaction/cancellation hardening; native command and all 27 masks match, and installed code passed focused regression tests.",
+    "real_integration_receipt": {
+      "bytes": 19836,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\wrapper_control_v2\\repair_receipt.json",
+      "sha256": "a5dbbae3ab18f3ca677280634df49a09105d66e0784bb69bef7e098139fdd394"
+    },
+    "test_receipt": {
+      "bytes": 5895,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\tests.xml",
+      "sha256": "0d9a2b6824c483ffccafb60dd86a23251e4222f3fdcde831bb259c126bc4c9dc"
+    }
+  }
+}

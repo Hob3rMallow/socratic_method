@@ -1,0 +1,44 @@
+{
+  "schema": "socratic-f0-freeze-verification-v1",
+  "verified_at_utc": "2026-09-07T17:45:55.6740664Z",
+  "passed": true,
+  "errors": [],
+  "frozen_model_sha256": "54db9a59cb602ff08e3dda0acc1195ad980ab05fb660332d32fb436a0d49a175",
+  "original_selected_sha256": "54db9a59cb602ff08e3dda0acc1195ad980ab05fb660332d32fb436a0d49a175",
+  "frozen_model_bytes": 409674095,
+  "frozen_model_read_only": true,
+  "archived_evidence_files_verified_in_each_location": 96,
+  "live_sealed_code_pins_verified": 63,
+  "local_document_links_checked": 56,
+  "metadata": [
+    {
+      "file": "manifest.json",
+      "sha256": "73482c18e5ce82c24a02906eb762646b6788f6da4f8f7ec15c6eb0885ed6b0a1",
+      "official_copy_matches": true
+    },
+    {
+      "file": "files.json",
+      "sha256": "d432deedaaf5d83781435615d8f8efcda8ba8d72fbdcecc9e9f18b9791ab8048",
+      "official_copy_matches": true
+    },
+    {
+      "file": "analysis.json",
+      "sha256": "d6baa5de5ce1f315b22612b01ad1315495d41ac42a2d96b60651121d53cd62dc",
+      "official_copy_matches": true
+    },
+    {
+      "file": "README.md",
+      "sha256": "4cb7e9aa79e76e197cf9d7f5a0bcb0144b4f200c2a6ff2da8b8ec1801f30c26f",
+      "official_copy_matches": true
+    },
+    {
+      "file": "review.md",
+      "sha256": "d2984054b2dbd44e9c9a9621c42a2348a775375e538bfd5606c73954239041e5",
+      "official_copy_matches": true
+    }
+  ],
+  "historical_filler_document_unchanged": true,
+  "new_training_inference_scoring_or_filler_runs": 0,
+  "public_upload_or_production_deployment": false,
+  "git_preservation_note": "The official frozen-record subtree uses '* -text' so Git does not normalize line endings of hash-pinned evidence or runtime snapshots."
+}

@@ -1,0 +1,22 @@
+{
+  "all_27_package_masks_byte_identical": true,
+  "anatomical_precision": null,
+  "automatic_deployment": false,
+  "fresh_control_based_algorithm_tuning": false,
+  "model_or_threshold_changed": false,
+  "official_native_default_changed": false,
+  "pre_control_selection": {
+    "bytes": 3545,
+    "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\selected_policy.json",
+    "sha256": "899342b2d367ac63db2e2a9a17d50976403aca8906477bdef9c4087c373d2459"
+  },
+  "profile": "f0-probability-continuity-v2",
+  "remaining_limit": "Ambiguous folds, one-plane patches and unsupported broad gaps; coherent 3D expansion and anatomical adjudication remain future work.",
+  "schema": "f0-continuity-decision-v1",
+  "status": "implemented and locally verified for opt-in review",
+  "visual_review": {
+    "bytes": 2987,
+    "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\visual_review.json",
+    "sha256": "2b94c20604e46a0d60f14075b275123538caf303dc267e80a9ac715d9a701c8b"
+  }
+}

@@ -1,0 +1,555 @@
+{
+  "schema": "socratic-additive-repair-v1",
+  "status": "complete",
+  "profile": "f0-contiguous-gap-repair-v1",
+  "completed_utc": "2026-09-07T18:33:13.516034+00:00",
+  "plan": {
+    "schema": "socratic-repair-plan-v1",
+    "profile": "f0-contiguous-gap-repair-v1",
+    "source": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_control",
+    "output": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\wrapper_control_v2",
+    "binary": {
+      "path": "D:\\work\\vesuvius-c\\build\\c3-human-line-fitter_20260905\\extracted\\Release\\pred_fixup.exe",
+      "bytes": 809472,
+      "sha256": "54fe434f76beb8c1eff58cdb1bd72200e4630497e23539cd467e4e64360f1e13"
+    },
+    "checkpoint_sha256": "54db9a59cb602ff08e3dda0acc1195ad980ab05fb660332d32fb436a0d49a175",
+    "threshold": 0.35,
+    "voxel_size_um": 8.64,
+    "umbilicus_yx": [
+      3287.0,
+      3784.0
+    ],
+    "parameters": {
+      "reach_safe": 6,
+      "reach_max": 21,
+      "radial_dr": 3,
+      "min_support": 0,
+      "min_score": 0.3,
+      "paint_radius": 1,
+      "radial_armed": 1,
+      "tracks": 1
+    },
+    "threads": 16,
+    "cube_ids": [
+      "z12672_y03968_x03200",
+      "z12672_y03968_x03328",
+      "z12672_y03968_x03456",
+      "z12672_y04096_x03200",
+      "z12672_y04096_x03328",
+      "z12672_y04096_x03456",
+      "z12672_y04224_x03200",
+      "z12672_y04224_x03328",
+      "z12672_y04224_x03456",
+      "z12800_y03968_x03200",
+      "z12800_y03968_x03328",
+      "z12800_y03968_x03456",
+      "z12800_y04096_x03200",
+      "z12800_y04096_x03328",
+      "z12800_y04096_x03456",
+      "z12800_y04224_x03200",
+      "z12800_y04224_x03328",
+      "z12800_y04224_x03456",
+      "z12928_y03968_x03200",
+      "z12928_y03968_x03328",
+      "z12928_y03968_x03456",
+      "z12928_y04096_x03200",
+      "z12928_y04096_x03328",
+      "z12928_y04096_x03456",
+      "z12928_y04224_x03200",
+      "z12928_y04224_x03328",
+      "z12928_y04224_x03456"
+    ],
+    "origin_zyx": [
+      12672,
+      3968,
+      3200
+    ],
+    "shape_zyx": [
+      384,
+      384,
+      384
+    ],
+    "foreground_before": 10296795,
+    "estimated_work_gib": 0.73828125,
+    "memory_estimate_is_not_a_hard_process_limit": true,
+    "input_files": [
+      {
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_control\\provenance.json",
+        "bytes": 2225,
+        "sha256": "2078808d15b71713ee8bc5704f041442f41f0f020ad7c8b51b25ecb93592c7b5"
+      },
+      {
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_control\\source_manifest.json",
+        "bytes": 452,
+        "sha256": "209ebf6a0734f8cb72a38d05f8e669cae3872d821a7b23ef71286cbc1c7bb09f"
+      },
+      {
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_control\\cubes_PRED\\z12672_y03968_x03200.tif",
+        "bytes": 2118490,
+        "sha256": "2eef6793463ed0579e8634628e49901ed7b2a69ec2ddf73fb8c6123389593dae"
+      },
+      {
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_control\\cubes_PRED\\z12672_y03968_x03328.tif",
+        "bytes": 2118490,
+        "sha256": "50d88ea04558f3b85ff828a42c086d4a5c52f08ab50e73e8938b89af3476f489"
+      },
+      {
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_control\\cubes_PRED\\z12672_y03968_x03456.tif",
+        "bytes": 2118490,
+        "sha256": "c7689a7f30a7ae47c8914cbc0a7e20d543a1fe26681a6c9c1e184a025bcd31bf"
+      },
+      {
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_control\\cubes_PRED\\z12672_y04096_x03200.tif",
+        "bytes": 2118490,
+        "sha256": "0acb265312186d9f4f073bd27e3b45772d35da8e66042f525a3a0c295fbf57a4"
+      },
+      {
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_control\\cubes_PRED\\z12672_y04096_x03328.tif",
+        "bytes": 2118490,
+        "sha256": "704f15a0b70f6ab75bfecabb5d79b43975c5648ed50f064a729f623eb26b581d"
+      },
+      {
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_control\\cubes_PRED\\z12672_y04096_x03456.tif",
+        "bytes": 2118490,
+        "sha256": "803a8ce7cf215a4d35d520a6255f2462edd5e63873b6e8d17ea94ad94225cfb4"
+      },
+      {
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_control\\cubes_PRED\\z12672_y04224_x03200.tif",
+        "bytes": 2118490,
+        "sha256": "59e35d4d891824ed5980992dc35fa61f795b83e9321c5cdf23c7c3b396d2c22f"
+      },
+      {
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_control\\cubes_PRED\\z12672_y04224_x03328.tif",
+        "bytes": 2118490,
+        "sha256": "c4495a970f629ae7fb957fd5ef154893bb41856348a2ffc4362e0a9faf549a02"
+      },
+      {
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_control\\cubes_PRED\\z12672_y04224_x03456.tif",
+        "bytes": 2118490,
+        "sha256": "265ee88743bbbc194f974ace3fa68250f6d04a574db8a8b4ca6de121c9808587"
+      },
+      {
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_control\\cubes_PRED\\z12800_y03968_x03200.tif",
+        "bytes": 2118490,
+        "sha256": "3f8979c0f99567b2a2ce392f23bcb511202be931b6666b61f9c1dedfbb69fb3b"
+      },
+      {
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_control\\cubes_PRED\\z12800_y03968_x03328.tif",
+        "bytes": 2118490,
+        "sha256": "effddb8dfb8db8419520705ce7ea3c4550ce6b531ab8572910e075ccb2bb9af5"
+      },
+      {
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_control\\cubes_PRED\\z12800_y03968_x03456.tif",
+        "bytes": 2118490,
+        "sha256": "261cf46108f03146ed5ac4b5ab03f4f201cafeb0d5795fc0e4a1a4503e81f4c6"
+      },
+      {
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_control\\cubes_PRED\\z12800_y04096_x03200.tif",
+        "bytes": 2118490,
+        "sha256": "369c905a0146700e8f0016fc95985cbfb4e360a463d01ffddb7eabdde8495771"
+      },
+      {
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_control\\cubes_PRED\\z12800_y04096_x03328.tif",
+        "bytes": 2118490,
+        "sha256": "8f1d171cd1d7d6619e533fd5e6d873ab63bbfb07e4d627f8cffb2307ee878eb0"
+      },
+      {
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_control\\cubes_PRED\\z12800_y04096_x03456.tif",
+        "bytes": 2118490,
+        "sha256": "6bad870a90d0744d0c296f055447c97e68fb1d6a5135461c6eee52937f917ca3"
+      },
+      {
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_control\\cubes_PRED\\z12800_y04224_x03200.tif",
+        "bytes": 2118490,
+        "sha256": "d43e202594db3d3d28e476ab3e314b7f835e926d50b5b02aaa71aee05908435c"
+      },
+      {
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_control\\cubes_PRED\\z12800_y04224_x03328.tif",
+        "bytes": 2118490,
+        "sha256": "e1752e36ec9dc6cad9077d158af4b9cdd1e9cd34f0dd72d0d6e0dc8bfcbf8e18"
+      },
+      {
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_control\\cubes_PRED\\z12800_y04224_x03456.tif",
+        "bytes": 2118490,
+        "sha256": "d8bd970b1c9ede9661a29a3ee32f5895009545bf7c95ae31869ba4342b06b33f"
+      },
+      {
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_control\\cubes_PRED\\z12928_y03968_x03200.tif",
+        "bytes": 2118490,
+        "sha256": "9c09c1892536308de362515a735f9d620ef3542d4a1ab8e609c0417dc5cf49cb"
+      },
+      {
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_control\\cubes_PRED\\z12928_y03968_x03328.tif",
+        "bytes": 2118490,
+        "sha256": "e8b25f0b3e7938d57b517869b34e165842f80348a652c7d4ba2a6f808c512905"
+      },
+      {
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_control\\cubes_PRED\\z12928_y03968_x03456.tif",
+        "bytes": 2118490,
+        "sha256": "edca8e4ca6f4d8229c4fe8dc407cd73bae71902a7c7976bf75605a7771938427"
+      },
+      {
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_control\\cubes_PRED\\z12928_y04096_x03200.tif",
+        "bytes": 2118490,
+        "sha256": "e0bd8518f52672b2243a97be8bf2af35fce6e3263c7920d245af060e5b5a8718"
+      },
+      {
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_control\\cubes_PRED\\z12928_y04096_x03328.tif",
+        "bytes": 2118490,
+        "sha256": "b81c2c1d3f4a8bbbb03e860b722eca6cf312feec0658f4f3ab8a3d031bd04691"
+      },
+      {
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_control\\cubes_PRED\\z12928_y04096_x03456.tif",
+        "bytes": 2118490,
+        "sha256": "c083f0399a5ec74df06e0bab11211f18dbeeecb53839d629a797e505e394b103"
+      },
+      {
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_control\\cubes_PRED\\z12928_y04224_x03200.tif",
+        "bytes": 2118490,
+        "sha256": "a1c3cba609ef320bcf15b3553d36f4d1fb80565eb238dfc71381f08cd3567d1b"
+      },
+      {
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_control\\cubes_PRED\\z12928_y04224_x03328.tif",
+        "bytes": 2118490,
+        "sha256": "763c9a46a94c77e928b1469bff96bd29e154482d5531b861a4aa7c4abfaf2401"
+      },
+      {
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_control\\cubes_PRED\\z12928_y04224_x03456.tif",
+        "bytes": 2118490,
+        "sha256": "0a5d527341cde774baf487795a4918ac4e11fbf5ada2dff7e412b2b5a39ae53d"
+      }
+    ],
+    "automatic_deployment": false,
+    "context_boundary_note": "Outer edges remain clipped; evaluate/use interior regions with real neighboring predictions."
+  },
+  "native": {
+    "grid": "D:/work/vesuvius-c/output/crossres_data/f0_repair_20260907/inference_control",
+    "dims": [
+      384,
+      384,
+      384
+    ],
+    "world_origin": [
+      12672,
+      3968,
+      3200
+    ],
+    "cubes": 27,
+    "params": {
+      "reach_safe": 6.0,
+      "reach_max": 21.0,
+      "radial_armed": 1,
+      "radial_dr": 3.0,
+      "min_support": 0,
+      "min_score": 0.3,
+      "paint_radius": 1,
+      "tracks": 1
+    },
+    "endpoints": 23445,
+    "candidates": 97,
+    "joins": 97,
+    "kept": 97,
+    "support_dropped": 0,
+    "painted_px": 1174,
+    "bridges": {
+      "necks": 1728,
+      "certified": 0,
+      "persistent": 0,
+      "cut": 0,
+      "cut_px": 0
+    },
+    "fg_in": 10296795,
+    "rejects": {
+      "same_cc": 294,
+      "tangent": 893,
+      "radial": 394,
+      "evidence": 0,
+      "score": 0,
+      "arc": 0,
+      "merger": 4,
+      "cross_sheet": 20,
+      "crossing": 0,
+      "occupied": 0
+    },
+    "cubes_written": 27,
+    "seconds": 4.5
+  },
+  "cubes": {
+    "z12672_y03968_x03200": {
+      "foreground_before": 255256,
+      "added_voxels": 50,
+      "erased_voxels": 0
+    },
+    "z12672_y03968_x03328": {
+      "foreground_before": 372651,
+      "added_voxels": 0,
+      "erased_voxels": 0
+    },
+    "z12672_y03968_x03456": {
+      "foreground_before": 389592,
+      "added_voxels": 0,
+      "erased_voxels": 0
+    },
+    "z12672_y04096_x03200": {
+      "foreground_before": 328769,
+      "added_voxels": 79,
+      "erased_voxels": 0
+    },
+    "z12672_y04096_x03328": {
+      "foreground_before": 360877,
+      "added_voxels": 6,
+      "erased_voxels": 0
+    },
+    "z12672_y04096_x03456": {
+      "foreground_before": 252828,
+      "added_voxels": 74,
+      "erased_voxels": 0
+    },
+    "z12672_y04224_x03200": {
+      "foreground_before": 320413,
+      "added_voxels": 58,
+      "erased_voxels": 0
+    },
+    "z12672_y04224_x03328": {
+      "foreground_before": 389021,
+      "added_voxels": 139,
+      "erased_voxels": 0
+    },
+    "z12672_y04224_x03456": {
+      "foreground_before": 427224,
+      "added_voxels": 75,
+      "erased_voxels": 0
+    },
+    "z12800_y03968_x03200": {
+      "foreground_before": 411438,
+      "added_voxels": 6,
+      "erased_voxels": 0
+    },
+    "z12800_y03968_x03328": {
+      "foreground_before": 430997,
+      "added_voxels": 3,
+      "erased_voxels": 0
+    },
+    "z12800_y03968_x03456": {
+      "foreground_before": 443396,
+      "added_voxels": 24,
+      "erased_voxels": 0
+    },
+    "z12800_y04096_x03200": {
+      "foreground_before": 271043,
+      "added_voxels": 38,
+      "erased_voxels": 0
+    },
+    "z12800_y04096_x03328": {
+      "foreground_before": 406801,
+      "added_voxels": 25,
+      "erased_voxels": 0
+    },
+    "z12800_y04096_x03456": {
+      "foreground_before": 531872,
+      "added_voxels": 9,
+      "erased_voxels": 0
+    },
+    "z12800_y04224_x03200": {
+      "foreground_before": 405753,
+      "added_voxels": 146,
+      "erased_voxels": 0
+    },
+    "z12800_y04224_x03328": {
+      "foreground_before": 467194,
+      "added_voxels": 135,
+      "erased_voxels": 0
+    },
+    "z12800_y04224_x03456": {
+      "foreground_before": 418871,
+      "added_voxels": 4,
+      "erased_voxels": 0
+    },
+    "z12928_y03968_x03200": {
+      "foreground_before": 479389,
+      "added_voxels": 14,
+      "erased_voxels": 0
+    },
+    "z12928_y03968_x03328": {
+      "foreground_before": 463294,
+      "added_voxels": 0,
+      "erased_voxels": 0
+    },
+    "z12928_y03968_x03456": {
+      "foreground_before": 384248,
+      "added_voxels": 10,
+      "erased_voxels": 0
+    },
+    "z12928_y04096_x03200": {
+      "foreground_before": 388995,
+      "added_voxels": 0,
+      "erased_voxels": 0
+    },
+    "z12928_y04096_x03328": {
+      "foreground_before": 397200,
+      "added_voxels": 0,
+      "erased_voxels": 0
+    },
+    "z12928_y04096_x03456": {
+      "foreground_before": 293097,
+      "added_voxels": 271,
+      "erased_voxels": 0
+    },
+    "z12928_y04224_x03200": {
+      "foreground_before": 441994,
+      "added_voxels": 0,
+      "erased_voxels": 0
+    },
+    "z12928_y04224_x03328": {
+      "foreground_before": 293174,
+      "added_voxels": 8,
+      "erased_voxels": 0
+    },
+    "z12928_y04224_x03456": {
+      "foreground_before": 271408,
+      "added_voxels": 0,
+      "erased_voxels": 0
+    }
+  },
+  "added_voxels": 1174,
+  "erased_voxels": 0,
+  "output_files": [
+    {
+      "path": "cubes_PRED/z12672_y03968_x03200.tif",
+      "bytes": 2117896,
+      "sha256": "6aea15dbcd05400d1efad32cf72c5494e0a5f41056f04388f83be76e4f2faabb"
+    },
+    {
+      "path": "cubes_PRED/z12672_y03968_x03328.tif",
+      "bytes": 2117896,
+      "sha256": "cf11dd17146afd5de0b8d7b61e0cd7a8544212ce0164e952b8581afb5870cc96"
+    },
+    {
+      "path": "cubes_PRED/z12672_y03968_x03456.tif",
+      "bytes": 2117896,
+      "sha256": "9ba217a4c5e6bdd3f317a58f20439fa1bd65a49987efdc755ac4f3d8480a54d4"
+    },
+    {
+      "path": "cubes_PRED/z12672_y04096_x03200.tif",
+      "bytes": 2117896,
+      "sha256": "5d8a88ab97cf6c2c380ac44f1bb9bd00317af0ad970eae5c41b3ef0edc34b6bc"
+    },
+    {
+      "path": "cubes_PRED/z12672_y04096_x03328.tif",
+      "bytes": 2117896,
+      "sha256": "1692d27b0beee5ccc7b80a62eb26f37787cc05d51e3d2797907a74b600e202c4"
+    },
+    {
+      "path": "cubes_PRED/z12672_y04096_x03456.tif",
+      "bytes": 2117896,
+      "sha256": "cf8d9de2b568b09d6261c1887ec85d19865b8e5593fa533969d1f183b51f7f98"
+    },
+    {
+      "path": "cubes_PRED/z12672_y04224_x03200.tif",
+      "bytes": 2117896,
+      "sha256": "a5366568a59a6ff43fa1890ce53ebfd439772736a1de7da74eab815b75d0565f"
+    },
+    {
+      "path": "cubes_PRED/z12672_y04224_x03328.tif",
+      "bytes": 2117896,
+      "sha256": "4e2ea77f1ef2266f8ac11c2b21361d150e57cafcb8446896bbb6212abfa1edc0"
+    },
+    {
+      "path": "cubes_PRED/z12672_y04224_x03456.tif",
+      "bytes": 2117896,
+      "sha256": "e92fb3b574c358861f596928416441a7198c204d759194b877f020820914bd66"
+    },
+    {
+      "path": "cubes_PRED/z12800_y03968_x03200.tif",
+      "bytes": 2117896,
+      "sha256": "b9a65236ae9ae40935bede38acc988f8e3b4c7adc2ef580093c47d4229951bba"
+    },
+    {
+      "path": "cubes_PRED/z12800_y03968_x03328.tif",
+      "bytes": 2117896,
+      "sha256": "cb67221987d99c271ce0798f6d067dd535ab6e280a0f99f337dd48f92aeb745f"
+    },
+    {
+      "path": "cubes_PRED/z12800_y03968_x03456.tif",
+      "bytes": 2117896,
+      "sha256": "d868b96d80b0c88e9e357023c1695a21e6551a22d3718807c479219262655bf8"
+    },
+    {
+      "path": "cubes_PRED/z12800_y04096_x03200.tif",
+      "bytes": 2117896,
+      "sha256": "9fd43dfb4bc3bc32371237605e741a6a1e626196ed2cb717a61b40293dad78a7"
+    },
+    {
+      "path": "cubes_PRED/z12800_y04096_x03328.tif",
+      "bytes": 2117896,
+      "sha256": "01b7ceda4e8a339b3f5169aafd3415de12c7f414cb99d0ed053f0b24d6626a9a"
+    },
+    {
+      "path": "cubes_PRED/z12800_y04096_x03456.tif",
+      "bytes": 2117896,
+      "sha256": "4e094e3c8a8e9031fe9525e7b9195454d34a46c716d0e0d6b869844fc7582584"
+    },
+    {
+      "path": "cubes_PRED/z12800_y04224_x03200.tif",
+      "bytes": 2117896,
+      "sha256": "e6241e3a10f9260c85106bd647fbe6e41f0f581c5cb1bc1dfd76bf4014fcc220"
+    },
+    {
+      "path": "cubes_PRED/z12800_y04224_x03328.tif",
+      "bytes": 2117896,
+      "sha256": "9b726a61f2ecdac36f64f07a929bccd08560054a6657ed13e046cbee7174076b"
+    },
+    {
+      "path": "cubes_PRED/z12800_y04224_x03456.tif",
+      "bytes": 2117896,
+      "sha256": "694342f8c4f837bba5552e4b0f23f00e7aa6dba2b7276e0c8d663f059cad9f9e"
+    },
+    {
+      "path": "cubes_PRED/z12928_y03968_x03200.tif",
+      "bytes": 2117896,
+      "sha256": "3d2242cf0771da9c3d5af047104e41557e17f138e4a69123af1043782a3ca29c"
+    },
+    {
+      "path": "cubes_PRED/z12928_y03968_x03328.tif",
+      "bytes": 2117896,
+      "sha256": "86825171ecd94f939f5a10972ff74029051ce487795a8cdeb00cf1dc83d07809"
+    },
+    {
+      "path": "cubes_PRED/z12928_y03968_x03456.tif",
+      "bytes": 2117896,
+      "sha256": "7af2a5baa000e39bdcfaec2e49cdbd9b28e611a664a21f567ba6f7b187cc5128"
+    },
+    {
+      "path": "cubes_PRED/z12928_y04096_x03200.tif",
+      "bytes": 2117896,
+      "sha256": "ae87d84bc24a4e52a4831c44bfed0172fe6e6e9d9cfb2a27270e5ca271f700f2"
+    },
+    {
+      "path": "cubes_PRED/z12928_y04096_x03328.tif",
+      "bytes": 2117896,
+      "sha256": "9319ee1e5975ff5889c63f550276e3773cc336041aeabc5acedccbe384a7d807"
+    },
+    {
+      "path": "cubes_PRED/z12928_y04096_x03456.tif",
+      "bytes": 2117896,
+      "sha256": "d9638a8f2b69ecee5bbc8dc5ee0abdea07482edf6a9e242e247e1ec1f457c61c"
+    },
+    {
+      "path": "cubes_PRED/z12928_y04224_x03200.tif",
+      "bytes": 2117896,
+      "sha256": "50324a94e995918b8ca45fc79c9a6b8533eea3d26e8dd675a61c883b22fd6ad2"
+    },
+    {
+      "path": "cubes_PRED/z12928_y04224_x03328.tif",
+      "bytes": 2117896,
+      "sha256": "b440709e3f193d46b18a97c86828401a698798d8ed30cf3906d73620db9f65c1"
+    },
+    {
+      "path": "cubes_PRED/z12928_y04224_x03456.tif",
+      "bytes": 2117896,
+      "sha256": "2775da9add39f586b8a53aabe4b414f49805ed55d20138b704bd0db1b261b931"
+    }
+  ],
+  "anatomical_correctness_not_implied_by_additivity": true
+}

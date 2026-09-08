@@ -1,0 +1,39 @@
+{
+  "schema": "f0-repair-qualitative-review-v1",
+  "date": "2026-09-07",
+  "reviewer": "assistant; operator anatomical adjudication remains available",
+  "basis": "Direct inspection of rendered CT-aligned PNGs, not new ground-truth labels or automated probability-based acceptance.",
+  "development": {
+    "reviewed_long_track_ids": [4, 9, 39, 41, 50, 60, 66, 71, 116],
+    "reviewed_core_track_ids": [86, 96, 100, 103],
+    "risk_first_contact_sheet_reviewed": true,
+    "overview_world_z_reviewed": [12224],
+    "reviewed_orthogonal_added_component_ids": [154, 52, 5, 108, 123, 25, 44, 45, 73]
+  },
+  "control": {
+    "reviewed_core_track_ids": [33, 38],
+    "risk_first_contact_sheet_reviewed": true,
+    "reviewed_orthogonal_added_component_ids": [40, 65, 4, 63, 43, 16, 28, 38],
+    "representative_tracks_longer_than_12_px": 0
+  },
+  "observations": [
+    "The new profile visibly reconnects some short interruptions and a few longer development continuations that the old profile leaves broken.",
+    "The 17 risk-first orthogonal cards are consistent with local continuation repair; no obvious new cross-sheet shortcut was identified in those displayed cuts. This is a limited qualitative observation, not a per-join correctness rate.",
+    "Several maximum-span components were already repaired by the old preset; they are risk checks, not all novel candidate wins.",
+    "Development added components 108 and 73 sit in crowded or broad foreground. The displayed cuts do not determine unique anatomical sheet identity; retain these as operator-review cautions rather than certified-correct examples.",
+    "Boundary-adjacent examples, including development component 5 and control component 38, have incomplete external context and are not interior-only validation evidence.",
+    "A low chord probability alone is not sufficient to reject a plausible CT continuation; these probabilities are diagnostics, not ground truth or exact native Bezier samples.",
+    "The green additions occupy only a small fraction of the field. Broad missing geometry and some pre-existing merged foreground remain."
+  ],
+  "limits": [
+    "All 250 accepted connection tracks are rendered, but not every track or every plane was manually adjudicated.",
+    "The independent 2D-contact and added-component audits do not certify global 3D sheet/wrap topology.",
+    "No new official filled-mask Dice, topology score or human join-precision labels were acquired.",
+    "No automatic production deployment or model change."
+  ],
+  "html_qa": {
+    "browser_skill": "browser:control-in-app-browser",
+    "in_app_browser": "unavailable; browser list was empty",
+    "fallback": "Direct image inspection and static local asset/link validation; no browser-render pass claimed."
+  }
+}

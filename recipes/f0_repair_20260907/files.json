@@ -1,0 +1,247 @@
+{
+  "schema": "f0-repair-official-evidence-inventory-v1",
+  "files": [
+    {
+      "relative_path": ".gitattributes",
+      "original_path": "D:\\work\\vesuvius-c\\.tmp\\f0-repair-package-20260907\\.gitattributes",
+      "bytes": 8,
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+    },
+    {
+      "relative_path": "README.md",
+      "original_path": "D:\\work\\vesuvius-c\\.tmp\\f0-repair-package-20260907\\README.md",
+      "bytes": 2595,
+      "sha256": "ce1dcad6df766e92e5a8421a2131034e96d4737b796ebf973009a837bce74fe2"
+    },
+    {
+      "relative_path": "decision.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\decision.json",
+      "bytes": 942,
+      "sha256": "36f5e1453f16d62982f3df925fcc495954069fe465e78b1600e32d012036357e"
+    },
+    {
+      "relative_path": "profile.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\profile.json",
+      "bytes": 793,
+      "sha256": "a67e55531ac941ccbbd5ecff420c695d52ebdd787a448ba4291b66e6a736a645"
+    },
+    {
+      "relative_path": "provenance/control_comparison_state.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\control\\state.json",
+      "bytes": 2865,
+      "sha256": "2ff7a49021cfbdb8a7db640f77aec2f498dfdf3811ae10253c2b94cb26ca4977"
+    },
+    {
+      "relative_path": "provenance/control_contacts_details.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\contact_audit\\control\\details.json",
+      "bytes": 111086,
+      "sha256": "3f6aa4a4cf9060002acc652be89c065288dc97280383cc0a21f69dbe2b20a2fe"
+    },
+    {
+      "relative_path": "provenance/control_contacts_summary.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\contact_audit\\control\\summary.json",
+      "bytes": 3829,
+      "sha256": "2f9035cb6ebfa92a27067e9422819c5b7b93749d4dd2f413b21b733374f0d861"
+    },
+    {
+      "relative_path": "provenance/control_extended_safe_summary.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\control\\extended_safe_summary.json",
+      "bytes": 13775,
+      "sha256": "201af40cd14621e60cf5e081cd77200f5d0ce3c5d138480bfb022c1fdcb86a8e"
+    },
+    {
+      "relative_path": "provenance/control_inference_provenance.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_control\\provenance.json",
+      "bytes": 2225,
+      "sha256": "2078808d15b71713ee8bc5704f041442f41f0f020ad7c8b51b25ecb93592c7b5"
+    },
+    {
+      "relative_path": "provenance/control_report_baseline_summary.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\control\\report_baseline_summary.json",
+      "bytes": 13814,
+      "sha256": "9946416052b4cf5dfa1df2c05ac40c095cacbcb44cf39058dcd78314ecc2e078"
+    },
+    {
+      "relative_path": "provenance/control_track_cases.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\review\\control\\extended_safe\\cases.json",
+      "bytes": 22050,
+      "sha256": "bc6784f09043507b46e76e084ecb2896169390e00a6a18e10773228f44f2220f"
+    },
+    {
+      "relative_path": "provenance/development_comparison_state.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\development\\state.json",
+      "bytes": 5383,
+      "sha256": "5c59fc2a17aa85d56c87094ae452adf59a313139cb7ad4990efcf6a7caf0630f"
+    },
+    {
+      "relative_path": "provenance/development_contacts_details.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\contact_audit\\development\\details.json",
+      "bytes": 226996,
+      "sha256": "06b0f420f3a9432fb885952f7bbcd89abe3d9cdeea6671d9be142f653ba1118d"
+    },
+    {
+      "relative_path": "provenance/development_contacts_summary.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\contact_audit\\development\\summary.json",
+      "bytes": 4256,
+      "sha256": "f6803737aaa636fa7eff22bb29967fead152a79204fb607b21eafccda68c2fb3"
+    },
+    {
+      "relative_path": "provenance/development_extended_safe_summary.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\development\\extended_safe_summary.json",
+      "bytes": 13947,
+      "sha256": "a4cde12643453e1cab5ff5b1c23af4709c81249003a3cca0dbb3d6841aa4ff7f"
+    },
+    {
+      "relative_path": "provenance/development_inference_provenance.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_development\\provenance.json",
+      "bytes": 2225,
+      "sha256": "dd9c57753f4ee8a9887d633c339a95f4beaf178770482d8c5b6d8a6c885bb27b"
+    },
+    {
+      "relative_path": "provenance/development_radial_safe_summary.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\development\\radial_safe_summary.json",
+      "bytes": 13873,
+      "sha256": "97fc3d20d97cf3fa9f4dd64de5c8d2fbefa03aeee54823947d184059538757cc"
+    },
+    {
+      "relative_path": "provenance/development_report_baseline_summary.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\development\\report_baseline_summary.json",
+      "bytes": 13968,
+      "sha256": "792c3d3bbedb4d2a2735886d39e2ca35c2d2394347a6e2e8a2254876e52438c8"
+    },
+    {
+      "relative_path": "provenance/development_support_only_summary.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\development\\support_only_summary.json",
+      "bytes": 13904,
+      "sha256": "5acce418634efe1050a3f177af4c8cd79ec6ed83a924a1901dcb23c2b9fb9633"
+    },
+    {
+      "relative_path": "provenance/development_track_cases.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\review\\development\\extended_safe\\cases.json",
+      "bytes": 76557,
+      "sha256": "679bed11b14ae2d82b3cac74f95b904b37e940823e33b9893ff8c1af3d6835e8"
+    },
+    {
+      "relative_path": "provenance/inference_state.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_state.json",
+      "bytes": 31193,
+      "sha256": "95a6cc57c6318024ff6f72a6943a2bbcf6847babfeedcde52bed809238724157"
+    },
+    {
+      "relative_path": "provenance/wrapper_integration_receipt.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\wrapper_control_v2\\repair_receipt.json",
+      "bytes": 19836,
+      "sha256": "a5dbbae3ab18f3ca677280634df49a09105d66e0784bb69bef7e098139fdd394"
+    },
+    {
+      "relative_path": "request.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\request.json",
+      "bytes": 70361,
+      "sha256": "1202b5822e253c202177898fe401113db7c3bca6fb8552d1b1a558e25e515476"
+    },
+    {
+      "relative_path": "results.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\results.json",
+      "bytes": 22426,
+      "sha256": "d5527f2a54ccfdf717db8e6a226079f97d16163499fcf32d17e0b127ddd91754"
+    },
+    {
+      "relative_path": "selected_policy.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\selected_policy.json",
+      "bytes": 2187,
+      "sha256": "c356d6149959e2cf3ec7c76c0f6c20c5abc3be25bb1fa36e32778cd8a669689d"
+    },
+    {
+      "relative_path": "source/experiment/audit_f0_repair_contacts.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\audit_f0_repair_contacts.py",
+      "bytes": 6674,
+      "sha256": "24e6863e26ddde91481be7f4869a57404d53af4ef67fd86c5db61775155cffdb"
+    },
+    {
+      "relative_path": "source/experiment/build_f0_repair_report.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\build_f0_repair_report.py",
+      "bytes": 29382,
+      "sha256": "f02a070cc8ba0f71eda37a3bdd3544dd79cf4fc1ad932b6a7b3e429f405b7a87"
+    },
+    {
+      "relative_path": "source/experiment/evaluate_f0_repair_context.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\evaluate_f0_repair_context.py",
+      "bytes": 10620,
+      "sha256": "03c489037112402cf0360735860386bb07a0a6449ae94f19122537dfa1832fb0"
+    },
+    {
+      "relative_path": "source/experiment/record_f0_repair_evidence.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\record_f0_repair_evidence.py",
+      "bytes": 4824,
+      "sha256": "2ab1a9422d9c92f4b7611133f144b30556350b4a18e3aa15b559299cbd878e6f"
+    },
+    {
+      "relative_path": "source/experiment/render_f0_repair_review.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\render_f0_repair_review.py",
+      "bytes": 10152,
+      "sha256": "7ea83ae3eb26b0732bf92c7169bcaede4c8df75420e328cce8405c88d0d825e6"
+    },
+    {
+      "relative_path": "source/experiment/run_f0_repair_context.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\run_f0_repair_context.py",
+      "bytes": 10463,
+      "sha256": "6e96466e9a159b6255ba47d6f062bcdde430692d8b9b9750dca8d39bcc91f075"
+    },
+    {
+      "relative_path": "source/repair.py",
+      "original_path": "D:\\work\\socratic_method\\src\\socratic_method\\repair.py",
+      "bytes": 14483,
+      "sha256": "2158cb60c367d31e72fe2101f61b7da8fb53e14932156cc0a1639427f7a2c36c"
+    },
+    {
+      "relative_path": "source/test_repair.py",
+      "original_path": "D:\\work\\socratic_method\\tests\\test_repair.py",
+      "bytes": 10411,
+      "sha256": "8e0cc00c78e6bf31e5819d27b1a6463d8f1c046b23b5ae75f2f7aca9f30b6b2c"
+    },
+    {
+      "relative_path": "source/tests/test_f0_repair_contacts.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\tests\\test_f0_repair_contacts.py",
+      "bytes": 998,
+      "sha256": "e65747c6c188a4e581b0204422b496987e896be25ce06e10afd46e2540af9b99"
+    },
+    {
+      "relative_path": "source/tests/test_f0_repair_context.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\tests\\test_f0_repair_context.py",
+      "bytes": 1594,
+      "sha256": "685cd2fea5fd51ba62fdd6bfc3c43d5d4df40c812f4890a7bdce6fafd740f32f"
+    },
+    {
+      "relative_path": "source/tests/test_f0_repair_evaluation.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\tests\\test_f0_repair_evaluation.py",
+      "bytes": 1990,
+      "sha256": "b34f90d792d4a78af4ed1e230782b8339bd26f1bfbe0035de1f24a7cfffb4f6d"
+    },
+    {
+      "relative_path": "tests.xml",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\tests.xml",
+      "bytes": 5895,
+      "sha256": "0d9a2b6824c483ffccafb60dd86a23251e4222f3fdcde831bb259c126bc4c9dc"
+    },
+    {
+      "relative_path": "verification.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\verification.json",
+      "bytes": 10774,
+      "sha256": "64624e9d26d47c38112ec5f185c3377dcd41a8f529f4d956843fc72f6ccbe8af"
+    },
+    {
+      "relative_path": "visual_review.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\visual_review.json",
+      "bytes": 2766,
+      "sha256": "55bb5624909d76e7c3d9b4ba5f423c56cdf67f0b1238bd72b6eb3e780f3122ab"
+    }
+  ],
+  "verified_at_utc": "2026-09-07T19:01:11.889761+00:00",
+  "local_report": {
+    "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\index.html",
+    "bytes": 21255,
+    "sha256": "1e7bba123039ff7ff78b3f312e7c617a7780b996b5d1eb7eaba737d3075f6211"
+  },
+  "weights_or_image_arrays_copied": false,
+  "git_commit_or_public_upload": false
+}

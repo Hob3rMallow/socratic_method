@@ -1,0 +1,11 @@
+{
+  "status": "terminal_failed",
+  "observed_exit_code": 1,
+  "session_id": 84460,
+  "failure": "NumPy int64 in per-plane contact z_local could not be serialized by the final JSON writer",
+  "accepted_meshes_written": 107,
+  "observed_new_voxels_before_failure": 75661,
+  "arrays_and_images_written_before_failure": true,
+  "partial_artifacts_preserved": true,
+  "recovery": "New growth_v2 source converts that metadata coordinate to a Python int. Same numerical algorithm and policy; separate output and exact TIFF parity required."
+}

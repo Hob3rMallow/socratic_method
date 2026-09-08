@@ -1,0 +1,327 @@
+{
+  "final_report": {
+    "bytes": 30596,
+    "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\index.html",
+    "sha256": "670c2373c65cbe00c94bd7fc0499f54f0e079e84686e02f4f6f03beb40cb71f5"
+  },
+  "frozen_sources": {
+    "byte_identical_prior_probability_cubes": [
+      {
+        "new": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_development\\probability\\z12032_y03968_x03072.tif",
+        "old": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\evaluation\\milestone_00200000\\blind_t035\\inference\\probability\\z12032_y03968_x03072.tif",
+        "sha256": "3dd1fdc6222902aeb846e9280868cbc4a55ce41a75f582a43db5f52290fd0528"
+      },
+      {
+        "new": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_development\\probability\\z12160_y03968_x03200.tif",
+        "old": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\evaluation\\milestone_00200000\\blind_t035\\inference\\probability\\z12160_y03968_x03200.tif",
+        "sha256": "64c552a5cd4199fddc7dfcb04ebb18f49111a365acc8ac7bb7365deb6ef7c96b"
+      },
+      {
+        "new": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_control\\probability\\z12800_y04096_x03456.tif",
+        "old": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\evaluation\\milestone_00200000\\blind_t035\\inference\\probability\\z12800_y04096_x03456.tif",
+        "sha256": "bc9581fd86ef6bd53dc71bc8db2f531f1a426454e27493a5b30d60e33de9c213"
+      },
+      {
+        "new": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_control\\probability\\z12928_y04096_x03328.tif",
+        "old": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\evaluation\\milestone_00200000\\blind_t035\\inference\\probability\\z12928_y04096_x03328.tif",
+        "sha256": "18cc6d540032c1dd4e4ef60df10823ea49b2fb833bed776c1a180117f26041da"
+      }
+    ],
+    "frozen_evidence_files_verified_in_each_copy": 96,
+    "frozen_model_read_only": true,
+    "historical_artifacts_unchanged": [
+      {
+        "bytes": 25106,
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\operator_report\\index.html",
+        "sha256": "5c95c6514a819bae4419457016620627a4990710b80a99b5462f5398b8f32009"
+      },
+      {
+        "bytes": 190483,
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\operator_report\\filler\\manifest.json",
+        "sha256": "fedabe4b91efac9291d8ca07d23b3907f17efb5c80d1a97cdf1b02157c4a8e4c"
+      },
+      {
+        "bytes": 1651,
+        "path": "D:\\work\\socratic_method\\docs\\line_fitter.md",
+        "sha256": "bef61cce483f1d42d53a8c52909be8eb4568ff7abff76558163f1a261ef5702e"
+      },
+      {
+        "bytes": 24920,
+        "path": "D:\\work\\vesuvius-c\\crossres_pred\\configs\\final_c3_250k_20260905.json",
+        "sha256": "af9d74dbf9f4c0fc978d6b9756fc92f6750fec211705c08be0a05e970c496cbc"
+      }
+    ],
+    "model": {
+      "bytes": 409674095,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\releases\\c3-f0-200k-20260907\\checkpoint_f0_00200000.pt",
+      "sha256": "54db9a59cb602ff08e3dda0acc1195ad980ab05fb660332d32fb436a0d49a175"
+    },
+    "native_binary": {
+      "bytes": 809472,
+      "path": "D:\\work\\vesuvius-c\\build\\c3-human-line-fitter_20260905\\extracted\\Release\\pred_fixup.exe",
+      "sha256": "54fe434f76beb8c1eff58cdb1bd72200e4630497e23539cd467e4e64360f1e13"
+    },
+    "raw_context_cubes_verified": 250,
+    "sealed_runtime_files_verified": 63
+  },
+  "html": {
+    "browser_render_verified": false,
+    "browser_unavailable": true,
+    "decoded_pngs": 1995,
+    "local_references": 4015,
+    "pages": 4
+  },
+  "old_native_record_files_verified": 39,
+  "old_native_report_unchanged": {
+    "bytes": 21255,
+    "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\index.html",
+    "sha256": "1e7bba123039ff7ff78b3f312e7c617a7780b996b5d1eb7eaba737d3075f6211"
+  },
+  "package": {
+    "byte_identical_tiffs": [
+      {
+        "bytes": 2118490,
+        "path": "cubes_PRED/z12416_y04352_x02944.tif",
+        "sha256": "f409edfc13b5f2943bb034d46eef9e88e5cde7f7b35143370f0e5d400e8b2a91"
+      },
+      {
+        "bytes": 2118490,
+        "path": "cubes_PRED/z12416_y04352_x03072.tif",
+        "sha256": "33e075a913879387e962fb675c44038965430f028d43954d022b17c282ff8852"
+      },
+      {
+        "bytes": 2118490,
+        "path": "cubes_PRED/z12416_y04352_x03200.tif",
+        "sha256": "7350306cb846c673056f1c7e89981f607247c92065eacd79e84764e13d608bf6"
+      },
+      {
+        "bytes": 2118490,
+        "path": "cubes_PRED/z12416_y04480_x02944.tif",
+        "sha256": "f699c534458484376b71a2af9e9ce76034accfaaf94853e5d391a28148462274"
+      },
+      {
+        "bytes": 2118490,
+        "path": "cubes_PRED/z12416_y04480_x03072.tif",
+        "sha256": "f8e919cd58c70925e8df147bf77d8d1db7813975911f05b8d7d6882cf0febcab"
+      },
+      {
+        "bytes": 2118490,
+        "path": "cubes_PRED/z12416_y04480_x03200.tif",
+        "sha256": "39485b2d2049eb6edecdc077b62edf5d8341f046d48612a5eb37d1df76f62892"
+      },
+      {
+        "bytes": 2118490,
+        "path": "cubes_PRED/z12416_y04608_x02944.tif",
+        "sha256": "978c51a44eefa469bb39de60c0a0987b3a83889174e1e16f43662dced7d68f28"
+      },
+      {
+        "bytes": 2118490,
+        "path": "cubes_PRED/z12416_y04608_x03072.tif",
+        "sha256": "1de15a0ecd533c171e7f1a56f5ee1e862ab01b92383ce2be81e6d5c0490fdaa0"
+      },
+      {
+        "bytes": 2118490,
+        "path": "cubes_PRED/z12416_y04608_x03200.tif",
+        "sha256": "df1caeaa9b11299603c19bd0d7c4d314f5363c678141bbad1030781dd3552d36"
+      },
+      {
+        "bytes": 2118490,
+        "path": "cubes_PRED/z12544_y04352_x02944.tif",
+        "sha256": "365cf5d0aa64d74c8ef6c94c24a092b763f26c89119572f29375dc0cde2f9547"
+      },
+      {
+        "bytes": 2118490,
+        "path": "cubes_PRED/z12544_y04352_x03072.tif",
+        "sha256": "4404e88f2543c071f48678a93a38a7a592c73522cb7c628eaf70de452e41788a"
+      },
+      {
+        "bytes": 2118490,
+        "path": "cubes_PRED/z12544_y04352_x03200.tif",
+        "sha256": "9ae7d35b8c5d95ef5cfc3efe0eaed15ae60c6929d04ba3f27d102da694853efe"
+      },
+      {
+        "bytes": 2118490,
+        "path": "cubes_PRED/z12544_y04480_x02944.tif",
+        "sha256": "4412fb09e0c4cd1557270660f2631d12ab2a1daead8e43b8ee7132cde97bbb18"
+      },
+      {
+        "bytes": 2118490,
+        "path": "cubes_PRED/z12544_y04480_x03072.tif",
+        "sha256": "deff6501af5d2816889db88176225a26d04f2e2dcdc80ccc7fb40bf4816e2cc1"
+      },
+      {
+        "bytes": 2118490,
+        "path": "cubes_PRED/z12544_y04480_x03200.tif",
+        "sha256": "df3d72b7a0c3d2c79d8c0575c16dd01ce101e937bd74ec36df37194150b7856d"
+      },
+      {
+        "bytes": 2118490,
+        "path": "cubes_PRED/z12544_y04608_x02944.tif",
+        "sha256": "6ea1876b98184819483703e0132e1bc4a76582f398d88a036074c4f45ed72919"
+      },
+      {
+        "bytes": 2118490,
+        "path": "cubes_PRED/z12544_y04608_x03072.tif",
+        "sha256": "0b67deb3326dc0d870b61566271e767f9ee56ea0f40f723d40b933785d153c88"
+      },
+      {
+        "bytes": 2118490,
+        "path": "cubes_PRED/z12544_y04608_x03200.tif",
+        "sha256": "5b888b5dc6ed09a538a0993a4fa056d75ca56b0ce00f7f626e8b020fe890bc37"
+      },
+      {
+        "bytes": 2118490,
+        "path": "cubes_PRED/z12672_y04352_x02944.tif",
+        "sha256": "33cf31a7045816fb44d2e939bf88410829985b8a7192802ec50961a4ca42e923"
+      },
+      {
+        "bytes": 2118490,
+        "path": "cubes_PRED/z12672_y04352_x03072.tif",
+        "sha256": "ba58506df5c1f6415c4f3d683298162c34921411f80500bc2c94653146025f0a"
+      },
+      {
+        "bytes": 2118490,
+        "path": "cubes_PRED/z12672_y04352_x03200.tif",
+        "sha256": "40aa45be9995cc99d0e65eb510f1c5b8acb25f093c2ef1b8b7bdd6317c8c483d"
+      },
+      {
+        "bytes": 2118490,
+        "path": "cubes_PRED/z12672_y04480_x02944.tif",
+        "sha256": "e59407ed1b58fcd1edd2c56adfa9c77da5a6c2e56e1cb077fe7b101ab41b42ee"
+      },
+      {
+        "bytes": 2118490,
+        "path": "cubes_PRED/z12672_y04480_x03072.tif",
+        "sha256": "c8d14649f281a7d1a395b678b0cfb7ecb1cf7bf1d88dc9ea14a8872952cbeddf"
+      },
+      {
+        "bytes": 2118490,
+        "path": "cubes_PRED/z12672_y04480_x03200.tif",
+        "sha256": "7649d486a7c521a803812205777c85a8c03662452db1c5e0a52554c6273f6db9"
+      },
+      {
+        "bytes": 2118490,
+        "path": "cubes_PRED/z12672_y04608_x02944.tif",
+        "sha256": "a04e4d7b730469349af0236769fe4ca5c0406de40ef91a84e7e8a4ae7ad2b50d"
+      },
+      {
+        "bytes": 2118490,
+        "path": "cubes_PRED/z12672_y04608_x03072.tif",
+        "sha256": "74a94cb51bcb2218641923473a03238f8167b7ddfcd99686b22a61a56d9224e2"
+      },
+      {
+        "bytes": 2118490,
+        "path": "cubes_PRED/z12672_y04608_x03200.tif",
+        "sha256": "7ca10c5ff83f2bd6f6836bd365381c0195e0f78b330413840fbb70a704b71f72"
+      }
+    ],
+    "entry_points": {
+      "crossres-pred": "crossres_pred.cli:main",
+      "crossres-voxel": "crossres_pred.voxel.cli:main",
+      "socratic-continuity": "socratic_method.continuity:main",
+      "socratic-export": "socratic_method.hf_export:main",
+      "socratic-repair": "socratic_method.repair:main",
+      "socratic-train": "socratic_method.recipe:main"
+    },
+    "environment": {
+      "Pillow": "12.3.0",
+      "numpy": "2.5.1",
+      "scikit-image": "0.26.0",
+      "scipy": "1.18.0",
+      "tifffile": "2026.7.31"
+    },
+    "initial_strict_audit_failure_preserved": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\package_control.partial-57780",
+    "no_output_from_check_only": true,
+    "receipt": {
+      "bytes": 37602,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\package_control_verified\\continuity_receipt.json",
+      "sha256": "a1bc51777ae9ae95db0164f71fe48bb46acf26088e1fa24fe2f4d172dbb5fd8c"
+    },
+    "status": "verified",
+    "test_receipt": {
+      "bytes": 10036,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\package_tests.xml",
+      "sha256": "b68a740510fe16ea31bd38faf2664777d68e3ed07edd940cd74a7594671c0efc"
+    },
+    "tests_passed": 83
+  },
+  "report_generator": {
+    "bytes": 25434,
+    "path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\build_f0_continuity_report.py",
+    "sha256": "c5d1a80ace47463b4ca06d04bcea265ab00a522d98f24a9a5f73bb129cbbeb52"
+  },
+  "runs": [
+    {
+      "components": {
+        "bytes": 140883,
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\development_candidate_v1\\components.json",
+        "sha256": "522ad893af9d59fc248247ff09c309322f71377be75a06a1271129b1e9b7abfc"
+      },
+      "corridors": {
+        "bytes": 11203789,
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\development_candidate_v1\\corridors.json",
+        "sha256": "88c15987e4fca8eaa5dd2e6c8f3ac6b4d1d2e9f67da09cdff67c8cb4c44f390e"
+      },
+      "request": {
+        "bytes": 31948,
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\development_candidate_v1\\request.json",
+        "sha256": "2d7ae21585a01332188ae6d63cd2afd8d87d6ca9fef36d71d5c5e99da3fdf9a3"
+      },
+      "run": "development_candidate_v1",
+      "state": {
+        "bytes": 482,
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\development_candidate_v1\\state.json",
+        "sha256": "ea4187c1fa173201ca21140f02e7c9c106a7c249cc889727678837321c4e2292"
+      }
+    },
+    {
+      "components": {
+        "bytes": 164080,
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\development_candidate_v2\\components.json",
+        "sha256": "20aee0a1803a1afc539f944ba5316ec0dd91ac7212871dbacc53b970d1f80c3e"
+      },
+      "corridors": {
+        "bytes": 16596942,
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\development_candidate_v2\\corridors.json",
+        "sha256": "bf48bae28b6b7aa301b66cc35543fbad544c723bd926d197f2f24218d23f5a9a"
+      },
+      "request": {
+        "bytes": 32239,
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\development_candidate_v2\\request.json",
+        "sha256": "291530bbfc1ad1a6b237090e0af8175d84a359c533178ac519c368a52295750b"
+      },
+      "run": "development_candidate_v2",
+      "state": {
+        "bytes": 481,
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\development_candidate_v2\\state.json",
+        "sha256": "ffa8c44aa7709bb730a31e6a53b55642664d2ba1b8eeb12ca91e2d4fe432b1ba"
+      }
+    },
+    {
+      "components": {
+        "bytes": 96110,
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control_candidate_v2\\components.json",
+        "sha256": "8cfcea9f0c168279c47fd7f6cc5ec70a90ec935eb92820de23eadd85c8defa84"
+      },
+      "corridors": {
+        "bytes": 5243271,
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control_candidate_v2\\corridors.json",
+        "sha256": "0cf10e150621e3b3760a964647dc39616fa642671361e3c1014da460afc4bbb6"
+      },
+      "request": {
+        "bytes": 39125,
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control_candidate_v2\\request.json",
+        "sha256": "7834ab4ea18e59ee189b0b78d0704014fbb7968f6761751ed27f0048ea1e5c1f"
+      },
+      "run": "fresh_control_candidate_v2",
+      "state": {
+        "bytes": 484,
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\fresh_control_candidate_v2\\state.json",
+        "sha256": "1fa4a936ce80e0daa1a9a11310f07595f201eb758fbb825f705dad3a98930dc5"
+      }
+    }
+  ],
+  "schema": "f0-continuity-verification-v1",
+  "status": "passed",
+  "verified_utc": "2026-09-07T20:32:23.796657+00:00"
+}

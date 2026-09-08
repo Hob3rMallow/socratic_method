@@ -1,0 +1,43 @@
+{
+  "code": [
+    {
+      "bytes": 5942,
+      "path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\probe_sheet_competition.py",
+      "sha256": "6f14cb2676a38849f52969800fad0584b0facff0cffe681f7b399e87a350761e"
+    },
+    {
+      "bytes": 11137,
+      "path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\sheet_patch_chart_v3.py",
+      "sha256": "297ca274d1ba3818b0597f67c138ecc0e710957f6b8c1a49d31f0d6d1b101fdf"
+    },
+    {
+      "bytes": 6030,
+      "path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\sheet_patch_competition.py",
+      "sha256": "1b0d3e05dc8b901422707c11676ad5360b9cd731083c20bf6171c77bbee1bb16"
+    },
+    {
+      "bytes": 6637,
+      "path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\sheet_surface_graph.py",
+      "sha256": "c0d25592c5045a3b4e9dfd1848fc78c6c052c914d575fa86e03b4e716c7fe36e"
+    },
+    {
+      "bytes": 7445,
+      "path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\sheet_surface_ordered_graph.py",
+      "sha256": "04bfc83763df377652460a0c118fafd8d2449cedf5a444429a09376ead27b54f"
+    }
+  ],
+  "development_only": true,
+  "minimum_normal_separation_px": 5,
+  "proposals_not_accepted_masks": true,
+  "seeds": [
+    1934,
+    3637,
+    3752,
+    1039
+  ],
+  "source_request": {
+    "bytes": 32239,
+    "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\development_candidate_v2\\request.json",
+    "sha256": "291530bbfc1ad1a6b237090e0af8175d84a359c533178ac519c368a52295750b"
+  }
+}

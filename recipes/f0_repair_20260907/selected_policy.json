@@ -1,0 +1,26 @@
+{
+  "schema": "f0-repair-development-selection-v1",
+  "selected_preset": "extended_safe",
+  "status": "candidate selected on development; independent control verification pending",
+  "operating_model": "F0 200k",
+  "threshold": 0.35,
+  "parameters": {"reach_safe": 6, "reach_max": 21, "radial_dr": 3, "min_support": 0, "min_score": 0.30, "paint_radius": 1, "tracks": true, "cut_bridges": false},
+  "selection_basis": [
+    "Removing the final support cutoff restores many threshold-flicker gaps while keeping all earlier pair gates and tracking.",
+    "Use the tighter radial displacement cap of 3 rather than restoring the historical 4-pixel tolerance associated with a chained fusion.",
+    "All nine representative development connection tracks longer than 12 pixels were inspected against CT and probabilities; they follow plausible continuations, including weak/low-probability examples. They are not rejected solely for having low model probability.",
+    "The extension from 12 to 21 supplies additional longer repairs beyond the support-only change; no raw foreground is erased.",
+    "The 21-pixel cap follows the existing implementation and historical dose-response evidence. It is not an arbitrary unbounded reach increase."
+  ],
+  "reviewed_long_track_ids": [4, 9, 39, 41, 50, 60, 66, 71, 116],
+  "reviewed_core_track_ids": [86, 96, 100, 103],
+  "development_result": {"old_per_plane_joins": 96, "candidate_per_plane_joins": 286, "old_connection_tracks": 23, "candidate_connection_tracks": 195, "old_added_voxels": 1364, "candidate_added_voxels": 3970, "candidate_core_added_voxels": 42, "erased_raw_voxels": 0},
+  "limitations": [
+    "These are qualitative CT/model-supported decisions, not newly acquired ground-truth join labels.",
+    "Representative-plane review does not certify all 3D chains or universal cross-wrap safety.",
+    "Most recovered gaps are short; this does not claim broad reconstruction of wholly missing sheet geometry.",
+    "The source name extended_safe is a preset identifier, not a proof of anatomical safety."
+  ],
+  "control_policy": "Run report_baseline versus extended_safe only; no control-based parameter tuning.",
+  "deployment": false
+}

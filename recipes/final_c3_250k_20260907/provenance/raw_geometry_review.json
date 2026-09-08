@@ -1,0 +1,46 @@
+{
+  "review_stage": "All 25 raw checkpoint audits complete; filler not yet executed",
+  "threshold": 0.35,
+  "checkpoint_sha256": {
+    "original_c3_30000": "e55f44a150936bd172fa7649cd55de36aac25b1d44df54bf35f1655efa9cc273",
+    "f0_200000": "54db9a59cb602ff08e3dda0acc1195ad980ab05fb660332d32fb436a0d49a175",
+    "f0_250000": "dc295f429bce62768c9bcdd43ed252aa78b018fe0b846884b65bb275629bfccc"
+  },
+  "reviewed_image_sets": ["evaluation/milestone_00200000/blind_t035/report/images", "evaluation/milestone_00250000/blind_t035/report/images"],
+  "legend": "Published M7 cyan; incumbent original C3 yellow; current F0 magenta; identical CT coordinates across panels",
+  "reviewed_views": [
+    "z12032_y03968_x03072:z:12032", "z12032_y03968_x03072:z:12043", "z12032_y03968_x03072:z:12050",
+    "z12032_y03968_x03072:z:12045", "z12032_y03968_x03072:z:12056", "z12032_y03968_x03072:z:12096", "z12032_y03968_x03072:z:12153",
+    "z12160_y03968_x03200:z:12193", "z12160_y03968_x03200:z:12205", "z12160_y03968_x03200:z:12224",
+    "z12160_y04224_x02944:z:12161", "z12160_y04224_x02944:z:12171", "z12160_y04224_x02944:z:12224", "z12160_y04224_x02944:z:12256",
+    "z12800_y04096_x03456:z:12864", "z12928_y04096_x03328:z:12936", "z12928_y04096_x03328:z:12938", "z12928_y04096_x03328:z:12992",
+    "z12544_y03840_x03328:z:12608"
+  ],
+  "paragraphs": [
+    "On the named blob planes, both late checkpoints visibly separate several parallel tracks that original C3 joins into broad central foreground. This is a meaningful visual improvement for finding a path through the blob, not merely a change in the aggregate score.",
+    "The 200k checkpoint generally retains more weak or short geometry than the exact 250k endpoint. The endpoint removes still more merged-looking foreground but also omits additional tracks, notably near the lower/right part of the first named cube. Some missing stretches are more than tiny local gaps; filler recovery must be measured, not assumed.",
+    "The clearer, separated tracks persist across the fixed control views: several original C3 fork-like connections are absent in the late outputs, while prominent long tracks remain. Broad regions and local breaks still occur in packed folds. Small isolated pieces are visible in a few views; these observations are not a quantitative speckle census.",
+    "These are qualitative interpretations against shared coarse CT, not proof of human-ground-truth accuracy or 3D sheet connectivity. They do not change the preregistered checkpoint selection, and no post-filler conclusion is included yet."
+  ],
+  "view_notes": {
+    "z12032_y03968_x03072:z:12032": "Broad C3 central junction is substantially reduced. 200k keeps more lower/right short tracks; 250k is sparser there.",
+    "z12032_y03968_x03072:z:12043": "Parallel tracks are easier to distinguish in both late models. 250k removes additional weak lower/right geometry.",
+    "z12032_y03968_x03072:z:12050": "Several long oblique tracks remain while the C3 broad junction is reduced; local joins still require caution.",
+    "z12032_y03968_x03072:z:12045": "Late outputs reopen separation through the central C3 foreground; 250k breaks an additional upper junction and loses some support.",
+    "z12032_y03968_x03072:z:12056": "Long oblique tracks remain with clearer separation; 200k and 250k are visually similar on the main paths.",
+    "z12032_y03968_x03072:z:12096": "Prominent long tracks are preserved; most differences are width or secondary support rather than a large new blob.",
+    "z12032_y03968_x03072:z:12153": "Clean long tracks remain in both late outputs; no obvious widespread speckling on this control plane.",
+    "z12160_y03968_x03200:z:12193": "Late outputs follow long corner-shaped tracks; original C3 has larger isolated/patchy foreground at the inner bend.",
+    "z12160_y03968_x03200:z:12205": "Late tracks through the bend are more continuous than C3's broken islands, with some local interruptions remaining.",
+    "z12160_y03968_x03200:z:12224": "Packed-fold region retains broad areas and a lateral connection at 200k; 250k opens part of that junction but loses support.",
+    "z12160_y04224_x02944:z:12161": "Main curved tracks remain well separated; the late outputs are not uniformly erasing all geometry.",
+    "z12160_y04224_x02944:z:12171": "Main tracks persist. A few small isolated pieces remain, smaller/sparser at 250k in this view.",
+    "z12160_y04224_x02944:z:12224": "Several C3 crossbar-like/broad regions are reduced, with cleaner long paths but residual broad ends.",
+    "z12160_y04224_x02944:z:12256": "Late masks remain broad in the packed upper region; additional lower fragments are absent at 250k.",
+    "z12800_y04096_x03456:z:12864": "A conspicuous C3 fork/connection is removed; the late outputs show cleaner oblique tracks, with more local gaps at 250k.",
+    "z12928_y04096_x03328:z:12936": "C3 fork-like links between adjacent long tracks are absent in the late outputs; main tracks remain.",
+    "z12928_y04096_x03328:z:12938": "Same clearer separation seen on the neighboring fixed plane; no large new merged region is evident.",
+    "z12928_y04096_x03328:z:12992": "Main long tracks remain; differences are mainly thickness and local support.",
+    "z12544_y03840_x03328:z:12608": "Sixth-cube context only: long, separated tracks remain in both late outputs. Excluded from fixed18/named3 totals."
+  }
+}

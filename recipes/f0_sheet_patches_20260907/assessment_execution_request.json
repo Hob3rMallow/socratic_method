@@ -1,0 +1,24 @@
+{
+  "no_assessment_based_tuning": true,
+  "no_threshold_model_or_policy_change": true,
+  "parity": {
+    "bytes": 9295,
+    "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\package_development_verified\\receipt.json",
+    "sha256": "526f1480c76ece359e0b80427d91bbf391b5af8870f882121c966f0042c50c39"
+  },
+  "preflight": {
+    "bytes": 43076,
+    "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\assessment_check_only_plan.json",
+    "sha256": "eb2272f919bfb6d676ea21095630c6f42181b5cc38557961d209d157db2354ad"
+  },
+  "runner": {
+    "bytes": 1862,
+    "path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\run_checked_sheet_assessment.py",
+    "sha256": "464054030bdd9d017ad7ecec2692034cf9da120b9e7abc09a4f1f0cc4b5221e3"
+  },
+  "selection": {
+    "bytes": 33390,
+    "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\selected_policy.json",
+    "sha256": "6c388a8dfbf813bcc148e611e4e33da1db3f30fe213dae76a76338abd313f688"
+  }
+}

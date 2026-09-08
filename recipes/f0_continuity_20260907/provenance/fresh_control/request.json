@@ -1,0 +1,785 @@
+{
+  "block": {
+    "center_zyx": [
+      12544,
+      4480,
+      3072
+    ],
+    "origin_zyx": [
+      12416,
+      4352,
+      2944
+    ],
+    "primary_assessment_core_cube": "z12544_y04480_x03072",
+    "shape_zyx": [
+      384,
+      384,
+      384
+    ],
+    "target_cube_ids": [
+      "z12416_y04352_x02944",
+      "z12416_y04352_x03072",
+      "z12416_y04352_x03200",
+      "z12416_y04480_x02944",
+      "z12416_y04480_x03072",
+      "z12416_y04480_x03200",
+      "z12416_y04608_x02944",
+      "z12416_y04608_x03072",
+      "z12416_y04608_x03200",
+      "z12544_y04352_x02944",
+      "z12544_y04352_x03072",
+      "z12544_y04352_x03200",
+      "z12544_y04480_x02944",
+      "z12544_y04480_x03072",
+      "z12544_y04480_x03200",
+      "z12544_y04608_x02944",
+      "z12544_y04608_x03072",
+      "z12544_y04608_x03200",
+      "z12672_y04352_x02944",
+      "z12672_y04352_x03072",
+      "z12672_y04352_x03200",
+      "z12672_y04480_x02944",
+      "z12672_y04480_x03072",
+      "z12672_y04480_x03200",
+      "z12672_y04608_x02944",
+      "z12672_y04608_x03072",
+      "z12672_y04608_x03200"
+    ]
+  },
+  "created_utc": "2026-09-07T20:03:40.068331+00:00",
+  "inference": {
+    "amp_dtype": "bfloat16",
+    "gpu_uuid": "GPU-304375e6-2d2f-b771-b8be-a0c095fe209e",
+    "halo": 32,
+    "tta": true
+  },
+  "model": {
+    "bytes": 409674095,
+    "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\releases\\c3-f0-200k-20260907\\checkpoint_f0_00200000.pt",
+    "sha256": "54db9a59cb602ff08e3dda0acc1195ad980ab05fb660332d32fb436a0d49a175"
+  },
+  "native_binary": {
+    "bytes": 809472,
+    "path": "D:\\work\\vesuvius-c\\build\\c3-human-line-fitter_20260905\\extracted\\Release\\pred_fixup.exe",
+    "sha256": "54fe434f76beb8c1eff58cdb1bd72200e4630497e23539cd467e4e64360f1e13"
+  },
+  "native_wrapper": {
+    "bytes": 14483,
+    "path": "D:\\work\\socratic_method\\src\\socratic_method\\repair.py",
+    "sha256": "2158cb60c367d31e72fe2101f61b7da8fb53e14932156cc0a1639427f7a2c36c"
+  },
+  "no_control_based_tuning": true,
+  "raw_inputs": [
+    {
+      "bytes": 452,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\manifest.json",
+      "sha256": "209ebf6a0734f8cb72a38d05f8e669cae3872d821a7b23ef71286cbc1c7bb09f"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12288_y04224_x02816.tif",
+      "sha256": "efbd6d88f9a121705cbd534f2ac06aeaf3a25e795d2084a2e1091b9ca175cb42"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12288_y04224_x02944.tif",
+      "sha256": "3955c532c85f1d4820676a9f53f94f9ffef00344944cb08446230850eefc09ed"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12288_y04224_x03072.tif",
+      "sha256": "d7176dbfb83cb6023a0a4ed2613b1d899b906059f74ced84b70a54ffbdd540b9"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12288_y04224_x03200.tif",
+      "sha256": "d8138bf5147443b5b6447c80a88ecab73380bbe54dd92b557ffe339ca548bbd7"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12288_y04224_x03328.tif",
+      "sha256": "61f420d933b02299a17dba7776865f4545c4e32a1e7193657bf1eca5e5533de8"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12288_y04352_x02816.tif",
+      "sha256": "38e31e2902de885f1e5814db01b4fbd32a762e9bf06b4f31d5a5b8f05c5caa18"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12288_y04352_x02944.tif",
+      "sha256": "c04432bc630ac009548c99a54171351a3551a352125ca26b7bd853d84bda838c"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12288_y04352_x03072.tif",
+      "sha256": "501733ce267bc81b26387159afd6ae998d75230d82734cecc3886c133eef6509"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12288_y04352_x03200.tif",
+      "sha256": "c2c6e76fe9ce8acb413c300c37bbdec1c7b5f57ce1e0661e60af14006f03b1dd"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12288_y04352_x03328.tif",
+      "sha256": "c872369b8912c9654c16cd10fad6e231fa7bff45dcdd182b43f0a2a1c4aab7e1"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12288_y04480_x02816.tif",
+      "sha256": "fbba94ff9b405466520fad5a63ecc3b678032bd0e8192f5138f996adad73f8ad"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12288_y04480_x02944.tif",
+      "sha256": "e45dc82eddb71f98d37afd36cc59f8a15bccf2c7a7e4a7269f371101d8aff881"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12288_y04480_x03072.tif",
+      "sha256": "4fbb9186ab4aa946bf4149e715cf0f26648c0e56416484ad4310d16d4ed8c9a4"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12288_y04480_x03200.tif",
+      "sha256": "368f1bd25c7c20fb6b78689c0f78466caa5f2603a9de800d22d866d16a8b33a9"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12288_y04480_x03328.tif",
+      "sha256": "0f7407890ed5cb6b71c294a6a7059a515923bbd553eca63940b1f37855add26b"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12288_y04608_x02816.tif",
+      "sha256": "2449c175f4f382c6fbf3be223acae83d262a0864a46a128c3ad0a78510e0da51"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12288_y04608_x02944.tif",
+      "sha256": "a17e8b1389c95f611c57c91f09de5813f1c283470206b7b461e0caadb535c6a9"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12288_y04608_x03072.tif",
+      "sha256": "3a1b05090e370c5a94983e699d1cfb8a8c14f3a2ec26ece38664c1538b99e7e2"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12288_y04608_x03200.tif",
+      "sha256": "2101b8a28a362f52d7cbf98525215b6cc32f5db31e61e0d9a42c0a5d5d51f428"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12288_y04608_x03328.tif",
+      "sha256": "35ea91be775fb1052a172ce06aa336132ef2febdb739ca649ec805b515c2d72f"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12288_y04736_x02816.tif",
+      "sha256": "9fc58e6931597bc9157fb2772181e28ec08261252e0a05fc1a2fdf553058978b"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12288_y04736_x02944.tif",
+      "sha256": "5b2c1605f02d56043a450d957c2e0df2ce53086c87fda4199391cac9a084bd8d"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12288_y04736_x03072.tif",
+      "sha256": "05fdf338f22d92e0064e138cc83176781e538dcd9ab14056b0b0e271c9c1ab85"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12288_y04736_x03200.tif",
+      "sha256": "767cc342367c4ab30f2d4ad80d1b218eaf25dabfaa5384c9928839845caa2256"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12288_y04736_x03328.tif",
+      "sha256": "64c7985ff176926475eae58ede1236ef57eab68d8fb88fed5e07475fec1e3f18"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12416_y04224_x02816.tif",
+      "sha256": "97d9e6b88c44fa131a68ee9884de366dda746f2bf80836db12906bf9cafe4635"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12416_y04224_x02944.tif",
+      "sha256": "26536054a2986b29da12b6f644eb047b004f5437b8a50bf7373f17b392904dfe"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12416_y04224_x03072.tif",
+      "sha256": "1eb78e0e69bac3d362910f74b879a312972dc4dd61107e3127d80e91753c12b5"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12416_y04224_x03200.tif",
+      "sha256": "1811a2c48933e48345046ae05a2c367565615b357e1e067f0aa587bf54e20b52"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12416_y04224_x03328.tif",
+      "sha256": "a5adc050d24434c87ed929cbd48543066a61d54af0c69add3fb7a3c387133e18"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12416_y04352_x02816.tif",
+      "sha256": "4bafc2aeced09e2f508c1e65f7f51dad671932552cd797e6c7f69be6b22a6961"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12416_y04352_x02944.tif",
+      "sha256": "47b4dde9b6e725c31bd5b14d81116cad8564f36c5a4946fff3286ae83cba5c42"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12416_y04352_x03072.tif",
+      "sha256": "b96ec623373ef4ce23c0a7caf25b71c505d14fbdeb334ab349baf09d4fa2d677"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12416_y04352_x03200.tif",
+      "sha256": "79466671164f3aae26a988c81cc9e8403b63c7397215893cbd49ba7b180ddb30"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12416_y04352_x03328.tif",
+      "sha256": "29a24d2b2a23c627ee9626d8f75f9dc51f6851aab9fad83344e65266c2176157"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12416_y04480_x02816.tif",
+      "sha256": "e48a3a57e3d186401ba56e102d08be9ab54e2749532b59246b55e49b4ee368ab"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12416_y04480_x02944.tif",
+      "sha256": "4a3f441e6f4e1baba27ca79de4ef3ab1a5547d11a36fe2ad7704bba3c75e253b"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12416_y04480_x03072.tif",
+      "sha256": "dea58941a92ca499a36cf9a79c628eebf484ea77101c75ff45ae36ec514c5a1a"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12416_y04480_x03200.tif",
+      "sha256": "df454352ecdb1ba784e217a5ed66bc730e0bd864e6244a10cfe4344d6dd5bd85"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12416_y04480_x03328.tif",
+      "sha256": "876279ecf6e8025097adfa50e9e068ec2e11475646738c4e6e2e400b6fdeb265"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12416_y04608_x02816.tif",
+      "sha256": "6d9be624b6928a4360ca7b075b8d59dd147d721e140c9c7be9619d8a3c0ac465"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12416_y04608_x02944.tif",
+      "sha256": "e6690b01711069c700a52ba3d0c728fbb7ba593aff6f2e409af9cca0868485be"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12416_y04608_x03072.tif",
+      "sha256": "3ea30eaff5b537e1a6739ab3adfb6b343e0349153257d94bfaef25b4ee240bc2"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12416_y04608_x03200.tif",
+      "sha256": "f078e5f499cafd82b0802f04767d5ea4206c26599b05b02a924943c66b488205"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12416_y04608_x03328.tif",
+      "sha256": "06218312a3669217ebf2ede547f63cfa2e088190fd0b792388376ecbcaddb883"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12416_y04736_x02816.tif",
+      "sha256": "8fb67e869642aadc4f7573c40402090622e801ed4d2c73961c76817c34fbcfb0"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12416_y04736_x02944.tif",
+      "sha256": "f3c25134bb984b11abf4b5e9ffa3c4b75980b8b6abfa342fec206f6711aa45d5"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12416_y04736_x03072.tif",
+      "sha256": "9d28fee5796c0963e7d55ce333e929c15c6c4bbff9b0c88859a1f97c1d89fe62"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12416_y04736_x03200.tif",
+      "sha256": "d0d452b14d34f4c92d772fbee23895fe430d440c1cd65325eb3cfe5d9836fc9c"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12416_y04736_x03328.tif",
+      "sha256": "04edfffe8f45bd83eaa4bcee644d6ea1557ad2612d289e426da9bf7e2ce7d41c"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12544_y04224_x02816.tif",
+      "sha256": "6a609c883a58bc7bd09ec326b45cc2f2366581dbaa21fbc00201c5e69ce4e3b5"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12544_y04224_x02944.tif",
+      "sha256": "c665ca56c2a5b0be13bb48d07549db1ab9624baf53d888e36bfaf18f454a1422"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12544_y04224_x03072.tif",
+      "sha256": "4fc8ce76ce16e286a017eaa0e8711a994cbdd6390b5445cac7ee017469839d0c"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12544_y04224_x03200.tif",
+      "sha256": "3318e9d4ff3b6dd4a0cfb4bfc27881a9e443d45a1c1615ba0ac0d32b1de8bb46"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12544_y04224_x03328.tif",
+      "sha256": "ca64fc41ef1345d53f0ede483fa894804f6f6333953deba722ffdfce9596cd5d"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12544_y04352_x02816.tif",
+      "sha256": "8e3e472d1e202f84db37f016bc070b8b582c551735fa17ac83d30c1fe92029ed"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12544_y04352_x02944.tif",
+      "sha256": "4bdd8d929a21a5469c2c52c57179943efc9c161d9e3242c92c884667ae5d7d90"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12544_y04352_x03072.tif",
+      "sha256": "c2e3c4e4dcfc7a9b0b687c3eee77e2c4ad893f8ae6d532c4ba28e5a000bf18f3"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12544_y04352_x03200.tif",
+      "sha256": "91955ed65508db6b6b0b276d2f487e398e5282173a34da1a3a0b1accb781062b"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12544_y04352_x03328.tif",
+      "sha256": "8916df154041b52a2c6a67bb50d5e9c8ef1e288b66395306e56693a6033d908d"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12544_y04480_x02816.tif",
+      "sha256": "f24523b13256bf3f66b1f4f9d1ad0762de9e6dd1bba463c067727d3e092900b8"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12544_y04480_x02944.tif",
+      "sha256": "a7ae99883876f48d2c00ecfa214fc77ec64401306b0980eb75df0e7f71761123"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12544_y04480_x03072.tif",
+      "sha256": "e59c924abded703e0ddbe112b99341e9c4b3993901045fb19e551ee5d86b74f2"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12544_y04480_x03200.tif",
+      "sha256": "083d5b4f7dae2f0059cb5f025c946852cf97d18d201985a739bef5d707e6869a"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12544_y04480_x03328.tif",
+      "sha256": "cdb6555ee784e63028145b77a86d2c8e2f6ef2964bb99564c8c9a50d2ce298cb"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12544_y04608_x02816.tif",
+      "sha256": "9a45e9dbac37b2c93cf54a53387396b46da14d84e0a8aacf3070d3f22c0ce2f7"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12544_y04608_x02944.tif",
+      "sha256": "3e8680940a3c7519b4d7507fabce8f96d280d12e82f33e95606cdbb3202f5006"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12544_y04608_x03072.tif",
+      "sha256": "85b2f5a428cca635a05fdb591d71cb5915b470af889c3efc47434c3a0639e24d"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12544_y04608_x03200.tif",
+      "sha256": "d74ecbf2726e77cdf2b5945a04c45507813ba567b132fdfbf226af78725a0afb"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12544_y04608_x03328.tif",
+      "sha256": "16eb8551985e64175c637d908028ed3b58e4db11a4ba39a9322afb111eb7a408"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12544_y04736_x02816.tif",
+      "sha256": "dd071f644852f92c1f3f09177b8956a47bf7513ecb3baec6faed83276eeb7988"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12544_y04736_x02944.tif",
+      "sha256": "d7f18808790f44d8927f38352dc055c7eaf0e99a89264e22a1bf6e74eeba8a7e"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12544_y04736_x03072.tif",
+      "sha256": "e4e3258ba7c4717ff6efcd6b746def7b7f37bd0edbcd2214c90e07d38f7734f6"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12544_y04736_x03200.tif",
+      "sha256": "80448c00e34ca538423552fca90b389cbcd23422286153569163d6f2261be5e9"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12544_y04736_x03328.tif",
+      "sha256": "d7feb02f630407ad33dd1e86ca2f7fdcb0c7c41107fb5676cf281d0e3de5a2f5"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12672_y04224_x02816.tif",
+      "sha256": "d59f5afb7dd0d0b342d1da5c437080e0eff78be6683bc5f41d38f6ef7c2e2336"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12672_y04224_x02944.tif",
+      "sha256": "b85f48965f86ffa553154126e0c47988a3e519b3fc99e3aabf363ea0858894dc"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12672_y04224_x03072.tif",
+      "sha256": "2e851cfb79cd51ed76d59dda9a469be834763ba07e254e62bb2704ba5120096d"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12672_y04224_x03200.tif",
+      "sha256": "f2c7df6e78d9e90744f043417ec6723ca28ad0a3db2748f0104d6ab933f6c427"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12672_y04224_x03328.tif",
+      "sha256": "2ab42df0a3a72cbe0ff7bdf6f4ee251c48d492c6c30db0d0444e315975f9a27f"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12672_y04352_x02816.tif",
+      "sha256": "232baa0a140dd837c9490b5008e242f73c8de4bb7be7f46013070df6b3a60837"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12672_y04352_x02944.tif",
+      "sha256": "5870d160c5d86efb0c3ab1b4c3712d4691cb02b7766f4305d1a6861cf503470d"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12672_y04352_x03072.tif",
+      "sha256": "f08d71e6e305d40d327e4c206a036de0cccabb4cfb652a58357ff704167282db"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12672_y04352_x03200.tif",
+      "sha256": "0977e909271c4969b4fc416e83c824d0b1e77896bfb720adb5a34082fc053fc2"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12672_y04352_x03328.tif",
+      "sha256": "c0322c002ba46c5e5017e4df5bc342eee23e224413b6e0ad81efa1d49b864b28"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12672_y04480_x02816.tif",
+      "sha256": "fb691e000083eabd30082363af126efb8b47a04a8dd30514c32a445203b76cab"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12672_y04480_x02944.tif",
+      "sha256": "d60c0024e1caa9c397e9e51bf74ea86b1b9473e08e1c730ae06ecd3f9326be4e"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12672_y04480_x03072.tif",
+      "sha256": "626430a5a8f051e44a7bf197f8c2597f874479e37315e87a189a95abdf2f5ecd"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12672_y04480_x03200.tif",
+      "sha256": "43a8a22acb545a08084decf0f2687327aaeeb7eb87c40a00e23a533ee3157ec9"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12672_y04480_x03328.tif",
+      "sha256": "cc098961ef090631d12aed522256c668195343c9f259465b5f08d291506b562c"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12672_y04608_x02816.tif",
+      "sha256": "c0d363ee92c8fe8ebfcb7f4ee1beff9bde7d390f027293cffff418d5719c0c6f"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12672_y04608_x02944.tif",
+      "sha256": "4fbc04ce808db9d2ea24e651277a5edff4298de1a80a9ace9a7f4e648690d790"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12672_y04608_x03072.tif",
+      "sha256": "f77cb436d8e1c9e0891ad4c53d46349d27e0f34b907e597a18b925bc149ea117"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12672_y04608_x03200.tif",
+      "sha256": "7b3c72614f7335ca0a18551255108f9af52c309dc2e265e8f0bd227d59403f1c"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12672_y04608_x03328.tif",
+      "sha256": "bb302a43d8b8673b4e97527bd2ccd21b9b9da1a758c1c1c6f341ffa77ac6c5f2"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12672_y04736_x02816.tif",
+      "sha256": "bde99abce8ba7ee7a0e2e3c6a2e4c51c78cbfdb3dbeba4114e75adb6ed4a6069"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12672_y04736_x02944.tif",
+      "sha256": "bdd4b4e70516796ca12c390abd826d69dc6774719a253801b3fc4da12c7a45ac"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12672_y04736_x03072.tif",
+      "sha256": "29d24893c309be08e37e010cd3feee9d948f166532ed704e9e0ff85adf75b767"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12672_y04736_x03200.tif",
+      "sha256": "dc9d78301916d54968886b6aae0746e9b765f558a2d66224df155f88bf03f425"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12672_y04736_x03328.tif",
+      "sha256": "67672a66e85588cb27fd22f0a0aad632ca37a81bac0115fa280be1ad510ff70a"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12800_y04224_x02816.tif",
+      "sha256": "1c62ba3e5efb5b42ba5a59a5f03e5299a6ab7c4225802d819e4b639be09369a0"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12800_y04224_x02944.tif",
+      "sha256": "df786bbbbf7c27b10d9770a3eca5bd3c43a54b32bd82363d294b38f03631545f"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12800_y04224_x03072.tif",
+      "sha256": "f96bf7be30876d3d3713b9a3203f0fb82b7fb103604ddbebc7cc9dcf58f140b4"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12800_y04224_x03200.tif",
+      "sha256": "0a356c84eb18e3b1981466772004ab435871b299fbc65e61f1590c74a487e2d0"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12800_y04224_x03328.tif",
+      "sha256": "dcd66e9fba98bedad85f0db0653f9652c8ac26a6fe5a8ba5d4e2c23825c21d75"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12800_y04352_x02816.tif",
+      "sha256": "a1fca283b27d44ffbb88754d8cd92724bfa894c8d859ad1631d4970f1350a8d4"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12800_y04352_x02944.tif",
+      "sha256": "f8439cee7893b97a0727d01f9b5e3c3ebf990266a7b3ccdfc512066fb0e9bb8c"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12800_y04352_x03072.tif",
+      "sha256": "e37f0e477e1f80ec611524bdf7ba9a0081c3c29d67211aa3fedeb7ae842f6a89"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12800_y04352_x03200.tif",
+      "sha256": "15b81b2cd6b9b3a6d72bcfb78aef3e8fbdcaea5820cec37b8278de514c6938f1"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12800_y04352_x03328.tif",
+      "sha256": "2d760db5e14466fb2524ec63310a4013e980521541f9303a1f9a56652763e98d"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12800_y04480_x02816.tif",
+      "sha256": "1ad22e73a0eab3c00ca51fcd30f12acbdda7a4a9709d2bf2c67f104e2f8b21a2"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12800_y04480_x02944.tif",
+      "sha256": "e38adbd8beccde3bd426ca4e6442fb5d3b9dabbb8abecf15b8970ea6c2aa533f"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12800_y04480_x03072.tif",
+      "sha256": "e0d6f8df6d47cd3ce310e64179ca981a898b257622c6fa5dda40b045ce40158c"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12800_y04480_x03200.tif",
+      "sha256": "483eebdf159521190dce36bf347f9f742ae63ee9c46f44f555c26dc89277e602"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12800_y04480_x03328.tif",
+      "sha256": "d306c72736d98760aac4fd7be4c7c1bdbe8940874a297a2bd5dd4d6939cc1dda"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12800_y04608_x02816.tif",
+      "sha256": "4401548c225ef63c23bf8ba1cf67b8126fa4ba4db1dc962cd9f41d26fb55916a"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12800_y04608_x02944.tif",
+      "sha256": "091a55035e69f0b6fe819708c6b700e69f2151bd96c03103db5072afb57c616b"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12800_y04608_x03072.tif",
+      "sha256": "a7774dc1e836888ac6c8b0a0571bb560af5a2035b3550fcb71dc223b2e64ba56"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12800_y04608_x03200.tif",
+      "sha256": "c87ece629c7c5044281505025ce9394a0aa00f273a8af00f566220945281ccf3"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12800_y04608_x03328.tif",
+      "sha256": "4ba7c09a24e0a23b787023cfab4fadc307de14d1702335bd499909c305c83077"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12800_y04736_x02816.tif",
+      "sha256": "d884c336d9cf2dc5c5e8ca440f8fc4fc8f053b2361c13b1b0fd02781435c294d"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12800_y04736_x02944.tif",
+      "sha256": "b53e53b032d6abb7bd11b4964386bf14742f5867dcd1c90c0608f4ad9c2fc475"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12800_y04736_x03072.tif",
+      "sha256": "fc8bc228159837215b7392da76de4aad53d8b812ea908ad2787e4787575da546"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12800_y04736_x03200.tif",
+      "sha256": "8b65453d8e5581588bf66e32d8f807d769f1eeff63d62f9c2466b5d0e90b69ff"
+    },
+    {
+      "bytes": 2118490,
+      "path": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight\\cubes_RAW\\z12800_y04736_x03328.tif",
+      "sha256": "f0e402d538f97f0298fd1fd6b60de54ff0b462e8f6ee903fef5395f72b84eee6"
+    }
+  ],
+  "runner": {
+    "bytes": 5673,
+    "path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\run_continuity_fresh_control.py",
+    "sha256": "fdcef8202d78379fa9490098bf02d7814afd4b70fdd395d4d78b2e46f83d310f"
+  },
+  "schema": "f0-continuity-fresh-control-request-v1",
+  "sealed_runtime_pins": {
+    "crossres_pred/configs/unified_ladder_20260902.json": "a3119edce41516d9b28eaac192b98e48cea3dc28a5bd44aecadf752d72e32aef",
+    "crossres_pred/scripts/audit_m7_xr_v29_joint_thresholds.py": "bdbd1df646ac7485e9746a6c3623d1e905415970498d0571e9f3269968d71c6e",
+    "crossres_pred/scripts/diagnose_release_t025_blobs.py": "edb8b18e90250c2e999d7e075d6efeb771b433677503daec1bc2b7ba3b515757",
+    "crossres_pred/scripts/evaluate_final_c3_250k.py": "9952adb16fd70534f0bc3bfb0ba21834a617871b88ab1c82f1072541f7a9546a",
+    "crossres_pred/scripts/evaluate_ladder_arm.py": "8d47022876ae5017e104d2eab8a3b13ada1b09e3cc14b79f4af76d9edaa4e6bb",
+    "crossres_pred/scripts/generate_checkpoint_report.py": "97d8b92f6bfe0835424680dfe44cb1ebaea38b941821ba9d02a960dc973f2df0",
+    "crossres_pred/scripts/launch_final_c3_250k.ps1": "51b009174e191143fc1578e51eb8c8940ffccd4fd0fc81faf012012d8a04bba0",
+    "crossres_pred/scripts/measure_blob_frontier.py": "00eb41b6a8f9215bfa54c8bb901a5f9fa930060ab6997a526e04c90fd43b37c9",
+    "crossres_pred/scripts/measure_trust_displacement.py": "468afdadd9255cd7acfe8a00288ca692cc845b590893dab0e4acdeec20c1d6e7",
+    "crossres_pred/scripts/render_cached_probability_report.py": "6b83e639e8a6f85ac2611235b3dfbcbad8d1769d791a17e55cce1b4a10e63e00",
+    "crossres_pred/scripts/render_release_milestone_panels.py": "4a0c2619000581d0872d6706676871462211c52b1eabf31acc545ba8b2cf5b98",
+    "crossres_pred/scripts/run_final_c3_250k.py": "5754fd9e494be365607e2cfe7b400d340653e265c8476149423682453e5b7276",
+    "crossres_pred/scripts/run_focused_medial_final_250k.py": "7ec9af4ae34cad5789519cd7f20987eac793bd57fa8ab6cd838fe04c561b5a3e",
+    "crossres_pred/scripts/run_release_ladder.py": "f278ab3c55689173594e1a21d2ef8ea0bb46c18507eb8aad61119ba0b258642f",
+    "crossres_pred/scripts/run_unified_ladder.py": "66f58660f2e2d6ac464cfca81546a4832e9adeae2909a729b583734afb48d4b6",
+    "crossres_pred/src/crossres_pred/voxel/__init__.py": "d67456fa9bdd272d6d3bdf3058a9697b59d22d8e2597354f76183d487fc68058",
+    "crossres_pred/src/crossres_pred/voxel/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "crossres_pred/src/crossres_pred/voxel/affines.py": "38fcb3a326154fa9c65b8466206413ed3a10559b12d6f7ae9e34c92fe94fb869",
+    "crossres_pred/src/crossres_pred/voxel/alignment_gate.py": "cf9572e07c6a3835550f7c1ae2bb43f1ad6ef57fb46090206b9fe4a26c10fdad",
+    "crossres_pred/src/crossres_pred/voxel/antialias_corpus.py": "e36f28de572d373e8eba4c4722047f1f199093f2eea3418cd5d0a992585eae28",
+    "crossres_pred/src/crossres_pred/voxel/antiblob_qualification.py": "eb9960f36585f8d1eea9fdfc88d0b2619ed15fb378be82f8613a5ddc3b320a87",
+    "crossres_pred/src/crossres_pred/voxel/blob_diagnostics.py": "803ea446ac18726875406ad8acd60bf59f918a1ecf23c7514c8e2f4bc07c2c2a",
+    "crossres_pred/src/crossres_pred/voxel/catalog_maximality.py": "a5bb5387d0622b4aaae3cd15e313a8e54d8680ce2d3431363f741d754dbe2b15",
+    "crossres_pred/src/crossres_pred/voxel/checkpoint_audit.py": "e3dbefa9c47df32452f851af7fad2417bd7351608aa12e380afc372a86f332fc",
+    "crossres_pred/src/crossres_pred/voxel/cli.py": "5c8fec7ca9c87307654a7ff89077b035f4c54d05d3a4d3a376a7faf92e25f6e8",
+    "crossres_pred/src/crossres_pred/voxel/coarse_teacher_atlas.py": "5dfbd6a0c39f4ee5956c2c79d8dd89de072c6acd58cb6fcd8f029bdc63187cc7",
+    "crossres_pred/src/crossres_pred/voxel/connectivity.py": "25371df177d5d02041bebed857441efbd1eafdd33cecdcc15b6328571dcd7bf3",
+    "crossres_pred/src/crossres_pred/voxel/corpus_plan.py": "ba2e1230e9018b96e50ffbcfdcc264006ccc3e43973fa2b37380cbd2985470ac",
+    "crossres_pred/src/crossres_pred/voxel/final_fit.py": "ed33104aa2dab1e3bd41fe4571621de7c9c8251075af598eaead8906304aa09b",
+    "crossres_pred/src/crossres_pred/voxel/gap_join_validation.py": "89e85dba9ebd00fbd11accc9d29097774bda618db958c7ae8af2b89243657174",
+    "crossres_pred/src/crossres_pred/voxel/global_connectivity.py": "4809b01949227bc257b81073725c37d89daaf140f135542d71b6644150001753",
+    "crossres_pred/src/crossres_pred/voxel/grid_growth.py": "b6d040af4563fcba4f2be0c27f40d63637f7cbfb6cfe6ebac973f1d9defa6f11",
+    "crossres_pred/src/crossres_pred/voxel/grid_inference.py": "0795233774ca4fcdbe58a2d06c7d6c030255f89266b6245a9023b640e81fb4d0",
+    "crossres_pred/src/crossres_pred/voxel/growth_sentinels.py": "66105e54218d7f9eef113efe7165f9c8daddc000593c38f9d99fda91c529708c",
+    "crossres_pred/src/crossres_pred/voxel/heldout_failure.py": "c7a76fab5dbec2bc091b7cecb49beda93d5b42f6615566f744e36e4f84b78c6e",
+    "crossres_pred/src/crossres_pred/voxel/inference.py": "3cd0cd0c1e7622a2645fa1b892cb641b0b6547d8ab53b78fea0d2aaa368efa9c",
+    "crossres_pred/src/crossres_pred/voxel/io.py": "1569e6a60252dc485d21b8a4faa5351f489174269018ec7b27bdc6ed6f624c56",
+    "crossres_pred/src/crossres_pred/voxel/label_store_compaction.py": "a7c204fe4629b0d0ef5abb00825256efd6f9da155b3453eaf8ad0454c6e1d4c7",
+    "crossres_pred/src/crossres_pred/voxel/local_registration.py": "656b68a1c2e71ac14cea7e54c4c79735157effac5ba5dd67854276e45fe05409",
+    "crossres_pred/src/crossres_pred/voxel/loss.py": "11a95201c114ebddf4f01d5f52cf068c8a48036e2d2ae495aee079644c1c2caa",
+    "crossres_pred/src/crossres_pred/voxel/manual_labels.py": "cd53011e47750e97f44321deda8a820ceeb628575379f89fb349aa5a5d6c4ba0",
+    "crossres_pred/src/crossres_pred/voxel/medial.py": "93936eb0c1f19e45b8a6fbd14bc1f395f31c510bb8489717cbaaeeb0d5302e11",
+    "crossres_pred/src/crossres_pred/voxel/medial_bridges.py": "73affc91a3e105ff3e9c79cc0c14bf07a0fc259311d169ce74fb39f402f77e68",
+    "crossres_pred/src/crossres_pred/voxel/model.py": "e762773c8bc485b95cbc476fa1ec71ca84984926034ab72186541e94b133602d",
+    "crossres_pred/src/crossres_pred/voxel/official_corpus.py": "d4e7729e66db8bf39d8f8f405eea5179c55548ef1e87f9ba1547637f21fef7e5",
+    "crossres_pred/src/crossres_pred/voxel/patches.py": "f8f0d6ee06592f86667265bfda5ccb54489e12b353ee5b7e37f87aff19d5eba3",
+    "crossres_pred/src/crossres_pred/voxel/pathology_mining.py": "a856fd69d6b26d5f33771a27c42088b9fa293a1e13d22b740e03b5f28d37a270",
+    "crossres_pred/src/crossres_pred/voxel/prepare.py": "09ef15a9271e61b6e31cf0111cde3a1fa1d5d10d1c2772646a42822bf98bce4f",
+    "crossres_pred/src/crossres_pred/voxel/registered_mirror.py": "fbc9259887ff7159ff177762df4938cdffb3cd34331dc50966549c92e55f516c",
+    "crossres_pred/src/crossres_pred/voxel/registration.py": "f891c1d485f23b6ef51fb570813f1b31377f4a291152a2d2affb5c39c0e128b3",
+    "crossres_pred/src/crossres_pred/voxel/registration_evidence.py": "123f150f98ca4cde5c993005961baeca1fc066854258a65b39aed29ddd79e0e7",
+    "crossres_pred/src/crossres_pred/voxel/registration_fit.py": "31294ab98698b9ec670faf21f1e040808e7375a6bf38c4a0e0fc8e1fd207d71a",
+    "crossres_pred/src/crossres_pred/voxel/resources.py": "5fcfbd92ed8180f0e24d33b94ce3a38fe92cebda1fcdc062167466165271880d",
+    "crossres_pred/src/crossres_pred/voxel/ridge_growth.py": "a321d37b5935c8ccb7b16c9387ab158ea0225f56e153f42dac45eb796836fbfc",
+    "crossres_pred/src/crossres_pred/voxel/schema.py": "9c6c759c9737dd2e21d4649ff7d052c9cb541d1bc74474db42fc671b8abb990d",
+    "crossres_pred/src/crossres_pred/voxel/scrollfiesta_metrics.py": "f50346c664794311dd9556ec9ea5eb2b4db17d9fb36dfb0a6e5c4c1c5eea750a",
+    "crossres_pred/src/crossres_pred/voxel/sealed_test.py": "9f495cce66938750142acd7ef98b1a015ab142bbaa476a851ba701477b073883",
+    "crossres_pred/src/crossres_pred/voxel/teacher.py": "2f5f0a1e52f51346e854defd64cbb0d0c0fb86e405da1edadb3298e98a37e3e9",
+    "crossres_pred/src/crossres_pred/voxel/teacher_audit.py": "08f5227e00c215f5b1c6d9852dcfad3fcec6353c1b87e5f21575828e75de8162",
+    "crossres_pred/src/crossres_pred/voxel/teacher_model.py": "f59cd93135f8de5064f3b073ed64f3cdcc05d778215fb4ac35e079a37e30509f",
+    "crossres_pred/src/crossres_pred/voxel/train.py": "ec71716c04701d7bc9527381f8fb554d3c2a604f672e4447c776224ee8b5dbec",
+    "crossres_pred/src/crossres_pred/voxel/trust_region.py": "7bd37c6611e85adec5289e9d327b53718979b76f8c40de9defcf38a81c363103",
+    "crossres_pred/src/crossres_pred/voxel/visual_approval.py": "c5c7fe597f074d6aa5d00856976e94956faccb927f8b4c5e0c7a0aeab6e10b3e"
+  },
+  "selection": {
+    "bytes": 3545,
+    "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\selected_policy.json",
+    "sha256": "899342b2d367ac63db2e2a9a17d50976403aca8906477bdef9c4087c373d2459"
+  },
+  "selection_basis": "Disjoint local block with genuine raw neighbors; not used in either earlier filler comparison or current development probes.",
+  "source_grid": "D:\\work\\vesuvius-c\\PHerc1447-10x10x10-overnight",
+  "threshold": 0.35,
+  "training_or_deployment": false,
+  "voxel_size_um": 8.64
+}

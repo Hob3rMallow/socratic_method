@@ -1,0 +1,85 @@
+{
+  "created_utc": "2026-09-07T22:19:47.051820+00:00",
+  "old_frozen_sources": {
+    "byte_identical_prior_probability_cubes": [
+      {
+        "new": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_development\\probability\\z12032_y03968_x03072.tif",
+        "old": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\evaluation\\milestone_00200000\\blind_t035\\inference\\probability\\z12032_y03968_x03072.tif",
+        "sha256": "3dd1fdc6222902aeb846e9280868cbc4a55ce41a75f582a43db5f52290fd0528"
+      },
+      {
+        "new": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_development\\probability\\z12160_y03968_x03200.tif",
+        "old": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\evaluation\\milestone_00200000\\blind_t035\\inference\\probability\\z12160_y03968_x03200.tif",
+        "sha256": "64c552a5cd4199fddc7dfcb04ebb18f49111a365acc8ac7bb7365deb6ef7c96b"
+      },
+      {
+        "new": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_control\\probability\\z12800_y04096_x03456.tif",
+        "old": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\evaluation\\milestone_00200000\\blind_t035\\inference\\probability\\z12800_y04096_x03456.tif",
+        "sha256": "bc9581fd86ef6bd53dc71bc8db2f531f1a426454e27493a5b30d60e33de9c213"
+      },
+      {
+        "new": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\inference_control\\probability\\z12928_y04096_x03328.tif",
+        "old": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\evaluation\\milestone_00200000\\blind_t035\\inference\\probability\\z12928_y04096_x03328.tif",
+        "sha256": "18cc6d540032c1dd4e4ef60df10823ea49b2fb833bed776c1a180117f26041da"
+      }
+    ],
+    "frozen_evidence_files_verified_in_each_copy": 96,
+    "frozen_model_read_only": true,
+    "historical_artifacts_unchanged": [
+      {
+        "bytes": 25106,
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\operator_report\\index.html",
+        "sha256": "5c95c6514a819bae4419457016620627a4990710b80a99b5462f5398b8f32009"
+      },
+      {
+        "bytes": 190483,
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\operator_report\\filler\\manifest.json",
+        "sha256": "fedabe4b91efac9291d8ca07d23b3907f17efb5c80d1a97cdf1b02157c4a8e4c"
+      },
+      {
+        "bytes": 1651,
+        "path": "D:\\work\\socratic_method\\docs\\line_fitter.md",
+        "sha256": "bef61cce483f1d42d53a8c52909be8eb4568ff7abff76558163f1a261ef5702e"
+      },
+      {
+        "bytes": 24920,
+        "path": "D:\\work\\vesuvius-c\\crossres_pred\\configs\\final_c3_250k_20260905.json",
+        "sha256": "af9d74dbf9f4c0fc978d6b9756fc92f6750fec211705c08be0a05e970c496cbc"
+      }
+    ],
+    "model": {
+      "bytes": 409674095,
+      "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\releases\\c3-f0-200k-20260907\\checkpoint_f0_00200000.pt",
+      "sha256": "54db9a59cb602ff08e3dda0acc1195ad980ab05fb660332d32fb436a0d49a175"
+    },
+    "native_binary": {
+      "bytes": 809472,
+      "path": "D:\\work\\vesuvius-c\\build\\c3-human-line-fitter_20260905\\extracted\\Release\\pred_fixup.exe",
+      "sha256": "54fe434f76beb8c1eff58cdb1bd72200e4630497e23539cd467e4e64360f1e13"
+    },
+    "raw_context_cubes_verified": 250,
+    "sealed_runtime_files_verified": 63
+  },
+  "package_parity": {
+    "bytes": 9295,
+    "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\package_development_verified\\receipt.json",
+    "sha256": "526f1480c76ece359e0b80427d91bbf391b5af8870f882121c966f0042c50c39"
+  },
+  "package_tests": {
+    "bytes": 18465,
+    "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_sheet_patches_20260907\\package_tests_final.xml",
+    "sha256": "a28e7cbb6ea8154c72b8be1330700b9e748ed0e272d4fd43ae0b44134c6509d7"
+  },
+  "prior_official_records": [
+    {
+      "bytes": 11858,
+      "path": "D:\\work\\socratic_method\\recipes\\f0_repair_20260907\\files.json",
+      "sha256": "835af8f2a069297a6fc5fcce2a09747082d81159f42104cd755ba808dc2fd111"
+    },
+    {
+      "bytes": 19341,
+      "path": "D:\\work\\socratic_method\\recipes\\f0_continuity_20260907\\files.json",
+      "sha256": "d86bfe45e8fc5eb5cc412612c8e64e32fa1c9b831644210c585b5ac5772f8301"
+    }
+  ]
+}

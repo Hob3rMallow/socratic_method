@@ -1,0 +1,269 @@
+{
+  "schema": "crossres-unified-ladder-recipe-v1",
+  "version": "unified-ladder-v1-socratic-times-wide",
+  "created": "2026-09-01",
+  "plan": "C:/Users/mordr/.claude/plans/golden-conjuring-hennessy.md",
+  "scientific_question": "Which ingredients of the shipped Socratic Method (soft anti-aliased targets, separation shell, M7-KL anchor, crest recall, trust region) still earn their place on the 12-scroll wide corpus, where the jackpot recipe already produced the best held-out macro ever but is chonky at its calibrated threshold? Every shipped term's prior evidence is from a 1-scroll 4,096-row corpus with a saturated 16x trust region; none has been measured with breadth or without the projection binding.",
+  "base": {
+    "note": "Verbatim the wide15 jackpot recipe (m7_xr_wide15_jackpot_recipe_20260901.json) except targets and per-arm objective deltas. Declared at max_train_samples 250000 so the poly(0.9) LR trajectory is IDENTICAL to A0 (train.py:974: poly horizon = max_train_samples); the runner terminates each arm once the 50k milestone is durable.",
+    "optimizer": {
+      "optimizer": "sgd",
+      "learning_rate": 0.001,
+      "momentum": 0.99,
+      "weight_decay": 3e-05,
+      "lr_schedule": "poly",
+      "warmup_samples": 0
+    },
+    "schedule": {
+      "batch_size": 3,
+      "accumulate": 1,
+      "amp_dtype": "bfloat16",
+      "max_train_samples": 250000,
+      "samples_per_epoch": 10000,
+      "epochs": 25,
+      "snapshot_samples": [
+        10000,
+        20000,
+        30000,
+        40000,
+        50000
+      ],
+      "stratified_sampling": false,
+      "train_augmentation": true,
+      "stop_at_samples": 50000
+    },
+    "seed": 1203,
+    "num_workers": 2,
+    "max_cpu_threads": 16,
+    "device": "cuda"
+  },
+  "initialization": {
+    "contract": "fresh-released-m7-sha256-strict-v1",
+    "checkpoint": "output/crossres_data/models/surface_m7_nnunet/fold_0/checkpoint_best.pth",
+    "sha256": "17465b77591b794638e671f1a9f79c4cf1e79821f302e6fc235e3725e5da7d7e"
+  },
+  "corpus": {
+    "hard_manifest": "output/crossres_data/voxel_wide15_corpus_20260901/patches.jsonl",
+    "hard_manifest_sha256": "0ded463733fa7822318ad816d3671b101c5d528f2621861e2767d3490a0d6957",
+    "soft_manifest": "output/crossres_data/voxel_wide15_antialias_corpus_20260901/patches.jsonl",
+    "soft_contract": "STITCHED soft corpus: 10,072 native rows rebuilt at exact source origins via the cuda-gauss-hermite3 anti-aliased pullback (teacher_q + target_valid sidecars); 6,128 human rows pass through with their original hard targets (already 1-2 vox thin; the loader synthesizes binary q=(target==1)*255 where the sidecar is absent; the CUDA GH3 backend does not cover human general-affine records - measured 2026-09-01, they route to scipy-tiled-gaussian and reproject refuses mixed backends). Manifest row order byte-for-byte the source order.",
+    "pair_manifests": [
+      "output/crossres_data/voxel_wide15_plan_20260901/pherc0139.pairs.jsonl",
+      "output/crossres_data/voxel_wide15_plan_20260901/pherc0332.pairs.jsonl",
+      "output/crossres_data/voxel_wide15_plan_20260901/pherc0343p.pairs.jsonl",
+      "output/crossres_data/voxel_wide15_plan_20260901/pherc1667.pairs.jsonl",
+      "output/crossres_data/voxel_wide15_plan_20260901/paris4.pairs.jsonl",
+      "output/crossres_data/voxel_wide15_plan_20260901/phercmanbp.pairs.jsonl",
+      "output/crossres_data/voxel_wide15_plan_20260901/small_native.pairs.jsonl",
+      "output/crossres_data/voxel_wide15_plan_20260901/validation.pairs.jsonl"
+    ],
+    "expected_rows": 16200,
+    "expected_train": 15432,
+    "expected_val": 768,
+    "expected_source_corpora": 8,
+    "record_coverage_verified": "2026-09-01: all 26 source record_ids present, disjoint across the 8 group pair manifests (the exact manifests prepare used; the 4 official manifests share a duplicate paris4 record and are refused by _pair_records)"
+  },
+  "arms": [
+    {
+      "arm_id": "A0",
+      "kind": "external_control",
+      "output": "output/crossres_data/m7_xr_wide15_jackpot_recipe_20260901",
+      "note": "hard forward-OR targets, CE1+Dice1, running now; scored at fixed 50k (and 100k observationally). Re-evaluated under the frozen ladder harness before any arm launches."
+    },
+    {
+      "arm_id": "B0",
+      "kind": "trained",
+      "delta": "soft-corpus package swap (teacher_q + target_valid, ~0.654x hard foreground)",
+      "seed": 1203,
+      "objective": {
+        "ce_weight": 1.0,
+        "dice_weight": 1.0
+      }
+    },
+    {
+      "arm_id": "B0r",
+      "kind": "trained",
+      "delta": "B0 with seed 1204; defines the tie margin",
+      "seed": 1204,
+      "objective": {
+        "ce_weight": 1.0,
+        "dice_weight": 1.0
+      }
+    },
+    {
+      "arm_id": "C1",
+      "kind": "trained",
+      "delta": "B0 + separation shell 0.5 (r=2, q<=0.1) -- the v18-evidenced pass-with-half-growth weight",
+      "seed": 1203,
+      "objective": {
+        "ce_weight": 1.0,
+        "dice_weight": 1.0,
+        "separation_weight": 0.5,
+        "separation_radius": 2,
+        "separation_max_teacher_q": 0.1
+      }
+    },
+    {
+      "arm_id": "C3",
+      "kind": "trained",
+      "delta": "B0 + M7-KL exact shipped flag triple (weight 0.5, known-agreement, confident-agreement, unknown-corridor radius 2). Corridor seed degrades to truth-only without a crest channel -- documented divergence from shipped.",
+      "seed": 1203,
+      "objective": {
+        "ce_weight": 1.0,
+        "dice_weight": 1.0,
+        "m7_anchor_weight": 0.5,
+        "m7_anchor_known_agreement": true,
+        "m7_anchor_confident_agreement": true,
+        "m7_anchor_unknown_corridor_radius": 2
+      }
+    },
+    {
+      "arm_id": "C2",
+      "kind": "conditional",
+      "condition": "C1 moves blob metrics at least half the gate gap versus B0 without passing all gates at its calibrated threshold",
+      "delta": "B0 + separation shell 2.0 (shipped weight)",
+      "seed": 1203,
+      "objective": {
+        "ce_weight": 1.0,
+        "dice_weight": 1.0,
+        "separation_weight": 2.0,
+        "separation_radius": 2,
+        "separation_max_teacher_q": 0.1
+      }
+    },
+    {
+      "arm_id": "C5",
+      "kind": "conditional",
+      "condition": "ceiling diagnostic fires at B0: fraction of val continuation-band voxels (q in [0.25,0.45]) with student p >= lowest gate-passing threshold is below 0.5. Requires the 12-scroll crest sidecar build (~15h) which is NOT pre-built; the runner records the trigger and surfaces it for implementation rather than running unreviewed build code.",
+      "delta": "B0 + crest recall 1.0",
+      "seed": 1203,
+      "objective": {
+        "ce_weight": 1.0,
+        "dice_weight": 1.0,
+        "medial_recall_weight": 1.0
+      }
+    }
+  ],
+  "cut": {
+    "C0_adam": "conflates optimizer family, ~50x effective LR and schedule in one arm; SGD pre-committed (best-ever result on this corpus). Resurrection trigger: B0 milestone macro oscillates > 2x A0's adjacent-milestone RMS, or visible loss spikes.",
+    "C4_trust_region": "replaced by the free displacement measurement (scripts/measure_trust_displacement.py): relative-L2 of existing milestones vs M7 against the historical radii ladder.",
+    "E1_composite": "re-imports the trust-region confound and decomposes nothing; folded into the D-phase combo-confirm."
+  },
+  "evaluation": {
+    "val_manifest": "output/crossres_data/voxel_balanced_native_v14p2_registered_antialias_softtarget_corpus/patches.jsonl",
+    "val_rows": 689,
+    "val_scrolls": [
+      "PHerc0814",
+      "PHerc1451"
+    ],
+    "val_gt_provenance": "verified 2026-09-01: hard GT derived at q>=0.5 from the anti-aliased pullback, maxpool_prefilter false -- does not reward chonk",
+    "thresholds": [
+      0.1,
+      0.15,
+      0.2,
+      0.25,
+      0.3,
+      0.35,
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.75,
+      0.8,
+      0.85,
+      0.9
+    ],
+    "audit_tta": false,
+    "blind_source": "output/crossres_data/pherc1447_blind_audit/six_cube_subset",
+    "blind_reference_grid": "output/crossres_data/pherc1447_blind_audit/jackpot_all_sources_20260815_t035_report_20260901/inference/cubes_PRED",
+    "blind_report_tta": true,
+    "fixed_report_threshold": 0.45,
+    "joint_sweep": {
+      "start": 0.1,
+      "stop": 0.8,
+      "step": 0.01
+    },
+    "gates": {
+      "recall_of_reference": "the binding under-segmentation guard (reported, ranked)",
+      "interior_fraction_max_delta": 0.1,
+      "max_thickness_max_delta": 2,
+      "foreground_ratio_band": [
+        0.75,
+        1.25
+      ],
+      "foreground_lower_bound_advisory_for_soft_arms": "a correct soft student carries ~0.654x mass of the hard-trained reference"
+    },
+    "pherc0139_locked16": "diagnostic only, never selection (PHerc0139 is in wide training; gate dominated by the 95% M7-retention predicate)",
+    "kaggle": {
+      "enabled": true,
+      "metric_exe": "metric-windows/build/metric/Release/metric.exe",
+      "shards": 8,
+      "gt_root": "output/crossres_data/unified_ladder_20260902/kaggle_gt",
+      "contract": "competition composite 0.30*TopoScore + 0.35*SurfaceDice@2.0 + 0.35*VOI(alpha=0.3), ignore label 2, per-192cube-patch then mean; scored at the arm's calibrated threshold AND fixed 0.45",
+      "sets": {
+        "v14p2_val": {
+          "manifest": "output/crossres_data/voxel_balanced_native_v14p2_registered_antialias_softtarget_corpus/patches.jsonl",
+          "scroll": null,
+          "note": "689 val rows, PHerc0814+1451, registered-teacher GT at q>=0.5"
+        },
+        "p0500p2_val": {
+          "manifest": "output/crossres_data/voxel_all_sources_patches_5856/patches.jsonl",
+          "scroll": "PHerc0500P2",
+          "note": "320 rows, the ONLY truly-held-out scroll with human GT (2.215um registered, native ignore-label 2). Released M7 saw these labels: report ABSOLUTE scores only, never M7-gain."
+        }
+      }
+    },
+    "ablation_set_decision": {
+      "decided": "2026-09-01 evening (operator asked: what is the best ablation set we can actually run on)",
+      "quantitative_primary": "v14p2 689-row val (PHerc0814+1451) -- registered teacher GT, macro dice + kaggle composite",
+      "quantitative_heldout": "PHerc0500P2 320 rows -- only wide15 holdout with human GT; absolute kaggle scores, standalone table",
+      "blind_morphology": "PHerc1447 six-cube vs jackpot reference (existing); optional second blind: carve PHerc1203 six-cube subset (data local+verified; sealed prize target -> visual/agreement only)",
+      "excluded": {
+        "PHerc0846A": "zero bytes local, no published fine-to-coarse transform, one-shot sealed test -- do not burn on ablations",
+        "PHerc1203_quantitative": "no registered pair, no labels, sealed holdout",
+        "PHerc1447_quantitative": "no fine scan exists at all -- forever blind/morphology-only"
+      }
+    }
+  },
+  "operator_controls": {
+    "pause_after_evaluation_arm": "C3",
+    "reason": "Run and evaluate exactly B0r, C1, and C3 after the reviewed B0 result, then stop before any conditional or combo arm launches."
+  },
+  "decision_rules": {
+    "winner": "highest val calibrated macro among arms passing blind gates at their calibrated threshold; if the val-best fails gates, promote the next passer; if none pass, ladder returns no-gate-passer and the D phase becomes exploratory -- never calibrate against PHerc1447",
+    "tie_margin": "max(0.005, 2x RMS of B0-vs-B0r matched-milestone macro deltas); ties go to fewer loss terms",
+    "scroll_guard": "winner must not fall below released M7 on either val scroll individually",
+    "human_review": "PNGs can veto a winner, never pick one",
+    "arm_score": "best of the arm's five milestones by calibrated macro on the fixed val manifest; A0 scored at fixed 50k -- asymmetry favors arms and fixed-30k/50k tables are reported alongside"
+  },
+  "d_phase": {
+    "combo_confirm": "B0 + surviving terms at 50k, must score >= best single arm minus the tie margin; if the surviving set equals an existing arm, that arm IS the combo (no retrain)",
+    "final": "100k+ run of the confirmed recipe -- HARD STOP before this stage for operator review (user-chosen autonomy: auto through combo)",
+    "final_ablation": {
+      "directive": "operator goal 2026-09-01 evening: once the best-shot model exists, ablate it (a) against vanilla released M7, (b) against vanilla released M7 + 8-way mirror TTA, (c) per component isolation",
+      "baselines": [
+        {
+          "id": "m7_raw",
+          "model": "released M7 (hash-pinned)",
+          "tta": false,
+          "harness": "audit-checkpoint on the fixed val manifest + blind six-cube report vs the jackpot reference, no TTA"
+        },
+        {
+          "id": "m7_mirror_tta",
+          "model": "released M7 (hash-pinned)",
+          "tta": true,
+          "harness": "same harness with 8-way mirror TTA at audit and report time"
+        }
+      ],
+      "component_isolation": {
+        "rule": "every component of the winning recipe must have an isolation measurement under the frozen harness: target operator via A0-vs-B0; each loss term via its single-term arm vs B0; if the winner is a combo of >=2 terms, leave-one-out arms (winner minus each term, 50k, same seed) for any component whose isolation is not already implied by the committed arms (for a 2-term combo the leave-one-outs ARE the single-term arms -- no retrain)",
+        "budget_note": "new leave-one-out arms only for a >=3-component winner"
+      },
+      "deliverable": "one table: winner + per-component deltas + M7 raw + M7 TTA, all under the frozen harness, with blind-report PNGs for eyes"
+    }
+  },
+  "output_root": "output/crossres_data/unified_ladder_20260902"
+}

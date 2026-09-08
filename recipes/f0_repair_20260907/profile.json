@@ -1,0 +1,27 @@
+{
+  "checkpoint_sha256": "54db9a59cb602ff08e3dda0acc1195ad980ab05fb660332d32fb436a0d49a175",
+  "cutting": false,
+  "guarded_pitch_range_um": [
+    8,
+    10
+  ],
+  "measured_pitch_um": 8.64,
+  "model_changed": false,
+  "name": "f0-contiguous-gap-repair-v1",
+  "native_algorithm_changed": false,
+  "native_binary_sha256": "54fe434f76beb8c1eff58cdb1bd72200e4630497e23539cd467e4e64360f1e13",
+  "parameters": {
+    "min_score": 0.3,
+    "min_support": 0,
+    "paint_radius": 1,
+    "radial_armed": 1,
+    "radial_dr": 3,
+    "reach_max": 21,
+    "reach_safe": 6,
+    "tracks": 1
+  },
+  "schema": "socratic-repair-profile-v1",
+  "scope": "Opt-in contiguous coarse-grid local repair; no global topology or reconstruction certification.",
+  "support_zero_keeps_tracking": true,
+  "threshold": 0.35
+}

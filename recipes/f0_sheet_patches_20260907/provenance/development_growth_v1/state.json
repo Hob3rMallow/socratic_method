@@ -1,0 +1,8 @@
+{
+  "accepted_patches": 107,
+  "added_voxels": 75661,
+  "elapsed_seconds": 72.14927459999853,
+  "pid": 30508,
+  "processed_components": 336,
+  "status": "serialization_failed_after_arrays_and_images"
+}

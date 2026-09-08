@@ -1,0 +1,34 @@
+{
+  "base_summary": {
+    "bytes": 11769,
+    "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\development_candidate_v2\\summary.json",
+    "sha256": "f913b3ffcb86d5bd70d17c2fb73e55d2cda1efbff3b4f60a6227e44c71147304"
+  },
+  "creates_accepted_masks": false,
+  "development_only": true,
+  "engine": {
+    "bytes": 10163,
+    "path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\sheet_patch_chart_v2.py",
+    "sha256": "d942a259cdb8bf4b6f5dbde3270ca68a5ffe7121e20d632891ba9fa42df007d3"
+  },
+  "runner": {
+    "bytes": 5041,
+    "path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\probe_sheet_patches_v2.py",
+    "sha256": "fa50328d0800d46784deaeb098dedc7bddf682a566c95054cb38678526c77734"
+  },
+  "seed_ids": [
+    1934,
+    3637,
+    1993,
+    3752,
+    3671,
+    4127,
+    1039,
+    1245
+  ],
+  "source_request": {
+    "bytes": 32239,
+    "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_continuity_20260907\\development_candidate_v2\\request.json",
+    "sha256": "291530bbfc1ad1a6b237090e0af8175d84a359c533178ac519c368a52295750b"
+  }
+}

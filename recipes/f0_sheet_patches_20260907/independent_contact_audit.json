@@ -1,0 +1,20 @@
+{
+  "development_growth_v2": {
+    "after_26_connected_components": 300,
+    "baseline_26_connected_components": 310,
+    "component_reduction_is_not_true_sheet_identity_or_anatomical_safety": true,
+    "independently_checked_patch_planes": 1393,
+    "maximum_existing_components_contacted_per_patch_plane": 2,
+    "net_component_reduction": 10,
+    "status": "passed"
+  },
+  "fresh_assessment_growth": {
+    "after_26_connected_components": 96,
+    "baseline_26_connected_components": 98,
+    "component_reduction_is_not_true_sheet_identity_or_anatomical_safety": true,
+    "independently_checked_patch_planes": 1324,
+    "maximum_existing_components_contacted_per_patch_plane": 2,
+    "net_component_reduction": 2,
+    "status": "passed"
+  }
+}

@@ -1,0 +1,777 @@
+{
+  "schema": "c3-f0-release-file-inventory-v1",
+  "verified_at_utc": "2026-09-07T17:34:07.5691699Z",
+  "files": [
+    {
+      "relative_path": "provenance/recipe.json",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\configs\\final_c3_250k_20260905.json",
+      "bytes": 24920,
+      "sha256": "af9d74dbf9f4c0fc978d6b9756fc92f6750fec211705c08be0a05e970c496cbc",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "provenance/preregistration.md",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\FINAL_C3_250K_PREREG_20260905.md",
+      "bytes": 7825,
+      "sha256": "f5d9329a4e7de881b05f50fe2a23315f51d0ce2cf8a0e3db5a1352d184e90cac",
+      "preregistered_hash": false,
+      "read_only": true
+    },
+    {
+      "relative_path": "provenance/run.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\arms\\F0\\run.json",
+      "bytes": 2954,
+      "sha256": "3d7f17a78e5463d748e030e5762b6cab691a2ed3048a77e2f220cd8a3c545825",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "provenance/history.jsonl",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\arms\\F0\\history.jsonl",
+      "bytes": 390240,
+      "sha256": "f1a06a7fcd9d436432ac5e00c2fe7dec6be1c5f41fa19c14a911af7cf984d0d5",
+      "preregistered_hash": false,
+      "read_only": true
+    },
+    {
+      "relative_path": "provenance/checkpoint_milestones.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\arms\\F0\\checkpoint_milestones.json",
+      "bytes": 4090,
+      "sha256": "2a83bc74ec9a93600f09c89ec6320458504f20b4fa4897a64e49a33b2d39adda",
+      "preregistered_hash": false,
+      "read_only": true
+    },
+    {
+      "relative_path": "provenance/initial_validation.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\arms\\F0\\initial_validation.json",
+      "bytes": 15109,
+      "sha256": "646e2ab9d29f294b455806d48931f5540c8645c93e47f89fd2cfe029ee7c1376",
+      "preregistered_hash": false,
+      "read_only": true
+    },
+    {
+      "relative_path": "provenance/training_integrity_review.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\report_qa\\training_integrity_review.json",
+      "bytes": 900,
+      "sha256": "c9a9147ea9310ded9310afe514176b6ee5e912db12a90b1e886ce00efaae54f0",
+      "preregistered_hash": false,
+      "read_only": true
+    },
+    {
+      "relative_path": "provenance/completion_review.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\report_qa\\completion_review.json",
+      "bytes": 3640,
+      "sha256": "5256e04385c08b24e1995ddfcd8a1fb3cb7fcb86087776f8021c8ec255eb604f",
+      "preregistered_hash": false,
+      "read_only": true
+    },
+    {
+      "relative_path": "provenance/evaluation_summary.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\evaluation\\summary.json",
+      "bytes": 6249880,
+      "sha256": "2a3b4fa9364c6dc648b00e1e1041f0e486d6426b5e69b7f9a93258bfc9268503",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "provenance/candidate_audit.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\evaluation\\milestone_00200000\\audit\\report.json",
+      "bytes": 104630,
+      "sha256": "d711a064f3a33402743033ab08463bdeb6860d5021c21876ea00087db32e6733",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "provenance/candidate_six_cube_gates.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\evaluation\\milestone_00200000\\six_cube_gates.json",
+      "bytes": 73647,
+      "sha256": "2e1db6ea2e31a6855d241e0ab9668e2b89c5fee0e1457f60b3c96fbe38d24bd8",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "provenance/candidate_frontier.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\evaluation\\milestone_00200000\\frontier.json",
+      "bytes": 198637,
+      "sha256": "32d64a91088ad3ccba02699cfb6e28c3784b6f77e71ccedcc36a1dd15b9b5814",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "provenance/m7_raw_summary.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\unified_ladder_20260902\\baselines\\m7_raw\\ladder_eval\\arm_summary.json",
+      "bytes": 4677,
+      "sha256": "d58d37fb521df6c21abae192ad0bf6b5e99c8771f0498b4f28cb5a18761b19ca",
+      "preregistered_hash": false,
+      "read_only": true
+    },
+    {
+      "relative_path": "provenance/m7_raw_audit.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\unified_ladder_20260902\\baselines\\m7_raw\\ladder_eval\\audit_00000000\\report.json",
+      "bytes": 104730,
+      "sha256": "bb9cde5dfbe4f65734d563ceb7243dff49cd33568e1e737b551a5f2bafae0ff7",
+      "preregistered_hash": false,
+      "read_only": true
+    },
+    {
+      "relative_path": "provenance/m7_tta_summary.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\unified_ladder_20260902\\baselines\\m7_tta\\ladder_eval\\arm_summary.json",
+      "bytes": 4675,
+      "sha256": "6ddc870f623aa26b6280a3a91298a9c02630521244c26f265e7ec6bd74d840ac",
+      "preregistered_hash": false,
+      "read_only": true
+    },
+    {
+      "relative_path": "provenance/m7_tta_audit.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\unified_ladder_20260902\\baselines\\m7_tta\\ladder_eval\\audit_00000000\\report.json",
+      "bytes": 104686,
+      "sha256": "9668ad308cd6c0d990bb5458a0a90e7065243edede5c0cc3b65d4c8d45c90146",
+      "preregistered_hash": false,
+      "read_only": true
+    },
+    {
+      "relative_path": "provenance/operator_report_manifest.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\operator_report\\manifest.json",
+      "bytes": 820632,
+      "sha256": "88944660c41e532844c6d56758cf3319c86e1441e5fe58ad4c783a2a9a5c2907",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "provenance/filler_manifest.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\operator_report\\filler\\manifest.json",
+      "bytes": 190483,
+      "sha256": "fedabe4b91efac9291d8ca07d23b3907f17efb5c80d1a97cdf1b02157c4a8e4c",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "provenance/filler_200k_joins.jsonl",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\operator_report\\filler\\outputs\\f0_00200000\\joins.jsonl",
+      "bytes": 5545,
+      "sha256": "42a59daaf03ccd231a8583704615099dd230bfe347c79682abeefb3c79696065",
+      "preregistered_hash": false,
+      "read_only": true
+    },
+    {
+      "relative_path": "provenance/filler_200k_rejected.jsonl",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\operator_report\\filler\\outputs\\f0_00200000\\rejected.jsonl",
+      "bytes": 11363,
+      "sha256": "db39c5dd1d8bd42b8ebba5c814890798d4bf3f08839ca6a61a26ed796219806f",
+      "preregistered_hash": false,
+      "read_only": true
+    },
+    {
+      "relative_path": "provenance/filler_200k_planes.csv",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\operator_report\\filler\\outputs\\f0_00200000\\planes.csv",
+      "bytes": 43321,
+      "sha256": "f2d1a4e73680ed6c58d3c8edf08eb101c5c7a669bb3987b881a37e2241ac77ce",
+      "preregistered_hash": false,
+      "read_only": true
+    },
+    {
+      "relative_path": "provenance/filler_200k.log",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\operator_report\\filler\\f0_00200000.log",
+      "bytes": 1428,
+      "sha256": "ae068f784f8b3525140f5ba094b00761dfeb9950bb970485be1811f0e4ce4d2a",
+      "preregistered_hash": false,
+      "read_only": true
+    },
+    {
+      "relative_path": "provenance/raw_geometry_review.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\report_qa\\raw_geometry_review.json",
+      "bytes": 5392,
+      "sha256": "2684f1bfefb168c0978cb1f7de9ed75c62f96c121084a7309e35d1f423dea9d1",
+      "preregistered_hash": false,
+      "read_only": true
+    },
+    {
+      "relative_path": "provenance/operator_visual_review.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\operator_report\\visual_review.json",
+      "bytes": 4060,
+      "sha256": "fd38c375e017858edfb8e23af38eff7a22cd814b9ce662e1799fa33d9f2c624a",
+      "preregistered_hash": false,
+      "read_only": true
+    },
+    {
+      "relative_path": "provenance/m7_presentation_review.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\report_qa\\m7_revision\\review.json",
+      "bytes": 2504,
+      "sha256": "593980410333998da80e85479f7f1e9a485d1a2582110d619a2205ecfb01f340",
+      "preregistered_hash": false,
+      "read_only": true
+    },
+    {
+      "relative_path": "provenance/status.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\status.json",
+      "bytes": 378,
+      "sha256": "638092d56e87b47d48634bab4c089e0a60a66a53a9b413d50b94fc2d40b0c585",
+      "preregistered_hash": false,
+      "read_only": true
+    },
+    {
+      "relative_path": "provenance/run_journal.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\logs\\final_c3_250k_state.json",
+      "bytes": 6916,
+      "sha256": "41427d273b66be2e5bcf4c69ad99ef9644f75d34ecd5a18d116f2e375e6094ff",
+      "preregistered_hash": false,
+      "read_only": true
+    },
+    {
+      "relative_path": "provenance/line_fitter_documentation.md",
+      "original_path": "D:\\work\\socratic_method\\docs\\line_fitter.md",
+      "bytes": 1651,
+      "sha256": "bef61cce483f1d42d53a8c52909be8eb4568ff7abff76558163f1a261ef5702e",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "provenance/native/pred_fixup.c",
+      "original_path": "D:\\work\\socratic_method\\native\\line_fitter\\src\\tools\\pred_fixup.c",
+      "bytes": 82055,
+      "sha256": "e6354f04c29256b57f76772e1d991b7da92110fcc1cdd98d02aabc2c8b71d098",
+      "preregistered_hash": false,
+      "read_only": true
+    },
+    {
+      "relative_path": "provenance/native/pipeline_constants.h",
+      "original_path": "D:\\work\\socratic_method\\native\\line_fitter\\src\\common\\pipeline_constants.h",
+      "bytes": 50206,
+      "sha256": "b88a11dfa0e9298968dc611733ead9a2135a5c6401ab1173f9bb3d0a8381d785",
+      "preregistered_hash": false,
+      "read_only": true
+    },
+    {
+      "relative_path": "provenance/native/slice_match.c",
+      "original_path": "D:\\work\\socratic_method\\native\\line_fitter\\src\\fixup\\slice_match.c",
+      "bytes": 27058,
+      "sha256": "7fec7af868bc12f15c23a97e3979b6f0ad31ff92a17f4a561d572d696dd4cfcc",
+      "preregistered_hash": false,
+      "read_only": true
+    },
+    {
+      "relative_path": "provenance/native/join_tracks.c",
+      "original_path": "D:\\work\\socratic_method\\native\\line_fitter\\src\\fixup\\join_tracks.c",
+      "bytes": 19465,
+      "sha256": "8706fd9508da5f8c89e77203072d3278f9bc050d2bb396ae2e4bb6dbbd2f6f69",
+      "preregistered_hash": false,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/scripts/run_final_c3_250k.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\run_final_c3_250k.py",
+      "bytes": 27109,
+      "sha256": "5754fd9e494be365607e2cfe7b400d340653e265c8476149423682453e5b7276",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/scripts/evaluate_final_c3_250k.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\evaluate_final_c3_250k.py",
+      "bytes": 21175,
+      "sha256": "9952adb16fd70534f0bc3bfb0ba21834a617871b88ab1c82f1072541f7a9546a",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/scripts/measure_blob_frontier.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\measure_blob_frontier.py",
+      "bytes": 6613,
+      "sha256": "00eb41b6a8f9215bfa54c8bb901a5f9fa930060ab6997a526e04c90fd43b37c9",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/scripts/launch_final_c3_250k.ps1",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\launch_final_c3_250k.ps1",
+      "bytes": 3869,
+      "sha256": "51b009174e191143fc1578e51eb8c8940ffccd4fd0fc81faf012012d8a04bba0",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/scripts/run_unified_ladder.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\run_unified_ladder.py",
+      "bytes": 42500,
+      "sha256": "66f58660f2e2d6ac464cfca81546a4832e9adeae2909a729b583734afb48d4b6",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/scripts/evaluate_ladder_arm.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\evaluate_ladder_arm.py",
+      "bytes": 29468,
+      "sha256": "8d47022876ae5017e104d2eab8a3b13ada1b09e3cc14b79f4af76d9edaa4e6bb",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/scripts/run_focused_medial_final_250k.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\run_focused_medial_final_250k.py",
+      "bytes": 64303,
+      "sha256": "7ec9af4ae34cad5789519cd7f20987eac793bd57fa8ab6cd838fe04c561b5a3e",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/scripts/run_release_ladder.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\run_release_ladder.py",
+      "bytes": 27629,
+      "sha256": "f278ab3c55689173594e1a21d2ef8ea0bb46c18507eb8aad61119ba0b258642f",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/scripts/generate_checkpoint_report.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\generate_checkpoint_report.py",
+      "bytes": 17519,
+      "sha256": "97d8b92f6bfe0835424680dfe44cb1ebaea38b941821ba9d02a960dc973f2df0",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/scripts/render_cached_probability_report.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\render_cached_probability_report.py",
+      "bytes": 9099,
+      "sha256": "6b83e639e8a6f85ac2611235b3dfbcbad8d1769d791a17e55cce1b4a10e63e00",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/scripts/audit_m7_xr_v29_joint_thresholds.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\audit_m7_xr_v29_joint_thresholds.py",
+      "bytes": 22364,
+      "sha256": "bdbd1df646ac7485e9746a6c3623d1e905415970498d0571e9f3269968d71c6e",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/scripts/measure_trust_displacement.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\measure_trust_displacement.py",
+      "bytes": 3967,
+      "sha256": "468afdadd9255cd7acfe8a00288ca692cc845b590893dab0e4acdeec20c1d6e7",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/scripts/diagnose_release_t025_blobs.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\diagnose_release_t025_blobs.py",
+      "bytes": 49128,
+      "sha256": "edb8b18e90250c2e999d7e075d6efeb771b433677503daec1bc2b7ba3b515757",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/scripts/render_release_milestone_panels.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\render_release_milestone_panels.py",
+      "bytes": 13600,
+      "sha256": "4a0c2619000581d0872d6706676871462211c52b1eabf31acc545ba8b2cf5b98",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/__init__.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\__init__.py",
+      "bytes": 613,
+      "sha256": "d67456fa9bdd272d6d3bdf3058a9697b59d22d8e2597354f76183d487fc68058",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/__main__.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\__main__.py",
+      "bytes": 48,
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/affines.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\affines.py",
+      "bytes": 4425,
+      "sha256": "38fcb3a326154fa9c65b8466206413ed3a10559b12d6f7ae9e34c92fe94fb869",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/alignment_gate.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\alignment_gate.py",
+      "bytes": 2156,
+      "sha256": "cf9572e07c6a3835550f7c1ae2bb43f1ad6ef57fb46090206b9fe4a26c10fdad",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/antialias_corpus.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\antialias_corpus.py",
+      "bytes": 33616,
+      "sha256": "e36f28de572d373e8eba4c4722047f1f199093f2eea3418cd5d0a992585eae28",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/antiblob_qualification.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\antiblob_qualification.py",
+      "bytes": 12718,
+      "sha256": "eb9960f36585f8d1eea9fdfc88d0b2619ed15fb378be82f8613a5ddc3b320a87",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/blob_diagnostics.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\blob_diagnostics.py",
+      "bytes": 13698,
+      "sha256": "803ea446ac18726875406ad8acd60bf59f918a1ecf23c7514c8e2f4bc07c2c2a",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/catalog_maximality.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\catalog_maximality.py",
+      "bytes": 13674,
+      "sha256": "a5bb5387d0622b4aaae3cd15e313a8e54d8680ce2d3431363f741d754dbe2b15",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/checkpoint_audit.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\checkpoint_audit.py",
+      "bytes": 23878,
+      "sha256": "e3dbefa9c47df32452f851af7fad2417bd7351608aa12e380afc372a86f332fc",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/cli.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\cli.py",
+      "bytes": 39112,
+      "sha256": "5c8fec7ca9c87307654a7ff89077b035f4c54d05d3a4d3a376a7faf92e25f6e8",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/coarse_teacher_atlas.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\coarse_teacher_atlas.py",
+      "bytes": 40510,
+      "sha256": "5dfbd6a0c39f4ee5956c2c79d8dd89de072c6acd58cb6fcd8f029bdc63187cc7",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/connectivity.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\connectivity.py",
+      "bytes": 3058,
+      "sha256": "25371df177d5d02041bebed857441efbd1eafdd33cecdcc15b6328571dcd7bf3",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/corpus_plan.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\corpus_plan.py",
+      "bytes": 10098,
+      "sha256": "ba2e1230e9018b96e50ffbcfdcc264006ccc3e43973fa2b37380cbd2985470ac",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/final_fit.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\final_fit.py",
+      "bytes": 16443,
+      "sha256": "ed33104aa2dab1e3bd41fe4571621de7c9c8251075af598eaead8906304aa09b",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/gap_join_validation.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\gap_join_validation.py",
+      "bytes": 21443,
+      "sha256": "89e85dba9ebd00fbd11accc9d29097774bda618db958c7ae8af2b89243657174",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/global_connectivity.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\global_connectivity.py",
+      "bytes": 18657,
+      "sha256": "4809b01949227bc257b81073725c37d89daaf140f135542d71b6644150001753",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/grid_growth.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\grid_growth.py",
+      "bytes": 17971,
+      "sha256": "b6d040af4563fcba4f2be0c27f40d63637f7cbfb6cfe6ebac973f1d9defa6f11",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/grid_inference.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\grid_inference.py",
+      "bytes": 12738,
+      "sha256": "0795233774ca4fcdbe58a2d06c7d6c030255f89266b6245a9023b640e81fb4d0",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/growth_sentinels.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\growth_sentinels.py",
+      "bytes": 17780,
+      "sha256": "66105e54218d7f9eef113efe7165f9c8daddc000593c38f9d99fda91c529708c",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/heldout_failure.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\heldout_failure.py",
+      "bytes": 7631,
+      "sha256": "c7a76fab5dbec2bc091b7cecb49beda93d5b42f6615566f744e36e4f84b78c6e",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/inference.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\inference.py",
+      "bytes": 8797,
+      "sha256": "3cd0cd0c1e7622a2645fa1b892cb641b0b6547d8ab53b78fea0d2aaa368efa9c",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/io.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\io.py",
+      "bytes": 7645,
+      "sha256": "1569e6a60252dc485d21b8a4faa5351f489174269018ec7b27bdc6ed6f624c56",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/label_store_compaction.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\label_store_compaction.py",
+      "bytes": 48856,
+      "sha256": "a7c204fe4629b0d0ef5abb00825256efd6f9da155b3453eaf8ad0454c6e1d4c7",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/local_registration.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\local_registration.py",
+      "bytes": 20492,
+      "sha256": "656b68a1c2e71ac14cea7e54c4c79735157effac5ba5dd67854276e45fe05409",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/loss.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\loss.py",
+      "bytes": 49931,
+      "sha256": "11a95201c114ebddf4f01d5f52cf068c8a48036e2d2ae495aee079644c1c2caa",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/manual_labels.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\manual_labels.py",
+      "bytes": 27598,
+      "sha256": "cd53011e47750e97f44321deda8a820ceeb628575379f89fb349aa5a5d6c4ba0",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/medial.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\medial.py",
+      "bytes": 19125,
+      "sha256": "93936eb0c1f19e45b8a6fbd14bc1f395f31c510bb8489717cbaaeeb0d5302e11",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/medial_bridges.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\medial_bridges.py",
+      "bytes": 11870,
+      "sha256": "73affc91a3e105ff3e9c79cc0c14bf07a0fc259311d169ce74fb39f402f77e68",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/model.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\model.py",
+      "bytes": 7704,
+      "sha256": "e762773c8bc485b95cbc476fa1ec71ca84984926034ab72186541e94b133602d",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/official_corpus.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\official_corpus.py",
+      "bytes": 14458,
+      "sha256": "d4e7729e66db8bf39d8f8f405eea5179c55548ef1e87f9ba1547637f21fef7e5",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/patches.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\patches.py",
+      "bytes": 96103,
+      "sha256": "f8f0d6ee06592f86667265bfda5ccb54489e12b353ee5b7e37f87aff19d5eba3",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/pathology_mining.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\pathology_mining.py",
+      "bytes": 27887,
+      "sha256": "a856fd69d6b26d5f33771a27c42088b9fa293a1e13d22b740e03b5f28d37a270",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/prepare.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\prepare.py",
+      "bytes": 53374,
+      "sha256": "09ef15a9271e61b6e31cf0111cde3a1fa1d5d10d1c2772646a42822bf98bce4f",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/registered_mirror.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\registered_mirror.py",
+      "bytes": 36518,
+      "sha256": "fbc9259887ff7159ff177762df4938cdffb3cd34331dc50966549c92e55f516c",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/registration.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\registration.py",
+      "bytes": 62042,
+      "sha256": "f891c1d485f23b6ef51fb570813f1b31377f4a291152a2d2affb5c39c0e128b3",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/registration_evidence.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\registration_evidence.py",
+      "bytes": 14643,
+      "sha256": "123f150f98ca4cde5c993005961baeca1fc066854258a65b39aed29ddd79e0e7",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/registration_fit.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\registration_fit.py",
+      "bytes": 12305,
+      "sha256": "31294ab98698b9ec670faf21f1e040808e7375a6bf38c4a0e0fc8e1fd207d71a",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/resources.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\resources.py",
+      "bytes": 3271,
+      "sha256": "5fcfbd92ed8180f0e24d33b94ce3a38fe92cebda1fcdc062167466165271880d",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/ridge_growth.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\ridge_growth.py",
+      "bytes": 9068,
+      "sha256": "a321d37b5935c8ccb7b16c9387ab158ea0225f56e153f42dac45eb796836fbfc",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/schema.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\schema.py",
+      "bytes": 15134,
+      "sha256": "9c6c759c9737dd2e21d4649ff7d052c9cb541d1bc74474db42fc671b8abb990d",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/scrollfiesta_metrics.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\scrollfiesta_metrics.py",
+      "bytes": 13184,
+      "sha256": "f50346c664794311dd9556ec9ea5eb2b4db17d9fb36dfb0a6e5c4c1c5eea750a",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/sealed_test.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\sealed_test.py",
+      "bytes": 15103,
+      "sha256": "9f495cce66938750142acd7ef98b1a015ab142bbaa476a851ba701477b073883",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/teacher.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\teacher.py",
+      "bytes": 56414,
+      "sha256": "2f5f0a1e52f51346e854defd64cbb0d0c0fb86e405da1edadb3298e98a37e3e9",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/teacher_audit.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\teacher_audit.py",
+      "bytes": 11970,
+      "sha256": "08f5227e00c215f5b1c6d9852dcfad3fcec6353c1b87e5f21575828e75de8162",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/teacher_model.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\teacher_model.py",
+      "bytes": 11739,
+      "sha256": "f59cd93135f8de5064f3b073ed64f3cdcc05d778215fb4ac35e079a37e30509f",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/train.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\train.py",
+      "bytes": 81304,
+      "sha256": "ec71716c04701d7bc9527381f8fb554d3c2a604f672e4447c776224ee8b5dbec",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/trust_region.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\trust_region.py",
+      "bytes": 3657,
+      "sha256": "7bd37c6611e85adec5289e9d327b53718979b76f8c40de9defcf38a81c363103",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/src/crossres_pred/voxel/visual_approval.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\visual_approval.py",
+      "bytes": 14900,
+      "sha256": "c5c7fe597f074d6aa5d00856976e94956faccb927f8b4c5e0c7a0aeab6e10b3e",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "runtime/crossres_pred/configs/unified_ladder_20260902.json",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\configs\\unified_ladder_20260902.json",
+      "bytes": 13973,
+      "sha256": "a3119edce41516d9b28eaac192b98e48cea3dc28a5bd44aecadf752d72e32aef",
+      "preregistered_hash": true,
+      "read_only": true
+    },
+    {
+      "relative_path": "provenance/native/slice_trace.c",
+      "original_path": "D:/work/socratic_method/native/line_fitter/src/fixup/slice_trace.c",
+      "bytes": 24421,
+      "sha256": "320a4105896fdda99f476dc7d6b143ae3c42f21215896f3b73f023fe5da2c717",
+      "preregistered_hash": false,
+      "read_only": true
+    }
+  ],
+  "file_count": 96,
+  "sealed_runtime_file_count": 63,
+  "total_bytes": 10009793
+}

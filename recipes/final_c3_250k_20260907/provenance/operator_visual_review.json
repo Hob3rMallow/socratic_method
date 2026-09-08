@@ -1,0 +1,25 @@
+{
+  "filler_manifest_sha256": "fedabe4b91efac9291d8ca07d23b3907f17efb5c80d1a97cdf1b02157c4a8e4c",
+  "reviewed_views": [
+    "z12032_y03968_x03072:z:12032", "z12032_y03968_x03072:z:12043", "z12032_y03968_x03072:z:12050",
+    "z12032_y03968_x03072:z:12045", "z12032_y03968_x03072:z:12056", "z12032_y03968_x03072:z:12096", "z12032_y03968_x03072:z:12153",
+    "z12160_y03968_x03200:z:12193", "z12160_y03968_x03200:z:12205", "z12160_y03968_x03200:z:12224",
+    "z12160_y04224_x02944:z:12161", "z12160_y04224_x02944:z:12171", "z12160_y04224_x02944:z:12224", "z12160_y04224_x02944:z:12256",
+    "z12800_y04096_x03456:z:12864", "z12928_y04096_x03328:z:12936", "z12928_y04096_x03328:z:12938", "z12928_y04096_x03328:z:12992",
+    "z12544_y03840_x03328:z:12608"
+  ],
+  "review_scope": "All 19 raw fixed/context planes reviewed for both late checkpoints against original C3; new comparison mosaics checked on all three named planes, both fixed planes with filler changes, and each model's largest-change filler illustration. Remaining fixed filled planes are unchanged from their reviewed raw masks.",
+  "raw_review_receipt": "../report_qa/raw_geometry_review.json",
+  "filler_illustrations_reviewed": [
+    "assets/example_c3_z12160_y03968_x03200_z12261.png",
+    "assets/example_f0_00200000_z12160_y04224_x02944_z12163.png",
+    "assets/example_f0_00250000_z12160_y04224_x02944_z12178.png"
+  ],
+  "paragraphs": [
+    "The 200k checkpoint is the more balanced of the two late outputs for this geometry-first review. On the named blob planes, both late checkpoints visibly separate several parallel tracks that original C3 joins into broad foreground. Across the fixed 18 planes, raw reference-relative bridge alerts fall from 5,011 (C3) to 2,273 (200k, 54.6% fewer) and 1,149 (250k, 77.1% fewer). These are bridge-alert counts, not a percentage of actual blob volume removed.",
+    "That improvement has a real geometry cost. Fixed18 reference-line coverage falls from 75.82% to 70.73% and 66.43%, respectively. On the three named blob planes alone the corresponding coverage is 62.60%, 52.00% and 40.56%. The exact 250k endpoint omits more weak or short tracks, especially in the lower/right part of the first named cube. Some missing stretches are substantially larger than tiny local gaps. At the 200k coverage, the preregistered C3 frontier interpolation predicts about 3,959 bridge-alert pixels versus 2,273 observed at 200k; this supports the matched-coverage review pass, but is still a model-reference diagnostic rather than ground-truth proof.",
+    "The conservative filler made local repairs, not broad reconstruction: C3 gained 318 voxels through 18 accepted per-plane joins, 200k gained 81 through 5, and 250k gained 183 through 11 across the six cubes. No existing foreground was erased. The magenta illustrations show short connections along interrupted tracks. None of the three named blob planes changed. Fixed18 bridge-alert counts stayed unchanged for every model; line coverage stayed unchanged for both late models. We therefore cannot assume that this filler restores the missing late-run sheet geometry.",
+    "Across the other fixed views, prominent long tracks generally remain and several original C3 fork-like connections disappear. Packed folds still contain broad regions and local breaks. Small isolated pieces remain in a few views; this is not a quantitative speckle census. These observations use the shared coarse CT and model reference, not human-ground-truth labels or a proof of 3D sheet connectivity.",
+    "The numerical result is mixed, not a universal score win. The selected 200k raw frozen macro Dice is 0.680787 versus C3's 0.676853, but its T=0.35 composite is 0.630391 and topology 0.375646; topology narrowly misses the 0.3776 advisory benchmark. The exact 250k endpoint's macro Dice is 0.669299. Cleaner paths are the encouraging result; the tiny filler gains are a limitation. This assessment does not change the preregistered 200k late selection or authorize deployment, a threshold change, or another experiment."
+  ]
+}

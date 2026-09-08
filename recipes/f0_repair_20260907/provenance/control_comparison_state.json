@@ -1,0 +1,94 @@
+{
+  "pid": 56112,
+  "request_sha256": "1202b5822e253c202177898fe401113db7c3bca6fb8552d1b1a558e25e515476",
+  "runner": {
+    "bytes": 10620,
+    "path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\evaluate_f0_repair_context.py",
+    "sha256": "03c489037112402cf0360735860386bb07a0a6449ae94f19122537dfa1832fb0"
+  },
+  "runs": {
+    "extended_safe": {
+      "command": [
+        "D:\\work\\vesuvius-c\\build\\c3-human-line-fitter_20260905\\extracted\\Release\\pred_fixup.exe",
+        "D:/work/vesuvius-c/output/crossres_data/f0_repair_20260907/input_control",
+        "D:/work/vesuvius-c/output/crossres_data/f0_repair_20260907/repairs/control/extended_safe",
+        "--umb-y",
+        "3287",
+        "--umb-x",
+        "3784",
+        "--reach-safe",
+        "6",
+        "--reach-max",
+        "21",
+        "--radial-dr",
+        "3",
+        "--min-support",
+        "0",
+        "--min-score",
+        "0.30",
+        "--paint-radius",
+        "1",
+        "--threads",
+        "16",
+        "--png-max",
+        "12",
+        "--crop-max",
+        "24",
+        "--rej-crop-max",
+        "24"
+      ],
+      "completed_utc": "2026-09-07T18:18:47.350335+00:00",
+      "exit_code": 0,
+      "pid": 25252,
+      "started_utc": "2026-09-07T18:18:43.208071+00:00",
+      "status": "complete",
+      "summary": {
+        "bytes": 13775,
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\control\\extended_safe_summary.json",
+        "sha256": "201af40cd14621e60cf5e081cd77200f5d0ce3c5d138480bfb022c1fdcb86a8e"
+      }
+    },
+    "report_baseline": {
+      "command": [
+        "D:\\work\\vesuvius-c\\build\\c3-human-line-fitter_20260905\\extracted\\Release\\pred_fixup.exe",
+        "D:/work/vesuvius-c/output/crossres_data/f0_repair_20260907/input_control",
+        "D:/work/vesuvius-c/output/crossres_data/f0_repair_20260907/repairs/control/report_baseline",
+        "--umb-y",
+        "3287",
+        "--umb-x",
+        "3784",
+        "--reach-safe",
+        "6",
+        "--reach-max",
+        "12",
+        "--radial-dr",
+        "4",
+        "--min-support",
+        "3",
+        "--min-score",
+        "0.30",
+        "--paint-radius",
+        "1",
+        "--threads",
+        "16",
+        "--png-max",
+        "12",
+        "--crop-max",
+        "24",
+        "--rej-crop-max",
+        "24"
+      ],
+      "completed_utc": "2026-09-07T18:18:43.206070+00:00",
+      "exit_code": 0,
+      "pid": 25412,
+      "started_utc": "2026-09-07T18:18:38.769900+00:00",
+      "status": "complete",
+      "summary": {
+        "bytes": 13814,
+        "path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_repair_20260907\\repairs\\control\\report_baseline_summary.json",
+        "sha256": "9946416052b4cf5dfa1df2c05ac40c095cacbcb44cf39058dcd78314ecc2e078"
+      }
+    }
+  },
+  "schema": "f0-repair-comparison-state-v1"
+}
