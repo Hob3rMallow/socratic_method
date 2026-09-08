@@ -227,6 +227,36 @@ def test_confident_agreement_is_explicit_in_run_identity() -> None:
     assert confident_identity["loss_options"]["m7_anchor_confident_agreement"] is True
 
 
+def test_medial_tail_floor_identity_is_absent_when_off_and_complete_when_on() -> None:
+    common = {
+        "preset": "tiny-test",
+        "device": "cpu",
+        "amp": False,
+        "max_cpu_threads": 1,
+        "num_workers": 0,
+    }
+    conservative = VoxelLossOptions(dice_weight=0.25, separation_weight=3.0)
+    disabled = _options_identity(
+        TrainOptions(**common, loss_options=conservative)
+    )["loss_options"]
+    assert "medial_tail_floor_weight" not in disabled
+    assert "medial_tail_floor_probability" not in disabled
+    assert "medial_tail_bottom_fraction" not in disabled
+
+    focused = replace(
+        conservative,
+        medial_tail_floor_weight=0.015625,
+        medial_tail_floor_probability=0.30,
+        medial_tail_bottom_fraction=0.20,
+    )
+    enabled = _options_identity(
+        TrainOptions(**common, loss_options=focused)
+    )["loss_options"]
+    assert enabled["medial_tail_floor_weight"] == 0.015625
+    assert enabled["medial_tail_floor_probability"] == 0.30
+    assert enabled["medial_tail_bottom_fraction"] == 0.20
+
+
 def test_pinned_axial_configuration_is_explicit_and_requires_its_atlas(
     tmp_path: Path,
 ) -> None:

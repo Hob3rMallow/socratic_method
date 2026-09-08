@@ -48,10 +48,16 @@ def assert_cuda_power_limit(
     if device.type != "cuda":
         return None
     device_index = device.index if device.index is not None else 0
+    # torch orders devices fastest-first, nvidia-smi by PCI enumeration, so the
+    # two indices need not agree (2026-09-03: torch cuda:0 = the RTX PRO 6000 =
+    # nvidia-smi 1).  Address the card by its UUID so the limit belongs to the
+    # device the caller is about to train on.
+    uuid = str(getattr(torch.cuda.get_device_properties(device_index), "uuid", ""))
+    selector = f"GPU-{uuid}" if uuid else str(device_index)
     command = [
         "nvidia-smi",
         "-i",
-        str(device_index),
+        selector,
         "--query-gpu=power.limit",
         "--format=csv,noheader,nounits",
     ]

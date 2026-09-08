@@ -32,7 +32,9 @@ from crossres_pred.voxel.loss import (
 )
 from crossres_pred.voxel.patches import (
     ANTIALIAS_PATCH_PREPARATION_VERSION,
+    PATCH_PREPARATION_VERSION,
     VoxelPatchDataset,
+    _validate_source_manifests,
     load_patch_manifest,
     validate_patch_corpus,
 )
@@ -42,6 +44,9 @@ from crossres_pred.voxel.registration import (
     antialias_fine_target_patch,
 )
 from crossres_pred.voxel.schema import DenseFieldSpec
+from crossres_pred.voxel.scrollfiesta_metrics import (
+    SCROLLFIESTA_PRED_METRICS_CONTRACT,
+)
 
 IDENTITY_AFFINE = (
     (1.0, 0.0, 0.0, 0.0),
@@ -54,6 +59,186 @@ def _sha256(path: Path) -> str:
     digest = hashlib.sha256()
     digest.update(path.read_bytes())
     return digest.hexdigest()
+
+
+def test_stitched_antialias_lineage_covers_mixed_source_root(tmp_path: Path) -> None:
+    source_root = tmp_path / "source"
+    source_patches = source_root / "patches"
+    source_patches.mkdir(parents=True)
+
+    def source_row(patch_id: str, *, native: bool) -> dict:
+        archive = source_patches / f"{patch_id}.npz"
+        archive.write_bytes(patch_id.encode())
+        row = {
+            "schema": "crossres-voxel-patch-v1",
+            "schema_version": 1,
+            "patch_id": patch_id,
+            "path": f"patches/{archive.name}",
+            "record_id": f"record-{patch_id}",
+            "scroll_id": "SyntheticTrain",
+            "split": "train",
+            "origin_zyx": [0, 0, 0],
+            "shape_zyx": [2, 2, 2],
+            "known_fraction": 1.0,
+            "acceptance_min_known_fraction": 0.05,
+            "positive_fraction_known": 0.5,
+            "pathology_score": 0.0,
+            "scrollfiesta_pred_metrics": None,
+            "has_baseline": False,
+            "supervision_source": (
+                "official-native-fine-teacher/test"
+                if native
+                else "official-human-label/test"
+            ),
+            "sampling_strategy": "random",
+            "preparation_version": PATCH_PREPARATION_VERSION,
+            "ct_nonzero_fraction": 1.0,
+            "archive_bytes": archive.stat().st_size,
+            "archive_sha256": _sha256(archive),
+        }
+        if native:
+            row.update(
+                native_teacher_min_fine_ct_nonzero_fraction=0.95,
+                native_teacher_fine_ct_quality_gate_applied=True,
+                native_teacher_support_chunks_before_quality_gate=1,
+                native_teacher_support_chunks_after_quality_gate=1,
+                native_teacher_support_chunks_excluded_by_quality_gate=0,
+            )
+        return row
+
+    native = source_row("native-00000", native=True)
+    human = source_row("human-00000", native=False)
+    source_manifest = source_root / "patches.jsonl"
+    source_manifest.write_text(
+        "".join(json.dumps(row, sort_keys=True) + "\n" for row in (native, human)),
+        encoding="utf-8",
+    )
+    (source_root / "prepare_state.json").write_text(
+        json.dumps(
+            {
+                "state": "complete",
+                "completed": 2,
+                "identity": {
+                    "preparation_version": PATCH_PREPARATION_VERSION,
+                    "scrollfiesta_pred_metrics_contract": (
+                        SCROLLFIESTA_PRED_METRICS_CONTRACT
+                    ),
+                    "options": {
+                        "min_known_fraction": 0.05,
+                        "native_teacher_min_known_fraction": 0.05,
+                        "native_teacher_min_fine_ct_nonzero_fraction": 0.95,
+                    },
+                },
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    native_selection = tmp_path / "native-selection.jsonl"
+    selected = dict(native)
+    selected["path"] = str((source_patches / "native-00000.npz").resolve())
+    native_selection.write_text(
+        json.dumps(selected, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+    transformed_root = tmp_path / "antialias"
+    transformed_patches = transformed_root / "patches"
+    transformed_patches.mkdir(parents=True)
+    transformed_archive = transformed_patches / "native-00000.npz"
+    transformed_archive.write_bytes(b"anti-aliased-native")
+    transformed = dict(selected)
+    transformed.update(
+        path="patches/native-00000.npz",
+        preparation_version=ANTIALIAS_PATCH_PREPARATION_VERSION,
+        acceptance_min_known_fraction=0.0,
+        known_fraction=0.9,
+        positive_fraction_known=0.4,
+        pathology_score=0.1,
+        sampling_pathology_score=0.0,
+        archive_bytes=transformed_archive.stat().st_size,
+        archive_sha256=_sha256(transformed_archive),
+        target_projection={
+            "contract": "antialias-pullback-gh3-v2",
+            "prefilter_sigma_scale": 0.5,
+            "coverage_erosion_fine_vox": 0,
+            "maxpool_prefilter": False,
+            "erode_filter_margin": True,
+            "hard_threshold": 0.5,
+            "projection_backend": "cuda-gauss-hermite3-pullback-linf-validity-v1",
+            "gaussian_quadrature_order_per_axis": 3,
+            "validity_erosion_metric": "linf",
+            "record_id": native["record_id"],
+            "source_archive_sha256": native["archive_sha256"],
+            "source_preparation_version": PATCH_PREPARATION_VERSION,
+            "source_known_fraction": native["known_fraction"],
+            "source_positive_fraction_known": native["positive_fraction_known"],
+            "source_pathology_score": native["pathology_score"],
+        },
+    )
+    transformed_manifest = transformed_root / "patches.jsonl"
+    transformed_manifest.write_text(
+        json.dumps(transformed, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+    (transformed_root / "prepare_state.json").write_text(
+        json.dumps(
+            {
+                "state": "complete",
+                "completed": 1,
+                "identity": {
+                    "preparation_version": ANTIALIAS_PATCH_PREPARATION_VERSION,
+                    "scrollfiesta_pred_metrics_contract": (
+                        SCROLLFIESTA_PRED_METRICS_CONTRACT
+                    ),
+                    "source_manifest": str(native_selection.resolve()),
+                    "source_manifest_sha256": _sha256(native_selection),
+                    "source_rows": 1,
+                    "options": {
+                        "min_known_fraction": 0.0,
+                        "native_teacher_min_known_fraction": 0.0,
+                        "native_teacher_min_fine_ct_nonzero_fraction": 0.95,
+                    },
+                },
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    stitched = tmp_path / "stitched.jsonl"
+    final_transformed = dict(transformed)
+    final_transformed["path"] = str(transformed_archive.resolve())
+    final_human = dict(human)
+    final_human["path"] = str((source_patches / "human-00000.npz").resolve())
+    final_rows = (final_transformed, final_human)
+    stitched.write_text(
+        "".join(json.dumps(row, sort_keys=True) + "\n" for row in final_rows),
+        encoding="utf-8",
+    )
+    parsed = load_patch_manifest(stitched)
+    with pytest.raises(ValueError, match="exact source corpus"):
+        _validate_source_manifests(parsed)
+    assert (
+        _validate_source_manifests(
+            parsed,
+            require_complete_antialias_lineage=True,
+        )
+        == 1
+    )
+
+    final_transformed["target_projection"]["source_archive_sha256"] = "f" * 64
+    transformed_manifest.write_text(
+        json.dumps(transformed, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+    stitched.write_text(
+        "".join(json.dumps(row, sort_keys=True) + "\n" for row in final_rows),
+        encoding="utf-8",
+    )
+    with pytest.raises(ValueError, match="source identity changed"):
+        _validate_source_manifests(
+            load_patch_manifest(stitched),
+            require_complete_antialias_lineage=True,
+        )
 
 
 def test_sparse_fine_reader_marks_absent_chunks_unknown() -> None:

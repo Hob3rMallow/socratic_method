@@ -1,0 +1,2 @@
+# Pinned engine bytes are hash-verified against the sealed F0 record; never normalize.
+src/crossres_pred/** -text

@@ -45,6 +45,7 @@ socratic-export = "socratic_method.hf_export:main"
 socratic-repair = "socratic_method.repair:main"
 socratic-continuity = "socratic_method.continuity:main"
 socratic-sheet-patches = "socratic_method.sheet_patches:main"
+socratic-engine-pins = "socratic_method.engine_pins:main"
 crossres-pred = "crossres_pred.cli:main"
 crossres-voxel = "crossres_pred.voxel.cli:main"
 

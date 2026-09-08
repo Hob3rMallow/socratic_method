@@ -45,3 +45,35 @@ preserved under `provenance/source/evaluation/v31_release`.  The release and
 paper figures are regenerated from those outputs and the original registered
 report imagery by `scripts/generate_release_figures.py`; each generated figure
 and every discrete source it reads is hashed in the adjacent figure manifest.
+
+## F0 engine sync (2026-09-08)
+
+The current model is C3-F0 (`recipes/final_c3_250k_20260907`).  Its sealed
+configuration pins 63 source files by SHA-256 (`provenance/recipe.json`,
+`execution.code_pins`) and keeps byte-exact copies under `runtime/`.  The engine
+snapshot in `src/crossres_pred/voxel` was re-synchronised to those pins by
+`socratic-engine-pins --apply` (`src/socratic_method/engine_pins.py`), copying
+the 48 pinned `voxel` modules from the record's `runtime/` tree, never from the
+private working tree.  Eight modules changed content relative to the 2026-09-01
+snapshot (`antialias_corpus.py`, `cli.py`, `io.py`, `loss.py`, `patches.py`,
+`resources.py`, `train.py`; `blob_diagnostics.py` was added).  The synced tests
+`tests/test_voxel_{antialias_targets,img2img,medial,train_resume}.py` and
+`tests/test_blob_diagnostics.py` follow the same sources.  The live source date
+of the pinned code is 2026-09-05 (vesuvius-c worktree, sealed with the F0
+launch); the observed environment was PyTorch 2.11.0+cu128.
+
+The pathmap deviation is now a reversible table in `engine_pins.HOOKS`:
+`io.py` gains two inserted lines (the `remap_volume_spec` import and its call at
+the top of `split_volume_spec`); `patches.py` gains the `remap_embedded_path`
+import and six line substitutions replacing `Path(str(...))` reads of embedded
+artifact paths (`path`, `catalog`, `training_manifest` twice, `atlas_state`,
+`medial_state`, and the anti-aliased lineage `source_manifest`, which is new in
+the pinned code).  `socratic-engine-pins --check` verifies every pin against the
+record and against the snapshot modulo that table, and refuses unpinned modules.
+
+Pinned bytes must never be normalised: the root `.gitattributes` marks
+`src/crossres_pred/**` as `-text`, so the index stores the exact pinned bytes and
+`provenance/SHA256SUMS` is reproducible from a clone on any platform.  The 14
+pinned scripts and the ladder configuration are provenance only; they live
+hash-verified in the record's `runtime/` tree and are not duplicated under
+`provenance/source`.

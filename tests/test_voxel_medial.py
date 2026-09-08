@@ -9,6 +9,7 @@ from crossres_pred.voxel.loss import (
     CORRIDOR_CONSERVATIVE_LOSS_CONTRACT,
     DYNAMIC_MEDIAL_CONNECTIVITY_LOSS_CONTRACT,
     MEDIAL_CONSERVATIVE_LOSS_CONTRACT,
+    MEDIAL_TAIL_FLOOR_LOSS_CONTRACT,
     PINNED_AXIAL_MEDIAL_CONSERVATIVE_LOSS_CONTRACT,
     PRESERVATION_CUTOFF_MEDIAL_CONSERVATIVE_LOSS_CONTRACT,
     PRESERVATION_MEDIAL_CONSERVATIVE_LOSS_CONTRACT,
@@ -18,6 +19,7 @@ from crossres_pred.voxel.loss import (
     dice_ce_loss,
     dynamic_medial_connectivity_loss,
     loss_contract,
+    medial_tail_floor_loss,
     pinned_axial_floor_loss,
     resize_medial_target,
 )
@@ -359,6 +361,100 @@ def test_medial_recall_pushes_only_the_thin_crest_toward_foreground() -> None:
 
 
 @pytest.mark.torch
+def test_medial_tail_floor_targets_only_the_weakest_crest_fraction() -> None:
+    floor_margin = float(torch.logit(torch.tensor(0.25)))
+    margins = torch.tensor(
+        [
+            floor_margin - 1.0,
+            floor_margin - 0.5,
+            floor_margin - 0.2,
+            floor_margin + 0.1,
+            floor_margin + 1.0,
+            floor_margin - 4.0,
+        ]
+    )
+    logits = torch.zeros((1, 2, 1, 1, 6), requires_grad=True)
+    with torch.no_grad():
+        logits[0, 1, 0, 0] = margins
+    crest = torch.zeros((1, 1, 1, 1, 6))
+    crest[..., :5] = 1.0
+
+    result = medial_tail_floor_loss(
+        logits,
+        crest,
+        probability_floor=0.25,
+        bottom_fraction=0.40,
+    )
+    result.loss.backward()
+
+    assert float(result.loss.detach()) == pytest.approx(0.75, abs=1.0e-6)
+    assert float(result.samples) == 1.0
+    assert float(result.target_voxels) == 5.0
+    assert float(result.selected_voxels) == 2.0
+    foreground_gradient = logits.grad[0, 1, 0, 0]
+    assert torch.all(foreground_gradient[:2] < 0)
+    assert torch.count_nonzero(foreground_gradient) == 2
+    # The much weaker off-crest voxel is never eligible for a positive gradient.
+    assert float(foreground_gradient[5]) == 0.0
+
+
+@pytest.mark.torch
+def test_medial_tail_floor_gives_each_crest_sample_one_vote() -> None:
+    floor_margin = float(torch.logit(torch.tensor(0.25)))
+    logits = torch.zeros((3, 2, 1, 1, 4), requires_grad=True)
+    with torch.no_grad():
+        logits[0, 1, 0, 0, 0] = floor_margin - 1.0
+        logits[1, 1, 0, 0] = torch.tensor(
+            [
+                floor_margin - 3.0,
+                floor_margin - 2.0,
+                floor_margin + 1.0,
+                floor_margin + 2.0,
+            ]
+        )
+        # An arbitrarily weak prediction in a sample with no crest is irrelevant.
+        logits[2, 1, 0, 0, 0] = floor_margin - 20.0
+    crest = torch.zeros((3, 1, 1, 1, 4))
+    crest[0, ..., 0] = 1.0
+    crest[1] = 1.0
+
+    result = medial_tail_floor_loss(
+        logits,
+        crest,
+        probability_floor=0.25,
+        bottom_fraction=0.25,
+    )
+    result.loss.backward()
+
+    assert float(result.loss.detach()) == pytest.approx(2.0, abs=1.0e-6)
+    assert float(result.samples) == 2.0
+    assert float(result.target_voxels) == 5.0
+    assert float(result.selected_voxels) == 2.0
+    foreground_gradient = logits.grad[:, 1, 0, 0]
+    assert float(foreground_gradient[0, 0]) == pytest.approx(
+        float(foreground_gradient[1, 0])
+    )
+    assert torch.count_nonzero(foreground_gradient[2]) == 0
+
+
+@pytest.mark.torch
+def test_medial_tail_floor_is_one_sided_and_has_an_explicit_contract() -> None:
+    logits = torch.zeros((1, 2, 1, 1, 3), requires_grad=True)
+    crest = torch.ones((1, 1, 1, 1, 3))
+    options = VoxelLossOptions(medial_tail_floor_weight=0.25)
+
+    result = medial_tail_floor_loss(logits, crest)
+    result.loss.backward()
+
+    assert loss_contract(options) == MEDIAL_TAIL_FLOOR_LOSS_CONTRACT
+    assert float(result.loss.detach()) == 0.0
+    assert logits.grad is not None
+    assert torch.count_nonzero(logits.grad) == 0
+    with pytest.raises(ValueError, match="bottom fraction"):
+        VoxelLossOptions(medial_tail_bottom_fraction=0.0).validate()
+
+
+@pytest.mark.torch
 def test_m7_preservation_pushes_only_teacher_near_m7_foreground() -> None:
     logits = torch.zeros((1, 2, 1, 1, 9), requires_grad=True)
     target = torch.zeros((1, 1, 1, 9), dtype=torch.long)
@@ -697,6 +793,44 @@ def test_deep_supervision_reports_medial_and_shell_per_scale() -> None:
     for index in range(3):
         assert f"medial_recall_ds{index}" in components
         assert f"separation_ds{index}" in components
+
+
+@pytest.mark.torch
+def test_deep_supervision_adds_medial_tail_floor_once_at_full_resolution() -> None:
+    floor_margin = float(torch.logit(torch.tensor(0.25)))
+    outputs = [
+        torch.zeros((1, 2, 4, 4, 4)),
+        torch.zeros((1, 2, 2, 2, 2)),
+    ]
+    outputs[0][:, 1, 1, 1, 1] = floor_margin - 1.0
+    outputs[1][:, 1] = floor_margin - 8.0
+    target = torch.zeros((1, 1, 4, 4, 4), dtype=torch.long)
+    crest = torch.zeros_like(target, dtype=torch.float32)
+    crest[:, :, 1, 1, 1] = 1.0
+    valid = torch.ones_like(crest)
+    base_total, _ = deep_supervision_loss(
+        outputs,
+        target,
+        teacher_crest=crest,
+        teacher_crest_valid=valid,
+        teacher_crest_available=torch.tensor([True]),
+    )
+    options = VoxelLossOptions(medial_tail_floor_weight=2.0)
+
+    focused_total, components = deep_supervision_loss(
+        outputs,
+        target,
+        teacher_crest=crest,
+        teacher_crest_valid=valid,
+        teacher_crest_available=torch.tensor([True]),
+        options=options,
+    )
+
+    assert float(components["medial_tail_floor_loss"]) == pytest.approx(1.0)
+    assert float(components["medial_tail_floor_samples"]) == 1.0
+    assert float(components["medial_tail_floor_target_voxels"]) == 1.0
+    assert float(components["medial_tail_floor_selected_voxels"]) == 1.0
+    assert float(focused_total - base_total) == pytest.approx(2.0)
 
 
 @pytest.mark.torch

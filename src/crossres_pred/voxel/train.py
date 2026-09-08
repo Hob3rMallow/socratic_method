@@ -496,6 +496,10 @@ def _options_identity(options: TrainOptions) -> dict[str, Any]:
     if "loss_options" in value:
         if options.loss_options.medial_recall_weight == 0:
             value["loss_options"].pop("medial_recall_weight")
+        if options.loss_options.medial_tail_floor_weight == 0:
+            value["loss_options"].pop("medial_tail_floor_weight")
+            value["loss_options"].pop("medial_tail_floor_probability")
+            value["loss_options"].pop("medial_tail_bottom_fraction")
         if options.loss_options.m7_anchor_unknown_corridor_radius == 0:
             value["loss_options"].pop("m7_anchor_unknown_corridor_radius")
         if options.loss_options.m7_preservation_weight == 0:
@@ -1276,10 +1280,13 @@ def train_model(
         snapshot_samples,
         total_samples=schedule.total_samples,
     )
-    output_preexisted = output.exists()
-    if output_preexisted and not resume:
-        raise ValueError(f"output already exists; use resume: {output}")
-    if resume and not output_preexisted:
+    # A run exists iff its identity (run.json, the first artifact written)
+    # exists; a pre-created directory holding only a driver's recipe or
+    # ledger is not a run and must not block a fresh launch.
+    run_started = (output / "run.json").exists()
+    if run_started and not resume:
+        raise ValueError(f"output already holds a run; use resume: {output}")
+    if resume and not output.exists():
         raise ValueError(f"resume output does not exist: {output}")
     output.mkdir(parents=True, exist_ok=True)
     identity_value = {
@@ -1386,11 +1393,14 @@ def train_model(
         ),
     )
     if (
-        options.loss_options.medial_recall_weight > 0
+        (
+            options.loss_options.medial_recall_weight > 0
+            or options.loss_options.medial_tail_floor_weight > 0
+        )
         and not train_dataset.has_complete_teacher_crest
     ):
         raise ValueError(
-            "medial recall training requires every training row to use the "
+            "medial training requires every training row to use the "
             "provenance-bound medial atlas patch format"
         )
     if len(train_dataset) != dataset_size:

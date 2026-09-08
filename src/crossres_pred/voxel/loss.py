@@ -39,7 +39,13 @@ DYNAMIC_MEDIAL_CONNECTIVITY_LOSS_CONTRACT = (
     "soft-occupancy-ce-dice-villa-medial-crest-shell-kl-corridor-"
     "m7-preservation-dynamic-widest-path-v9"
 )
+MEDIAL_TAIL_FLOOR_LOSS_CONTRACT = (
+    "soft-occupancy-ce-dice-villa-medial-crest-shell-kl-corridor-"
+    "focused-medial-tail-floor-v10"
+)
 VILLA_MEDIAL_RECALL_SMOOTH = 1.0
+MEDIAL_TAIL_FLOOR_PROBABILITY = 0.25
+MEDIAL_TAIL_BOTTOM_FRACTION = 0.20
 M7_PINNED_AXIAL_PROBABILITY_FLOOR = 0.20
 M7_PINNED_AXIAL_BOTTOM_FRACTION = 0.10
 DYNAMIC_MEDIAL_CONNECTIVITY_PROBABILITY_FLOOR = 0.20
@@ -51,6 +57,9 @@ class VoxelLossOptions:
     cross_entropy_weight: float = 1.0
     dice_weight: float = 1.0
     medial_recall_weight: float = 0.0
+    medial_tail_floor_weight: float = 0.0
+    medial_tail_floor_probability: float = MEDIAL_TAIL_FLOOR_PROBABILITY
+    medial_tail_bottom_fraction: float = MEDIAL_TAIL_BOTTOM_FRACTION
     separation_weight: float = 0.0
     separation_radius: int = 2
     separation_max_teacher_q: float = 0.1
@@ -76,6 +85,7 @@ class VoxelLossOptions:
             ("cross_entropy_weight", self.cross_entropy_weight),
             ("dice_weight", self.dice_weight),
             ("medial_recall_weight", self.medial_recall_weight),
+            ("medial_tail_floor_weight", self.medial_tail_floor_weight),
             ("separation_weight", self.separation_weight),
             ("m7_anchor_weight", self.m7_anchor_weight),
             ("m7_preservation_weight", self.m7_preservation_weight),
@@ -99,6 +109,10 @@ class VoxelLossOptions:
             raise ValueError("M7 preservation anchor threshold must be in (0, 1]")
         if not 0 <= self.separation_max_teacher_q < 0.5:
             raise ValueError("separation teacher-q ceiling must be in [0, 0.5)")
+        if not 0 < self.medial_tail_floor_probability < 1:
+            raise ValueError("medial tail probability floor must be in (0, 1)")
+        if not 0 < self.medial_tail_bottom_fraction <= 1:
+            raise ValueError("medial tail bottom fraction must be in (0, 1]")
         if not isinstance(self.m7_anchor_known_agreement, bool):
             raise TypeError("M7 known-agreement anchoring flag must be boolean")
         if not isinstance(self.m7_anchor_confident_agreement, bool):
@@ -137,6 +151,8 @@ def loss_contract(options: VoxelLossOptions) -> str:
     options.validate()
     if options.is_legacy:
         return LOSS_CONTRACT
+    if options.medial_tail_floor_weight > 0:
+        return MEDIAL_TAIL_FLOOR_LOSS_CONTRACT
     if options.dynamic_medial_connectivity_weight > 0:
         return DYNAMIC_MEDIAL_CONNECTIVITY_LOSS_CONTRACT
     if options.pinned_axial_weight > 0:
@@ -162,6 +178,7 @@ class LossResult:
     cross_entropy: torch.Tensor
     dice: torch.Tensor
     medial_recall: torch.Tensor
+    medial_tail_floor: torch.Tensor
     separation: torch.Tensor
     m7_anchor_kl: torch.Tensor
     m7_preservation: torch.Tensor
@@ -174,6 +191,15 @@ class PinnedAxialLossResult:
     loss: torch.Tensor
     groups: torch.Tensor
     target_voxels: torch.Tensor
+
+
+@dataclass(frozen=True)
+class MedialTailFloorLossResult:
+    loss: torch.Tensor
+    samples: torch.Tensor
+    target_voxels: torch.Tensor
+    selected_voxels: torch.Tensor
+    mean_selected_probability: torch.Tensor
 
 
 @dataclass(frozen=True)
@@ -197,6 +223,141 @@ def _per_sample_masked_mean(
         value.dtype
     )
     return means[selected].mean()
+
+
+def _teacher_crest_masks(
+    expected: torch.Tensor,
+    teacher_crest: torch.Tensor | None,
+    teacher_crest_valid: torch.Tensor | None,
+    teacher_crest_available: torch.Tensor | None,
+) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
+    """Validate a medial target and apply its independent sample availability."""
+    if expected.ndim != 4:
+        raise ValueError("expected medial target shape must be BxDxHxW")
+    crest = torch.zeros_like(expected, dtype=torch.bool)
+    crest_valid = torch.zeros_like(expected, dtype=torch.bool)
+    crest_available = torch.zeros(
+        expected.shape[0], dtype=torch.bool, device=expected.device
+    )
+    if teacher_crest is not None:
+        if teacher_crest.ndim == 5 and teacher_crest.shape[1] == 1:
+            teacher_crest = teacher_crest[:, 0]
+        if teacher_crest.ndim != 4 or teacher_crest.shape != expected.shape:
+            raise ValueError(
+                f"teacher_crest shape {tuple(teacher_crest.shape)} does not match "
+                f"target {tuple(expected.shape)}"
+            )
+        if not bool(torch.isfinite(teacher_crest).all()) or bool(
+            ((teacher_crest < 0.0) | (teacher_crest > 1.0)).any()
+        ):
+            raise ValueError("teacher_crest must be finite and in [0, 1]")
+        if teacher_crest_valid is None:
+            raise ValueError("teacher_crest requires its own voxel-valid mask")
+        if teacher_crest_valid.ndim == 5 and teacher_crest_valid.shape[1] == 1:
+            teacher_crest_valid = teacher_crest_valid[:, 0]
+        if (
+            teacher_crest_valid.ndim != 4
+            or teacher_crest_valid.shape != expected.shape
+        ):
+            raise ValueError(
+                "teacher_crest_valid shape must match the segmentation target"
+            )
+        crest_valid = teacher_crest_valid > 0.5
+        crest = (teacher_crest > 0.5) & crest_valid
+        if teacher_crest_available is None:
+            crest_available = torch.ones_like(crest_available)
+        else:
+            available = teacher_crest_available
+            if available.ndim > 1:
+                available = available.reshape(available.shape[0], -1)
+                if available.shape[1] != 1:
+                    raise ValueError(
+                        "teacher_crest_available must have one value per sample"
+                    )
+                available = available[:, 0]
+            if available.ndim != 1 or available.shape[0] != expected.shape[0]:
+                raise ValueError(
+                    "teacher_crest_available must have one value per sample"
+                )
+            crest_available = available > 0.5
+        crest_valid &= crest_available[:, None, None, None]
+        crest &= crest_available[:, None, None, None]
+    elif teacher_crest_valid is not None or (
+        teacher_crest_available is not None
+        and bool((teacher_crest_available > 0.5).any())
+    ):
+        raise ValueError("crest availability was declared without a crest target")
+    return crest, crest_valid, crest_available
+
+
+def medial_tail_floor_loss(
+    logits: torch.Tensor,
+    crest_mask: torch.Tensor,
+    *,
+    probability_floor: float = MEDIAL_TAIL_FLOOR_PROBABILITY,
+    bottom_fraction: float = MEDIAL_TAIL_BOTTOM_FRACTION,
+) -> MedialTailFloorLossResult:
+    """Raise only the weakest full-resolution fraction of each teacher crest.
+
+    This is a one-sided log-odds hinge. Each sample containing a crest receives
+    one vote, regardless of crest area. Within that sample only the lowest
+    ``bottom_fraction`` of crest probabilities can receive gradient, and the
+    gradient becomes exactly zero as each selected voxel clears the declared
+    floor. No off-crest voxel can be rewarded by this term.
+    """
+    if logits.ndim != 5 or logits.shape[1] != 2:
+        raise ValueError(f"expected Bx2xDxHxW logits, got {tuple(logits.shape)}")
+    values = crest_mask
+    if values.ndim == 5 and values.shape[1] == 1:
+        values = values[:, 0]
+    if values.ndim != 4 or values.shape != logits.shape[:1] + logits.shape[2:]:
+        raise ValueError("medial tail crest mask must match the logits")
+    if values.is_floating_point() and (
+        not bool(torch.isfinite(values).all())
+        or bool(((values < 0.0) | (values > 1.0)).any())
+    ):
+        raise ValueError("medial tail crest mask must be finite and in [0, 1]")
+    if not 0 < probability_floor < 1:
+        raise ValueError("medial tail probability floor must be in (0, 1)")
+    if not 0 < bottom_fraction <= 1:
+        raise ValueError("medial tail bottom fraction must be in (0, 1]")
+
+    mask = values > 0.5
+    foreground_margin = logits.float()[:, 1] - logits.float()[:, 0]
+    floor_margin = math.log(probability_floor / (1.0 - probability_floor))
+    sample_losses: list[torch.Tensor] = []
+    selected_probabilities: list[torch.Tensor] = []
+    target_voxels = 0
+    selected_voxels = 0
+    for sample_index in range(mask.shape[0]):
+        sample_values = foreground_margin[sample_index][mask[sample_index]]
+        count = int(sample_values.numel())
+        if count == 0:
+            continue
+        selected_count = max(1, math.ceil(bottom_fraction * count))
+        weakest = torch.topk(
+            sample_values,
+            selected_count,
+            largest=False,
+            sorted=False,
+        ).values
+        sample_losses.append(F.relu(floor_margin - weakest).mean())
+        selected_probabilities.append(torch.sigmoid(weakest).mean())
+        target_voxels += count
+        selected_voxels += selected_count
+
+    zero = logits.sum() * 0.0
+    loss = torch.stack(sample_losses).mean() if sample_losses else zero
+    mean_selected_probability = (
+        torch.stack(selected_probabilities).mean() if selected_probabilities else zero
+    )
+    return MedialTailFloorLossResult(
+        loss=loss,
+        samples=logits.new_tensor(float(len(sample_losses))),
+        target_voxels=logits.new_tensor(float(target_voxels)),
+        selected_voxels=logits.new_tensor(float(selected_voxels)),
+        mean_selected_probability=mean_selected_probability,
+    )
 
 
 def pinned_axial_floor_loss(
@@ -494,56 +655,12 @@ def dice_ce_loss(
         if bool(valid_samples.any())
         else logits.sum() * 0.0
     )
-    crest = torch.zeros_like(valid)
-    crest_valid = torch.zeros_like(valid)
-    crest_available = torch.zeros(
-        target.shape[0], dtype=torch.bool, device=target.device
+    crest, crest_valid, _ = _teacher_crest_masks(
+        target,
+        teacher_crest,
+        teacher_crest_valid,
+        teacher_crest_available,
     )
-    if teacher_crest is not None:
-        if teacher_crest.ndim == 5 and teacher_crest.shape[1] == 1:
-            teacher_crest = teacher_crest[:, 0]
-        if teacher_crest.ndim != 4 or teacher_crest.shape != target.shape:
-            raise ValueError(
-                f"teacher_crest shape {tuple(teacher_crest.shape)} does not match "
-                f"target {tuple(target.shape)}"
-            )
-        if not bool(torch.isfinite(teacher_crest).all()) or bool(
-            ((teacher_crest < 0.0) | (teacher_crest > 1.0)).any()
-        ):
-            raise ValueError("teacher_crest must be finite and in [0, 1]")
-        if teacher_crest_valid is None:
-            raise ValueError("teacher_crest requires its own voxel-valid mask")
-        if teacher_crest_valid.ndim == 5 and teacher_crest_valid.shape[1] == 1:
-            teacher_crest_valid = teacher_crest_valid[:, 0]
-        if teacher_crest_valid.ndim != 4 or teacher_crest_valid.shape != target.shape:
-            raise ValueError(
-                "teacher_crest_valid shape must match the segmentation target"
-            )
-        crest_valid = teacher_crest_valid > 0.5
-        crest = (teacher_crest > 0.5) & crest_valid
-        if teacher_crest_available is None:
-            crest_available = torch.ones_like(crest_available)
-        else:
-            available = teacher_crest_available
-            if available.ndim > 1:
-                available = available.reshape(available.shape[0], -1)
-                if available.shape[1] != 1:
-                    raise ValueError(
-                        "teacher_crest_available must have one value per sample"
-                    )
-                available = available[:, 0]
-            if available.ndim != 1 or available.shape[0] != target.shape[0]:
-                raise ValueError(
-                    "teacher_crest_available must have one value per sample"
-                )
-            crest_available = available > 0.5
-        crest_valid &= crest_available[:, None, None, None]
-        crest &= crest_available[:, None, None, None]
-    elif teacher_crest_valid is not None or (
-        teacher_crest_available is not None
-        and bool((teacher_crest_available > 0.5).any())
-    ):
-        raise ValueError("crest availability was declared without a crest target")
 
     medial_recall = logits.sum() * 0.0
     crest_samples = crest.flatten(1).any(dim=1)
@@ -556,6 +673,15 @@ def dice_ce_loss(
         # Villa returns -recall.  Subtracting from one preserves its exact
         # gradient while making the logged component a conventional loss.
         medial_recall = (1.0 - recall)[crest_samples].mean()
+
+    medial_tail_floor = logits.sum() * 0.0
+    if options.medial_tail_floor_weight > 0:
+        medial_tail_floor = medial_tail_floor_loss(
+            logits,
+            crest,
+            probability_floor=options.medial_tail_floor_probability,
+            bottom_fraction=options.medial_tail_bottom_fraction,
+        ).loss
 
     separation = logits.sum() * 0.0
     if options.separation_weight > 0:
@@ -718,6 +844,7 @@ def dice_ce_loss(
         options.cross_entropy_weight * cross_entropy
         + options.dice_weight * dice
         + options.medial_recall_weight * medial_recall
+        + options.medial_tail_floor_weight * medial_tail_floor
         + options.separation_weight * separation
         + options.m7_anchor_weight * m7_anchor_kl
         + options.m7_preservation_weight * m7_preservation
@@ -729,6 +856,7 @@ def dice_ce_loss(
         cross_entropy,
         dice,
         medial_recall,
+        medial_tail_floor,
         separation,
         m7_anchor_kl,
         m7_preservation,
@@ -852,6 +980,7 @@ def deep_supervision_loss(
     total = outputs[0].sum() * 0.0
     base_options = replace(
         options,
+        medial_tail_floor_weight=0.0,
         pinned_axial_weight=0.0,
         dynamic_medial_connectivity_weight=0.0,
     )
@@ -896,6 +1025,36 @@ def deep_supervision_loss(
         scale_diagnostics[f"separation_ds{index}"] = result.separation.detach()
         total = total + result.total * weight
     assert full is not None
+    medial_tail_floor = MedialTailFloorLossResult(
+        loss=outputs[0].sum() * 0.0,
+        samples=outputs[0].new_tensor(0.0),
+        target_voxels=outputs[0].new_tensor(0.0),
+        selected_voxels=outputs[0].new_tensor(0.0),
+        mean_selected_probability=outputs[0].sum() * 0.0,
+    )
+    if options.medial_tail_floor_weight > 0:
+        full_target = resize_target(target, tuple(outputs[0].shape[-3:]))[:, 0]
+        full_crest = teacher_crest
+        full_crest_valid = teacher_crest_valid
+        if full_crest is not None and full_crest_valid is not None:
+            full_crest, full_crest_valid = resize_medial_target(
+                full_crest,
+                full_crest_valid,
+                tuple(outputs[0].shape[-3:]),
+            )
+        crest_mask, _, _ = _teacher_crest_masks(
+            full_target,
+            full_crest,
+            full_crest_valid,
+            teacher_crest_available,
+        )
+        medial_tail_floor = medial_tail_floor_loss(
+            outputs[0],
+            crest_mask,
+            probability_floor=options.medial_tail_floor_probability,
+            bottom_fraction=options.medial_tail_bottom_fraction,
+        )
+        total = total + options.medial_tail_floor_weight * medial_tail_floor.loss
     pinned_axial = PinnedAxialLossResult(
         loss=outputs[0].sum() * 0.0,
         groups=outputs[0].new_tensor(0.0),
@@ -943,6 +1102,15 @@ def deep_supervision_loss(
         "cross_entropy": full.cross_entropy.detach(),
         "dice_loss": full.dice.detach(),
         "medial_recall_loss": full.medial_recall.detach(),
+        "medial_tail_floor_loss": medial_tail_floor.loss.detach(),
+        "medial_tail_floor_samples": medial_tail_floor.samples.detach(),
+        "medial_tail_floor_target_voxels": medial_tail_floor.target_voxels.detach(),
+        "medial_tail_floor_selected_voxels": (
+            medial_tail_floor.selected_voxels.detach()
+        ),
+        "medial_tail_floor_selected_probability": (
+            medial_tail_floor.mean_selected_probability.detach()
+        ),
         "separation_loss": full.separation.detach(),
         "m7_anchor_kl": full.m7_anchor_kl.detach(),
         "m7_preservation_loss": full.m7_preservation.detach(),

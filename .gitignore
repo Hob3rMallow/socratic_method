@@ -84,3 +84,6 @@ CMakeCache.txt
 .vscode/
 .DS_Store
 Thumbs.db
+
+# Machine-local artifact paths for socratic-train (see recipes/*/paths.example.json)
+paths.local.json

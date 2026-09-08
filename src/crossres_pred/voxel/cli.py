@@ -108,6 +108,11 @@ def _train(args: argparse.Namespace) -> int:
                 cross_entropy_weight=args.loss_ce_weight,
                 dice_weight=args.loss_dice_weight,
                 medial_recall_weight=args.loss_medial_recall_weight,
+                medial_tail_floor_weight=args.loss_medial_tail_floor_weight,
+                medial_tail_floor_probability=(
+                    args.loss_medial_tail_floor_probability
+                ),
+                medial_tail_bottom_fraction=(args.loss_medial_tail_bottom_fraction),
                 separation_weight=args.loss_separation_weight,
                 separation_radius=args.loss_separation_radius,
                 separation_max_teacher_q=args.loss_separation_max_teacher_q,
@@ -432,6 +437,9 @@ def _validate_patches(args: argparse.Namespace) -> int:
             "RECORD",
         ),
         expected_source_corpora=args.expected_source_corpora,
+        require_complete_antialias_lineage=(
+            args.require_complete_antialias_lineage
+        ),
         require_hashes=args.require_hashes,
         voxel_check_count=args.voxel_check_count,
         workers=args.workers,
@@ -659,6 +667,14 @@ def build_parser() -> argparse.ArgumentParser:
     )
     patch_validate.add_argument("--expected-source-corpora", type=int)
     patch_validate.add_argument(
+        "--require-complete-antialias-lineage",
+        action="store_true",
+        help=(
+            "prove a stitched hard/anti-aliased corpus is an exact, hash-bound "
+            "replacement of its original prepared source corpora"
+        ),
+    )
+    patch_validate.add_argument(
         "--require-hashes",
         action=argparse.BooleanOptionalAction,
         default=True,
@@ -745,6 +761,13 @@ def build_parser() -> argparse.ArgumentParser:
     train.add_argument("--loss-ce-weight", type=float, default=1.0)
     train.add_argument("--loss-dice-weight", type=float, default=1.0)
     train.add_argument("--loss-medial-recall-weight", type=float, default=0.0)
+    train.add_argument("--loss-medial-tail-floor-weight", type=float, default=0.0)
+    train.add_argument(
+        "--loss-medial-tail-floor-probability", type=float, default=0.25
+    )
+    train.add_argument(
+        "--loss-medial-tail-bottom-fraction", type=float, default=0.20
+    )
     train.add_argument("--loss-pinned-axial-weight", type=float, default=0.0)
     train.add_argument(
         "--loss-pinned-axial-probability-floor", type=float, default=0.20

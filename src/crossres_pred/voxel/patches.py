@@ -1073,7 +1073,7 @@ def _validate_patch_file(
     }
 
 
-def _validate_source_manifests(rows: list[PatchRecord]) -> int:
+def _validate_exact_source_manifests(rows: list[PatchRecord]) -> int:
     by_root: dict[Path, list[PatchRecord]] = {}
     for row in rows:
         if row.path.parent.name != "patches":
@@ -1162,6 +1162,130 @@ def _validate_source_manifests(rows: list[PatchRecord]) -> int:
                     f"{patch_id}: pathology overlay changed immutable source fields"
                 )
     return len(by_root)
+
+
+def _validate_antialias_source_relation(
+    source_row: PatchRecord,
+    transformed_row: PatchRecord,
+) -> None:
+    projection = transformed_row.target_projection
+    if projection is None:
+        raise ValueError(
+            f"{transformed_row.patch_id}: transformed row has no source provenance"
+        )
+    expected_source_values = {
+        "record_id": source_row.record_id,
+        "source_archive_sha256": source_row.archive_sha256,
+        "source_preparation_version": source_row.preparation_version,
+    }
+    if any(
+        projection.get(name) != expected
+        for name, expected in expected_source_values.items()
+    ):
+        raise ValueError(
+            f"{transformed_row.patch_id}: anti-aliased source identity changed"
+        )
+    for name, expected in (
+        ("source_known_fraction", source_row.known_fraction),
+        ("source_positive_fraction_known", source_row.positive_fraction_known),
+        ("source_pathology_score", source_row.pathology_score),
+    ):
+        try:
+            actual = float(projection[name])
+        except (KeyError, TypeError, ValueError) as error:
+            raise ValueError(
+                f"{transformed_row.patch_id}: anti-aliased {name} is invalid"
+            ) from error
+        if not _close_fraction(actual, expected):
+            raise ValueError(
+                f"{transformed_row.patch_id}: anti-aliased {name} changed"
+            )
+
+    # The pullback may change only the target-derived facts and archive. Reset
+    # those fields to prove that the selected source row carried every other
+    # identity field through unchanged. Pathology-mining provenance is tied to
+    # the old archive hash and is intentionally removed by the pullback.
+    normalized = replace(
+        transformed_row,
+        path=source_row.path,
+        known_fraction=source_row.known_fraction,
+        acceptance_min_known_fraction=source_row.acceptance_min_known_fraction,
+        positive_fraction_known=source_row.positive_fraction_known,
+        pathology_score=source_row.pathology_score,
+        sampling_pathology_score=source_row.sampling_pathology_score,
+        preparation_version=source_row.preparation_version,
+        archive_bytes=source_row.archive_bytes,
+        archive_sha256=source_row.archive_sha256,
+        pathology_mining=source_row.pathology_mining,
+        target_projection=source_row.target_projection,
+    )
+    if normalized != source_row:
+        raise ValueError(
+            f"{transformed_row.patch_id}: anti-aliased row changed immutable "
+            "source fields"
+        )
+
+
+def _validate_source_manifests(
+    rows: list[PatchRecord],
+    *,
+    require_complete_antialias_lineage: bool = False,
+) -> int:
+    if not require_complete_antialias_lineage:
+        return _validate_exact_source_manifests(rows)
+
+    # A stitched corpus can replace some rows from a prepared source root with
+    # anti-aliased derivatives while passing other rows through. Grouping only
+    # by the final archive parent makes each half look like an illegal subset.
+    # Expand transformed rows back through their hash-bound source selection,
+    # then apply the ordinary exact-corpus proof to the reconstructed lineage.
+    by_root: dict[Path, list[PatchRecord]] = {}
+    for row in rows:
+        if row.path.parent.name != "patches":
+            raise ValueError(f"{row.path}: patch is not inside a patches directory")
+        by_root.setdefault(row.path.parent.parent, []).append(row)
+
+    lineage_rows: list[PatchRecord] = []
+    for root, included in by_root.items():
+        versions = {row.preparation_version for row in included}
+        if versions != {ANTIALIAS_PATCH_PREPARATION_VERSION}:
+            lineage_rows.extend(included)
+            continue
+
+        # First prove that no row from the transformed preparation root was
+        # omitted or substituted in the stitched manifest.
+        _validate_exact_source_manifests(included)
+        state_path = root / "prepare_state.json"
+        state = json.loads(state_path.read_text(encoding="utf-8"))
+        identity = state.get("identity")
+        if not isinstance(identity, dict):
+            raise TypeError(f"{root}: anti-aliased preparation identity is missing")
+        source_text = identity.get("source_manifest")
+        source_sha256 = str(identity.get("source_manifest_sha256", ""))
+        source_manifest = remap_embedded_path(str(source_text))
+        if (
+            not source_manifest.is_absolute()
+            or len(source_sha256) != 64
+            or not source_manifest.is_file()
+            or _sha256(source_manifest) != source_sha256
+        ):
+            raise ValueError(f"{root}: anti-aliased source manifest changed")
+        source_rows = load_patch_manifest(source_manifest)
+        if int(identity.get("source_rows", -1)) != len(source_rows):
+            raise ValueError(f"{root}: anti-aliased source row count changed")
+        if [row.patch_id for row in source_rows] != [
+            row.patch_id for row in included
+        ]:
+            raise ValueError(f"{root}: anti-aliased source selection changed")
+        transformed_by_id = {row.patch_id: row for row in included}
+        for source_row in source_rows:
+            _validate_antialias_source_relation(
+                source_row,
+                transformed_by_id[source_row.patch_id],
+            )
+        lineage_rows.extend(source_rows)
+
+    return _validate_exact_source_manifests(lineage_rows)
 
 
 def _validate_finite_anchor_coverage(
@@ -1351,6 +1475,7 @@ def validate_patch_corpus(
     expected_test_scroll_counts: dict[str, int] | None = None,
     expected_record_counts: dict[str, int] | None = None,
     expected_source_corpora: int | None = None,
+    require_complete_antialias_lineage: bool = False,
     require_hashes: bool = True,
     voxel_check_count: int | None = None,
     workers: int = 8,
@@ -1436,7 +1561,10 @@ def validate_patch_corpus(
             raise ValueError(
                 f"{source}: {split} scroll counts {actual} do not match {canonical}"
             )
-    source_corpora = _validate_source_manifests(rows)
+    source_corpora = _validate_source_manifests(
+        rows,
+        require_complete_antialias_lineage=require_complete_antialias_lineage,
+    )
     native_teacher_anchors = _validate_native_teacher_anchors(rows)
     human_label_anchors = _validate_human_label_anchors(rows)
     if (

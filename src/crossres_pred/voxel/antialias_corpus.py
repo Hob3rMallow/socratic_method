@@ -203,10 +203,15 @@ def _identity(
     options: AntialiasCorpusOptions,
     patch_registration_identity: dict[str, Any] | None,
 ) -> dict[str, Any]:
+    # The fine-CT quality gate applies to native-teacher rows only; human-label
+    # rows carry None there (mixed-supervision corpora such as wide15).
     quality_values = {
-        float(row["native_teacher_min_fine_ct_nonzero_fraction"]) for row in source_rows
+        float(value)
+        for row in source_rows
+        if (value := row.get("native_teacher_min_fine_ct_nonzero_fraction"))
+        is not None
     }
-    if len(quality_values) != 1:
+    if len(quality_values) > 1:
         raise ValueError("source rows disagree on fine-CT quality threshold")
     return {
         "preparation_version": ANTIALIAS_PATCH_PREPARATION_VERSION,
@@ -222,7 +227,9 @@ def _identity(
             **asdict(options),
             "bridge": asdict(options.bridge),
             "native_teacher_min_known_fraction": options.min_known_fraction,
-            "native_teacher_min_fine_ct_nonzero_fraction": quality_values.pop(),
+            "native_teacher_min_fine_ct_nonzero_fraction": (
+                quality_values.pop() if quality_values else None
+            ),
         },
     }
 
