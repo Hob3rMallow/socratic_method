@@ -1,0 +1,434 @@
+{
+  "schema": "c3-f0-inference-record-file-inventory-v1",
+  "verified_at_utc": "2026-09-09T04:05:56.121022+00:00",
+  "files": [
+    {
+      "relative_path": "evidence/decision_table.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\decision_table.json",
+      "bytes": 35874,
+      "sha256": "b09381ad06de497f1b007307170a8b713d3cc75f57ac1d03c7310cb933c719dd"
+    },
+    {
+      "relative_path": "evidence/decision_table.before_primary_kaggle_20260908T185355Z.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\decision_table.before_primary_kaggle_20260908T185355Z.json",
+      "bytes": 35112,
+      "sha256": "f0df66f427be60067b7a1c658f70aade9333261c1e238dcff430905a1323f7f7"
+    },
+    {
+      "relative_path": "evidence/all_metrics/all_metrics_table.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\all_metrics\\all_metrics_table.json",
+      "bytes": 358258,
+      "sha256": "63e1763109c7564e8edb4fe98d0348d92291d5be7fbf1809766fda1e291a981f"
+    },
+    {
+      "relative_path": "evidence/all_metrics/all_metrics_table.md",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\all_metrics\\all_metrics_table.md",
+      "bytes": 20462,
+      "sha256": "c67862b11a9aef75b975b1337b946a12dc553d0daa41201e77562b02cadfe754"
+    },
+    {
+      "relative_path": "evidence/all_metrics/all_metrics_ledger.html",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\all_metrics\\all_metrics_ledger.html",
+      "bytes": 318454,
+      "sha256": "63dab45a011f9a150e024c289ab14cd500519b961a5ee3f83f82b859ecd20622"
+    },
+    {
+      "relative_path": "evidence/audits/f0_200k_tta/report.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\audits\\f0_200k_tta\\report.json",
+      "bytes": 104994,
+      "sha256": "b2bf5b49d4738a00db56f3eadfe675164af26c6e4a54bb084bfc408ea33f5b57"
+    },
+    {
+      "relative_path": "evidence/audits/f0_200k_tta/per_patch_counts.npz",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\audits\\f0_200k_tta\\per_patch_counts.npz",
+      "bytes": 101049,
+      "sha256": "74ec78ebbfed3471051a38b837566378865995b6cdd5196864fec155bcf1d939"
+    },
+    {
+      "relative_path": "evidence/bootstrap/f0_200k_tta.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\bootstrap\\f0_200k_tta.json",
+      "bytes": 8467,
+      "sha256": "728a643633bb5326418e9467fb58ad2a1bd577e4a8030f24d85825d14f1d5440"
+    },
+    {
+      "relative_path": "evidence/audits/f0_200k/report.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\audits\\f0_200k\\report.json",
+      "bytes": 105005,
+      "sha256": "4e7e8d5eb8ae41bf80a690a8f3d241e0dd226ba7846d8ee7c66128a730579b69"
+    },
+    {
+      "relative_path": "evidence/audits/f0_200k/per_patch_counts.npz",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\audits\\f0_200k\\per_patch_counts.npz",
+      "bytes": 103957,
+      "sha256": "c2940fda216406aee4a740377dd3990bc6010ce06883626e3008cc44c75dbf9e"
+    },
+    {
+      "relative_path": "evidence/bootstrap/f0_200k.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\bootstrap\\f0_200k.json",
+      "bytes": 4271,
+      "sha256": "7b4aa002ccab2f69de2b78027e48a6edd3616538a895f301e0f28d6dfc2d480b"
+    },
+    {
+      "relative_path": "evidence/kaggle/f0_200k_tta_t030/kaggle.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\kaggle\\f0_200k_tta_t030\\kaggle.json",
+      "bytes": 1169,
+      "sha256": "f971c83fa9dcec402fe6b1d8d3b4f1820c9fe0f55af2b23c72795a9fe7ab2a6e"
+    },
+    {
+      "relative_path": "evidence/kaggle/f0_200k_tta_t030/v14p2_val_score/kaggle_summary.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\kaggle\\f0_200k_tta_t030\\v14p2_val_score\\kaggle_summary.json",
+      "bytes": 479,
+      "sha256": "326691496a116519e6f48ddf9b864533c08a1680c158101f20baafad65b060c8"
+    },
+    {
+      "relative_path": "evidence/kaggle/f0_200k_tta_t030/v14p2_val_score/shard_0/out/metrics_per_case.csv",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\kaggle\\f0_200k_tta_t030\\v14p2_val_score\\shard_0\\out\\metrics_per_case.csv",
+      "bytes": 24018,
+      "sha256": "dafd98ea616b24f66ba989333225a1eb303bf738728835e009ea8de4ccc41d2a"
+    },
+    {
+      "relative_path": "evidence/kaggle/f0_200k_tta_t030/v14p2_val_score/shard_1/out/metrics_per_case.csv",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\kaggle\\f0_200k_tta_t030\\v14p2_val_score\\shard_1\\out\\metrics_per_case.csv",
+      "bytes": 23904,
+      "sha256": "ecd3f2eff41c30170d182b1b456b087dcfe1c09ee702ff6490f34915e3bec62f"
+    },
+    {
+      "relative_path": "evidence/kaggle/f0_200k_tta_t030/v14p2_val_score/shard_2/out/metrics_per_case.csv",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\kaggle\\f0_200k_tta_t030\\v14p2_val_score\\shard_2\\out\\metrics_per_case.csv",
+      "bytes": 23859,
+      "sha256": "cd48852d78e638b0ab844cf70e4019476abf30f307aba10fcfaf4371c133f2dd"
+    },
+    {
+      "relative_path": "evidence/kaggle/f0_200k_tta_t030/v14p2_val_score/shard_3/out/metrics_per_case.csv",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\kaggle\\f0_200k_tta_t030\\v14p2_val_score\\shard_3\\out\\metrics_per_case.csv",
+      "bytes": 23928,
+      "sha256": "3bcca413f299d80e9b557fb29e422ba6e3fbc7336592afe09dc8658faff3afb3"
+    },
+    {
+      "relative_path": "evidence/kaggle/f0_200k_tta_t030/p0500p2_val_score/kaggle_summary.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\kaggle\\f0_200k_tta_t030\\p0500p2_val_score\\kaggle_summary.json",
+      "bytes": 473,
+      "sha256": "c3b85520aed37c4573f6016158ee1eaaada0154f99b2308c0e46af466f4c6a43"
+    },
+    {
+      "relative_path": "evidence/kaggle/f0_200k_tta_t030/p0500p2_val_score/shard_0/out/metrics_per_case.csv",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\kaggle\\f0_200k_tta_t030\\p0500p2_val_score\\shard_0\\out\\metrics_per_case.csv",
+      "bytes": 11308,
+      "sha256": "987fa9e139ebadb9d8d065f60ced9077a768982d76162f1dfb69d030ecd1e638"
+    },
+    {
+      "relative_path": "evidence/kaggle/f0_200k_tta_t030/p0500p2_val_score/shard_1/out/metrics_per_case.csv",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\kaggle\\f0_200k_tta_t030\\p0500p2_val_score\\shard_1\\out\\metrics_per_case.csv",
+      "bytes": 11273,
+      "sha256": "d77da747dfbff74496df843e09a96994d5b259655f36bcd8b3df29a6f3e7e5cf"
+    },
+    {
+      "relative_path": "evidence/kaggle/f0_200k_tta_t030/p0500p2_val_score/shard_2/out/metrics_per_case.csv",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\kaggle\\f0_200k_tta_t030\\p0500p2_val_score\\shard_2\\out\\metrics_per_case.csv",
+      "bytes": 11258,
+      "sha256": "6bd27118abd719a7f61b143db3051254275e8cff2a134c7f0d67c015274f6d58"
+    },
+    {
+      "relative_path": "evidence/kaggle/f0_200k_tta_t030/p0500p2_val_score/shard_3/out/metrics_per_case.csv",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\kaggle\\f0_200k_tta_t030\\p0500p2_val_score\\shard_3\\out\\metrics_per_case.csv",
+      "bytes": 11283,
+      "sha256": "8e0fea929e5ae55e62b707ac87f258d4b7a69206ef8fd5245e241606290e50b3"
+    },
+    {
+      "relative_path": "evidence/kaggle/f0_200k_tta_t035/kaggle.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\kaggle\\f0_200k_tta_t035\\kaggle.json",
+      "bytes": 1155,
+      "sha256": "05e4b8b8c02f0a510a20172a4893dfe11b5b2173721bc7c98b6012fbe473d569"
+    },
+    {
+      "relative_path": "evidence/kaggle/f0_200k_tta_t035/v14p2_val_score/kaggle_summary.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\kaggle\\f0_200k_tta_t035\\v14p2_val_score\\kaggle_summary.json",
+      "bytes": 477,
+      "sha256": "fc266c95a8b990de4348b8b71dbb778efb4b65e8740c111ab10dae069674d964"
+    },
+    {
+      "relative_path": "evidence/kaggle/f0_200k_tta_t035/v14p2_val_score/shard_0/out/metrics_per_case.csv",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\kaggle\\f0_200k_tta_t035\\v14p2_val_score\\shard_0\\out\\metrics_per_case.csv",
+      "bytes": 24009,
+      "sha256": "2e42074d6ec4daaa0670f45c75a043bc92b918af479d5eddef32b3de2f286a4f"
+    },
+    {
+      "relative_path": "evidence/kaggle/f0_200k_tta_t035/v14p2_val_score/shard_1/out/metrics_per_case.csv",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\kaggle\\f0_200k_tta_t035\\v14p2_val_score\\shard_1\\out\\metrics_per_case.csv",
+      "bytes": 23919,
+      "sha256": "4a762f4b9f8b7b8b351cd8efe32db383aefef87d5fec7e46cde3a1bd049066fd"
+    },
+    {
+      "relative_path": "evidence/kaggle/f0_200k_tta_t035/v14p2_val_score/shard_2/out/metrics_per_case.csv",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\kaggle\\f0_200k_tta_t035\\v14p2_val_score\\shard_2\\out\\metrics_per_case.csv",
+      "bytes": 23844,
+      "sha256": "0f74b7d6c92d11fbc0c4675d7219c7479f63bef6e30b2a3df00821a73de43e84"
+    },
+    {
+      "relative_path": "evidence/kaggle/f0_200k_tta_t035/v14p2_val_score/shard_3/out/metrics_per_case.csv",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\kaggle\\f0_200k_tta_t035\\v14p2_val_score\\shard_3\\out\\metrics_per_case.csv",
+      "bytes": 23949,
+      "sha256": "0653d68886c563a74884904682bde83e59029c9980e4275b2c34d6500edcdd15"
+    },
+    {
+      "relative_path": "evidence/kaggle/f0_200k_tta_t035/p0500p2_val_score/kaggle_summary.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\kaggle\\f0_200k_tta_t035\\p0500p2_val_score\\kaggle_summary.json",
+      "bytes": 460,
+      "sha256": "386aa7dec9e4610992c70f9c10f4f82f2ae8fc7b5687062e559623a88a38eec8"
+    },
+    {
+      "relative_path": "evidence/kaggle/f0_200k_tta_t035/p0500p2_val_score/shard_0/out/metrics_per_case.csv",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\kaggle\\f0_200k_tta_t035\\p0500p2_val_score\\shard_0\\out\\metrics_per_case.csv",
+      "bytes": 11273,
+      "sha256": "15d9b838288928f619e477b8ba5b80b2da00b58d5e2a1c52d248c0322342cfa2"
+    },
+    {
+      "relative_path": "evidence/kaggle/f0_200k_tta_t035/p0500p2_val_score/shard_1/out/metrics_per_case.csv",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\kaggle\\f0_200k_tta_t035\\p0500p2_val_score\\shard_1\\out\\metrics_per_case.csv",
+      "bytes": 11228,
+      "sha256": "3dfa8e605f80f7c34e5ff11fa788ae46d94f4677cf1855949c3a774a0976ba60"
+    },
+    {
+      "relative_path": "evidence/kaggle/f0_200k_tta_t035/p0500p2_val_score/shard_2/out/metrics_per_case.csv",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\kaggle\\f0_200k_tta_t035\\p0500p2_val_score\\shard_2\\out\\metrics_per_case.csv",
+      "bytes": 11223,
+      "sha256": "a3f3094a74811cbfc47bb7caf3db869d161c97cf10162065c0627577413af044"
+    },
+    {
+      "relative_path": "evidence/kaggle/f0_200k_tta_t035/p0500p2_val_score/shard_3/out/metrics_per_case.csv",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\kaggle\\f0_200k_tta_t035\\p0500p2_val_score\\shard_3\\out\\metrics_per_case.csv",
+      "bytes": 11233,
+      "sha256": "037fd5d8d3a2e17aa5fc6fed163f96aa43658d8432e59729b6aa5391cd8c103a"
+    },
+    {
+      "relative_path": "evidence/kaggle/f0_200k_tta_extra_kaggle.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\kaggle\\f0_200k_tta_extra_kaggle.json",
+      "bytes": 2772,
+      "sha256": "d6ce0349971f5cc0766f8779f4350fbce2683c616ae28dcdd6a1940870ba317f"
+    },
+    {
+      "relative_path": "evidence/kaggle/reference_f0_200k_t030/v14p2_val_score/kaggle_summary.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\evaluation\\milestone_00200000\\kaggle_v14p2_val_t030_score\\kaggle_summary.json",
+      "bytes": 479,
+      "sha256": "fe44245b6afb5dcd2d9c2ee924abb8f742f345d8c9c6edd6e1327acf245eaea9"
+    },
+    {
+      "relative_path": "evidence/kaggle/reference_f0_200k_t030/v14p2_val_score/shard_0/out/metrics_per_case.csv",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\evaluation\\milestone_00200000\\kaggle_v14p2_val_t030_score\\shard_0\\out\\metrics_per_case.csv",
+      "bytes": 47487,
+      "sha256": "19c4b87fb790982b8aa0d0a2a92493b8f6a94c4eb1e98c5066b775dbd7e50153"
+    },
+    {
+      "relative_path": "evidence/kaggle/reference_f0_200k_t030/v14p2_val_score/shard_1/out/metrics_per_case.csv",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\evaluation\\milestone_00200000\\kaggle_v14p2_val_t030_score\\shard_1\\out\\metrics_per_case.csv",
+      "bytes": 47423,
+      "sha256": "8f4319dbbe5be3f2709725321e1864980a6cd0af67cd3357976a5791d7c49bd3"
+    },
+    {
+      "relative_path": "evidence/kaggle/reference_f0_200k_t030/p0500p2_val_score/kaggle_summary.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\evaluation\\milestone_00200000\\kaggle_p0500p2_val_t030_score\\kaggle_summary.json",
+      "bytes": 479,
+      "sha256": "028e442b6f2b2cac28157eb323becf8110ecb7bbfe5f24547067c29f38c50774"
+    },
+    {
+      "relative_path": "evidence/kaggle/reference_f0_200k_t030/p0500p2_val_score/shard_0/out/metrics_per_case.csv",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\evaluation\\milestone_00200000\\kaggle_p0500p2_val_t030_score\\shard_0\\out\\metrics_per_case.csv",
+      "bytes": 22434,
+      "sha256": "fd201501c7dcef2fb6edd7419ca123ecc041c161a559e257b8b2986cd2fbd9a6"
+    },
+    {
+      "relative_path": "evidence/kaggle/reference_f0_200k_t030/p0500p2_val_score/shard_1/out/metrics_per_case.csv",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\evaluation\\milestone_00200000\\kaggle_p0500p2_val_t030_score\\shard_1\\out\\metrics_per_case.csv",
+      "bytes": 22403,
+      "sha256": "930120a3641e70e2fff763fc07ec3021974750298e5ff0338d6402bb809bf67a"
+    },
+    {
+      "relative_path": "evidence/kaggle/reference_f0_200k_t035/v14p2_val_score/kaggle_summary.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\evaluation\\milestone_00200000\\kaggle_v14p2_val_t035_score\\kaggle_summary.json",
+      "bytes": 478,
+      "sha256": "bf03af35b39f130e7352882855f6cf92b7caaceb7b2a77262e643357c1828b2d"
+    },
+    {
+      "relative_path": "evidence/kaggle/reference_f0_200k_t035/v14p2_val_score/shard_0/out/metrics_per_case.csv",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\evaluation\\milestone_00200000\\kaggle_v14p2_val_t035_score\\shard_0\\out\\metrics_per_case.csv",
+      "bytes": 47463,
+      "sha256": "0ba18980964920e3592f544c813964959a090c5db89829c1f631d5811033f86d"
+    },
+    {
+      "relative_path": "evidence/kaggle/reference_f0_200k_t035/v14p2_val_score/shard_1/out/metrics_per_case.csv",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\evaluation\\milestone_00200000\\kaggle_v14p2_val_t035_score\\shard_1\\out\\metrics_per_case.csv",
+      "bytes": 47445,
+      "sha256": "4f6be10669cc58b9c70b709430ebebabca1c061482a7c5144cefd0de70cf13a8"
+    },
+    {
+      "relative_path": "evidence/kaggle/reference_f0_200k_t035/p0500p2_val_score/kaggle_summary.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\evaluation\\milestone_00200000\\kaggle_p0500p2_val_t035_score\\kaggle_summary.json",
+      "bytes": 476,
+      "sha256": "4259d267a4b89fd84796f09ee34437f6a1e19f2ef2563153bf4df81fa155dd09"
+    },
+    {
+      "relative_path": "evidence/kaggle/reference_f0_200k_t035/p0500p2_val_score/shard_0/out/metrics_per_case.csv",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\evaluation\\milestone_00200000\\kaggle_p0500p2_val_t035_score\\shard_0\\out\\metrics_per_case.csv",
+      "bytes": 22365,
+      "sha256": "e00d78e5828e9a34e9e151826fe9d30a97de1a0d589a8f571f00c1a390dc563a"
+    },
+    {
+      "relative_path": "evidence/kaggle/reference_f0_200k_t035/p0500p2_val_score/shard_1/out/metrics_per_case.csv",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\final_c3_250k_20260905\\evaluation\\milestone_00200000\\kaggle_p0500p2_val_t035_score\\shard_1\\out\\metrics_per_case.csv",
+      "bytes": 22337,
+      "sha256": "ec44dc07bb0aecb41e9a4642a5930b447539699bcbde2fd4fff3d42a71afb952"
+    },
+    {
+      "relative_path": "evidence/kaggle/sealed_m7_raw_calibrated_t020/v14p2_val_score/kaggle_summary.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\unified_ladder_20260902\\baselines\\m7_raw\\ladder_eval\\kaggle_v14p2_val_cal_00000000_score\\kaggle_summary.json",
+      "bytes": 480,
+      "sha256": "e7f33e5121e3ad76696d1f4b373add1307c7da510d4a5879cfceece98eeef34a"
+    },
+    {
+      "relative_path": "evidence/kaggle/sealed_m7_raw_calibrated_t020/p0500p2_val_score/kaggle_summary.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\unified_ladder_20260902\\baselines\\m7_raw\\ladder_eval\\kaggle_p0500p2_val_cal_00000000_score\\kaggle_summary.json",
+      "bytes": 465,
+      "sha256": "bf6803316ee6153f989979617a2ad6789bce156c23d769d921a5964c6ae8cf5e"
+    },
+    {
+      "relative_path": "evidence/kaggle/sealed_m7_tta_calibrated_t020/v14p2_val_score/kaggle_summary.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\unified_ladder_20260902\\baselines\\m7_tta\\ladder_eval\\kaggle_v14p2_val_cal_00000000_score\\kaggle_summary.json",
+      "bytes": 480,
+      "sha256": "0ad0285c2bb8d36602234419966a988826fbab871616e291380f5ffae98a32e9"
+    },
+    {
+      "relative_path": "evidence/kaggle/sealed_m7_tta_calibrated_t020/p0500p2_val_score/kaggle_summary.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\unified_ladder_20260902\\baselines\\m7_tta\\ladder_eval\\kaggle_p0500p2_val_cal_00000000_score\\kaggle_summary.json",
+      "bytes": 481,
+      "sha256": "718a7561b5eabd5f775656f686e22d56eee5940e7c4943702e762c6c828a6573"
+    },
+    {
+      "relative_path": "evidence/geometry/54db9a59cb602ff0/receipt_t030.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\geometry\\54db9a59cb602ff0\\receipt_t030.json",
+      "bytes": 3844,
+      "sha256": "722ab555b5c29c8033f27f99d3f918d3316e6eb623f079aed36e86ade397c4d9"
+    },
+    {
+      "relative_path": "evidence/geometry/54db9a59cb602ff0/receipt_t035.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\geometry\\54db9a59cb602ff0\\receipt_t035.json",
+      "bytes": 3841,
+      "sha256": "e21ea908581b158d5ec246412e0d64f19b98f27b8f5b4b2d3bbb3b910e78e46a"
+    },
+    {
+      "relative_path": "evidence/geometry/54db9a59cb602ff0/frontier.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\geometry\\54db9a59cb602ff0\\frontier.json",
+      "bytes": 198651,
+      "sha256": "b89e929a3edc2a07949d590cbad79bf9c942c20039f245ed32b368e3cc90123f"
+    },
+    {
+      "relative_path": "evidence/geometry/54db9a59cb602ff0/review_z12160_y04224_x02944_z12224.png",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\geometry\\54db9a59cb602ff0\\blind_t035\\report\\images\\z12160_y04224_x02944_z12224.png",
+      "bytes": 69658,
+      "sha256": "c4bea6711a32147f3d9fdf92681de623546e2856d17869047a4aaae4f52325bf"
+    },
+    {
+      "relative_path": "evidence/prereg/F0_FAMILY_PREREG_20260908.md",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\F0_FAMILY_PREREG_20260908.md",
+      "bytes": 6273,
+      "sha256": "53bd869ed6ab447bfc3437d7ac0257f5052b6e6ef48b68317b92707cc8fa4617"
+    },
+    {
+      "relative_path": "evidence/config/f0_variants_20260908.json",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\configs\\f0_variants_20260908.json",
+      "bytes": 7440,
+      "sha256": "71ca3dd676611e045b1d6976e8c42992eddeb68fc6859cde4e14191e8db726f2"
+    },
+    {
+      "relative_path": "evidence/config/preflight.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\preflight.json",
+      "bytes": 843,
+      "sha256": "b6a7b268fdb7d786e4244e75a8d981a1bb0c9ae3f74f1b95163b833405667c66"
+    },
+    {
+      "relative_path": "evidence/config/status.json",
+      "original_path": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\status.json",
+      "bytes": 174,
+      "sha256": "9dd837e6aedcae436cd0419be0406ba99cea44206822d2185920017814b0a4e5"
+    },
+    {
+      "relative_path": "runtime/scripts/evaluate_f0_variants.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\evaluate_f0_variants.py",
+      "bytes": 45542,
+      "sha256": "2552679bed14b2c6d4477cbde2830951b548d5d9f888f7eb6da08df4b727f340"
+    },
+    {
+      "relative_path": "runtime/scripts/score_all_f0_variants.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\score_all_f0_variants.py",
+      "bytes": 24259,
+      "sha256": "749284c2eaa7dc8fa81e154f611c9f8bf0fa29b8da0f13fe0f9c03452c1efb17"
+    },
+    {
+      "relative_path": "runtime/scripts/score_f0_variant_kaggle.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\score_f0_variant_kaggle.py",
+      "bytes": 2371,
+      "sha256": "1a84db926f4c0b4d6db7f02a15e7a7dfb8262c88332c70c8ca83af2333a6830a"
+    },
+    {
+      "relative_path": "runtime/scripts/kaggle_paired_bootstrap.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\kaggle_paired_bootstrap.py",
+      "bytes": 5075,
+      "sha256": "dac534d68ae346052d78e6ce6424f7270dcf0423528a0ff6434313c933462c49"
+    },
+    {
+      "relative_path": "runtime/scripts/render_f0_all_metrics_ledger.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\render_f0_all_metrics_ledger.py",
+      "bytes": 31783,
+      "sha256": "d45528b37cfb8214144348fa27b5d89111974b2b7132aa9a59fecb36189d0fd8"
+    },
+    {
+      "relative_path": "runtime/scripts/launch_f0_variants.ps1",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\launch_f0_variants.ps1",
+      "bytes": 3838,
+      "sha256": "a6193ec7b772d0b63d738360ed9537a84fb261614927d85c89f06ae6a2bb6cb6"
+    },
+    {
+      "relative_path": "runtime/scripts/bootstrap_audit_ci.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\bootstrap_audit_ci.py",
+      "bytes": 2533,
+      "sha256": "23fd35958dc24fa4e2f0a512662e0265243c848bec8453f99ae65c71247cfc59"
+    },
+    {
+      "relative_path": "runtime/scripts/average_voxel_checkpoints.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\scripts\\average_voxel_checkpoints.py",
+      "bytes": 2823,
+      "sha256": "beeef68b9910352a2174a4c12bf1feb287407c39d714f5ac2502caf90f844692"
+    },
+    {
+      "relative_path": "runtime/voxel/checkpoint_audit.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\checkpoint_audit.py",
+      "bytes": 30094,
+      "sha256": "b82fbcfeefca358980e7b73ea167f5796cde508517eadc6312ab71903ed094e7"
+    },
+    {
+      "relative_path": "runtime/voxel/audit_bootstrap.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\audit_bootstrap.py",
+      "bytes": 16079,
+      "sha256": "405acfce9460fc1d8bef6c19090daa322f4fba8f2d471bc599c3e8ccc8b932ed"
+    },
+    {
+      "relative_path": "runtime/voxel/ensemble.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\ensemble.py",
+      "bytes": 1969,
+      "sha256": "4817bbcdb982f970d7b38ad5872107259e60a21256267469fd9588c502a636a3"
+    },
+    {
+      "relative_path": "runtime/voxel/checkpoint_average.py",
+      "original_path": "D:\\work\\vesuvius-c\\crossres_pred\\src\\crossres_pred\\voxel\\checkpoint_average.py",
+      "bytes": 10703,
+      "sha256": "d65559b8846fbd4d9ede0ee0cae2d418415c47d15fbe64629babe92b82d9e047"
+    },
+    {
+      "relative_path": "runtime/build_inference_record.py",
+      "original_path": "C:\\Users\\mordr\\AppData\\Local\\Temp\\claude\\D--work-vesuvius-c\\d75d67d5-0255-457e-ab57-75e0e3e22659\\scratchpad\\build_inference_record.py",
+      "bytes": 19543,
+      "sha256": "8c267135fdc6e0b46b9a09c017fc85d94179d72bd1bab7a377f5c87c55d0be9a"
+    }
+  ],
+  "file_count": 71,
+  "total_bytes": 2254908
+}

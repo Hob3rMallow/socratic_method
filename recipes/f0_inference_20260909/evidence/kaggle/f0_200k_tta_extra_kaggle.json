@@ -1,0 +1,77 @@
+{
+  "at_utc": "2026-09-08T20:37:41.610939+00:00",
+  "results": {
+    "0.30": {
+      "operating_threshold": 0.3,
+      "sets": {
+        "p0500p2_val": {
+          "mean_elapsed_s": 18.37281249999999,
+          "mean_leaderboard": 0.49170751875,
+          "mean_surface_dice": 0.7127076312500006,
+          "mean_topoF1_0": 0.28399431874999986,
+          "mean_topoF1_1": 0.0009713281250000001,
+          "mean_topoF1_2": 0.10921538405797089,
+          "mean_toposcore": 0.14367271562499997,
+          "mean_voi_merge": 1.042834121875,
+          "mean_voi_score": 0.5690228687500001,
+          "mean_voi_split": 1.5384171249999996,
+          "mean_voi_total": 2.5812512468749995,
+          "n_cases": 320
+        },
+        "v14p2_val": {
+          "mean_elapsed_s": 12.170246734397683,
+          "mean_leaderboard": 0.6520606342525399,
+          "mean_surface_dice": 0.8862702772133517,
+          "mean_topoF1_0": 0.6398883176470594,
+          "mean_topoF1_1": 0.04107513148788925,
+          "mean_topoF1_2": 0.14444431818181822,
+          "mean_toposcore": 0.40157148330914383,
+          "mean_voi_merge": 1.043813404934688,
+          "mean_voi_score": 0.6325560072568942,
+          "mean_voi_split": 0.9528678403483309,
+          "mean_voi_total": 1.9966812380261243,
+          "n_cases": 689
+        }
+      },
+      "student_tta": true,
+      "variant_id": "f0_200k_tta"
+    },
+    "0.35": {
+      "operating_threshold": 0.35,
+      "sets": {
+        "p0500p2_val": {
+          "mean_elapsed_s": 21.7325,
+          "mean_leaderboard": 0.48314491875,
+          "mean_surface_dice": 0.7013500406249997,
+          "mean_topoF1_0": 0.2767156125,
+          "mean_topoF1_1": 0.0011842218750000007,
+          "mean_topoF1_2": 0.07619865714285713,
+          "mean_toposcore": 0.13821000625000004,
+          "mean_voi_merge": 1.0718187812499997,
+          "mean_voi_score": 0.5605983156249998,
+          "mean_voi_split": 1.5988310343750016,
+          "mean_voi_total": 2.6706497875000013,
+          "n_cases": 320
+        },
+        "v14p2_val": {
+          "mean_elapsed_s": 12.986211901306238,
+          "mean_leaderboard": 0.6397802046444121,
+          "mean_surface_dice": 0.8646887285921614,
+          "mean_topoF1_0": 0.6233403269514002,
+          "mean_topoF1_1": 0.03435062627986348,
+          "mean_topoF1_2": 0.09673194117647059,
+          "mean_toposcore": 0.386003899854862,
+          "mean_voi_merge": 1.1083963759071112,
+          "mean_voi_score": 0.6323941712626996,
+          "mean_voi_split": 0.893326262699565,
+          "mean_voi_total": 2.0017226473149514,
+          "n_cases": 689
+        }
+      },
+      "student_tta": true,
+      "variant_id": "f0_200k_tta"
+    }
+  },
+  "schema": "crossres-f0-variants-extra-kaggle-v1",
+  "variant": "f0_200k_tta"
+}

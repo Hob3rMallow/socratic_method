@@ -175,3 +175,26 @@ def test_selection_summary_must_match_recipe(tmp_path: Path) -> None:
     selection.write_text(json.dumps(value), encoding="utf-8")
     with pytest.raises(ValueError, match="threshold"):
         _validate_selection_summary(selection, contract)
+
+
+def test_test_time_augmentation_flows_from_the_recipe(tmp_path: Path) -> None:
+    _, recipe, qualification = _write_contract(tmp_path)
+    contract = _release_contract(recipe, qualification)
+    assert contract["test_time_augmentation"] == "none"
+    assert _preprocessor_config(contract)["test_time_augmentation"] == "none"
+    value = json.loads(recipe.read_text(encoding="utf-8"))
+    value["release"]["test_time_augmentation"] = "8-way-mirror"
+    recipe.write_text(json.dumps(value), encoding="utf-8")
+    contract = _release_contract(recipe, qualification)
+    assert contract["test_time_augmentation"] == "8-way-mirror"
+    assert _preprocessor_config(contract)["test_time_augmentation"] == "8-way-mirror"
+    qualified = json.loads(qualification.read_text(encoding="utf-8"))
+    qualified["selection"]["test_time_augmentation"] = "none"
+    qualification.write_text(json.dumps(qualified), encoding="utf-8")
+    with pytest.raises(ValueError, match="test_time_augmentation"):
+        _release_contract(recipe, qualification)
+    value["release"]["test_time_augmentation"] = "sixteen-way"
+    recipe.write_text(json.dumps(value), encoding="utf-8")
+    with pytest.raises(ValueError, match="test_time_augmentation"):
+        _release_contract(recipe, qualification)
+

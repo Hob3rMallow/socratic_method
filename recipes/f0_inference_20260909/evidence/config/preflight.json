@@ -1,0 +1,30 @@
+{
+  "at_utc": "2026-09-08T07:50:49.667573+00:00",
+  "config_sha256": "71ca3dd676611e045b1d6976e8c42992eddeb68fc6859cde4e14191e8db726f2",
+  "reference_sha256": "54db9a59cb602ff08e3dda0acc1195ad980ab05fb660332d32fb436a0d49a175",
+  "resources": {
+    "disk_free_bytes": 6360744681472,
+    "memory_used_mib": 1899.0,
+    "name": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+    "power_limit_watts": 450.0,
+    "utilization_percent": 1.0,
+    "uuid": "GPU-304375e6-2d2f-b771-b8be-a0c095fe209e"
+  },
+  "schema": "crossres-f0-variants-preflight-v1",
+  "variants": [
+    "f0_200k",
+    "f0_110k",
+    "f0_250k",
+    "f0_200k_tta",
+    "f0_110k_tta",
+    "f0_250k_tta",
+    "avg_150k_250k",
+    "avg_200k_250k",
+    "avg_top3_150k",
+    "avg_last3",
+    "avg_100k_250k",
+    "ens_200k_110k",
+    "ens_200k_250k",
+    "ens_200k_110k_250k"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "mean_elapsed_s": 18.37281249999999,
+  "mean_leaderboard": 0.49170751875,
+  "mean_surface_dice": 0.7127076312500006,
+  "mean_topoF1_0": 0.28399431874999986,
+  "mean_topoF1_1": 0.0009713281250000001,
+  "mean_topoF1_2": 0.10921538405797089,
+  "mean_toposcore": 0.14367271562499997,
+  "mean_voi_merge": 1.042834121875,
+  "mean_voi_score": 0.5690228687500001,
+  "mean_voi_split": 1.5384171249999996,
+  "mean_voi_total": 2.5812512468749995,
+  "n_cases": 320
+}

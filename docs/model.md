@@ -1,13 +1,38 @@
 # Current model: C3-F0
 
-As of 7 September 2026, the current frozen model is **F0 at 200,000 sample
-exposures, operating threshold 0.35**, selected after the complete 250k run.
-It improves matched frozen macro Dice from released M7's **0.554140 to
-0.680787**: **+0.126647 Dice / 12.7 percentage points / 22.9% relative**.
+The current frozen model is **F0 at 200,000 sample exposures**, selected on
+7 September 2026 after the complete 250k run. Since 9 September 2026 it ships
+with **eight-way mirror TTA at operating threshold 0.30** on the unchanged
+weights: **0.713026** macro Dice on the frozen benchmark, against released M7's
+0.5575 flat or 0.5875 with the same TTA at the same threshold. The training
+record's matched no-TTA comparison at T=0.35 stands: **0.554140 to 0.680787**,
+**+0.126647 Dice / 12.7 percentage points / 22.9% relative**.
 
 The authoritative [manifest](../recipes/final_c3_250k_20260907/manifest.json)
 and [full evidence review](../recipes/final_c3_250k_20260907/review.md) distinguish
 this selected milestone from the retained exact 250k endpoint.
+
+## Inference recipe update (9 September 2026)
+
+The 2026-09-08 variants ladder was preregistered before scoring
+([record](../recipes/f0_inference_20260909/README.md)): the family primary was the
+frozen 200k weights with eight-way mirror TTA, the primary endpoint fixed T=0.35,
+T=0.30 the single secondary operating point, and a 0.70 claim required a positive
+paired cluster-bootstrap lower bound after Holm plus non-negative deltas on both
+scrolls. The primary reached 0.703826 at T=0.35 (+0.023039 [+0.019517, +0.026546]
+over the no-TTA reference) and 0.713026 [0.701206, 0.724822] at T=0.30, the
+declared argmax. Six-cube gates and the frontier veto pass at T=0.30 (foreground
+ratio 0.799; 4,945 bridge pixels against a 7,983 maximum at skeleton recall
+0.782). The Kaggle-style composite on the frozen rows rises from 0.6401 to 0.6521
+and topology from 0.3880 to 0.4016, so the 0.3776 topology advisory missed by the
+no-TTA record is now met. On the human-labelled PHerc0500P2 the composite is flat
+across every variant (0.476 to 0.497) and released M7 with TTA at its calibrated
+T=0.20 stays ahead there (0.5015 against 0.4917); those scores are absolute only.
+Weight averaging over late milestones only reduced variance; the exploratory
+F0 110k + TTA and the 100k-250k average + TTA score at or slightly above the
+shipped recipe and are reported, not promoted. Open: the C3r seed replication
+of the inference recipe, and re-qualification of the repair, continuity and
+sheet-patch postprocessors, which keep their T=0.35 pins.
 
 ## Architecture and training
 

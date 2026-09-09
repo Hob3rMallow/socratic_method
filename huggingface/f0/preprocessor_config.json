@@ -6,7 +6,9 @@
   "ct_std": 47.74376678466797,
   "spatial_divisor": 32,
   "output": "softmax surface probability from class index 1",
-  "operating_threshold": 0.35,
-  "threshold_status": "fixed by preregistration before training; the calibrated T=0.30 optimum is diagnostic only and was never tuned on PHerc1447",
-  "threshold_selection_contract": "preregistered-fixed-operating-threshold-0p35-late-checkpoint-rule-v1"
+  "operating_threshold": 0.3,
+  "threshold_status": "weights fixed by the preregistered late-checkpoint rule (training record: T=0.35 without TTA); the shipped inference recipe was preregistered before the 2026-09-08 ladder ran (eight-way mirror TTA, operating point = the declared argmax over {0.30, 0.35}) and promoted on 2026-09-09 on the unchanged weights; nothing was tuned on PHerc1447",
+  "threshold_selection_contract": "preregistered-late-checkpoint-rule-8way-mirror-tta-operating-point-argmax-0p30-0p35-v2",
+  "test_time_augmentation": "8-way-mirror",
+  "inference": "threshold the class-1 softmax probability; with 8-way-mirror TTA average the softmax over the eight axis-flip passes before thresholding"
 }

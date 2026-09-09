@@ -85,6 +85,10 @@ Required input:
 - `provenance.json`, or `manifest.json` when provenance is absent: `threshold:
   0.35` and either `checkpoint_sha256` or `checkpoint.sha256` matching the frozen
   model. When `target_cube_ids` is present, the TIFF inventory must match it.
+  This profile was qualified against the T=0.35 prediction and keeps that pin:
+  the raw model's shipped operating point moved to T=0.30 with TTA on
+  9 September 2026 (`recipes/f0_inference_20260909`), and the profile has not
+  been re-qualified for that input.
 
 The explicit pitch argument is an operator assertion, not a registration
 measurement. The coarse profile rejects pitches outside 8–10 µm; **the new

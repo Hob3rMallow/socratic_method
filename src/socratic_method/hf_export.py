@@ -17,6 +17,7 @@ DEFAULT_THRESHOLD_STATUS = (
     "selected by registered morphology and blind anti-blob review"
 )
 DEFAULT_MODEL_TYPE = "socratic-m7-xr"
+TEST_TIME_AUGMENTATIONS = ("none", "8-way-mirror")
 
 
 def _sha256(path: Path) -> str:
@@ -116,6 +117,7 @@ def _release_contract(recipe: Path, qualification: Path) -> dict[str, Any]:
             release.get("threshold_status", DEFAULT_THRESHOLD_STATUS)
         ),
         "model_type": str(model.get("hf_model_type", DEFAULT_MODEL_TYPE)),
+        "test_time_augmentation": str(release.get("test_time_augmentation", "none")),
     }
     if contract["samples"] <= 0 or contract["bytes"] <= 0:
         raise ValueError("selected checkpoint samples and bytes must be positive")
@@ -129,6 +131,8 @@ def _release_contract(recipe: Path, qualification: Path) -> dict[str, Any]:
         raise ValueError("release contract must export the raw student only")
     if not contract["version"]:
         raise ValueError("training recipe must declare a version")
+    if contract["test_time_augmentation"] not in TEST_TIME_AUGMENTATIONS:
+        raise ValueError("release test_time_augmentation must be one of none, 8-way-mirror")
 
     qualification_value = _read_json(qualification)
     qualification_selection = qualification_value.get("selection")
@@ -146,6 +150,8 @@ def _release_contract(recipe: Path, qualification: Path) -> dict[str, Any]:
             raise ValueError(
                 f"release qualification {name} does not match the recipe"
             )
+    if "test_time_augmentation" in qualification_selection and qualification_selection["test_time_augmentation"] != contract["test_time_augmentation"]:
+        raise ValueError("release qualification test_time_augmentation does not match the recipe")
     return contract
 
 
@@ -190,6 +196,8 @@ def _preprocessor_config(contract: dict[str, Any]) -> dict[str, Any]:
         "operating_threshold": float(contract["operating_threshold"]),
         "threshold_status": contract.get("threshold_status", DEFAULT_THRESHOLD_STATUS),
         "threshold_selection_contract": contract["threshold_selection_contract"],
+        "test_time_augmentation": contract.get("test_time_augmentation", "none"),
+        "inference": "threshold the class-1 softmax probability; with 8-way-mirror TTA average the softmax over the eight axis-flip passes before thresholding",
     }
 
 
@@ -330,6 +338,7 @@ def export_checkpoint(
         "recipe_version": contract["version"],
         "selected_checkpoint_samples": int(contract["samples"]),
         "operating_threshold": float(contract["operating_threshold"]),
+        "test_time_augmentation": contract.get("test_time_augmentation", "none"),
         "threshold_selection_contract": contract["threshold_selection_contract"],
         "source_checkpoint_sha256": checkpoint_sha256,
         "model_safetensors_sha256": model_sha256,
@@ -351,6 +360,7 @@ def export_checkpoint(
             "recipe_version": contract["version"],
             "selected_checkpoint_samples": int(contract["samples"]),
             "operating_threshold": float(contract["operating_threshold"]),
+            "test_time_augmentation": contract.get("test_time_augmentation", "none"),
             "threshold_selection_contract": contract[
                 "threshold_selection_contract"
             ],
@@ -370,6 +380,10 @@ def export_checkpoint(
     card = card.replace("{{CHECKPOINT_SAMPLES}}", f"{contract['samples']:,}")
     card = card.replace(
         "{{OPERATING_THRESHOLD}}", f"{contract['operating_threshold']:.2f}"
+    )
+    card = card.replace(
+        "{{TEST_TIME_AUGMENTATION}}",
+        "eight-way mirror TTA" if contract.get("test_time_augmentation") == "8-way-mirror" else "no TTA",
     )
     (destination / "README.md").write_text(card, encoding="utf-8", newline="\n")
     return config

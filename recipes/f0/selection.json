@@ -1,15 +1,21 @@
 {
-  "schema": "socratic-method-f0-selection-v1",
+  "schema": "socratic-method-f0-selection-v2",
   "status": "frozen-model-selected",
-  "decision_date": "2026-09-07",
-  "release_id": "c3-f0-200k-20260907",
+  "decision_date": "2026-09-09",
+  "release_id": "c3-f0-200k-tta-t030-20260909",
+  "previous_release_id": "c3-f0-200k-20260907",
   "samples": 200000,
   "completed_training_samples": 250000,
-  "threshold": 0.35,
+  "threshold": 0.3,
+  "test_time_augmentation": "8-way-mirror",
+  "mirror_tta": true,
+  "training_record_threshold": 0.35,
   "checkpoint_sha256": "54db9a59cb602ff08e3dda0acc1195ad980ab05fb660332d32fb436a0d49a175",
   "checkpoint_bytes": 409674095,
   "model_composition": "raw-student-probability-only; no teacher, M7 blend, morphology, or line fitting",
   "selection_basis": "Highest fixed-T=0.35 frozen macro Dice among eligible checkpoints at >=150k; ties to later. Selected after full 250k completion.",
+  "inference_basis": "Family primary fixed before any scoring (F0_FAMILY_PREREG_20260908.md): the frozen 200k weights with eight-way mirror TTA. Operating point = argmax of the fixed-threshold frozen macro Dice over the two pre-registered thresholds {0.30, 0.35}; no other threshold was considered, no per-variant calibration, nothing tuned on PHerc1447.",
+  "threshold_selection_contract": "preregistered-late-checkpoint-rule-8way-mirror-tta-operating-point-argmax-0p30-0p35-v2",
   "selection": {
     "rule": "Highest fixed-T=0.35 frozen macro Dice among eligible checkpoints at >=150k; ties to later. Selected after full 250k completion.",
     "selected_samples": 200000,
@@ -25,6 +31,70 @@
     "readiness_composite_pass": true,
     "readiness_topology_pass": false,
     "threshold_changed_by_this_freeze": false
+  },
+  "inference": {
+    "operating_threshold": 0.3,
+    "test_time_augmentation": "8-way-mirror",
+    "mirror_tta": true,
+    "amp_dtype": "bfloat16",
+    "previous_operating_threshold": 0.35,
+    "macro_dice_030": 0.713025708376333,
+    "ci95_030": [
+      0.7012057990608916,
+      0.7248217726327456
+    ],
+    "macro_dice_035": 0.7038261039837073,
+    "ci95_035": [
+      0.6905625946041541,
+      0.7170029587305439
+    ],
+    "paired_delta_vs_reference": {
+      "0.30": {
+        "delta": 0.0322382802399479,
+        "ci95": [
+          0.02806252141417822,
+          0.036360900514700464
+        ],
+        "probability_delta_le_zero": 0.0,
+        "scrolls": {
+          "PHerc0814": 0.037095242437458764,
+          "PHerc1451": 0.02738131804243704
+        }
+      },
+      "0.35": {
+        "delta": 0.02303867584732222,
+        "ci95": [
+          0.019517286714935668,
+          0.026545518835129216
+        ],
+        "probability_delta_le_zero": 0.0,
+        "scrolls": {
+          "PHerc0814": 0.02393038078130072,
+          "PHerc1451": 0.0221469709133435
+        }
+      },
+      "method": "paired cluster bootstrap, clusters = support_anchor_chunk_zyx (PHerc0814 256 clusters, PHerc1451 142), 2,000 resamples, seed 20260908, identical resample weights for both audits"
+    },
+    "holm_over_family_primaries": {
+      "alpha": 0.05,
+      "primaries": [
+        "f0_200k_tta",
+        "avg_200k_250k",
+        "ens_200k_110k"
+      ],
+      "pass": {
+        "avg_200k_250k": false,
+        "ens_200k_110k": true,
+        "f0_200k_tta": true
+      },
+      "pvalues": {
+        "avg_200k_250k": 1.0,
+        "ens_200k_110k": 0.0,
+        "f0_200k_tta": 0.0
+      }
+    },
+    "breaks_0p70": true,
+    "verdict": "breaks-0.70-candidate (needs C3r replication, 0500P2 floor, repair re-qualification)"
   },
   "results": {
     "benchmark": "Frozen v14p2, 689 rows, macro-scroll Dice; no TTA for matched raw comparison",
@@ -45,11 +115,31 @@
   },
   "candidate_delta_vs_original_c3_30k": 0.003934756627647862,
   "H1_late_best_ge_early_best": true,
+  "pending": {
+    "c3r_replication": {
+      "status": "pending",
+      "rule": "F0_FAMILY_PREREG_20260908.md rule 8: the promoted inference recipe (same weights index, TTA, T) applied to the seed-1204 replicate C3r must beat C3r's own no-TTA reference with a positive paired lower bound",
+      "state_at_record_time": "C3r at 160,000 of 250,000 samples (family coordinator VesuviusCrossres-F0Family-20260908, journal output/crossres_data/logs/f0_family_20260908_state.json)"
+    },
+    "postprocessor_requalification": {
+      "status": "pending",
+      "profiles": [
+        "socratic-repair (recipes/f0_repair_20260907)",
+        "socratic-continuity (recipes/f0_continuity_20260907)",
+        "socratic-sheet-patches (recipes/f0_sheet_patches_20260907)"
+      ],
+      "qualified_input": "frozen F0/200k prediction at T=0.35, halo 32, eight-way mirror TTA, bfloat16",
+      "note": "The profiles pin the T=0.35 prediction and stay valid for it; they have not been re-qualified against the T=0.30 operating point (88-case + control comparison, zero erasure). The raw model's operating point moved; the postprocessor pins did not."
+    }
+  },
   "source_evidence": {
     "manifest": "../final_c3_250k_20260907/manifest.json",
     "analysis": "../final_c3_250k_20260907/analysis.json",
     "review": "../final_c3_250k_20260907/review.md",
-    "evaluation_summary_sha256": "2a3b4fa9364c6dc648b00e1e1041f0e486d6426b5e69b7f9a93258bfc9268503"
+    "evaluation_summary_sha256": "2a3b4fa9364c6dc648b00e1e1041f0e486d6426b5e69b7f9a93258bfc9268503",
+    "inference_record": "../f0_inference_20260909/manifest.json",
+    "inference_decision_table": "../f0_inference_20260909/evidence/decision_table.json",
+    "inference_prereg_sha256": "53bd869ed6ab447bfc3437d7ac0257f5052b6e6ef48b68317b92707cc8fa4617"
   },
-  "release_note": "operator-authorized local freeze; current official model record"
+  "release_note": "operator-authorized inference-recipe update on the unchanged frozen F0/200k weights; current official model record; no automatic production deployment or public upload"
 }

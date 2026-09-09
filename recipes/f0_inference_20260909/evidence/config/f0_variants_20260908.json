@@ -1,0 +1,111 @@
+{
+  "schema": "crossres-f0-variants-prereg-v1",
+  "created": "2026-09-08",
+  "prereg_document": "crossres_pred/F0_FAMILY_PREREG_20260908.md",
+  "scientific_question": "Can the frozen-harness macro-scroll Dice of the C3-F0 model exceed 0.70 with inference-only levers (operating threshold, eight-way mirror TTA, uniform weight averages of late F0 milestones) once patch-sampling uncertainty is measured with a paired cluster bootstrap? Probability ensembles are diagnostic bounds only.",
+  "reference": {
+    "variant_id": "f0_200k",
+    "run_dir": "output/crossres_data/final_c3_250k_20260905/arms/F0",
+    "sealed_release_sha256": "54db9a59cb602ff08e3dda0acc1195ad980ab05fb660332d32fb436a0d49a175",
+    "sealed_audit": "output/crossres_data/final_c3_250k_20260905/evaluation/milestone_00200000/audit/report.json",
+    "sealed_macro_at_035": 0.680787428136385,
+    "reproduction_tolerance": 0.0001
+  },
+  "evaluation": {
+    "val_manifest": "output/crossres_data/voxel_balanced_native_v14p2_registered_antialias_softtarget_corpus/patches.jsonl",
+    "val_manifest_sha256": "a995787032eb446f71759a4dbd510396273b93c65f65863bac8fe9587e12b714",
+    "val_rows": 689,
+    "thresholds": [0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9],
+    "operating_thresholds": [0.3, 0.35],
+    "primary_threshold": 0.35,
+    "secondary_threshold_note": "T=0.30 is the single pre-registered secondary operating point, fixed a priori from the F0 record (calibrated argmax 0.30 at 21 of 25 milestones); calibrated T is diagnostic only.",
+    "num_workers": 2,
+    "max_cpu_threads": 16,
+    "amp_dtype": "bfloat16"
+  },
+  "bootstrap": {
+    "replicates": 2000,
+    "seed": 20260908,
+    "confidence": 0.95,
+    "cluster": true,
+    "cluster_key": "support_anchor_chunk_zyx",
+    "note": "cluster resampling within scroll (PHerc0814 256 rows/256 anchors, PHerc1451 433 rows/142 anchors); identical resample weights for paired deltas; describes patch sampling only, never seed noise"
+  },
+  "variants": [
+    {"id": "f0_200k", "family": "S", "role": "reference", "checkpoint": {"kind": "milestone", "samples": 200000}, "tta": false},
+    {"id": "f0_110k", "family": "S", "role": "exploratory", "checkpoint": {"kind": "milestone", "samples": 110000}, "tta": false},
+    {"id": "f0_250k", "family": "S", "role": "exploratory", "checkpoint": {"kind": "milestone", "samples": 250000}, "tta": false},
+    {"id": "f0_200k_tta", "family": "S", "role": "primary", "checkpoint": {"kind": "milestone", "samples": 200000}, "tta": true},
+    {"id": "f0_110k_tta", "family": "S", "role": "exploratory", "checkpoint": {"kind": "milestone", "samples": 110000}, "tta": true},
+    {"id": "f0_250k_tta", "family": "S", "role": "exploratory", "checkpoint": {"kind": "milestone", "samples": 250000}, "tta": true},
+    {"id": "avg_150k_250k", "family": "W", "role": "exploratory", "checkpoint": {"kind": "average", "samples": [150000, 160000, 170000, 180000, 190000, 200000, 210000, 220000, 230000, 240000, 250000]}, "tta": false},
+    {"id": "avg_200k_250k", "family": "W", "role": "primary", "checkpoint": {"kind": "average", "samples": [200000, 210000, 220000, 230000, 240000, 250000]}, "tta": false},
+    {"id": "avg_top3_150k", "family": "W", "role": "exploratory", "checkpoint": {"kind": "average", "samples": [200000, 220000, 250000]}, "tta": false, "note": "top-3 fixed-.35 macro among milestones >= 150k in the sealed record"},
+    {"id": "avg_last3", "family": "W", "role": "exploratory", "checkpoint": {"kind": "average", "samples": [230000, 240000, 250000]}, "tta": false},
+    {"id": "avg_100k_250k", "family": "W", "role": "exploratory", "checkpoint": {"kind": "average", "samples": [100000, 110000, 120000, 130000, 140000, 150000, 160000, 170000, 180000, 190000, 200000, 210000, 220000, 230000, 240000, 250000]}, "tta": false, "note": "declared exploratory average that straddles the 110k->120k hop; barrier check applies"},
+    {"id": "ens_200k_110k", "family": "E", "role": "primary", "checkpoint": {"kind": "ensemble", "samples": [200000, 110000]}, "tta": false, "diagnostic_only": true},
+    {"id": "ens_200k_250k", "family": "E", "role": "exploratory", "checkpoint": {"kind": "ensemble", "samples": [200000, 250000]}, "tta": false, "diagnostic_only": true},
+    {"id": "ens_200k_110k_250k", "family": "E", "role": "exploratory", "checkpoint": {"kind": "ensemble", "samples": [200000, 110000, 250000]}, "tta": false, "diagnostic_only": true}
+  ],
+  "conditional_variants": {
+    "rule": "after all no-TTA audits, the two weight averages with the highest fixed-0.35 macro receive a TTA audit, declared here before scoring",
+    "family": "W",
+    "count": 2,
+    "tta": true
+  },
+  "family_primaries": ["f0_200k_tta", "avg_200k_250k", "ens_200k_110k", "x_ens_f0sel_c3rsel"],
+  "family_primaries_note": "x_ens_f0sel_c3rsel is the cross-seed primary evaluated by the family coordinator after C3r; it is declared here so the Holm family is fixed before any scoring",
+  "holm_alpha": 0.05,
+  "candidate_selection": {
+    "shippable_top_k": 3,
+    "kaggle_top_k": 2,
+    "operating_thresholds": [0.3, 0.35],
+    "rule": "top-3 shippable (not diagnostic_only) by fixed-0.35 macro plus the reference; operating T = argmax over {0.30, 0.35} (ties to 0.35); geometry gates + frontier veto at that T; Kaggle composite on both sets for the top 2"
+  },
+  "geometry": {
+    "blind_source": "output/crossres_data/pherc1447_blind_audit/six_cube_subset",
+    "blind_reference_grid": "output/crossres_data/pherc1447_blind_audit/jackpot_all_sources_20260815_t035_report_20260901/inference/cubes_PRED",
+    "gates": {
+      "interior_fraction_max_delta": 0.1,
+      "max_thickness_max_delta": 2,
+      "foreground_ratio_band": [0.75, 1.25]
+    },
+    "gate_thresholds": [0.25, 0.3, 0.35],
+    "frontier_reference": "output/crossres_data/final_c3_250k_20260905/preflight_frontiers/C3.json",
+    "max_bridge_growth": 1.2,
+    "export": "halo 32, eight-way mirror TTA, bfloat16 (the sealed blind protocol) regardless of the variant's audit TTA flag; the export is shared by variants of the same checkpoint"
+  },
+  "kaggle": {
+    "metric_exe": "metric-windows/build/metric/Release/metric.exe",
+    "gt_root": "output/crossres_data/unified_ladder_20260902/kaggle_gt",
+    "metric_shards": 2,
+    "expected_rows": {"v14p2_val": 689, "p0500p2_val": 320},
+    "sets": {
+      "v14p2_val": {
+        "manifest": "output/crossres_data/voxel_balanced_native_v14p2_registered_antialias_softtarget_corpus/patches.jsonl",
+        "scroll": null
+      },
+      "p0500p2_val": {
+        "manifest": "output/crossres_data/voxel_all_sources_patches_5856/patches.jsonl",
+        "scroll": "PHerc0500P2",
+        "note": "absolute only; released M7 saw these labels"
+      }
+    },
+    "floors": {
+      "topo_v14p2_reference_at_035": 0.3756456211901307,
+      "composite_p0500p2_reference_at_035": 0.4817672562499996,
+      "allowed_drop": 0.005
+    }
+  },
+  "execution": {
+    "output_root": "output/crossres_data/f0_family_20260908/variants",
+    "journal": "output/crossres_data/logs/f0_variants_20260908_state.json",
+    "log": "output/crossres_data/logs/f0_variants_20260908.log",
+    "task_name": "VesuviusCrossres-F0Variants-20260908",
+    "gpu_lock_owner": "f0-family:variants",
+    "gpu_uuid": "GPU-304375e6-2d2f-b771-b8be-a0c095fe209e",
+    "max_power_limit_watts": 600.5,
+    "minimum_free_bytes": 107374182400,
+    "heartbeat_seconds": 1800
+  }
+}

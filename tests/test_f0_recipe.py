@@ -55,12 +55,14 @@ def test_recipe_structure_and_constants(recipe: dict) -> None:
     for key in ("schema", "name", "version", "artifacts", "model", "release", "objective", "optimization", "evaluation", "training"):
         assert key in recipe, key
     assert recipe["schema"] == "socratic-method-training-recipe-v1"
-    assert recipe["version"] == "c3-f0-200k-20260907"
+    assert recipe["version"] == "c3-f0-200k-tta-t030-20260909"
     release = recipe["release"]
     assert release["status"] == "selected"
     assert release["inference"] == "raw-student-only-no-m7-blend-no-teacher"
     assert release["selection_status"] == "frozen-model-selected"
     assert 0 < release["operating_threshold"] < 1
+    assert release["operating_threshold"] == 0.30 and release["training_record_operating_threshold"] == 0.35
+    assert release["test_time_augmentation"] == "8-way-mirror" and release["previous_release_id"] == "c3-f0-200k-20260907"
     assert set(release["selected_checkpoint"]["sha256"]) <= HEX64 and len(release["selected_checkpoint"]["sha256"]) == 64
     assert isinstance(recipe["training"]["argv"], list) and all(isinstance(t, str) for t in recipe["training"]["argv"])
     jsonschema = pytest.importorskip("jsonschema")
@@ -87,7 +89,7 @@ def test_artifact_pins_match_the_sealed_record(recipe: dict, manifest: dict, sea
     assert selected["sha256"] == manifest["model"]["sha256"]
     assert selected["bytes"] == manifest["model"]["bytes"]
     assert selected["samples"] == manifest["model"]["selected_sample_exposures"]
-    assert recipe["release"]["operating_threshold"] == manifest["model"]["operating_threshold"]
+    assert recipe["release"]["training_record_operating_threshold"] == manifest["model"]["operating_threshold"]
     assert recipe["release"]["completed_training_samples"] == manifest["model"]["completed_training_horizon"]
     assert recipe["source_recipe_sha256"] == _sha256(RECORD / "provenance" / "recipe.json") == manifest["training"]["config_sha256"]
     assert recipe["source_run_identity_sha256"] == manifest["training"]["run_identity_sha256"]
@@ -247,11 +249,12 @@ def test_observed_metrics_and_release_records_are_derived_from_the_record() -> N
     assert observed["release_selection"]["checkpoint_samples"] == 200000
     manifest = _json(RECORD / "manifest.json")
     analysis = _json(RECORD / "analysis.json")
+    inference = _json(ROOT / "recipes" / "f0_inference_20260909" / "manifest.json")
     selection = _json(RECIPE_DIR / "selection.json")
-    expected_selection = records_builder.build_selection(manifest, analysis)
+    expected_selection = records_builder.build_selection(manifest, analysis, inference)
     assert selection == expected_selection
     qualification = _json(RECIPE_DIR / "release_qualification.json")
-    expected_qualification = records_builder.build_qualification(manifest, analysis)
+    expected_qualification = records_builder.build_qualification(manifest, analysis, inference)
     expected_qualification["created_at_utc"] = qualification["created_at_utc"]
     assert qualification == expected_qualification
 
@@ -259,9 +262,10 @@ def test_observed_metrics_and_release_records_are_derived_from_the_record() -> N
 def test_export_contract_accepts_the_f0_records(recipe: dict) -> None:
     contract = _release_contract(RECIPE_DIR / "recipe.json", RECIPE_DIR / "release_qualification.json")
     assert contract["samples"] == 200000
-    assert contract["operating_threshold"] == 0.35
+    assert contract["operating_threshold"] == 0.30
+    assert contract["test_time_augmentation"] == "8-way-mirror"
     assert contract["sha256"] == recipe["release"]["selected_checkpoint"]["sha256"]
-    assert contract["version"] == "c3-f0-200k-20260907"
+    assert contract["version"] == "c3-f0-200k-tta-t030-20260909"
     assert contract["selection_status"] == "frozen-model-selected"
     assert contract["model_type"] == "socratic-c3-f0"
     _validate_selection_summary(RECIPE_DIR / "selection.json", contract)
@@ -269,7 +273,8 @@ def test_export_contract_accepts_the_f0_records(recipe: dict) -> None:
     assert (ROOT / "huggingface" / "f0" / "README.md").is_file()
     card_config = _json(ROOT / "huggingface" / "f0" / "config.json")
     assert card_config["source_checkpoint_sha256"] == contract["sha256"]
-    assert card_config["operating_threshold"] == 0.35
+    assert card_config["operating_threshold"] == 0.30
+    assert card_config["test_time_augmentation"] == "8-way-mirror"
     current = _json(ROOT / "CURRENT_MODEL.json")
     assert current["executable_recipe"] == "recipes/f0/recipe.json"
     assert current["checkpoint_sha256"] == contract["sha256"]

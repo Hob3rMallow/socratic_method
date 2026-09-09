@@ -12,8 +12,9 @@ Repository: <https://github.com/ubc-nvining/socratic_method>
 
 This repository isolates the ScrollFiesta! team's scroll-training work from
 the geometry tools repository. The current frozen model is **C3-F0 at 200,000
-sample exposures, T=0.35**, selected after completion of the full 250,000-exposure
-training run.
+sample exposures**, selected after completion of the full 250,000-exposure
+training run, shipped since 9 September 2026 with **eight-way mirror TTA at
+T=0.30** on the unchanged weights (macro Dice 0.7130 on the frozen benchmark).
 
 ## A substantial advance over released M7
 
@@ -43,6 +44,22 @@ all 25 checkpoints, matched M7 comparisons, completed native metrics and the
 postprocessor diagnosis. The gain is substantial without claiming every metric
 wins: operating-point topology narrowly misses its advisory target, and the
 six-cube conservative filler has not demonstrated broad sheet reconstruction.
+
+## Inference update, 9 September 2026: 0.713 macro Dice with TTA at T=0.30
+
+The same 200k weights, scored with eight-way mirror test-time augmentation and
+the preregistered secondary operating point T=0.30, reach **0.7130** macro Dice
+[0.7012, 0.7248] on the frozen benchmark (0.7038 at the primary endpoint
+T=0.35; paired cluster-bootstrap delta over the no-TTA reference +0.0230
+[+0.0195, +0.0265], Holm pass, both scrolls positive). Released M7 scored the
+same way reaches 0.5875 (TTA, T=0.30) and 0.5926 at its calibrated T=0.20. The
+Kaggle-style composite on the same rows moves from 0.6401 to 0.6521 with
+topology 0.4016 (advisory 0.3776, now met), and the six-cube gates and frontier
+veto pass at T=0.30. Two items stay open and are recorded, not waived: the C3r
+seed replication of the inference recipe, and re-qualification of the
+postprocessors below, which keep their T=0.35 pins. Evidence, receipts and
+the preregistration are in
+[recipes/f0_inference_20260909](recipes/f0_inference_20260909/README.md).
 
 ## More useful local gap repair
 
@@ -81,12 +98,15 @@ socratic-engine-pins --check
 socratic-train --paths recipes/f0/paths.local.json --check --print-command
 socratic-train --paths recipes/f0/paths.local.json --run
 crossres-voxel audit-checkpoint --checkpoint <run>/checkpoint_milestone_00200000.pt --patches <frozen v14p2 manifest> --output <audit dir> --split val
+crossres-voxel audit-checkpoint --checkpoint <run>/checkpoint_milestone_00200000.pt --patches <frozen v14p2 manifest> --output <audit dir>/tta --split val --tta
 socratic-export <run>/checkpoint_milestone_00200000.pt huggingface/export/f0
 ```
 
 `--check` verifies the SHA-256 of every staged input, the wide15 corpus scope
 (16,200 rows, 15,432 train / 768 val, twelve training scrolls, 26 record ids)
-and prints a command whose tokens equal the sealed F0 argv. See
+and prints a command whose tokens equal the sealed F0 argv. The first audit
+reproduces the training record (0.680787 at T=0.35, no TTA); the second is the
+shipped inference number (0.713026 at T=0.30 with `--tta`). See
 [docs/reproduction.md](docs/reproduction.md) for the full walkthrough and its
 limits (same-seed recipe repeat, not bitwise reproduction).
 
@@ -124,6 +144,9 @@ the preserved v31 instructions. The old
 
 - `recipes/final_c3_250k_20260907/`: current frozen model identity, complete
   post-run review, observed evidence and sealed F0 runtime-file snapshot.
+- `recipes/f0_inference_20260909/`: the shipped inference recipe's evidence
+  (preregistration, decision table, TTA audits, bootstrap receipts, Kaggle and
+  six-cube receipts, hash inventory).
 - `recipes/f0/`: the executable F0 recipe (sealed argv with placeholders,
   artifact pins, observed milestones, selection and qualification records,
   environment lock, paths example).

@@ -1,0 +1,1168 @@
+{
+  "config_sha256": "71ca3dd676611e045b1d6976e8c42992eddeb68fc6859cde4e14191e8db726f2",
+  "created_utc": "2026-09-08T12:20:22.434602+00:00",
+  "family_primaries": [
+    "f0_200k_tta",
+    "avg_200k_250k",
+    "ens_200k_110k"
+  ],
+  "holm": {
+    "alpha": 0.05,
+    "pass": {
+      "avg_200k_250k": false,
+      "ens_200k_110k": true,
+      "f0_200k_tta": true
+    },
+    "pvalues": {
+      "avg_200k_250k": 1.0,
+      "ens_200k_110k": 0.0,
+      "f0_200k_tta": 0.0
+    }
+  },
+  "prereg_document": "crossres_pred/F0_FAMILY_PREREG_20260908.md",
+  "primary_threshold": 0.35,
+  "reference": "f0_200k",
+  "reference_reproduction": {
+    "max_abs_macro_difference": 0.0,
+    "passed": true,
+    "reaudited_macro_at_035": 0.680787428136385,
+    "sealed_macro_at_035": 0.680787428136385,
+    "tolerance": 0.0001
+  },
+  "rows": [
+    {
+      "breaks_0p70": false,
+      "calibrated_macro": 0.7137721349394992,
+      "calibrated_threshold": 0.29999998211860657,
+      "checkpoint_kind": "milestone",
+      "checkpoint_sha256": "23955ff8a8cbb97abd2fdd1b98c1f008809c281430d776683526a17d9bdfe640",
+      "ci_0.30": [
+        0.7028930266791028,
+        0.7244671589167385
+      ],
+      "ci_0.35": [
+        0.696484000931163,
+        0.7198524440503928
+      ],
+      "composite_p0500p2_val": 0.4965468593749994,
+      "composite_v14p2_val": 0.6535633134978234,
+      "delta_0.30_vs_ref": 0.03298470680311416,
+      "delta_0.35_vs_ref": 0.027410383224660162,
+      "delta_ci_0.30_vs_ref": [
+        0.027543331815461855,
+        0.03905451245795026
+      ],
+      "delta_ci_0.35_vs_ref": [
+        0.02252759051146886,
+        0.032966858654455436
+      ],
+      "diagnostic_only": false,
+      "ensemble_member_sha256": [],
+      "exploratory_note": "exploratory: not promotable on v14p2 alone (rule 7)",
+      "family": "S",
+      "fg_ratio": 0.8072176578710701,
+      "frontier_bridges": 4354,
+      "frontier_coverage": 0.8112596882718678,
+      "frontier_pass": true,
+      "gates_pass": true,
+      "geometry_pass": true,
+      "holm_pass": null,
+      "is_primary": false,
+      "macro_0.30": 0.7137721349394992,
+      "macro_0.35": 0.7081978113610452,
+      "members": 110000,
+      "operating_threshold": 0.3,
+      "p_le_zero_0.30_vs_ref": 0.0,
+      "p_le_zero_0.35_vs_ref": 0.0,
+      "precision_0.30": 0.681421174751479,
+      "precision_0.35": 0.7297861767512613,
+      "recall_0.30": 0.7581698878569365,
+      "recall_0.35": 0.6937963280311623,
+      "role": "exploratory",
+      "scroll_deltas_0.30_vs_ref": {
+        "PHerc0814": 0.04528455432783596,
+        "PHerc1451": 0.020684859278392365
+      },
+      "scroll_deltas_0.35_vs_ref": {
+        "PHerc0814": 0.03712214236556988,
+        "PHerc1451": 0.017698624083750336
+      },
+      "scrolls_0.30": {
+        "PHerc0814": 0.7274562130355994,
+        "PHerc1451": 0.7000880568433991
+      },
+      "scrolls_0.35": {
+        "PHerc0814": 0.7192938010733333,
+        "PHerc1451": 0.6971018216487571
+      },
+      "surface_dice_p0500p2_val": 0.7253004281250002,
+      "surface_dice_v14p2_val": 0.8906565021770694,
+      "topo_p0500p2_val": 0.14578999062499998,
+      "topo_v14p2_val": 0.40272543976777947,
+      "tta": true,
+      "variant_id": "f0_110k_tta",
+      "verdict": "no-claim"
+    },
+    {
+      "breaks_0p70": false,
+      "calibrated_macro": 0.7128347746450886,
+      "calibrated_threshold": 0.29999998211860657,
+      "checkpoint_kind": "average",
+      "checkpoint_sha256": "d34f55b8ee7949b584cdaa01136f1e39278944b21cf6a5e27e3682929509186a",
+      "ci_0.30": [
+        0.7003275902083049,
+        0.7246851101699296
+      ],
+      "ci_0.35": [
+        0.6915914624340262,
+        0.7181732065991577
+      ],
+      "composite_p0500p2_val": 0.4944257593749998,
+      "composite_v14p2_val": 0.6526566429608125,
+      "delta_0.30_vs_ref": 0.032047346508703556,
+      "delta_0.35_vs_ref": 0.024203440022031453,
+      "delta_ci_0.30_vs_ref": [
+        0.026816271200801742,
+        0.03757859697656311
+      ],
+      "delta_ci_0.35_vs_ref": [
+        0.019475393519030906,
+        0.029001742408129534
+      ],
+      "diagnostic_only": false,
+      "ensemble_member_sha256": [],
+      "exploratory_note": "exploratory: not promotable on v14p2 alone (rule 7)",
+      "family": "W",
+      "fg_ratio": 0.7850790334279076,
+      "frontier_bridges": 4019,
+      "frontier_coverage": 0.7810237628822077,
+      "frontier_pass": true,
+      "gates_pass": true,
+      "geometry_pass": true,
+      "holm_pass": null,
+      "is_primary": false,
+      "macro_0.30": 0.7128347746450886,
+      "macro_0.35": 0.7049908681584165,
+      "members": [
+        100000,
+        110000,
+        120000,
+        130000,
+        140000,
+        150000,
+        160000,
+        170000,
+        180000,
+        190000,
+        200000,
+        210000,
+        220000,
+        230000,
+        240000,
+        250000
+      ],
+      "operating_threshold": 0.3,
+      "p_le_zero_0.30_vs_ref": 0.0,
+      "p_le_zero_0.35_vs_ref": 0.0,
+      "precision_0.30": 0.6849588015308137,
+      "precision_0.35": 0.7330877786743126,
+      "recall_0.30": 0.7490484920293401,
+      "recall_0.35": 0.6819498818667662,
+      "role": "exploratory",
+      "scroll_deltas_0.30_vs_ref": {
+        "PHerc0814": 0.03997158288421876,
+        "PHerc1451": 0.02412311013318824
+      },
+      "scroll_deltas_0.35_vs_ref": {
+        "PHerc0814": 0.028479912514347117,
+        "PHerc1451": 0.019926967529715678
+      },
+      "scrolls_0.30": {
+        "PHerc0814": 0.7221432415919822,
+        "PHerc1451": 0.703526307698195
+      },
+      "scrolls_0.35": {
+        "PHerc0814": 0.7106515712221105,
+        "PHerc1451": 0.6993301650947225
+      },
+      "surface_dice_p0500p2_val": 0.71962319375,
+      "surface_dice_v14p2_val": 0.8898115645863574,
+      "topo_p0500p2_val": 0.14489145,
+      "topo_v14p2_val": 0.4000390595065314,
+      "tta": true,
+      "variant_id": "avg_100k_250k_tta",
+      "verdict": "no-claim"
+    },
+    {
+      "breaks_0p70": true,
+      "calibrated_macro": 0.713025708376333,
+      "calibrated_threshold": 0.29999998211860657,
+      "checkpoint_kind": "milestone",
+      "checkpoint_sha256": "54db9a59cb602ff08e3dda0acc1195ad980ab05fb660332d32fb436a0d49a175",
+      "ci_0.30": [
+        0.7012057990608916,
+        0.7248217726327456
+      ],
+      "ci_0.35": [
+        0.6905625946041541,
+        0.7170029587305439
+      ],
+      "delta_0.30_vs_ref": 0.0322382802399479,
+      "delta_0.35_vs_ref": 0.02303867584732222,
+      "delta_ci_0.30_vs_ref": [
+        0.02806252141417822,
+        0.036360900514700464
+      ],
+      "delta_ci_0.35_vs_ref": [
+        0.019517286714935668,
+        0.026545518835129216
+      ],
+      "diagnostic_only": false,
+      "ensemble_member_sha256": [],
+      "exploratory_note": null,
+      "family": "S",
+      "fg_ratio": 0.7989009897797321,
+      "frontier_bridges": 4945,
+      "frontier_coverage": 0.7822161655736308,
+      "frontier_pass": true,
+      "gates_pass": true,
+      "geometry_pass": true,
+      "holm_pass": true,
+      "is_primary": true,
+      "macro_0.30": 0.713025708376333,
+      "macro_0.35": 0.7038261039837073,
+      "members": 200000,
+      "operating_threshold": 0.3,
+      "p_le_zero_0.30_vs_ref": 0.0,
+      "p_le_zero_0.35_vs_ref": 0.0,
+      "precision_0.30": 0.6872036641245098,
+      "precision_0.35": 0.7379042184865943,
+      "recall_0.30": 0.7448263903216362,
+      "recall_0.35": 0.6739322745833477,
+      "role": "primary",
+      "scroll_deltas_0.30_vs_ref": {
+        "PHerc0814": 0.037095242437458764,
+        "PHerc1451": 0.02738131804243704
+      },
+      "scroll_deltas_0.35_vs_ref": {
+        "PHerc0814": 0.02393038078130072,
+        "PHerc1451": 0.0221469709133435
+      },
+      "scrolls_0.30": {
+        "PHerc0814": 0.7192669011452222,
+        "PHerc1451": 0.7067845156074438
+      },
+      "scrolls_0.35": {
+        "PHerc0814": 0.7061020394890641,
+        "PHerc1451": 0.7015501684783503
+      },
+      "tta": true,
+      "variant_id": "f0_200k_tta",
+      "verdict": "breaks-0.70-candidate (needs C3r replication, 0500P2 floor, repair re-qualification)"
+    },
+    {
+      "breaks_0p70": null,
+      "calibrated_macro": 0.7078802273982175,
+      "calibrated_threshold": 0.29999998211860657,
+      "checkpoint_kind": "average",
+      "checkpoint_sha256": "cfce15adbf04c80586f23a38dc2378749de6653f8f4e156faaec5ee332e89e8c",
+      "ci_0.30": [
+        0.6950413391225774,
+        0.7201767178798439
+      ],
+      "ci_0.35": [
+        0.6819775001368963,
+        0.7099269624092466
+      ],
+      "delta_0.30_vs_ref": 0.0270927992618325,
+      "delta_0.35_vs_ref": 0.01534265591994366,
+      "delta_ci_0.30_vs_ref": [
+        0.022608575140775106,
+        0.031682164994450104
+      ],
+      "delta_ci_0.35_vs_ref": [
+        0.011281066708615718,
+        0.0194034389783007
+      ],
+      "diagnostic_only": false,
+      "ensemble_member_sha256": [],
+      "family": "W",
+      "fg_ratio": null,
+      "frontier_bridges": null,
+      "frontier_coverage": null,
+      "frontier_pass": null,
+      "gates_pass": null,
+      "geometry_pass": null,
+      "holm_pass": null,
+      "is_primary": false,
+      "macro_0.30": 0.7078802273982175,
+      "macro_0.35": 0.6961300840563287,
+      "members": [
+        200000,
+        220000,
+        250000
+      ],
+      "operating_threshold": null,
+      "p_le_zero_0.30_vs_ref": 0.0,
+      "p_le_zero_0.35_vs_ref": 0.0,
+      "precision_0.30": 0.6905877553207409,
+      "precision_0.35": 0.7421117296931111,
+      "recall_0.30": 0.7289935615492815,
+      "recall_0.35": 0.6558906055658058,
+      "role": "exploratory",
+      "scroll_deltas_0.30_vs_ref": {
+        "PHerc0814": 0.030437810517026542,
+        "PHerc1451": 0.02374778800663835
+      },
+      "scroll_deltas_0.35_vs_ref": {
+        "PHerc0814": 0.014709813004241679,
+        "PHerc1451": 0.01597549883564564
+      },
+      "scrolls_0.30": {
+        "PHerc0814": 0.71260946922479,
+        "PHerc1451": 0.7031509855716451
+      },
+      "scrolls_0.35": {
+        "PHerc0814": 0.6968814717120051,
+        "PHerc1451": 0.6953786964006524
+      },
+      "tta": true,
+      "variant_id": "avg_top3_150k_tta",
+      "verdict": "no-claim"
+    },
+    {
+      "breaks_0p70": null,
+      "calibrated_macro": 0.7025926221911617,
+      "calibrated_threshold": 0.29999998211860657,
+      "checkpoint_kind": "ensemble",
+      "checkpoint_sha256": "54db9a59cb602ff08e3dda0acc1195ad980ab05fb660332d32fb436a0d49a175",
+      "ci_0.30": [
+        0.6919769891391874,
+        0.7132077941886616
+      ],
+      "ci_0.35": [
+        0.6842148991297645,
+        0.7077553594479731
+      ],
+      "delta_0.30_vs_ref": 0.021805194054776655,
+      "delta_0.35_vs_ref": 0.015197806826394267,
+      "delta_ci_0.30_vs_ref": [
+        0.017536161988911086,
+        0.026262321123636714
+      ],
+      "delta_ci_0.35_vs_ref": [
+        0.011699598628910624,
+        0.019202640017845173
+      ],
+      "diagnostic_only": true,
+      "ensemble_member_sha256": [
+        "23955ff8a8cbb97abd2fdd1b98c1f008809c281430d776683526a17d9bdfe640"
+      ],
+      "family": "E",
+      "fg_ratio": null,
+      "frontier_bridges": null,
+      "frontier_coverage": null,
+      "frontier_pass": null,
+      "gates_pass": null,
+      "geometry_pass": null,
+      "holm_pass": true,
+      "is_primary": true,
+      "macro_0.30": 0.7025926221911617,
+      "macro_0.35": 0.6959852349627793,
+      "members": [
+        200000,
+        110000
+      ],
+      "operating_threshold": null,
+      "p_le_zero_0.30_vs_ref": 0.0,
+      "p_le_zero_0.35_vs_ref": 0.0,
+      "precision_0.30": 0.6741686132191002,
+      "precision_0.35": 0.7197110210428613,
+      "recall_0.30": 0.7407817621486915,
+      "recall_0.35": 0.6788220248516282,
+      "role": "primary",
+      "scroll_deltas_0.30_vs_ref": {
+        "PHerc0814": 0.03170258920649205,
+        "PHerc1451": 0.01190779890306115
+      },
+      "scroll_deltas_0.35_vs_ref": {
+        "PHerc0814": 0.02323999307852309,
+        "PHerc1451": 0.007155620574265331
+      },
+      "scrolls_0.30": {
+        "PHerc0814": 0.7138742479142555,
+        "PHerc1451": 0.6913109964680679
+      },
+      "scrolls_0.35": {
+        "PHerc0814": 0.7054116517862865,
+        "PHerc1451": 0.6865588181392721
+      },
+      "tta": false,
+      "variant_id": "ens_200k_110k",
+      "verdict": "diagnostic-only"
+    },
+    {
+      "breaks_0p70": null,
+      "calibrated_macro": 0.7017567119486756,
+      "calibrated_threshold": 0.29999998211860657,
+      "checkpoint_kind": "ensemble",
+      "checkpoint_sha256": "54db9a59cb602ff08e3dda0acc1195ad980ab05fb660332d32fb436a0d49a175",
+      "ci_0.30": [
+        0.6908486254350775,
+        0.7126450537486689
+      ],
+      "ci_0.35": [
+        0.6816281257709935,
+        0.70579784151302
+      ],
+      "delta_0.30_vs_ref": 0.020969283812290573,
+      "delta_0.35_vs_ref": 0.012999762588802755,
+      "delta_ci_0.30_vs_ref": [
+        0.017283181805793062,
+        0.024970678101886492
+      ],
+      "delta_ci_0.35_vs_ref": [
+        0.010061198648199486,
+        0.01614664994545569
+      ],
+      "diagnostic_only": true,
+      "ensemble_member_sha256": [
+        "23955ff8a8cbb97abd2fdd1b98c1f008809c281430d776683526a17d9bdfe640",
+        "dc295f429bce62768c9bcdd43ed252aa78b018fe0b846884b65bb275629bfccc"
+      ],
+      "family": "E",
+      "fg_ratio": null,
+      "frontier_bridges": null,
+      "frontier_coverage": null,
+      "frontier_pass": null,
+      "gates_pass": null,
+      "geometry_pass": null,
+      "holm_pass": null,
+      "is_primary": false,
+      "macro_0.30": 0.7017567119486756,
+      "macro_0.35": 0.6937871907251878,
+      "members": [
+        200000,
+        110000,
+        250000
+      ],
+      "operating_threshold": null,
+      "p_le_zero_0.30_vs_ref": 0.0,
+      "p_le_zero_0.35_vs_ref": 0.0,
+      "precision_0.30": 0.6756155319259148,
+      "precision_0.35": 0.7229316970045793,
+      "recall_0.30": 0.735892713634206,
+      "recall_0.35": 0.6705117862356887,
+      "role": "exploratory",
+      "scroll_deltas_0.30_vs_ref": {
+        "PHerc0814": 0.0287206084435776,
+        "PHerc1451": 0.013217959181003547
+      },
+      "scroll_deltas_0.35_vs_ref": {
+        "PHerc0814": 0.018418630874089015,
+        "PHerc1451": 0.007580894303516272
+      },
+      "scrolls_0.30": {
+        "PHerc0814": 0.710892267151341,
+        "PHerc1451": 0.6926211567460103
+      },
+      "scrolls_0.35": {
+        "PHerc0814": 0.7005902895818524,
+        "PHerc1451": 0.686984091868523
+      },
+      "tta": false,
+      "variant_id": "ens_200k_110k_250k",
+      "verdict": "diagnostic-only"
+    },
+    {
+      "breaks_0p70": null,
+      "calibrated_macro": 0.7013297982441543,
+      "calibrated_threshold": 0.29999998211860657,
+      "checkpoint_kind": "milestone",
+      "checkpoint_sha256": "dc295f429bce62768c9bcdd43ed252aa78b018fe0b846884b65bb275629bfccc",
+      "ci_0.30": [
+        0.6881717503761958,
+        0.714171787981622
+      ],
+      "ci_0.35": [
+        0.6756321790977011,
+        0.704166029632
+      ],
+      "delta_0.30_vs_ref": 0.02054237010776927,
+      "delta_0.35_vs_ref": 0.009301591151925304,
+      "delta_ci_0.30_vs_ref": [
+        0.01563151281393246,
+        0.025575156908835557
+      ],
+      "delta_ci_0.35_vs_ref": [
+        0.004338137561897482,
+        0.014297292015961935
+      ],
+      "diagnostic_only": false,
+      "ensemble_member_sha256": [],
+      "family": "S",
+      "fg_ratio": null,
+      "frontier_bridges": null,
+      "frontier_coverage": null,
+      "frontier_pass": null,
+      "gates_pass": null,
+      "geometry_pass": null,
+      "holm_pass": null,
+      "is_primary": false,
+      "macro_0.30": 0.7013297982441543,
+      "macro_0.35": 0.6900890192883103,
+      "members": 250000,
+      "operating_threshold": null,
+      "p_le_zero_0.30_vs_ref": 0.0,
+      "p_le_zero_0.35_vs_ref": 0.0005,
+      "precision_0.30": 0.683331322909268,
+      "precision_0.35": 0.7351911874722296,
+      "recall_0.30": 0.7223240934814651,
+      "recall_0.35": 0.6501179788480178,
+      "role": "exploratory",
+      "scroll_deltas_0.30_vs_ref": {
+        "PHerc0814": 0.022378430330684984,
+        "PHerc1451": 0.018706309884853445
+      },
+      "scroll_deltas_0.35_vs_ref": {
+        "PHerc0814": 0.007753866738964499,
+        "PHerc1451": 0.010849315564885997
+      },
+      "scrolls_0.30": {
+        "PHerc0814": 0.7045500890384484,
+        "PHerc1451": 0.6981095074498602
+      },
+      "scrolls_0.35": {
+        "PHerc0814": 0.6899255254467279,
+        "PHerc1451": 0.6902525131298928
+      },
+      "tta": true,
+      "variant_id": "f0_250k_tta",
+      "verdict": "no-claim"
+    },
+    {
+      "breaks_0p70": null,
+      "calibrated_macro": 0.6940245469738258,
+      "calibrated_threshold": 0.29999998211860657,
+      "checkpoint_kind": "average",
+      "checkpoint_sha256": "d34f55b8ee7949b584cdaa01136f1e39278944b21cf6a5e27e3682929509186a",
+      "ci_0.30": [
+        0.6820409837177475,
+        0.7055610167511043
+      ],
+      "ci_0.35": [
+        0.6738463036032862,
+        0.6991430261190229
+      ],
+      "delta_0.30_vs_ref": 0.01323711883744072,
+      "delta_0.35_vs_ref": 0.005958935083842487,
+      "delta_ci_0.30_vs_ref": [
+        0.009240106522691013,
+        0.017284188008851564
+      ],
+      "delta_ci_0.35_vs_ref": [
+        0.0023892182093604775,
+        0.009434193454974062
+      ],
+      "diagnostic_only": false,
+      "ensemble_member_sha256": [],
+      "family": "W",
+      "fg_ratio": null,
+      "frontier_bridges": null,
+      "frontier_coverage": null,
+      "frontier_pass": null,
+      "gates_pass": null,
+      "geometry_pass": null,
+      "holm_pass": null,
+      "is_primary": false,
+      "macro_0.30": 0.6940245469738258,
+      "macro_0.35": 0.6867463632202275,
+      "members": [
+        100000,
+        110000,
+        120000,
+        130000,
+        140000,
+        150000,
+        160000,
+        170000,
+        180000,
+        190000,
+        200000,
+        210000,
+        220000,
+        230000,
+        240000,
+        250000
+      ],
+      "operating_threshold": null,
+      "p_le_zero_0.30_vs_ref": 0.0,
+      "p_le_zero_0.35_vs_ref": 0.001,
+      "precision_0.30": 0.667266374230021,
+      "precision_0.35": 0.7114805549186913,
+      "recall_0.30": 0.7266463354557176,
+      "recall_0.35": 0.665287930985602,
+      "role": "exploratory",
+      "scroll_deltas_0.30_vs_ref": {
+        "PHerc0814": 0.01748246420158517,
+        "PHerc1451": 0.00899177347329616
+      },
+      "scroll_deltas_0.35_vs_ref": {
+        "PHerc0814": 0.00760627384144108,
+        "PHerc1451": 0.004311596326243783
+      },
+      "scrolls_0.30": {
+        "PHerc0814": 0.6996541229093486,
+        "PHerc1451": 0.6883949710383029
+      },
+      "scrolls_0.35": {
+        "PHerc0814": 0.6897779325492045,
+        "PHerc1451": 0.6837147938912506
+      },
+      "tta": false,
+      "variant_id": "avg_100k_250k",
+      "verdict": "no-claim"
+    },
+    {
+      "breaks_0p70": null,
+      "calibrated_macro": 0.6885819018886541,
+      "calibrated_threshold": 0.29999998211860657,
+      "checkpoint_kind": "milestone",
+      "checkpoint_sha256": "23955ff8a8cbb97abd2fdd1b98c1f008809c281430d776683526a17d9bdfe640",
+      "ci_0.30": [
+        0.6778501148934614,
+        0.6998769846998034
+      ],
+      "ci_0.35": [
+        0.6698100761125145,
+        0.6933668220585983
+      ],
+      "delta_0.30_vs_ref": 0.007794473752269049,
+      "delta_0.35_vs_ref": 0.000768843041725864,
+      "delta_ci_0.30_vs_ref": [
+        0.001634634299848638,
+        0.014212652449394176
+      ],
+      "delta_ci_0.35_vs_ref": [
+        -0.005385051943224283,
+        0.0072285570413952085
+      ],
+      "diagnostic_only": false,
+      "ensemble_member_sha256": [],
+      "family": "S",
+      "fg_ratio": null,
+      "frontier_bridges": null,
+      "frontier_coverage": null,
+      "frontier_pass": null,
+      "gates_pass": null,
+      "geometry_pass": null,
+      "holm_pass": null,
+      "is_primary": false,
+      "macro_0.30": 0.6885819018886541,
+      "macro_0.35": 0.6815562711781109,
+      "members": 110000,
+      "operating_threshold": null,
+      "p_le_zero_0.30_vs_ref": 0.0045,
+      "p_le_zero_0.35_vs_ref": 0.409,
+      "precision_0.30": 0.6623388288020841,
+      "precision_0.35": 0.7018357046141458,
+      "recall_0.30": 0.7239698464815328,
+      "recall_0.35": 0.6673966309642406,
+      "role": "exploratory",
+      "scroll_deltas_0.30_vs_ref": {
+        "PHerc0814": 0.017334978431353232,
+        "PHerc1451": -0.0017460309268151342
+      },
+      "scroll_deltas_0.35_vs_ref": {
+        "PHerc0814": 0.008605774777308284,
+        "PHerc1451": -0.007068088693856556
+      },
+      "scrolls_0.30": {
+        "PHerc0814": 0.6995066371391166,
+        "PHerc1451": 0.6776571666381916
+      },
+      "scrolls_0.35": {
+        "PHerc0814": 0.6907774334850717,
+        "PHerc1451": 0.6723351088711502
+      },
+      "tta": false,
+      "variant_id": "f0_110k",
+      "verdict": "no-claim"
+    },
+    {
+      "breaks_0p70": null,
+      "calibrated_macro": 0.6895123227142614,
+      "calibrated_threshold": 0.29999998211860657,
+      "checkpoint_kind": "ensemble",
+      "checkpoint_sha256": "54db9a59cb602ff08e3dda0acc1195ad980ab05fb660332d32fb436a0d49a175",
+      "ci_0.30": [
+        0.6775775428719819,
+        0.7017170710200907
+      ],
+      "ci_0.35": [
+        0.6677700244852859,
+        0.6939219638873272
+      ],
+      "delta_0.30_vs_ref": 0.008724894577876396,
+      "delta_0.35_vs_ref": 0.0001335090006157058,
+      "delta_ci_0.30_vs_ref": [
+        0.006377275431496706,
+        0.011303586344307634
+      ],
+      "delta_ci_0.35_vs_ref": [
+        -0.0016424488449166604,
+        0.0020194688261040536
+      ],
+      "diagnostic_only": true,
+      "ensemble_member_sha256": [
+        "dc295f429bce62768c9bcdd43ed252aa78b018fe0b846884b65bb275629bfccc"
+      ],
+      "family": "E",
+      "fg_ratio": null,
+      "frontier_bridges": null,
+      "frontier_coverage": null,
+      "frontier_pass": null,
+      "gates_pass": null,
+      "geometry_pass": null,
+      "holm_pass": null,
+      "is_primary": false,
+      "macro_0.30": 0.6895123227142614,
+      "macro_0.35": 0.6809209371370007,
+      "members": [
+        200000,
+        250000
+      ],
+      "operating_threshold": null,
+      "p_le_zero_0.30_vs_ref": 0.0,
+      "p_le_zero_0.35_vs_ref": 0.441,
+      "precision_0.30": 0.6667540839341799,
+      "precision_0.35": 0.7142014418428811,
+      "recall_0.30": 0.715445151905837,
+      "recall_0.35": 0.6510595219147886,
+      "role": "exploratory",
+      "scroll_deltas_0.30_vs_ref": {
+        "PHerc0814": 0.00977464243108539,
+        "PHerc1451": 0.007675146724667181
+      },
+      "scroll_deltas_0.35_vs_ref": {
+        "PHerc0814": -0.0003832850525392617,
+        "PHerc1451": 0.0006503030537705623
+      },
+      "scrolls_0.30": {
+        "PHerc0814": 0.6919463011388488,
+        "PHerc1451": 0.687078344289674
+      },
+      "scrolls_0.35": {
+        "PHerc0814": 0.6817883736552242,
+        "PHerc1451": 0.6800535006187773
+      },
+      "tta": false,
+      "variant_id": "ens_200k_250k",
+      "verdict": "diagnostic-only"
+    },
+    {
+      "breaks_0p70": null,
+      "calibrated_macro": 0.6880649121938085,
+      "calibrated_threshold": 0.29999998211860657,
+      "checkpoint_kind": "milestone",
+      "checkpoint_sha256": "54db9a59cb602ff08e3dda0acc1195ad980ab05fb660332d32fb436a0d49a175",
+      "ci_0.30": [
+        0.6763716824664564,
+        0.7001858206312387
+      ],
+      "ci_0.35": [
+        0.6679994779234593,
+        0.6938622975783089
+      ],
+      "diagnostic_only": false,
+      "ensemble_member_sha256": [],
+      "family": "S",
+      "fg_ratio": 0.7989009897797321,
+      "frontier_bridges": 4945,
+      "frontier_coverage": 0.7822161655736308,
+      "frontier_pass": true,
+      "gates_pass": true,
+      "geometry_pass": true,
+      "holm_pass": null,
+      "is_primary": false,
+      "macro_0.30": 0.6880649121938085,
+      "macro_0.35": 0.680787428136385,
+      "members": 200000,
+      "operating_threshold": 0.3,
+      "precision_0.30": 0.6637945899588042,
+      "precision_0.35": 0.7106858597614065,
+      "recall_0.30": 0.7158769410159094,
+      "recall_0.35": 0.6540310281843973,
+      "role": "reference",
+      "scrolls_0.30": {
+        "PHerc0814": 0.6907216961977019,
+        "PHerc1451": 0.685408128189915
+      },
+      "scrolls_0.35": {
+        "PHerc0814": 0.6821716587077634,
+        "PHerc1451": 0.6794031975650068
+      },
+      "tta": false,
+      "variant_id": "f0_200k",
+      "verdict": "reference"
+    },
+    {
+      "breaks_0p70": null,
+      "calibrated_macro": 0.6871126239525542,
+      "calibrated_threshold": 0.29999998211860657,
+      "checkpoint_kind": "average",
+      "checkpoint_sha256": "cfce15adbf04c80586f23a38dc2378749de6653f8f4e156faaec5ee332e89e8c",
+      "ci_0.30": [
+        0.6749276704765952,
+        0.6995118084856377
+      ],
+      "ci_0.35": [
+        0.6639106992006615,
+        0.6906720980490088
+      ],
+      "delta_0.30_vs_ref": 0.0063251958161691935,
+      "delta_0.35_vs_ref": -0.003538952151277419,
+      "delta_ci_0.30_vs_ref": [
+        0.003902877005269468,
+        0.008958550370705852
+      ],
+      "delta_ci_0.35_vs_ref": [
+        -0.005830457820584961,
+        -0.001254236150773655
+      ],
+      "diagnostic_only": false,
+      "ensemble_member_sha256": [],
+      "family": "W",
+      "fg_ratio": null,
+      "frontier_bridges": null,
+      "frontier_coverage": null,
+      "frontier_pass": null,
+      "gates_pass": null,
+      "geometry_pass": null,
+      "holm_pass": null,
+      "is_primary": false,
+      "macro_0.30": 0.6871126239525542,
+      "macro_0.35": 0.6772484759851076,
+      "members": [
+        200000,
+        220000,
+        250000
+      ],
+      "operating_threshold": null,
+      "p_le_zero_0.30_vs_ref": 0.0,
+      "p_le_zero_0.35_vs_ref": 0.999,
+      "precision_0.30": 0.6701094991935972,
+      "precision_0.35": 0.7172987287370493,
+      "recall_0.30": 0.7059584932279356,
+      "recall_0.35": 0.6411831793545156,
+      "role": "exploratory",
+      "scroll_deltas_0.30_vs_ref": {
+        "PHerc0814": 0.006464752550457087,
+        "PHerc1451": 0.0061856390818813
+      },
+      "scroll_deltas_0.35_vs_ref": {
+        "PHerc0814": -0.005412819958876436,
+        "PHerc1451": -0.0016650843436785134
+      },
+      "scrolls_0.30": {
+        "PHerc0814": 0.6886364112582205,
+        "PHerc1451": 0.6855888366468881
+      },
+      "scrolls_0.35": {
+        "PHerc0814": 0.676758838748887,
+        "PHerc1451": 0.6777381132213283
+      },
+      "tta": false,
+      "variant_id": "avg_top3_150k",
+      "verdict": "no-claim"
+    },
+    {
+      "breaks_0p70": null,
+      "calibrated_macro": 0.6850365173923956,
+      "calibrated_threshold": 0.29999998211860657,
+      "checkpoint_kind": "average",
+      "checkpoint_sha256": "7bd7f2fe2955de2897f23bc2574bac6781e2fb9a9d5b5d12b723737918e7effe",
+      "ci_0.30": [
+        0.6725945766848108,
+        0.697182277773366
+      ],
+      "ci_0.35": [
+        0.6624169245051637,
+        0.689138718264282
+      ],
+      "delta_0.30_vs_ref": 0.00424908925601053,
+      "delta_0.35_vs_ref": -0.00508473340874116,
+      "delta_ci_0.30_vs_ref": [
+        0.0004761918239756024,
+        0.007941863721918418
+      ],
+      "delta_ci_0.35_vs_ref": [
+        -0.008637838387761514,
+        -0.0017611774272411598
+      ],
+      "diagnostic_only": false,
+      "ensemble_member_sha256": [],
+      "family": "W",
+      "fg_ratio": null,
+      "frontier_bridges": null,
+      "frontier_coverage": null,
+      "frontier_pass": null,
+      "gates_pass": null,
+      "geometry_pass": null,
+      "holm_pass": null,
+      "is_primary": false,
+      "macro_0.30": 0.6850365173923956,
+      "macro_0.35": 0.6757026947276439,
+      "members": [
+        150000,
+        160000,
+        170000,
+        180000,
+        190000,
+        200000,
+        210000,
+        220000,
+        230000,
+        240000,
+        250000
+      ],
+      "operating_threshold": null,
+      "p_le_zero_0.30_vs_ref": 0.015,
+      "p_le_zero_0.35_vs_ref": 0.999,
+      "precision_0.30": 0.6637722449652848,
+      "precision_0.35": 0.7087143755745875,
+      "recall_0.30": 0.7093769464895889,
+      "recall_0.35": 0.6454953160741198,
+      "role": "exploratory",
+      "scroll_deltas_0.30_vs_ref": {
+        "PHerc0814": 0.00549676851786185,
+        "PHerc1451": 0.003001409994159099
+      },
+      "scroll_deltas_0.35_vs_ref": {
+        "PHerc0814": -0.006727350056582426,
+        "PHerc1451": -0.0034421167609001158
+      },
+      "scrolls_0.30": {
+        "PHerc0814": 0.6876684272256253,
+        "PHerc1451": 0.6824046075591659
+      },
+      "scrolls_0.35": {
+        "PHerc0814": 0.675444308651181,
+        "PHerc1451": 0.6759610808041067
+      },
+      "tta": false,
+      "variant_id": "avg_150k_250k",
+      "verdict": "no-claim"
+    },
+    {
+      "breaks_0p70": null,
+      "calibrated_macro": 0.6795184524282181,
+      "calibrated_threshold": 0.29999998211860657,
+      "checkpoint_kind": "milestone",
+      "checkpoint_sha256": "dc295f429bce62768c9bcdd43ed252aa78b018fe0b846884b65bb275629bfccc",
+      "ci_0.30": [
+        0.6668218112064738,
+        0.6922158444946838
+      ],
+      "ci_0.35": [
+        0.6555883824458225,
+        0.6828712438374706
+      ],
+      "delta_0.30_vs_ref": -0.001268975708166975,
+      "delta_0.35_vs_ref": -0.011488779742395816,
+      "delta_ci_0.30_vs_ref": [
+        -0.004818501317203124,
+        0.002626208125022753
+      ],
+      "delta_ci_0.35_vs_ref": [
+        -0.015233074988692216,
+        -0.007665896509960642
+      ],
+      "diagnostic_only": false,
+      "ensemble_member_sha256": [],
+      "family": "S",
+      "fg_ratio": null,
+      "frontier_bridges": null,
+      "frontier_coverage": null,
+      "frontier_pass": null,
+      "gates_pass": null,
+      "geometry_pass": null,
+      "holm_pass": null,
+      "is_primary": false,
+      "macro_0.30": 0.6795184524282181,
+      "macro_0.35": 0.6692986483939892,
+      "members": 250000,
+      "operating_threshold": null,
+      "p_le_zero_0.30_vs_ref": 0.754,
+      "p_le_zero_0.35_vs_ref": 1.0,
+      "precision_0.30": 0.6614449832312332,
+      "precision_0.35": 0.7076245969274874,
+      "recall_0.30": 0.6983707101439633,
+      "recall_0.35": 0.6339011503990313,
+      "role": "exploratory",
+      "scroll_deltas_0.30_vs_ref": {
+        "PHerc0814": -0.0030217077645217083,
+        "PHerc1451": 0.00048375634818775826
+      },
+      "scroll_deltas_0.35_vs_ref": {
+        "PHerc0814": -0.014803586230004107,
+        "PHerc1451": -0.008173973254787636
+      },
+      "scrolls_0.30": {
+        "PHerc0814": 0.6791499509432417,
+        "PHerc1451": 0.6798869539131945
+      },
+      "scrolls_0.35": {
+        "PHerc0814": 0.6673680724777593,
+        "PHerc1451": 0.6712292243102191
+      },
+      "tta": false,
+      "variant_id": "f0_250k",
+      "verdict": "no-claim"
+    },
+    {
+      "breaks_0p70": null,
+      "calibrated_macro": 0.6793638467781582,
+      "calibrated_threshold": 0.29999998211860657,
+      "checkpoint_kind": "average",
+      "checkpoint_sha256": "d14e67c8c56351308ed5221853301bb5be5c9908a977513538467417904b4e54",
+      "ci_0.30": [
+        0.6666990641358348,
+        0.6919656427358797
+      ],
+      "ci_0.35": [
+        0.6554642770938774,
+        0.6829990721754282
+      ],
+      "delta_0.30_vs_ref": -0.0014235813582268442,
+      "delta_0.35_vs_ref": -0.011538277561004895,
+      "delta_ci_0.30_vs_ref": [
+        -0.004916577059620184,
+        0.001992425563485177
+      ],
+      "delta_ci_0.35_vs_ref": [
+        -0.015215936316946498,
+        -0.008094964585321463
+      ],
+      "diagnostic_only": false,
+      "ensemble_member_sha256": [],
+      "family": "W",
+      "fg_ratio": null,
+      "frontier_bridges": null,
+      "frontier_coverage": null,
+      "frontier_pass": null,
+      "gates_pass": null,
+      "geometry_pass": null,
+      "holm_pass": false,
+      "is_primary": true,
+      "macro_0.30": 0.6793638467781582,
+      "macro_0.35": 0.6692491505753801,
+      "members": [
+        200000,
+        210000,
+        220000,
+        230000,
+        240000,
+        250000
+      ],
+      "operating_threshold": null,
+      "p_le_zero_0.30_vs_ref": 0.7805,
+      "p_le_zero_0.35_vs_ref": 1.0,
+      "precision_0.30": 0.6627423868013906,
+      "precision_0.35": 0.7098385428103605,
+      "recall_0.30": 0.6967831325335024,
+      "recall_0.35": 0.6319961695470853,
+      "role": "primary",
+      "scroll_deltas_0.30_vs_ref": {
+        "PHerc0814": -0.002898616383921193,
+        "PHerc1451": 5.145366746739377e-05
+      },
+      "scroll_deltas_0.35_vs_ref": {
+        "PHerc0814": -0.014975352785837837,
+        "PHerc1451": -0.008101202336172175
+      },
+      "scrolls_0.30": {
+        "PHerc0814": 0.6792730423238422,
+        "PHerc1451": 0.6794546512324742
+      },
+      "scrolls_0.35": {
+        "PHerc0814": 0.6671963059219256,
+        "PHerc1451": 0.6713019952288346
+      },
+      "tta": false,
+      "variant_id": "avg_200k_250k",
+      "verdict": "no-claim"
+    },
+    {
+      "breaks_0p70": null,
+      "calibrated_macro": 0.6733487271090913,
+      "calibrated_threshold": 0.29999998211860657,
+      "checkpoint_kind": "average",
+      "checkpoint_sha256": "0ef703f608875d39619328d1028f46c2a34494097e2427e7d41eff2c2d424e7d",
+      "ci_0.30": [
+        0.6604671813679379,
+        0.6864571838243955
+      ],
+      "ci_0.35": [
+        0.649611621184392,
+        0.6769113835285427
+      ],
+      "delta_0.30_vs_ref": -0.007438701027293715,
+      "delta_0.35_vs_ref": -0.017645013479648863,
+      "delta_ci_0.30_vs_ref": [
+        -0.011564511005524207,
+        -0.003297105397824697
+      ],
+      "delta_ci_0.35_vs_ref": [
+        -0.02218017026889402,
+        -0.01339631261962711
+      ],
+      "diagnostic_only": false,
+      "ensemble_member_sha256": [],
+      "family": "W",
+      "fg_ratio": null,
+      "frontier_bridges": null,
+      "frontier_coverage": null,
+      "frontier_pass": null,
+      "gates_pass": null,
+      "geometry_pass": null,
+      "holm_pass": null,
+      "is_primary": false,
+      "macro_0.30": 0.6733487271090913,
+      "macro_0.35": 0.6631424146567362,
+      "members": [
+        230000,
+        240000,
+        250000
+      ],
+      "operating_threshold": null,
+      "p_le_zero_0.30_vs_ref": 1.0,
+      "p_le_zero_0.35_vs_ref": 1.0,
+      "precision_0.30": 0.6557215254525245,
+      "precision_0.35": 0.702644955954398,
+      "recall_0.30": 0.6912018740756148,
+      "recall_0.35": 0.6263964549643888,
+      "role": "exploratory",
+      "scroll_deltas_0.30_vs_ref": {
+        "PHerc0814": -0.009989937060888687,
+        "PHerc1451": -0.0048874649936988535
+      },
+      "scroll_deltas_0.35_vs_ref": {
+        "PHerc0814": -0.021814826467218662,
+        "PHerc1451": -0.013475200492079176
+      },
+      "scrolls_0.30": {
+        "PHerc0814": 0.6721817216468747,
+        "PHerc1451": 0.6745157325713079
+      },
+      "scrolls_0.35": {
+        "PHerc0814": 0.6603568322405448,
+        "PHerc1451": 0.6659279970729276
+      },
+      "tta": false,
+      "variant_id": "avg_last3",
+      "verdict": "no-claim"
+    }
+  ],
+  "schema": "crossres-f0-variants-decision-table-v1"
+}

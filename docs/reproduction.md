@@ -64,16 +64,23 @@ software or hardware.
    use `--resume` to start a new candidate from an older student. The
    selected artifact is `<output>/checkpoint_milestone_00200000.pt`, not
    `checkpoint_best.pt` or `checkpoint_last.pt`.
-4. **Audit on the frozen harness** (no `--tta`; the frozen macro Dice is a
-   no-TTA number, eight-way TTA was used only for the blind six-cube exports):
+4. **Audit on the frozen harness.** The training record's number is the no-TTA
+   audit read at T=0.35; the shipped inference number is the same audit with
+   `--tta`, read at T=0.30:
 
    ```bash
    crossres-voxel audit-checkpoint --checkpoint <output>/checkpoint_milestone_00200000.pt --patches <frozen_validation_manifest> --output <audit dir> --split val --device cuda
    ```
 
-   For the sealed weights the sweep row at T=0.35 reads
-   `macro_scroll_dice = 0.680787428136385`; a fresh training run lands in
-   the seed band, not on that exact value.
+   ```bash
+   crossres-voxel audit-checkpoint --checkpoint <output>/checkpoint_milestone_00200000.pt --patches <frozen_validation_manifest> --output <audit dir>/tta --split val --device cuda --tta
+   ```
+
+   For the sealed weights the no-TTA sweep row at T=0.35 reads
+   `macro_scroll_dice = 0.680787428136385`, and the `--tta` sweep reads
+   `0.713025708376333` at T=0.30 and `0.7038261039837073` at T=0.35
+   (see `recipes/f0_inference_20260909/evidence/audits/`). A fresh training
+   run lands in the seed band, not on those exact values.
 5. **Export:** `socratic-export <output>/checkpoint_milestone_00200000.pt huggingface/export/f0`
    fails closed unless the checkpoint bytes, SHA-256, sample counters and the
    recipe's selection/qualification records agree; it writes

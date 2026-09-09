@@ -1,2 +1,4 @@
 # Pinned engine bytes are hash-verified against the sealed F0 record; never normalize.
 src/crossres_pred/** -text
+# Inference-evidence record: copied bytes are hash-inventoried in files.json; never normalize.
+recipes/f0_inference_20260909/** -text

@@ -24,7 +24,10 @@ same real uint8 raw CT grid used by inference, and an entirely new output path.
 The original frozen-F0 probability cache and native-repair inputs referenced by
 the receipt must still exist and match their hashes. Only 8.640 um, halo32,
 eight-way mirror TTA, BF16 inference and a dense 3x3x3 block of 128-cubed targets
-are qualified. This is not a generic-resolution or whole-scroll executor.
+are qualified. This is not a generic-resolution or whole-scroll executor. The
+qualified probability cache is the T=0.35 profile; the raw model's shipped
+operating point moved to T=0.30 with TTA on 9 September 2026
+(`recipes/f0_inference_20260909`) without re-qualifying this stage.
 Use interior cubes; the surrounding context is not a seam-free tiled product.
 
 ## Outputs and interruption handling

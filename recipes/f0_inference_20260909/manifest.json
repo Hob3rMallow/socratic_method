@@ -1,0 +1,1398 @@
+{
+  "schema": "socratic-method-inference-record-v1",
+  "release_id": "c3-f0-200k-tta-t030-20260909",
+  "previous_release_id": "c3-f0-200k-20260907",
+  "recorded_at_utc": "2026-09-09T04:05:56.119508+00:00",
+  "status": "operator-authorized inference-recipe update on the unchanged frozen F0/200k weights; current official model record; no automatic production deployment or public upload",
+  "training_record": "../final_c3_250k_20260907/manifest.json",
+  "weights": {
+    "unchanged": true,
+    "sha256": "54db9a59cb602ff08e3dda0acc1195ad980ab05fb660332d32fb436a0d49a175",
+    "bytes": 409674095,
+    "selected_sample_exposures": 200000,
+    "file": "checkpoint_milestone_00200000.pt",
+    "frozen_copy": "checkpoint_f0_00200000.pt"
+  },
+  "inference": {
+    "model_composition": "raw-student-only-no-m7-blend-no-teacher",
+    "test_time_augmentation": "8-way-mirror",
+    "mirror_tta": true,
+    "operating_threshold": 0.3,
+    "previous_operating_threshold": 0.35,
+    "amp_dtype": "bfloat16",
+    "threshold_selection_contract": "preregistered-late-checkpoint-rule-8way-mirror-tta-operating-point-argmax-0p30-0p35-v2",
+    "rule": "Family primary fixed before any scoring (F0_FAMILY_PREREG_20260908.md): the frozen 200k weights with eight-way mirror TTA. Operating point = argmax of the fixed-threshold frozen macro Dice over the two pre-registered thresholds {0.30, 0.35}; no other threshold was considered, no per-variant calibration, nothing tuned on PHerc1447.",
+    "audit_command": "crossres-voxel audit-checkpoint --checkpoint <checkpoint_milestone_00200000.pt> --patches <frozen_validation_manifest> --output <audit dir> --split val --device cuda --tta"
+  },
+  "frozen_v14p2_benchmark": {
+    "rows": 689,
+    "scrolls": [
+      "PHerc0814",
+      "PHerc1451"
+    ],
+    "tta": true,
+    "validation_manifest_sha256": "a995787032eb446f71759a4dbd510396273b93c65f65863bac8fe9587e12b714",
+    "audit_report": "evidence/audits/f0_200k_tta/report.json",
+    "audit_report_sha256": "b2bf5b49d4738a00db56f3eadfe675164af26c6e4a54bb084bfc408ea33f5b57",
+    "per_patch_counts_sha256": "74ec78ebbfed3471051a38b837566378865995b6cdd5196864fec155bcf1d939",
+    "macro_dice_030": 0.713025708376333,
+    "ci95_030": [
+      0.7012057990608916,
+      0.7248217726327456
+    ],
+    "scrolls_030": {
+      "PHerc0814": 0.7192669011452222,
+      "PHerc1451": 0.7067845156074438
+    },
+    "precision_030": 0.6872036641245098,
+    "recall_030": 0.7448263903216362,
+    "macro_dice_035": 0.7038261039837073,
+    "ci95_035": [
+      0.6905625946041541,
+      0.7170029587305439
+    ],
+    "scrolls_035": {
+      "PHerc0814": 0.7061020394890641,
+      "PHerc1451": 0.7015501684783503
+    },
+    "precision_035": 0.7379042184865943,
+    "recall_035": 0.6739322745833477,
+    "calibrated_threshold": 0.29999998211860657,
+    "calibrated_macro": 0.713025708376333,
+    "calibrated_optimism": 0.0,
+    "reference_no_tta": {
+      "macro_dice_030": 0.6880649121938085,
+      "macro_dice_035": 0.680787428136385,
+      "reproduction_of_sealed_value": {
+        "max_abs_macro_difference": 0.0,
+        "passed": true,
+        "reaudited_macro_at_035": 0.680787428136385,
+        "sealed_macro_at_035": 0.680787428136385,
+        "tolerance": 0.0001
+      }
+    },
+    "paired_delta_vs_reference": {
+      "0.30": {
+        "delta": 0.0322382802399479,
+        "ci95": [
+          0.02806252141417822,
+          0.036360900514700464
+        ],
+        "probability_delta_le_zero": 0.0,
+        "scrolls": {
+          "PHerc0814": 0.037095242437458764,
+          "PHerc1451": 0.02738131804243704
+        }
+      },
+      "0.35": {
+        "delta": 0.02303867584732222,
+        "ci95": [
+          0.019517286714935668,
+          0.026545518835129216
+        ],
+        "probability_delta_le_zero": 0.0,
+        "scrolls": {
+          "PHerc0814": 0.02393038078130072,
+          "PHerc1451": 0.0221469709133435
+        }
+      },
+      "method": "paired cluster bootstrap, clusters = support_anchor_chunk_zyx (PHerc0814 256 clusters, PHerc1451 142), 2,000 resamples, seed 20260908, identical resample weights for both audits"
+    },
+    "holm_over_family_primaries": {
+      "alpha": 0.05,
+      "primaries": [
+        "f0_200k_tta",
+        "avg_200k_250k",
+        "ens_200k_110k"
+      ],
+      "pass": {
+        "avg_200k_250k": false,
+        "ens_200k_110k": true,
+        "f0_200k_tta": true
+      },
+      "pvalues": {
+        "avg_200k_250k": 1.0,
+        "ens_200k_110k": 0.0,
+        "f0_200k_tta": 0.0
+      }
+    },
+    "breaks_0p70": true,
+    "primary_endpoint_threshold": 0.35,
+    "m7_comparators_macro_dice": {
+      "flat_m7_030": 0.5574951367381736,
+      "flat_m7_035": 0.5541400563365637,
+      "m7_tta_030": 0.5874874255181086,
+      "m7_tta_035": 0.5799316565366924,
+      "m7_raw_calibrated_020": 0.5606687358084226,
+      "m7_tta_calibrated_020": 0.5925770672592173
+    }
+  },
+  "kaggle_metric": {
+    "composite": "0.35 SurfaceDice@2.0 + 0.35 VOI + 0.30 TopoScore (metric-windows reimplementation metric.exe; tau 2.0, VOI alpha 0.3, ignore label 2)",
+    "student_tta": true,
+    "f0_200k_tta": {
+      "0.30": {
+        "v14p2_val": {
+          "mean_leaderboard": 0.6520606342525399,
+          "mean_surface_dice": 0.8862702772133517,
+          "mean_voi_score": 0.6325560072568942,
+          "mean_voi_split": 0.9528678403483309,
+          "mean_voi_merge": 1.043813404934688,
+          "mean_voi_total": 1.9966812380261243,
+          "mean_toposcore": 0.40157148330914383,
+          "mean_topoF1_0": 0.6398883176470594,
+          "mean_topoF1_1": 0.04107513148788925,
+          "mean_topoF1_2": 0.14444431818181822,
+          "paired_delta_vs_reference_same_t": {
+            "leaderboard": {
+              "delta": 0.011996570391872276,
+              "ci95": [
+                0.008891104178279036,
+                0.015124432640023269
+              ],
+              "cases_used": 689
+            },
+            "surface_dice": {
+              "delta": 0.013381053701015966,
+              "ci95": [
+                0.009771296919860825,
+                0.01711982787542736
+              ],
+              "cases_used": 689
+            },
+            "voi_score": {
+              "delta": 0.0092344557329463,
+              "ci95": [
+                0.00740812356297254,
+                0.011027041803042746
+              ],
+              "cases_used": 689
+            },
+            "voi_split": {
+              "delta": -0.051154029027576195,
+              "ci95": [
+                -0.0627657891036837,
+                -0.039621371161211304
+              ],
+              "cases_used": 689
+            },
+            "voi_merge": {
+              "delta": -0.030955033381712627,
+              "ci95": [
+                -0.04039355616125913,
+                -0.021851015633399484
+              ],
+              "cases_used": 689
+            },
+            "toposcore": {
+              "delta": 0.01360379100145138,
+              "ci95": [
+                0.0055795412565998485,
+                0.021873291633529926
+              ],
+              "cases_used": 689
+            },
+            "topoF1_0": {
+              "delta": 0.017582802359882,
+              "ci95": [
+                0.009187185953471193,
+                0.0253418373691755
+              ],
+              "cases_used": 678
+            }
+          }
+        },
+        "p0500p2_val": {
+          "mean_leaderboard": 0.49170751875,
+          "mean_surface_dice": 0.7127076312500006,
+          "mean_voi_score": 0.5690228687500001,
+          "mean_voi_split": 1.5384171249999996,
+          "mean_voi_merge": 1.042834121875,
+          "mean_voi_total": 2.5812512468749995,
+          "mean_toposcore": 0.14367271562499997,
+          "mean_topoF1_0": 0.28399431874999986,
+          "mean_topoF1_1": 0.0009713281250000001,
+          "mean_topoF1_2": 0.10921538405797089,
+          "paired_delta_vs_reference_same_t": {
+            "leaderboard": {
+              "delta": 0.0026820812500000027,
+              "ci95": [
+                0.0008157524218750048,
+                0.004485632656250004
+              ],
+              "cases_used": 320
+            },
+            "surface_dice": {
+              "delta": -0.004186112499999993,
+              "ci95": [
+                -0.006341683593749993,
+                -0.002026887968749993
+              ],
+              "cases_used": 320
+            },
+            "voi_score": {
+              "delta": -0.003572484374999997,
+              "ci95": [
+                -0.006200332812499993,
+                -0.0010683852343750032
+              ],
+              "cases_used": 320
+            },
+            "voi_split": {
+              "delta": 0.056331334375,
+              "ci95": [
+                0.03152980492187499,
+                0.08240923937499998
+              ],
+              "cases_used": 320
+            },
+            "voi_merge": {
+              "delta": -0.020261656249999992,
+              "ci95": [
+                -0.02569332546874999,
+                -0.015116623671874998
+              ],
+              "cases_used": 320
+            },
+            "toposcore": {
+              "delta": 0.017991843749999997,
+              "ci95": [
+                0.01334582015625,
+                0.022732044765624997
+              ],
+              "cases_used": 320
+            },
+            "topoF1_0": {
+              "delta": 0.04632333749999999,
+              "ci95": [
+                0.039483401328125,
+                0.053276155937499986
+              ],
+              "cases_used": 320
+            }
+          }
+        }
+      },
+      "0.35": {
+        "v14p2_val": {
+          "mean_leaderboard": 0.6397802046444121,
+          "mean_surface_dice": 0.8646887285921614,
+          "mean_voi_score": 0.6323941712626996,
+          "mean_voi_split": 0.893326262699565,
+          "mean_voi_merge": 1.1083963759071112,
+          "mean_voi_total": 2.0017226473149514,
+          "mean_toposcore": 0.386003899854862,
+          "mean_topoF1_0": 0.6233403269514002,
+          "mean_topoF1_1": 0.03435062627986348,
+          "mean_topoF1_2": 0.09673194117647059,
+          "paired_delta_vs_reference_same_t": {
+            "leaderboard": {
+              "delta": 0.009389164005805516,
+              "ci95": [
+                0.006129501269001024,
+                0.012667881074429213
+              ],
+              "cases_used": 689
+            },
+            "surface_dice": {
+              "delta": 0.00917090420899855,
+              "ci95": [
+                0.004457272657897697,
+                0.014113815886263674
+              ],
+              "cases_used": 689
+            },
+            "voi_score": {
+              "delta": 0.008776645863570394,
+              "ci95": [
+                0.0068624012322567075,
+                0.010732028837025316
+              ],
+              "cases_used": 689
+            },
+            "voi_split": {
+              "delta": -0.04993967489114659,
+              "ci95": [
+                -0.06235544088290495,
+                -0.037350585115865365
+              ],
+              "cases_used": 689
+            },
+            "voi_merge": {
+              "delta": -0.028066217706821477,
+              "ci95": [
+                -0.037672862689199046,
+                -0.019557407666059498
+              ],
+              "cases_used": 689
+            },
+            "toposcore": {
+              "delta": 0.010358278664731498,
+              "ci95": [
+                0.0018544557557585118,
+                0.018956631610946375
+              ],
+              "cases_used": 689
+            },
+            "topoF1_0": {
+              "delta": 0.01761321207658321,
+              "ci95": [
+                0.008335142540379327,
+                0.026800307103174586
+              ],
+              "cases_used": 679
+            }
+          }
+        },
+        "p0500p2_val": {
+          "mean_leaderboard": 0.48314491875,
+          "mean_surface_dice": 0.7013500406249997,
+          "mean_voi_score": 0.5605983156249998,
+          "mean_voi_split": 1.5988310343750016,
+          "mean_voi_merge": 1.0718187812499997,
+          "mean_voi_total": 2.6706497875000013,
+          "mean_toposcore": 0.13821000625000004,
+          "mean_topoF1_0": 0.2767156125,
+          "mean_topoF1_1": 0.0011842218750000007,
+          "mean_topoF1_2": 0.07619865714285713,
+          "paired_delta_vs_reference_same_t": {
+            "leaderboard": {
+              "delta": 0.0013776625000000028,
+              "ci95": [
+                -0.0005536032031249985,
+                0.003215564296874999
+              ],
+              "cases_used": 320
+            },
+            "surface_dice": {
+              "delta": -0.005489596874999999,
+              "ci95": [
+                -0.007984018359374997,
+                -0.0030291524999999995
+              ],
+              "cases_used": 320
+            },
+            "voi_score": {
+              "delta": -0.0054580125000000005,
+              "ci95": [
+                -0.008146608046874997,
+                -0.0027045961718750043
+              ],
+              "cases_used": 320
+            },
+            "voi_split": {
+              "delta": 0.074594275,
+              "ci95": [
+                0.04785146546875001,
+                0.10086916843749999
+              ],
+              "cases_used": 320
+            },
+            "voi_merge": {
+              "delta": -0.019651925,
+              "ci95": [
+                -0.025383818046875003,
+                -0.014192738984375002
+              ],
+              "cases_used": 320
+            },
+            "toposcore": {
+              "delta": 0.017364406250000002,
+              "ci95": [
+                0.012600598828125002,
+                0.021737122499999997
+              ],
+              "cases_used": 320
+            },
+            "topoF1_0": {
+              "delta": 0.04302256249999999,
+              "ci95": [
+                0.03577395875,
+                0.05022099859374998
+              ],
+              "cases_used": 320
+            }
+          }
+        }
+      }
+    },
+    "reference_f0_200k_no_tta": {
+      "0.30": {
+        "v14p2_val": {
+          "mean_leaderboard": 0.6400640638606676,
+          "mean_surface_dice": 0.8728892235123373,
+          "mean_voi_score": 0.6233215515239475,
+          "mean_voi_split": 1.0040218693759075,
+          "mean_voi_merge": 1.0747684383164013,
+          "mean_voi_total": 2.0787903323657475,
+          "mean_toposcore": 0.38796769230769246,
+          "mean_topoF1_0": 0.6225533073529425,
+          "mean_topoF1_1": 0.034612676369862996,
+          "mean_topoF1_2": 0.1894506857142857
+        },
+        "p0500p2_val": {
+          "mean_leaderboard": 0.48902543750000016,
+          "mean_surface_dice": 0.7168937437500006,
+          "mean_voi_score": 0.572595353125,
+          "mean_voi_split": 1.4820857906250005,
+          "mean_voi_merge": 1.0630957781250001,
+          "mean_voi_total": 2.5451815781250007,
+          "mean_toposcore": 0.12568087187500002,
+          "mean_topoF1_0": 0.2376709812499997,
+          "mean_topoF1_1": 0.0014395250000000005,
+          "mean_topoF1_2": 0.12929912658227835
+        }
+      },
+      "0.35": {
+        "v14p2_val": {
+          "mean_leaderboard": 0.6303910406386075,
+          "mean_surface_dice": 0.8555178243831637,
+          "mean_voi_score": 0.6236175253991291,
+          "mean_voi_split": 0.9432659375907113,
+          "mean_voi_merge": 1.1364625936139323,
+          "mean_voi_total": 2.0797285268505097,
+          "mean_toposcore": 0.3756456211901307,
+          "mean_topoF1_0": 0.6057271148748167,
+          "mean_topoF1_1": 0.03757024873096444,
+          "mean_topoF1_2": 0.17985330769230767
+        },
+        "p0500p2_val": {
+          "mean_leaderboard": 0.4817672562499996,
+          "mean_surface_dice": 0.7068396374999995,
+          "mean_voi_score": 0.5660563281250002,
+          "mean_voi_split": 1.5242367593749997,
+          "mean_voi_merge": 1.0914707062500004,
+          "mean_voi_total": 2.6157074687499993,
+          "mean_toposcore": 0.12084560000000007,
+          "mean_topoF1_0": 0.23369305000000012,
+          "mean_topoF1_1": 0.001643165625,
+          "mean_topoF1_2": 0.10631514503816782
+        }
+      }
+    },
+    "flat_m7": {
+      "0.30": {
+        "v14p2_val": {
+          "mean_leaderboard": 0.5972436734397671,
+          "mean_surface_dice": 0.8074951378809875,
+          "mean_voi_score": 0.5924623642960806,
+          "mean_voi_split": 1.1357954499274294,
+          "mean_voi_merge": 1.2420277634252535,
+          "mean_voi_total": 2.3778231872278632,
+          "mean_toposcore": 0.35752855878084133,
+          "mean_topoF1_0": 0.5905275241581265,
+          "mean_topoF1_1": 0.034983279264214025,
+          "mean_topoF1_2": 0.1666665384615385,
+          "paired_delta_vs_reference_same_t": {
+            "leaderboard": {
+              "delta": -0.04282039042089986,
+              "ci95": [
+                -0.049272178434502385,
+                -0.036661287023007104
+              ],
+              "cases_used": 689
+            },
+            "surface_dice": {
+              "delta": -0.06539408563134978,
+              "ci95": [
+                -0.07714969616221173,
+                -0.05467321555227251
+              ],
+              "cases_used": 689
+            },
+            "voi_score": {
+              "delta": -0.030859187227866475,
+              "ci95": [
+                -0.03459654505175983,
+                -0.027016600824013144
+              ],
+              "cases_used": 689
+            },
+            "voi_split": {
+              "delta": 0.13177358055152394,
+              "ci95": [
+                0.10880513718022002,
+                0.15364704453147887
+              ],
+              "cases_used": 689
+            },
+            "voi_merge": {
+              "delta": 0.16725932510885344,
+              "ci95": [
+                0.13849799306283012,
+                0.1948277423169878
+              ],
+              "cases_used": 689
+            },
+            "toposcore": {
+              "delta": -0.030439133526850504,
+              "ci95": [
+                -0.044962665715654715,
+                -0.017685550199562687
+              ],
+              "cases_used": 689
+            },
+            "topoF1_0": {
+              "delta": -0.031020754050073634,
+              "ci95": [
+                -0.046404768592869836,
+                -0.016782662964940603
+              ],
+              "cases_used": 679
+            }
+          }
+        },
+        "p0500p2_val": {
+          "mean_leaderboard": 0.488625953125,
+          "mean_surface_dice": 0.7070357031249994,
+          "mean_voi_score": 0.5654670999999999,
+          "mean_voi_split": 1.540478471875,
+          "mean_voi_merge": 1.069492350000001,
+          "mean_voi_total": 2.6099708406250004,
+          "mean_toposcore": 0.14416657187499998,
+          "mean_topoF1_0": 0.2882707468750002,
+          "mean_topoF1_1": 0.00100725625,
+          "mean_topoF1_2": 0.08411661607142855,
+          "paired_delta_vs_reference_same_t": {
+            "leaderboard": {
+              "delta": -0.00039948437499999934,
+              "ci95": [
+                -0.0034930161718749984,
+                0.002576528281250002
+              ],
+              "cases_used": 320
+            },
+            "surface_dice": {
+              "delta": -0.009858040624999996,
+              "ci95": [
+                -0.014437972109374995,
+                -0.005251986249999995
+              ],
+              "cases_used": 320
+            },
+            "voi_score": {
+              "delta": -0.007128253125,
+              "ci95": [
+                -0.011091803359375003,
+                -0.003169864609375
+              ],
+              "cases_used": 320
+            },
+            "voi_split": {
+              "delta": 0.05839268125,
+              "ci95": [
+                0.016771901875000005,
+                0.10111894507812494
+              ],
+              "cases_used": 320
+            },
+            "voi_merge": {
+              "delta": 0.006396571875000002,
+              "ci95": [
+                -0.0037534814062499923,
+                0.016217295156250006
+              ],
+              "cases_used": 320
+            },
+            "toposcore": {
+              "delta": 0.0184857,
+              "ci95": [
+                0.012186852812500001,
+                0.024769385859374993
+              ],
+              "cases_used": 320
+            },
+            "topoF1_0": {
+              "delta": 0.050599765624999994,
+              "ci95": [
+                0.03975684031249999,
+                0.062050132578124986
+              ],
+              "cases_used": 320
+            }
+          }
+        }
+      },
+      "0.35": {
+        "v14p2_val": {
+          "mean_leaderboard": 0.5950182743105957,
+          "mean_surface_dice": 0.8026229448476057,
+          "mean_voi_score": 0.591810753265602,
+          "mean_voi_split": 1.115965698113207,
+          "mean_voi_merge": 1.2690741306240925,
+          "mean_voi_total": 2.385039801161103,
+          "mean_toposcore": 0.35655495355587813,
+          "mean_topoF1_0": 0.5913976011730203,
+          "mean_topoF1_1": 0.031187144537815112,
+          "mean_topoF1_2": 0.06190471428571429,
+          "paired_delta_vs_reference_same_t": {
+            "leaderboard": {
+              "delta": -0.03537276632801161,
+              "ci95": [
+                -0.04195733283492824,
+                -0.02866081154327323
+              ],
+              "cases_used": 689
+            },
+            "surface_dice": {
+              "delta": -0.052894879535558784,
+              "ci95": [
+                -0.06562865009145505,
+                -0.04006917152200119
+              ],
+              "cases_used": 689
+            },
+            "voi_score": {
+              "delta": -0.03180677213352685,
+              "ci95": [
+                -0.03548165587493887,
+                -0.027951234013330113
+              ],
+              "cases_used": 689
+            },
+            "voi_split": {
+              "delta": 0.17269976052249633,
+              "ci95": [
+                0.14729472670649818,
+                0.19652587681681058
+              ],
+              "cases_used": 689
+            },
+            "voi_merge": {
+              "delta": 0.13261153701015965,
+              "ci95": [
+                0.10341464769515275,
+                0.1615761985269425
+              ],
+              "cases_used": 689
+            },
+            "toposcore": {
+              "delta": -0.019090667634252538,
+              "ci95": [
+                -0.031247717411404557,
+                -0.007575003662974207
+              ],
+              "cases_used": 689
+            },
+            "topoF1_0": {
+              "delta": -0.01314387444608567,
+              "ci95": [
+                -0.02763732832407462,
+                0.0017567530331860687
+              ],
+              "cases_used": 677
+            }
+          }
+        },
+        "p0500p2_val": {
+          "mean_leaderboard": 0.48671169062499986,
+          "mean_surface_dice": 0.7043410468749995,
+          "mean_voi_score": 0.5626252468749999,
+          "mean_voi_split": 1.5616926562499986,
+          "mean_voi_merge": 1.0778888968749996,
+          "mean_voi_total": 2.6395816031250003,
+          "mean_toposcore": 0.14424500312500013,
+          "mean_topoF1_0": 0.2871414750000002,
+          "mean_topoF1_1": 0.0010147468749999995,
+          "mean_topoF1_2": 0.08706620720720717,
+          "paired_delta_vs_reference_same_t": {
+            "leaderboard": {
+              "delta": 0.004944434375000003,
+              "ci95": [
+                0.0019923420312500037,
+                0.007996130781250001
+              ],
+              "cases_used": 320
+            },
+            "surface_dice": {
+              "delta": -0.0024985906250000007,
+              "ci95": [
+                -0.007810988437500002,
+                0.002670163828124993
+              ],
+              "cases_used": 320
+            },
+            "voi_score": {
+              "delta": -0.003431081249999998,
+              "ci95": [
+                -0.0072025178125000025,
+                0.0004298750000000053
+              ],
+              "cases_used": 320
+            },
+            "voi_split": {
+              "delta": 0.03745589687500002,
+              "ci95": [
+                -0.002921037499999989,
+                0.07573412164062499
+              ],
+              "cases_used": 320
+            },
+            "voi_merge": {
+              "delta": -0.013581809375000004,
+              "ci95": [
+                -0.022959036953125,
+                -0.003467757734375008
+              ],
+              "cases_used": 320
+            },
+            "toposcore": {
+              "delta": 0.023399403125,
+              "ci95": [
+                0.017077895859374997,
+                0.029586086874999994
+              ],
+              "cases_used": 320
+            },
+            "topoF1_0": {
+              "delta": 0.053448425,
+              "ci95": [
+                0.042029463984374994,
+                0.064576598046875
+              ],
+              "cases_used": 320
+            }
+          }
+        }
+      }
+    },
+    "m7_tta": {
+      "0.30": {
+        "v14p2_val": {
+          "mean_leaderboard": 0.6094526879535561,
+          "mean_surface_dice": 0.8255121915820032,
+          "mean_voi_score": 0.5978411828737303,
+          "mean_voi_split": 1.1269886066763437,
+          "mean_voi_merge": 1.1966149419448477,
+          "mean_voi_total": 2.3236035529753285,
+          "mean_toposcore": 0.37092996081277235,
+          "mean_topoF1_0": 0.6159011510263935,
+          "mean_topoF1_1": 0.025084584040747007,
+          "mean_topoF1_2": 0.11203319999999999,
+          "paired_delta_vs_reference_same_t": {
+            "leaderboard": {
+              "delta": -0.030611375907111757,
+              "ci95": [
+                -0.036581539073120756,
+                -0.025025033804218368
+              ],
+              "cases_used": 689
+            },
+            "surface_dice": {
+              "delta": -0.04737703193033382,
+              "ci95": [
+                -0.05866346568067226,
+                -0.03736845940779611
+              ],
+              "cases_used": 689
+            },
+            "voi_score": {
+              "delta": -0.025480368650217706,
+              "ci95": [
+                -0.029414210439838214,
+                -0.021409495324700982
+              ],
+              "cases_used": 689
+            },
+            "voi_split": {
+              "delta": 0.12296673730043543,
+              "ci95": [
+                0.09804575549272612,
+                0.14621867649661813
+              ],
+              "cases_used": 689
+            },
+            "voi_merge": {
+              "delta": 0.12184650362844703,
+              "ci95": [
+                0.09637987662665838,
+                0.14720395363704822
+              ],
+              "cases_used": 689
+            },
+            "toposcore": {
+              "delta": -0.017037731494920175,
+              "ci95": [
+                -0.02969291703520352,
+                -0.005322912127976199
+              ],
+              "cases_used": 689
+            },
+            "topoF1_0": {
+              "delta": -0.00559116371681416,
+              "ci95": [
+                -0.019969420443485875,
+                0.00823783851902032
+              ],
+              "cases_used": 678
+            }
+          }
+        },
+        "p0500p2_val": {
+          "mean_leaderboard": 0.49420232187500013,
+          "mean_surface_dice": 0.7139649874999999,
+          "mean_voi_score": 0.5621334749999999,
+          "mean_voi_split": 1.615787234374999,
+          "mean_voi_merge": 1.0301799531250002,
+          "mean_voi_total": 2.6459671375000005,
+          "mean_toposcore": 0.15855955312499997,
+          "mean_topoF1_0": 0.3199637062500001,
+          "mean_topoF1_1": 0.0007544156249999998,
+          "mean_topoF1_2": 0.07161080952380952,
+          "paired_delta_vs_reference_same_t": {
+            "leaderboard": {
+              "delta": 0.005176884375,
+              "ci95": [
+                0.002036724140625002,
+                0.008329105390625001
+              ],
+              "cases_used": 320
+            },
+            "surface_dice": {
+              "delta": -0.0029287562499999966,
+              "ci95": [
+                -0.007348936796874995,
+                0.0016452422656249984
+              ],
+              "cases_used": 320
+            },
+            "voi_score": {
+              "delta": -0.010461878125,
+              "ci95": [
+                -0.0146756209375,
+                -0.006322340546875004
+              ],
+              "cases_used": 320
+            },
+            "voi_split": {
+              "delta": 0.13370144374999998,
+              "ci95": [
+                0.09172834101562499,
+                0.17570724101562496
+              ],
+              "cases_used": 320
+            },
+            "voi_merge": {
+              "delta": -0.032915824999999996,
+              "ci95": [
+                -0.04295155749999999,
+                -0.0231874309375
+              ],
+              "cases_used": 320
+            },
+            "toposcore": {
+              "delta": 0.03287868125,
+              "ci95": [
+                0.025968180937499998,
+                0.03990919070312499
+              ],
+              "cases_used": 320
+            },
+            "topoF1_0": {
+              "delta": 0.082292725,
+              "ci95": [
+                0.06985765984375,
+                0.094662308984375
+              ],
+              "cases_used": 320
+            }
+          }
+        }
+      },
+      "0.35": {
+        "v14p2_val": {
+          "mean_leaderboard": 0.6043481219158199,
+          "mean_surface_dice": 0.813377262699565,
+          "mean_voi_score": 0.5982060449927428,
+          "mean_voi_split": 1.0795465413642962,
+          "mean_voi_merge": 1.2442526821480413,
+          "mean_voi_total": 2.32379920899855,
+          "mean_toposcore": 0.3676465210449927,
+          "mean_topoF1_0": 0.6123317258064518,
+          "mean_topoF1_1": 0.026759097807757152,
+          "mean_topoF1_2": 0.05841266666666667,
+          "paired_delta_vs_reference_same_t": {
+            "leaderboard": {
+              "delta": -0.026042918722786645,
+              "ci95": [
+                -0.03233744833457198,
+                -0.01974656017886327
+              ],
+              "cases_used": 689
+            },
+            "surface_dice": {
+              "delta": -0.04214056168359942,
+              "ci95": [
+                -0.05629254270682147,
+                -0.029561797165451716
+              ],
+              "cases_used": 689
+            },
+            "voi_score": {
+              "delta": -0.025411480406386064,
+              "ci95": [
+                -0.029649272390487088,
+                -0.021002846889003626
+              ],
+              "cases_used": 689
+            },
+            "voi_split": {
+              "delta": 0.1362806037735849,
+              "ci95": [
+                0.10840600749258159,
+                0.1630658081919729
+              ],
+              "cases_used": 689
+            },
+            "voi_merge": {
+              "delta": 0.1077900885341074,
+              "ci95": [
+                0.08005901006673342,
+                0.13519253945930088
+              ],
+              "cases_used": 689
+            },
+            "toposcore": {
+              "delta": -0.007999100145137878,
+              "ci95": [
+                -0.018378242053610317,
+                0.002694188390893241
+              ],
+              "cases_used": 689
+            },
+            "topoF1_0": {
+              "delta": 0.0077516120943952795,
+              "ci95": [
+                -0.00656761732292638,
+                0.02191184075202987
+              ],
+              "cases_used": 678
+            }
+          }
+        },
+        "p0500p2_val": {
+          "mean_leaderboard": 0.48984020624999997,
+          "mean_surface_dice": 0.7085974875000003,
+          "mean_voi_score": 0.557683134375,
+          "mean_voi_split": 1.6475407499999999,
+          "mean_voi_merge": 1.0451395750000005,
+          "mean_voi_total": 2.6926803218749993,
+          "mean_toposcore": 0.15547336250000007,
+          "mean_topoF1_0": 0.31382789687499996,
+          "mean_topoF1_1": 0.0008564624999999996,
+          "mean_topoF1_2": 0.07231977450980391,
+          "paired_delta_vs_reference_same_t": {
+            "leaderboard": {
+              "delta": 0.00807295,
+              "ci95": [
+                0.005082340781250004,
+                0.0111423209375
+              ],
+              "cases_used": 320
+            },
+            "surface_dice": {
+              "delta": 0.0017578500000000005,
+              "ci95": [
+                -0.0030386388281249967,
+                0.006821418828124997
+              ],
+              "cases_used": 320
+            },
+            "voi_score": {
+              "delta": -0.008373193749999999,
+              "ci95": [
+                -0.012211408046874999,
+                -0.004467703046875
+              ],
+              "cases_used": 320
+            },
+            "voi_split": {
+              "delta": 0.123303990625,
+              "ci95": [
+                0.083817563046875,
+                0.160887922109375
+              ],
+              "cases_used": 320
+            },
+            "voi_merge": {
+              "delta": -0.046331131250000004,
+              "ci95": [
+                -0.05625948117187501,
+                -0.03653988031250002
+              ],
+              "cases_used": 320
+            },
+            "toposcore": {
+              "delta": 0.0346277625,
+              "ci95": [
+                0.027846059843749993,
+                0.04124895132812499
+              ],
+              "cases_used": 320
+            },
+            "topoF1_0": {
+              "delta": 0.08013484687500001,
+              "ci95": [
+                0.06778268804687498,
+                0.09307779625
+              ],
+              "cases_used": 320
+            }
+          }
+        }
+      }
+    },
+    "sealed_m7_calibrated_020": {
+      "m7_raw": {
+        "sets": {
+          "p0500p2_val": {
+            "mean_leaderboard": 0.49375040000000026,
+            "mean_surface_dice": 0.7124856968750001,
+            "mean_topoF1_0": 0.2854221093749999,
+            "mean_topoF1_1": 0.0010448875,
+            "mean_topoF1_2": 0.11480720714285704,
+            "mean_toposcore": 0.14639959374999986,
+            "mean_voi_merge": 1.0488378781250003,
+            "mean_voi_score": 0.5727443406249996,
+            "mean_voi_split": 1.4847895312500006,
+            "mean_voi_total": 2.5336274031249997
+          },
+          "v14p2_val": {
+            "mean_leaderboard": 0.6012354121915817,
+            "mean_surface_dice": 0.8152858055152398,
+            "mean_topoF1_0": 0.5910612313323581,
+            "mean_topoF1_1": 0.03374907023411368,
+            "mean_topoF1_2": 0.21770753968253947,
+            "mean_toposcore": 0.35775558635703897,
+            "mean_voi_merge": 1.1827771988388975,
+            "mean_voi_score": 0.5958820391872277,
+            "mean_voi_split": 1.1620243178519596,
+            "mean_voi_total": 2.3448015195936143
+          }
+        },
+        "paired_delta_vs_reference_at_030": {
+          "p0500p2_val": {
+            "leaderboard": {
+              "delta": 0.004724962499999999,
+              "ci95": [
+                0.0016440807031249966,
+                0.007636957812499995
+              ]
+            },
+            "topoF1_0": {
+              "delta": 0.047751128125,
+              "ci95": [
+                0.036624930859375,
+                0.05876711851562498
+              ]
+            },
+            "toposcore": {
+              "delta": 0.020718721875,
+              "ci95": [
+                0.014219796875,
+                0.02718940414062499
+              ]
+            },
+            "voi_merge": {
+              "delta": -0.014257899999999999,
+              "ci95": [
+                -0.023765499140624993,
+                -0.0044350889062500015
+              ]
+            },
+            "voi_split": {
+              "delta": 0.0027037406250000006,
+              "ci95": [
+                -0.03979371171875,
+                0.04502957164062498
+              ]
+            }
+          },
+          "v14p2_val": {
+            "leaderboard": {
+              "delta": -0.03882865166908563,
+              "ci95": [
+                -0.04541602354862118,
+                -0.03279694158391622
+              ]
+            },
+            "topoF1_0": {
+              "delta": -0.030287536082474233,
+              "ci95": [
+                -0.04626645262462529,
+                -0.015596041307249727
+              ]
+            },
+            "toposcore": {
+              "delta": -0.030212105950653118,
+              "ci95": [
+                -0.04564683412303698,
+                -0.01642778532944145
+              ]
+            },
+            "voi_merge": {
+              "delta": 0.10800876052249637,
+              "ci95": [
+                0.081089501228987,
+                0.1347192635921569
+              ]
+            },
+            "voi_split": {
+              "delta": 0.15800244847605222,
+              "ci95": [
+                0.13218282963393718,
+                0.18128667560956419
+              ]
+            }
+          }
+        }
+      },
+      "m7_tta": {
+        "sets": {
+          "p0500p2_val": {
+            "mean_leaderboard": 0.5014585937500002,
+            "mean_surface_dice": 0.7212727937500002,
+            "mean_topoF1_0": 0.31633379062499983,
+            "mean_topoF1_1": 0.0008250093749999999,
+            "mean_topoF1_2": 0.12217838607594927,
+            "mean_toposcore": 0.16060201562500004,
+            "mean_voi_merge": 1.0027566625000002,
+            "mean_voi_score": 0.5738071968749998,
+            "mean_voi_split": 1.5216821968750003,
+            "mean_voi_total": 2.524438868749999
+          },
+          "v14p2_val": {
+            "mean_leaderboard": 0.6162138040638608,
+            "mean_surface_dice": 0.8368682539912917,
+            "mean_topoF1_0": 0.6198163060029293,
+            "mean_topoF1_1": 0.027824578313252996,
+            "mean_topoF1_2": 0.17293755319148935,
+            "mean_toposcore": 0.3776448287373004,
+            "mean_voi_merge": 1.1146066937590706,
+            "mean_voi_score": 0.6000469811320759,
+            "mean_voi_split": 1.1853135457184334,
+            "mean_voi_total": 2.2999202249637127
+          }
+        },
+        "paired_delta_vs_reference_at_030": {
+          "p0500p2_val": {
+            "leaderboard": {
+              "delta": 0.012433156250000002,
+              "ci95": [
+                0.009340250234375003,
+                0.015378721640624999
+              ]
+            },
+            "topoF1_0": {
+              "delta": 0.078662809375,
+              "ci95": [
+                0.06625029976562499,
+                0.09184829765625
+              ]
+            },
+            "toposcore": {
+              "delta": 0.034921143749999994,
+              "ci95": [
+                0.028179127187499996,
+                0.04161800367187501
+              ]
+            },
+            "voi_merge": {
+              "delta": -0.06033911562500001,
+              "ci95": [
+                -0.07075730328125,
+                -0.050488891328125014
+              ]
+            },
+            "voi_split": {
+              "delta": 0.039596406249999994,
+              "ci95": [
+                -0.0032348929687500217,
+                0.08323458351562499
+              ]
+            }
+          },
+          "v14p2_val": {
+            "leaderboard": {
+              "delta": -0.02385025979680697,
+              "ci95": [
+                -0.02982464022083943,
+                -0.01844553285025418
+              ]
+            },
+            "topoF1_0": {
+              "delta": -0.0011649970544919007,
+              "ci95": [
+                -0.015213859991232263,
+                0.012053366681459359
+              ]
+            },
+            "toposcore": {
+              "delta": -0.010322863570391872,
+              "ci95": [
+                -0.022770362584820254,
+                0.0007693815549969355
+              ]
+            },
+            "voi_merge": {
+              "delta": 0.03983825544267054,
+              "ci95": [
+                0.015545778244516853,
+                0.06366711947149194
+              ]
+            },
+            "voi_split": {
+              "delta": 0.1812916763425254,
+              "ci95": [
+                0.15416936876291318,
+                0.20719832988554812
+              ]
+            }
+          }
+        }
+      }
+    },
+    "exploratory_equivalents_not_promoted": {
+      "f0_110k_tta": {
+        "macro_dice_030": 0.7137721349394992,
+        "macro_dice_035": 0.7081978113610452,
+        "composite_030": {
+          "v14p2_val": 0.6535633134978234,
+          "p0500p2_val": 0.4965468593749994
+        }
+      },
+      "avg_100k_250k_tta": {
+        "macro_dice_030": 0.7128347746450886,
+        "macro_dice_035": 0.7049908681584165,
+        "composite_030": {
+          "v14p2_val": 0.6526566429608125,
+          "p0500p2_val": 0.4944257593749998
+        }
+      }
+    },
+    "all_metrics_table": "evidence/all_metrics/all_metrics_table.json",
+    "all_metrics_table_created_utc": "2026-09-09T03:43:56.404471+00:00"
+  },
+  "six_cube_pherc1447": {
+    "export": "blind six-cube export, halo 32, eight-way mirror TTA, bfloat16 (evaluate_final_c3_250k.blind_command); the receipts threshold the same probability export at the operating T",
+    "gate_at_030": {
+      "blob_score": 0.0,
+      "dice_vs_reference": 0.7358048698040819,
+      "fg_lower_advisory": true,
+      "fg_lower_pass": true,
+      "fg_upper_pass": true,
+      "foreground_ratio_vs_reference": 0.7989009897797321,
+      "interior_pass": true,
+      "passed": true,
+      "recall_vs_reference": 0.661820054287655,
+      "thickness_pass": true,
+      "threshold": 0.3
+    },
+    "frontier_at_030": {
+      "candidate_bridges": 4945,
+      "coverage": 0.7822161655736308,
+      "maximum_candidate_bridges": 7982.9237704918005,
+      "passed": true,
+      "reference_bridges_interpolated": 6652.436475409834,
+      "resolved": true
+    },
+    "fixed18_at_030": {
+      "candidate_only_bridge_pixels": 4945,
+      "candidate_only_interior_pixels_r2": 5026,
+      "reference_skeleton_recall": 0.7822161655736308,
+      "candidate_skeleton_precision": 0.9172590275803242,
+      "candidate_meaningful_components": 123
+    },
+    "gate_at_035": {
+      "blob_score": 0.0,
+      "dice_vs_reference": 0.6954742016418742,
+      "fg_lower_advisory": true,
+      "fg_lower_pass": false,
+      "fg_upper_pass": true,
+      "foreground_ratio_vs_reference": 0.695121532994108,
+      "interior_pass": true,
+      "passed": true,
+      "recall_vs_reference": 0.5894566474225137,
+      "thickness_pass": true,
+      "threshold": 0.35
+    },
+    "frontier_at_035": {
+      "candidate_bridges": 2273,
+      "coverage": 0.7072651392556001,
+      "maximum_candidate_bridges": 4751.2523364486,
+      "passed": true,
+      "reference_bridges_interpolated": 3959.3769470404995,
+      "resolved": true
+    },
+    "geometry_pass_030": true,
+    "review_view": "evidence/geometry/54db9a59cb602ff0/review_z12160_y04224_x02944_z12224.png",
+    "review_view_legend": "cyan = published M7, yellow = incumbent (jackpot) student, magenta = F0 200k; veto material, never selection"
+  },
+  "readiness_advisory": {
+    "composite_target": 0.6212,
+    "composite_030": 0.6520606342525399,
+    "composite": true,
+    "topology_target": 0.3776,
+    "topology_030": 0.40157148330914383,
+    "topology": true,
+    "p0500p2_floor": 0.476767,
+    "p0500p2_composite_030": 0.49170751875,
+    "p0500p2_floor_pass": true
+  },
+  "verdict": "breaks-0.70-candidate (needs C3r replication, 0500P2 floor, repair re-qualification)",
+  "pending": {
+    "c3r_replication": {
+      "status": "pending",
+      "rule": "F0_FAMILY_PREREG_20260908.md rule 8: the promoted inference recipe (same weights index, TTA, T) applied to the seed-1204 replicate C3r must beat C3r's own no-TTA reference with a positive paired lower bound",
+      "state_at_record_time": "C3r at 160,000 of 250,000 samples (family coordinator VesuviusCrossres-F0Family-20260908, journal output/crossres_data/logs/f0_family_20260908_state.json)"
+    },
+    "postprocessor_requalification": {
+      "status": "pending",
+      "profiles": [
+        "socratic-repair (recipes/f0_repair_20260907)",
+        "socratic-continuity (recipes/f0_continuity_20260907)",
+        "socratic-sheet-patches (recipes/f0_sheet_patches_20260907)"
+      ],
+      "qualified_input": "frozen F0/200k prediction at T=0.35, halo 32, eight-way mirror TTA, bfloat16",
+      "note": "The profiles pin the T=0.35 prediction and stay valid for it; they have not been re-qualified against the T=0.30 operating point (88-case + control comparison, zero erasure). The raw model's operating point moved; the postprocessor pins did not."
+    }
+  },
+  "known_limits": [
+    "the frozen-harness 0.70 is reached by inference changes on the same weights: eight-way mirror TTA (+0.023 at T=0.35) and the pre-registered secondary operating point T=0.30 (+0.009); no retraining was involved",
+    "one seed; the C3r replication of the inference recipe is pending",
+    "on the human-labelled PHerc0500P2 the composite is flat across the whole ladder (0.476-0.497): released M7 with TTA at its calibrated T=0.20 scores 0.5015 against this recipe's 0.4917, with better topology; the student's advantage there is Surface Dice and merges",
+    "the six-cube lower-foreground advisory is met at T=0.30 (foreground ratio 0.799) but the model stays sparser than the exemplar",
+    "the exploratory F0 110k + TTA and the 100k-250k weight average + TTA score at or slightly above this recipe on every metric and are reported, not promoted (pre-registered family primary rule)"
+  ],
+  "source_evidence": {
+    "prereg_document": {
+      "path": "evidence/prereg/F0_FAMILY_PREREG_20260908.md",
+      "sha256": "53bd869ed6ab447bfc3437d7ac0257f5052b6e6ef48b68317b92707cc8fa4617"
+    },
+    "ladder_config": {
+      "path": "evidence/config/f0_variants_20260908.json",
+      "sha256": "71ca3dd676611e045b1d6976e8c42992eddeb68fc6859cde4e14191e8db726f2",
+      "decision_table_config_sha256": "71ca3dd676611e045b1d6976e8c42992eddeb68fc6859cde4e14191e8db726f2"
+    },
+    "decision_table": {
+      "path": "evidence/decision_table.json",
+      "created_utc": "2026-09-08T12:20:22.434602+00:00",
+      "amendments": [
+        {
+          "at_utc": "20260908T185355Z",
+          "note": "family primary Kaggle-scored post hoc via score_f0_variant_kaggle.py (top-k rule had excluded it); previous table kept at decision_table.before_primary_kaggle_20260908T185355Z.json",
+          "operating_threshold": 0.3,
+          "source": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\kaggle\\f0_200k_tta_t030\\kaggle.json",
+          "variant_id": "f0_200k_tta"
+        }
+      ]
+    },
+    "ladder_root": "D:/work/vesuvius-c/output/crossres_data/f0_family_20260908/variants",
+    "ledger_page": "https://claude.ai/code/artifact/1eae2886-7404-4266-8052-eb55b07f1e13",
+    "external_tools": [
+      "metric-windows/build/metric/Release/metric.exe (Kaggle metric reimplementation, not part of this repository)"
+    ],
+    "engine_note": "runtime/voxel/checkpoint_audit.py differs from the sealed pin only by the additive per-patch counts sidecar; the sealed engine reproduces the same sweep (reference_reproduction max |delta| 0.0) and the --tta audit of the shipped number needs no engine change"
+  },
+  "files": "files.json"
+}

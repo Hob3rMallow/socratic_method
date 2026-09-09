@@ -1,8 +1,8 @@
 {
   "$schema": "../schema.json",
   "schema": "socratic-method-training-recipe-v1",
-  "name": "C3-F0: wide15 anti-aliased corpus, CE 1 + Dice 1 + M7-KL 0.5, SGD poly over 250k exposures, frozen at 200k, T=0.35",
-  "version": "c3-f0-200k-20260907",
+  "name": "C3-F0: wide15 anti-aliased corpus, CE 1 + Dice 1 + M7-KL 0.5, SGD poly over 250k exposures, frozen at 200k; shipped inference = eight-way mirror TTA at T=0.30",
+  "version": "c3-f0-200k-tta-t030-20260909",
   "status": "frozen-model-selected",
   "record": "../final_c3_250k_20260907/manifest.json",
   "source_recipe": "../final_c3_250k_20260907/provenance/recipe.json",
@@ -111,7 +111,8 @@
   "release": {
     "status": "selected",
     "selection_status": "frozen-model-selected",
-    "release_id": "c3-f0-200k-20260907",
+    "release_id": "c3-f0-200k-tta-t030-20260909",
+    "previous_release_id": "c3-f0-200k-20260907",
     "selected_checkpoint": {
       "samples": 200000,
       "sha256": "54db9a59cb602ff08e3dda0acc1195ad980ab05fb660332d32fb436a0d49a175",
@@ -120,18 +121,22 @@
       "frozen_copy": "checkpoint_f0_00200000.pt"
     },
     "completed_training_samples": 250000,
-    "operating_threshold": 0.35,
-    "threshold_selection_contract": "preregistered-fixed-operating-threshold-0p35-late-checkpoint-rule-v1",
-    "threshold_status": "fixed by preregistration before training; the calibrated T=0.30 optimum is diagnostic only and was never tuned on PHerc1447",
+    "operating_threshold": 0.30,
+    "training_record_operating_threshold": 0.35,
+    "test_time_augmentation": "8-way-mirror",
+    "threshold_selection_contract": "preregistered-late-checkpoint-rule-8way-mirror-tta-operating-point-argmax-0p30-0p35-v2",
+    "threshold_status": "weights fixed by the preregistered late-checkpoint rule (training record: T=0.35 without TTA); the shipped inference recipe was preregistered before the 2026-09-08 ladder ran (eight-way mirror TTA, operating point = the declared argmax over {0.30, 0.35}) and promoted on 2026-09-09 on the unchanged weights; nothing was tuned on PHerc1447",
     "inference": "raw-student-only-no-m7-blend-no-teacher",
+    "inference_record": "../f0_inference_20260909/manifest.json",
+    "inference_record_sha256": "c2b7e9da17827ff752453daccefa10d0a9787092b7243a755df40f3328880ef0",
     "selection": "selection.json",
     "qualification": "release_qualification.json",
     "known_limits": [
-      "one seed and correlated checkpoints: duration superiority beyond seed noise is unresolved (200k exceeds the original C3@30k by 0.003935)",
-      "operating-point native topology 0.375646 narrowly misses the 0.3776 advisory",
-      "the six-cube lower-foreground advisory is not met at T=0.35: the model is deliberately sparse relative to the exemplar",
-      "PHerc0500P2 scores are absolute only; released M7 saw its labels",
-      "the conservative line filler is not part of the model and is not a validated production repair",
+      "the frozen-harness 0.70 comes from inference changes on unchanged weights: eight-way mirror TTA (+0.023 at T=0.35) and the preregistered secondary operating point T=0.30 (+0.009); no retraining",
+      "one seed and correlated checkpoints; the C3r seed replication of the inference recipe is pending",
+      "the repair, continuity and sheet-patch postprocessors pin the T=0.35 prediction and are not re-qualified at T=0.30",
+      "on the human-labelled PHerc0500P2 the composite is flat across the ladder (0.476-0.497) and released M7 with TTA at its calibrated T=0.20 scores above this recipe there (0.5015 vs 0.4917); scores on that scroll are absolute only because released M7 saw its labels",
+      "the exploratory F0 110k + TTA and the 100k-250k weight average + TTA score at or slightly above this recipe and are reported, not promoted",
       "seed 1203 defines a same-seed recipe repeat; bitwise reproduction across environments is not promised"
     ]
   },
@@ -175,13 +180,18 @@
     "trust_ball": false
   },
   "evaluation": {
-    "harness": "crossres-voxel audit-checkpoint on the frozen v14p2 689-row val split, 17 thresholds 0.10-0.90, no TTA; macro-scroll Dice = mean of the two per-scroll pooled Dice values",
+    "harness": "crossres-voxel audit-checkpoint on the frozen v14p2 689-row val split, 17 thresholds 0.10-0.90; macro-scroll Dice = mean of the two per-scroll pooled Dice values. The training record's number is the no-TTA audit read at T=0.35; the shipped inference number is the same audit run with --tta and read at T=0.30",
     "thresholds": {"minimum": 0.10, "maximum": 0.90, "step": 0.05},
     "selection": "highest fixed-T=0.35 frozen macro-scroll Dice among eligible checkpoints at >= 150k; ties to the later milestone; decided after natural 250k completion",
-    "eligibility": "six-cube PHerc1447 gate at T=0.35 (foreground ratio <= 1.25, interior delta <= 0.10, max-thickness delta <= 2) and non-negative Dice gain versus released M7 on both validation scrolls",
+    "inference_selection": "family primary fixed before scoring (F0 200k + eight-way mirror TTA); operating point = argmax of the fixed macro Dice over the preregistered {0.30, 0.35}; a positive paired cluster-bootstrap lower bound after Holm and non-negative deltas on both scrolls were required",
+    "eligibility": "six-cube PHerc1447 gate at the operating point (foreground ratio <= 1.25, interior delta <= 0.10, max-thickness delta <= 2), frontier veto at matched coverage, and non-negative Dice gain versus released M7 on both validation scrolls",
     "in_run_validation": "telemetry only; never select or abort on history.jsonl",
+    "shipped_inference": "eight-way mirror TTA, T=0.30",
+    "expected_selected_macro_dice_tta_at_030": 0.713025708376333,
+    "expected_selected_macro_dice_tta_at_035": 0.7038261039837073,
     "expected_selected_macro_dice_at_035": 0.680787428136385,
-    "expected_m7_raw_macro_dice_at_035": 0.5541400563365637
+    "expected_m7_raw_macro_dice_at_035": 0.5541400563365637,
+    "expected_m7_tta_macro_dice_at_030": 0.5874874255181086
   },
   "environment": {
     "OMP_NUM_THREADS": "1",

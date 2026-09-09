@@ -1,0 +1,124 @@
+{
+  "checkpoint_sha256": "54db9a59cb602ff08e3dda0acc1195ad980ab05fb660332d32fb436a0d49a175",
+  "levels": {
+    "0.30": {
+      "calibrated_optimism": {
+        "note": "best-threshold macro re-selected inside each replicate minus the fixed-threshold macro; the in-sample calibrated value inherits this optimism",
+        "optimism": 0.0,
+        "point_calibrated_macro": 0.6880649121938085,
+        "point_calibrated_threshold": 0.29999998211860657,
+        "replicate_mean_fixed": 0.6881667812022588,
+        "replicate_mean_reselected": 0.6881667812022588
+      },
+      "checkpoint_sha256": "54db9a59cb602ff08e3dda0acc1195ad980ab05fb660332d32fb436a0d49a175",
+      "cluster_mode": "support_anchor_chunk_zyx",
+      "clusters_per_scroll": {
+        "PHerc0814": 256,
+        "PHerc1451": 142
+      },
+      "confidence": 0.95,
+      "interval": {
+        "half_width": 0.011907069082391142,
+        "high": 0.7001858206312387,
+        "low": 0.6763716824664564,
+        "mean": 0.6881667812022588,
+        "std": 0.006118414779628319
+      },
+      "kind": "level",
+      "mirror_tta": false,
+      "patches_per_scroll": {
+        "PHerc0814": 256,
+        "PHerc1451": 433
+      },
+      "point": {
+        "macro_scroll_dice": 0.6880649121938085,
+        "scrolls": {
+          "PHerc0814": 0.6907216961977019,
+          "PHerc1451": 0.685408128189915
+        }
+      },
+      "replicates": 2000,
+      "report": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\audits\\f0_200k\\report.json",
+      "schema": "crossres-voxel-audit-bootstrap-v1",
+      "scroll_intervals": {
+        "PHerc0814": {
+          "half_width": 0.016659964864117027,
+          "high": 0.7073970264060027,
+          "low": 0.6740770966777686,
+          "mean": 0.6909514220034729,
+          "std": 0.008595942561178146
+        },
+        "PHerc1451": {
+          "half_width": 0.01735357513278596,
+          "high": 0.7022865143441668,
+          "low": 0.6675793640785949,
+          "mean": 0.6853821404010446,
+          "std": 0.008804582691163217
+        }
+      },
+      "seed": 20260908,
+      "threshold": 0.29999998211860657
+    },
+    "0.35": {
+      "calibrated_optimism": {
+        "note": "best-threshold macro re-selected inside each replicate minus the fixed-threshold macro; the in-sample calibrated value inherits this optimism",
+        "optimism": 0.007278288171397712,
+        "point_calibrated_macro": 0.6880649121938085,
+        "point_calibrated_threshold": 0.29999998211860657,
+        "replicate_mean_fixed": 0.6808884930308611,
+        "replicate_mean_reselected": 0.6881667812022588
+      },
+      "checkpoint_sha256": "54db9a59cb602ff08e3dda0acc1195ad980ab05fb660332d32fb436a0d49a175",
+      "cluster_mode": "support_anchor_chunk_zyx",
+      "clusters_per_scroll": {
+        "PHerc0814": 256,
+        "PHerc1451": 142
+      },
+      "confidence": 0.95,
+      "interval": {
+        "half_width": 0.0129314098274248,
+        "high": 0.6938622975783089,
+        "low": 0.6679994779234593,
+        "mean": 0.6808884930308611,
+        "std": 0.006619751163079645
+      },
+      "kind": "level",
+      "mirror_tta": false,
+      "patches_per_scroll": {
+        "PHerc0814": 256,
+        "PHerc1451": 433
+      },
+      "point": {
+        "macro_scroll_dice": 0.680787428136385,
+        "scrolls": {
+          "PHerc0814": 0.6821716587077634,
+          "PHerc1451": 0.6794031975650068
+        }
+      },
+      "replicates": 2000,
+      "report": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\variants\\audits\\f0_200k\\report.json",
+      "schema": "crossres-voxel-audit-bootstrap-v1",
+      "scroll_intervals": {
+        "PHerc0814": {
+          "half_width": 0.018438112002689078,
+          "high": 0.7003159300991835,
+          "low": 0.6634397060938053,
+          "mean": 0.6823985982767365,
+          "std": 0.009518770973954737
+        },
+        "PHerc1451": {
+          "half_width": 0.018459633936227238,
+          "high": 0.6972677373215392,
+          "low": 0.6603484694490848,
+          "mean": 0.6793783877849855,
+          "std": 0.009299472238339494
+        }
+      },
+      "seed": 20260908,
+      "threshold": 0.3499999940395355
+    }
+  },
+  "paired": {},
+  "reference_dir": null,
+  "variant_id": "f0_200k"
+}
