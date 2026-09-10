@@ -1,0 +1,1220 @@
+{
+  "schema": "crossres-f0-rescue-prereg-v1",
+  "created": "2026-09-09",
+  "prereg_document": "crossres_pred/F0_RESCUE_PREREG_20260909.md",
+  "operator_authorization": "2026-09-09: run the kill stage (P_hard, P_soft, conditional P_sep) then PAUSE; the 250k continuation, replicate and ship check are pre-registered but need output/crossres_data/f0_rescue_20260909/authorizations/continue_250k.json; the tail lane needs its trigger AND authorizations/T_lane.json",
+  "scientific_question": "Can the one removed 2026-08-31 loss term that survives the evidence review (one-sided M7 preservation, hard or soft-floor) be re-added to the F0 recipe with a late-band macro gain of at least 0.012 beyond seed noise, without rim thickening, and does it restore PHerc0500P2 topology? Every other removed term is measured dead or untestable on wide15 (separation shell = threshold dial with a worse within-lane frontier; crest recall refills blobs and its ceiling hypothesis is absent on wide15; dynamic connectivity is inert outside PHerc0139; trust ball = cage; hard Dice and pinned axial measured negative).",
+  "base": {
+    "config": "crossres_pred/configs/final_c3_250k_20260905.json",
+    "config_sha256": "af9d74dbf9f4c0fc978d6b9756fc92f6750fec211705c08be0a05e970c496cbc",
+    "argv_source": "arms[0].argv",
+    "reference_run_dir": "output/crossres_data/final_c3_250k_20260905/arms/F0"
+  },
+  "initialization": {
+    "contract": "fresh-released-m7-sha256-strict-v1",
+    "checkpoint": "output/crossres_data/models/surface_m7_nnunet/fold_0/checkpoint_best.pth",
+    "sha256": "17465b77591b794638e671f1a9f79c4cf1e79821f302e6fc235e3725e5da7d7e"
+  },
+  "corpora": {
+    "wide15": {
+      "manifest": "output/crossres_data/voxel_wide15_antialias_corpus_20260901/patches.jsonl",
+      "sha256": "f18c4efbb0de1e2576f6d3900d1e0994b0159dbddb0f3ba7305ea22724031128",
+      "census": {
+        "train": 15432,
+        "val": 768,
+        "scrolls": 14
+      }
+    },
+    "native_v19_medial": {
+      "manifest": "output/crossres_data/voxel_atlas_native_v19_medial_250k_reuse_20260902/patches.jsonl",
+      "sha256": "4db602bfb02dc6e322604aaeea52d767379e1a9137f37d070778adadcfaa050b",
+      "paths_relative_to_manifest": true,
+      "census": {
+        "train": 249836,
+        "val": 0,
+        "scrolls": 4
+      },
+      "validation_manifest": "output/crossres_data/voxel_balanced_native_v14p2_registered_antialias_softtarget_corpus/patches.jsonl",
+      "validation_manifest_sha256": "a995787032eb446f71759a4dbd510396273b93c65f65863bac8fe9587e12b714",
+      "note": "PHerc0139/0332/1667/Paris4 .atlas rows with preparation_version coarse-atlas-antialias-gh3-villa-medial-v2 (crest-complete); no val split, so the trainer validates on the frozen v14p2 manifest via --validation-patches as the deferred N0 arm declared"
+    }
+  },
+  "arms": [
+    {
+      "arm_id": "P_hard",
+      "priority": 1,
+      "role": "primary",
+      "purpose": "F0 + one-sided M7 preservation in its 2026-08-31 v31 setting: -log p_fg on voxels where frozen M7 says foreground (>= 0.5) within 2 vox of a teacher positive, weight 1.0; declared 250k for LR identity, stopped after the durable 50k optimizer commit",
+      "seed": 1203,
+      "corpus": "wide15",
+      "samples": 250000,
+      "snapshot_samples": [
+        10000,
+        20000,
+        30000,
+        40000,
+        50000,
+        60000,
+        70000,
+        80000,
+        90000,
+        100000,
+        110000,
+        120000,
+        130000,
+        140000,
+        150000,
+        160000,
+        170000,
+        180000,
+        190000,
+        200000,
+        210000,
+        220000,
+        230000,
+        240000,
+        250000
+      ],
+      "stages": {
+        "kill_at_commit": 50000,
+        "resume_to": 250000
+      },
+      "output": "output/crossres_data/f0_rescue_20260909/arms/P_hard",
+      "argv_delta": {
+        "--loss-m7-preservation-weight": [
+          "1.0"
+        ],
+        "--loss-m7-preservation-radius": [
+          "2"
+        ],
+        "--loss-m7-preservation-anchor-threshold": [
+          "0.5"
+        ],
+        "--output": [
+          "output/crossres_data/f0_rescue_20260909/arms/P_hard"
+        ]
+      },
+      "expected_loss_contract": "soft-occupancy-ce-dice-villa-medial-crest-shell-kl-corridor-m7-preservation-v5",
+      "expected_losses": {
+        "cross_entropy_weight": 1.0,
+        "dice_weight": 1.0,
+        "m7_anchor_weight": 0.5,
+        "m7_anchor_known_agreement": true,
+        "m7_anchor_confident_agreement": true,
+        "m7_anchor_unknown_corridor_radius": 2,
+        "m7_preservation_weight": 1.0,
+        "m7_preservation_radius": 2,
+        "m7_preservation_anchor_threshold": 0.5
+      },
+      "loss_component": "loss_m7_preservation_loss",
+      "loss_weight_for_inertness": 1.0,
+      "risk": "rim thickening: v31 paired this term with the opposing separation shell 2.0; F0 runs neither",
+      "expected_wall_hours": {
+        "train_kill": 4.3,
+        "eval_kill": 0.5,
+        "train_resume": 18.0,
+        "eval_full": 2.5
+      }
+    },
+    {
+      "arm_id": "P_soft",
+      "priority": 2,
+      "role": "primary",
+      "purpose": "F0 + the one-sided soft-floor preservation variant: KL(M7 || student) only where the student has dropped below M7 on the same corridor voxels, weight 4.0 (the 2026-08-31 v22 sweep's 'moderate' point; the term is second-order small so 0.5 would likely be inert); never run at scale, never on wide15, never on the frozen harness",
+      "seed": 1203,
+      "corpus": "wide15",
+      "samples": 250000,
+      "snapshot_samples": [
+        10000,
+        20000,
+        30000,
+        40000,
+        50000,
+        60000,
+        70000,
+        80000,
+        90000,
+        100000,
+        110000,
+        120000,
+        130000,
+        140000,
+        150000,
+        160000,
+        170000,
+        180000,
+        190000,
+        200000,
+        210000,
+        220000,
+        230000,
+        240000,
+        250000
+      ],
+      "stages": {
+        "kill_at_commit": 50000,
+        "resume_to": 250000
+      },
+      "output": "output/crossres_data/f0_rescue_20260909/arms/P_soft",
+      "argv_delta": {
+        "--loss-m7-preservation-weight": [
+          "4.0"
+        ],
+        "--loss-m7-preservation-radius": [
+          "2"
+        ],
+        "--loss-m7-preservation-anchor-threshold": [
+          "0.5"
+        ],
+        "--loss-m7-preservation-soft-floor": [],
+        "--output": [
+          "output/crossres_data/f0_rescue_20260909/arms/P_soft"
+        ]
+      },
+      "expected_loss_contract": "soft-occupancy-ce-dice-villa-medial-crest-shell-kl-corridor-m7-preservation-one-sided-soft-floor-v7",
+      "expected_losses": {
+        "cross_entropy_weight": 1.0,
+        "dice_weight": 1.0,
+        "m7_anchor_weight": 0.5,
+        "m7_anchor_known_agreement": true,
+        "m7_anchor_confident_agreement": true,
+        "m7_anchor_unknown_corridor_radius": 2,
+        "m7_preservation_weight": 4.0,
+        "m7_preservation_radius": 2,
+        "m7_preservation_anchor_threshold": 0.5,
+        "m7_preservation_soft_floor": true
+      },
+      "loss_component": "loss_m7_preservation_loss",
+      "loss_weight_for_inertness": 4.0,
+      "prior_evidence": "output/crossres_data/m7_xr_v22_pherc0139_soft_floor_weight_sweep_20260831/result.json (weights 1/4/16/64 at 1,024 samples, PHerc0139, Adam/ball lane, never scored)",
+      "expected_wall_hours": {
+        "train_kill": 4.3,
+        "eval_kill": 0.5,
+        "train_resume": 18.0,
+        "eval_full": 2.5
+      }
+    },
+    {
+      "arm_id": "P_sep",
+      "priority": 3,
+      "role": "conditional",
+      "condition": "rim_thickening",
+      "purpose": "counter-force: the thickening preservation arm plus the separation shell at 0.4 (radius 2, teacher-q ceiling 0.1 inherited from the F0 argv); parented at runtime to the thickening primary with the better pooled delta vs F0 (rule C1)",
+      "seed": 1203,
+      "corpus": "wide15",
+      "samples": 250000,
+      "snapshot_samples": [
+        10000,
+        20000,
+        30000,
+        40000,
+        50000,
+        60000,
+        70000,
+        80000,
+        90000,
+        100000,
+        110000,
+        120000,
+        130000,
+        140000,
+        150000,
+        160000,
+        170000,
+        180000,
+        190000,
+        200000,
+        210000,
+        220000,
+        230000,
+        240000,
+        250000
+      ],
+      "stages": {
+        "kill_at_commit": 50000,
+        "resume_to": 250000
+      },
+      "output": "output/crossres_data/f0_rescue_20260909/arms/P_sep",
+      "parent_candidates": [
+        "P_hard",
+        "P_soft"
+      ],
+      "argv_delta_extra": {
+        "--loss-separation-weight": [
+          "0.4"
+        ]
+      },
+      "expected_loss_contract_by_parent": {
+        "P_hard": "soft-occupancy-ce-dice-villa-medial-crest-shell-kl-corridor-m7-preservation-v5",
+        "P_soft": "soft-occupancy-ce-dice-villa-medial-crest-shell-kl-corridor-m7-preservation-one-sided-soft-floor-v7"
+      },
+      "expected_losses_extra": {
+        "separation_weight": 0.4
+      },
+      "expected_wall_hours": {
+        "train_kill": 4.3,
+        "eval_kill": 0.5,
+        "train_resume": 18.0,
+        "eval_full": 2.5
+      }
+    },
+    {
+      "arm_id": "P_hard_r",
+      "priority": 4,
+      "role": "conditional",
+      "condition": "promoted:P_hard",
+      "purpose": "seed-1204 replicate of P_hard, full 250k, natural completion; required before any ship claim",
+      "seed": 1204,
+      "corpus": "wide15",
+      "samples": 250000,
+      "snapshot_samples": [
+        10000,
+        20000,
+        30000,
+        40000,
+        50000,
+        60000,
+        70000,
+        80000,
+        90000,
+        100000,
+        110000,
+        120000,
+        130000,
+        140000,
+        150000,
+        160000,
+        170000,
+        180000,
+        190000,
+        200000,
+        210000,
+        220000,
+        230000,
+        240000,
+        250000
+      ],
+      "stages": {
+        "resume_to": 250000
+      },
+      "output": "output/crossres_data/f0_rescue_20260909/arms/P_hard_r",
+      "argv_delta": {
+        "--loss-m7-preservation-weight": [
+          "1.0"
+        ],
+        "--loss-m7-preservation-radius": [
+          "2"
+        ],
+        "--loss-m7-preservation-anchor-threshold": [
+          "0.5"
+        ],
+        "--output": [
+          "output/crossres_data/f0_rescue_20260909/arms/P_hard_r"
+        ],
+        "--seed": [
+          "1204"
+        ]
+      },
+      "expected_loss_contract": "soft-occupancy-ce-dice-villa-medial-crest-shell-kl-corridor-m7-preservation-v5",
+      "expected_losses": {
+        "cross_entropy_weight": 1.0,
+        "dice_weight": 1.0,
+        "m7_anchor_weight": 0.5,
+        "m7_anchor_known_agreement": true,
+        "m7_anchor_confident_agreement": true,
+        "m7_anchor_unknown_corridor_radius": 2,
+        "m7_preservation_weight": 1.0,
+        "m7_preservation_radius": 2,
+        "m7_preservation_anchor_threshold": 0.5
+      },
+      "loss_component": "loss_m7_preservation_loss",
+      "loss_weight_for_inertness": 1.0,
+      "expected_wall_hours": {
+        "train_full": 22.0,
+        "eval_full": 2.5
+      }
+    },
+    {
+      "arm_id": "P_soft_r",
+      "priority": 5,
+      "role": "conditional",
+      "condition": "promoted:P_soft",
+      "purpose": "seed-1204 replicate of P_soft, full 250k, natural completion; required before any ship claim",
+      "seed": 1204,
+      "corpus": "wide15",
+      "samples": 250000,
+      "snapshot_samples": [
+        10000,
+        20000,
+        30000,
+        40000,
+        50000,
+        60000,
+        70000,
+        80000,
+        90000,
+        100000,
+        110000,
+        120000,
+        130000,
+        140000,
+        150000,
+        160000,
+        170000,
+        180000,
+        190000,
+        200000,
+        210000,
+        220000,
+        230000,
+        240000,
+        250000
+      ],
+      "stages": {
+        "resume_to": 250000
+      },
+      "output": "output/crossres_data/f0_rescue_20260909/arms/P_soft_r",
+      "argv_delta": {
+        "--loss-m7-preservation-weight": [
+          "4.0"
+        ],
+        "--loss-m7-preservation-radius": [
+          "2"
+        ],
+        "--loss-m7-preservation-anchor-threshold": [
+          "0.5"
+        ],
+        "--loss-m7-preservation-soft-floor": [],
+        "--output": [
+          "output/crossres_data/f0_rescue_20260909/arms/P_soft_r"
+        ],
+        "--seed": [
+          "1204"
+        ]
+      },
+      "expected_loss_contract": "soft-occupancy-ce-dice-villa-medial-crest-shell-kl-corridor-m7-preservation-one-sided-soft-floor-v7",
+      "expected_losses": {
+        "cross_entropy_weight": 1.0,
+        "dice_weight": 1.0,
+        "m7_anchor_weight": 0.5,
+        "m7_anchor_known_agreement": true,
+        "m7_anchor_confident_agreement": true,
+        "m7_anchor_unknown_corridor_radius": 2,
+        "m7_preservation_weight": 4.0,
+        "m7_preservation_radius": 2,
+        "m7_preservation_anchor_threshold": 0.5,
+        "m7_preservation_soft_floor": true
+      },
+      "loss_component": "loss_m7_preservation_loss",
+      "loss_weight_for_inertness": 4.0,
+      "expected_wall_hours": {
+        "train_full": 22.0,
+        "eval_full": 2.5
+      }
+    },
+    {
+      "arm_id": "T_base",
+      "priority": 6,
+      "role": "conditional",
+      "condition": "tail_lane",
+      "purpose": "the F0 recipe on the only crest-complete corpus on disk (native four-scroll v19 medial atlas corpus, 249,836 rows, no val split); the within-lane base for T_tail because the tail floor cannot run on wide15 (train.py refuses unless every training row carries the medial patch format, and the 6,128 human rows never will)",
+      "seed": 1203,
+      "corpus": "native_v19_medial",
+      "samples": 250000,
+      "snapshot_samples": [
+        10000,
+        20000,
+        30000,
+        40000,
+        50000,
+        60000,
+        70000,
+        80000,
+        90000,
+        100000,
+        110000,
+        120000,
+        130000,
+        140000,
+        150000,
+        160000,
+        170000,
+        180000,
+        190000,
+        200000,
+        210000,
+        220000,
+        230000,
+        240000,
+        250000
+      ],
+      "stages": {
+        "kill_at_commit": 50000
+      },
+      "requires_operator_authorization": "output/crossres_data/f0_rescue_20260909/authorizations/T_lane.json",
+      "output": "output/crossres_data/f0_rescue_20260909/arms/T_base",
+      "argv_delta": {
+        "--patches": [
+          "output/crossres_data/voxel_atlas_native_v19_medial_250k_reuse_20260902/patches.jsonl"
+        ],
+        "--validation-patches": [
+          "output/crossres_data/voxel_balanced_native_v14p2_registered_antialias_softtarget_corpus/patches.jsonl"
+        ],
+        "--output": [
+          "output/crossres_data/f0_rescue_20260909/arms/T_base"
+        ]
+      },
+      "expected_loss_contract": "soft-ce-weighted-dice-separation-shell-m7-kl-unknown-corridor-v4",
+      "expected_losses": {
+        "cross_entropy_weight": 1.0,
+        "dice_weight": 1.0,
+        "m7_anchor_weight": 0.5,
+        "m7_anchor_known_agreement": true,
+        "m7_anchor_confident_agreement": true,
+        "m7_anchor_unknown_corridor_radius": 2
+      },
+      "loss_component": null,
+      "loss_weight_for_inertness": null,
+      "expected_wall_hours": {
+        "train_kill": 5.0,
+        "eval_kill": 0.5
+      }
+    },
+    {
+      "arm_id": "T_tail",
+      "priority": 7,
+      "role": "conditional",
+      "condition": "tail_lane",
+      "purpose": "T_base + the focused medial tail floor at the R_sep3_tail20 values (weight 1/64, floor 0.3, weakest 20% of crest voxels); judged against T_base only",
+      "seed": 1203,
+      "corpus": "native_v19_medial",
+      "samples": 250000,
+      "snapshot_samples": [
+        10000,
+        20000,
+        30000,
+        40000,
+        50000,
+        60000,
+        70000,
+        80000,
+        90000,
+        100000,
+        110000,
+        120000,
+        130000,
+        140000,
+        150000,
+        160000,
+        170000,
+        180000,
+        190000,
+        200000,
+        210000,
+        220000,
+        230000,
+        240000,
+        250000
+      ],
+      "stages": {
+        "kill_at_commit": 50000
+      },
+      "requires_operator_authorization": "output/crossres_data/f0_rescue_20260909/authorizations/T_lane.json",
+      "output": "output/crossres_data/f0_rescue_20260909/arms/T_tail",
+      "argv_delta": {
+        "--patches": [
+          "output/crossres_data/voxel_atlas_native_v19_medial_250k_reuse_20260902/patches.jsonl"
+        ],
+        "--validation-patches": [
+          "output/crossres_data/voxel_balanced_native_v14p2_registered_antialias_softtarget_corpus/patches.jsonl"
+        ],
+        "--loss-medial-tail-floor-weight": [
+          "0.015625"
+        ],
+        "--loss-medial-tail-floor-probability": [
+          "0.3"
+        ],
+        "--loss-medial-tail-bottom-fraction": [
+          "0.2"
+        ],
+        "--output": [
+          "output/crossres_data/f0_rescue_20260909/arms/T_tail"
+        ]
+      },
+      "expected_loss_contract": "soft-occupancy-ce-dice-villa-medial-crest-shell-kl-corridor-focused-medial-tail-floor-v10",
+      "expected_losses": {
+        "cross_entropy_weight": 1.0,
+        "dice_weight": 1.0,
+        "m7_anchor_weight": 0.5,
+        "m7_anchor_known_agreement": true,
+        "m7_anchor_confident_agreement": true,
+        "m7_anchor_unknown_corridor_radius": 2,
+        "medial_tail_floor_weight": 0.015625,
+        "medial_tail_floor_probability": 0.3,
+        "medial_tail_bottom_fraction": 0.2
+      },
+      "loss_component": "loss_medial_tail_floor_loss",
+      "loss_weight_for_inertness": 0.015625,
+      "expected_wall_hours": {
+        "train_kill": 5.0,
+        "eval_kill": 0.5
+      }
+    }
+  ],
+  "evaluation": {
+    "val_manifest": "output/crossres_data/voxel_balanced_native_v14p2_registered_antialias_softtarget_corpus/patches.jsonl",
+    "val_manifest_sha256": "a995787032eb446f71759a4dbd510396273b93c65f65863bac8fe9587e12b714",
+    "thresholds": [
+      0.1,
+      0.15,
+      0.2,
+      0.25,
+      0.3,
+      0.35,
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.75,
+      0.8,
+      0.85,
+      0.9
+    ],
+    "operating_thresholds": [
+      0.3,
+      0.35
+    ],
+    "primary_threshold": 0.35,
+    "reference_milestones": {
+      "F0": {
+        "run_dir": "output/crossres_data/final_c3_250k_20260905/arms/F0",
+        "samples": [
+          10000,
+          20000,
+          30000,
+          40000,
+          50000,
+          60000,
+          70000,
+          80000,
+          90000,
+          100000,
+          110000,
+          120000,
+          130000,
+          140000,
+          150000,
+          160000,
+          170000,
+          180000,
+          190000,
+          200000,
+          210000,
+          220000,
+          230000,
+          240000,
+          250000
+        ],
+        "sealed_evaluation_dir": "output/crossres_data/final_c3_250k_20260905/evaluation",
+        "family_evaluation_dir": "output/crossres_data/f0_family_20260908/evaluation/F0",
+        "variants_audit_dir": "output/crossres_data/f0_family_20260908/variants/audits",
+        "reaudit_tolerance": 0.0001,
+        "sealed_fixed_t035_macro": {
+          "10000": 0.6616995399540502,
+          "20000": 0.6442233180021888,
+          "30000": 0.6768526715087372,
+          "40000": 0.6719689691995804,
+          "50000": 0.6389383725675901,
+          "60000": 0.6650720464849027,
+          "70000": 0.6452278429357579,
+          "80000": 0.666176744892822,
+          "90000": 0.6628917944711072,
+          "100000": 0.6766062445217587,
+          "110000": 0.6815562711781109,
+          "120000": 0.6242986848971361,
+          "130000": 0.6694403535119997,
+          "140000": 0.6349203891618237,
+          "150000": 0.6658738206893653,
+          "160000": 0.6600158303985338,
+          "170000": 0.6654679794420242,
+          "180000": 0.6477463788673345,
+          "190000": 0.6604611999363668,
+          "200000": 0.680787428136385,
+          "210000": 0.6419007395771433,
+          "220000": 0.6683579976442999,
+          "230000": 0.6592492769542826,
+          "240000": 0.6554762486890724,
+          "250000": 0.6692986483939892
+        },
+        "sealed_fixed_t030_macro": {
+          "10000": 0.6555667759958723,
+          "20000": 0.6469643434504386,
+          "30000": 0.6754954482415569,
+          "40000": 0.668042814508887,
+          "50000": 0.6412062160215981,
+          "60000": 0.6719274883550317,
+          "70000": 0.6518738988649988,
+          "80000": 0.6666917881973649,
+          "90000": 0.6629095439506723,
+          "100000": 0.6807858464794492,
+          "110000": 0.6885819018886541,
+          "120000": 0.6375976758212134,
+          "130000": 0.6730732247663574,
+          "140000": 0.6469323514292108,
+          "150000": 0.6748748293427408,
+          "160000": 0.6672332715636486,
+          "170000": 0.6698324426165314,
+          "180000": 0.6551497342342316,
+          "190000": 0.6708337282259599,
+          "200000": 0.6880649121938085,
+          "210000": 0.6537360466997868,
+          "220000": 0.6806329166665532,
+          "230000": 0.6685860489395455,
+          "240000": 0.6664640743614618,
+          "250000": 0.6795184524282181
+        },
+        "sealed_gate_t035_fg_ratio": {
+          "10000": 0.8183825595661901,
+          "20000": 0.6578301215099605,
+          "30000": 0.7416970241090216,
+          "40000": 0.7765604373723874,
+          "50000": 0.7085286284714847,
+          "60000": 0.6526442326148725,
+          "70000": 0.6890265843667319,
+          "80000": 0.7150650545870919,
+          "90000": 0.6981862825138573,
+          "100000": 0.6608503393874187,
+          "110000": 0.6849957029524479,
+          "120000": 0.6376913261062402,
+          "130000": 0.7142586223752564,
+          "140000": 0.6405894658608657,
+          "150000": 0.6521369813791194,
+          "160000": 0.6925696651476428,
+          "170000": 0.7161118041099123,
+          "180000": 0.6782811502676761,
+          "190000": 0.6404149222974028,
+          "200000": 0.695121532994108,
+          "210000": 0.6539118488462977,
+          "220000": 0.6273505157224849,
+          "230000": 0.649567454433125,
+          "240000": 0.6416633438554268,
+          "250000": 0.6517576946327086
+        },
+        "sealed_frontier_t035": {
+          "10000": {
+            "coverage": 0.6983221190699259,
+            "bridges": 5440,
+            "components": 199,
+            "fixed18_foreground_ratio": 0.7027898903518056
+          },
+          "20000": {
+            "coverage": 0.6656162166766033,
+            "bridges": 2584,
+            "components": 214,
+            "fixed18_foreground_ratio": 0.5706532322932983
+          },
+          "30000": {
+            "coverage": 0.7581977685035346,
+            "bridges": 5011,
+            "components": 151,
+            "fixed18_foreground_ratio": 0.696981499513145
+          },
+          "40000": {
+            "coverage": 0.7635635806149391,
+            "bridges": 2672,
+            "components": 161,
+            "fixed18_foreground_ratio": 0.6830024131069811
+          },
+          "50000": {
+            "coverage": 0.7702921386593987,
+            "bridges": 2018,
+            "components": 152,
+            "fixed18_foreground_ratio": 0.6558401422463063
+          },
+          "60000": {
+            "coverage": 0.6984924623115578,
+            "bridges": 984,
+            "components": 169,
+            "fixed18_foreground_ratio": 0.5530502518945006
+          },
+          "70000": {
+            "coverage": 0.7289839025636657,
+            "bridges": 2358,
+            "components": 152,
+            "fixed18_foreground_ratio": 0.6180347995427797
+          },
+          "80000": {
+            "coverage": 0.750021292905204,
+            "bridges": 1905,
+            "components": 139,
+            "fixed18_foreground_ratio": 0.6489141018585157
+          },
+          "90000": {
+            "coverage": 0.7168043607869857,
+            "bridges": 1576,
+            "components": 148,
+            "fixed18_foreground_ratio": 0.6149612632826722
+          },
+          "100000": {
+            "coverage": 0.7076058257388638,
+            "bridges": 1346,
+            "components": 148,
+            "fixed18_foreground_ratio": 0.583912620126159
+          },
+          "110000": {
+            "coverage": 0.7370752065411805,
+            "bridges": 1557,
+            "components": 145,
+            "fixed18_foreground_ratio": 0.6259176156809618
+          },
+          "120000": {
+            "coverage": 0.6823950259773444,
+            "bridges": 671,
+            "components": 154,
+            "fixed18_foreground_ratio": 0.5578087295203421
+          },
+          "130000": {
+            "coverage": 0.7482326888680692,
+            "bridges": 1777,
+            "components": 140,
+            "fixed18_foreground_ratio": 0.6534693704754244
+          },
+          "140000": {
+            "coverage": 0.6729409760667745,
+            "bridges": 191,
+            "components": 152,
+            "fixed18_foreground_ratio": 0.533025697472588
+          },
+          "150000": {
+            "coverage": 0.6880163529511967,
+            "bridges": 932,
+            "components": 133,
+            "fixed18_foreground_ratio": 0.5689005545912535
+          },
+          "160000": {
+            "coverage": 0.7409931010987139,
+            "bridges": 1381,
+            "components": 144,
+            "fixed18_foreground_ratio": 0.6360103297912875
+          },
+          "170000": {
+            "coverage": 0.7406524146154502,
+            "bridges": 2337,
+            "components": 140,
+            "fixed18_foreground_ratio": 0.6544854155200881
+          },
+          "180000": {
+            "coverage": 0.6927007920960736,
+            "bridges": 799,
+            "components": 149,
+            "fixed18_foreground_ratio": 0.5838956860420812
+          },
+          "190000": {
+            "coverage": 0.6497742952048378,
+            "bridges": 884,
+            "components": 145,
+            "fixed18_foreground_ratio": 0.5231107912450785
+          },
+          "200000": {
+            "coverage": 0.7072651392556001,
+            "bridges": 2273,
+            "components": 142,
+            "fixed18_foreground_ratio": 0.613352525295288
+          },
+          "210000": {
+            "coverage": 0.6644238139851801,
+            "bridges": 1336,
+            "components": 142,
+            "fixed18_foreground_ratio": 0.5625672071461835
+          },
+          "220000": {
+            "coverage": 0.6597393748403032,
+            "bridges": 1863,
+            "components": 139,
+            "fixed18_foreground_ratio": 0.5392913085813471
+          },
+          "230000": {
+            "coverage": 0.6634869261562047,
+            "bridges": 915,
+            "components": 134,
+            "fixed18_foreground_ratio": 0.5444731383091317
+          },
+          "240000": {
+            "coverage": 0.6695341112341368,
+            "bridges": 1741,
+            "components": 132,
+            "fixed18_foreground_ratio": 0.5582998179585962
+          },
+          "250000": {
+            "coverage": 0.6642534707435482,
+            "bridges": 1149,
+            "components": 138,
+            "fixed18_foreground_ratio": 0.5485627196139029
+          }
+        },
+        "late_mean_t035": 0.6613305044298907,
+        "late_mean_t030": 0.6704478597520441
+      },
+      "C3r": {
+        "run_dir": "output/crossres_data/f0_family_20260908/arms/C3r",
+        "evaluation_dir": "output/crossres_data/f0_family_20260908/evaluation/C3r",
+        "summary": "output/crossres_data/f0_family_20260908/evaluation/C3r/summary.json",
+        "summary_sha256": "f93f860222fb705b15e867f01c14a12aaa86658d8644170570907dffe9b44a4b",
+        "fixed_t035_macro": {
+          "10000": 0.6584759448018396,
+          "20000": 0.6506628855310537,
+          "30000": 0.6280204811266328,
+          "40000": 0.6378944086460387,
+          "50000": 0.6684887412016169,
+          "60000": 0.6446416757091487,
+          "70000": 0.6665822902411347,
+          "80000": 0.6544268138473686,
+          "90000": 0.6665713778201394,
+          "100000": 0.6004621147267997,
+          "110000": 0.6908972847785712,
+          "120000": 0.6618763339596831,
+          "130000": 0.6172602654329282,
+          "140000": 0.6824188830857558,
+          "150000": 0.6537051620350764,
+          "160000": 0.6553492354455023,
+          "170000": 0.628610559530111,
+          "180000": 0.6738048447540258,
+          "190000": 0.6511857149810375,
+          "200000": 0.6494860391384202,
+          "210000": 0.6652140242134381,
+          "220000": 0.656774507896072,
+          "230000": 0.6555495970381444,
+          "240000": 0.6574812429799131,
+          "250000": 0.6613841784047214
+        },
+        "fixed_t030_macro": {
+          "10000": 0.6578100228134216,
+          "20000": 0.6485216837970178,
+          "30000": 0.6269987180878527,
+          "40000": 0.6350081184354659,
+          "50000": 0.6699459520400632,
+          "60000": 0.6459991788062656,
+          "70000": 0.6675459399122565,
+          "80000": 0.658495820492279,
+          "90000": 0.6668284152616624,
+          "100000": 0.6081089994275577,
+          "110000": 0.6922673826409724,
+          "120000": 0.6632904462484297,
+          "130000": 0.6246018142804559,
+          "140000": 0.6819131445961519,
+          "150000": 0.6649924900079347,
+          "160000": 0.6641297161594453,
+          "170000": 0.6347095227260187,
+          "180000": 0.6845808648697842,
+          "190000": 0.6569461240745562,
+          "200000": 0.6619189155310974,
+          "210000": 0.6734659270905452,
+          "220000": 0.6676967684110429,
+          "230000": 0.6700490616861616,
+          "240000": 0.6696996769239558,
+          "250000": 0.6724972480516913
+        },
+        "late_mean_t035": 0.6553222824014966,
+        "late_mean_t030": 0.6655169377756576,
+        "seed_band": {
+          "rms": 0.02953174376841599,
+          "rms_early_le_50k": 0.02990231555081348,
+          "rms_late_ge_150k": 0.019143503353901123,
+          "tie_margin": 0.05906348753683198,
+          "tie_margin_late": 0.038287006707802246
+        }
+      }
+    },
+    "bootstrap": {
+      "replicates": 2000,
+      "seed": 20260908,
+      "confidence": 0.95,
+      "cluster": true
+    },
+    "geometry": {
+      "blind_source": "output/crossres_data/pherc1447_blind_audit/six_cube_subset",
+      "blind_reference_grid": "output/crossres_data/pherc1447_blind_audit/jackpot_all_sources_20260815_t035_report_20260901/inference/cubes_PRED",
+      "gates": {
+        "interior_fraction_max_delta": 0.1,
+        "max_thickness_max_delta": 2,
+        "foreground_ratio_band": [
+          0.75,
+          1.25
+        ]
+      },
+      "frontier_reference": "output/crossres_data/final_c3_250k_20260905/preflight_frontiers/C3.json",
+      "max_bridge_growth": 1.2
+    },
+    "kaggle": {
+      "metric_exe": "metric-windows/build/metric/Release/metric.exe",
+      "gt_root": "output/crossres_data/unified_ladder_20260902/kaggle_gt",
+      "metric_shards": 2,
+      "expected_rows": {
+        "v14p2_val": 689,
+        "p0500p2_val": 320
+      },
+      "sets": {
+        "v14p2_val": {
+          "manifest": "output/crossres_data/voxel_balanced_native_v14p2_registered_antialias_softtarget_corpus/patches.jsonl",
+          "scroll": null
+        },
+        "p0500p2_val": {
+          "manifest": "output/crossres_data/voxel_all_sources_patches_5856/patches.jsonl",
+          "scroll": "PHerc0500P2",
+          "note": "absolute only; released M7 saw these labels"
+        }
+      },
+      "reference_scores": {
+        "f0_200k_t035": {
+          "v14p2_composite": 0.6303910406386075,
+          "v14p2_topo": 0.3756456211901307,
+          "p0500p2_composite": 0.4817672562499996,
+          "p0500p2_topo": 0.12084560000000007
+        },
+        "f0_200k_t030": {
+          "v14p2_composite": 0.6400640638606676,
+          "v14p2_topo": 0.38796769230769246,
+          "p0500p2_composite": 0.48902543750000016,
+          "p0500p2_topo": 0.12568087187500002
+        }
+      },
+      "reference_score_dirs": {
+        "v14p2_val": {
+          "0.35": "output/crossres_data/final_c3_250k_20260905/evaluation/milestone_00200000/kaggle_v14p2_val_t035_score",
+          "0.30": "output/crossres_data/final_c3_250k_20260905/evaluation/milestone_00200000/kaggle_v14p2_val_t030_score"
+        },
+        "p0500p2_val": {
+          "0.35": "output/crossres_data/final_c3_250k_20260905/evaluation/milestone_00200000/kaggle_p0500p2_val_t035_score",
+          "0.30": "output/crossres_data/final_c3_250k_20260905/evaluation/milestone_00200000/kaggle_p0500p2_val_t030_score"
+        }
+      }
+    },
+    "ship": {
+      "reference_audit": "output/crossres_data/f0_family_20260908/variants/audits/f0_200k",
+      "reference_tta_audit": "output/crossres_data/f0_family_20260908/variants/audits/f0_200k_tta",
+      "reference_tta_macro_t030": 0.713025708376333,
+      "reference_tta_macro_t035": 0.7038261039837073,
+      "tabled_tta_audit": "output/crossres_data/f0_family_20260908/variants/audits/f0_110k_tta",
+      "operating_threshold": 0.3
+    }
+  },
+  "decision": {
+    "kill": {
+      "milestones": [
+        10000,
+        20000,
+        30000,
+        40000,
+        50000
+      ],
+      "consecutive_gate_failures": [
+        40000,
+        50000
+      ],
+      "pooled_delta_kill": -0.03,
+      "inertness_share": 0.01,
+      "early_seed_rms_reference": 0.02990231555081348,
+      "rule": "K1 .35 six-cube gate or scroll guard fails at BOTH 40k and 50k; K2 frontier veto (bridges > 1.20 x the C3 curve at matched coverage, resolved) at BOTH; K3 pooled 10k-50k paired delta at .35 with point < -0.030 AND upper bound < 0 vs F0 AND vs C3r (one early-band seed RMS beyond both comparators and beyond patch sampling); K4 technical. I: weighted term share < 0.01 of the committed total loss = inert, unmeasured, no resume. Single-milestone deltas are tabled, never decisive."
+    },
+    "late_band": {
+      "milestones": [
+        150000,
+        160000,
+        170000,
+        180000,
+        190000,
+        200000,
+        210000,
+        220000,
+        230000,
+        240000,
+        250000
+      ],
+      "tie_margin": 0.012,
+      "tie_margin_rule": "max(0.005, 2 x |late_mean_F0 - late_mean_C3r|) = 0.012016 at T .35 (0.009862 at .30; 0.012 used at both). The 11 paired late deltas have SD 0.0191 with no visible lag-1 correlation, so the SE of an 11-milestone mean is 0.0058 and the margin is ~2 SE; +0.020 is ~3.4 SE and clears the margin by 0.008; +0.012 is the minimum detectable effect. The family 25-milestone margin (0.059) and 50k comparisons (early seed RMS 0.0299) cannot resolve +0.02.",
+      "min_guard_late": 10,
+      "min_gates_late": 9,
+      "rule": "D1 late mean (.35) exceeds BOTH F0 (0.661331) and C3r (0.655322) late means by >= 0.012; D2 pooled late paired lower bounds > 0 vs both; D3 no reversal at .30 (both late-mean deltas > 0 and both pooled lower bounds > 0); D4 scroll guard >= 10/11, .35 gates >= 9/11 and at the selected milestone (best eligible >= 150k, ties later), frontier resolved and passed at the selected milestone; D5 Kaggle floors at the selected milestone without TTA; D6 PHerc0500P2 TopoScore paired vs F0@200k at the same T has lower bound > -0.010. promote = D1..D6; unresolved-positive = D2 and point > 0 without D1; else reject. H_topo (reported, never required): PHerc0500P2 TopoScore delta >= +0.010 with lower bound > 0."
+    },
+    "thickening": {
+      "milestones": [
+        40000,
+        50000
+      ],
+      "fg_ratio_growth": 1.1,
+      "rule": "C1: at BOTH 40k and 50k, the .35 six-cube foreground ratio >= 1.10 x F0's sealed value at the same milestone, OR the thickness gate fails, OR the interior gate fails, OR the frontier veto fails -> P_sep = parent + separation 0.4 at the kill stage. A killed parent is replaced by P_sep; a surviving parent competes with P_sep by pooled delta vs F0 and only the better one resumes. Both thickening: P_sep is built on the one with the better pooled delta."
+    },
+    "tail_lane": {
+      "coverage_delta_min": 0.02,
+      "fg_ratio_growth_max": 1.1,
+      "authorization": "output/crossres_data/f0_rescue_20260909/authorizations/T_lane.json",
+      "rule": "C2: a surviving preservation arm at 50k has fixed-18 reference-skeleton coverage >= F0@50k + 0.02, a resolved passing frontier and a .35 foreground ratio <= 1.10 x F0@50k (continuity near teacher sheets is the lever), AND the operator drops the authorization file. Verdict: T_tail vs T_base pooled 5-milestone delta at .35 with point > 0 and lower bound > 0 and no K1/K2 = eligible for its own 250k prereg; never a ship claim."
+    },
+    "continuation": {
+      "authorization": "output/crossres_data/f0_rescue_20260909/authorizations/continue_250k.json",
+      "rule": "after the operator review pause: comparators(late) -> survivors resumed with --resume from their 50k commit to 250k -> late-band verdict -> seed-1204 replicate of the promoted arm (D1, D2, D4 on its own; effect = mean of both seeds' late deltas) -> ship check."
+    },
+    "kaggle_floors": {
+      "allowed_drop": 0.005,
+      "topo_regression_lower_bound": -0.01,
+      "topo_restored_point": 0.01
+    },
+    "replicate": {
+      "seed": 1204
+    },
+    "ship": {
+      "operating_threshold": 0.3,
+      "reference_tta_macro_t030": 0.713025708376333,
+      "paired_lower_bound_min": -0.005,
+      "rule": "best seed's selected milestone + eight-way mirror TTA at T .30: macro >= the shipped F0 200k + TTA value with paired lower bound > -0.005 vs f0_200k_tta; TTA geometry gates + frontier at .30 pass; TTA Kaggle: v14p2 TopoScore >= 0.375646 - 0.005 and PHerc0500P2 composite >= 0.481767 - 0.005; family rules 6 (breaks 0.70) and 11 (repair re-qualification) apply unchanged."
+    }
+  },
+  "budget": {
+    "basis": "observed at the 450 W cap: 50k train 4h08-4h16 (C3h/C3n), 250k ~22-26 h (C3r), frozen audit ~5 min/milestone incl. six-cube export, TTA audit 12 min, Kaggle dump 11+5 min GPU and 53+38 min CPU",
+    "kill_stage_authorized": "~10 GPU-h (comparators 0.25 + 2 x (4.3 + 0.5)); ~15 with P_sep; +9.5 if the tail lane fires and is authorized",
+    "continuation_gated": "per survivor ~20 GPU-h (resume 200k + 20-milestone eval + Kaggle); replicate ~25; ship ~0.7"
+  },
+  "execution": {
+    "output_root": "output/crossres_data/f0_rescue_20260909",
+    "journal": "output/crossres_data/logs/f0_rescue_20260909_state.json",
+    "log": "output/crossres_data/logs/f0_rescue_20260909.log",
+    "task_name": "VesuviusCrossres-F0Rescue-20260909",
+    "variants_task_name": "VesuviusCrossres-F0Variants-20260908",
+    "gpu_uuid": "GPU-304375e6-2d2f-b771-b8be-a0c095fe209e",
+    "max_power_limit_watts": 600.5,
+    "gpu_lock_owner": "f0-rescue:arms",
+    "heartbeat_seconds": 1800,
+    "poll_seconds": 30,
+    "max_train_attempts": 3,
+    "metric_shards": 2,
+    "minimum_free_bytes": 107374182400,
+    "order": [
+      "P_hard",
+      "P_soft"
+    ],
+    "code_pins": {
+      "crossres_pred/scripts/audit_m7_xr_v29_joint_thresholds.py": "bdbd1df646ac7485e9746a6c3623d1e905415970498d0571e9f3269968d71c6e",
+      "crossres_pred/scripts/average_voxel_checkpoints.py": "beeef68b9910352a2174a4c12bf1feb287407c39d714f5ac2502caf90f844692",
+      "crossres_pred/scripts/bootstrap_audit_ci.py": "23fd35958dc24fa4e2f0a512662e0265243c848bec8453f99ae65c71247cfc59",
+      "crossres_pred/scripts/build_native_only_manifest.py": "ef41c21c23d43f8bddee2f0768681818c20b5430eb3bdf900369a1c3862f120b",
+      "crossres_pred/scripts/diagnose_release_t025_blobs.py": "edb8b18e90250c2e999d7e075d6efeb771b433677503daec1bc2b7ba3b515757",
+      "crossres_pred/scripts/evaluate_f0_cross_run.py": "dd85a57a2b6afe2c999449231bc9cb889cc18eebc7cd16a972fcdcbbcaad4cd9",
+      "crossres_pred/scripts/evaluate_f0_family.py": "9b2f2f84e5fd8ce0cc38f754548efbc8a31514b6e1e1c0821634a157f7b33a68",
+      "crossres_pred/scripts/evaluate_f0_rescue.py": "80c3fc4f9726a01e69130f6616a906c5ceac60a85beece96536067c54ab57240",
+      "crossres_pred/scripts/evaluate_f0_variants.py": "2552679bed14b2c6d4477cbde2830951b548d5d9f888f7eb6da08df4b727f340",
+      "crossres_pred/scripts/evaluate_final_c3_250k.py": "9952adb16fd70534f0bc3bfb0ba21834a617871b88ab1c82f1072541f7a9546a",
+      "crossres_pred/scripts/evaluate_ladder_arm.py": "8d47022876ae5017e104d2eab8a3b13ada1b09e3cc14b79f4af76d9edaa4e6bb",
+      "crossres_pred/scripts/generate_checkpoint_report.py": "97d8b92f6bfe0835424680dfe44cb1ebaea38b941821ba9d02a960dc973f2df0",
+      "crossres_pred/scripts/kaggle_paired_bootstrap.py": "dac534d68ae346052d78e6ce6424f7270dcf0423528a0ff6434313c933462c49",
+      "crossres_pred/scripts/launch_f0_family.ps1": "b8e3a1648514c4f4f969ba430b0c5b7760b35c9885154facf90d112537e8cb19",
+      "crossres_pred/scripts/launch_f0_rescue.ps1": "a9efee47f21e63e4231a44240259d93ecac3e6ee8cb035461be8929ec67fd166",
+      "crossres_pred/scripts/launch_f0_variants.ps1": "a6193ec7b772d0b63d738360ed9537a84fb261614927d85c89f06ae6a2bb6cb6",
+      "crossres_pred/scripts/measure_blob_frontier.py": "00eb41b6a8f9215bfa54c8bb901a5f9fa930060ab6997a526e04c90fd43b37c9",
+      "crossres_pred/scripts/render_cached_probability_report.py": "6b83e639e8a6f85ac2611235b3dfbcbad8d1769d791a17e55cce1b4a10e63e00",
+      "crossres_pred/scripts/render_release_milestone_panels.py": "4a0c2619000581d0872d6706676871462211c52b1eabf31acc545ba8b2cf5b98",
+      "crossres_pred/scripts/run_f0_family.py": "8b1c6aafb753f39780df541e14436524a7086681118b0dd87794f91bfceea931",
+      "crossres_pred/scripts/run_f0_rescue.py": "424b1dad9ff87713600eccda1aff3eabe5c9eaf18e27e95cc41d2ee8c06e02c6",
+      "crossres_pred/scripts/run_final_c3_250k.py": "5754fd9e494be365607e2cfe7b400d340653e265c8476149423682453e5b7276",
+      "crossres_pred/scripts/run_focused_medial_final_250k.py": "7ec9af4ae34cad5789519cd7f20987eac793bd57fa8ab6cd838fe04c561b5a3e",
+      "crossres_pred/scripts/run_unified_ladder.py": "66f58660f2e2d6ac464cfca81546a4832e9adeae2909a729b583734afb48d4b6",
+      "crossres_pred/scripts/score_all_f0_variants.py": "749284c2eaa7dc8fa81e154f611c9f8bf0fa29b8da0f13fe0f9c03452c1efb17",
+      "crossres_pred/src/crossres_pred/voxel/__init__.py": "d67456fa9bdd272d6d3bdf3058a9697b59d22d8e2597354f76183d487fc68058",
+      "crossres_pred/src/crossres_pred/voxel/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "crossres_pred/src/crossres_pred/voxel/affines.py": "38fcb3a326154fa9c65b8466206413ed3a10559b12d6f7ae9e34c92fe94fb869",
+      "crossres_pred/src/crossres_pred/voxel/alignment_gate.py": "cf9572e07c6a3835550f7c1ae2bb43f1ad6ef57fb46090206b9fe4a26c10fdad",
+      "crossres_pred/src/crossres_pred/voxel/antialias_corpus.py": "e36f28de572d373e8eba4c4722047f1f199093f2eea3418cd5d0a992585eae28",
+      "crossres_pred/src/crossres_pred/voxel/antiblob_qualification.py": "eb9960f36585f8d1eea9fdfc88d0b2619ed15fb378be82f8613a5ddc3b320a87",
+      "crossres_pred/src/crossres_pred/voxel/audit_bootstrap.py": "405acfce9460fc1d8bef6c19090daa322f4fba8f2d471bc599c3e8ccc8b932ed",
+      "crossres_pred/src/crossres_pred/voxel/blob_diagnostics.py": "803ea446ac18726875406ad8acd60bf59f918a1ecf23c7514c8e2f4bc07c2c2a",
+      "crossres_pred/src/crossres_pred/voxel/catalog_maximality.py": "a5bb5387d0622b4aaae3cd15e313a8e54d8680ce2d3431363f741d754dbe2b15",
+      "crossres_pred/src/crossres_pred/voxel/checkpoint_audit.py": "b82fbcfeefca358980e7b73ea167f5796cde508517eadc6312ab71903ed094e7",
+      "crossres_pred/src/crossres_pred/voxel/checkpoint_average.py": "d65559b8846fbd4d9ede0ee0cae2d418415c47d15fbe64629babe92b82d9e047",
+      "crossres_pred/src/crossres_pred/voxel/cli.py": "0dce0e00506d84739cd99d0d991007cd5ccdcf9e08854fb76a1c9c292bd62e2c",
+      "crossres_pred/src/crossres_pred/voxel/coarse_teacher_atlas.py": "5dfbd6a0c39f4ee5956c2c79d8dd89de072c6acd58cb6fcd8f029bdc63187cc7",
+      "crossres_pred/src/crossres_pred/voxel/connectivity.py": "25371df177d5d02041bebed857441efbd1eafdd33cecdcc15b6328571dcd7bf3",
+      "crossres_pred/src/crossres_pred/voxel/corpus_plan.py": "ba2e1230e9018b96e50ffbcfdcc264006ccc3e43973fa2b37380cbd2985470ac",
+      "crossres_pred/src/crossres_pred/voxel/ensemble.py": "4817bbcdb982f970d7b38ad5872107259e60a21256267469fd9588c502a636a3",
+      "crossres_pred/src/crossres_pred/voxel/final_fit.py": "ed33104aa2dab1e3bd41fe4571621de7c9c8251075af598eaead8906304aa09b",
+      "crossres_pred/src/crossres_pred/voxel/gap_join_validation.py": "89e85dba9ebd00fbd11accc9d29097774bda618db958c7ae8af2b89243657174",
+      "crossres_pred/src/crossres_pred/voxel/global_connectivity.py": "4809b01949227bc257b81073725c37d89daaf140f135542d71b6644150001753",
+      "crossres_pred/src/crossres_pred/voxel/grid_growth.py": "b6d040af4563fcba4f2be0c27f40d63637f7cbfb6cfe6ebac973f1d9defa6f11",
+      "crossres_pred/src/crossres_pred/voxel/grid_inference.py": "0795233774ca4fcdbe58a2d06c7d6c030255f89266b6245a9023b640e81fb4d0",
+      "crossres_pred/src/crossres_pred/voxel/growth_sentinels.py": "66105e54218d7f9eef113efe7165f9c8daddc000593c38f9d99fda91c529708c",
+      "crossres_pred/src/crossres_pred/voxel/heldout_failure.py": "c7a76fab5dbec2bc091b7cecb49beda93d5b42f6615566f744e36e4f84b78c6e",
+      "crossres_pred/src/crossres_pred/voxel/inference.py": "3cd0cd0c1e7622a2645fa1b892cb641b0b6547d8ab53b78fea0d2aaa368efa9c",
+      "crossres_pred/src/crossres_pred/voxel/io.py": "1569e6a60252dc485d21b8a4faa5351f489174269018ec7b27bdc6ed6f624c56",
+      "crossres_pred/src/crossres_pred/voxel/label_store_compaction.py": "a7c204fe4629b0d0ef5abb00825256efd6f9da155b3453eaf8ad0454c6e1d4c7",
+      "crossres_pred/src/crossres_pred/voxel/learned_refinement/__init__.py": "aa8155f237565c80ae9ecd1622f350b92a6bf466c5eb904c40360cc3d0755d46",
+      "crossres_pred/src/crossres_pred/voxel/learned_refinement/action_metrics.py": "66a075249a62e4737c21ac1664171d43950380c5f929a3c6e516e1661d710162",
+      "crossres_pred/src/crossres_pred/voxel/learned_refinement/cache.py": "7170c971984838cca6a3d9e1c77be7c92115e417b8bd75935900b9b76d8bd187",
+      "crossres_pred/src/crossres_pred/voxel/learned_refinement/corruptions.py": "4845377154c6147d192e13eec0555ce60b2ac825bbd83359090bab16fd339eda",
+      "crossres_pred/src/crossres_pred/voxel/learned_refinement/data.py": "ac11cebf9c9e2049dbe0ce68e928ef697771bb477fae25ca14f6eb5ef472f900",
+      "crossres_pred/src/crossres_pred/voxel/learned_refinement/development_report.py": "e534d6221fe274b8c767428d4037d31366b8c84c57ef24f46c14019f0407ed56",
+      "crossres_pred/src/crossres_pred/voxel/learned_refinement/final_data.py": "923ac2baef096c6288bf93a3b11fbf175c4626cf4207d414f4c5806d3ae1ca3e",
+      "crossres_pred/src/crossres_pred/voxel/learned_refinement/final_evaluate.py": "102b4cf9bfcd51ee20cc9a14c18e28a68499b908aac848f44515b7fe22ba2fe6",
+      "crossres_pred/src/crossres_pred/voxel/learned_refinement/metrics.py": "ef228c48b30c0f80acf83da4a62b9ecfd7cda4814494a18389f943dd6058a4a8",
+      "crossres_pred/src/crossres_pred/voxel/learned_refinement/models.py": "e44991f241cac84651b8548f1ff4e7e0f933f9ac138951879ec4189f54065c80",
+      "crossres_pred/src/crossres_pred/voxel/learned_refinement/morphology.py": "fe6fa5bca95337074316685919d252b85b53adfee1fbeb5f6300aee9296c0454",
+      "crossres_pred/src/crossres_pred/voxel/learned_refinement/native_evaluate.py": "0c2726a496af17ed5129a322228581d077c8c171ee84f1cafa01589e61eb0844",
+      "crossres_pred/src/crossres_pred/voxel/learned_refinement/objectives.py": "182dbf75197ac8db7011768480aba68bf10f326256e77aabf2eff72d24f6db8e",
+      "crossres_pred/src/crossres_pred/voxel/learned_refinement/objectives_r2.py": "acc8b166467f1cfcdd608b28f10b1180229929c192d0be3f90f57b1058869a06",
+      "crossres_pred/src/crossres_pred/voxel/learned_refinement/package.py": "a0ebdea24c0d9c5bee92984bcae019f5d6254285fce7ac584b9b0a892bdd61ca",
+      "crossres_pred/src/crossres_pred/voxel/learned_refinement/phase_report.py": "dca359a65b611e7465d9f752abd2f722e7ce20cb1abfa038c51349166ba15bf0",
+      "crossres_pred/src/crossres_pred/voxel/learned_refinement/pipeline.py": "407077a7e6f414cf3a8331a7c5b7196f6a7e22eb8b382f7f3ac42d5a2ec42c15",
+      "crossres_pred/src/crossres_pred/voxel/learned_refinement/repair_data.py": "e0e8964992821a822edd49a0fad9aeef16b0dc3d99ad64e29853034d634c9075",
+      "crossres_pred/src/crossres_pred/voxel/learned_refinement/repair_evaluate.py": "de77245115e767ea0e66dfbd10140dbc1e74bb97a074969a6c6ae82df856c3e5",
+      "crossres_pred/src/crossres_pred/voxel/learned_refinement/repair_inference.py": "16acbfd79dd55c4706b99bf8d0d10ce7afa7f289c352eae78dedd6bb99153fc3",
+      "crossres_pred/src/crossres_pred/voxel/learned_refinement/report.py": "f2cbb74c59dee81de8c51974cb700884a3d0b96e578905913cc6f63e8149fad0",
+      "crossres_pred/src/crossres_pred/voxel/learned_refinement/runtime.py": "b3dde5954ef2d8ac910baf8a96cebb02892cfc78e8ec21b814ae57d6d952d1c3",
+      "crossres_pred/src/crossres_pred/voxel/learned_refinement/selection_identity.py": "35009a343f58bfc37225e9c911de46c5fc8a09ccddcad2b5e26e81ceda0a4601",
+      "crossres_pred/src/crossres_pred/voxel/learned_refinement/train_repair.py": "86134c6acc71a05a3ec3d22bfcf12dd6e5919259941686562fef9b7b09b2aa64",
+      "crossres_pred/src/crossres_pred/voxel/learned_refinement/train_repair_r2.py": "c04db652f376a469f2ec80c3b01ea8e3554246e0fe031eddbb908b426c0e3c1a",
+      "crossres_pred/src/crossres_pred/voxel/learned_refinement/train_segmentation.py": "af69a166c81076e1509bf7903e9e4ff706dc2b5dd3196a366e9fc4b257334109",
+      "crossres_pred/src/crossres_pred/voxel/learned_refinement/unlabeled_evaluate.py": "aa7b8227645587156c7c9c0fd92d87d5dfbed595a3a8c25ad72956961ae3f85e",
+      "crossres_pred/src/crossres_pred/voxel/learned_refinement/unlabeled_figures.py": "f5dae3e4d8569fb60b0e59b1df60049f0c12cbcf69ed5a0aff26c53ca84ef84b",
+      "crossres_pred/src/crossres_pred/voxel/local_registration.py": "656b68a1c2e71ac14cea7e54c4c79735157effac5ba5dd67854276e45fe05409",
+      "crossres_pred/src/crossres_pred/voxel/loss.py": "1a67e6e08df05f4cc772837be940d8032ee999e2aa365e6564358230b57c2b63",
+      "crossres_pred/src/crossres_pred/voxel/manual_labels.py": "cd53011e47750e97f44321deda8a820ceeb628575379f89fb349aa5a5d6c4ba0",
+      "crossres_pred/src/crossres_pred/voxel/medial.py": "93936eb0c1f19e45b8a6fbd14bc1f395f31c510bb8489717cbaaeeb0d5302e11",
+      "crossres_pred/src/crossres_pred/voxel/medial_bridges.py": "73affc91a3e105ff3e9c79cc0c14bf07a0fc259311d169ce74fb39f402f77e68",
+      "crossres_pred/src/crossres_pred/voxel/model.py": "e762773c8bc485b95cbc476fa1ec71ca84984926034ab72186541e94b133602d",
+      "crossres_pred/src/crossres_pred/voxel/official_corpus.py": "d4e7729e66db8bf39d8f8f405eea5179c55548ef1e87f9ba1547637f21fef7e5",
+      "crossres_pred/src/crossres_pred/voxel/patches.py": "f8f0d6ee06592f86667265bfda5ccb54489e12b353ee5b7e37f87aff19d5eba3",
+      "crossres_pred/src/crossres_pred/voxel/pathology_mining.py": "a856fd69d6b26d5f33771a27c42088b9fa293a1e13d22b740e03b5f28d37a270",
+      "crossres_pred/src/crossres_pred/voxel/prepare.py": "09ef15a9271e61b6e31cf0111cde3a1fa1d5d10d1c2772646a42822bf98bce4f",
+      "crossres_pred/src/crossres_pred/voxel/reconstruction_benchmark/__init__.py": "c7627271326a19e91ed69a81d604678ac379154397b96b59632df5320314d7e2",
+      "crossres_pred/src/crossres_pred/voxel/reconstruction_benchmark/__main__.py": "7133220950454e349307fddaa206bbf47fd2fe3e2e334c5269cf0d8ac4f6707e",
+      "crossres_pred/src/crossres_pred/voxel/reconstruction_benchmark/common.py": "e21c72d224fe04cabcd8f9789965d8f435aeb6eec116e60e757db114f8c9e95f",
+      "crossres_pred/src/crossres_pred/voxel/reconstruction_benchmark/corruptions.py": "d21951a7c4a3334e57f46afb9e900a30726a7c60bc04fe834825051a35b992f8",
+      "crossres_pred/src/crossres_pred/voxel/reconstruction_benchmark/dataset.py": "f4ff6b312752068234de572d0e429ef81f0f1b5e5bf6913bb09caca8566c0177",
+      "crossres_pred/src/crossres_pred/voxel/reconstruction_benchmark/evaluate.py": "ae7aa5c75e04be41d5cbefd1dfeff60703599af3a48579390fed423dadc94fc7",
+      "crossres_pred/src/crossres_pred/voxel/reconstruction_benchmark/methods.py": "3e1fbbb2e2ef2e1cac5c7d8bfbfcae0159cfbb83db0a7618e284896a483f107c",
+      "crossres_pred/src/crossres_pred/voxel/reconstruction_benchmark/metrics.py": "9d46db9d077e4518a1301ec3a11671ed6662be6c803fc3c6526e9ec0d87a5d35",
+      "crossres_pred/src/crossres_pred/voxel/reconstruction_benchmark/probability.py": "88f9f671ea6b2076d5da5f41eb69f092d905c20b88e0e25ff71c66bafb255f14",
+      "crossres_pred/src/crossres_pred/voxel/reconstruction_benchmark/report.py": "5590aed53d00df2149de9049c978332f611661bb773e04d6b459d11042c5a944",
+      "crossres_pred/src/crossres_pred/voxel/registered_mirror.py": "fbc9259887ff7159ff177762df4938cdffb3cd34331dc50966549c92e55f516c",
+      "crossres_pred/src/crossres_pred/voxel/registration.py": "f891c1d485f23b6ef51fb570813f1b31377f4a291152a2d2affb5c39c0e128b3",
+      "crossres_pred/src/crossres_pred/voxel/registration_evidence.py": "123f150f98ca4cde5c993005961baeca1fc066854258a65b39aed29ddd79e0e7",
+      "crossres_pred/src/crossres_pred/voxel/registration_fit.py": "31294ab98698b9ec670faf21f1e040808e7375a6bf38c4a0e0fc8e1fd207d71a",
+      "crossres_pred/src/crossres_pred/voxel/resources.py": "5fcfbd92ed8180f0e24d33b94ce3a38fe92cebda1fcdc062167466165271880d",
+      "crossres_pred/src/crossres_pred/voxel/ridge_growth.py": "a321d37b5935c8ccb7b16c9387ab158ea0225f56e153f42dac45eb796836fbfc",
+      "crossres_pred/src/crossres_pred/voxel/schema.py": "9c6c759c9737dd2e21d4649ff7d052c9cb541d1bc74474db42fc671b8abb990d",
+      "crossres_pred/src/crossres_pred/voxel/scrollfiesta_metrics.py": "f50346c664794311dd9556ec9ea5eb2b4db17d9fb36dfb0a6e5c4c1c5eea750a",
+      "crossres_pred/src/crossres_pred/voxel/sealed_test.py": "9f495cce66938750142acd7ef98b1a015ab142bbaa476a851ba701477b073883",
+      "crossres_pred/src/crossres_pred/voxel/teacher.py": "2f5f0a1e52f51346e854defd64cbb0d0c0fb86e405da1edadb3298e98a37e3e9",
+      "crossres_pred/src/crossres_pred/voxel/teacher_audit.py": "08f5227e00c215f5b1c6d9852dcfad3fcec6353c1b87e5f21575828e75de8162",
+      "crossres_pred/src/crossres_pred/voxel/teacher_model.py": "f59cd93135f8de5064f3b073ed64f3cdcc05d778215fb4ac35e079a37e30509f",
+      "crossres_pred/src/crossres_pred/voxel/train.py": "6ff3136600b45b52a1ba44c452151831866192904885a314ad5448f189748cc8",
+      "crossres_pred/src/crossres_pred/voxel/trust_region.py": "7bd37c6611e85adec5289e9d327b53718979b76f8c40de9defcf38a81c363103",
+      "crossres_pred/src/crossres_pred/voxel/visual_approval.py": "c5c7fe597f074d6aa5d00856976e94956faccb927f8b4c5e0c7a0aeab6e10b3e",
+      "crossres_pred/configs/f0_family_20260908.json": "47412ed7db8404275cccc31541303bad2779e713ebf404bdcc57c35ed395b15d",
+      "crossres_pred/configs/f0_variants_20260908.json": "71ca3dd676611e045b1d6976e8c42992eddeb68fc6859cde4e14191e8db726f2",
+      "crossres_pred/configs/voxel_corpus_wide15_native_only_20260908.json": "40d1679ca954e83bb8ec9e82f6288d466428c3ab69a2e9aacfd3a7a701bbe8be",
+      "crossres_pred/configs/final_c3_250k_20260905.json": "af9d74dbf9f4c0fc978d6b9756fc92f6750fec211705c08be0a05e970c496cbc",
+      "crossres_pred/configs/unified_ladder_20260902.json": "a3119edce41516d9b28eaac192b98e48cea3dc28a5bd44aecadf752d72e32aef"
+    }
+  }
+}

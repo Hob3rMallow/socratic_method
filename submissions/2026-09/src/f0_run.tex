@@ -1,0 +1,74 @@
+% F0 run macros.
+%
+% Transcribed from the sealed records, not generated at build time:
+%   recipes/final_c3_250k_20260907/provenance/{recipe,run}.json  (training identity)
+%   recipes/f0/{selection,release_qualification}.json            (checkpoint choice)
+%   recipes/f0_inference_20260909/evidence/                      (TTA, bootstrap, Kaggle)
+%   recipes/f0_ablations_20260910/                               (appendix A ablations)
+%
+% "Exposures" counts repeated sample draws, not unique corpus rows.
+
+\newcommand{\fzHorizon}{250{,}000}
+\newcommand{\fzSelected}{200{,}000}
+\newcommand{\fzSelectedShort}{200k}
+\newcommand{\fzPrimaryT}{0.35}
+\newcommand{\fzShipT}{0.30}
+
+% Frozen 689-row benchmark, macro-scroll Dice.
+\newcommand{\fzMacro}{0.6808}
+\newcommand{\fzMacroFull}{0.680787}
+\newcommand{\mSevenMacro}{0.5541}
+\newcommand{\mSevenMacroFull}{0.554140}
+\newcommand{\fzGain}{0.1266}
+\newcommand{\fzTtaMacro}{0.7130}
+\newcommand{\fzTtaMacroFull}{0.713026}
+\newcommand{\fzTtaLow}{0.7012}
+\newcommand{\fzTtaHigh}{0.7248}
+\newcommand{\fzTtaPrimary}{0.7038}
+\newcommand{\fzTtaDelta}{+0.0230}
+\newcommand{\fzTtaDeltaLow}{+0.0195}
+\newcommand{\fzTtaDeltaHigh}{+0.0265}
+\newcommand{\mSevenTtaMacro}{0.5875}
+\newcommand{\mSevenTtaCalibrated}{0.5926}
+
+% Kaggle-style composite on the same rows.
+\newcommand{\fzComposite}{0.6401}
+\newcommand{\fzCompositeTta}{0.6521}
+\newcommand{\fzTopo}{0.3880}
+\newcommand{\fzTopoTta}{0.4016}
+\newcommand{\fzTopoAdvisory}{0.3776}
+
+% Late-band behaviour and seed noise (25 milestones; late band is >= 150k).
+\newcommand{\fzLateMean}{0.6613}
+\newcommand{\fzLateSD}{0.0107}
+\newcommand{\fzGlobalMax}{0.6816}
+\newcommand{\fzEndpoint}{0.6693}
+\newcommand{\seedRMS}{0.0295}
+\newcommand{\seedRMSLate}{0.0191}
+
+% Corpus.
+\newcommand{\corpusRows}{16{,}200}
+\newcommand{\corpusTrain}{15{,}432}
+\newcommand{\corpusVal}{768}
+\newcommand{\corpusNative}{10{,}072}
+\newcommand{\corpusHuman}{6{,}128}
+\newcommand{\corpusScrolls}{twelve}
+
+% Appendix A: single-term ablation scores at their best milestone,
+% 50k exposures on the wide corpus with no trust region.
+\newcommand{\ablBaseline}{0.6542}
+\newcommand{\ablSeedReplicate}{0.6455}
+\newcommand{\ablSeparation}{0.6349}
+\newcommand{\ablKL}{0.6769}
+
+% Appendix A: the 2026-09-10 preservation rescue, pooled paired deltas vs F0.
+\newcommand{\presHard}{-0.0480}
+\newcommand{\presSoft}{-0.1117}
+\newcommand{\presSep}{-0.0228}
+
+% Appendix B: measured displacement of the shipped recipe from released M7,
+% as a multiple of the v31 trust radius.
+\newcommand{\ballRadius}{0.00275354}
+\newcommand{\ballRatioThirty}{67}
+\newcommand{\ballRatioFifty}{82}
+\newcommand{\ballActiveFirst}{97.7}

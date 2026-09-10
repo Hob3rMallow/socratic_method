@@ -1,0 +1,99 @@
+\section{Additive 2D Curve Fitting}
+\label{sec:fitter}
+
+This appendix describes the downstream postprocess.
+It is separated from the body because it is not part of the model: it runs after
+thresholding, changes no weights, and is measured on its own terms.
+Keeping the boundary explicit is deliberate.
+A gap-repair stage that is reported jointly with a segmenter can quietly become
+a second segmentation method, and an improvement in one stage can then hide a
+regression in the other.
+
+\subsection{Method}
+
+The postprocess repairs short omissions in the thresholded predictions.
+It is additive only: accepted joins set foreground pixels but never erase model
+output, which makes every intervention localizable and reversible.
+
+For each $z$-slice, we apply Zhang--Suen thinning~\cite{zhang1984fast}, remove
+short spurs, label the 8-connected skeleton and mask components, and extract
+curve endpoints with outward tangents.
+We then snap endpoints to the mask edge so distances describe the visible gap
+rather than skeleton retraction.
+Endpoints clipped by the volume or missing data are retained for audit but may
+not be matched.
+
+We score endpoint pairs using distance, facing, adjacent-plane evidence, and
+cross-slice track support.
+Before a pair enters deterministic greedy matching it must satisfy the
+following requirements:
+
+\begin{enumerate}
+  \item it does not close the same skeleton or mask component;
+  \item its tangents face the gap and are sufficiently opposed;
+  \item its reach is at most 21 pixels, while the calibrated safe regime at six
+  pixels or less requires less supporting evidence;
+  \item if an umbilicus is available, its radial displacement is at most three
+  pixels;
+  \item its cubic Bezier has a bounded arc-to-chord ratio and does not approach
+  a third component;
+  \item the path corridor does not cross another sheet on nearby slices; and
+  \item it neither crosses nor touches an already accepted join, and neither
+  endpoint has taken a better match.
+\end{enumerate}
+
+A first matching pass seeds endpoint and connection tracks.
+A second pass follows each new track through $z$, uses connection confidence,
+and retains only joins supported across at least three slices.
+We then paint a cubic Bezier disk stroke and record every added pixel.
+
+\subsection{Measured Behaviour}
+
+In a calibrated $4\!\times\!5\!\times\!5$ study the fitter accepted 481 joins
+and added 12,697 pixels.
+Registered high-resolution precision was 92.5\% overall and 98.4\% for joins no
+longer than six pixels.
+We observed no full-turn fusion and measured a 21\% reduction in atlas overlap.
+A larger 21-cube census measured 98.3\% weighted precision.
+
+Adjacent high-resolution connectivity is useful confirmation but is not, by
+itself, proof that a join remains on one wrap.
+The umbilicus-aware radial gate is our primary cross-wrap safeguard.
+A release evaluation should therefore report false joins by gate, distance, and
+radial regime rather than only an aggregate precision.
+
+A bridge scanner reports thin-neck weld candidates, but cutting is disabled by
+default because erasure breaks the additive contract.
+An experimental mesh-stage slab splitter separated zero of 246 fused runs; it is
+retained in the source tree as a measured negative result and is not part of the
+recommended pipeline.
+
+\subsection{Later Postprocessors}
+
+Three further opt-in stages are implemented in the repository and evaluated in
+their own records rather than here: a checked repair profile that recovers more
+local continuations under a tighter radial guard, a probability-guided
+continuity tool that reaches beyond the native fitter's 21-pixel limit, and a
+stage that extends supported curves into explicit 3D patches.
+All three share this appendix's contract---additive, opt-in, separately
+measured, no model change---and all three currently pin the earlier operating
+threshold, so each must be re-qualified before being combined with the shipped
+inference recipe.
+None is a production default, and none should be read as a global threshold
+reduction or an anatomical certification.
+
+\begin{figure*}[t]
+  \centering
+  \figureasset{figure_3_line_fitter_examples}{0.96\linewidth}{2.9in}
+  \caption{Measured line-fitter behavior on the released M7 baseline. Left:
+  representative M7 masks before and after additive accepted joins. Center:
+  the same connection persists across neighboring $z$-slices. Right:
+  registered fine-CT evidence distinguishes a supported connection from a
+  required separation. The calibration accepted 481 of 772 proposals, added
+  12,697 pixels, reached 92.5\% registered fine-CT precision, and produced no
+  observed full-turn fusion. Cyan is released M7 and green is fitted addition.}
+  \Description{Released M7 before-and-after curve fitting, cross-slice track
+  persistence, connected and separate fine-CT validation examples, and measured
+  calibration statistics.}
+  \label{fig:fitter}
+\end{figure*}

@@ -40,10 +40,10 @@ A model operating on finer CT can resolve local evidence that is ambiguous after
 downsampling, while the deployed segmentation and geometry stack still consumes
 the coarser grid.
 We treat this mismatch as a cross-resolution dialogue.
-The fine model proposes soft occupancy and medial evidence; the released M7
-model contributes a function that is already effective; explicit loss terms
-expose where those views are inconsistent.
-The student must reconcile them without moving far from M7.
+The fine model proposes soft occupancy; the released M7 model contributes a
+function that is already effective; an explicit loss term exposes where those
+views are inconsistent.
+The student must reconcile them.
 
 This is the origin of our title.
 In the Socratic account, a speaker who professes little knowledge reveals
@@ -52,20 +52,45 @@ Our fine teacher is similarly not deployed as a superior replacement.
 It asks local questions of the expert coarse model.
 The answer is a revised M7 that stands alone at inference.
 
+\paragraph{A method arrived at by subtraction.}
+This paper describes a smaller method than the one we first built, and that
+difference is a substantial part of its content.
+An earlier version of this work supervised the student with seven weighted
+terms: soft occupancy and Dice, medial crest recall, a teacher-background
+separation shell, a masked M7 function anchor, one-sided M7 positive
+preservation, and a dynamic widest-path connectivity term, all under a global
+parameter trust region.
+Each term was a plausible local answer to an observed failure, and the stack as
+a whole did improve on released M7.
+When the corpus was later widened from one scroll to \corpusScrolls, the trust
+projection removed, and the declared schedule actually run to completion,
+single-term ablation showed that five of the six auxiliary terms were neutral or
+harmful, and that the surviving one---the M7 function anchor---accounted for the
+measurable gain.
+We describe the reduced method in the body and the discarded terms in
+Appendix~\ref{sec:also-tried}.
+Appendix~\ref{sec:trust} treats the trust region separately, because it is not
+simply another retired term: while it was active it made the others
+unmeasurable, and it is the reason the original stack survived scrutiny for as
+long as it did.
+
 We present four contributions:
 \begin{itemize}
   \item a hash-pinned $2\,\mu$m-to-$9\,\mu$m teacher-supervision recipe that
   can be executed independently of our geometry repository;
-  \item an objective that balances soft occupancy, de-blob separation, medial
-  recall, dynamic connectivity, and two forms of M7 preservation;
-  \item a duration-ladder protocol that retains each declared observation rather
-  than assuming the longest run is best; and
-  \item an independently measured, additive 2D curve fitter that reconnects
-  only short gaps able to answer geometric and cross-plane objections.
+  \item an objective reduced by single-term ablation to soft occupancy and one
+  masked M7 function anchor, reported together with the five discarded terms
+  and the measurements that discarded them;
+  \item an evaluation protocol that runs the declared schedule to completion,
+  quantifies patch-sampling uncertainty by paired cluster bootstrap, and
+  measures seed noise with a full-horizon replicate before crediting any
+  difference; and
+  \item a separately measured, additive 2D curve fitter that reconnects only
+  short gaps able to answer geometric and cross-plane objections
+  (Appendix~\ref{sec:fitter}).
 \end{itemize}
 
-The 8,192-sample duration experiment and the independent morphology review are
-complete. We report every committed interval, including the fact that the
-best-Dice interval is not the released interval. The selected artifact is the
-raw 8,192-sample student at threshold 0.45; its known component-count exception,
-undergrowth cases, and gate-proxy failures remain visible in the record.
+The \fzHorizon-exposure schedule and its independent gate review are complete.
+We report every retained milestone, the selected checkpoint, the inference-time
+levers that were preregistered before scoring, and the negative results that
+reduced the objective to its present form.

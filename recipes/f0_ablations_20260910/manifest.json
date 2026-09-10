@@ -1,0 +1,110 @@
+{
+  "schema": "socratic-ablation-record-v1",
+  "record": "f0_ablations_20260910",
+  "created": "2026-09-10",
+  "purpose": "Evidence for Appendix A of the paper: the loss terms removed from the shipped objective, and the measurements that removed them. Changes no model.",
+  "shipped_objective": {
+    "cross_entropy_weight": 1.0,
+    "dice_weight": 1.0,
+    "m7_anchor_weight": 0.5,
+    "m7_anchor_known_agreement": true,
+    "m7_anchor_confident_agreement": true,
+    "m7_anchor_unknown_corridor_radius": 2,
+    "all_other_terms": 0.0,
+    "trust_region": null
+  },
+  "single_term_ablations": {
+    "note": "wide corpus, no trust region, best frozen milestone, macro-scroll Dice on the frozen 689-row benchmark; arms differ only in the named flag",
+    "occupancy_only": 0.6542258759235362,
+    "occupancy_only_seed_replicate": 0.6454717032346569,
+    "plus_separation_shell_0p5": 0.6348965359023184,
+    "plus_m7_function_anchor_0p5": 0.6768526715087372
+  },
+  "preservation_arms": {
+    "P_hard": {
+      "killed": true,
+      "survivor": false,
+      "inert": false,
+      "reason": "K1 gates/guard fail at 40k and 50k; K3 pooled delta below the kill limit vs both comparators",
+      "pooled_delta_vs_f0_t035": {
+        "point": -0.047966831768326834,
+        "low": -0.056701828749190136,
+        "high": -0.038263154113506885
+      },
+      "pooled_delta_vs_c3r_t035": {
+        "point": -0.03793874978333385,
+        "low": -0.04761639024592387,
+        "high": -0.02742545469251785
+      }
+    },
+    "P_sep": {
+      "killed": true,
+      "survivor": false,
+      "inert": false,
+      "reason": "K1 gates/guard fail at 40k and 50k",
+      "pooled_delta_vs_f0_t035": {
+        "point": -0.02277698589176491,
+        "low": -0.031124530055616637,
+        "high": -0.013957496119733768
+      },
+      "pooled_delta_vs_c3r_t035": {
+        "point": -0.012748903906771924,
+        "low": -0.021928281140471344,
+        "high": -0.0027811161476217574
+      }
+    },
+    "P_soft": {
+      "killed": true,
+      "survivor": false,
+      "inert": false,
+      "reason": "K1 gates/guard fail at 40k and 50k; K3 pooled delta below the kill limit vs both comparators",
+      "pooled_delta_vs_f0_t035": {
+        "point": -0.11167468530065876,
+        "low": -0.12140909281039776,
+        "high": -0.10139620793973836
+      },
+      "pooled_delta_vs_c3r_t035": {
+        "point": -0.10164660331566577,
+        "low": -0.11190368639510545,
+        "high": -0.09076360427952233
+      }
+    }
+  },
+  "continuation": {
+    "notes": {
+      "P_sep": "killed at the kill stage"
+    },
+    "resume": []
+  },
+  "source_experiment_root": "D:/work/vesuvius-c/output/crossres_data/f0_rescue_20260909",
+  "files": {
+    "evidence/preservation_config.json": {
+      "sha256": "b9be36cbfbe1471e88928ce9e1a46a01f898918078deea7ecbca224615131e23",
+      "bytes": 56509
+    },
+    "evidence/preservation_kill_table.json": {
+      "sha256": "9c414623b85075bfe2df0c271b4df831b5aed70d456f0eff29e79c9b703fcbf0",
+      "bytes": 59068
+    },
+    "evidence/preservation_P_hard_summary_kill.json": {
+      "sha256": "3a2494a755cb04c5a485ee01c5789f2a9ee6a2fe1bcb18c64bc4f0561eef2998",
+      "bytes": 44981
+    },
+    "evidence/preservation_P_sep_summary_kill.json": {
+      "sha256": "211c1643e1f58ec75f3060971d8cfa221a4b85a5dd1c70c164656fb6f5213cf2",
+      "bytes": 45076
+    },
+    "evidence/preservation_P_soft_summary_kill.json": {
+      "sha256": "5ad252fad234fb738c3c97a7958ea138f0a4328a208a26ad36d715ccadb55e23",
+      "bytes": 44900
+    },
+    "evidence/preservation_preregistration.md": {
+      "sha256": "8471b113da9cc07e6694bfc07d570b6411fa36de15086e58a218e11e5c014948",
+      "bytes": 9388
+    },
+    "evidence/preservation_SUMMARY.md": {
+      "sha256": "6b4374d5e4fb06447e7798a2b7120e1460b892e1f9799d344cbeef049ec1ee7c",
+      "bytes": 9307
+    }
+  }
+}

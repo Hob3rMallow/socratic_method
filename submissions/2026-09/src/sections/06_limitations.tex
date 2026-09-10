@@ -1,0 +1,63 @@
+\section{Limitations}
+\label{sec:limitations}
+
+Fine-teacher predictions are model-derived soft supervision rather than human
+ground truth, and both gate corpora are likewise model-derived.
+Our guards therefore constrain a checkpoint without certifying it.
+The one held-out set with human labels is flat across every variant we
+measured, and released M7 remains ahead there, so the frozen benchmark
+establishes an ordering under its own supervision rather than a general one.
+
+Milestone-to-milestone variation is comparable to the differences that
+selection rules are asked to resolve.
+We measured seed noise with one full-horizon replicate and report anything
+inside that band as unresolved, but a single replicate is a weak estimate of a
+variance, and we have not repeated the shipped configuration a third time.
+
+The ablations in Appendix~\ref{sec:also-tried} are negative results measured
+under one corpus, one optimizer, and one horizon.
+They establish that those terms do not earn their place in this configuration.
+They do not establish that no version of a medial, separation, or connectivity
+objective could help under a different corpus or schedule, and the medial tail
+floor in particular remains untested at scale because the corpus it needs does
+not exist in the required form.
+
+Test-time augmentation improves the shipped number at eight times the inference
+cost.
+We report both the augmented and unaugmented figures because that trade is a
+deployment decision, not a property of the model.
+
+Rendered figures in this draft show the earlier v31 student and have not been
+regenerated against the shipped weights
+(Sec.~\ref{sec:figure-provenance}); doing so is outstanding release work.
+The downstream postprocessors of Appendix~\ref{sec:fitter} keep provenance pins
+at the earlier operating threshold and must be re-qualified before they are
+combined with the shipped inference recipe.
+
+The curve fitter has a different failure mode from the model.
+A completion may be locally smooth and persistent across slices but still join
+the wrong wrap near the core.
+Radial, third-component, and cross-sheet gates reduce this risk but cannot prove
+global correctness.
+The postprocess must remain independently measured and its additions must remain
+recoverable during qualification.
+
+\begin{figure*}[t]
+  \centering
+  \figureasset{figure_4_failure_cases}{0.96\linewidth}{2.6in}
+  \caption{Known edge cases: a component-count proxy that disagrees with the
+  visible structure, mild drift or thinning on locked sheets, and blind
+  PHerc1447 views that remain undergrown or fragmented.
+  Every row includes CT, released M7, the available model-derived reference,
+  the raw student, and a two-sided comparison. Yellow reference masks are not
+  ground truth. Student panels show the v31 configuration; see
+  Sec.~\ref{sec:figure-provenance}.}
+  \Description{Edge cases showing topology-metric disagreement, mild drift or
+  thinning, and residual undergrowth.}
+  \label{fig:limitations}
+\end{figure*}
+
+Finally, exact replay requires large, separately licensed artifacts.
+The training code, recipes, hashes, and export scaffolding are public-repository
+material, but the validation corpus, teacher atlases, M7 weights, and student
+checkpoints require dedicated artifact hosting and resolved upstream terms.

@@ -1,0 +1,1323 @@
+{
+  "arms": {
+    "P_hard": {
+      "inertness": {
+        "component": "loss_m7_preservation_loss",
+        "mean_component": 0.25812408533472464,
+        "mean_total": 1.4037510390008505,
+        "rows": 5,
+        "weight": 1.0,
+        "weighted_share": 0.1838816700135445
+      },
+      "milestones": [
+        {
+          "eligible": false,
+          "fg_ratio_035": 1.806026052546314,
+          "fixed_t030_macro": 0.5681186757888055,
+          "fixed_t035_macro": 0.5835727936039555,
+          "frontier": {
+            "reason": "outside measured coverage overlap; no extrapolation",
+            "resolved": false
+          },
+          "gate_035_passed": false,
+          "level_ci_035": [
+            0.5704534513669649,
+            0.5970904907516379
+          ],
+          "samples": 10000,
+          "scroll_guard_passed": false
+        },
+        {
+          "eligible": false,
+          "fg_ratio_035": 1.5841852782485448,
+          "fixed_t030_macro": 0.6006773938462737,
+          "fixed_t035_macro": 0.6173629133546769,
+          "frontier": {
+            "reason": "outside measured coverage overlap; no extrapolation",
+            "resolved": false
+          },
+          "gate_035_passed": false,
+          "level_ci_035": [
+            0.6052732887339589,
+            0.6300331531984402
+          ],
+          "samples": 20000,
+          "scroll_guard_passed": true
+        },
+        {
+          "eligible": false,
+          "fg_ratio_035": 1.4245767062657044,
+          "fixed_t030_macro": 0.6124896412119264,
+          "fixed_t035_macro": 0.6243669652595621,
+          "frontier": {
+            "reason": "outside measured coverage overlap; no extrapolation",
+            "resolved": false
+          },
+          "gate_035_passed": false,
+          "level_ci_035": [
+            0.611187354434199,
+            0.6382037536381984
+          ],
+          "samples": 30000,
+          "scroll_guard_passed": true
+        },
+        {
+          "eligible": false,
+          "fg_ratio_035": 1.5765240442716184,
+          "fixed_t030_macro": 0.6045410783600698,
+          "fixed_t035_macro": 0.6184200929679192,
+          "frontier": {
+            "reason": "outside measured coverage overlap; no extrapolation",
+            "resolved": false
+          },
+          "gate_035_passed": false,
+          "level_ci_035": [
+            0.6066245232570628,
+            0.6308620595350147
+          ],
+          "samples": 40000,
+          "scroll_guard_passed": true
+        },
+        {
+          "eligible": false,
+          "fg_ratio_035": 1.541707466011352,
+          "fixed_t030_macro": 0.591238535142645,
+          "fixed_t035_macro": 0.6101259472043987,
+          "frontier": {
+            "reason": "outside measured coverage overlap; no extrapolation",
+            "resolved": false
+          },
+          "gate_035_passed": false,
+          "level_ci_035": [
+            0.5982419777087656,
+            0.6233207101250798
+          ],
+          "samples": 50000,
+          "scroll_guard_passed": true
+        }
+      ],
+      "pooled": {
+        "C3r": {
+          "0.30": {
+            "cluster_mode": "support_anchor_chunk_zyx",
+            "clusters_per_scroll": {
+              "PHerc0814": 256,
+              "PHerc1451": 142
+            },
+            "comparator": "C3r",
+            "confidence": 0.95,
+            "delta": {
+              "half_width": 0.010151288745455248,
+              "high": -0.041543354665233165,
+              "low": -0.06184593215614366,
+              "mean": -0.05229383622750118,
+              "point": -0.05224383416482017,
+              "probability_delta_le_zero": 1.0,
+              "std": 0.0050874153147024885
+            },
+            "kind": "pooled-paired-delta",
+            "milestone_samples": [
+              10000,
+              20000,
+              30000,
+              40000,
+              50000
+            ],
+            "milestones": 5,
+            "pairing": "one cluster resample matrix shared by every audit of both runs",
+            "per_milestone": [
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_hard\\milestone_00010000\\audit\\report.json",
+                "candidate_macro": 0.5681186757888055,
+                "delta": -0.08969134702461612,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00010000\\audit\\report.json",
+                "reference_macro": 0.6578100228134216
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_hard\\milestone_00020000\\audit\\report.json",
+                "candidate_macro": 0.6006773938462737,
+                "delta": -0.04784428995074408,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00020000\\audit\\report.json",
+                "reference_macro": 0.6485216837970178
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_hard\\milestone_00030000\\audit\\report.json",
+                "candidate_macro": 0.6124896412119264,
+                "delta": -0.014509076875926286,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00030000\\audit\\report.json",
+                "reference_macro": 0.6269987180878527
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_hard\\milestone_00040000\\audit\\report.json",
+                "candidate_macro": 0.6045410783600698,
+                "delta": -0.030467040075396135,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00040000\\audit\\report.json",
+                "reference_macro": 0.6350081184354659
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_hard\\milestone_00050000\\audit\\report.json",
+                "candidate_macro": 0.591238535142645,
+                "delta": -0.07870741689741823,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00050000\\audit\\report.json",
+                "reference_macro": 0.6699459520400632
+              }
+            ],
+            "reference_threshold": 0.3,
+            "replicates": 2000,
+            "schema": "crossres-voxel-audit-bootstrap-v1",
+            "seed": 20260908,
+            "threshold": 0.29999998211860657
+          },
+          "0.35": {
+            "cluster_mode": "support_anchor_chunk_zyx",
+            "clusters_per_scroll": {
+              "PHerc0814": 256,
+              "PHerc1451": 142
+            },
+            "comparator": "C3r",
+            "confidence": 0.95,
+            "delta": {
+              "half_width": 0.010095467776703011,
+              "high": -0.02742545469251785,
+              "low": -0.04761639024592387,
+              "mean": -0.038011775679280976,
+              "point": -0.03793874978333385,
+              "probability_delta_le_zero": 1.0,
+              "std": 0.005029443865059155
+            },
+            "kind": "pooled-paired-delta",
+            "milestone_samples": [
+              10000,
+              20000,
+              30000,
+              40000,
+              50000
+            ],
+            "milestones": 5,
+            "pairing": "one cluster resample matrix shared by every audit of both runs",
+            "per_milestone": [
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_hard\\milestone_00010000\\audit\\report.json",
+                "candidate_macro": 0.5835727936039555,
+                "delta": -0.07490315119788404,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00010000\\audit\\report.json",
+                "reference_macro": 0.6584759448018396
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_hard\\milestone_00020000\\audit\\report.json",
+                "candidate_macro": 0.6173629133546769,
+                "delta": -0.03329997217637681,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00020000\\audit\\report.json",
+                "reference_macro": 0.6506628855310537
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_hard\\milestone_00030000\\audit\\report.json",
+                "candidate_macro": 0.6243669652595621,
+                "delta": -0.0036535158670706336,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00030000\\audit\\report.json",
+                "reference_macro": 0.6280204811266328
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_hard\\milestone_00040000\\audit\\report.json",
+                "candidate_macro": 0.6184200929679192,
+                "delta": -0.019474315678119525,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00040000\\audit\\report.json",
+                "reference_macro": 0.6378944086460387
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_hard\\milestone_00050000\\audit\\report.json",
+                "candidate_macro": 0.6101259472043987,
+                "delta": -0.05836279399721822,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00050000\\audit\\report.json",
+                "reference_macro": 0.6684887412016169
+              }
+            ],
+            "reference_threshold": 0.35,
+            "replicates": 2000,
+            "schema": "crossres-voxel-audit-bootstrap-v1",
+            "seed": 20260908,
+            "threshold": 0.3499999940395355
+          }
+        },
+        "F0": {
+          "0.30": {
+            "cluster_mode": "support_anchor_chunk_zyx",
+            "clusters_per_scroll": {
+              "PHerc0814": 256,
+              "PHerc1451": 142
+            },
+            "comparator": "F0",
+            "confidence": 0.95,
+            "delta": {
+              "half_width": 0.009124153950292892,
+              "high": -0.0523935761124999,
+              "low": -0.07064188401308569,
+              "mean": -0.0620946080391399,
+              "point": -0.06204205477372653,
+              "probability_delta_le_zero": 1.0,
+              "std": 0.004659747311281469
+            },
+            "kind": "pooled-paired-delta",
+            "milestone_samples": [
+              10000,
+              20000,
+              30000,
+              40000,
+              50000
+            ],
+            "milestones": 5,
+            "pairing": "one cluster resample matrix shared by every audit of both runs",
+            "per_milestone": [
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_hard\\milestone_00010000\\audit\\report.json",
+                "candidate_macro": 0.5681186757888055,
+                "delta": -0.08744810020706684,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\F0\\milestone_00010000\\audit\\report.json",
+                "reference_macro": 0.6555667759958723
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_hard\\milestone_00020000\\audit\\report.json",
+                "candidate_macro": 0.6006773938462737,
+                "delta": -0.046286949604164906,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\F0\\milestone_00020000\\audit\\report.json",
+                "reference_macro": 0.6469643434504386
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_hard\\milestone_00030000\\audit\\report.json",
+                "candidate_macro": 0.6124896412119264,
+                "delta": -0.06300580702963055,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\F0\\milestone_00030000\\audit\\report.json",
+                "reference_macro": 0.6754954482415569
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_hard\\milestone_00040000\\audit\\report.json",
+                "candidate_macro": 0.6045410783600698,
+                "delta": -0.06350173614881727,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\F0\\milestone_00040000\\audit\\report.json",
+                "reference_macro": 0.668042814508887
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_hard\\milestone_00050000\\audit\\report.json",
+                "candidate_macro": 0.591238535142645,
+                "delta": -0.04996768087895309,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\F0\\milestone_00050000\\audit\\report.json",
+                "reference_macro": 0.6412062160215981
+              }
+            ],
+            "reference_threshold": 0.3,
+            "replicates": 2000,
+            "schema": "crossres-voxel-audit-bootstrap-v1",
+            "seed": 20260908,
+            "threshold": 0.29999998211860657
+          },
+          "0.35": {
+            "cluster_mode": "support_anchor_chunk_zyx",
+            "clusters_per_scroll": {
+              "PHerc0814": 256,
+              "PHerc1451": 142
+            },
+            "comparator": "F0",
+            "confidence": 0.95,
+            "delta": {
+              "half_width": 0.009219337317841626,
+              "high": -0.038263154113506885,
+              "low": -0.056701828749190136,
+              "mean": -0.04803942370277107,
+              "point": -0.047966831768326834,
+              "probability_delta_le_zero": 1.0,
+              "std": 0.004687229726619767
+            },
+            "kind": "pooled-paired-delta",
+            "milestone_samples": [
+              10000,
+              20000,
+              30000,
+              40000,
+              50000
+            ],
+            "milestones": 5,
+            "pairing": "one cluster resample matrix shared by every audit of both runs",
+            "per_milestone": [
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_hard\\milestone_00010000\\audit\\report.json",
+                "candidate_macro": 0.5835727936039555,
+                "delta": -0.07812674635009464,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\F0\\milestone_00010000\\audit\\report.json",
+                "reference_macro": 0.6616995399540502
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_hard\\milestone_00020000\\audit\\report.json",
+                "candidate_macro": 0.6173629133546769,
+                "delta": -0.026860404647511937,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\F0\\milestone_00020000\\audit\\report.json",
+                "reference_macro": 0.6442233180021888
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_hard\\milestone_00030000\\audit\\report.json",
+                "candidate_macro": 0.6243669652595621,
+                "delta": -0.052485706249175035,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\F0\\milestone_00030000\\audit\\report.json",
+                "reference_macro": 0.6768526715087372
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_hard\\milestone_00040000\\audit\\report.json",
+                "candidate_macro": 0.6184200929679192,
+                "delta": -0.05354887623166116,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\F0\\milestone_00040000\\audit\\report.json",
+                "reference_macro": 0.6719689691995804
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_hard\\milestone_00050000\\audit\\report.json",
+                "candidate_macro": 0.6101259472043987,
+                "delta": -0.028812425363191396,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\F0\\milestone_00050000\\audit\\report.json",
+                "reference_macro": 0.6389383725675901
+              }
+            ],
+            "reference_threshold": 0.35,
+            "replicates": 2000,
+            "schema": "crossres-voxel-audit-bootstrap-v1",
+            "seed": 20260908,
+            "threshold": 0.3499999940395355
+          }
+        }
+      },
+      "thickening": {
+        "checks": [
+          {
+            "f0_foreground_ratio": 0.7765604373723874,
+            "fg_grown": true,
+            "foreground_ratio": 1.5765240442716184,
+            "frontier_fail": false,
+            "interior_fail": true,
+            "samples": 40000,
+            "thickness_fail": true
+          },
+          {
+            "f0_foreground_ratio": 0.7085286284714847,
+            "fg_grown": true,
+            "foreground_ratio": 1.541707466011352,
+            "frontier_fail": false,
+            "interior_fail": true,
+            "samples": 50000,
+            "thickness_fail": true
+          }
+        ],
+        "fg_ratio_growth": 1.1,
+        "triggered": true
+      },
+      "verdict": {
+        "inert": false,
+        "k1_gates": true,
+        "k2_frontier": false,
+        "k3_pooled_delta": true,
+        "killed": true,
+        "pooled_vs_c3r_035": {
+          "half_width": 0.010095467776703011,
+          "high": -0.02742545469251785,
+          "low": -0.04761639024592387,
+          "mean": -0.038011775679280976,
+          "point": -0.03793874978333385,
+          "probability_delta_le_zero": 1.0,
+          "std": 0.005029443865059155
+        },
+        "pooled_vs_f0_035": {
+          "half_width": 0.009219337317841626,
+          "high": -0.038263154113506885,
+          "low": -0.056701828749190136,
+          "mean": -0.04803942370277107,
+          "point": -0.047966831768326834,
+          "probability_delta_le_zero": 1.0,
+          "std": 0.004687229726619767
+        },
+        "reason": "K1 gates/guard fail at 40k and 50k; K3 pooled delta below the kill limit vs both comparators",
+        "survivor": false
+      }
+    },
+    "P_sep": {
+      "inertness": {
+        "component": "loss_m7_preservation_loss",
+        "mean_component": 0.35011514014892403,
+        "mean_total": 1.602001417173049,
+        "rows": 5,
+        "weight": 1.0,
+        "weighted_share": 0.2185485832882409
+      },
+      "milestones": [
+        {
+          "eligible": false,
+          "fg_ratio_035": 1.4596059615072579,
+          "fixed_t030_macro": 0.6103936411275694,
+          "fixed_t035_macro": 0.6231392722995406,
+          "frontier": {
+            "reason": "outside measured coverage overlap; no extrapolation",
+            "resolved": false
+          },
+          "gate_035_passed": false,
+          "level_ci_035": [
+            0.6108311440982874,
+            0.6360560648690797
+          ],
+          "samples": 10000,
+          "scroll_guard_passed": true
+        },
+        {
+          "eligible": false,
+          "fg_ratio_035": 1.183093894711842,
+          "fixed_t030_macro": 0.6269802061906411,
+          "fixed_t035_macro": 0.6384342528812172,
+          "frontier": {
+            "candidate_bridges": 24004,
+            "coverage": 0.8630440337279618,
+            "maximum_candidate_bridges": 16817.44587155962,
+            "passed": false,
+            "reference_bridges_interpolated": 14014.538226299683,
+            "resolved": true
+          },
+          "gate_035_passed": false,
+          "level_ci_035": [
+            0.6266951445160286,
+            0.6504787336753767
+          ],
+          "samples": 20000,
+          "scroll_guard_passed": true
+        },
+        {
+          "eligible": false,
+          "fg_ratio_035": 1.2372021434563822,
+          "fixed_t030_macro": 0.6300678825697821,
+          "fixed_t035_macro": 0.640304448679831,
+          "frontier": {
+            "reason": "outside measured coverage overlap; no extrapolation",
+            "resolved": false
+          },
+          "gate_035_passed": false,
+          "level_ci_035": [
+            0.6276241030727984,
+            0.65306776047888
+          ],
+          "samples": 30000,
+          "scroll_guard_passed": true
+        },
+        {
+          "eligible": false,
+          "fg_ratio_035": 1.323591226140381,
+          "fixed_t030_macro": 0.6325569740808767,
+          "fixed_t035_macro": 0.6441461119690555,
+          "frontier": {
+            "candidate_bridges": 37838,
+            "coverage": 0.922323481815859,
+            "maximum_candidate_bridges": 27699.73577981653,
+            "passed": false,
+            "reference_bridges_interpolated": 23083.113149847108,
+            "resolved": true
+          },
+          "gate_035_passed": false,
+          "level_ci_035": [
+            0.6325234261668858,
+            0.6565672378913692
+          ],
+          "samples": 40000,
+          "scroll_guard_passed": true
+        },
+        {
+          "eligible": false,
+          "fg_ratio_035": 1.3366794341103168,
+          "fixed_t030_macro": 0.6181649186854077,
+          "fixed_t035_macro": 0.6337738559436777,
+          "frontier": {
+            "reason": "outside measured coverage overlap; no extrapolation",
+            "resolved": false
+          },
+          "gate_035_passed": false,
+          "level_ci_035": [
+            0.6219070216791504,
+            0.6466376181198905
+          ],
+          "samples": 50000,
+          "scroll_guard_passed": true
+        }
+      ],
+      "pooled": {
+        "C3r": {
+          "0.30": {
+            "cluster_mode": "support_anchor_chunk_zyx",
+            "clusters_per_scroll": {
+              "PHerc0814": 256,
+              "PHerc1451": 142
+            },
+            "comparator": "C3r",
+            "confidence": 0.95,
+            "delta": {
+              "half_width": 0.009767139569938816,
+              "high": -0.01376947072701668,
+              "low": -0.033303749866894314,
+              "mean": -0.02413116063230827,
+              "point": -0.024024174503908834,
+              "probability_delta_le_zero": 1.0,
+              "std": 0.00492757263293251
+            },
+            "kind": "pooled-paired-delta",
+            "milestone_samples": [
+              10000,
+              20000,
+              30000,
+              40000,
+              50000
+            ],
+            "milestones": 5,
+            "pairing": "one cluster resample matrix shared by every audit of both runs",
+            "per_milestone": [
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00010000\\audit\\report.json",
+                "candidate_macro": 0.6103936411275694,
+                "delta": -0.04741638168585216,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00010000\\audit\\report.json",
+                "reference_macro": 0.6578100228134216
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00020000\\audit\\report.json",
+                "candidate_macro": 0.6269802061906411,
+                "delta": -0.021541477606376702,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00020000\\audit\\report.json",
+                "reference_macro": 0.6485216837970178
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00030000\\audit\\report.json",
+                "candidate_macro": 0.6300678825697821,
+                "delta": 0.0030691644819293984,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00030000\\audit\\report.json",
+                "reference_macro": 0.6269987180878527
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00040000\\audit\\report.json",
+                "candidate_macro": 0.6325569740808767,
+                "delta": -0.002451144354589152,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00040000\\audit\\report.json",
+                "reference_macro": 0.6350081184354659
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00050000\\audit\\report.json",
+                "candidate_macro": 0.6181649186854077,
+                "delta": -0.05178103335465556,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00050000\\audit\\report.json",
+                "reference_macro": 0.6699459520400632
+              }
+            ],
+            "reference_threshold": 0.3,
+            "replicates": 2000,
+            "schema": "crossres-voxel-audit-bootstrap-v1",
+            "seed": 20260908,
+            "threshold": 0.29999998211860657
+          },
+          "0.35": {
+            "cluster_mode": "support_anchor_chunk_zyx",
+            "clusters_per_scroll": {
+              "PHerc0814": 256,
+              "PHerc1451": 142
+            },
+            "comparator": "C3r",
+            "confidence": 0.95,
+            "delta": {
+              "half_width": 0.009573582496424793,
+              "high": -0.0027811161476217574,
+              "low": -0.021928281140471344,
+              "mean": -0.012874374930948231,
+              "point": -0.012748903906771924,
+              "probability_delta_le_zero": 0.9975,
+              "std": 0.004800128202890739
+            },
+            "kind": "pooled-paired-delta",
+            "milestone_samples": [
+              10000,
+              20000,
+              30000,
+              40000,
+              50000
+            ],
+            "milestones": 5,
+            "pairing": "one cluster resample matrix shared by every audit of both runs",
+            "per_milestone": [
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00010000\\audit\\report.json",
+                "candidate_macro": 0.6231392722995406,
+                "delta": -0.035336672502298994,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00010000\\audit\\report.json",
+                "reference_macro": 0.6584759448018396
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00020000\\audit\\report.json",
+                "candidate_macro": 0.6384342528812172,
+                "delta": -0.012228632649836424,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00020000\\audit\\report.json",
+                "reference_macro": 0.6506628855310537
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00030000\\audit\\report.json",
+                "candidate_macro": 0.640304448679831,
+                "delta": 0.012283967553198272,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00030000\\audit\\report.json",
+                "reference_macro": 0.6280204811266328
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00040000\\audit\\report.json",
+                "candidate_macro": 0.6441461119690555,
+                "delta": 0.006251703323016722,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00040000\\audit\\report.json",
+                "reference_macro": 0.6378944086460387
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00050000\\audit\\report.json",
+                "candidate_macro": 0.6337738559436777,
+                "delta": -0.0347148852579392,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00050000\\audit\\report.json",
+                "reference_macro": 0.6684887412016169
+              }
+            ],
+            "reference_threshold": 0.35,
+            "replicates": 2000,
+            "schema": "crossres-voxel-audit-bootstrap-v1",
+            "seed": 20260908,
+            "threshold": 0.3499999940395355
+          }
+        },
+        "F0": {
+          "0.30": {
+            "cluster_mode": "support_anchor_chunk_zyx",
+            "clusters_per_scroll": {
+              "PHerc0814": 256,
+              "PHerc1451": 142
+            },
+            "comparator": "F0",
+            "confidence": 0.95,
+            "delta": {
+              "half_width": 0.008658837522604795,
+              "high": -0.02485982391667605,
+              "low": -0.04217749896188564,
+              "mean": -0.03393193244394699,
+              "point": -0.03382239511281519,
+              "probability_delta_le_zero": 1.0,
+              "std": 0.004478677118722866
+            },
+            "kind": "pooled-paired-delta",
+            "milestone_samples": [
+              10000,
+              20000,
+              30000,
+              40000,
+              50000
+            ],
+            "milestones": 5,
+            "pairing": "one cluster resample matrix shared by every audit of both runs",
+            "per_milestone": [
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00010000\\audit\\report.json",
+                "candidate_macro": 0.6103936411275694,
+                "delta": -0.04517313486830288,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\F0\\milestone_00010000\\audit\\report.json",
+                "reference_macro": 0.6555667759958723
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00020000\\audit\\report.json",
+                "candidate_macro": 0.6269802061906411,
+                "delta": -0.01998413725979753,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\F0\\milestone_00020000\\audit\\report.json",
+                "reference_macro": 0.6469643434504386
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00030000\\audit\\report.json",
+                "candidate_macro": 0.6300678825697821,
+                "delta": -0.04542756567177486,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\F0\\milestone_00030000\\audit\\report.json",
+                "reference_macro": 0.6754954482415569
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00040000\\audit\\report.json",
+                "candidate_macro": 0.6325569740808767,
+                "delta": -0.035485840428010285,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\F0\\milestone_00040000\\audit\\report.json",
+                "reference_macro": 0.668042814508887
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00050000\\audit\\report.json",
+                "candidate_macro": 0.6181649186854077,
+                "delta": -0.023041297336190425,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\F0\\milestone_00050000\\audit\\report.json",
+                "reference_macro": 0.6412062160215981
+              }
+            ],
+            "reference_threshold": 0.3,
+            "replicates": 2000,
+            "schema": "crossres-voxel-audit-bootstrap-v1",
+            "seed": 20260908,
+            "threshold": 0.29999998211860657
+          },
+          "0.35": {
+            "cluster_mode": "support_anchor_chunk_zyx",
+            "clusters_per_scroll": {
+              "PHerc0814": 256,
+              "PHerc1451": 142
+            },
+            "comparator": "F0",
+            "confidence": 0.95,
+            "delta": {
+              "half_width": 0.008583516967941435,
+              "high": -0.013957496119733768,
+              "low": -0.031124530055616637,
+              "mean": -0.022902022954438318,
+              "point": -0.02277698589176491,
+              "probability_delta_le_zero": 1.0,
+              "std": 0.004425835317579304
+            },
+            "kind": "pooled-paired-delta",
+            "milestone_samples": [
+              10000,
+              20000,
+              30000,
+              40000,
+              50000
+            ],
+            "milestones": 5,
+            "pairing": "one cluster resample matrix shared by every audit of both runs",
+            "per_milestone": [
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00010000\\audit\\report.json",
+                "candidate_macro": 0.6231392722995406,
+                "delta": -0.038560267654509595,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\F0\\milestone_00010000\\audit\\report.json",
+                "reference_macro": 0.6616995399540502
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00020000\\audit\\report.json",
+                "candidate_macro": 0.6384342528812172,
+                "delta": -0.005789065120971548,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\F0\\milestone_00020000\\audit\\report.json",
+                "reference_macro": 0.6442233180021888
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00030000\\audit\\report.json",
+                "candidate_macro": 0.640304448679831,
+                "delta": -0.03654822282890613,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\F0\\milestone_00030000\\audit\\report.json",
+                "reference_macro": 0.6768526715087372
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00040000\\audit\\report.json",
+                "candidate_macro": 0.6441461119690555,
+                "delta": -0.02782285723052491,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\F0\\milestone_00040000\\audit\\report.json",
+                "reference_macro": 0.6719689691995804
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00050000\\audit\\report.json",
+                "candidate_macro": 0.6337738559436777,
+                "delta": -0.005164516623912374,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\F0\\milestone_00050000\\audit\\report.json",
+                "reference_macro": 0.6389383725675901
+              }
+            ],
+            "reference_threshold": 0.35,
+            "replicates": 2000,
+            "schema": "crossres-voxel-audit-bootstrap-v1",
+            "seed": 20260908,
+            "threshold": 0.3499999940395355
+          }
+        }
+      },
+      "thickening": {
+        "checks": [
+          {
+            "f0_foreground_ratio": 0.7765604373723874,
+            "fg_grown": true,
+            "foreground_ratio": 1.323591226140381,
+            "frontier_fail": true,
+            "interior_fail": true,
+            "samples": 40000,
+            "thickness_fail": true
+          },
+          {
+            "f0_foreground_ratio": 0.7085286284714847,
+            "fg_grown": true,
+            "foreground_ratio": 1.3366794341103168,
+            "frontier_fail": false,
+            "interior_fail": true,
+            "samples": 50000,
+            "thickness_fail": true
+          }
+        ],
+        "fg_ratio_growth": 1.1,
+        "triggered": true
+      },
+      "verdict": {
+        "inert": false,
+        "k1_gates": true,
+        "k2_frontier": false,
+        "k3_pooled_delta": false,
+        "killed": true,
+        "pooled_vs_c3r_035": {
+          "half_width": 0.009573582496424793,
+          "high": -0.0027811161476217574,
+          "low": -0.021928281140471344,
+          "mean": -0.012874374930948231,
+          "point": -0.012748903906771924,
+          "probability_delta_le_zero": 0.9975,
+          "std": 0.004800128202890739
+        },
+        "pooled_vs_f0_035": {
+          "half_width": 0.008583516967941435,
+          "high": -0.013957496119733768,
+          "low": -0.031124530055616637,
+          "mean": -0.022902022954438318,
+          "point": -0.02277698589176491,
+          "probability_delta_le_zero": 1.0,
+          "std": 0.004425835317579304
+        },
+        "reason": "K1 gates/guard fail at 40k and 50k",
+        "survivor": false
+      }
+    },
+    "P_soft": {
+      "inertness": {
+        "component": "loss_m7_preservation_loss",
+        "mean_component": 0.04956519746885176,
+        "mean_total": 1.540638027665997,
+        "rows": 5,
+        "weight": 4.0,
+        "weighted_share": 0.12868745695948058
+      },
+      "milestones": [
+        {
+          "eligible": false,
+          "fg_ratio_035": 2.258140972847471,
+          "fixed_t030_macro": 0.4934539593010391,
+          "fixed_t035_macro": 0.5071272082279529,
+          "frontier": {
+            "reason": "outside measured coverage overlap; no extrapolation",
+            "resolved": false
+          },
+          "gate_035_passed": false,
+          "level_ci_035": [
+            0.4949698382732497,
+            0.5198136884445451
+          ],
+          "samples": 10000,
+          "scroll_guard_passed": false
+        },
+        {
+          "eligible": false,
+          "fg_ratio_035": 2.037390967856856,
+          "fixed_t030_macro": 0.5317852629690656,
+          "fixed_t035_macro": 0.547996695421396,
+          "frontier": {
+            "reason": "outside measured coverage overlap; no extrapolation",
+            "resolved": false
+          },
+          "gate_035_passed": false,
+          "level_ci_035": [
+            0.5351918553283371,
+            0.560880598022674
+          ],
+          "samples": 20000,
+          "scroll_guard_passed": false
+        },
+        {
+          "eligible": false,
+          "fg_ratio_035": 1.86721201719638,
+          "fixed_t030_macro": 0.5539508907591844,
+          "fixed_t035_macro": 0.5660785701856592,
+          "frontier": {
+            "reason": "outside measured coverage overlap; no extrapolation",
+            "resolved": false
+          },
+          "gate_035_passed": false,
+          "level_ci_035": [
+            0.5525831195843097,
+            0.580646111252301
+          ],
+          "samples": 30000,
+          "scroll_guard_passed": false
+        },
+        {
+          "eligible": false,
+          "fg_ratio_035": 1.9622924479965111,
+          "fixed_t030_macro": 0.5374451712021338,
+          "fixed_t035_macro": 0.550277526437745,
+          "frontier": {
+            "reason": "outside measured coverage overlap; no extrapolation",
+            "resolved": false
+          },
+          "gate_035_passed": false,
+          "level_ci_035": [
+            0.5366962290230906,
+            0.5646570891671627
+          ],
+          "samples": 40000,
+          "scroll_guard_passed": false
+        },
+        {
+          "eligible": false,
+          "fg_ratio_035": 1.8196458250049778,
+          "fixed_t030_macro": 0.5515026090640237,
+          "fixed_t035_macro": 0.5638294444560998,
+          "frontier": {
+            "reason": "outside measured coverage overlap; no extrapolation",
+            "resolved": false
+          },
+          "gate_035_passed": false,
+          "level_ci_035": [
+            0.550001080120614,
+            0.5783292619520831
+          ],
+          "samples": 50000,
+          "scroll_guard_passed": false
+        }
+      ],
+      "pooled": {
+        "C3r": {
+          "0.30": {
+            "cluster_mode": "support_anchor_chunk_zyx",
+            "clusters_per_scroll": {
+              "PHerc0814": 256,
+              "PHerc1451": 142
+            },
+            "comparator": "C3r",
+            "confidence": 0.95,
+            "delta": {
+              "half_width": 0.010298371996356394,
+              "high": -0.10322891068996914,
+              "low": -0.12382565468268193,
+              "mean": -0.11406343804761088,
+              "point": -0.11402932037567495,
+              "probability_delta_le_zero": 1.0,
+              "std": 0.005260647207517579
+            },
+            "kind": "pooled-paired-delta",
+            "milestone_samples": [
+              10000,
+              20000,
+              30000,
+              40000,
+              50000
+            ],
+            "milestones": 5,
+            "pairing": "one cluster resample matrix shared by every audit of both runs",
+            "per_milestone": [
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_soft\\milestone_00010000\\audit\\report.json",
+                "candidate_macro": 0.4934539593010391,
+                "delta": -0.16435606351238252,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00010000\\audit\\report.json",
+                "reference_macro": 0.6578100228134216
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_soft\\milestone_00020000\\audit\\report.json",
+                "candidate_macro": 0.5317852629690656,
+                "delta": -0.11673642082795221,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00020000\\audit\\report.json",
+                "reference_macro": 0.6485216837970178
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_soft\\milestone_00030000\\audit\\report.json",
+                "candidate_macro": 0.5539508907591844,
+                "delta": -0.07304782732866832,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00030000\\audit\\report.json",
+                "reference_macro": 0.6269987180878527
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_soft\\milestone_00040000\\audit\\report.json",
+                "candidate_macro": 0.5374451712021338,
+                "delta": -0.09756294723333214,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00040000\\audit\\report.json",
+                "reference_macro": 0.6350081184354659
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_soft\\milestone_00050000\\audit\\report.json",
+                "candidate_macro": 0.5515026090640237,
+                "delta": -0.11844334297603953,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00050000\\audit\\report.json",
+                "reference_macro": 0.6699459520400632
+              }
+            ],
+            "reference_threshold": 0.3,
+            "replicates": 2000,
+            "schema": "crossres-voxel-audit-bootstrap-v1",
+            "seed": 20260908,
+            "threshold": 0.29999998211860657
+          },
+          "0.35": {
+            "cluster_mode": "support_anchor_chunk_zyx",
+            "clusters_per_scroll": {
+              "PHerc0814": 256,
+              "PHerc1451": 142
+            },
+            "comparator": "C3r",
+            "confidence": 0.95,
+            "delta": {
+              "half_width": 0.010570041057791559,
+              "high": -0.09076360427952233,
+              "low": -0.11190368639510545,
+              "mean": -0.10168384300565264,
+              "point": -0.10164660331566577,
+              "probability_delta_le_zero": 1.0,
+              "std": 0.005385561179722182
+            },
+            "kind": "pooled-paired-delta",
+            "milestone_samples": [
+              10000,
+              20000,
+              30000,
+              40000,
+              50000
+            ],
+            "milestones": 5,
+            "pairing": "one cluster resample matrix shared by every audit of both runs",
+            "per_milestone": [
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_soft\\milestone_00010000\\audit\\report.json",
+                "candidate_macro": 0.5071272082279529,
+                "delta": -0.1513487365738867,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00010000\\audit\\report.json",
+                "reference_macro": 0.6584759448018396
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_soft\\milestone_00020000\\audit\\report.json",
+                "candidate_macro": 0.547996695421396,
+                "delta": -0.10266619010965772,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00020000\\audit\\report.json",
+                "reference_macro": 0.6506628855310537
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_soft\\milestone_00030000\\audit\\report.json",
+                "candidate_macro": 0.5660785701856592,
+                "delta": -0.061941910940973566,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00030000\\audit\\report.json",
+                "reference_macro": 0.6280204811266328
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_soft\\milestone_00040000\\audit\\report.json",
+                "candidate_macro": 0.550277526437745,
+                "delta": -0.08761688220829378,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00040000\\audit\\report.json",
+                "reference_macro": 0.6378944086460387
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_soft\\milestone_00050000\\audit\\report.json",
+                "candidate_macro": 0.5638294444560998,
+                "delta": -0.1046592967455171,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00050000\\audit\\report.json",
+                "reference_macro": 0.6684887412016169
+              }
+            ],
+            "reference_threshold": 0.35,
+            "replicates": 2000,
+            "schema": "crossres-voxel-audit-bootstrap-v1",
+            "seed": 20260908,
+            "threshold": 0.3499999940395355
+          }
+        },
+        "F0": {
+          "0.30": {
+            "cluster_mode": "support_anchor_chunk_zyx",
+            "clusters_per_scroll": {
+              "PHerc0814": 256,
+              "PHerc1451": 142
+            },
+            "comparator": "F0",
+            "confidence": 0.95,
+            "delta": {
+              "half_width": 0.009586272773330497,
+              "high": -0.1139098013213909,
+              "low": -0.1330823468680519,
+              "mean": -0.1238642098592496,
+              "point": -0.1238275409845813,
+              "probability_delta_le_zero": 1.0,
+              "std": 0.0049179790580638144
+            },
+            "kind": "pooled-paired-delta",
+            "milestone_samples": [
+              10000,
+              20000,
+              30000,
+              40000,
+              50000
+            ],
+            "milestones": 5,
+            "pairing": "one cluster resample matrix shared by every audit of both runs",
+            "per_milestone": [
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_soft\\milestone_00010000\\audit\\report.json",
+                "candidate_macro": 0.4934539593010391,
+                "delta": -0.16211281669483324,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\F0\\milestone_00010000\\audit\\report.json",
+                "reference_macro": 0.6555667759958723
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_soft\\milestone_00020000\\audit\\report.json",
+                "candidate_macro": 0.5317852629690656,
+                "delta": -0.11517908048137304,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\F0\\milestone_00020000\\audit\\report.json",
+                "reference_macro": 0.6469643434504386
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_soft\\milestone_00030000\\audit\\report.json",
+                "candidate_macro": 0.5539508907591844,
+                "delta": -0.12154455748237258,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\F0\\milestone_00030000\\audit\\report.json",
+                "reference_macro": 0.6754954482415569
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_soft\\milestone_00040000\\audit\\report.json",
+                "candidate_macro": 0.5374451712021338,
+                "delta": -0.13059764330675327,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\F0\\milestone_00040000\\audit\\report.json",
+                "reference_macro": 0.668042814508887
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_soft\\milestone_00050000\\audit\\report.json",
+                "candidate_macro": 0.5515026090640237,
+                "delta": -0.0897036069575744,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\F0\\milestone_00050000\\audit\\report.json",
+                "reference_macro": 0.6412062160215981
+              }
+            ],
+            "reference_threshold": 0.3,
+            "replicates": 2000,
+            "schema": "crossres-voxel-audit-bootstrap-v1",
+            "seed": 20260908,
+            "threshold": 0.29999998211860657
+          },
+          "0.35": {
+            "cluster_mode": "support_anchor_chunk_zyx",
+            "clusters_per_scroll": {
+              "PHerc0814": 256,
+              "PHerc1451": 142
+            },
+            "comparator": "F0",
+            "confidence": 0.95,
+            "delta": {
+              "half_width": 0.0100064424353297,
+              "high": -0.10139620793973836,
+              "low": -0.12140909281039776,
+              "mean": -0.11171149102914274,
+              "point": -0.11167468530065876,
+              "probability_delta_le_zero": 1.0,
+              "std": 0.005115277935494435
+            },
+            "kind": "pooled-paired-delta",
+            "milestone_samples": [
+              10000,
+              20000,
+              30000,
+              40000,
+              50000
+            ],
+            "milestones": 5,
+            "pairing": "one cluster resample matrix shared by every audit of both runs",
+            "per_milestone": [
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_soft\\milestone_00010000\\audit\\report.json",
+                "candidate_macro": 0.5071272082279529,
+                "delta": -0.1545723317260973,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\F0\\milestone_00010000\\audit\\report.json",
+                "reference_macro": 0.6616995399540502
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_soft\\milestone_00020000\\audit\\report.json",
+                "candidate_macro": 0.547996695421396,
+                "delta": -0.09622662258079284,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\F0\\milestone_00020000\\audit\\report.json",
+                "reference_macro": 0.6442233180021888
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_soft\\milestone_00030000\\audit\\report.json",
+                "candidate_macro": 0.5660785701856592,
+                "delta": -0.11077410132307797,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\F0\\milestone_00030000\\audit\\report.json",
+                "reference_macro": 0.6768526715087372
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_soft\\milestone_00040000\\audit\\report.json",
+                "candidate_macro": 0.550277526437745,
+                "delta": -0.12169144276183541,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\F0\\milestone_00040000\\audit\\report.json",
+                "reference_macro": 0.6719689691995804
+              },
+              {
+                "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_soft\\milestone_00050000\\audit\\report.json",
+                "candidate_macro": 0.5638294444560998,
+                "delta": -0.07510892811149028,
+                "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\F0\\milestone_00050000\\audit\\report.json",
+                "reference_macro": 0.6389383725675901
+              }
+            ],
+            "reference_threshold": 0.35,
+            "replicates": 2000,
+            "schema": "crossres-voxel-audit-bootstrap-v1",
+            "seed": 20260908,
+            "threshold": 0.3499999940395355
+          }
+        }
+      },
+      "thickening": {
+        "checks": [
+          {
+            "f0_foreground_ratio": 0.7765604373723874,
+            "fg_grown": true,
+            "foreground_ratio": 1.9622924479965111,
+            "frontier_fail": false,
+            "interior_fail": true,
+            "samples": 40000,
+            "thickness_fail": true
+          },
+          {
+            "f0_foreground_ratio": 0.7085286284714847,
+            "fg_grown": true,
+            "foreground_ratio": 1.8196458250049778,
+            "frontier_fail": false,
+            "interior_fail": true,
+            "samples": 50000,
+            "thickness_fail": true
+          }
+        ],
+        "fg_ratio_growth": 1.1,
+        "triggered": true
+      },
+      "verdict": {
+        "inert": false,
+        "k1_gates": true,
+        "k2_frontier": false,
+        "k3_pooled_delta": true,
+        "killed": true,
+        "pooled_vs_c3r_035": {
+          "half_width": 0.010570041057791559,
+          "high": -0.09076360427952233,
+          "low": -0.11190368639510545,
+          "mean": -0.10168384300565264,
+          "point": -0.10164660331566577,
+          "probability_delta_le_zero": 1.0,
+          "std": 0.005385561179722182
+        },
+        "pooled_vs_f0_035": {
+          "half_width": 0.0100064424353297,
+          "high": -0.10139620793973836,
+          "low": -0.12140909281039776,
+          "mean": -0.11171149102914274,
+          "point": -0.11167468530065876,
+          "probability_delta_le_zero": 1.0,
+          "std": 0.005115277935494435
+        },
+        "reason": "K1 gates/guard fail at 40k and 50k; K3 pooled delta below the kill limit vs both comparators",
+        "survivor": false
+      }
+    }
+  },
+  "config_sha256": "b9be36cbfbe1471e88928ce9e1a46a01f898918078deea7ecbca224615131e23",
+  "continuation": {
+    "notes": {
+      "P_sep": "killed at the kill stage"
+    },
+    "resume": []
+  },
+  "created_utc": "2026-09-10T19:57:48.224605+00:00",
+  "schema": "crossres-f0-rescue-kill-table-v1"
+}

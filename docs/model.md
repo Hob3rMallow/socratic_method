@@ -57,6 +57,15 @@ The exact settings and identities are in the byte-preserved
 [preregistered recipe](../recipes/final_c3_250k_20260907/provenance/recipe.json)
 and [run record](../recipes/final_c3_250k_20260907/provenance/run.json).
 
+"All additional loss terms are zero" is a measured choice, not an omission. The
+earlier v31 objective carried four further terms and a parameter-space trust
+region; on a corpus of adequate breadth, with the trust ball off and the
+schedule run to its declared length, only the M7 function anchor clears its own
+seed-noise floor. The single-term ablation table, the preregistered preservation
+experiment that retired the last candidate on 2026-09-10, and the two terms that
+remain untested rather than refuted are in the
+[ablation ledger](../recipes/f0_ablations_20260910/README.md).
+
 ## Selection and evidence
 
 All 25 checkpoints completed their frozen audits and were eligible at T=.35.

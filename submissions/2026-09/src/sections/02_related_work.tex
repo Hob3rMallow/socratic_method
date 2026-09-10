@@ -11,21 +11,27 @@ This preserves compatibility with the existing coarse-volume pipeline.
 Knowledge distillation transfers information from a teacher into a student by matching soft outputs or intermediate functions \cite{hinton2015distilling}.
 Most such methods assume teacher and student predictions share a sampling grid. Our teacher observes a finer CT volume, so its occupancy and validity must be
 pulled back into the student's physical frame. The resulting targets represent partial volume rather than only a hard class.
+Our surviving constraint on the incumbent model is also a distillation term, but
+it is masked rather than global: it acts where the teacher is silent or
+confidently agrees and is switched off in the band where teacher and incumbent
+disagree, which is precisely the region the method exists to revise.
 
-\paragraph{Topology-aware Objectives.}
-Skeleton and centerline losses preserve thin connected structures that can be under-represented by region overlap metrics
-\cite{shit2021cldice}. The medial axis transform (MAT) instead describes a
-shape by centers and the radii of their maximally inscribed disks or spheres.
-LSMAT casts this construction as a least-squares problem to make the resulting
-representation less brittle under noisy or perturbed boundaries
-\cite{rebain2019lsmat}. This center--radius factorization is especially useful
-for papyrus: motion along the medial set extends a sheet, whereas increasing
-radius thickens it toward a neighboring wrap. We use that distinction to derive
-thin training corridors and M7 contact pins. Unlike a conventional skeleton
-overlap loss, our final connectivity term does not prescribe every voxel of one
-centerline. It raises the bottleneck of whichever admissible medial path the
-student currently supports. The atlas is constructed only from fully owned
-training events and never from held-out data.
+\paragraph{Topology-aware objectives.}
+Skeleton and centerline losses preserve thin connected structures that can be
+under-represented by region overlap metrics \cite{shit2021cldice}. The medial
+axis transform instead describes a shape by centers and the radii of their
+maximally inscribed disks or spheres; LSMAT casts this construction as a
+least-squares problem to make the representation less brittle under noisy
+boundaries \cite{rebain2019lsmat}. This center--radius factorization is
+attractive for papyrus, because motion along the medial set extends a sheet
+whereas increasing radius thickens it toward a neighboring wrap.
+We built three successive objectives on that distinction---crest recall, a
+separation shell keyed to the crest, and a widest-path connectivity term over
+teacher-medial corridors---and none of them survived measurement on a corpus of
+adequate breadth. Appendix~\ref{sec:also-tried} reports those results in full,
+including the respect in which the underlying geometric argument still appears
+correct and the respect in which it turned out to describe a property of our
+training corpus rather than of the objective.
 
 \paragraph{Curve completion.}
 Classical thinning extracts one-pixel skeletons from binary images
@@ -33,7 +39,7 @@ Classical thinning extracts one-pixel skeletons from binary images
 continuity. For wound papyrus, however, a locally smooth completion can cross from one wrap
 to the next. Our postprocess therefore combines 2D tangents with an umbilicus-aware radial
 test, neighboring-plane corridors, explicit anti-merger and crossing gates, and
-connection persistence across slices.
+connection persistence across slices (Appendix~\ref{sec:fitter}).
 
 \paragraph{Vesuvius models and data.}
 Our experiments build on the public Vesuvius Challenge CT data, the released M7

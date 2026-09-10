@@ -1,0 +1,1107 @@
+{
+  "arm_id": "P_sep",
+  "complete": true,
+  "config_sha256": "b9be36cbfbe1471e88928ce9e1a46a01f898918078deea7ecbca224615131e23",
+  "created_utc": "2026-09-10T19:57:47.267199+00:00",
+  "inertness": {
+    "component": "loss_m7_preservation_loss",
+    "mean_component": 0.35011514014892403,
+    "mean_total": 1.602001417173049,
+    "rows": 5,
+    "weight": 1.0,
+    "weighted_share": 0.2185485832882409
+  },
+  "milestones": [
+    {
+      "calibrated_macro": 0.6476876165299619,
+      "calibrated_threshold": 0.550000011920929,
+      "checkpoint": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\arms\\P_sep\\checkpoint_milestone_00010000.pt",
+      "checkpoint_sha256": "84af67058adbbecd811a33b5d58325e8db25175b7e0f5999abca1c0172214818",
+      "config_sha256": "b9be36cbfbe1471e88928ce9e1a46a01f898918078deea7ecbca224615131e23",
+      "eligible": false,
+      "fixed_t030_macro": 0.6103936411275694,
+      "fixed_t035_macro": 0.6231392722995406,
+      "fixed_t035_scrolls": {
+        "PHerc0814": 0.6298309370201168,
+        "PHerc1451": 0.6164476075789644
+      },
+      "geometry": {
+        "blind_report": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00010000\\blind_t035\\report\\index.html",
+        "checkpoint_sha256": "84af67058adbbecd811a33b5d58325e8db25175b7e0f5999abca1c0172214818",
+        "frontier_fixed18_at_035": {
+          "candidate_foreground_pixels": 169195,
+          "candidate_interior_fraction_r2": 0.7420136528857235,
+          "candidate_interior_fraction_r2_delta_vs_reference": 0.1104400531228007,
+          "candidate_interior_pixels_r2": 125545,
+          "candidate_meaningful_components": 82,
+          "candidate_only_bridge_fraction": 0.2989509146251367,
+          "candidate_only_bridge_pixels": 50581,
+          "candidate_only_interior_pixels_r2": 41307,
+          "candidate_only_pixels": 64268,
+          "candidate_sheetness": 0.08198823842312125,
+          "candidate_skeleton_matched_pixels": 10415,
+          "candidate_skeleton_pixels": 13872,
+          "candidate_skeleton_precision": 0.7507929642445214,
+          "dice_vs_reference": 0.7304350852767142,
+          "eligible_reference_components": 105,
+          "foreground_ratio_vs_reference": 1.4325811777655475,
+          "maximum_candidate_taxicab_radius": 35,
+          "maximum_candidate_taxicab_radius_delta_vs_reference": 22,
+          "maximum_reference_taxicab_radius": 24,
+          "merged_reference_component_excess": 41,
+          "merging_candidate_components": 14,
+          "precision_vs_reference": 0.6201542598776559,
+          "recall_vs_reference": 0.8884213200118538,
+          "reference_foreground_pixels": 118105,
+          "reference_interior_fraction_r2": 0.6315735997629228,
+          "reference_interior_pixels_r2": 74592,
+          "reference_meaningful_components": 105,
+          "reference_only_pixels": 13178,
+          "reference_sheetness": 0.09941154057829897,
+          "reference_skeleton_matched_pixels": 11101,
+          "reference_skeleton_pixels": 11741,
+          "reference_skeleton_recall": 0.9454901626777957,
+          "shared_pixels": 104927,
+          "slice_count": 18
+        },
+        "frontier_review": {
+          "reason": "outside measured coverage overlap; no extrapolation",
+          "resolved": false
+        },
+        "gate_thresholds": [
+          0.25,
+          0.3,
+          0.35,
+          0.55
+        ],
+        "gates": {
+          "0.25": {
+            "blob_score": 3.622237961836463,
+            "dice_vs_reference": 0.6534730243663317,
+            "fg_lower_advisory": true,
+            "fg_lower_pass": true,
+            "fg_upper_pass": false,
+            "foreground_ratio_vs_reference": 1.8422581739876858,
+            "interior_pass": false,
+            "passed": false,
+            "recall_vs_reference": 0.9286695224928302,
+            "thickness_pass": false,
+            "threshold": 0.25
+          },
+          "0.30": {
+            "blob_score": 2.9178350781440043,
+            "dice_vs_reference": 0.6770749015079388,
+            "fg_lower_advisory": true,
+            "fg_lower_pass": true,
+            "fg_upper_pass": false,
+            "foreground_ratio_vs_reference": 1.6593424058450084,
+            "interior_pass": false,
+            "passed": false,
+            "recall_vs_reference": 0.900286998756697,
+            "thickness_pass": false,
+            "threshold": 0.3
+          },
+          "0.35": {
+            "blob_score": 2.5,
+            "dice_vs_reference": 0.696063535494816,
+            "fg_lower_advisory": true,
+            "fg_lower_pass": true,
+            "fg_upper_pass": false,
+            "foreground_ratio_vs_reference": 1.4596059615072579,
+            "interior_pass": false,
+            "passed": false,
+            "recall_vs_reference": 0.8560210107454341,
+            "thickness_pass": false,
+            "threshold": 0.35
+          },
+          "0.55": {
+            "blob_score": 0.0,
+            "dice_vs_reference": 0.6167121316799737,
+            "fg_lower_advisory": true,
+            "fg_lower_pass": false,
+            "fg_upper_pass": true,
+            "foreground_ratio_vs_reference": 0.65290348867028,
+            "interior_pass": true,
+            "passed": true,
+            "recall_vs_reference": 0.5096828169795569,
+            "thickness_pass": true,
+            "threshold": 0.55
+          }
+        }
+      },
+      "label": "P_sep",
+      "level_ci_035": [
+        0.6108311440982874,
+        0.6360560648690797
+      ],
+      "samples": 10000,
+      "schema": "crossres-f0-family-arm-evaluation-v1",
+      "scroll_guard_passed": true
+    },
+    {
+      "calibrated_macro": 0.6549289857051466,
+      "calibrated_threshold": 0.5,
+      "checkpoint": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\arms\\P_sep\\checkpoint_milestone_00020000.pt",
+      "checkpoint_sha256": "1ad72ee4599396057bde7d743872052ac3a1f2d298e2ba2cdbb2480e0e69ec12",
+      "config_sha256": "b9be36cbfbe1471e88928ce9e1a46a01f898918078deea7ecbca224615131e23",
+      "eligible": false,
+      "fixed_t030_macro": 0.6269802061906411,
+      "fixed_t035_macro": 0.6384342528812172,
+      "fixed_t035_scrolls": {
+        "PHerc0814": 0.6478206059837496,
+        "PHerc1451": 0.6290478997786848
+      },
+      "geometry": {
+        "blind_report": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00020000\\blind_t035\\report\\index.html",
+        "checkpoint_sha256": "1ad72ee4599396057bde7d743872052ac3a1f2d298e2ba2cdbb2480e0e69ec12",
+        "frontier_fixed18_at_035": {
+          "candidate_foreground_pixels": 130593,
+          "candidate_interior_fraction_r2": 0.666605407640532,
+          "candidate_interior_fraction_r2_delta_vs_reference": 0.03503180787760918,
+          "candidate_interior_pixels_r2": 87054,
+          "candidate_meaningful_components": 95,
+          "candidate_only_bridge_fraction": 0.18380770791696338,
+          "candidate_only_bridge_pixels": 24004,
+          "candidate_only_interior_pixels_r2": 18702,
+          "candidate_only_pixels": 36767,
+          "candidate_sheetness": 0.09564831193096107,
+          "candidate_skeleton_matched_pixels": 10522,
+          "candidate_skeleton_pixels": 12491,
+          "candidate_skeleton_precision": 0.8423665038827957,
+          "dice_vs_reference": 0.7545376319873903,
+          "eligible_reference_components": 105,
+          "foreground_ratio_vs_reference": 1.10573642098133,
+          "maximum_candidate_taxicab_radius": 26,
+          "maximum_candidate_taxicab_radius_delta_vs_reference": 7,
+          "maximum_reference_taxicab_radius": 24,
+          "merged_reference_component_excess": 30,
+          "merging_candidate_components": 15,
+          "precision_vs_reference": 0.718461173263498,
+          "recall_vs_reference": 0.7944286863384277,
+          "reference_foreground_pixels": 118105,
+          "reference_interior_fraction_r2": 0.6315735997629228,
+          "reference_interior_pixels_r2": 74592,
+          "reference_meaningful_components": 105,
+          "reference_only_pixels": 24279,
+          "reference_sheetness": 0.09941154057829897,
+          "reference_skeleton_matched_pixels": 10133,
+          "reference_skeleton_pixels": 11741,
+          "reference_skeleton_recall": 0.8630440337279618,
+          "shared_pixels": 93826,
+          "slice_count": 18
+        },
+        "frontier_review": {
+          "candidate_bridges": 24004,
+          "coverage": 0.8630440337279618,
+          "maximum_candidate_bridges": 16817.44587155962,
+          "passed": false,
+          "reference_bridges_interpolated": 14014.538226299683,
+          "resolved": true
+        },
+        "gate_thresholds": [
+          0.25,
+          0.3,
+          0.35,
+          0.5
+        ],
+        "gates": {
+          "0.25": {
+            "blob_score": 2.866268373794286,
+            "dice_vs_reference": 0.6930622979964273,
+            "fg_lower_advisory": true,
+            "fg_lower_pass": true,
+            "fg_upper_pass": false,
+            "foreground_ratio_vs_reference": 1.570488727096276,
+            "interior_pass": false,
+            "passed": false,
+            "recall_vs_reference": 0.8907544120876281,
+            "thickness_pass": false,
+            "threshold": 0.25
+          },
+          "0.30": {
+            "blob_score": 2.0,
+            "dice_vs_reference": 0.7146440317132309,
+            "fg_lower_advisory": true,
+            "fg_lower_pass": true,
+            "fg_upper_pass": false,
+            "foreground_ratio_vs_reference": 1.3764188062755833,
+            "interior_pass": false,
+            "passed": false,
+            "recall_vs_reference": 0.849146758377963,
+            "thickness_pass": false,
+            "threshold": 0.3
+          },
+          "0.35": {
+            "blob_score": 1.0,
+            "dice_vs_reference": 0.7233608793918272,
+            "fg_lower_advisory": true,
+            "fg_lower_pass": true,
+            "fg_upper_pass": true,
+            "foreground_ratio_vs_reference": 1.183093894711842,
+            "interior_pass": false,
+            "passed": false,
+            "recall_vs_reference": 0.7895823597368435,
+            "thickness_pass": false,
+            "threshold": 0.35
+          },
+          "0.50": {
+            "blob_score": 0.0,
+            "dice_vs_reference": 0.6612627101096702,
+            "fg_lower_advisory": true,
+            "fg_lower_pass": false,
+            "fg_upper_pass": true,
+            "foreground_ratio_vs_reference": 0.7291920782815086,
+            "interior_pass": true,
+            "passed": true,
+            "recall_vs_reference": 0.5717251199923017,
+            "thickness_pass": true,
+            "threshold": 0.5
+          }
+        }
+      },
+      "label": "P_sep",
+      "level_ci_035": [
+        0.6266951445160286,
+        0.6504787336753767
+      ],
+      "samples": 20000,
+      "schema": "crossres-f0-family-arm-evaluation-v1",
+      "scroll_guard_passed": true
+    },
+    {
+      "calibrated_macro": 0.6560280754834946,
+      "calibrated_threshold": 0.550000011920929,
+      "checkpoint": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\arms\\P_sep\\checkpoint_milestone_00030000.pt",
+      "checkpoint_sha256": "c09950433d147c35588b7d1d6508696cf9e89652000095605970e2761de9bd43",
+      "config_sha256": "b9be36cbfbe1471e88928ce9e1a46a01f898918078deea7ecbca224615131e23",
+      "eligible": false,
+      "fixed_t030_macro": 0.6300678825697821,
+      "fixed_t035_macro": 0.640304448679831,
+      "fixed_t035_scrolls": {
+        "PHerc0814": 0.6508276241512104,
+        "PHerc1451": 0.6297812732084517
+      },
+      "geometry": {
+        "blind_report": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00030000\\blind_t035\\report\\index.html",
+        "checkpoint_sha256": "c09950433d147c35588b7d1d6508696cf9e89652000095605970e2761de9bd43",
+        "frontier_fixed18_at_035": {
+          "candidate_foreground_pixels": 146052,
+          "candidate_interior_fraction_r2": 0.6971695012735191,
+          "candidate_interior_fraction_r2_delta_vs_reference": 0.06559590151059624,
+          "candidate_interior_pixels_r2": 101823,
+          "candidate_meaningful_components": 92,
+          "candidate_only_bridge_fraction": 0.21099334483608578,
+          "candidate_only_bridge_pixels": 30816,
+          "candidate_only_interior_pixels_r2": 25226,
+          "candidate_only_pixels": 43576,
+          "candidate_sheetness": 0.09044039109358311,
+          "candidate_skeleton_matched_pixels": 10842,
+          "candidate_skeleton_pixels": 13209,
+          "candidate_skeleton_precision": 0.8208039972745855,
+          "dice_vs_reference": 0.7758719246508705,
+          "eligible_reference_components": 105,
+          "foreground_ratio_vs_reference": 1.2366284238601244,
+          "maximum_candidate_taxicab_radius": 31,
+          "maximum_candidate_taxicab_radius_delta_vs_reference": 15,
+          "maximum_reference_taxicab_radius": 24,
+          "merged_reference_component_excess": 32,
+          "merging_candidate_components": 14,
+          "precision_vs_reference": 0.7016405115986087,
+          "recall_vs_reference": 0.8676685999745989,
+          "reference_foreground_pixels": 118105,
+          "reference_interior_fraction_r2": 0.6315735997629228,
+          "reference_interior_pixels_r2": 74592,
+          "reference_meaningful_components": 105,
+          "reference_only_pixels": 15629,
+          "reference_sheetness": 0.09941154057829897,
+          "reference_skeleton_matched_pixels": 10949,
+          "reference_skeleton_pixels": 11741,
+          "reference_skeleton_recall": 0.9325440763137722,
+          "shared_pixels": 102476,
+          "slice_count": 18
+        },
+        "frontier_review": {
+          "reason": "outside measured coverage overlap; no extrapolation",
+          "resolved": false
+        },
+        "gate_thresholds": [
+          0.25,
+          0.3,
+          0.35,
+          0.55
+        ],
+        "gates": {
+          "0.25": {
+            "blob_score": 2.8413753628406346,
+            "dice_vs_reference": 0.7050511401293461,
+            "fg_lower_advisory": true,
+            "fg_lower_pass": true,
+            "fg_upper_pass": false,
+            "foreground_ratio_vs_reference": 1.5489991385430577,
+            "interior_pass": false,
+            "passed": false,
+            "recall_vs_reference": 0.898587374409252,
+            "thickness_pass": false,
+            "threshold": 0.25
+          },
+          "0.30": {
+            "blob_score": 2.5,
+            "dice_vs_reference": 0.7244081161650159,
+            "fg_lower_advisory": true,
+            "fg_lower_pass": true,
+            "fg_upper_pass": false,
+            "foreground_ratio_vs_reference": 1.3952649044079672,
+            "interior_pass": false,
+            "passed": false,
+            "recall_vs_reference": 0.8675746685591762,
+            "thickness_pass": false,
+            "threshold": 0.3
+          },
+          "0.35": {
+            "blob_score": 2.5,
+            "dice_vs_reference": 0.7379315851657428,
+            "fg_lower_advisory": true,
+            "fg_lower_pass": true,
+            "fg_upper_pass": true,
+            "foreground_ratio_vs_reference": 1.2372021434563822,
+            "interior_pass": false,
+            "passed": false,
+            "recall_vs_reference": 0.8254510620284828,
+            "thickness_pass": false,
+            "threshold": 0.35
+          },
+          "0.55": {
+            "blob_score": 0.0,
+            "dice_vs_reference": 0.6499618298178981,
+            "fg_lower_advisory": true,
+            "fg_lower_pass": false,
+            "fg_upper_pass": true,
+            "foreground_ratio_vs_reference": 0.6504222572219319,
+            "interior_pass": true,
+            "passed": true,
+            "recall_vs_reference": 0.5363557351380762,
+            "thickness_pass": true,
+            "threshold": 0.55
+          }
+        }
+      },
+      "label": "P_sep",
+      "level_ci_035": [
+        0.6276241030727984,
+        0.65306776047888
+      ],
+      "samples": 30000,
+      "schema": "crossres-f0-family-arm-evaluation-v1",
+      "scroll_guard_passed": true
+    },
+    {
+      "calibrated_macro": 0.6629628406263774,
+      "calibrated_threshold": 0.550000011920929,
+      "checkpoint": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\arms\\P_sep\\checkpoint_milestone_00040000.pt",
+      "checkpoint_sha256": "a81f30bb8095d6efba571471fb2ee098152dbae2819b295c6d32cdbb714e5672",
+      "config_sha256": "b9be36cbfbe1471e88928ce9e1a46a01f898918078deea7ecbca224615131e23",
+      "eligible": false,
+      "fixed_t030_macro": 0.6325569740808767,
+      "fixed_t035_macro": 0.6441461119690555,
+      "fixed_t035_scrolls": {
+        "PHerc0814": 0.6466181317847746,
+        "PHerc1451": 0.6416740921533363
+      },
+      "geometry": {
+        "blind_report": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00040000\\blind_t035\\report\\index.html",
+        "checkpoint_sha256": "a81f30bb8095d6efba571471fb2ee098152dbae2819b295c6d32cdbb714e5672",
+        "frontier_fixed18_at_035": {
+          "candidate_foreground_pixels": 151085,
+          "candidate_interior_fraction_r2": 0.701571962802396,
+          "candidate_interior_fraction_r2_delta_vs_reference": 0.06999836303947315,
+          "candidate_interior_pixels_r2": 105997,
+          "candidate_meaningful_components": 79,
+          "candidate_only_bridge_fraction": 0.2504418042823576,
+          "candidate_only_bridge_pixels": 37838,
+          "candidate_only_interior_pixels_r2": 29377,
+          "candidate_only_pixels": 49607,
+          "candidate_sheetness": 0.09540986861700368,
+          "candidate_skeleton_matched_pixels": 11174,
+          "candidate_skeleton_pixels": 14415,
+          "candidate_skeleton_precision": 0.7751647589316684,
+          "dice_vs_reference": 0.7539507411122256,
+          "eligible_reference_components": 105,
+          "foreground_ratio_vs_reference": 1.2792430464417255,
+          "maximum_candidate_taxicab_radius": 35,
+          "maximum_candidate_taxicab_radius_delta_vs_reference": 22,
+          "maximum_reference_taxicab_radius": 24,
+          "merged_reference_component_excess": 38,
+          "merging_candidate_components": 15,
+          "precision_vs_reference": 0.671661647417017,
+          "recall_vs_reference": 0.8592184920198129,
+          "reference_foreground_pixels": 118105,
+          "reference_interior_fraction_r2": 0.6315735997629228,
+          "reference_interior_pixels_r2": 74592,
+          "reference_meaningful_components": 105,
+          "reference_only_pixels": 16627,
+          "reference_sheetness": 0.09941154057829897,
+          "reference_skeleton_matched_pixels": 10829,
+          "reference_skeleton_pixels": 11741,
+          "reference_skeleton_recall": 0.922323481815859,
+          "shared_pixels": 101478,
+          "slice_count": 18
+        },
+        "frontier_review": {
+          "candidate_bridges": 37838,
+          "coverage": 0.922323481815859,
+          "maximum_candidate_bridges": 27699.73577981653,
+          "passed": false,
+          "reference_bridges_interpolated": 23083.113149847108,
+          "resolved": true
+        },
+        "gate_thresholds": [
+          0.25,
+          0.3,
+          0.35,
+          0.55
+        ],
+        "gates": {
+          "0.25": {
+            "blob_score": 3.0679284181526,
+            "dice_vs_reference": 0.6826317255265363,
+            "fg_lower_advisory": true,
+            "fg_lower_pass": true,
+            "fg_upper_pass": false,
+            "foreground_ratio_vs_reference": 1.6723172372773867,
+            "interior_pass": false,
+            "passed": false,
+            "recall_vs_reference": 0.9121042634184843,
+            "thickness_pass": false,
+            "threshold": 0.25
+          },
+          "0.30": {
+            "blob_score": 2.5,
+            "dice_vs_reference": 0.7015719459797496,
+            "fg_lower_advisory": true,
+            "fg_lower_pass": true,
+            "fg_upper_pass": false,
+            "foreground_ratio_vs_reference": 1.503354717052599,
+            "interior_pass": false,
+            "passed": false,
+            "recall_vs_reference": 0.8781417201600887,
+            "thickness_pass": false,
+            "threshold": 0.3
+          },
+          "0.35": {
+            "blob_score": 2.5,
+            "dice_vs_reference": 0.7145946044777607,
+            "fg_lower_advisory": true,
+            "fg_lower_pass": true,
+            "fg_upper_pass": false,
+            "foreground_ratio_vs_reference": 1.323591226140381,
+            "interior_pass": false,
+            "passed": false,
+            "recall_vs_reference": 0.8302128766058904,
+            "thickness_pass": false,
+            "threshold": 0.35
+          },
+          "0.55": {
+            "blob_score": 0.0,
+            "dice_vs_reference": 0.6463352425748208,
+            "fg_lower_advisory": true,
+            "fg_lower_pass": false,
+            "fg_upper_pass": true,
+            "foreground_ratio_vs_reference": 0.6867639162661805,
+            "interior_pass": true,
+            "passed": true,
+            "recall_vs_reference": 0.5451074824931782,
+            "thickness_pass": true,
+            "threshold": 0.55
+          }
+        }
+      },
+      "label": "P_sep",
+      "level_ci_035": [
+        0.6325234261668858,
+        0.6565672378913692
+      ],
+      "samples": 40000,
+      "schema": "crossres-f0-family-arm-evaluation-v1",
+      "scroll_guard_passed": true
+    },
+    {
+      "calibrated_macro": 0.6605206657758992,
+      "calibrated_threshold": 0.550000011920929,
+      "checkpoint": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\arms\\P_sep\\checkpoint_milestone_00050000.pt",
+      "checkpoint_sha256": "36b31832cfe47f4450acbaa992d0c98740b8f17b941e3f770da5cf523511beb2",
+      "config_sha256": "b9be36cbfbe1471e88928ce9e1a46a01f898918078deea7ecbca224615131e23",
+      "eligible": false,
+      "fixed_t030_macro": 0.6181649186854077,
+      "fixed_t035_macro": 0.6337738559436777,
+      "fixed_t035_scrolls": {
+        "PHerc0814": 0.6392021011857083,
+        "PHerc1451": 0.6283456107016472
+      },
+      "geometry": {
+        "blind_report": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00050000\\blind_t035\\report\\index.html",
+        "checkpoint_sha256": "36b31832cfe47f4450acbaa992d0c98740b8f17b941e3f770da5cf523511beb2",
+        "frontier_fixed18_at_035": {
+          "candidate_foreground_pixels": 156810,
+          "candidate_interior_fraction_r2": 0.7274982462853135,
+          "candidate_interior_fraction_r2_delta_vs_reference": 0.09592464652239063,
+          "candidate_interior_pixels_r2": 114079,
+          "candidate_meaningful_components": 82,
+          "candidate_only_bridge_fraction": 0.25281550921497353,
+          "candidate_only_bridge_pixels": 39644,
+          "candidate_only_interior_pixels_r2": 33613,
+          "candidate_only_pixels": 52416,
+          "candidate_sheetness": 0.08272431605127224,
+          "candidate_skeleton_matched_pixels": 10363,
+          "candidate_skeleton_pixels": 12972,
+          "candidate_skeleton_precision": 0.7988744989207524,
+          "dice_vs_reference": 0.7594638342760489,
+          "eligible_reference_components": 105,
+          "foreground_ratio_vs_reference": 1.3277168621142204,
+          "maximum_candidate_taxicab_radius": 40,
+          "maximum_candidate_taxicab_radius_delta_vs_reference": 23,
+          "maximum_reference_taxicab_radius": 24,
+          "merged_reference_component_excess": 36,
+          "merging_candidate_components": 14,
+          "precision_vs_reference": 0.6657356035967094,
+          "recall_vs_reference": 0.8839083866051395,
+          "reference_foreground_pixels": 118105,
+          "reference_interior_fraction_r2": 0.6315735997629228,
+          "reference_interior_pixels_r2": 74592,
+          "reference_meaningful_components": 105,
+          "reference_only_pixels": 13711,
+          "reference_sheetness": 0.09941154057829897,
+          "reference_skeleton_matched_pixels": 11118,
+          "reference_skeleton_pixels": 11741,
+          "reference_skeleton_recall": 0.9469380802316668,
+          "shared_pixels": 104394,
+          "slice_count": 18
+        },
+        "frontier_review": {
+          "reason": "outside measured coverage overlap; no extrapolation",
+          "resolved": false
+        },
+        "gate_thresholds": [
+          0.25,
+          0.3,
+          0.35,
+          0.55
+        ],
+        "gates": {
+          "0.25": {
+            "blob_score": 3.1705522473149292,
+            "dice_vs_reference": 0.6856324760738213,
+            "fg_lower_advisory": true,
+            "fg_lower_pass": true,
+            "fg_upper_pass": false,
+            "foreground_ratio_vs_reference": 1.6596316055909222,
+            "interior_pass": false,
+            "passed": false,
+            "recall_vs_reference": 0.9117649015927484,
+            "thickness_pass": false,
+            "threshold": 0.25
+          },
+          "0.30": {
+            "blob_score": 2.5,
+            "dice_vs_reference": 0.7052276078288475,
+            "fg_lower_advisory": true,
+            "fg_lower_pass": true,
+            "fg_upper_pass": false,
+            "foreground_ratio_vs_reference": 1.5003659784395191,
+            "interior_pass": false,
+            "passed": false,
+            "recall_vs_reference": 0.8816635588357689,
+            "thickness_pass": false,
+            "threshold": 0.3
+          },
+          "0.35": {
+            "blob_score": 2.5,
+            "dice_vs_reference": 0.7202216121093686,
+            "fg_lower_advisory": true,
+            "fg_lower_pass": true,
+            "fg_upper_pass": false,
+            "foreground_ratio_vs_reference": 1.3366794341103168,
+            "interior_pass": false,
+            "passed": false,
+            "recall_vs_reference": 0.8414635145088697,
+            "thickness_pass": false,
+            "threshold": 0.35
+          },
+          "0.55": {
+            "blob_score": 0.0,
+            "dice_vs_reference": 0.653549624054314,
+            "fg_lower_advisory": true,
+            "fg_lower_pass": false,
+            "fg_upper_pass": true,
+            "foreground_ratio_vs_reference": 0.6815125095525492,
+            "interior_pass": true,
+            "passed": true,
+            "recall_vs_reference": 0.5494759342303474,
+            "thickness_pass": true,
+            "threshold": 0.55
+          }
+        }
+      },
+      "label": "P_sep",
+      "level_ci_035": [
+        0.6219070216791504,
+        0.6466376181198905
+      ],
+      "samples": 50000,
+      "schema": "crossres-f0-family-arm-evaluation-v1",
+      "scroll_guard_passed": true
+    }
+  ],
+  "paired": {
+    "C3r": {
+      "0.30": {
+        "10000": {
+          "high": -0.03826758841981137,
+          "low": -0.056550732644836545,
+          "point": -0.04741638168585216
+        },
+        "20000": {
+          "high": -0.009944536855197956,
+          "low": -0.03283614613053788,
+          "point": -0.021541477606376702
+        },
+        "30000": {
+          "high": 0.017658937397569237,
+          "low": -0.010705035792374968,
+          "point": 0.0030691644819293984
+        },
+        "40000": {
+          "high": 0.008685096207962774,
+          "low": -0.013397309426197468,
+          "point": -0.002451144354589152
+        },
+        "50000": {
+          "high": -0.04052950161554076,
+          "low": -0.06226164469893531,
+          "point": -0.05178103335465556
+        }
+      },
+      "0.35": {
+        "10000": {
+          "high": -0.025923050331826843,
+          "low": -0.044408143953917276,
+          "point": -0.035336672502298994
+        },
+        "20000": {
+          "high": -0.0011848664414023436,
+          "low": -0.023287747007865987,
+          "point": -0.012228632649836424
+        },
+        "30000": {
+          "high": 0.026318945946410793,
+          "low": -0.0013238108299741254,
+          "point": 0.012283967553198272
+        },
+        "40000": {
+          "high": 0.01749763335281648,
+          "low": -0.004691570611733006,
+          "point": 0.006251703323016722
+        },
+        "50000": {
+          "high": -0.023793145327427177,
+          "low": -0.04510733566244467,
+          "point": -0.0347148852579392
+        }
+      }
+    },
+    "F0": {
+      "0.30": {
+        "10000": {
+          "high": -0.036308424971033516,
+          "low": -0.053919537989834704,
+          "point": -0.04517313486830288
+        },
+        "20000": {
+          "high": -0.007897482422264745,
+          "low": -0.030831910059996352,
+          "point": -0.01998413725979753
+        },
+        "30000": {
+          "high": -0.03869833139056897,
+          "low": -0.052366672749479835,
+          "point": -0.04542756567177486
+        },
+        "40000": {
+          "high": -0.02690752507346527,
+          "low": -0.043836702343540604,
+          "point": -0.035485840428010285
+        },
+        "50000": {
+          "high": -0.007454335071303295,
+          "low": -0.03727541067916749,
+          "point": -0.023041297336190425
+        }
+      },
+      "0.35": {
+        "10000": {
+          "high": -0.029278668066555553,
+          "low": -0.047470681640089905,
+          "point": -0.038560267654509595
+        },
+        "20000": {
+          "high": 0.005959004012747327,
+          "low": -0.016779128597543796,
+          "point": -0.005789065120971548
+        },
+        "30000": {
+          "high": -0.02953230079160715,
+          "low": -0.043900683613638115,
+          "point": -0.03654822282890613
+        },
+        "40000": {
+          "high": -0.01971136098736016,
+          "low": -0.03585019399002449,
+          "point": -0.02782285723052491
+        },
+        "50000": {
+          "high": 0.010736343579344868,
+          "low": -0.0198399046418158,
+          "point": -0.005164516623912374
+        }
+      }
+    }
+  },
+  "pooled": {
+    "C3r": {
+      "0.30": {
+        "cluster_mode": "support_anchor_chunk_zyx",
+        "clusters_per_scroll": {
+          "PHerc0814": 256,
+          "PHerc1451": 142
+        },
+        "comparator": "C3r",
+        "confidence": 0.95,
+        "delta": {
+          "half_width": 0.009767139569938816,
+          "high": -0.01376947072701668,
+          "low": -0.033303749866894314,
+          "mean": -0.02413116063230827,
+          "point": -0.024024174503908834,
+          "probability_delta_le_zero": 1.0,
+          "std": 0.00492757263293251
+        },
+        "kind": "pooled-paired-delta",
+        "milestone_samples": [
+          10000,
+          20000,
+          30000,
+          40000,
+          50000
+        ],
+        "milestones": 5,
+        "pairing": "one cluster resample matrix shared by every audit of both runs",
+        "per_milestone": [
+          {
+            "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00010000\\audit\\report.json",
+            "candidate_macro": 0.6103936411275694,
+            "delta": -0.04741638168585216,
+            "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00010000\\audit\\report.json",
+            "reference_macro": 0.6578100228134216
+          },
+          {
+            "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00020000\\audit\\report.json",
+            "candidate_macro": 0.6269802061906411,
+            "delta": -0.021541477606376702,
+            "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00020000\\audit\\report.json",
+            "reference_macro": 0.6485216837970178
+          },
+          {
+            "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00030000\\audit\\report.json",
+            "candidate_macro": 0.6300678825697821,
+            "delta": 0.0030691644819293984,
+            "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00030000\\audit\\report.json",
+            "reference_macro": 0.6269987180878527
+          },
+          {
+            "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00040000\\audit\\report.json",
+            "candidate_macro": 0.6325569740808767,
+            "delta": -0.002451144354589152,
+            "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00040000\\audit\\report.json",
+            "reference_macro": 0.6350081184354659
+          },
+          {
+            "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00050000\\audit\\report.json",
+            "candidate_macro": 0.6181649186854077,
+            "delta": -0.05178103335465556,
+            "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00050000\\audit\\report.json",
+            "reference_macro": 0.6699459520400632
+          }
+        ],
+        "reference_threshold": 0.3,
+        "replicates": 2000,
+        "schema": "crossres-voxel-audit-bootstrap-v1",
+        "seed": 20260908,
+        "threshold": 0.29999998211860657
+      },
+      "0.35": {
+        "cluster_mode": "support_anchor_chunk_zyx",
+        "clusters_per_scroll": {
+          "PHerc0814": 256,
+          "PHerc1451": 142
+        },
+        "comparator": "C3r",
+        "confidence": 0.95,
+        "delta": {
+          "half_width": 0.009573582496424793,
+          "high": -0.0027811161476217574,
+          "low": -0.021928281140471344,
+          "mean": -0.012874374930948231,
+          "point": -0.012748903906771924,
+          "probability_delta_le_zero": 0.9975,
+          "std": 0.004800128202890739
+        },
+        "kind": "pooled-paired-delta",
+        "milestone_samples": [
+          10000,
+          20000,
+          30000,
+          40000,
+          50000
+        ],
+        "milestones": 5,
+        "pairing": "one cluster resample matrix shared by every audit of both runs",
+        "per_milestone": [
+          {
+            "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00010000\\audit\\report.json",
+            "candidate_macro": 0.6231392722995406,
+            "delta": -0.035336672502298994,
+            "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00010000\\audit\\report.json",
+            "reference_macro": 0.6584759448018396
+          },
+          {
+            "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00020000\\audit\\report.json",
+            "candidate_macro": 0.6384342528812172,
+            "delta": -0.012228632649836424,
+            "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00020000\\audit\\report.json",
+            "reference_macro": 0.6506628855310537
+          },
+          {
+            "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00030000\\audit\\report.json",
+            "candidate_macro": 0.640304448679831,
+            "delta": 0.012283967553198272,
+            "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00030000\\audit\\report.json",
+            "reference_macro": 0.6280204811266328
+          },
+          {
+            "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00040000\\audit\\report.json",
+            "candidate_macro": 0.6441461119690555,
+            "delta": 0.006251703323016722,
+            "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00040000\\audit\\report.json",
+            "reference_macro": 0.6378944086460387
+          },
+          {
+            "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00050000\\audit\\report.json",
+            "candidate_macro": 0.6337738559436777,
+            "delta": -0.0347148852579392,
+            "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00050000\\audit\\report.json",
+            "reference_macro": 0.6684887412016169
+          }
+        ],
+        "reference_threshold": 0.35,
+        "replicates": 2000,
+        "schema": "crossres-voxel-audit-bootstrap-v1",
+        "seed": 20260908,
+        "threshold": 0.3499999940395355
+      }
+    },
+    "F0": {
+      "0.30": {
+        "cluster_mode": "support_anchor_chunk_zyx",
+        "clusters_per_scroll": {
+          "PHerc0814": 256,
+          "PHerc1451": 142
+        },
+        "comparator": "F0",
+        "confidence": 0.95,
+        "delta": {
+          "half_width": 0.008658837522604795,
+          "high": -0.02485982391667605,
+          "low": -0.04217749896188564,
+          "mean": -0.03393193244394699,
+          "point": -0.03382239511281519,
+          "probability_delta_le_zero": 1.0,
+          "std": 0.004478677118722866
+        },
+        "kind": "pooled-paired-delta",
+        "milestone_samples": [
+          10000,
+          20000,
+          30000,
+          40000,
+          50000
+        ],
+        "milestones": 5,
+        "pairing": "one cluster resample matrix shared by every audit of both runs",
+        "per_milestone": [
+          {
+            "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00010000\\audit\\report.json",
+            "candidate_macro": 0.6103936411275694,
+            "delta": -0.04517313486830288,
+            "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\F0\\milestone_00010000\\audit\\report.json",
+            "reference_macro": 0.6555667759958723
+          },
+          {
+            "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00020000\\audit\\report.json",
+            "candidate_macro": 0.6269802061906411,
+            "delta": -0.01998413725979753,
+            "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\F0\\milestone_00020000\\audit\\report.json",
+            "reference_macro": 0.6469643434504386
+          },
+          {
+            "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00030000\\audit\\report.json",
+            "candidate_macro": 0.6300678825697821,
+            "delta": -0.04542756567177486,
+            "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\F0\\milestone_00030000\\audit\\report.json",
+            "reference_macro": 0.6754954482415569
+          },
+          {
+            "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00040000\\audit\\report.json",
+            "candidate_macro": 0.6325569740808767,
+            "delta": -0.035485840428010285,
+            "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\F0\\milestone_00040000\\audit\\report.json",
+            "reference_macro": 0.668042814508887
+          },
+          {
+            "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00050000\\audit\\report.json",
+            "candidate_macro": 0.6181649186854077,
+            "delta": -0.023041297336190425,
+            "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\F0\\milestone_00050000\\audit\\report.json",
+            "reference_macro": 0.6412062160215981
+          }
+        ],
+        "reference_threshold": 0.3,
+        "replicates": 2000,
+        "schema": "crossres-voxel-audit-bootstrap-v1",
+        "seed": 20260908,
+        "threshold": 0.29999998211860657
+      },
+      "0.35": {
+        "cluster_mode": "support_anchor_chunk_zyx",
+        "clusters_per_scroll": {
+          "PHerc0814": 256,
+          "PHerc1451": 142
+        },
+        "comparator": "F0",
+        "confidence": 0.95,
+        "delta": {
+          "half_width": 0.008583516967941435,
+          "high": -0.013957496119733768,
+          "low": -0.031124530055616637,
+          "mean": -0.022902022954438318,
+          "point": -0.02277698589176491,
+          "probability_delta_le_zero": 1.0,
+          "std": 0.004425835317579304
+        },
+        "kind": "pooled-paired-delta",
+        "milestone_samples": [
+          10000,
+          20000,
+          30000,
+          40000,
+          50000
+        ],
+        "milestones": 5,
+        "pairing": "one cluster resample matrix shared by every audit of both runs",
+        "per_milestone": [
+          {
+            "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00010000\\audit\\report.json",
+            "candidate_macro": 0.6231392722995406,
+            "delta": -0.038560267654509595,
+            "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\F0\\milestone_00010000\\audit\\report.json",
+            "reference_macro": 0.6616995399540502
+          },
+          {
+            "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00020000\\audit\\report.json",
+            "candidate_macro": 0.6384342528812172,
+            "delta": -0.005789065120971548,
+            "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\F0\\milestone_00020000\\audit\\report.json",
+            "reference_macro": 0.6442233180021888
+          },
+          {
+            "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00030000\\audit\\report.json",
+            "candidate_macro": 0.640304448679831,
+            "delta": -0.03654822282890613,
+            "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\F0\\milestone_00030000\\audit\\report.json",
+            "reference_macro": 0.6768526715087372
+          },
+          {
+            "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00040000\\audit\\report.json",
+            "candidate_macro": 0.6441461119690555,
+            "delta": -0.02782285723052491,
+            "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\F0\\milestone_00040000\\audit\\report.json",
+            "reference_macro": 0.6719689691995804
+          },
+          {
+            "candidate": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_rescue_20260909\\evaluation\\P_sep\\milestone_00050000\\audit\\report.json",
+            "candidate_macro": 0.6337738559436777,
+            "delta": -0.005164516623912374,
+            "reference": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\F0\\milestone_00050000\\audit\\report.json",
+            "reference_macro": 0.6389383725675901
+          }
+        ],
+        "reference_threshold": 0.35,
+        "replicates": 2000,
+        "schema": "crossres-voxel-audit-bootstrap-v1",
+        "seed": 20260908,
+        "threshold": 0.3499999940395355
+      }
+    }
+  },
+  "schema": "crossres-f0-rescue-arm-evaluation-v1",
+  "stage": "kill",
+  "thickening": {
+    "checks": [
+      {
+        "f0_foreground_ratio": 0.7765604373723874,
+        "fg_grown": true,
+        "foreground_ratio": 1.323591226140381,
+        "frontier_fail": true,
+        "interior_fail": true,
+        "samples": 40000,
+        "thickness_fail": true
+      },
+      {
+        "f0_foreground_ratio": 0.7085286284714847,
+        "fg_grown": true,
+        "foreground_ratio": 1.3366794341103168,
+        "frontier_fail": false,
+        "interior_fail": true,
+        "samples": 50000,
+        "thickness_fail": true
+      }
+    ],
+    "fg_ratio_growth": 1.1,
+    "triggered": true
+  },
+  "verdict": {
+    "inert": false,
+    "k1_gates": true,
+    "k2_frontier": false,
+    "k3_pooled_delta": false,
+    "killed": true,
+    "pooled_vs_c3r_035": {
+      "half_width": 0.009573582496424793,
+      "high": -0.0027811161476217574,
+      "low": -0.021928281140471344,
+      "mean": -0.012874374930948231,
+      "point": -0.012748903906771924,
+      "probability_delta_le_zero": 0.9975,
+      "std": 0.004800128202890739
+    },
+    "pooled_vs_f0_035": {
+      "half_width": 0.008583516967941435,
+      "high": -0.013957496119733768,
+      "low": -0.031124530055616637,
+      "mean": -0.022902022954438318,
+      "point": -0.02277698589176491,
+      "probability_delta_le_zero": 1.0,
+      "std": 0.004425835317579304
+    },
+    "reason": "K1 gates/guard fail at 40k and 50k",
+    "survivor": false
+  }
+}

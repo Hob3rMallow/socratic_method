@@ -1,0 +1,293 @@
+\section{What We Also Tried}
+\label{sec:also-tried}
+
+The objective in Eq.~\ref{eq:objective} has three terms.
+An earlier version of this method had seven, listed in
+Table~\ref{tab:retired}.
+This appendix records what those terms were, why each seemed justified, and
+what happened when they were measured in a regime where they could have been
+right.
+We report them because the reduction was the most informative result of the
+project, and because a reader deciding whether to build a similar objective
+deserves the negative half of our evidence.
+
+\begin{table}[t]
+\caption{The earlier seven-term objective. ``Weight'' is the shipped value in
+that configuration. Only the first two terms and the M7 function anchor remain.
+Section references point to the measurement that retired each term.}
+\label{tab:retired}
+\centering
+\small
+\begin{tabular}{llll}
+\toprule
+Term & Weight & Status & See \\
+\midrule
+Soft cross-entropy & 1.0 & retained & Sec.~\ref{sec:crossres} \\
+Soft Dice & 0.25 & retained, reweighted & Sec.~\ref{sec:crossres} \\
+M7 function anchor & 0.5 & retained & Sec.~\ref{sec:crossres} \\
+Medial crest recall & 1.0 & retired & \ref{sec:also-crest} \\
+Separation shell & 2.0 & retired & \ref{sec:also-separation} \\
+M7 preservation & 1.0 & retired & \ref{sec:also-preservation} \\
+Dynamic connectivity & 0.03125 & retired & \ref{sec:also-connectivity} \\
+\midrule
+Trust region & --- & retired & App.~\ref{sec:trust} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Why the Stack Survived as Long as It Did}
+\label{sec:also-regime}
+
+The terms were not retained because they had been shown to work.
+They were retained because, in the regime where they were developed, nothing
+could be shown either way, and a term that shows no measurable effect is easy to
+keep.
+Three properties of that regime were jointly responsible.
+
+First, the parameter-space trust region was saturated: the post-update
+projection was active on essentially every optimizer step, so no term could
+move the function far enough to demonstrate either benefit or harm.
+Appendix~\ref{sec:trust} treats this in detail because it is the load-bearing
+failure.
+
+Second, the promotion gate rewarded the behaviour the terms produced.
+Its dominant criterion required that at least 95\% of the M7 voxels already
+judged teacher-correct survive within a one-voxel neighbourhood of the
+student's prediction.
+That is a retention test, and preservation and the anchor are retention terms.
+A thinner, better student fails it.
+Cross-referencing the artifacts of that era, no shipped term scored above the
+no-term baseline on this gate; the only intervention that moved it was an
+inference-time blend with M7, which was itself later withdrawn as confounded.
+A companion anti-blob check compounded the problem by pinning its reference to
+an older prediction grid with a foreground cap, which bounded any candidate at
+roughly 39\% of the foreground of a previously accepted model and made growth
+scoreable only as a violation.
+
+Third, the training corpus had narrowed to 4,096 rows from a single scroll.
+A shape prior is most attractive exactly when data is scarce, and least
+testable for the same reason.
+
+A fourth, procedural point belongs here.
+The terms were added incrementally and evaluated as a stack against the previous
+stack, so what was tuned was the interaction, not the terms.
+Leave-one-out arms were specified for five of them and never trained.
+Preservation is the clearest casualty of this ordering: it was always paired
+with the separation shell that offsets its cost, so the question of what it does
+alone was never asked until it was asked directly
+(Sec.~\ref{sec:also-preservation}).
+
+\subsection{Single-Term Ablations}
+\label{sec:also-single}
+
+Once the corpus was widened and the trust region removed, each candidate term
+could be added individually to a common baseline.
+Table~\ref{tab:ablation} reports arms trained from released M7 under the
+optimizer of Sec.~\ref{sec:crossres}, all declaring the same horizon and all
+terminated at the same milestone, differing only in the named flag.
+
+\begin{table}[t]
+\caption{Single-term ablations on the wide corpus with no trust region, best
+frozen milestone, macro-scroll Dice. The seed replicate differs from the
+baseline only in its random seed and bounds what any single arm can claim.}
+\label{tab:ablation}
+\centering
+\small
+\begin{tabular}{lr}
+\toprule
+Arm & Macro Dice \\
+\midrule
+Occupancy only (CE + Dice) & $\ablBaseline$ \\
+Occupancy only, seed replicate & $\ablSeedReplicate$ \\
+\midrule
+$+$ separation shell $0.5$ & $\ablSeparation$ \\
+$+$ M7 function anchor $0.5$ & $\mathbf{\ablKL}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The anchor is the one term that clears its own noise floor, and it is the one
+term in Eq.~\ref{eq:objective}.
+The separation arm lands below the baseline.
+The two occupancy-only arms differ from each other by more than most effects we
+were trying to detect, which is why every later comparison is expressed against
+a measured seed band rather than against zero.
+
+\subsection{Separation Shell}
+\label{sec:also-separation}
+
+The shell placed background cross-entropy on a two-voxel dilation of the
+teacher-supported positives, intersected with confidently empty teacher space.
+The intent was a local fence: attack unsupported girth and short cross-wrap
+welds while leaving the occupancy term free to grow faint material elsewhere.
+
+Measured as a dial, it does what it claims.
+On a separate release-ladder sweep, raising its weight from $2$ to $3$ cut
+reference-relative bridge pixels by roughly half.
+It also cost about sixteen points of reference skeleton recall, against a
+tolerance of one, and lowering it toward zero inverted both effects.
+What the sweep does not show is any movement of the underlying trade.
+Compared at matched coverage rather than at a fixed threshold, a model trained
+with the shell sits on the same bridge-versus-coverage curve as one trained
+without it; the shell selects a point on that curve, and so does the
+segmentation threshold, which is free.
+We retired it because a training-time term that duplicates a deployment-time
+dial should be the dial.
+
+\subsection{Medial Crest Recall}
+\label{sec:also-crest}
+
+The crest term supervised sheet \emph{existence} separately from amount of
+material.
+The fine teacher's medial surface was extracted with the center--radius view of
+LSMAT~\cite{rebain2019lsmat}, projected to the coarse grid with a max operator
+so that a thin center survives downsampling, and rewarded through a per-sample
+recall term evaluated only on crest voxels.
+Slice-wise radii were deliberate: pairing 2D centers with a 3D distance
+transform would substitute spheres for disks and collapse the medial surface
+toward a curve.
+
+Its premise was the occupancy ceiling of Sec.~\ref{sec:crossres}.
+That premise is corpus-dependent, and on the wide corpus the diagnostic that
+was supposed to trigger the term does not fire: the fraction of
+continuation-band validation voxels already above the lowest gate-passing
+threshold is comfortably above the level at which a ceiling would be indicated.
+The term was accordingly never triggered for a wide-corpus arm of its own.
+Where it was measured, on the narrower release ladder, raising its weight
+reduced bridge burden by roughly a fifth but cost five points of skeleton
+recall against the same one-point tolerance, and the rendered panels showed it
+refilling broad mass rather than extending thin lines.
+Global recall pressure turned out to be the wrong shape for the problem: it
+buys length by buying width.
+
+A focused variant survives as untested rather than refuted.
+Instead of rewarding all crest voxels, it applies a one-sided hinge to the
+weakest fifth of them, so gradient vanishes once a selected voxel clears a floor.
+It had the best burden-versus-recall behaviour of the medial family in its one
+trial, and it cannot be evaluated on the present corpus at all: the term
+requires a medial sidecar on every training row, and the human-labelled rows of
+the wide corpus can never carry one.
+Testing it means building a crest-complete corpus first, which changes the
+corpus and therefore needs its own control arm.
+
+\subsection{M7 Positive Preservation}
+\label{sec:also-preservation}
+
+Preservation applied a one-sided foreground cross-entropy to voxels where the
+frozen M7 predicted foreground inside a two-voxel corridor around teacher
+positives.
+Its stated job was to stop de-blobbing from deleting M7-supported sheet, and it
+had the best surviving motivation of any retired term: our students beat M7 on
+overlap and on merge behaviour but lose to it on topology on the one
+human-labelled holdout, which is the deficit preservation is shaped to fix.
+
+It was also, of the seven, the only term never measured in isolation at scale,
+so we measured it.
+Three arms were preregistered against the shipped recipe, each declaring the
+full horizon and terminating at a common milestone: the original hard form at
+its shipped weight; a one-sided soft-floor form that resists only where the
+student has fallen below M7; and, conditional on a rim-thickening trigger, the
+hard form paired with a reduced separation shell.
+Kill criteria, a seed-derived tie margin, and the thickening trigger were fixed
+before any arm ran.
+
+All three were rejected, and the failure mode was the one the preregistration
+named.
+Pooled paired deltas against the shipped recipe over five matched milestones
+were $\presHard$ for the hard form, $\presSoft$ for the soft floor, and
+$\presSep$ for the shell-paired arm, every interval excluding zero.
+Each arm failed the blind six-cube morphology gate at two consecutive
+milestones on interior fraction and maximum thickness.
+Foreground ran between $1.3$ and $2.3$ times the reference where the shipped
+recipe runs at $0.71$, and reference-relative bridge pixels ran an order of
+magnitude above it.
+The frontier veto could not even be evaluated: at the coverage these models
+reach, they lie beyond the end of the reference curve, which is itself the
+finding.
+None of the arms was inert---the term contributed between 13\% and 22\% of the
+committed training loss---so these are measured negatives rather than absences.
+
+The shell-paired arm is the informative one.
+It halves the damage on every axis and still fails every gate.
+Read together, the three arms say that preservation's cost is paid in girth and
+that the separation shell of the original stack existed to pay it.
+Reconstructing that pair means reintroducing a term we retired in
+Sec.~\ref{sec:also-separation} for duplicating a free deployment-time dial.
+
+\subsection{Dynamic Connectivity}
+\label{sec:also-connectivity}
+
+The connectivity term asked, existentially, for some viable route through an
+audited teacher-medial corridor joining two or more disconnected M7 components.
+Its precursor prescribed one minimum-off-axis route and raised the weakest
+tenth of its logits; that version tied the incumbent at the smallest weight and
+degraded ordinary validation monotonically at larger ones, which is what
+motivated replacing a prescribed path with a bottleneck on whichever path the
+student currently supports.
+The mechanism is sound and we still regard it as the most interesting of the
+retired terms.
+
+It is nonetheless inapplicable to the corpus that produced our result, for a
+structural reason rather than a measured one.
+An event requires a full-volume M7 prediction to define the component-contact
+pins, and that prediction exists for exactly one of the training scrolls.
+The frozen atlas contains 149 events, all from that scroll; on the wide corpus
+roughly three percent of rows carry any event at all, so the term is close to
+inert by construction and its weight cannot be interpreted.
+Producing the missing full-volume predictions is days of inference, and until
+that exists the honest status is untested at breadth, not refuted.
+
+\begin{figure*}[t]
+  \centering
+  \figureasset{figure_crossres_supervision}{0.96\linewidth}{2.0in}
+  \caption{Supervision fields from the retired seven-term configuration, shown
+  on actual training data at dynamic event 138. Projected soft occupancy is
+  retained by the present method; the sparse medial crest, the radius-two
+  separation shell, the teacher-medial corridor, the component-contact pins and
+  the free anchors supplied to the max--min connectivity recurrence all belong
+  to terms this appendix retires.}
+  \Description{Training slice with projected teacher occupancy, medial crest,
+  de-blob shell, M7 fragments, and dynamic-connectivity metadata.}
+  \label{fig:supervision}
+\end{figure*}
+
+\subsection{Terms Proposed and Rejected Later}
+\label{sec:also-later}
+
+Two further candidates were measured after the reduction and are recorded for
+completeness.
+A hardened Dice term, taking the thresholded label the benchmark actually
+scores in addition to the soft target, lost to the shipped recipe at both
+matched milestones with intervals excluding zero, and carries a documented
+confound: human rows are already binary, so their Dice weight doubles.
+Dropping the human-labelled rows entirely lost at the earlier milestone and won
+narrowly at the later one, inside the seed band, and was not promoted.
+
+\subsection{The Retired Configuration, for Reference}
+\label{sec:also-v31}
+
+Table~\ref{tab:duration} preserves the completed duration ladder of the
+seven-term configuration on its single-scroll corpus, as originally reported.
+Its best calibrated macro-scroll Dice was $\bestMacro$ at \bestSamplesText\
+samples, a gain of roughly $0.02$ over released M7.
+The present method gains $\fzGain$ on the frozen benchmark.
+The entire seven-term stack was worth about a sixth of what corpus breadth and
+a completed schedule were worth, which is the ratio we would most like a reader
+to take away.
+
+\begin{table}[t]
+\caption{Historical duration ladder of the retired seven-term configuration.
+``Cal.'' is calibrated macro-scroll Dice; ``$t=.40$'' uses a fixed threshold;
+``gain'' is calibrated macro gain over the M7 initial model. All calibrated
+thresholds equal the $0.25$ search boundary, so the optimum is censored.}
+\label{tab:duration}
+\centering
+\small
+\begin{tabular}{rrrrr}
+\toprule
+Samples & Cal. & $t=.40$ & Gain & Min. gain \\
+\midrule
+\durationRows
+\bottomrule
+\end{tabular}
+\end{table}

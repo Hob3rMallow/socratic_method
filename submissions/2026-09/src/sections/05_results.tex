@@ -1,0 +1,171 @@
+\section{Results}
+\label{sec:results}
+
+\subsection{Evaluation Protocol}
+
+Our primary measurement is macro-scroll Dice on a frozen 689-row benchmark
+drawn from the two held-out scrolls: the unweighted mean of the per-scroll
+pooled Dice, so a scroll contributes equally regardless of how many rows it
+supplies.
+The benchmark manifest, its row set, and its threshold grid were fixed before
+this study and are hash-checked at evaluation time.
+
+Three protocol choices matter for interpreting what follows.
+First, the operating threshold is declared rather than fitted per candidate:
+$t=\fzPrimaryT$ is the primary endpoint and $t=\fzShipT$ the single
+preregistered secondary point, chosen a priori because it is the calibrated
+argmax at 21 of 25 milestones.
+A per-candidate calibrated threshold is reported as a diagnostic only, since
+selecting it inside the same rows inflates the score.
+Second, uncertainty is measured by paired cluster bootstrap: sampling units are
+support-anchor chunks within a scroll rather than individual rows, because many
+validation rows share an anchor, and a candidate and its reference are resampled
+with identical weights so their difference is paired.
+Such an interval describes patch sampling and says nothing about seed noise,
+which we measure separately.
+Third, a promoted candidate must additionally pass a blind six-cube morphology
+gate on PHerc1447 and a frontier veto: its reference-relative bridge pixels may
+not exceed $1.20$ times the reference curve interpolated at matched skeleton
+coverage, with no extrapolation outside the measured coverage overlap.
+
+\subsection{Milestone Behaviour and Seed Noise}
+
+All 25 milestones completed their frozen audits and were gate-eligible at
+$t=\fzPrimaryT$.
+The response is not a curve that rises and plateaus.
+Over the eleven late milestones at or beyond $150{,}000$ exposures, the mean
+fixed-threshold macro Dice is $\fzLateMean$ with a standard deviation of
+$\fzLateSD$, and adjacent milestones swing by several times that deviation in
+both directions.
+Batch three with momentum $0.99$ random-walks in a flat basin.
+
+The preregistered late-selection rule chooses \fzSelected\ exposures at
+$\fzMacroFull$.
+For context rather than selection, the global maximum over all milestones is
+$\fzGlobalMax$ and the exact endpoint is $\fzEndpoint$, so a rule that simply
+took the last checkpoint would have lost roughly a standard deviation of
+milestone noise.
+
+We ran a second full-horizon replicate under an identical recipe with a
+different seed in order to know how much of that spread is not attributable to
+the method at all.
+Its root-mean-square difference from the primary run across the 25 matched
+milestones is $\seedRMS$, falling to $\seedRMSLate$ over the late band.
+This number is the reason we do not claim duration superiority: the gap between
+our selected milestone and an early milestone of the same recipe is smaller
+than the difference two seeds of that recipe produce.
+It is also the yardstick every ablation in Appendix~\ref{sec:also-tried} is
+measured against.
+
+\subsection{Comparison with Released M7}
+
+Table~\ref{tab:headline} reports the frozen benchmark under matched inference.
+Against released M7 evaluated identically and at the same threshold, the
+student gains $\fzGain$ macro Dice, a 22.9\% relative improvement.
+The comparison is not an ensemble: inference runs the raw student alone, with
+no teacher forward pass and no probability blend.
+
+\begin{table}[t]
+\caption{Frozen 689-row benchmark, macro-scroll Dice. TTA is eight-way mirror
+test-time augmentation on unchanged weights. The student's $t$ values are
+preregistered; M7's calibrated $t=0.20$ is fitted in-sample and therefore
+favours the baseline.}
+\label{tab:headline}
+\centering
+\small
+\begin{tabular}{llr}
+\toprule
+Model & Inference & Macro Dice \\
+\midrule
+Released M7 & $t=\fzPrimaryT$ & $\mSevenMacro$ \\
+Released M7 & TTA, $t=\fzShipT$ & $\mSevenTtaMacro$ \\
+Released M7 & TTA, calibrated $t=0.20$ & $\mSevenTtaCalibrated$ \\
+\midrule
+Ours (\fzSelectedShort) & $t=\fzPrimaryT$ & $\fzMacro$ \\
+Ours (\fzSelectedShort) & TTA, $t=\fzPrimaryT$ & $\fzTtaPrimary$ \\
+Ours (\fzSelectedShort) & TTA, $t=\fzShipT$ & $\mathbf{\fzTtaMacro}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Inference-Time Levers}
+
+Two levers that change no weights were preregistered before scoring, together
+with the rule that a claim above $0.70$ requires a positive paired lower bound
+after Holm correction and non-negative deltas on both scrolls.
+Eight-way mirror TTA at $t=\fzShipT$ reaches $\fzTtaMacro$
+$[\fzTtaLow,\fzTtaHigh]$, a paired gain of $\fzTtaDelta$
+$[\fzTtaDeltaLow,\fzTtaDeltaHigh]$ over the same weights without TTA, positive
+on both scrolls.
+At the primary endpoint $t=\fzPrimaryT$ the same weights reach $\fzTtaPrimary$.
+
+We also evaluated uniform weight averages over late milestones.
+They reduce variance without shifting the level: no narrow late average beat the
+selected milestone, and only a wide average spanning $100{,}000$ to
+$\fzHorizon$ exposures edged past it, by less than the seed band.
+We report those variants and do not promote them.
+
+At the shipped operating point the blind six-cube gates and the frontier veto
+pass: foreground ratio $0.799$ against the reference, with $4{,}945$
+reference-relative bridge pixels against a $7{,}983$ ceiling at the measured
+skeleton coverage of $0.782$.
+A Kaggle-style composite on the same rows rises from $\fzComposite$ to
+$\fzCompositeTta$, with the topology component rising from $\fzTopo$ to
+$\fzTopoTta$ and thereby meeting the $\fzTopoAdvisory$ advisory that the
+no-TTA configuration missed.
+
+\subsection{Held-Out Human Labels}
+
+On PHerc0500P2, the one held-out set with human rather than model-derived
+labels, every variant we measured scores between $0.476$ and $0.497$ composite:
+the spread is smaller than the differences we are trying to resolve.
+Released M7 with TTA at its calibrated threshold remains ahead there at
+$0.5015$.
+These are absolute scores only and not a gain claim, because released M7 saw
+those labels during its own training; we report them because a flat result on
+the only human-labelled holdout is a real limit on what the frozen benchmark
+establishes.
+
+\subsection{Figure Provenance}
+\label{sec:figure-provenance}
+
+Every rendered panel in this draft---the teaser,
+Fig.~\ref{fig:registered}, Fig.~\ref{fig:limitations}, and both galleries in
+Sec.~\ref{sec:gallery}---shows the earlier v31 student at $t=0.45$, not the
+model reported in Table~\ref{tab:headline}.
+Those panels were produced for the earlier configuration and have not yet been
+regenerated.
+They remain informative about the qualitative failure modes the method
+addresses, and the registered comparison grammar is unchanged, but they should
+not be read as depicting the shipped weights.
+Regenerating the panel set against the selected checkpoint is outstanding
+release work and is listed in Sec.~\ref{sec:limitations}.
+The quantitative gate review of the shipped model, including its six-cube
+panels, is complete and lives in the release record.
+
+\begin{figure*}[t]
+  \centering
+  \figureasset{figure_2_registered_examples}{0.96\linewidth}{2.2in}
+  \caption{Locked PHerc0139 comparisons at a fixed operating point.
+  Columns show the same CT crop, released M7, projected fine-teacher target, raw
+  student, and a two-sided teacher comparison. Green denotes shared foreground,
+  yellow teacher-only foreground, and magenta student-only foreground.
+  Student panels show the v31 configuration; see
+  Sec.~\ref{sec:figure-provenance}.}
+  \Description{Four registered locked examples comparing CT, released M7,
+  projected teacher, raw student, and two-sided difference.}
+  \label{fig:registered}
+\end{figure*}
+
+\subsection{Interpretation}
+
+The result we are most confident in is a level: under matched inference the
+student is far enough above released M7 that no threshold, seed, or milestone
+choice within our measured spread reverses the ordering.
+The results we hold loosely are the ones inside that spread.
+Duration beyond the late band, the choice among late milestones, and the
+weight-average variants all sit within seed noise and are reported as
+unresolved rather than settled.
+Both gate corpora remain model-derived rather than ground truth, so the
+morphology review constrains the selected checkpoint without certifying it,
+and the flat human-labelled holdout keeps that caveat in view.

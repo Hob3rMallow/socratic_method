@@ -1,15 +1,28 @@
 # September 2026 submission workspace
 
 This directory is intentionally separate from the reproducibility and model
-artifacts. It contains the first paper-style account of the Socratic Method and
-is marked as a working draft. The v31 raw-model selection is complete; figures,
-authorship, licensing, and artifact URLs remain provisional.
+artifacts. It contains the paper-style account of the Socratic Method and is
+marked as a working draft. Authorship, licensing, and artifact URLs remain
+provisional.
+
+**Rewritten 2026-09-10.** The paper now reports the shipped F0 model and the
+three-term objective that survived ablation. The four retired loss terms are in
+Appendix A, the parameter-space trust region in Appendix B, and the additive 2D
+curve fitter and its successors in Appendix C. Section files were renumbered to
+match; the appendices are `sections/A*.tex`. Numeric macros for the shipped run
+live in `src/f0_run.tex` (transcribed from the sealed records), while
+`src/generated_run.tex` is retained unchanged because Appendix A still uses its
+historical duration table.
+
+Rendered figures still show the earlier v31 student and are labelled as such in
+every caption; regenerating them against the shipped weights is outstanding
+release work, listed in the paper's limitations.
 
 Canonical repository: <https://github.com/ubc-nvining/socratic_method>
 
 The canonical source uses the same anonymous ACM TOG/SIGGRAPH review format as
 the papers under `D:\papers` (`acmtog`, author-year citations, two columns, a
-teaser, overview, method, results, limitations, and conclusion).
+teaser, overview, method, results, limitations, conclusion, and appendices).
 
 Build the PDF from the repository root:
 
@@ -25,9 +38,11 @@ The canonical output is
 belong under `rendered/` and are ignored by Git.
 
 Before submission, fill in authors/affiliations, venue metadata, remaining
-upstream licenses, dataset/model URLs, and representative figures. The final
-checkpoint identity, blinded gate results, and selected threshold are now
-recorded in the paper and `recipes/v31/selection.json`.
+upstream licenses, dataset/model URLs, and regenerated figures. The shipped
+checkpoint identity, gate results, and operating thresholds are recorded in the
+paper and in `recipes/f0/selection.json`; the ablation evidence behind Appendix A
+is in `recipes/f0_ablations_20260910/`. The historical v31 identity remains in
+`recipes/v31/selection.json`.
 
 The LaTeX source reserves and captions each visual slot. It accepts either PDF
 or PNG files under `figures/` without changing the surrounding paper.

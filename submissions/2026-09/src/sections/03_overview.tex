@@ -3,17 +3,23 @@
 
 Fig.~\ref{fig:overview} summarizes our pipeline.
 We first run a native-fine teacher in its approximately $2.399\,\mu$m CT frame.
-Its probabilities, support, and medial crest are projected into the
-$9.362\,\mu$m grid as soft training fields (Sec.~\ref{sec:crossres}).
+Its probabilities and support are projected into the $9.362\,\mu$m grid as soft
+training fields (Sec.~\ref{sec:crossres}).
 We initialize every candidate from the exact released M7 checkpoint and train
-all parameters under a small global trust region. The output is one ordinary M7 network.
+all parameters, unconstrained in parameter space, for a declared
+\fzHorizon-exposure schedule.
+The output is one ordinary M7 network.
 At inference we use only its raw class-1 probability; there is no teacher and no
 M7 probability blend.
+The shipped configuration adds eight-way mirror test-time augmentation at a
+preregistered operating threshold, which changes inference cost but not the
+weights.
 
 After selecting a threshold, an optional C postprocess operates on each axial
-slice (Sec.~\ref{sec:fitter}). It proposes Bezier completions between skeleton endpoints, but paints a join
-only when local curve geometry, radial displacement, neighboring slices, and
-connection-track support agree. Segmentation training and curve completion are measured separately so an
+slice (Appendix~\ref{sec:fitter}). It proposes Bezier completions between
+skeleton endpoints, but paints a join only when local curve geometry, radial
+displacement, neighboring slices, and connection-track support agree.
+Segmentation training and curve completion are measured separately so an
 improvement in one stage cannot hide a failure in the other.
 
 \begin{figure*}[t]
@@ -21,16 +27,20 @@ improvement in one stage cannot hide a failure in the other.
   \figureasset{figure_1_method_overview}{0.96\linewidth}{2.05in}
   \caption{Method overview with a registered crop. The released M7 appears both
   as the frozen initializer and as the state-of-the-art visual baseline.
-  Training-only components (fine teacher, projection, medial and separation
-  losses, and post-update trust projection) are separated from the deployed raw
-  student. The optional 2D fitter is outside the learned model and is evaluated
-  separately.}
+  Training-only components are separated from the deployed raw student, and the
+  optional 2D fitter is outside the learned model and evaluated separately.
+  The rendered schematic dates from the earlier seven-term configuration, so
+  the medial and separation losses and the post-update trust projection it
+  depicts are no longer part of the method; they are documented in
+  Appendices~\ref{sec:also-tried} and~\ref{sec:trust}.}
   \Description{Data-backed schematic separating teacher-supervised training
   from raw-student inference and the optional line-fitter postprocess.}
   \label{fig:overview}
 \end{figure*}
 
-Two engineering details prevent accidental leakage or model substitution. First, the dynamic connectivity atlas is built only from boxes in the training
-manifest; held-out morphology is used only for evaluation. Second, the M7 initializer is accepted only if both its byte size and SHA-256
-match the released artifact. A new candidate may resume its own interrupted optimizer state, but may not use
-an earlier student as learned initialization.
+Two engineering details prevent accidental leakage or model substitution.
+First, held-out morphology is used only for evaluation; no gate corpus
+contributes a training target.
+Second, the M7 initializer is accepted only if both its byte size and SHA-256
+match the released artifact. A new candidate may resume its own interrupted
+optimizer state, but may not use an earlier student as learned initialization.

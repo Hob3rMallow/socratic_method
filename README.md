@@ -39,6 +39,27 @@ unknown-corridor radius of 2; SGD 1e-3 with the full-horizon poly schedule;
 **no trust ball**. Inference uses one ordinary M7-architecture student, with no
 teacher or M7 blend. “250k” counts repeated sample exposures, not unique rows.
 
+## The objective is what survived ablation
+
+The earlier v31 recipe had **seven** weighted loss terms and a parameter-space
+trust region. The shipped one has three and no projection, and the difference is
+measured rather than stylistic: on a corpus of adequate breadth, with the
+schedule run to its declared length and the trust ball off, only the M7 function
+anchor clears its own seed-noise floor. Medial crest recall, the separation
+shell, M7 positive preservation and dynamic connectivity are retired; the last
+of them, preservation, was tested directly on 2026-09-10 in three preregistered
+arms and all three were killed on rim thickening.
+
+The full ledger, the single-term ablation table and the preregistered
+preservation evidence are in
+[recipes/f0_ablations_20260910](recipes/f0_ablations_20260910/README.md).
+Two terms are recorded as **untested at breadth rather than refuted**: the
+medial tail floor, which needs a crest-complete corpus that the mixed wide15
+corpus cannot be, and dynamic connectivity, whose events only exist where a
+full-volume M7 prediction does. The trust region gets its own cautionary note in
+the paper, because while it was active it made every other ablation
+uninformative.
+
 See the [full post-run review](recipes/final_c3_250k_20260907/review.md) for
 all 25 checkpoints, matched M7 comparisons, completed native metrics and the
 postprocessor diagnosis. The gain is substantial without claiming every metric
@@ -150,6 +171,9 @@ the preserved v31 instructions. The old
 - `recipes/f0/`: the executable F0 recipe (sealed argv with placeholders,
   artifact pins, observed milestones, selection and qualification records,
   environment lock, paths example).
+- `recipes/f0_ablations_20260910/`: the ablation ledger behind the reduced
+  objective — single-term arms, the preregistered preservation experiment, and
+  what remains untested rather than refuted.
 - `recipes/v31/`: historical executable recipe, environment lock and release evidence.
 - `recipes/f0_repair_20260907/`: measured contiguous repair profile and evidence,
   implemented by the separate `socratic-repair` command.
@@ -162,8 +186,11 @@ the preserved v31 instructions. The old
 - `huggingface/`: model-card/export templates per recipe (`f0/` current,
   `v31/` historical); weights are not committed to Git.
 - `provenance/source/`: preserved earlier plans, run records and research drivers.
-- `submission.pdf` and `submissions/2026-09/`: existing paper/submission
-  artifacts, predating this F0 freeze; not rewritten by this record update.
+- `submission.pdf` and `submissions/2026-09/`: the paper. Rewritten on
+  2026-09-10 around the shipped F0 model and its reduced objective; the retired
+  loss terms, the trust region and the additive postprocessors are now
+  appendices. Rendered figures still show the earlier v31 student and are
+  labelled as such pending regeneration.
 
 ## Release and artifact boundary
 
@@ -174,4 +201,5 @@ Their identities and local locations are recorded. Public distribution still
 requires a license and resolution of upstream data/teacher/M7 terms.
 
 See [docs/model.md](docs/model.md), [docs/reproduction.md](docs/reproduction.md),
-and the [post-run review](recipes/final_c3_250k_20260907/review.md).
+the [post-run review](recipes/final_c3_250k_20260907/review.md), and the
+[ablation ledger](recipes/f0_ablations_20260910/README.md).

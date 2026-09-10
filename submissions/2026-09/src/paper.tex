@@ -38,6 +38,7 @@
       {\includegraphics[width=#2]{submissions/2026-09/figures/#1.png}}%
       {\placeholder{#2}{#3}{#1}}}}
 
+\input{submissions/2026-09/src/f0_run}
 \input{submissions/2026-09/src/generated_run}
 
 \begin{document}
@@ -52,19 +53,27 @@ approximately $2.399\,\mu$m native-fine model interrogates the released
 $9.362\,\mu$m M7 segmenter.
 The resulting student remains an ordinary, single M7 residual-encoder nnU-Net
 at inference.
-During training, projected soft occupancy is combined with medial-crest recall,
-teacher-background separation, M7 function preservation, a global parameter
-trust region, and dynamic widest-path connectivity.
-A separate additive 2D curve fitter reconnects short, geometrically credible
-gaps after segmentation.
-Our completed duration study improves both held-out scrolls over released M7 at
-every measured interval through \observedSamplesText\ samples, with a best
-calibrated macro-scroll Dice of $\bestMacro$ at \bestSamplesText\ samples.
-An independent registered-morphology and blind anti-blob review selects the raw
-\releaseSamplesText-sample student at threshold $\releaseThreshold$. It passes
-the six-cube PHerc1447 anti-blob gate and matches teacher component count on 15
-of 16 locked PHerc0139 slices; the remaining scalar exception and the difference
-between perceptual and overlap-based rankings are reported explicitly.
+Fine-teacher predictions enter the coarse frame as soft occupancy with an
+explicit validity field, and the student is held to M7 by one masked
+function-space term that acts where the teacher is silent or confidently
+agrees.
+Trained over \corpusScrolls\ scrolls for a full \fzHorizon-exposure schedule,
+the student reaches $\fzMacro$ macro-scroll Dice on a frozen 689-row benchmark
+against released M7's $\mSevenMacro$ under matched inference, and $\fzTtaMacro$
+with eight-way mirror test-time augmentation at a preregistered operating
+threshold.
+We also report what did not survive.
+An earlier form of this method carried five further training terms---medial
+crest recall, a teacher-background separation shell, one-sided M7 preservation,
+and fixed-route then dynamic widest-path connectivity---together with a global
+parameter trust region.
+Given a corpus of adequate breadth and no trust projection, every one of those
+terms is measurably neutral or harmful.
+The trust region itself was roughly $\ballRatioFifty$ times smaller than the
+displacement the successful recipe requires, and its saturation is what
+concealed that fact for as long as it did.
+Those negative findings, and the measurement failures behind them, are reported
+in the appendices rather than omitted.
 \end{abstract}
 
 \begin{CCSXML}
@@ -78,7 +87,7 @@ between perceptual and overlap-based rankings are reported explicitly.
 \end{CCSXML}
 \ccsdesc[500]{Computing methodologies~Neural networks}
 \keywords{volumetric segmentation, knowledge distillation, papyrus,
-topology-aware learning, curve completion}
+topology-aware learning, curve completion, ablation}
 
 \begin{teaserfigure}
   \centering
@@ -87,10 +96,11 @@ topology-aware learning, curve completion}
   begin with the identical CT crop and released M7 state-of-the-art baseline.
   The top row shows blind PHerc1447 de-blob behavior; the bottom row adds the
   projected fine teacher and shows longitudinal growth on locked PHerc0139.
-  Every M7-XR panel uses the selected \releaseSamplesText-sample student at
-  $t=\releaseThreshold$, without blending.}
+  Rendered panels in this draft show the earlier v31 student at
+  $t=\releaseThreshold$; Sec.~\ref{sec:figure-provenance} gives the panel
+  provenance and the outstanding regeneration against the shipped model.}
   \Description{Two-row comparison. Each row shows CT, released M7, and the raw
-  M7-XR student; the locked longitudinal-growth row also shows its projected
+  student; the locked longitudinal-growth row also shows its projected
   fine-teacher target.}
   \label{fig:teaser}
 \end{teaserfigure}
@@ -101,11 +111,15 @@ topology-aware learning, curve completion}
 \input{submissions/2026-09/src/sections/02_related_work}
 \input{submissions/2026-09/src/sections/03_overview}
 \input{submissions/2026-09/src/sections/04_cross_resolution}
-\input{submissions/2026-09/src/sections/05_line_fitter}
-\input{submissions/2026-09/src/sections/06_results}
-\input{submissions/2026-09/src/sections/07_limitations}
-\input{submissions/2026-09/src/sections/08_conclusion}
-\input{submissions/2026-09/src/sections/09_gallery}
+\input{submissions/2026-09/src/sections/05_results}
+\input{submissions/2026-09/src/sections/06_limitations}
+\input{submissions/2026-09/src/sections/07_conclusion}
+\input{submissions/2026-09/src/sections/08_gallery}
+
+\appendix
+\input{submissions/2026-09/src/sections/A1_what_we_also_tried}
+\input{submissions/2026-09/src/sections/A2_trust_regions}
+\input{submissions/2026-09/src/sections/A3_line_fitter}
 
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{submissions/2026-09/src/references}

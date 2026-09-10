@@ -1,5 +1,15 @@
 # Paper and release figures
 
+> **Provenance, 2026-09-10.** Every rendered panel below was produced for the
+> earlier v31 seven-term configuration and shows that student at threshold 0.45,
+> not the shipped F0 model the paper reports. The captions in the rewritten
+> paper say so, and regeneration against the shipped weights is outstanding
+> release work. Two figures also depict retired machinery:
+> `figure_1_method_overview` shows the trust projection and the medial and
+> separation losses, and `figure_crossres_supervision` shows the crest, shell and
+> connectivity fields. The paper keeps the first in the body with a corrective
+> caption and moves the second into Appendix A, where those terms are retired.
+
 The LaTeX paper detects these files automatically (PDF preferred, PNG accepted),
 scales them into their reserved panels, and otherwise leaves a labeled box:
 

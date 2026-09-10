@@ -1,0 +1,103 @@
+\section{A Cautionary Note on Trust Regions}
+\label{sec:trust}
+
+The retired configuration projected the student's complete parameter vector
+back into a relative-$L^2$ ball around the released M7 parameters after every
+optimizer update:
+\begin{equation}
+\theta \leftarrow \theta_0 +
+\min\!\left(1,\frac{r\lVert\theta_0\rVert_2}
+{\lVert\theta-\theta_0\rVert_2}\right)(\theta-\theta_0),
+\qquad r=\ballRadius.
+\label{eq:trust}
+\end{equation}
+We describe it separately from the retired loss terms of
+Appendix~\ref{sec:also-tried} because its consequences were not local to itself.
+While it was active, it made the other terms unmeasurable, and every ablation
+verdict recorded under it is uninformative.
+
+\subsection{Why It Seemed Reasonable}
+
+The premise was conservative and, stated abstractly, sound.
+The released M7 is a working expert; the fine teacher is locally more
+informative but globally incomplete and model-derived; a student free to move
+anywhere in parameter space can follow a confident teacher into a region where
+it is wrong, and the loss will not notice because the teacher supplies the
+targets.
+Bounding the student to a neighbourhood of a known-good function is a cheap
+insurance policy against that failure.
+The radius was not arbitrary either: it was derived from an earlier measurement
+of how far the function could safely depart, and inherited across several
+subsequent versions.
+
+The mistake was not the mechanism.
+It was retaining a radius across a change of objective, corpus, and optimizer
+without re-measuring what the new configuration actually required, and then
+reading the resulting absence of movement as an absence of effect.
+
+\subsection{What It Actually Did}
+
+The telemetry was unambiguous and was recorded at the time.
+The projection was active for $\ballActiveFirst$\% of updates in the first
+evaluation interval and for 100\% of updates in every interval thereafter, with
+a mean pre-projection step slightly larger than the radius itself.
+Roughly a quarter of every optimizer step was being discarded.
+The ball was not a guardrail that occasionally caught an excursion; it was a
+boundary the run rode continuously, which makes the radius a hyperparameter of
+the method rather than a safety margin.
+
+The decisive number came later, and from an observation rather than an
+experiment.
+Once a wide-corpus run was trained without any projection, we simply measured
+where it ended up.
+The recipe that produced the model in this paper sits at roughly
+$\ballRatioThirty$ times the shipped radius after $30{,}000$ exposures and
+$\ballRatioFifty$ times after $50{,}000$, and it keeps moving.
+The displacement the successful method requires is nearly two orders of
+magnitude outside the ball that earlier versions were confined to.
+No amount of loss design inside that ball could have found this model, because
+the model is not in it.
+
+\subsection{The Second-Order Damage}
+
+A saturated constraint does not merely slow a run down.
+It silently converts every comparison made under it into a comparison of
+projections.
+Two arms differing in one loss term will produce nearly identical functions if
+the projection removes most of the difference, and the correct reading of
+``these two runs are indistinguishable'' is then ``this experiment had no
+power,'' not ``this term does nothing.''
+Our own record contains the clean example: a carefully matched pair testing one
+mask refinement of the M7 anchor produced probability fields differing by
+fractions of a percent at every threshold, and the run logs show why---the
+anchor's own loss component was mechanically near zero, because the function
+never left M7's neighbourhood.
+That pair was recorded as a null result for the refinement.
+The refinement is in the shipped objective today, and it is one of the three
+mask properties in Sec.~\ref{sec:crossres} that the term needs to work.
+
+This is the mechanism by which a saturated trust region manufactures a stack of
+loss terms.
+Each new term is added, measured as harmless, and kept; the terms that would
+have been rejected are protected by the same constraint that prevents the terms
+that would have been accepted from showing a benefit.
+
+\subsection{What We Would Do Instead}
+
+We do not conclude that parameter-space trust regions are a bad idea.
+We conclude that an unmeasured one is, and that the measurement is cheap.
+
+Log the projection's activity fraction and the pre-projection step norm from the
+first interval, and treat sustained saturation as a failed run rather than a
+successful guard.
+Before trusting any ablation, measure the unconstrained displacement of the same
+recipe and compare it with the radius; if the free run ends up far outside, the
+ablation was run at zero power and its verdict should be discarded rather than
+recorded.
+Re-derive the radius whenever the objective, corpus, or optimizer changes, since
+a radius calibrated for one of them carries no authority over another.
+Where the underlying worry is following a model-derived teacher into its own
+errors, prefer a constraint expressed in function space and restricted to where
+the teacher is silent or confidently agrees, which is what
+Eq.~\ref{eq:m7-kl} does, and which survived ablation when the parameter-space
+constraint did not.

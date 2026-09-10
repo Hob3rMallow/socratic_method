@@ -1,0 +1,30 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+We presented a cross-resolution supervision method for improving the released
+M7 papyrus-surface segmenter without changing its deployed architecture.
+A fine teacher exposes local inconsistencies as soft occupancy; a masked
+function anchor holds the student to the incumbent wherever the teacher is
+silent or confidently agrees, and releases it everywhere else.
+Under matched inference the resulting student improves on released M7 by
+$\fzGain$ macro-scroll Dice on a frozen benchmark, and by more with an
+inference-time augmentation that leaves the weights untouched.
+
+The larger lesson of this work is subtractive.
+We began with seven weighted training terms, each a defensible answer to an
+observed failure, and finished with three.
+What removed the others was not a better idea but a better measurement: a
+corpus wide enough for a shape prior to be worth less than data, a schedule run
+to its declared length, and the removal of a parameter-space constraint that
+had been quietly making every ablation uninformative.
+The terms we discarded were not obviously wrong when we added them, and they
+were not shown to be wrong by argument.
+They were shown to be wrong by measuring them in a regime where they could have
+been right.
+
+The same design principle survives downstream: the 2D fitter may propose a
+connection, but radial, merger, cross-sheet, crossing, and persistence gates
+force it to answer a sequence of geometric objections before adding pixels.
+A useful surface model must learn to grow longitudinal structure without buying
+that recall through thickness or cross-wrap mergers, and the honest way to know
+whether a given mechanism does that is to give it a fair chance to fail.
