@@ -137,6 +137,84 @@
         "type": "string"
       }
     },
+    "inference": {
+      "type": "object",
+      "description": "Pinned runner parameters for socratic-predict. Absent from historical recipes, which socratic-predict refuses.",
+      "required": [
+        "operating_threshold",
+        "postprocessor_threshold",
+        "test_time_augmentation",
+        "mirror_tta",
+        "amp_dtype",
+        "chunk_size",
+        "halo_voxels",
+        "context_shape_zyx",
+        "device",
+        "max_cpu_threads"
+      ],
+      "properties": {
+        "operating_threshold": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "exclusiveMaximum": 1
+        },
+        "postprocessor_threshold": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "exclusiveMaximum": 1
+        },
+        "test_time_augmentation": {
+          "enum": [
+            "none",
+            "8-way-mirror"
+          ]
+        },
+        "mirror_tta": {
+          "type": "boolean"
+        },
+        "amp_dtype": {
+          "enum": [
+            "bfloat16",
+            "float16"
+          ]
+        },
+        "chunk_size": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "halo_voxels": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "context_shape_zyx": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "device": {
+          "type": "string",
+          "minLength": 1
+        },
+        "max_cpu_threads": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 16
+        },
+        "raw_contract": {
+          "type": "object"
+        },
+        "voxel_size_um": {
+          "type": "object"
+        },
+        "deliverable": {
+          "type": "object"
+        }
+      }
+    },
     "training": {
       "type": "object",
       "required": [

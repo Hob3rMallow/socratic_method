@@ -43,7 +43,10 @@ software or hardware.
    600.5 W, and at least 100 GiB free under the output directory. Run
    `socratic-engine-pins --check` once: it verifies the snapshot against the
    63 sealed code pins.
-1. **Stage the three artifacts** named in `recipes/f0/paths.example.json`: the
+1. **Stage the three training artifacts** named in
+   `recipes/f0/paths.example.json` (the file also carries the optional
+   `selected_checkpoint` and `scroll_mirrors` entries that `socratic-predict`
+   reads): the
    wide15 anti-aliased manifest with its archive trees (110.1 GB), the released
    M7 checkpoint and, for the audit only, the frozen v14p2 manifest with its
    patch tree (32.7 GB). Every wide15 row path is absolute under the original
@@ -87,6 +90,15 @@ software or hardware.
    `model.safetensors`, `config.json`, preprocessing metadata, the recipe,
    observed milestones, qualification, selection and the model card from
    `huggingface/f0/README.md`. Publishing remains a separate `hf upload`.
+
+6. **Predict a region.** `socratic-predict --scroll <name> --region
+   z0:z1,y0:y1,x0:x1 --out <dir>` runs these same weights on a scroll with the
+   shipped inference recipe and writes an OME-NGFF prediction store plus a cube
+   grid. It verifies the checkpoint against `release.selected_checkpoint` and the
+   engine against the sealed code pins before it fetches anything, and without
+   `--run` it writes nothing. Set `selected_checkpoint` in
+   `recipes/f0/paths.local.json` so the path need not be typed. See
+   [predict.md](predict.md).
 
 ## Historical v31 reproduction
 

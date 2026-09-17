@@ -38,6 +38,8 @@ The T=.35 pin is the qualified input of this profile and was left unchanged when
 the raw model's shipped operating point moved to T=0.30 with TTA on 9 September
 2026 (`recipes/f0_inference_20260909`); re-qualification at T=0.30 is pending.
 
+[`socratic-predict`](predict.md) writes a compatible grid when it is run with `--threshold 0.35`; its default T=0.30 output is refused by this profile.
+
 The measured pitch was 8.640 um, not the fine-grid 2.399 um or training 9.362 um.
 Probability dtypes must be consistent; stored precision is preserved. A gross
 probability/raw-mask disagreement is rejected, allowing a narrow .349-.351 band

@@ -52,6 +52,12 @@ Source repository: <https://github.com/ubc-nvining/socratic_method>
 - Test-time augmentation: {{TEST_TIME_AUGMENTATION}}; average the softmax over
   the eight axis-flip passes (each flip undone before averaging), then threshold.
 - Inference: raw student only. The fine teacher and M7 blend are not used.
+- Inference window: 128-voxel target cubes with a 32-voxel raw halo (192 cubed
+  context), sliding-window overlap 0.5 with Gaussian importance weighting, and
+  bfloat16 autocast on CUDA. These are pinned in `training_recipe.json` under
+  `inference`.
+- Reference runner: `socratic-predict` in the source repository takes a scroll
+  name and a region and applies all of the above.
 - Training data: wide15 anti-aliased corpus, 15,432 training rows over twelve
   scrolls (10,072 native soft rows and 6,128 human hard rows across the corpus),
   250,000 sample exposures.

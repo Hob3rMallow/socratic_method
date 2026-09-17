@@ -42,6 +42,7 @@ dev = [
 [project.scripts]
 socratic-train = "socratic_method.recipe:main"
 socratic-export = "socratic_method.hf_export:main"
+socratic-predict = "socratic_method.predict:main"
 socratic-repair = "socratic_method.repair:main"
 socratic-continuity = "socratic_method.continuity:main"
 socratic-sheet-patches = "socratic_method.sheet_patches:main"

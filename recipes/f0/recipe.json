@@ -199,6 +199,59 @@
     "OPENBLAS_NUM_THREADS": "1",
     "NUMEXPR_NUM_THREADS": "1"
   },
+  "inference": {
+    "engine": "crossres_pred.voxel.grid_inference.infer_voxel_grid",
+    "equivalent_command": "crossres-voxel infer-grid",
+    "command": "socratic-predict",
+    "operating_threshold": 0.30,
+    "postprocessor_threshold": 0.35,
+    "test_time_augmentation": "8-way-mirror",
+    "mirror_tta": true,
+    "amp_dtype": "bfloat16",
+    "chunk_size": 128,
+    "halo_voxels": 32,
+    "context_shape_zyx": [192, 192, 192],
+    "device": "cuda",
+    "max_cpu_threads": 16,
+    "raw_contract": {
+      "dtype": "uint8",
+      "ct_clip": [0.0, 212.0],
+      "ct_mean": 87.54424285888672,
+      "ct_std": 47.74376678466797
+    },
+    "voxel_size_um": {
+      "native": 9.362,
+      "training_corpus_range": [7.91, 9.366],
+      "accepted_range": [7.5, 10.0],
+      "postprocessor_range": [8.0, 10.0],
+      "qualified": [8.64],
+      "refuse_below": 4.0,
+      "note": "the wide15 corpus carries coarse rows at 7.910 um (PHerc0332, PHerc1667, PHercParis4), 8.640 um, 9.362 um and 9.366 um, so inference accepts [7.5, 10.0]; socratic-repair separately pins [8, 10] and was measured only at 8.640 um"
+    },
+    "deliverable": {
+      "format": "ome-ngff-0.4",
+      "zarr_format": 2,
+      "dtype": "uint8",
+      "values": [0, 255],
+      "chunks_zyx": [128, 128, 128],
+      "levels": 6,
+      "downsampling": "nearest",
+      "compressor": {
+        "id": "blosc",
+        "cname": "zstd",
+        "clevel": 1,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "reference": "published M7 surface predictions (<volume>-surface-20260413222639-surface-m7-L0-th0.2.zarr); chunks are 128 rather than the published 192 so one prediction cube is exactly one chunk"
+    },
+    "evidence": {
+      "operating_threshold": "release.operating_threshold; ../f0_inference_20260909/manifest.json#/inference/operating_threshold",
+      "postprocessor_threshold": "release.training_record_operating_threshold; ../f0_repair_20260907/provenance/development_inference_provenance.json#/threshold",
+      "halo_context_tta_amp": "../f0_repair_20260907/provenance/development_inference_provenance.json and control_inference_provenance.json (halo, chunk_size, context_shape_zyx, mirror_tta, amp_dtype, device, options.max_cpu_threads)"
+    },
+    "note": "socratic-predict accepts only operating_threshold (the shipped point) and postprocessor_threshold (the T=0.35 input that socratic-repair, socratic-continuity and socratic-sheet-patches pin); no other threshold was preregistered. device and max_cpu_threads are operator-overridable defaults, the device type is pinned, and every other key is a pin."
+  },
   "training": {
     "argv": [
       "-m", "crossres_pred.voxel.cli", "train",

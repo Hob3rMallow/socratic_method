@@ -1,0 +1,694 @@
+{
+  "schema": "socratic-method-scroll-registry-v1",
+  "updated": "2026-09-17",
+  "purpose": "Resolve socratic-predict --scroll to a CT volume. Every field is advisory: the opened volume's own metadata wins over shape_l0_zyx, and voxel_size_um is an operator assertion, not a registration measurement.",
+  "bucket": "s3://vesuvius-challenge-open-data",
+  "uri_pattern": "s3://vesuvius-challenge-open-data/<scroll>/volumes/<timestamp>-<pitch>um-<distance>-<energy>keV-masked.zarr",
+  "uri_source_values": {
+    "recorded": "the exact URI appears in a manifest, config or script in this repository or the geometry workspace",
+    "pattern": "constructed from the documented pattern and the acquisition timestamp recorded upstream; not seen verbatim",
+    "legacy": "an older EduceLab acquisition whose name omits the distance segment and which is not on the open-data bucket"
+  },
+  "f0_corpus": {
+    "train_scrolls": [
+      "PHerc0009B",
+      "PHerc0139",
+      "PHerc0332",
+      "PHerc0343P",
+      "PHerc0841",
+      "PHerc1299",
+      "PHerc1667",
+      "PHercMAN5",
+      "PHercMANB",
+      "PHercMANBp",
+      "PHercParis3",
+      "PHercParis4"
+    ],
+    "val_scrolls": [
+      "PHerc0814",
+      "PHerc1451"
+    ],
+    "note": "The twelve training and two validation scrolls of the wide15 corpus, from recipes/f0/recipe.json. socratic-predict warns when a prediction target was in F0's training data; PHerc1447 was deliberately kept out of it."
+  },
+  "sources": [
+    "vesuvius-c/python/src/scrollunwrap/ink_scrolls.py (acquisition timestamps, census shapes)",
+    "vesuvius-c grid manifest.json files (umbilicus values, recorded URIs)",
+    "recipes/f0/recipe.json artifacts.train_manifest (corpus scroll lists)",
+    "local <scroll>-full stores' 0/.zarray (shapes marked 'local 0/.zarray')"
+  ],
+  "scrolls": [
+    {
+      "id": "PHerc0009B",
+      "volume_uri": null,
+      "uri_source": null,
+      "voxel_size_um": null,
+      "energy_keV": null,
+      "shape_l0_zyx": null,
+      "shape_source": null,
+      "umbilicus_yx": null,
+      "umbilicus_source": null,
+      "f0_role": "train",
+      "surface_prediction_uri": null,
+      "notes": "F0 training scroll; no public coarse volume URI is recorded in this repository, so pass --volume to predict on it"
+    },
+    {
+      "id": "PHerc0125",
+      "volume_uri": "s3://vesuvius-challenge-open-data/PHerc0125/volumes/20250821151825-9.362um-1.2m-113keV-masked.zarr",
+      "uri_source": "pattern",
+      "voxel_size_um": 9.362,
+      "energy_keV": 113,
+      "shape_l0_zyx": [
+        20840,
+        8387,
+        8387
+      ],
+      "shape_source": "census-2026-09-12",
+      "umbilicus_yx": null,
+      "umbilicus_source": null,
+      "f0_role": "unseen",
+      "surface_prediction_uri": "s3://vesuvius-challenge-open-data/PHerc0125/representations/predictions/surfaces/20250821151825-surface-20260413222639-surface-m7-L0-th0.2.zarr",
+      "notes": ""
+    },
+    {
+      "id": "PHerc0139",
+      "volume_uri": "s3://vesuvius-challenge-open-data/PHerc0139/volumes/20250728140407-9.362um-1.2m-113keV-masked.zarr",
+      "uri_source": "recorded",
+      "voxel_size_um": 9.362,
+      "energy_keV": 113,
+      "shape_l0_zyx": [
+        20974,
+        6621,
+        6621
+      ],
+      "shape_source": "local 0/.zarray",
+      "umbilicus_yx": [
+        3405.0,
+        2878.0
+      ],
+      "umbilicus_source": "agrees across every PHerc0139 grid manifest and the upstream scroll table",
+      "f0_role": "train",
+      "surface_prediction_uri": "s3://vesuvius-challenge-open-data/PHerc0139/representations/predictions/surfaces/20250728140407-surface-20260413222639-surface-m7-L0-th0.2.zarr",
+      "notes": "F0 training scroll and this project's rehearsal scroll"
+    },
+    {
+      "id": "PHerc0175A",
+      "volume_uri": "s3://vesuvius-challenge-open-data/PHerc0175A/volumes/20250521115057-8.640um-1.2m-116keV-masked.zarr",
+      "uri_source": "pattern",
+      "voxel_size_um": 8.64,
+      "energy_keV": 116,
+      "shape_l0_zyx": [
+        12748,
+        9363,
+        9363
+      ],
+      "shape_source": "census-2026-09-12",
+      "umbilicus_yx": null,
+      "umbilicus_source": null,
+      "f0_role": "unseen",
+      "surface_prediction_uri": "s3://vesuvius-challenge-open-data/PHerc0175A/representations/predictions/surfaces/20250521115057-surface-20260413222639-surface-m7-L0-th0.2.zarr",
+      "notes": ""
+    },
+    {
+      "id": "PHerc0175B",
+      "volume_uri": "s3://vesuvius-challenge-open-data/PHerc0175B/volumes/20250521125822-8.640um-1.2m-116keV-masked.zarr",
+      "uri_source": "pattern",
+      "voxel_size_um": 8.64,
+      "energy_keV": 116,
+      "shape_l0_zyx": [
+        15897,
+        9613,
+        9613
+      ],
+      "shape_source": "census-2026-09-12",
+      "umbilicus_yx": null,
+      "umbilicus_source": null,
+      "f0_role": "unseen",
+      "surface_prediction_uri": "s3://vesuvius-challenge-open-data/PHerc0175B/representations/predictions/surfaces/20250521125822-surface-20260413222639-surface-m7-L0-th0.2.zarr",
+      "notes": ""
+    },
+    {
+      "id": "PHerc0191",
+      "volume_uri": "s3://vesuvius-challenge-open-data/PHerc0191/volumes/20250821151635-9.362um-1.2m-113keV-masked.zarr",
+      "uri_source": "pattern",
+      "voxel_size_um": 9.362,
+      "energy_keV": 113,
+      "shape_l0_zyx": [
+        18977,
+        8387,
+        8387
+      ],
+      "shape_source": "census-2026-09-12",
+      "umbilicus_yx": null,
+      "umbilicus_source": null,
+      "f0_role": "unseen",
+      "surface_prediction_uri": "s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr",
+      "notes": "worst wrap clearance in the census (33 percent of gaps under 7 voxels); fusion-prone"
+    },
+    {
+      "id": "PHerc0211",
+      "volume_uri": "s3://vesuvius-challenge-open-data/PHerc0211/volumes/20250821151803-9.362um-1.2m-113keV-masked.zarr",
+      "uri_source": "pattern",
+      "voxel_size_um": 9.362,
+      "energy_keV": 113,
+      "shape_l0_zyx": [
+        19416,
+        7948,
+        7948
+      ],
+      "shape_source": "census-2026-09-12",
+      "umbilicus_yx": null,
+      "umbilicus_source": null,
+      "f0_role": "unseen",
+      "surface_prediction_uri": "s3://vesuvius-challenge-open-data/PHerc0211/representations/predictions/surfaces/20250821151803-surface-20260413222639-surface-m7-L0-th0.2.zarr",
+      "notes": ""
+    },
+    {
+      "id": "PHerc0257",
+      "volume_uri": "s3://vesuvius-challenge-open-data/PHerc0257/volumes/20250821151750-9.362um-1.2m-113keV-masked.zarr",
+      "uri_source": "pattern",
+      "voxel_size_um": 9.362,
+      "energy_keV": 113,
+      "shape_l0_zyx": [
+        18872,
+        8388,
+        8388
+      ],
+      "shape_source": "census-2026-09-12",
+      "umbilicus_yx": null,
+      "umbilicus_source": null,
+      "f0_role": "unseen",
+      "surface_prediction_uri": "s3://vesuvius-challenge-open-data/PHerc0257/representations/predictions/surfaces/20250821151750-surface-20260413222639-surface-m7-L0-th0.2.zarr",
+      "notes": ""
+    },
+    {
+      "id": "PHerc0268",
+      "volume_uri": "s3://vesuvius-challenge-open-data/PHerc0268/volumes/20251110183117-8.640um-1.2m-116keV-masked.zarr",
+      "uri_source": "pattern",
+      "voxel_size_um": 8.64,
+      "energy_keV": 116,
+      "shape_l0_zyx": [
+        14833,
+        12145,
+        12145
+      ],
+      "shape_source": "census-2026-09-12",
+      "umbilicus_yx": null,
+      "umbilicus_source": null,
+      "f0_role": "unseen",
+      "surface_prediction_uri": "s3://vesuvius-challenge-open-data/PHerc0268/representations/predictions/surfaces/20251110183117-surface-20260413222639-surface-m7-L0-th0.2.zarr",
+      "notes": "2.6x the volume of a typical eligible scroll"
+    },
+    {
+      "id": "PHerc0306B",
+      "volume_uri": "s3://vesuvius-challenge-open-data/PHerc0306B/volumes/20250521133212-8.640um-1.2m-116keV-masked.zarr",
+      "uri_source": "pattern",
+      "voxel_size_um": 8.64,
+      "energy_keV": 116,
+      "shape_l0_zyx": [
+        15898,
+        8849,
+        8849
+      ],
+      "shape_source": "census-2026-09-12",
+      "umbilicus_yx": null,
+      "umbilicus_source": null,
+      "f0_role": "unseen",
+      "surface_prediction_uri": "s3://vesuvius-challenge-open-data/PHerc0306B/representations/predictions/surfaces/20250521133212-surface-20260413222639-surface-m7-L0-th0.2.zarr",
+      "notes": ""
+    },
+    {
+      "id": "PHerc0332",
+      "volume_uri": "https://data.aws.ash2txt.org/samples/PHerc0332/volumes/20231117143551-7.910um-53keV-masked.zarr",
+      "uri_source": "legacy",
+      "voxel_size_um": 7.91,
+      "energy_keV": 53,
+      "shape_l0_zyx": [
+        9777,
+        3550,
+        3400
+      ],
+      "shape_source": "local 0/.zarray",
+      "umbilicus_yx": null,
+      "umbilicus_source": null,
+      "f0_role": "train",
+      "surface_prediction_uri": null,
+      "notes": "legacy EduceLab acquisition: the volume name carries no distance segment and the store is not on the open-data bucket, so socratic-predict cannot stream it anonymously; pass --volume with a local copy"
+    },
+    {
+      "id": "PHerc0343",
+      "volume_uri": "s3://vesuvius-challenge-open-data/PHerc0343/volumes/20250521140437-8.640um-1.2m-116keV-masked.zarr",
+      "uri_source": "pattern",
+      "voxel_size_um": 8.64,
+      "energy_keV": 116,
+      "shape_l0_zyx": [
+        17998,
+        8595,
+        8595
+      ],
+      "shape_source": "census-2026-09-12",
+      "umbilicus_yx": null,
+      "umbilicus_source": null,
+      "f0_role": "unseen",
+      "surface_prediction_uri": "s3://vesuvius-challenge-open-data/PHerc0343/representations/predictions/surfaces/20250521140437-surface-20260413222639-surface-m7-L0-th0.2.zarr",
+      "notes": "distinct from PHerc0343P, the 2.215 um fragment in F0's training corpus"
+    },
+    {
+      "id": "PHerc0343P",
+      "volume_uri": null,
+      "uri_source": null,
+      "voxel_size_um": null,
+      "energy_keV": null,
+      "shape_l0_zyx": null,
+      "shape_source": null,
+      "umbilicus_yx": null,
+      "umbilicus_source": null,
+      "f0_role": "train",
+      "surface_prediction_uri": null,
+      "notes": "F0 training scroll, a 2.215 um fragment; distinct from the eligible PHerc0343; no public coarse volume URI is recorded in this repository, so pass --volume to predict on it"
+    },
+    {
+      "id": "PHerc0358",
+      "volume_uri": "s3://vesuvius-challenge-open-data/PHerc0358/volumes/20250821151737-9.362um-1.2m-113keV-masked.zarr",
+      "uri_source": "pattern",
+      "voxel_size_um": 9.362,
+      "energy_keV": 113,
+      "shape_l0_zyx": [
+        14744,
+        7783,
+        7783
+      ],
+      "shape_source": "census-2026-09-12",
+      "umbilicus_yx": null,
+      "umbilicus_source": null,
+      "f0_role": "unseen",
+      "surface_prediction_uri": "s3://vesuvius-challenge-open-data/PHerc0358/representations/predictions/surfaces/20250821151737-surface-20260413222639-surface-m7-L0-th0.2.zarr",
+      "notes": ""
+    },
+    {
+      "id": "PHerc0483A",
+      "volume_uri": "s3://vesuvius-challenge-open-data/PHerc0483A/volumes/20250521140913-8.640um-1.2m-116keV-masked.zarr",
+      "uri_source": "pattern",
+      "voxel_size_um": 8.64,
+      "energy_keV": 116,
+      "shape_l0_zyx": [
+        15898,
+        8849,
+        8849
+      ],
+      "shape_source": "census-2026-09-12",
+      "umbilicus_yx": null,
+      "umbilicus_source": null,
+      "f0_role": "unseen",
+      "surface_prediction_uri": "s3://vesuvius-challenge-open-data/PHerc0483A/representations/predictions/surfaces/20250521140913-surface-20260413222639-surface-m7-L0-th0.2.zarr",
+      "notes": ""
+    },
+    {
+      "id": "PHerc0483B",
+      "volume_uri": "s3://vesuvius-challenge-open-data/PHerc0483B/volumes/20251124083638-8.640um-1.2m-116keV-masked.zarr",
+      "uri_source": "pattern",
+      "voxel_size_um": 8.64,
+      "energy_keV": 116,
+      "shape_l0_zyx": [
+        11880,
+        8343,
+        8343
+      ],
+      "shape_source": "census-2026-09-12",
+      "umbilicus_yx": null,
+      "umbilicus_source": null,
+      "f0_role": "unseen",
+      "surface_prediction_uri": "s3://vesuvius-challenge-open-data/PHerc0483B/representations/predictions/surfaces/20251124083638-surface-20260413222639-surface-m7-L0-th0.2.zarr",
+      "notes": ""
+    },
+    {
+      "id": "PHerc0490A",
+      "volume_uri": "s3://vesuvius-challenge-open-data/PHerc0490A/volumes/20250521151210-8.640um-1.2m-116keV-masked.zarr",
+      "uri_source": "pattern",
+      "voxel_size_um": 8.64,
+      "energy_keV": 116,
+      "shape_l0_zyx": [
+        11698,
+        9101,
+        9101
+      ],
+      "shape_source": "census-2026-09-12",
+      "umbilicus_yx": null,
+      "umbilicus_source": null,
+      "f0_role": "unseen",
+      "surface_prediction_uri": "s3://vesuvius-challenge-open-data/PHerc0490A/representations/predictions/surfaces/20250521151210-surface-20260413222639-surface-m7-L0-th0.2.zarr",
+      "notes": ""
+    },
+    {
+      "id": "PHerc0490B",
+      "volume_uri": "s3://vesuvius-challenge-open-data/PHerc0490B/volumes/20250521151215-8.640um-1.2m-116keV-masked.zarr",
+      "uri_source": "pattern",
+      "voxel_size_um": 8.64,
+      "energy_keV": 116,
+      "shape_l0_zyx": [
+        10648,
+        8343,
+        8343
+      ],
+      "shape_source": "census-2026-09-12",
+      "umbilicus_yx": null,
+      "umbilicus_source": null,
+      "f0_role": "unseen",
+      "surface_prediction_uri": "s3://vesuvius-challenge-open-data/PHerc0490B/representations/predictions/surfaces/20250521151215-surface-20260413222639-surface-m7-L0-th0.2.zarr",
+      "notes": ""
+    },
+    {
+      "id": "PHerc0800",
+      "volume_uri": "s3://vesuvius-challenge-open-data/PHerc0800/volumes/20250521135224-8.640um-1.2m-116keV-masked.zarr",
+      "uri_source": "pattern",
+      "voxel_size_um": 8.64,
+      "energy_keV": 116,
+      "shape_l0_zyx": [
+        24298,
+        9867,
+        9867
+      ],
+      "shape_source": "census-2026-09-12",
+      "umbilicus_yx": null,
+      "umbilicus_source": null,
+      "f0_role": "unseen",
+      "surface_prediction_uri": "s3://vesuvius-challenge-open-data/PHerc0800/representations/predictions/surfaces/20250521135224-surface-20260413222639-surface-m7-L0-th0.2.zarr",
+      "notes": "2.6x the volume of a typical eligible scroll"
+    },
+    {
+      "id": "PHerc0813",
+      "volume_uri": "s3://vesuvius-challenge-open-data/PHerc0813/volumes/20250821151723-9.362um-1.2m-113keV-masked.zarr",
+      "uri_source": "pattern",
+      "voxel_size_um": 9.362,
+      "energy_keV": 113,
+      "shape_l0_zyx": [
+        16993,
+        7947,
+        7947
+      ],
+      "shape_source": "census-2026-09-12",
+      "umbilicus_yx": null,
+      "umbilicus_source": null,
+      "f0_role": "unseen",
+      "surface_prediction_uri": "s3://vesuvius-challenge-open-data/PHerc0813/representations/predictions/surfaces/20250821151723-surface-20260413222639-surface-m7-L0-th0.2.zarr",
+      "notes": ""
+    },
+    {
+      "id": "PHerc0814",
+      "volume_uri": "s3://vesuvius-challenge-open-data/PHerc0814/volumes/20250804134230-9.362um-1.2m-113keV-masked.zarr",
+      "uri_source": "pattern",
+      "voxel_size_um": 9.362,
+      "energy_keV": 113,
+      "shape_l0_zyx": [
+        19390,
+        5784,
+        5784
+      ],
+      "shape_source": "local 0/.zarray",
+      "umbilicus_yx": null,
+      "umbilicus_source": null,
+      "f0_role": "val",
+      "surface_prediction_uri": "s3://vesuvius-challenge-open-data/PHerc0814/representations/predictions/surfaces/20250804134230-surface-20260413222639-surface-m7-L0-th0.2.zarr",
+      "notes": "F0 validation scroll: half of the frozen 689-row benchmark"
+    },
+    {
+      "id": "PHerc0826",
+      "volume_uri": "s3://vesuvius-challenge-open-data/PHerc0826/volumes/20250821151701-9.362um-1.2m-113keV-masked.zarr",
+      "uri_source": "pattern",
+      "voxel_size_um": 9.362,
+      "energy_keV": 113,
+      "shape_l0_zyx": [
+        16920,
+        8169,
+        8169
+      ],
+      "shape_source": "census-2026-09-12",
+      "umbilicus_yx": null,
+      "umbilicus_source": null,
+      "f0_role": "unseen",
+      "surface_prediction_uri": "s3://vesuvius-challenge-open-data/PHerc0826/representations/predictions/surfaces/20250821151701-surface-20260413222639-surface-m7-L0-th0.2.zarr",
+      "notes": ""
+    },
+    {
+      "id": "PHerc0841",
+      "volume_uri": "s3://vesuvius-challenge-open-data/PHerc0841/volumes/20250821151531-9.366um-1.2m-113keV-masked.zarr",
+      "uri_source": "recorded",
+      "voxel_size_um": 9.366,
+      "energy_keV": 113,
+      "shape_l0_zyx": null,
+      "shape_source": null,
+      "umbilicus_yx": null,
+      "umbilicus_source": null,
+      "f0_role": "train",
+      "surface_prediction_uri": "s3://vesuvius-challenge-open-data/PHerc0841/representations/predictions/surfaces/20250821151531-surface-20260413222639-surface-m7-L0-th0.2.zarr",
+      "notes": "F0 training scroll"
+    },
+    {
+      "id": "PHerc0846A",
+      "volume_uri": "s3://vesuvius-challenge-open-data/PHerc0846A/volumes/20250728152254-9.362um-1.2m-113keV-masked.zarr",
+      "uri_source": "pattern",
+      "voxel_size_um": 9.362,
+      "energy_keV": 113,
+      "shape_l0_zyx": [
+        14019,
+        7726,
+        7726
+      ],
+      "shape_source": "census-2026-09-12",
+      "umbilicus_yx": null,
+      "umbilicus_source": null,
+      "f0_role": "unseen",
+      "surface_prediction_uri": "s3://vesuvius-challenge-open-data/PHerc0846A/representations/predictions/surfaces/20250728152254-surface-20260413222639-surface-m7-L0-th0.2.zarr",
+      "notes": "sealed development holdout in this project's own configs; the eligible volume is the native 9.362 um acquisition"
+    },
+    {
+      "id": "PHerc0846B",
+      "volume_uri": "s3://vesuvius-challenge-open-data/PHerc0846B/volumes/20250804142305-9.362um-1.2m-113keV-masked.zarr",
+      "uri_source": "pattern",
+      "voxel_size_um": 9.362,
+      "energy_keV": 113,
+      "shape_l0_zyx": [
+        13926,
+        7859,
+        7859
+      ],
+      "shape_source": "census-2026-09-12",
+      "umbilicus_yx": null,
+      "umbilicus_source": null,
+      "f0_role": "unseen",
+      "surface_prediction_uri": "s3://vesuvius-challenge-open-data/PHerc0846B/representations/predictions/surfaces/20250804142305-surface-20260413222639-surface-m7-L0-th0.2.zarr",
+      "notes": ""
+    },
+    {
+      "id": "PHerc1203",
+      "volume_uri": "s3://vesuvius-challenge-open-data/PHerc1203/volumes/20250820131727-9.362um-1.2m-113keV-masked.zarr",
+      "uri_source": "recorded",
+      "voxel_size_um": 9.362,
+      "energy_keV": 113,
+      "shape_l0_zyx": [
+        18977,
+        6844,
+        6844
+      ],
+      "shape_source": "census-2026-09-12",
+      "umbilicus_yx": [
+        3462.0,
+        3379.0
+      ],
+      "umbilicus_source": "agrees across the PHerc1203-10x10x10-overnight, PHerc1203-4x5x5 and PHerc1203-5x5x5 grid manifests",
+      "f0_role": "unseen",
+      "surface_prediction_uri": "s3://vesuvius-challenge-open-data/PHerc1203/representations/predictions/surfaces/20250820131727-surface-20260413222639-surface-m7-L0-th0.2.zarr",
+      "notes": "the only eligible scroll with a co-registered 2.403 um scan"
+    },
+    {
+      "id": "PHerc1218",
+      "volume_uri": "s3://vesuvius-challenge-open-data/PHerc1218/volumes/20250521120456-8.640um-1.2m-116keV-masked.zarr",
+      "uri_source": "pattern",
+      "voxel_size_um": 8.64,
+      "energy_keV": 116,
+      "shape_l0_zyx": [
+        23247,
+        7593,
+        7593
+      ],
+      "shape_source": "census-2026-09-12",
+      "umbilicus_yx": null,
+      "umbilicus_source": null,
+      "f0_role": "unseen",
+      "surface_prediction_uri": "s3://vesuvius-challenge-open-data/PHerc1218/representations/predictions/surfaces/20250521120456-surface-20260413222639-surface-m7-L0-th0.2.zarr",
+      "notes": ""
+    },
+    {
+      "id": "PHerc1299",
+      "volume_uri": null,
+      "uri_source": null,
+      "voxel_size_um": null,
+      "energy_keV": null,
+      "shape_l0_zyx": null,
+      "shape_source": null,
+      "umbilicus_yx": null,
+      "umbilicus_source": null,
+      "f0_role": "train",
+      "surface_prediction_uri": null,
+      "notes": "F0 training scroll; no public coarse volume URI is recorded in this repository, so pass --volume to predict on it"
+    },
+    {
+      "id": "PHerc1447",
+      "volume_uri": "s3://vesuvius-challenge-open-data/PHerc1447/volumes/20250521151220-8.640um-1.2m-116keV-masked.zarr",
+      "uri_source": "recorded",
+      "voxel_size_um": 8.64,
+      "energy_keV": 116,
+      "shape_l0_zyx": [
+        24297,
+        8343,
+        8343
+      ],
+      "shape_source": "census-2026-09-12",
+      "umbilicus_yx": [
+        3287.0,
+        3784.0
+      ],
+      "umbilicus_source": "PHerc1447-10x10x10-overnight, the value the frozen F0 repair and sheet-patch profiles were qualified against",
+      "f0_role": "unseen",
+      "surface_prediction_uri": "s3://vesuvius-challenge-open-data/PHerc1447/representations/predictions/surfaces/20250521151220-surface-20260413222639-surface-m7-L0-th0.2.zarr",
+      "notes": "F0's eligibility-gate scroll: nothing in the recipe was tuned on it",
+      "umbilicus_conflicts": [
+        {
+          "umbilicus_yx": [
+            3624.0,
+            3815.0
+          ],
+          "grids": [
+            "PHerc1447-4x21x21",
+            "PHerc1447-4x5x5",
+            "PHerc1447-5x5x5"
+          ],
+          "note": "recorded for a different box of the same scroll; pass --umbilicus to use it"
+        }
+      ]
+    },
+    {
+      "id": "PHerc1451",
+      "volume_uri": "s3://vesuvius-challenge-open-data/PHerc1451/volumes/20250521151225-8.640um-1.2m-116keV-masked.zarr",
+      "uri_source": "recorded",
+      "voxel_size_um": 8.64,
+      "energy_keV": 116,
+      "shape_l0_zyx": null,
+      "shape_source": null,
+      "umbilicus_yx": null,
+      "umbilicus_source": null,
+      "f0_role": "val",
+      "surface_prediction_uri": "s3://vesuvius-challenge-open-data/PHerc1451/representations/predictions/surfaces/20250521151225-surface-20260413222639-surface-m7-L0-th0.2.zarr",
+      "notes": "F0 validation scroll: half of the frozen 689-row benchmark"
+    },
+    {
+      "id": "PHerc1545",
+      "volume_uri": "s3://vesuvius-challenge-open-data/PHerc1545/volumes/20250821151648-9.362um-1.2m-113keV-masked.zarr",
+      "uri_source": "pattern",
+      "voxel_size_um": 9.362,
+      "energy_keV": 113,
+      "shape_l0_zyx": [
+        20961,
+        7506,
+        7506
+      ],
+      "shape_source": "census-2026-09-12",
+      "umbilicus_yx": null,
+      "umbilicus_source": null,
+      "f0_role": "unseen",
+      "surface_prediction_uri": "s3://vesuvius-challenge-open-data/PHerc1545/representations/predictions/surfaces/20250821151648-surface-20260413222639-surface-m7-L0-th0.2.zarr",
+      "notes": ""
+    },
+    {
+      "id": "PHerc1667",
+      "volume_uri": "https://data.aws.ash2txt.org/samples/PHerc1667/volumes/20231117161658-7.910um-53keV-masked.zarr",
+      "uri_source": "legacy",
+      "voxel_size_um": 7.91,
+      "energy_keV": 53,
+      "shape_l0_zyx": [
+        11173,
+        3340,
+        3440
+      ],
+      "shape_source": "local 0/.zarray",
+      "umbilicus_yx": null,
+      "umbilicus_source": null,
+      "f0_role": "train",
+      "surface_prediction_uri": null,
+      "notes": "legacy EduceLab acquisition: the volume name carries no distance segment and the store is not on the open-data bucket, so socratic-predict cannot stream it anonymously; pass --volume with a local copy"
+    },
+    {
+      "id": "PHercMAN5",
+      "volume_uri": null,
+      "uri_source": null,
+      "voxel_size_um": null,
+      "energy_keV": null,
+      "shape_l0_zyx": null,
+      "shape_source": null,
+      "umbilicus_yx": null,
+      "umbilicus_source": null,
+      "f0_role": "train",
+      "surface_prediction_uri": null,
+      "notes": "F0 training scroll; no public coarse volume URI is recorded in this repository, so pass --volume to predict on it"
+    },
+    {
+      "id": "PHercMANB",
+      "volume_uri": null,
+      "uri_source": null,
+      "voxel_size_um": null,
+      "energy_keV": null,
+      "shape_l0_zyx": null,
+      "shape_source": null,
+      "umbilicus_yx": null,
+      "umbilicus_source": null,
+      "f0_role": "train",
+      "surface_prediction_uri": null,
+      "notes": "F0 training scroll; no public coarse volume URI is recorded in this repository, so pass --volume to predict on it"
+    },
+    {
+      "id": "PHercMANBp",
+      "volume_uri": null,
+      "uri_source": null,
+      "voxel_size_um": null,
+      "energy_keV": null,
+      "shape_l0_zyx": null,
+      "shape_source": null,
+      "umbilicus_yx": null,
+      "umbilicus_source": null,
+      "f0_role": "train",
+      "surface_prediction_uri": null,
+      "notes": "F0 training scroll; no public coarse volume URI is recorded in this repository, so pass --volume to predict on it"
+    },
+    {
+      "id": "PHercParis3",
+      "volume_uri": null,
+      "uri_source": null,
+      "voxel_size_um": null,
+      "energy_keV": null,
+      "shape_l0_zyx": null,
+      "shape_source": null,
+      "umbilicus_yx": null,
+      "umbilicus_source": null,
+      "f0_role": "train",
+      "surface_prediction_uri": null,
+      "notes": "F0 training scroll; no public coarse volume URI is recorded in this repository, so pass --volume to predict on it"
+    },
+    {
+      "id": "PHercParis4",
+      "volume_uri": "https://data.aws.ash2txt.org/samples/PHercParis4/volumes/20230205180739-7.910um-54keV-masked.zarr",
+      "uri_source": "legacy",
+      "voxel_size_um": 7.91,
+      "energy_keV": 54,
+      "shape_l0_zyx": [
+        14258,
+        7888,
+        8096
+      ],
+      "shape_source": "local 0/.zarray",
+      "umbilicus_yx": null,
+      "umbilicus_source": null,
+      "f0_role": "train",
+      "surface_prediction_uri": null,
+      "notes": "legacy EduceLab acquisition: the volume name carries no distance segment and the store is not on the open-data bucket, so socratic-predict cannot stream it anonymously; pass --volume with a local copy. The 2026-08-24 catalog shape for this scroll is stale by +111 z; the local .zarray is authoritative"
+    }
+  ]
+}

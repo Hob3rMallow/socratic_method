@@ -5,6 +5,10 @@
   "m7_checkpoint": "D:/datasets/vesuvius-c/output/crossres_data/models/surface_m7_nnunet/fold_0/checkpoint_best.pth",
   "frozen_validation_manifest": "D:/datasets/vesuvius-c/output/crossres_data/voxel_balanced_native_v14p2_registered_antialias_softtarget_corpus/patches.jsonl",
   "output": "../../runs/c3_f0_250k",
+  "selected_checkpoint": "D:/datasets/vesuvius-c/output/crossres_data/releases/c3-f0-200k-20260907/checkpoint_f0_00200000.pt",
+  "scroll_mirrors": {
+    "PHerc0139": "D:/work/vesuvius-c/PHerc0139-full/20250728140407-9.362um-1.2m-113keV-masked.zarr"
+  },
   "environment": {
     "CUDA_VISIBLE_DEVICES": "GPU-00000000-0000-0000-0000-000000000000"
   }

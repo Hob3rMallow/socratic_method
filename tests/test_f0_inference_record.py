@@ -84,6 +84,10 @@ def test_recipe_and_current_model_point_at_the_inference_record() -> None:
     assert release["training_record_operating_threshold"] == manifest["inference"]["previous_operating_threshold"]
     assert release["test_time_augmentation"] == manifest["inference"]["test_time_augmentation"]
     assert release["threshold_selection_contract"] == manifest["inference"]["threshold_selection_contract"]
+    inference = recipe["inference"]
+    for key in ("operating_threshold", "mirror_tta", "amp_dtype", "test_time_augmentation"):
+        assert inference[key] == manifest["inference"][key], key
+    assert inference["postprocessor_threshold"] == manifest["inference"]["previous_operating_threshold"]
     evaluation = recipe["evaluation"]
     assert evaluation["expected_selected_macro_dice_tta_at_030"] == manifest["frozen_v14p2_benchmark"]["macro_dice_030"]
     assert evaluation["expected_selected_macro_dice_tta_at_035"] == manifest["frozen_v14p2_benchmark"]["macro_dice_035"]

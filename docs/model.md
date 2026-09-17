@@ -91,8 +91,11 @@ details its context, support-filter and safety constraints.
 The earlier 8,192-sample v31 model at T=.45 is preserved as historical evidence,
 not erased or relabeled. Its complete former model documentation is
 [archived here](archive/v31_model.md), and its recipe/selection remain under
-[recipes/v31](../recipes/v31/recipe.json). The portable training/export
-wrappers default to the executable F0 recipe
-([recipes/f0/recipe.json](../recipes/f0/recipe.json)); pass
-`--recipe recipes/v31/recipe.json` for the historical one. Neither implies
-public deployment.
+[recipes/v31](../recipes/v31/recipe.json). The portable training, export and
+prediction wrappers (`socratic-train`, `socratic-export`, `socratic-predict`)
+default to the executable F0 recipe
+([recipes/f0/recipe.json](../recipes/f0/recipe.json)), whose `inference` section
+pins the shipped runner: eight-way mirror TTA, T=0.30, a 32-voxel halo and BF16.
+Pass `--recipe recipes/v31/recipe.json` for the historical one; it carries no
+`inference` section, and `socratic-predict` refuses it for that reason. Neither
+implies public deployment. See [predict.md](predict.md).
