@@ -90,6 +90,8 @@ Required input:
   9 September 2026 (`recipes/f0_inference_20260909`), and the profile has not
   been re-qualified for that input.
 
+[`socratic-predict`](predict.md) writes a compatible grid when it is run with `--threshold 0.35`; its default T=0.30 output is refused by this profile.
+
 The explicit pitch argument is an operator assertion, not a registration
 measurement. The coarse profile rejects pitches outside 8–10 µm; **the new
 comparison is at 8.640 µm only**. Verify the actual volume pitch and umbilicus;

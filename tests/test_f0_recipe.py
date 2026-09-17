@@ -52,7 +52,7 @@ def manifest() -> dict:
 
 
 def test_recipe_structure_and_constants(recipe: dict) -> None:
-    for key in ("schema", "name", "version", "artifacts", "model", "release", "objective", "optimization", "evaluation", "training"):
+    for key in ("schema", "name", "version", "artifacts", "model", "release", "objective", "optimization", "evaluation", "inference", "training"):
         assert key in recipe, key
     assert recipe["schema"] == "socratic-method-training-recipe-v1"
     assert recipe["version"] == "c3-f0-200k-tta-t030-20260909"
@@ -278,3 +278,81 @@ def test_export_contract_accepts_the_f0_records(recipe: dict) -> None:
     current = _json(ROOT / "CURRENT_MODEL.json")
     assert current["executable_recipe"] == "recipes/f0/recipe.json"
     assert current["checkpoint_sha256"] == contract["sha256"]
+
+
+def test_inference_pins_match_the_records(recipe: dict, manifest: dict) -> None:
+    """The socratic-predict runner reads these; every one must be evidenced."""
+
+    from socratic_method.predict import load_inference_pins
+
+    inference = recipe["inference"]
+    release = recipe["release"]
+    shipped = _json(ROOT / "recipes" / "f0_inference_20260909" / "manifest.json")["inference"]
+
+    assert inference["operating_threshold"] == release["operating_threshold"] == 0.30
+    assert inference["operating_threshold"] == shipped["operating_threshold"]
+    assert inference["postprocessor_threshold"] == release["training_record_operating_threshold"]
+    assert inference["postprocessor_threshold"] == manifest["model"]["operating_threshold"] == 0.35
+    assert inference["mirror_tta"] is shipped["mirror_tta"] is True
+    assert inference["amp_dtype"] == shipped["amp_dtype"] == "bfloat16"
+    assert inference["test_time_augmentation"] == shipped["test_time_augmentation"]
+
+    current = _json(ROOT / "CURRENT_MODEL.json")
+    assert current["postprocessor_profiles_qualified_at_threshold"] == inference["postprocessor_threshold"]
+    assert current["inference_pins"] == "recipes/f0/recipe.json#/inference"
+    assert current["scroll_registry"] == "recipes/f0/scrolls.json"
+    assert current["predict_command"].startswith("socratic-predict ")
+
+    # halo, chunk size, context shape, device and thread budget are only recorded as
+    # the geometry the postprocessor evidence was produced with. Both records agree.
+    for name in ("development", "control"):
+        observed = _json(
+            ROOT / "recipes" / "f0_repair_20260907" / "provenance"
+            / f"{name}_inference_provenance.json"
+        )
+        assert inference["halo_voxels"] == observed["halo"] == 32
+        assert inference["chunk_size"] == observed["chunk_size"] == 128
+        assert inference["context_shape_zyx"] == observed["context_shape_zyx"] == [192, 192, 192]
+        assert inference["mirror_tta"] == observed["mirror_tta"]
+        assert inference["amp_dtype"] == observed["amp_dtype"]
+        assert inference["device"] == observed["device"]
+        assert inference["max_cpu_threads"] == observed["options"]["max_cpu_threads"]
+        assert inference["postprocessor_threshold"] == observed["threshold"]
+        assert observed["checkpoint_sha256"] == release["selected_checkpoint"]["sha256"]
+
+    assert inference["context_shape_zyx"] == [
+        inference["chunk_size"] + 2 * inference["halo_voxels"]
+    ] * 3
+    from crossres_pred.voxel.model import NNUNetConfig
+
+    divisor = NNUNetConfig(preset=recipe["model"]["preset"]).required_divisor
+    assert all(size % divisor == 0 for size in inference["context_shape_zyx"])
+
+    # The CT contract is the engine's own normalisation, not a second set of numbers.
+    from crossres_pred.voxel.patches import M7_CT_LOWER, M7_CT_MEAN, M7_CT_STD, M7_CT_UPPER
+
+    raw = inference["raw_contract"]
+    assert raw["dtype"] == "uint8"
+    assert raw["ct_clip"] == [M7_CT_LOWER, M7_CT_UPPER]
+    assert raw["ct_mean"] == M7_CT_MEAN and raw["ct_std"] == M7_CT_STD
+
+    # Three training scrolls are 7.910 um volumes, so inference must accept them even
+    # though socratic-repair separately pins the narrower range it was measured in.
+    pitch = inference["voxel_size_um"]
+    assert pitch["accepted_range"][0] <= min(pitch["training_corpus_range"])
+    assert pitch["accepted_range"][1] >= max(pitch["training_corpus_range"])
+    assert pitch["postprocessor_range"] == [8.0, 10.0]
+    assert pitch["qualified"] == [8.64]
+
+    pins = load_inference_pins(recipe)
+    assert pins.permitted_thresholds() == (0.30, 0.35)
+    assert pins.chunk_size == 128 and pins.halo == 32
+    assert pins.context_shape_zyx == (192, 192, 192)
+    assert pins.mirror_tta is True and pins.amp_dtype == "bfloat16"
+
+
+def test_predict_is_a_console_script() -> None:
+    tomllib = pytest.importorskip("tomllib")
+    project = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))
+    scripts = project["project"]["scripts"]
+    assert scripts["socratic-predict"] == "socratic_method.predict:main"

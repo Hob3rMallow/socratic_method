@@ -30,6 +30,8 @@ operating point moved to T=0.30 with TTA on 9 September 2026
 (`recipes/f0_inference_20260909`) without re-qualifying this stage.
 Use interior cubes; the surrounding context is not a seam-free tiled product.
 
+[`socratic-predict`](predict.md) writes a compatible grid when it is run with `--threshold 0.35`; its default T=0.30 output is refused by this profile.
+
 ## Outputs and interruption handling
 
 - `cubes_PRED/`: additive binary TIFFs; all prior foreground is protected.

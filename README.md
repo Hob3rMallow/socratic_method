@@ -104,6 +104,31 @@ long continuations, with ambiguous folds retained for review. This separate
 opt-in stage is not a global threshold reduction or anatomical certification.
 See [the continuity evidence record](recipes/f0_continuity_20260907/README.md).
 
+## Run the model on a scroll region
+
+`socratic-predict` runs the frozen weights on a region of a scroll with the
+shipped inference recipe (eight-way mirror TTA, T=0.30, a 32-voxel halo, BF16)
+and writes an OME-NGFF prediction store in the scroll's own coordinates plus a
+ScrollFiesta cube grid. The volume is streamed anonymously from the open-data
+bucket; the model is not a flag, it is the frozen record.
+
+```powershell
+socratic-predict --scroll PHerc1447 --region 12032:12416,4096:4480,2816:3200 `
+  --out .\infer-demo --run
+```
+
+That writes `infer-demo\prediction.zarr`, in the same form as the published M7
+surface predictions so a viewer opens it straight over the CT, and
+`infer-demo\cubes_PRED\`, which `grid_pipeline` and `socratic-repair` read
+directly. Without `--run` nothing is written and the checked plan is printed.
+`--volume` takes any local or `s3://` store instead of a scroll name, `--grid`
+re-predicts an existing carved grid, and `--threshold 0.35` produces the
+training-record operating point the T=0.35 postprocessors require. The pins come
+from the `inference` section of [recipes/f0/recipe.json](recipes/f0/recipe.json)
+and the scroll names from [recipes/f0/scrolls.json](recipes/f0/scrolls.json).
+See [docs/predict.md](docs/predict.md). This is a research runner, not a
+deployment.
+
 ## Frozen recipe reproduction
 
 The exact F0 configuration, run identity, copied evaluation evidence and 63
@@ -170,7 +195,8 @@ the preserved v31 instructions. The old
   six-cube receipts, hash inventory).
 - `recipes/f0/`: the executable F0 recipe (sealed argv with placeholders,
   artifact pins, observed milestones, selection and qualification records,
-  environment lock, paths example).
+  environment lock, paths example), the pinned inference parameters its
+  `inference` section holds, and the `scrolls.json` name registry.
 - `recipes/f0_ablations_20260910/`: the ablation ledger behind the reduced
   objective — single-term arms, the preregistered preservation experiment, and
   what remains untested rather than refuted.
@@ -179,7 +205,9 @@ the preserved v31 instructions. The old
   implemented by the separate `socratic-repair` command.
 - `src/crossres_pred/`: the engine snapshot, byte-synced to the 63 sealed F0
   code pins (with the documented read-time path-relocation hook);
-  `src/socratic_method/`: the portable recipe/export/postprocessor wrappers.
+  `src/socratic_method/`: the portable recipe, export, prediction and
+  postprocessor wrappers (`socratic-predict` runs the frozen model on a
+  scroll region).
 - `native/line_fitter/`: additive gap-joining postprocessor. Its
   [README](native/line_fitter/README.md) distinguishes source defaults from
   the conservative preset used in the F0 report.
