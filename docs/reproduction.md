@@ -96,8 +96,11 @@ software or hardware.
    shipped inference recipe and writes an OME-NGFF prediction store plus a cube
    grid. It verifies the checkpoint against `release.selected_checkpoint` and the
    engine against the sealed code pins before it fetches anything, and without
-   `--run` it writes nothing. Set `selected_checkpoint` in
-   `recipes/f0/paths.local.json` so the path need not be typed. See
+   `--run` it writes nothing. No setup is required: the weights ship in this
+   repository under `releases/c3-f0-200k-20260907/` and are picked up
+   automatically, so `paths.local.json` is needed for training, not prediction.
+   Clone with Git LFS (`git lfs install`, then `git lfs pull` in an existing
+   clone) or the checkpoint arrives as a pointer stub. See
    [predict.md](predict.md).
 
 ## Historical v31 reproduction

@@ -129,6 +129,13 @@ and the scroll names from [recipes/f0/scrolls.json](recipes/f0/scrolls.json).
 See [docs/predict.md](docs/predict.md). This is a research runner, not a
 deployment.
 
+The weights need no configuration: they are committed under
+`releases/c3-f0-200k-20260907/` and resolved automatically, then checked against
+the SHA-256 the recipe pins before anything runs. They are stored with Git LFS,
+so clone with `git lfs install` in place, or run `git lfs pull` in an existing
+clone; otherwise the checkpoint is a pointer stub and `socratic-predict` says
+so. `--checkpoint` and `--model-hf` still override.
+
 ## Frozen recipe reproduction
 
 The exact F0 configuration, run identity, copied evaluation evidence and 63

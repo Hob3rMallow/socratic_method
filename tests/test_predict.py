@@ -356,6 +356,58 @@ def test_checkpoint_from_the_paths_file(tmp_path, recipe, checkpoint, volume) ->
     assert Path(plan["checkpoint"]["path"]) == checkpoint[0]
 
 
+def test_the_bundled_checkpoint_is_the_default(
+    tmp_path, recipe, checkpoint, volume, monkeypatch
+) -> None:
+    """With no flag and no paths file, the copy committed under releases/ is used."""
+
+    path, contract = checkpoint
+    monkeypatch.setattr(predict, "_repository_root", lambda: tmp_path)
+    monkeypatch.setattr(predict, "DEFAULT_CHECKPOINT", Path(path.name))
+    plan = predict.plan_predict(
+        output=tmp_path / "out", volume=str(volume), region=REGION,
+        recipe_path=recipe, checkpoint=None)
+    assert plan["checkpoint"]["source"] == "bundled"
+    assert Path(plan["checkpoint"]["path"]) == path
+    assert plan["checkpoint"]["sha256"] == contract["sha256"]
+
+
+def test_a_bundled_copy_for_another_recipe_is_not_silently_used(
+    tmp_path, recipe, checkpoint, volume, monkeypatch
+) -> None:
+    """A release whose size disagrees with the contract falls through, it is not adopted."""
+
+    other = tmp_path / "other.pt"
+    other.write_bytes(checkpoint[0].read_bytes() + b"\0" * 32)
+    monkeypatch.setattr(predict, "_repository_root", lambda: tmp_path)
+    monkeypatch.setattr(predict, "DEFAULT_CHECKPOINT", Path(other.name))
+    with pytest.raises(ValueError, match="no checkpoint: pass --checkpoint"):
+        predict.plan_predict(
+            output=tmp_path / "out", volume=str(volume), region=REGION,
+            recipe_path=recipe, checkpoint=None)
+
+
+def test_a_git_lfs_pointer_is_named_as_one(
+    tmp_path, recipe, checkpoint, volume, monkeypatch
+) -> None:
+    """A clone made without Git LFS leaves a stub; say that, not "byte size mismatch"."""
+
+    pointer = tmp_path / "pointer.pt"
+    pointer.write_bytes(
+        b"version https://git-lfs.github.com/spec/v1\n"
+        b"oid sha256:" + b"0" * 64 + b"\nsize 409674095\n"
+    )
+    with pytest.raises(ValueError, match="Git LFS pointer"):
+        _plan(tmp_path, recipe, (pointer, checkpoint[1]), volume=str(volume))
+
+    monkeypatch.setattr(predict, "_repository_root", lambda: tmp_path)
+    monkeypatch.setattr(predict, "DEFAULT_CHECKPOINT", Path(pointer.name))
+    with pytest.raises(ValueError, match="Git LFS pointer"):
+        predict.plan_predict(
+            output=tmp_path / "out", volume=str(volume), region=REGION,
+            recipe_path=recipe, checkpoint=None)
+
+
 def test_model_hf_downloads_and_still_verifies(
     tmp_path, recipe, checkpoint, volume, monkeypatch
 ) -> None:

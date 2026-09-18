@@ -50,6 +50,7 @@ RECEIPT_FILE = "predict_receipt.json"
 RAW_INVENTORY = "raw_inventory.jsonl"
 DEFAULT_REGISTRY = Path("recipes") / "f0" / "scrolls.json"
 DEFAULT_PATHS = Path("recipes") / "f0" / "paths.local.json"
+DEFAULT_CHECKPOINT = Path("releases") / "c3-f0-200k-20260907" / "checkpoint_f0_00200000.pt"
 MAX_BAND_BYTES = 4 * 1024**3
 _REGION = re.compile(r"^\s*(\d+)\s*:\s*(\d+)\s*,\s*(\d+)\s*:\s*(\d+)\s*,\s*(\d+)\s*:\s*(\d+)\s*$")
 _PITCH = re.compile(r"(\d+\.\d+)um")
@@ -257,6 +258,18 @@ def default_registry_path(root: Path | None = None) -> Path:
 
 def _repository_root() -> Path:
     return Path(__file__).resolve().parents[2]
+
+
+def _is_lfs_pointer(path: Path) -> bool:
+    """True for the small text stub a clone without Git LFS leaves in place of weights."""
+
+    try:
+        if not path.is_file() or path.stat().st_size > 1024:
+            return False
+        with path.open("rb") as handle:
+            return handle.read(64).startswith(b"version https://git-lfs")
+    except OSError:
+        return False
 
 
 def load_scroll_registry(path: Path | None = None) -> dict[str, ScrollSpec]:
@@ -587,6 +600,7 @@ def resolve_checkpoint(
     """Locate the frozen checkpoint and prove it is the one the recipe pins."""
 
     source = "argument"
+    bundled = _repository_root() / DEFAULT_CHECKPOINT
     if explicit is not None:
         checkpoint = Path(explicit).expanduser().resolve()
     elif model_hf is not None:
@@ -595,13 +609,27 @@ def resolve_checkpoint(
     elif paths and paths.get("selected_checkpoint"):
         checkpoint = Path(str(paths["selected_checkpoint"])).expanduser().resolve()
         source = "paths-file"
+    elif bundled.is_file() and bundled.stat().st_size == int(contract["bytes"]):
+        checkpoint = bundled.resolve()
+        source = "bundled"
+    elif _is_lfs_pointer(bundled):
+        raise ValueError(
+            f"the bundled checkpoint at {DEFAULT_CHECKPOINT.as_posix()} is a Git LFS "
+            "pointer, not the weights: run `git lfs install` then `git lfs pull`"
+        )
     else:
         raise ValueError(
             "no checkpoint: pass --checkpoint, --model-hf, or set selected_checkpoint "
-            "in recipes/f0/paths.local.json"
+            "in recipes/f0/paths.local.json; the bundled copy at "
+            f"{DEFAULT_CHECKPOINT.as_posix()} is absent or does not match this recipe"
         )
     if not checkpoint.is_file():
         raise FileNotFoundError(f"checkpoint not found: {checkpoint}")
+    if _is_lfs_pointer(checkpoint):
+        raise ValueError(
+            f"{checkpoint} is a Git LFS pointer, not the weights: "
+            "run `git lfs install` then `git lfs pull`"
+        )
     hf_export._validate_selected_checkpoint(checkpoint, contract)
     return checkpoint, source
 
@@ -1117,7 +1145,7 @@ def render_plan(plan: dict[str, Any]) -> str:
     )
     lines.append(
         f"             checkpoint {plan['checkpoint']['sha256'][:8]}... verified "
-        f"({plan['checkpoint']['bytes']:,} bytes)"
+        f"({plan['checkpoint']['bytes']:,} bytes, {plan['checkpoint']['source']})"
     )
     pitch = plan.get("voxel_size_um")
     if pitch:
@@ -1738,7 +1766,11 @@ def build_parser() -> argparse.ArgumentParser:
 
     parser.add_argument("--out", "--output", dest="output", type=Path, required=True)
     parser.add_argument("--threshold", type=float, help="the shipped operating point by default")
-    parser.add_argument("--checkpoint", type=Path)
+    parser.add_argument(
+        "--checkpoint",
+        type=Path,
+        help="defaults to the copy committed under releases/",
+    )
     parser.add_argument("--model-hf", help="Hugging Face repository holding the checkpoint")
     parser.add_argument("--recipe", type=Path)
     parser.add_argument("--paths", type=Path)
