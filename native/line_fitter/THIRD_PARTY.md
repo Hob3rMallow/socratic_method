@@ -6,3 +6,6 @@ only by the optional visualization/research targets.
 
 The optional `pred_fixup` executable links against the system's libtiff and
 OpenMP runtime; their licenses are not reproduced here.
+
+Everything else in this directory is covered by the repository's Apache-2.0
+license; see [LICENSE](../../LICENSE) and [NOTICE](../../NOTICE).

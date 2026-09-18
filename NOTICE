@@ -1,0 +1,37 @@
+The Socratic Method
+Copyright 2026 The Socratic Method Authors
+
+This product includes software developed by the Socratic Method authors,
+licensed under the Apache License, Version 2.0 (see LICENSE).
+
+The frozen F0 model weights committed under `releases/` are released under
+that same Apache License, Version 2.0.
+
+--------------------------------------------------------------------------
+
+Third-party and upstream components
+
+The following are NOT covered by the Apache License above and retain their
+own terms:
+
+* `native/line_fitter/third_party/stb_image_write.h` - Sean Barrett's stb
+  image writer, public-domain/MIT dual-licensed. See the notice inside that
+  file and `native/line_fitter/THIRD_PARTY.md`.
+
+* Herculaneum scroll volumes and associated labels obtained through the
+  Vesuvius Challenge, subject to that programme's data terms.
+
+* The released M7 9.362 um surface model, from which the F0 student was
+  initialised, subject to its own upstream terms.
+
+* The approximately 2.399 um Villa fine-teacher implementation and
+  checkpoint, used as a training-time reference only, subject to its own
+  upstream terms.
+
+* The optional `pred_fixup` target links against the system libtiff and
+  OpenMP runtimes, whose licenses are not reproduced here.
+
+The Apache License covers this repository's original code and the F0 weights
+that code produced. It grants no rights over the upstream artifacts listed
+above. Anyone redistributing those artifacts, or rebuilding the corpus from
+them, must satisfy their terms independently.

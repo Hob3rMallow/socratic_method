@@ -12,7 +12,9 @@ exporter writes for that recipe.
   (`recipes/v31/recipe.json`).
 - `dataset/`: dataset-card scaffold for the replay bundles.
 
-Generated bundles land in `huggingface/export/` (gitignored). Weights are never
-committed to Git, and publishing remains a separate, explicit `hf upload`
-action that still requires a license and resolution of the upstream artifact
-terms.
+Generated bundles land in `huggingface/export/` (gitignored). The frozen F0
+checkpoint is committed to this repository under `releases/` via Git LFS and is
+Apache-2.0 licensed; pushing a bundle to the Hugging Face Hub remains a
+separate, explicit `hf upload` action. The upstream data, teacher and M7 terms
+still govern anything rebuilt from those artifacts - see the repository
+[NOTICE](../NOTICE).

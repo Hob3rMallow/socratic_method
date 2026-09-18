@@ -203,13 +203,12 @@ reclaimed automatically, by timeout or otherwise. Look at what owns it first.
 F0 is a single-pass model. There is no second pass in this recipe and no evidence
 for one, so the flag does not exist; passing it says exactly that.
 
-## Why `--model-hf` exists but the weights do not
+## Why `--model-hf` exists
 
 `--model-hf <repo-id>` fetches the checkpoint from a Hugging Face repository and
-verifies it against the recipe like any other. No public repository holds these
-weights: the release license and the upstream data, teacher and M7 terms are
-unresolved, so the weights are not redistributable. The flag is there for a
-private repository, or for the day that changes.
+verifies it against the recipe like any other. The frozen weights now ship in
+this repository under `releases/c3-f0-200k-20260907/` via Git LFS, so the flag is
+not required to run F0; it remains for a Hugging Face mirror, public or private.
 
 ## Limits
 

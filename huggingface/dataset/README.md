@@ -26,4 +26,6 @@ approximately 2.399 um to 9.362 um; they are not human ground truth.
 
 Before publication, fill in upstream data sources and licenses, Villa teacher
 version/checkpoint identity, download instructions, sizes/file counts, privacy
-review, and citation. Do not publish under a guessed license.
+review, and citation. The repository's Apache-2.0 license covers its own code
+and the F0 weights; it does not cover this corpus or the upstream scroll data it
+derives from. Do not publish the dataset under a guessed license.

@@ -212,7 +212,9 @@ the preserved v31 instructions. The old
   [README](native/line_fitter/README.md) distinguishes source defaults from
   the conservative preset used in the F0 report.
 - `huggingface/`: model-card/export templates per recipe (`f0/` current,
-  `v31/` historical); weights are not committed to Git.
+  `v31/` historical).
+- `releases/c3-f0-200k-20260907/`: the frozen F0 checkpoint itself, tracked
+  with Git LFS and byte-verified against the SHA-256 in `recipes/f0/recipe.json`.
 - `provenance/source/`: preserved earlier plans, run records and research drivers.
 - `submission.pdf` and `submissions/2026-09/`: the paper. Rewritten on
   2026-09-10 around the shipped F0 model and its reduced objective; the retired
@@ -222,12 +224,27 @@ the preserved v31 instructions. The old
 
 ## Release and artifact boundary
 
-The **current model record is frozen locally**; this update does not claim a
-production deployment or perform a public upload. Large corpora, released M7
-weights, student weights and full cached image reports remain external artifacts.
-Their identities and local locations are recorded. Public distribution still
-requires a license and resolution of upstream data/teacher/M7 terms.
+The **F0 student weights are committed to this repository** under
+`releases/c3-f0-200k-20260907/`, tracked with Git LFS and byte-verified against
+the SHA-256 pinned in `recipes/f0/recipe.json`. They carry the same Apache-2.0
+license as the code. This is a source release, not a production deployment.
+
+Large corpora, released M7 weights and full cached image reports remain external
+artifacts; their identities and local locations are recorded. Rebuilding from
+them is still governed by the upstream Vesuvius Challenge data, Villa teacher
+and M7 terms, which this repository's license does not extend. See
+[NOTICE](NOTICE).
 
 See [docs/model.md](docs/model.md), [docs/reproduction.md](docs/reproduction.md),
 the [post-run review](recipes/final_c3_250k_20260907/review.md), and the
 [ablation ledger](recipes/f0_ablations_20260910/README.md).
+
+## License
+
+Apache License 2.0 - see [LICENSE](LICENSE). It covers the original code in this
+repository and the frozen F0 weights under `releases/`.
+
+Upstream artifacts are not relicensed here and keep their own terms: the
+Vesuvius Challenge scroll data, the released M7 model the student was
+initialised from, the approximately 2.399 um Villa fine teacher, and the
+vendored `stb_image_write.h`. [NOTICE](NOTICE) lists them.

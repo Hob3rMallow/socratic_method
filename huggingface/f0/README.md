@@ -27,8 +27,9 @@ frozen model, chosen by a preregistered late-checkpoint rule after the complete
 operating threshold of {{OPERATING_THRESHOLD}}, preregistered before the
 2026-09-08 inference ladder and promoted on 9 September 2026 on the unchanged
 weights. The fine teacher and M7 are training-time references only; inference
-does not blend either one into the student. Weight publication remains subject
-to the repository's pending license and upstream artifact terms.
+does not blend either one into the student. The weights are released under the
+Apache License 2.0; the upstream data, teacher and M7 artifacts keep their own
+terms.
 
 On the frozen 689-row benchmark (PHerc0814 and PHerc1451, registered
 fine-teacher labels) the shipped recipe reaches macro Dice 0.7130 at T=0.30
@@ -124,6 +125,11 @@ gated tools.
 
 ## License and citation
 
-No release license has yet been selected. Do not upload or redistribute the
-weights until the repository owner resolves the source, data, teacher, and M7
-artifact terms. Ownership and citation fields are still to be completed.
+Apache License 2.0. The same license covers the source repository's original
+code and these weights, and the frozen checkpoint is committed there under
+`releases/c3-f0-200k-20260907/`.
+
+Apache-2.0 does not extend to the upstream artifacts this model was built from -
+the Vesuvius Challenge scroll data, the released M7 model used for
+initialisation, and the Villa fine teacher - each of which keeps its own terms.
+Citation fields are still to be completed.

@@ -22,8 +22,8 @@ medial-crest recall, M7 preservation, and dynamic widest-path connectivity.
 **Release status:** the raw {{CHECKPOINT_SAMPLES}}-sample student is selected at
 an operating threshold of {{OPERATING_THRESHOLD}}. The fine teacher and M7 are
 training-time references only; inference does not blend either one into the
-student. Weight publication remains subject to the repository's pending license
-and upstream artifact terms.
+student. The weights are released under the Apache License 2.0; the upstream
+data, teacher and M7 artifacts keep their own terms.
 
 All eight duration intervals improve both ordinary validation scrolls over
 released M7. Their Dice-calibrated optimum remains censored at the tested lower
@@ -105,6 +105,11 @@ mergers or gaps and require downstream geometric safeguards.
 
 ## License and citation
 
-No release license has yet been selected. Do not upload or redistribute the
-weights until the repository owner resolves the source, data, teacher, and M7
-artifact terms. Ownership and citation fields are still to be completed.
+Apache License 2.0, the same license as the source repository's original code.
+Note that v31 is the historical model: only the current F0 checkpoint is
+committed to the repository, under `releases/c3-f0-200k-20260907/`.
+
+Apache-2.0 does not extend to the upstream artifacts this model was built from -
+the Vesuvius Challenge scroll data, the released M7 model used for
+initialisation, and the Villa fine teacher - each of which keeps its own terms.
+Citation fields are still to be completed.

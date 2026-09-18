@@ -3,6 +3,8 @@ name = "socratic-method"
 version = "0.1.0"
 description = "Reproducible 2 um to 9 um teacher supervision for M7 surface segmentation"
 readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
 requires-python = ">=3.11,<3.14"
 dependencies = [
     "imagecodecs>=2024.1",

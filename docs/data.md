@@ -64,6 +64,8 @@ and plans are preserved under `provenance/source/scripts` and
 
 Those drivers are evidence rather than a one-command public downloader: public
 volume locations, Villa source/checkpoint identity, storage capacity, and data
-licenses must be supplied by the reproducer. A future dataset release should
+licenses must be supplied by the reproducer. The repository's Apache-2.0 license
+covers its own code and the F0 weights, not this corpus or the upstream
+artifacts it is built from. A future dataset release should
 ship the prepared replay bundles plus a dataset card documenting those upstream
 terms.
