@@ -87,3 +87,7 @@ Thumbs.db
 
 # Machine-local artifact paths for socratic-train (see recipes/*/paths.example.json)
 paths.local.json
+
+# The frozen F0 release weights are tracked via Git LFS (see .gitattributes),
+# so they are exempt from the blanket *.pt rule above.
+!releases/**/*.pt

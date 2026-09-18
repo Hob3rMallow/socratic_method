@@ -2,3 +2,5 @@
 src/crossres_pred/** -text
 # Inference-evidence record: copied bytes are hash-inventoried in files.json; never normalize.
 recipes/f0_inference_20260909/** -text
+# Frozen F0 release weights: stored via Git LFS, hash-pinned in recipes/f0/recipe.json.
+releases/**/*.pt filter=lfs diff=lfs merge=lfs -text
