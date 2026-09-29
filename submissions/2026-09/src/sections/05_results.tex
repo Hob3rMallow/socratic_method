@@ -88,16 +88,120 @@ Ours (\fzSelectedShort) & TTA, $t=\fzShipT$ & $\mathbf{\fzTtaMacro}$ \\
 \end{tabular}
 \end{table}
 
+\subsection{Head-to-Head at the Published Setting}
+\label{sec:head-to-head}
+
+The comparison above runs M7 the way we run the student. The organisers
+publish M7 differently: their inference metadata disables test-time
+augmentation and thresholds at $0.2$. Table~\ref{tab:h2h} scores that exact
+setting and HercUNet v0 \cite{lomeli2026hercunet}, a concurrent iterative
+refiner warm-started from M7. Nothing is retrained, every model sees the same
+192\textsuperscript{3} patches, and one metric binary computes every composite.
+
+HercUNet publishes no operating threshold, so it receives the best of both
+normalisations its code contains, one to four refinement passes, augmentation
+on or off, every threshold from $0.10$ to $0.90$ and up to three voxels of
+dilation, each chosen on this benchmark; that choice flatters it. Because it
+predicts the medial surface of a sheet rather than its face, we also report
+surface F1 with two- and four-voxel tolerance. Its own command-line pipeline,
+run on the live scroll around four benchmark patches with its blending and
+half-window shifts, read CT identical to our patches and scored at or below our
+harness on every one.
+
+\begin{table}[t]
+\caption{Frozen 689-row benchmark, same rows for every model. Comp.\ is the
+Kaggle-style $0.35$ SurfaceDice@2 $+\,0.35$ VOI $+\,0.30$ TopoScore. Surface F1
+counts a prediction within the stated distance of a labelled sheet as correct.
+HercUNet's row is the best over all of its settings on this benchmark.}
+\label{tab:h2h}
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llrrrr}
+\toprule
+Model & Inference & Dice & Comp. & F1@2 & F1@4 \\
+\midrule
+M7, as published & no TTA, $t=0.20$ & $\mSevenPublishedMacro$ & $\mSevenPublishedComposite$ & $\mSevenPublishedTolTwo$ & $\mSevenPublishedTolFour$ \\
+HercUNet v0 & best setting & $\hercBestMacro$ & $\hercBestComposite$ & $\hercTolTwo$ & $\hercTolFour$ \\
+Ours & TTA, $t=\fzShipT$ & $\mathbf{\fzTtaMacro}$ & $\mathbf{\fzCompositeTta}$ & $\mathbf{\fzTolTwo}$ & $\mathbf{\fzTolFour}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Paired over the same rows, the student leads M7 as published by
+$\fzMinusMSevenPublished$ $[\fzMinusMSevenPublishedLow,\fzMinusMSevenPublishedHigh]$
+macro Dice and HercUNet at its best by $\fzMinusHerc$
+$[\fzMinusHercLow,\fzMinusHercHigh]$. Dilating HercUNet's medial prediction,
+the remedy its own write-up proposes, raises it only to $\hercBestDilatedMacro$.
+Its additional refinement passes lower its Dice on this benchmark but, with
+augmentation, raise its topology score, so its best composite is the four-pass
+output with TTA.
+
+\subsection{Where the Published M7 Makes Blobs}
+\label{sec:blob-audit}
+
+The benchmark's labelled regions are relatively clean, so it measures accuracy
+more than blobs. To test the blob claim without choosing examples, we drew 32
+cubes of 128\textsuperscript{3} voxels uniformly at random from the interior of
+each of eight scrolls that carry an official published M7 prediction, 256 in
+all, under a rule written into the sampling code before any cube was read. For
+each cube we kept the published mask unchanged and ran the student and
+HercUNet on the same CT. We measure the share of predicted voxels at
+six-connected depth five or more from background, which a single sheet at this
+resolution does not reach, and split each scroll's cubes into thirds by how much
+of their CT is dark gap between wraps (Table~\ref{tab:blob}).
+
+\begin{table}[t]
+\caption{Share of predicted voxels inside a solid mass (depth $\geq 5$), in
+percent, over 256 random interior cubes from eight scrolls, split within each
+scroll by compression.}
+\label{tab:blob}
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrr}
+\toprule
+Source & open & middle & compressed \\
+\midrule
+M7, as published & 2.0 & 2.7 & 6.0 \\
+M7, released weights rerun, same setting & 2.1 & 2.5 & 6.5 \\
+M7 + TTA, $t=0.30$ & 0.4 & 0.2 & 0.6 \\
+HercUNet v0, best setting (four passes + TTA) & 5.3 & 5.1 & 7.4 \\
+HercUNet v0, four passes, no TTA & 5.0 & 4.8 & 6.6 \\
+HercUNet v0, one pass, no TTA, $t=0.50$ & 0.8 & 0.8 & 1.0 \\
+Ours, shipped & 2.9 & 1.5 & 2.8 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The published mask's solid-mass share triples from open to compressed cubes,
+and rerunning the released weights at the same setting reproduces it, so the
+effect belongs to the model rather than to the publication pipeline. The
+student does not rise with compression. Augmenting M7 removes most deep voxels,
+but in compressed cubes what remains is fragments rather than sheets: it fills
+less of the cube than the student (17.5\% against 23.0\%) yet breaks into more
+pieces ($33.9$ per cube against $24.0$), and on the benchmark that setting still
+trails the student by $0.120$ Dice. Whole-cube failures are rare for every model: one of
+256 published M7 cubes is a solid slab under the ScrollFiesta rejection rule,
+and none of the student's. At its best challenge-metric setting, four passes
+with TTA, HercUNet is the thickest output measured.
+
 \subsection{Inference-Time Levers}
 
 Two levers that change no weights were preregistered before scoring, together
 with the rule that a claim above $0.70$ requires a positive paired lower bound
 after Holm correction and non-negative deltas on both scrolls.
 Eight-way mirror TTA at $t=\fzShipT$ reaches $\fzTtaMacro$
-$[\fzTtaLow,\fzTtaHigh]$, a paired gain of $\fzTtaDelta$
-$[\fzTtaDeltaLow,\fzTtaDeltaHigh]$ over the same weights without TTA, positive
-on both scrolls.
-At the primary endpoint $t=\fzPrimaryT$ the same weights reach $\fzTtaPrimary$.
+$[\fzTtaLow,\fzTtaHigh]$, a paired gain of $\fzTtaDeltaOp$
+$[\fzTtaDeltaOpLow,\fzTtaDeltaOpHigh]$ over the same weights without TTA at
+their training-record threshold, positive on both scrolls.
+At the primary endpoint $t=\fzPrimaryT$ the same weights reach $\fzTtaPrimary$,
+a paired gain of $\fzTtaDelta$ $[\fzTtaDeltaLow,\fzTtaDeltaHigh]$ at matched
+threshold.
+The preregistered replication applied the same recipe to the independent
+seed-1204 run: it reaches $\cThreeRTtaMacro$ $[\cThreeRTtaLow,\cThreeRTtaHigh]$,
+$\cThreeRDelta$ $[\cThreeRDeltaLow,\cThreeRDeltaHigh]$ over that run's own
+no-TTA reference, so the gain is not a property of one seed.
 
 We also evaluated uniform weight averages over late milestones.
 They reduce variance without shifting the level: no narrow late average beat the
@@ -117,21 +221,41 @@ no-TTA configuration missed.
 \subsection{Held-Out Human Labels}
 
 On PHerc0500P2, the one held-out set with human rather than model-derived
-labels, every variant we measured scores between $0.476$ and $0.497$ composite:
-the spread is smaller than the differences we are trying to resolve.
-Released M7 with TTA at its calibrated threshold remains ahead there at
-$0.5015$.
+labels, the composite is flat across models: the shipped student scores
+$0.4917$, M7 as published $0.4938$, M7 with TTA at its calibrated threshold
+$0.5015$, and HercUNet v0 at most $0.4795$. Every variant of our model we
+measured falls between $0.476$ and $0.500$, a spread smaller than the
+differences we are trying to resolve.
 These are absolute scores only and not a gain claim, because released M7 saw
-those labels during its own training; we report them because a flat result on
-the only human-labelled holdout is a real limit on what the frozen benchmark
-establishes.
+those labels during its own training and HercUNet starts from M7; we report
+them because a flat result on the only human-labelled holdout is a real limit
+on what the frozen benchmark establishes.
+
+\subsection{Release}
+\label{sec:release}
+
+We release the selected \fzSelectedShort\ checkpoint with its shipped
+inference recipe as \releaseName; our records call it F0.
+The code and the \checkpointMB\,MB checkpoint are released under the Apache
+License 2.0, and the checkpoint is checked against its recorded SHA-256 before
+use.
+One command runs the shipped recipe, eight-way mirror TTA at $t=\fzShipT$, on
+any region of a registered scroll, streaming the CT from the public Vesuvius
+Challenge data bucket, and writes an OME-NGFF prediction store together with a
+cube grid that downstream geometry tools read directly.
+The postprocessors of Appendix~\ref{sec:fitter} ship with it as opt-in tools
+pinned to $t=\fzPrimaryT$ (Sec.~\ref{sec:limitations}).
+The upstream data, the M7 weights the student was initialised from, and the fine
+teacher keep their own terms.
 
 \subsection{Figure Provenance}
 \label{sec:figure-provenance}
 
-Every rendered panel in this draft---the teaser,
-Fig.~\ref{fig:registered}, Fig.~\ref{fig:limitations}, and both galleries in
-Sec.~\ref{sec:gallery}---shows the earlier v31 student at $t=0.45$, not the
+The teaser (Fig.~\ref{fig:teaser}) shows the shipped model at its operating
+point, beside the published M7 mask and HercUNet v0 on seeded-random cubes.
+The other rendered panels---Fig.~\ref{fig:registered},
+Fig.~\ref{fig:limitations}, and both galleries in
+Sec.~\ref{sec:gallery}---show the earlier v31 student at $t=0.45$, not the
 model reported in Table~\ref{tab:headline}.
 Those panels were produced for the earlier configuration and have not yet been
 regenerated.

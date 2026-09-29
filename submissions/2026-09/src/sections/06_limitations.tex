@@ -27,9 +27,18 @@ cost.
 We report both the augmented and unaugmented figures because that trade is a
 deployment decision, not a property of the model.
 
-Rendered figures in this draft show the earlier v31 student and have not been
-regenerated against the shipped weights
-(Sec.~\ref{sec:figure-provenance}); doing so is outstanding release work.
+The teaser shows the shipped model; the remaining rendered figures still show
+the earlier v31 student and have not been regenerated against the shipped
+weights (Sec.~\ref{sec:figure-provenance}).
+The blob audit of Sec.~\ref{sec:blob-audit} has no ground truth: solid-mass
+share is a geometric proxy, and it cannot see two wraps fused where the CT
+itself shows no gap. The HercUNet fidelity check covers four patches, not the
+whole benchmark.
+The student is not free of masses either: in some open cubes it fuses wraps
+itself.
+On the seeded-random open PHerc0191 cube shown in the release record,
+$\openFuseFz\%$ of its predicted voxels lie inside a solid mass, against
+$\openFuseMSeven\%$ for the published M7.
 The downstream postprocessors of Appendix~\ref{sec:fitter} keep provenance pins
 at the earlier operating threshold and must be re-qualified before they are
 combined with the shipped inference recipe.
@@ -57,7 +66,8 @@ recoverable during qualification.
   \label{fig:limitations}
 \end{figure*}
 
-Finally, exact replay requires large, separately licensed artifacts.
-The training code, recipes, hashes, and export scaffolding are public-repository
-material, but the validation corpus, teacher atlases, M7 weights, and student
+Finally, the shipped checkpoint and the code are public
+(Sec.~\ref{sec:release}), but exact replay of training and evaluation still
+requires large, separately licensed artifacts.
+The validation corpus, teacher atlases, M7 weights, and the unshipped milestone
 checkpoints require dedicated artifact hosting and resolved upstream terms.

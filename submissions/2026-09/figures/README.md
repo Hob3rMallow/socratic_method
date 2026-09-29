@@ -1,5 +1,20 @@
 # Paper and release figures
 
+> **Update, 2026-09-29.** The teaser's magenta row label now reads "Socratic
+> Method September 2026", the name the September 2026 progress video uses for
+> F0. `../relabel_teaser.py` repaints only that label cell of the record's copy
+> (`recipes/f0_benchmark_20260924/evidence/figures/teaser_f0_compressed.png`,
+> which keeps "F0 (ours)"); every image panel is pixel-identical.
+
+> **Update, 2026-09-24.** The paper's teaser is now `teaser_f0_compressed.png`,
+> which shows the **shipped F0 model** (eight-way mirror TTA, T=0.30) beside the
+> organisers' published M7 mask and HercUNet v0 at its best setting (four passes
+> with TTA) on the eight seeded-random
+> compressed cubes of the blob audit (one per scroll, never chosen by outcome).
+> It is produced by `recipes/f0_benchmark_20260924/runtime/render_teaser.py`;
+> the record holds all 256 cubes. The old `teaser.png` is kept for history.
+> Every other panel below still shows the v31 student.
+
 > **Provenance, 2026-09-10.** Every rendered panel below was produced for the
 > earlier v31 seven-term configuration and shows that student at threshold 0.45,
 > not the shipped F0 model the paper reports. The captions in the rewritten

@@ -23,8 +23,14 @@ function-space term that acts where the teacher is silent or confidently agrees.
 Trained over twelve scrolls for a full 250,000-exposure schedule, the student
 reaches 0.6808 macro-scroll Dice on a frozen 689-row benchmark against released
 M7's 0.5541 under matched inference, and 0.7130 with eight-way mirror test-time
-augmentation at a preregistered operating threshold. We also report what did not
-survive. An earlier form of this method carried five further training terms —
+augmentation at a preregistered operating threshold. The shipped student,
+released with open weights as Socratic Method September 2026, gains +0.1524
+macro Dice against M7 run exactly as the organisers publish it and leads on the
+challenge's own composite metric; against HercUNet v0, given every setting in its
+favour, it gains +0.2736. On 256 randomly drawn interior cubes, the
+published M7 buries 2.0% of its predicted voxels in solid masses where the scroll
+is open and 6.0% where it is compressed; the student stays near 3% in both. We
+also report what did not survive. An earlier form of this method carried five further training terms —
 medial crest recall, a teacher-background separation shell, one-sided M7
 preservation, and fixed-route then dynamic widest-path connectivity — together
 with a global parameter trust region. Given a corpus of adequate breadth and no
@@ -101,6 +107,11 @@ Our contributions are:
    difference; and
 4. a separately measured additive 2D postprocess that reconnects only short gaps
    passing geometric and cross-plane objections (Appendix C).
+
+We also compare the shipped model, Socratic Method September 2026, with M7 as the
+organisers publish it and with HercUNet v0 on the same rows, audit where each
+forms solid masses on randomly drawn cubes, and release its weights (Section 4,
+Release).
 
 > **Figure 1 - method overview.** File:
 > `figures/figure_1_method_overview.png`. The rendered schematic dates from the
@@ -261,8 +272,11 @@ Inference runs the raw student alone, with no teacher forward pass and no blend.
 before scoring, with the rule that a claim above 0.70 requires a positive paired
 lower bound after Holm correction and non-negative deltas on both scrolls.
 Eight-way mirror TTA at T = 0.30 reaches 0.7130 [0.7012, 0.7248], a paired gain
-of +0.0230 [+0.0195, +0.0265] over the same weights without TTA, positive on both
-scrolls. Uniform weight averages over late milestones reduce variance without
+of +0.0322 [+0.0281, +0.0364] over the same weights without TTA at their
+training-record threshold, positive on both scrolls; at matched T = 0.35 the gain
+is +0.0230 [+0.0195, +0.0265]. The preregistered replication applied the same
+recipe to the independent seed-1204 run: 0.7089 [0.6974, 0.7204], +0.0351
+[+0.0302, +0.0400] over that run's own no-TTA reference. Uniform weight averages over late milestones reduce variance without
 shifting the level; none beat the selected milestone beyond the seed band, and we
 report rather than promote them. At the shipped operating point the blind
 six-cube gates and the frontier veto pass: foreground ratio 0.799, with 4,945
@@ -271,15 +285,68 @@ reference-relative bridge pixels against a 7,983 ceiling at skeleton coverage
 with topology from 0.3880 to 0.4016, meeting the 0.3776 advisory that the no-TTA
 configuration missed.
 
-**Held-out human labels.** On PHerc0500P2, the one held-out set with human rather
-than model-derived labels, every variant scores between 0.476 and 0.497
-composite, and released M7 with TTA at its calibrated threshold remains ahead at
-0.5015. These are absolute scores only, because released M7 saw those labels
-during its own training; we report them because a flat result on the only
-human-labelled holdout is a real limit on what the frozen benchmark establishes.
+**Head-to-head at the published setting.** The organisers publish M7 with
+test-time augmentation disabled and a threshold of 0.2. On the same 689 rows,
+scored by one metric binary, and with HercUNet v0 given the best of both
+normalisations, one to four passes, augmentation on or off, every threshold and
+up to three voxels of dilation, each chosen on this benchmark:
 
-**Figure provenance.** Every rendered panel in this draft — the teaser, the
-registered examples, the failure cases and both galleries — shows the earlier
+| Model | Inference | Macro Dice | Composite | Surface F1 @2 | Surface F1 @4 |
+|---|---|---|---|---|---|
+| M7, as published | no TTA, T = 0.20 | 0.5607 | 0.6012 | 0.813 | 0.893 |
+| HercUNet v0 | best setting | 0.4394 | 0.5447 | 0.709 | 0.847 |
+| Ours (200k) | TTA, T = 0.30 | **0.7130** | **0.6521** | **0.903** | **0.937** |
+
+Paired over the same rows the student leads M7 as published by +0.1524 [+0.1413,
++0.1636] and HercUNet at its best by +0.2736 [+0.2548, +0.2924]. HercUNet's own
+command-line pipeline, run on the live scroll around four benchmark patches,
+scored at or below our harness on every one.
+
+**Where the published M7 makes blobs.** We drew 32 interior cubes of 128^3 voxels
+at random from each of eight scrolls with an official published M7 prediction,
+under a rule fixed before any cube was read, kept the published mask unchanged,
+and ran the student and HercUNet on the same CT. Share of predicted voxels inside
+a solid mass (depth >= 5), in percent, by compression third within each scroll:
+
+| Source | open | middle | compressed |
+|---|---|---|---|
+| M7, as published | 2.0 | 2.7 | 6.0 |
+| M7, released weights rerun, same setting | 2.1 | 2.5 | 6.5 |
+| M7 + TTA, T = 0.30 | 0.4 | 0.2 | 0.6 |
+| HercUNet v0, best setting (four passes + TTA) | 5.3 | 5.1 | 7.4 |
+| HercUNet v0, four passes, no TTA | 5.0 | 4.8 | 6.6 |
+| HercUNet v0, one pass, no TTA, T = 0.50 | 0.8 | 0.8 | 1.0 |
+| Ours, shipped | 2.9 | 1.5 | 2.8 |
+
+The published mask's solid-mass share triples with compression and the rerun
+reproduces it; the student does not rise. Augmenting M7 removes most deep voxels,
+but what remains in compressed cubes is fragments rather than sheets: it fills
+less of the cube than the student (17.5% against 23.0%) yet breaks into more
+pieces (33.9 per cube against 24.0), and that setting still trails the student
+by 0.120 Dice on the benchmark.
+
+**Held-out human labels.** On PHerc0500P2, the one held-out set with human rather
+than model-derived labels, the composite is flat across models: the shipped
+student scores 0.4917, M7 as published 0.4938, M7 with TTA at its calibrated
+threshold 0.5015, and HercUNet v0 at most 0.4795. These are absolute scores only,
+because released M7 saw those labels during its own training and HercUNet starts
+from M7; we report them because a flat result on the only human-labelled holdout
+is a real limit on what the frozen benchmark establishes.
+
+**Release.** We release the selected 200k checkpoint with its shipped inference
+recipe as Socratic Method September 2026; the records call it F0. The code and
+the 409.7 MB checkpoint are released under the Apache License 2.0, and the
+checkpoint is checked against its recorded SHA-256 before use. One command runs
+the shipped recipe, eight-way mirror TTA at T = 0.30, on any region of a
+registered scroll, streaming the CT from the public Vesuvius Challenge data
+bucket, and writes an OME-NGFF prediction store together with a cube grid that
+downstream geometry tools read directly. The postprocessors of Appendix C ship
+with it as opt-in tools pinned to T = 0.35. The upstream data, the M7 weights the
+student was initialised from, and the fine teacher keep their own terms.
+
+**Figure provenance.** The teaser shows the shipped model beside the published
+M7 mask and HercUNet v0 on seeded-random cubes. The other rendered panels — the
+registered examples, the failure cases and both galleries — show the earlier
 v31 student at T = 0.45, not the model in the table above. Those panels have not
 been regenerated. They remain informative about the qualitative failure modes the
 method addresses, but should not be read as depicting the shipped weights.
@@ -296,10 +363,16 @@ replicate is a weak estimate of a variance. The ablations of Appendix A are
 negative results under one corpus, one optimizer and one horizon; they do not
 establish that no version of those objectives could help elsewhere, and the
 medial tail floor in particular remains untested at scale. Test-time augmentation
-improves the shipped number at eight times the inference cost. Rendered figures
-show the earlier student. The postprocessors of Appendix C keep provenance pins
+improves the shipped number at eight times the inference cost. Apart from the
+teaser, rendered figures show the earlier student. The blob audit has no ground
+truth, and its solid-mass share cannot see two wraps fused where the CT shows no
+gap. The student is not free of masses either: on the seeded-random open
+PHerc0191 cube shown in the release record, 9.3% of its predicted voxels lie
+inside a solid mass, against 4.7% for the published M7. The postprocessors of
+Appendix C keep provenance pins
 at the earlier operating threshold and must be re-qualified before being combined
-with the shipped inference recipe. Finally, exact replay requires large,
+with the shipped inference recipe. Finally, the shipped checkpoint and the code
+are public, but exact replay of training and evaluation still requires large,
 separately licensed artifacts.
 
 ### 6. Conclusion
@@ -308,7 +381,10 @@ A fine-resolution teacher can productively question a coarse expert when its
 evidence is represented as soft occupancy and its authority is bounded by a
 masked function anchor. Under matched inference the resulting student improves on
 released M7 by 0.1266 macro-scroll Dice on a frozen benchmark, and by more with
-an inference-time augmentation that leaves the weights untouched.
+an inference-time augmentation that leaves the weights untouched. On the same rows
+it also leads M7 as the organisers publish it and HercUNet v0, and its
+solid-mass share does not rise with compression as the published M7's does. We
+release the shipped weights as Socratic Method September 2026.
 
 The larger lesson is subtractive. We began with seven weighted training terms,
 each a defensible answer to an observed failure, and finished with three. What
@@ -627,11 +703,14 @@ isolated native line fitter. A small portability shim maps the source
 experiment's absolute Windows root to a local artifact mirror at read time. It
 does not rewrite the provenance-bound JSON or JSONL bytes.
 
-The large corpora, released M7 weights, Villa teacher material, and student
-checkpoints are not appropriate ordinary Git payloads. Model and dataset cards
-plus a safetensors exporter are staged for artifact hosting, but no upload
-should occur until ownership and upstream terms are resolved. The repository
-uses an explicit license hold rather than guessing a permissive license.
+The code and the shipped F0 weights are released under the Apache License 2.0
+(`LICENSE`, `NOTICE`). The checkpoint is committed through Git LFS under
+`releases/c3-f0-200k-20260907/`, pinned by SHA-256 in `recipes/f0/recipe.json`,
+and `socratic-predict` runs it on a scroll region in one command. The large
+corpora, released M7 weights, Villa teacher material and the unshipped milestone
+checkpoints are not redistributed: they keep their own upstream terms and belong
+in dedicated artifact storage. Model cards and a safetensors exporter remain
+staged for optional artifact hosting.
 
 ### References
 

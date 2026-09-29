@@ -72,3 +72,56 @@
 \newcommand{\ballRatioThirty}{67}
 \newcommand{\ballRatioFifty}{82}
 \newcommand{\ballActiveFirst}{97.7}
+
+% Head-to-head record recipes/f0_benchmark_20260924 (measured 2026-09-24) and the
+% seed replication of the inference recipe (recipes/f0_c3r_replication_20260909).
+\newcommand{\fzTtaDeltaOp}{+0.0322}
+\newcommand{\fzTtaDeltaOpLow}{+0.0281}
+\newcommand{\fzTtaDeltaOpHigh}{+0.0364}
+\newcommand{\cThreeRTtaMacro}{0.7089}
+\newcommand{\cThreeRTtaLow}{0.6974}
+\newcommand{\cThreeRTtaHigh}{0.7204}
+\newcommand{\cThreeRDelta}{+0.0351}
+\newcommand{\cThreeRDeltaLow}{+0.0302}
+\newcommand{\cThreeRDeltaHigh}{+0.0400}
+\newcommand{\mSevenPublishedMacro}{0.5607}
+\newcommand{\mSevenPublishedComposite}{0.6012}
+\newcommand{\mSevenPublishedTolTwo}{0.813}
+\newcommand{\mSevenPublishedTolFour}{0.893}
+\newcommand{\fzTolTwo}{0.903}
+\newcommand{\fzTolFour}{0.937}
+\newcommand{\hercBestMacro}{0.4394}
+\newcommand{\hercBestDilatedMacro}{0.4481}
+\newcommand{\hercBestComposite}{0.5447}
+\newcommand{\hercTolTwo}{0.709}
+\newcommand{\hercTolFour}{0.847}
+\newcommand{\fzMinusMSevenPublished}{+0.1524}
+\newcommand{\fzMinusMSevenPublishedLow}{+0.1413}
+\newcommand{\fzMinusMSevenPublishedHigh}{+0.1636}
+\newcommand{\fzMinusHerc}{+0.2736}
+\newcommand{\fzMinusHercLow}{+0.2548}
+\newcommand{\fzMinusHercHigh}{+0.2924}
+\newcommand{\blobMSevenOpen}{2.0}
+\newcommand{\blobMSevenCompressed}{6.0}
+\newcommand{\blobMSevenRerunOpen}{2.1}
+\newcommand{\blobMSevenRerunCompressed}{6.5}
+\newcommand{\blobMSevenTtaCompressed}{0.6}
+\newcommand{\blobFzOpen}{2.9}
+\newcommand{\blobFzCompressed}{2.8}
+\newcommand{\soupTtaMacro}{0.7248}
+\newcommand{\soupTtaDelta}{+0.0118}
+\newcommand{\soupTtaDeltaLow}{+0.0079}
+\newcommand{\soupTtaDeltaHigh}{+0.0159}
+
+% Release. The September 2026 progress video names the shipped model; the records
+% call it F0. Checkpoint releases/c3-f0-200k-20260907/checkpoint_f0_00200000.pt is
+% 409,674,095 bytes, SHA-256 pinned in recipes/f0/recipe.json.
+\newcommand{\releaseName}{Socratic Method September 2026\xspace}
+\newcommand{\checkpointMB}{409.7}
+
+% Open-cube limitation shown in the video: the seeded showcase cube
+% PHerc0191_z04352_y03456_x05120 (stratum "open"), share of predicted voxels at
+% six-connected depth >= 5 (blob_audit/cube_metrics.jsonl: f0 0.0926,
+% m7_published 0.0473).
+\newcommand{\openFuseFz}{9.3}
+\newcommand{\openFuseMSeven}{4.7}

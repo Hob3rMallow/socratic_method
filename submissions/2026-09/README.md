@@ -14,9 +14,20 @@ live in `src/f0_run.tex` (transcribed from the sealed records), while
 `src/generated_run.tex` is retained unchanged because Appendix A still uses its
 historical duration table.
 
-Rendered figures still show the earlier v31 student and are labelled as such in
-every caption; regenerating them against the shipped weights is outstanding
-release work, listed in the paper's limitations.
+**Updated 2026-09-24.** The teaser shows the shipped model beside the published
+M7 and HercUNet v0 on seeded-random cubes, and the results add the head-to-head
+and the random-cube blob audit (`recipes/f0_benchmark_20260924/`) and the passed
+seed replication (`recipes/f0_c3r_replication_20260909/`).
+
+**Updated 2026-09-29.** The paper names the shipped model as the September 2026
+progress video does, **Socratic Method September 2026** (F0 in the records),
+states its release (Apache-2.0 weights, one-command inference), and adds the
+open-cube fusion limitation shown in the video. `relabel_teaser.py` gives the
+teaser's student row the same name; its image panels are unchanged.
+
+The other rendered figures still show the earlier v31 student and are labelled
+as such in every caption; regenerating them against the shipped weights is
+outstanding release work, listed in the paper's limitations.
 
 Canonical repository: <https://github.com/ubc-nvining/socratic_method>
 
