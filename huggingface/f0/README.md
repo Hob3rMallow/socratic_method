@@ -20,6 +20,8 @@ model and trained on the wide15 anti-aliased mixed corpus (soft native
 fine-teacher targets plus hard human passthrough rows over twelve training
 scrolls) with cross-entropy 1, Dice 1 and an M7 function-space KL anchor 0.5.
 No trust ball, no separation shell, no medial or connectivity terms.
+The September 2026 progress video and paper present it as **Socratic Method
+September 2026**.
 
 **Release status:** the raw {{CHECKPOINT_SAMPLES}}-exposure student is the
 frozen model, chosen by a preregistered late-checkpoint rule after the complete
@@ -104,8 +106,9 @@ global fixed-threshold maximum is the 110k checkpoint (0.6816) and the
 calibrated optimum sits at T=0.30; both are training observations that the
 frozen record reports beside the selected 200k checkpoint. The inference recipe
 (eight-way mirror TTA, T=0.30) was likewise preregistered before its ladder ran;
-its evidence, paired bootstraps and pending items (seed replication,
-postprocessor re-qualification) are in `recipes/f0_inference_20260909/`.
+its evidence and paired bootstraps are in `recipes/f0_inference_20260909/`.
+The preregistered seed replication passed (`recipes/f0_c3r_replication_20260909/`);
+postprocessor re-qualification at T=0.30 is still pending.
 
 ## Limitations
 

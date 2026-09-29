@@ -7,6 +7,8 @@ weights: **0.713026** macro Dice on the frozen benchmark, against released M7's
 0.5575 flat or 0.5875 with the same TTA at the same threshold. The training
 record's matched no-TTA comparison at T=0.35 stands: **0.554140 to 0.680787**,
 **+0.126647 Dice / 12.7 percentage points / 22.9% relative**.
+The September 2026 progress video and paper present this model as **Socratic
+Method September 2026**.
 
 The authoritative [manifest](../recipes/final_c3_250k_20260907/manifest.json)
 and [full evidence review](../recipes/final_c3_250k_20260907/review.md) distinguish
@@ -30,9 +32,12 @@ across every variant (0.476 to 0.497) and released M7 with TTA at its calibrated
 T=0.20 stays ahead there (0.5015 against 0.4917); those scores are absolute only.
 Weight averaging over late milestones only reduced variance; the exploratory
 F0 110k + TTA and the 100k-250k average + TTA score at or slightly above the
-shipped recipe and are reported, not promoted. Open: the C3r seed replication
-of the inference recipe, and re-qualification of the repair, continuity and
-sheet-patch postprocessors, which keep their T=0.35 pins.
+shipped recipe and are reported, not promoted. The C3r seed replication of the
+inference recipe passed (seed 1204: 0.7089 at T=0.30 with TTA, +0.0351
+[+0.0302, +0.0400] over its own no-TTA reference;
+[record](../recipes/f0_c3r_replication_20260909/README.md)). Open:
+re-qualification of the repair, continuity and sheet-patch postprocessors,
+which keep their T=0.35 pins.
 
 ## Architecture and training
 

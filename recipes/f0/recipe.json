@@ -133,7 +133,7 @@
     "qualification": "release_qualification.json",
     "known_limits": [
       "the frozen-harness 0.70 comes from inference changes on unchanged weights: eight-way mirror TTA (+0.023 at T=0.35) and the preregistered secondary operating point T=0.30 (+0.009); no retraining",
-      "one seed and correlated checkpoints; the C3r seed replication of the inference recipe is pending",
+      "one shipped seed (1203) and correlated checkpoints within a run; the seed-1204 replicate C3r reproduces the inference recipe's gain (0.7089 at T=0.30 with TTA, +0.0351 [+0.0302, +0.0400] over its own no-TTA reference; ../f0_c3r_replication_20260909/README.md)",
       "the repair, continuity and sheet-patch postprocessors pin the T=0.35 prediction and are not re-qualified at T=0.30",
       "on the human-labelled PHerc0500P2 the composite is flat across the ladder (0.476-0.497) and released M7 with TTA at its calibrated T=0.20 scores above this recipe there (0.5015 vs 0.4917); scores on that scroll are absolute only because released M7 saw its labels",
       "the exploratory F0 110k + TTA and the 100k-250k weight average + TTA score at or slightly above this recipe and are reported, not promoted",

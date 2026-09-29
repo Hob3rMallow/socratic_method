@@ -1,0 +1,25 @@
+{
+ "schema": "socratic-f0-benchmark-kaggle-v1",
+ "probs": "full_p0500\\hshipped\\probs\\hshipped_p0",
+ "threshold": 0.3,
+ "threshold_u8": 77,
+ "dilate": 0,
+ "set": "p0500p2_val",
+ "gt_dir": "D:\\work\\vesuvius-c\\output\\crossres_data\\unified_ladder_20260902\\kaggle_gt\\p0500p2_val",
+ "metric_exe": "D:\\work\\vesuvius-c\\metric-windows\\build\\metric\\Release\\metric.exe",
+ "cases": 320,
+ "summary": {
+  "n_cases": 320,
+  "mean_leaderboard": 0.47951464687499995,
+  "mean_toposcore": 0.022853187499999983,
+  "mean_topoF1_0": 0.04385074374999998,
+  "mean_topoF1_1": 0.004605234374999995,
+  "mean_topoF1_2": 0.01946955799373041,
+  "mean_surface_dice": 0.6617478656250004,
+  "mean_voi_score": 0.6887055374999997,
+  "mean_voi_total": 1.530530896874999,
+  "mean_voi_split": 0.478598609375,
+  "mean_voi_merge": 1.0519322875000001,
+  "mean_elapsed_s": 18.859687499999982
+ }
+}

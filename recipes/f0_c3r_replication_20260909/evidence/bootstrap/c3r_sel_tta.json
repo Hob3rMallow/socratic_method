@@ -1,0 +1,233 @@
+{
+  "checkpoint_sha256": "db4034c229e80aa145a63a1951fd600ad4a723fa28773d3f08b539e702477376",
+  "levels": {
+    "0.30": {
+      "calibrated_optimism": {
+        "note": "best-threshold macro re-selected inside each replicate minus the fixed-threshold macro; the in-sample calibrated value inherits this optimism",
+        "optimism": 0.0,
+        "point_calibrated_macro": 0.708856100021516,
+        "point_calibrated_threshold": 0.29999998211860657,
+        "replicate_mean_fixed": 0.7090220333057983,
+        "replicate_mean_reselected": 0.7090220333057983
+      },
+      "checkpoint_sha256": "db4034c229e80aa145a63a1951fd600ad4a723fa28773d3f08b539e702477376",
+      "cluster_mode": "support_anchor_chunk_zyx",
+      "clusters_per_scroll": {
+        "PHerc0814": 256,
+        "PHerc1451": 142
+      },
+      "confidence": 0.95,
+      "interval": {
+        "half_width": 0.01150658130132265,
+        "high": 0.7203942873471363,
+        "low": 0.697381124744491,
+        "mean": 0.7090220333057983,
+        "std": 0.005876247886467106
+      },
+      "kind": "level",
+      "mirror_tta": true,
+      "patches_per_scroll": {
+        "PHerc0814": 256,
+        "PHerc1451": 433
+      },
+      "point": {
+        "macro_scroll_dice": 0.708856100021516,
+        "scrolls": {
+          "PHerc0814": 0.7107264293728489,
+          "PHerc1451": 0.7069857706701831
+        }
+      },
+      "replicates": 2000,
+      "report": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\cross_run\\audits\\c3r_sel_tta\\report.json",
+      "schema": "crossres-voxel-audit-bootstrap-v1",
+      "scroll_intervals": {
+        "PHerc0814": {
+          "half_width": 0.014722465727302514,
+          "high": 0.7255381948774056,
+          "low": 0.6960932634228005,
+          "mean": 0.7111051941849859,
+          "std": 0.007329872376065828
+        },
+        "PHerc1451": {
+          "half_width": 0.018709800119794784,
+          "high": 0.7250988877222057,
+          "low": 0.6876792874826161,
+          "mean": 0.7069388724266105,
+          "std": 0.009326361992414052
+        }
+      },
+      "seed": 20260908,
+      "threshold": 0.29999998211860657
+    },
+    "0.35": {
+      "calibrated_optimism": {
+        "note": "best-threshold macro re-selected inside each replicate minus the fixed-threshold macro; the in-sample calibrated value inherits this optimism",
+        "optimism": 0.014461031738828206,
+        "point_calibrated_macro": 0.708856100021516,
+        "point_calibrated_threshold": 0.29999998211860657,
+        "replicate_mean_fixed": 0.69456100156697,
+        "replicate_mean_reselected": 0.7090220333057983
+      },
+      "checkpoint_sha256": "db4034c229e80aa145a63a1951fd600ad4a723fa28773d3f08b539e702477376",
+      "cluster_mode": "support_anchor_chunk_zyx",
+      "clusters_per_scroll": {
+        "PHerc0814": 256,
+        "PHerc1451": 142
+      },
+      "confidence": 0.95,
+      "interval": {
+        "half_width": 0.013440677058632555,
+        "high": 0.7077618528096629,
+        "low": 0.6808804986923978,
+        "mean": 0.69456100156697,
+        "std": 0.006743752680717255
+      },
+      "kind": "level",
+      "mirror_tta": true,
+      "patches_per_scroll": {
+        "PHerc0814": 256,
+        "PHerc1451": 433
+      },
+      "point": {
+        "macro_scroll_dice": 0.6943857694581544,
+        "scrolls": {
+          "PHerc0814": 0.6899081836608464,
+          "PHerc1451": 0.6988633552554625
+        }
+      },
+      "replicates": 2000,
+      "report": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\cross_run\\audits\\c3r_sel_tta\\report.json",
+      "schema": "crossres-voxel-audit-bootstrap-v1",
+      "scroll_intervals": {
+        "PHerc0814": {
+          "half_width": 0.018186554383944398,
+          "high": 0.7080478182048547,
+          "low": 0.6716747094369659,
+          "mean": 0.6903057725200549,
+          "std": 0.009198256100462966
+        },
+        "PHerc1451": {
+          "half_width": 0.020130406623498076,
+          "high": 0.7181440681284758,
+          "low": 0.6778832548814796,
+          "mean": 0.698816230613885,
+          "std": 0.010071402968434968
+        }
+      },
+      "seed": 20260908,
+      "threshold": 0.3499999940395355
+    }
+  },
+  "paired": {
+    "0.30_vs_0.35": {
+      "candidate": {
+        "checkpoint_sha256": "db4034c229e80aa145a63a1951fd600ad4a723fa28773d3f08b539e702477376",
+        "macro_scroll_dice": 0.708856100021516,
+        "mirror_tta": true,
+        "report": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\cross_run\\audits\\c3r_sel_tta\\report.json",
+        "threshold": 0.29999998211860657
+      },
+      "cluster_mode": "support_anchor_chunk_zyx",
+      "clusters_per_scroll": {
+        "PHerc0814": 256,
+        "PHerc1451": 142
+      },
+      "confidence": 0.95,
+      "delta": {
+        "half_width": 0.00488551644448363,
+        "high": 0.04000363748870904,
+        "low": 0.03023260459974178,
+        "mean": 0.03505747425323347,
+        "point": 0.0350512552674902,
+        "probability_delta_le_zero": 0.0,
+        "std": 0.0025457296552549567
+      },
+      "kind": "paired-delta",
+      "pairing": "identical cluster resample weights for both audits; operating-point-paired (different thresholds)",
+      "reference": {
+        "checkpoint_sha256": "db4034c229e80aa145a63a1951fd600ad4a723fa28773d3f08b539e702477376",
+        "macro_scroll_dice": 0.6738048447540258,
+        "mirror_tta": false,
+        "report": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00180000\\audit\\report.json",
+        "threshold": 0.3499999940395355
+      },
+      "replicates": 2000,
+      "schema": "crossres-voxel-audit-bootstrap-v1",
+      "scroll_deltas": {
+        "PHerc0814": {
+          "half_width": 0.007530505904677312,
+          "high": 0.04971179201303047,
+          "low": 0.034650780203675846,
+          "mean": 0.04188999512749537,
+          "point": 0.04193776431284979,
+          "std": 0.003930788165172071
+        },
+        "PHerc1451": {
+          "half_width": 0.006524673597143734,
+          "high": 0.03466838192322093,
+          "low": 0.02161903472893346,
+          "mean": 0.028224953378971563,
+          "point": 0.02816474622213061,
+          "std": 0.00334506551134688
+        }
+      },
+      "seed": 20260908
+    },
+    "0.35_vs_0.35": {
+      "candidate": {
+        "checkpoint_sha256": "db4034c229e80aa145a63a1951fd600ad4a723fa28773d3f08b539e702477376",
+        "macro_scroll_dice": 0.6943857694581544,
+        "mirror_tta": true,
+        "report": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\cross_run\\audits\\c3r_sel_tta\\report.json",
+        "threshold": 0.3499999940395355
+      },
+      "cluster_mode": "support_anchor_chunk_zyx",
+      "clusters_per_scroll": {
+        "PHerc0814": 256,
+        "PHerc1451": 142
+      },
+      "confidence": 0.95,
+      "delta": {
+        "half_width": 0.004061265177116059,
+        "high": 0.024577819101814814,
+        "low": 0.016455288747582696,
+        "mean": 0.02059644251440526,
+        "point": 0.020580924704128645,
+        "probability_delta_le_zero": 0.0,
+        "std": 0.0021133636902831003
+      },
+      "kind": "paired-delta",
+      "pairing": "identical cluster resample weights for both audits",
+      "reference": {
+        "checkpoint_sha256": "db4034c229e80aa145a63a1951fd600ad4a723fa28773d3f08b539e702477376",
+        "macro_scroll_dice": 0.6738048447540258,
+        "mirror_tta": false,
+        "report": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00180000\\audit\\report.json",
+        "threshold": 0.3499999940395355
+      },
+      "replicates": 2000,
+      "schema": "crossres-voxel-audit-bootstrap-v1",
+      "scroll_deltas": {
+        "PHerc0814": {
+          "half_width": 0.00608214674057939,
+          "high": 0.0272926833058801,
+          "low": 0.01512838982472132,
+          "mean": 0.02109057346256447,
+          "point": 0.021119518600847265,
+          "std": 0.003075232145830956
+        },
+        "PHerc1451": {
+          "half_width": 0.0058598262717320165,
+          "high": 0.025854389936306267,
+          "low": 0.014134737392842234,
+          "mean": 0.02010231156624605,
+          "point": 0.020042330807410025,
+          "std": 0.002970108934131352
+        }
+      },
+      "seed": 20260908
+    }
+  },
+  "reference_dir": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\evaluation\\C3r\\milestone_00180000\\audit",
+  "variant_id": "c3r_sel_tta"
+}

@@ -1,0 +1,90 @@
+{
+  "schema": "socratic-f0-benchmark-patch-counts-v1",
+  "label": "hshipped",
+  "configs": [
+    "hshipped_p0",
+    "hshipped_p1",
+    "hshipped_p2",
+    "hshipped_p3"
+  ],
+  "model": {
+    "family": "hercunet",
+    "model_dir": "D:\\work\\hercUNet_bench\\hf\\hercunet-v0",
+    "checkpoint_sha256": "7cb36f9a5abda03f5e56cd6d8389a7f9adc912b2d5b5ed4a95be72a1046c2946",
+    "norm": "shipped",
+    "fingerprint_norm_lo_hi_mean_std": [
+      0.0,
+      255.0,
+      138.79696655273438,
+      64.88428497314453
+    ],
+    "plans_norm_lo_hi_mean_std": [
+      0.0,
+      212.0,
+      87.54424285888672,
+      47.74376678466797
+    ],
+    "passes": 4,
+    "tta": "none",
+    "tta_variants": 1,
+    "autocast": "float16 (as hercunet.infer.jacobi_refine)",
+    "recurrence": "in-window Jacobi; prev_p = round(255 * prob_{p-1}) / 255; pass 0 prev = 0",
+    "blend": "single 192^3 window: sigmoid(clamp(l1 - l0, -30, 30)) == their Gaussian-blend output"
+  },
+  "manifest": "G:\\vesuvius\\crossres_data\\voxel_balanced_native_v14p2_registered_antialias_softtarget_corpus\\patches.jsonl",
+  "manifest_sha256": "a995787032eb446f71759a4dbd510396273b93c65f65863bac8fe9587e12b714",
+  "rows_requested": 689,
+  "thresholds": [
+    0.10000000149011612,
+    0.15000000596046448,
+    0.20000000298023224,
+    0.25,
+    0.30000001192092896,
+    0.3499999940395355,
+    0.4000000059604645,
+    0.44999998807907104,
+    0.5,
+    0.550000011920929,
+    0.6000000238418579,
+    0.6499999761581421,
+    0.699999988079071,
+    0.75,
+    0.800000011920929,
+    0.8500000238418579,
+    0.8999999761581421
+  ],
+  "tolerances": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "dilations": [
+    1,
+    2,
+    3
+  ],
+  "device": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+  "torch": "2.11.0+cu128",
+  "python": "3.12.9",
+  "argv": [
+    "D:/work/socratic_method/recipes/f0_benchmark_20260924/runtime/patch_benchmark.py",
+    "--family",
+    "hercunet",
+    "--label",
+    "hshipped",
+    "--model-dir",
+    "D:\\work\\hercUNet_bench\\hf\\hercunet-v0",
+    "--norm",
+    "shipped",
+    "--passes",
+    "4",
+    "--manifest",
+    "G:\\vesuvius\\crossres_data\\voxel_balanced_native_v14p2_registered_antialias_softtarget_corpus\\patches.jsonl",
+    "--work",
+    "D:/work/hercUNet_bench/work/full",
+    "--store",
+    "hshipped_p0",
+    "hshipped_p3"
+  ]
+}

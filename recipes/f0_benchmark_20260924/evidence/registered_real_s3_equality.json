@@ -1,0 +1,9 @@
+{
+ "rows_checked": 442,
+ "byte_equal": 442,
+ "mismatched": [],
+ "volumes": {
+  "PHerc0814": "vesuvius-challenge-open-data/PHerc0814/volumes/20250804134230-9.362um-1.2m-113keV-masked.zarr/0",
+  "PHerc1451": "vesuvius-challenge-open-data/PHerc1451/volumes/20250521151225-8.640um-1.2m-116keV-masked.zarr/0"
+ }
+}

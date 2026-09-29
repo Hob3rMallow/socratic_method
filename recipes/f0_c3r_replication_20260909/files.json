@@ -1,0 +1,48 @@
+{
+  "schema": "socratic-record-files-v1",
+  "record": "f0_c3r_replication_20260909",
+  "files": [
+    {
+      "path": "evidence/bootstrap/c3r_sel_tta.json",
+      "sha256": "f7f2df71298e7be7251bccb5b6e3924f433db42870225dfdef5f52d61442a53a",
+      "bytes": 8513,
+      "original": "D:/work/vesuvius-c/output/crossres_data/f0_family_20260908/cross_run/bootstrap/c3r_sel_tta.json"
+    },
+    {
+      "path": "evidence/bootstrap/c3r_sel.json",
+      "sha256": "7c3ab042e3abf22d29fa47e6a9ae87a64b457d39f468870f927c9f11c10865ec",
+      "bytes": 8488,
+      "original": "D:/work/vesuvius-c/output/crossres_data/f0_family_20260908/cross_run/bootstrap/c3r_sel.json"
+    },
+    {
+      "path": "evidence/audits/c3r_sel_tta/report.json",
+      "sha256": "b67eb6f9bdebecc11612a693ea983a5965de0afec155a95e37ab0a126a5eb61d",
+      "bytes": 104997,
+      "original": "D:/work/vesuvius-c/output/crossres_data/f0_family_20260908/cross_run/audits/c3r_sel_tta/report.json"
+    },
+    {
+      "path": "evidence/audits/c3r_sel_180k_reference/report.json",
+      "sha256": "f7c827b6b1edd539a1f651513d904cdb421921b6d8a4516a10de33e10a3c2c8f",
+      "bytes": 105007,
+      "original": "D:/work/vesuvius-c/output/crossres_data/f0_family_20260908/evaluation/C3r/milestone_00180000/audit/report.json"
+    },
+    {
+      "path": "evidence/family/final_summary.json",
+      "sha256": "c55f71d404ee88adad1cb4a86b1a25445870c9e9bf325c0e7aeff89ce592eadc",
+      "bytes": 570,
+      "original": "D:/work/vesuvius-c/output/crossres_data/f0_family_20260908/final/summary.json"
+    },
+    {
+      "path": "evidence/family/c3r_evaluation_summary.json",
+      "sha256": "f93f860222fb705b15e867f01c14a12aaa86658d8644170570907dffe9b44a4b",
+      "bytes": 123140,
+      "original": "D:/work/vesuvius-c/output/crossres_data/f0_family_20260908/evaluation/C3r/summary.json"
+    },
+    {
+      "path": "evidence/family/evaluate_f0_cross_run.py",
+      "sha256": "dd85a57a2b6afe2c999449231bc9cb889cc18eebc7cd16a972fcdcbbcaad4cd9",
+      "bytes": 14628,
+      "original": "D:/work/vesuvius-c/crossres_pred/scripts/evaluate_f0_cross_run.py"
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+ "schema": "socratic-f0-benchmark-fragments-v1",
+ "preregistered": false,
+ "definition": {
+  "connectivity": 26,
+  "small_piece_voxels_below": 2000,
+  "piece_counted_from_voxels": 50,
+  "volume": "central 128^3 of each drawn cube"
+ },
+ "sources": {
+  "m7_published": {
+   "config": "published",
+   "threshold": null,
+   "per_compression_stratum": {
+    "compressed": {
+     "cubes": 88,
+     "mean_fill": 0.30223521319302643,
+     "mean_small_piece_share": 0.00444234015771812,
+     "mean_pieces": 10.784090909090908
+    },
+    "middle": {
+     "cubes": 80,
+     "mean_fill": 0.2575540006160736,
+     "mean_small_piece_share": 0.005130595970579048,
+     "mean_pieces": 11.55
+    },
+    "open": {
+     "cubes": 88,
+     "mean_fill": 0.20992558110844006,
+     "mean_small_piece_share": 0.01732573132525304,
+     "mean_pieces": 10.409090909090908
+    }
+   }
+  },
+  "m7_rerun_flat": {
+   "config": "m7_flat",
+   "threshold": 0.2,
+   "per_compression_stratum": {
+    "compressed": {
+     "cubes": 88,
+     "mean_fill": 0.31512020934711804,
+     "mean_small_piece_share": 0.004251204803196697,
+     "mean_pieces": 10.75
+    },
+    "middle": {
+     "cubes": 80,
+     "mean_fill": 0.26566327810287477,
+     "mean_small_piece_share": 0.0038652026602069628,
+     "mean_pieces": 10.25
+    },
+    "open": {
+     "cubes": 88,
+     "mean_fill": 0.21337818015705456,
+     "mean_small_piece_share": 0.01598541609580653,
+     "mean_pieces": 10.068181818181818
+    }
+   }
+  },
+  "m7_rerun_tta": {
+   "config": "m7_tta",
+   "threshold": 0.3,
+   "per_compression_stratum": {
+    "compressed": {
+     "cubes": 88,
+     "mean_fill": 0.17521738464182074,
+     "mean_small_piece_share": 0.056868917647558886,
+     "mean_pieces": 33.90909090909091
+    },
+    "middle": {
+     "cubes": 80,
+     "mean_fill": 0.20104036927223207,
+     "mean_small_piece_share": 0.01904594353480082,
+     "mean_pieces": 20.9875
+    },
+    "open": {
+     "cubes": 88,
+     "mean_fill": 0.17171946438876065,
+     "mean_small_piece_share": 0.022088320884346743,
+     "mean_pieces": 15.352272727272727
+    }
+   }
+  },
+  "f0": {
+   "config": "f0_tta",
+   "threshold": 0.3,
+   "per_compression_stratum": {
+    "compressed": {
+     "cubes": 88,
+     "mean_fill": 0.23049134016036987,
+     "mean_small_piece_share": 0.02086653633778128,
+     "mean_pieces": 24.0
+    },
+    "middle": {
+     "cubes": 80,
+     "mean_fill": 0.25906050205230713,
+     "mean_small_piece_share": 0.007135917257659932,
+     "mean_pieces": 15.2625
+    },
+    "open": {
+     "cubes": 88,
+     "mean_fill": 0.21055616031993518,
+     "mean_small_piece_share": 0.00917555628111494,
+     "mean_pieces": 14.352272727272727
+    }
+   }
+  },
+  "hercunet": {
+   "config": "hshtta_p3",
+   "threshold": 0.3,
+   "per_compression_stratum": {
+    "compressed": {
+     "cubes": 88,
+     "mean_fill": 0.37401826815171674,
+     "mean_small_piece_share": 0.014485516259982532,
+     "mean_pieces": 17.988636363636363
+    },
+    "middle": {
+     "cubes": 80,
+     "mean_fill": 0.38523152470588684,
+     "mean_small_piece_share": 0.0017767048622249868,
+     "mean_pieces": 8.8625
+    },
+    "open": {
+     "cubes": 88,
+     "mean_fill": 0.3135849887674505,
+     "mean_small_piece_share": 0.0023346394154227126,
+     "mean_pieces": 8.488636363636363
+    }
+   }
+  }
+ }
+}

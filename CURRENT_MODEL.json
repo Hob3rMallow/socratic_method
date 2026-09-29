@@ -2,6 +2,7 @@
   "schema": "socratic-method-current-model-v1",
   "release_id": "c3-f0-200k-tta-t030-20260909",
   "previous_release_id": "c3-f0-200k-20260907",
+  "presented_as": "Socratic Method September 2026",
   "updated": "2026-09-09",
   "status": "frozen; shipped inference uses eight-way mirror TTA at T=0.30 on the unchanged weights; the checkpoint is committed to this repository under releases/ via Git LFS; no production deployment",
   "license": "Apache-2.0",
@@ -36,9 +37,18 @@
   "frozen_macro_dice_no_tta_035": 0.680787428136385,
   "postprocessor_profiles_qualified_at_threshold": 0.35,
   "pending": [
-    "C3r seed replication of the inference recipe (prereg rule 8)",
     "re-qualification of socratic-repair, socratic-continuity and socratic-sheet-patches at T=0.30 (they keep their T=0.35 pins)"
   ],
+  "seed_replication": {
+    "status": "passed",
+    "rule": "F0 family preregistration rule 9 (the inference recipe applied to the seed-1204 run C3r must beat C3r's own no-TTA reference with a positive paired lower bound)",
+    "evaluated_utc": "2026-09-09T23:43:37Z",
+    "record": "recipes/f0_c3r_replication_20260909/README.md",
+    "c3r_selected_sample_exposures": 180000,
+    "c3r_macro_dice_tta_030": 0.708856100021516,
+    "paired_delta_vs_c3r_no_tta_035": 0.0350512552674902,
+    "paired_delta_ci95": [0.03023260459974178, 0.04000363748870904]
+  },
   "trust_ball": false,
   "legacy_cli_recipe": "recipes/v31/recipe.json"
 }

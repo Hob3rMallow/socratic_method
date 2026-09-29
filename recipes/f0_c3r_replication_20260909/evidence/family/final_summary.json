@@ -1,0 +1,18 @@
+{
+  "created_utc": "2026-09-09T23:43:37.036876+00:00",
+  "note": "winner comes from the variants ladder; its gates and Kaggle live under variants/",
+  "replication": {
+    "analogue": "c3r_sel_tta",
+    "ci": [
+      0.03023260459974178,
+      0.04000363748870904
+    ],
+    "delta": 0.0350512552674902,
+    "operating_threshold": 0.3,
+    "passed": true,
+    "winner": "f0_110k_tta"
+  },
+  "schema": "crossres-f0-family-final-v1",
+  "table": "D:\\work\\vesuvius-c\\output\\crossres_data\\f0_family_20260908\\cross_run\\decision_table.json",
+  "winner": "f0_110k_tta"
+}

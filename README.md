@@ -15,6 +15,36 @@ the geometry tools repository. The current frozen model is **C3-F0 at 200,000
 sample exposures**, selected after completion of the full 250,000-exposure
 training run, shipped since 9 September 2026 with **eight-way mirror TTA at
 T=0.30** on the unchanged weights (macro Dice 0.7130 on the frozen benchmark).
+The September 2026 progress video and paper present it as **Socratic Method
+September 2026**; paths, record ids and code keep the name F0.
+
+## Head-to-head, 24 September 2026
+
+The same frozen 689-row benchmark (PHerc0814 and PHerc1451, which no compared
+model trained on), the same patches for every model, and the challenge's own
+Kaggle metric computed by one binary:
+
+| | macro Dice | Kaggle composite |
+|---|---:|---:|
+| **F0, shipped** (eight-way mirror TTA, T=0.30) | **0.7130** | **0.6521** |
+| M7, as the organisers publish it (no TTA, T=0.2) | 0.5607 | 0.6012 |
+| HercUNet v0, best of every setting on this benchmark | 0.4394 | 0.5447 |
+
+Paired over the same rows, F0 leads M7 as published by +0.1524
+[+0.1413, +0.1636] and HercUNet at its best by +0.2736 [+0.2548, +0.2924]. The
+harness reproduces the sealed F0 and M7 audits to within 5e-8 before scoring
+anything new, and HercUNet's own command-line inference on the live scroll
+scores at or below the harness on every patch checked.
+
+The published M7 does make blobs, and they sit where the scroll is compressed.
+On 256 randomly drawn interior cubes from eight scrolls, the share of its
+predicted voxels inside a solid mass rises from 2.0% in the most open third of
+cubes to 6.0% in the most compressed third; rerunning the released weights at
+the published setting reproduces it, and F0 does not rise with compression
+(2.9%, 1.5% and 2.8% from the most open third to the most compressed). On the
+human-labelled PHerc0500P2, which released M7 trained on, the models are close.
+Evidence, the fairness rules, every script and all 256 cubes are in
+[recipes/f0_benchmark_20260924](recipes/f0_benchmark_20260924/README.md).
 
 ## A substantial advance over released M7
 
@@ -76,10 +106,13 @@ T=0.35; paired cluster-bootstrap delta over the no-TTA reference +0.0230
 same way reaches 0.5875 (TTA, T=0.30) and 0.5926 at its calibrated T=0.20. The
 Kaggle-style composite on the same rows moves from 0.6401 to 0.6521 with
 topology 0.4016 (advisory 0.3776, now met), and the six-cube gates and frontier
-veto pass at T=0.30. Two items stay open and are recorded, not waived: the C3r
-seed replication of the inference recipe, and re-qualification of the
-postprocessors below, which keep their T=0.35 pins. Evidence, receipts and
-the preregistration are in
+veto pass at T=0.30. The preregistered seed replication ran the same night and
+passed: the independent seed-1204 run with the same recipe reaches 0.7089
+[0.6974, 0.7204], +0.0351 [+0.0302, +0.0400] over its own no-TTA reference with
+both scrolls positive
+([record](recipes/f0_c3r_replication_20260909/README.md)). One item stays open
+and is recorded, not waived: re-qualification of the postprocessors below, which
+keep their T=0.35 pins. Evidence, receipts and the preregistration are in
 [recipes/f0_inference_20260909](recipes/f0_inference_20260909/README.md).
 
 ## More useful local gap repair
@@ -204,6 +237,11 @@ the preserved v31 instructions. The old
   artifact pins, observed milestones, selection and qualification records,
   environment lock, paths example), the pinned inference parameters its
   `inference` section holds, and the `scrolls.json` name registry.
+- `recipes/f0_benchmark_20260924/`: the head-to-head against the published
+  M7 and HercUNet v0, the random-cube blob audit of the published M7, and
+  every script, per-row count and figure behind them.
+- `recipes/f0_c3r_replication_20260909/`: the passed seed replication of the
+  shipped inference recipe.
 - `recipes/f0_ablations_20260910/`: the ablation ledger behind the reduced
   objective — single-term arms, the preregistered preservation experiment, and
   what remains untested rather than refuted.
@@ -226,8 +264,10 @@ the preserved v31 instructions. The old
 - `submission.pdf` and `submissions/2026-09/`: the paper. Rewritten on
   2026-09-10 around the shipped F0 model and its reduced objective; the retired
   loss terms, the trust region and the additive postprocessors are now
-  appendices. Rendered figures still show the earlier v31 student and are
-  labelled as such pending regeneration.
+  appendices. Updated 2026-09-24: the teaser now shows the shipped model beside
+  the published M7 and HercUNet v0 on seeded-random cubes, and the results add
+  the head-to-head and the blob audit. The other rendered figures still show
+  the earlier v31 student and are labelled as such.
 
 ## Release and artifact boundary
 

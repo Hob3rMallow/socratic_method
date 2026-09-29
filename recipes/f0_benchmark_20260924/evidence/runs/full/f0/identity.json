@@ -1,0 +1,69 @@
+{
+  "schema": "socratic-f0-benchmark-patch-counts-v1",
+  "label": "f0",
+  "configs": [
+    "f0_flat",
+    "f0_tta",
+    "f0_ttalogit"
+  ],
+  "model": {
+    "family": "engine",
+    "checkpoint": "D:\\work\\socratic_method\\releases\\c3-f0-200k-20260907\\checkpoint_f0_00200000.pt",
+    "checkpoint_sha256": "54db9a59cb602ff08e3dda0acc1195ad980ab05fb660332d32fb436a0d49a175",
+    "amp_dtype": "bfloat16",
+    "flip_order": "itertools.product((False, True), repeat=3) over (z, y, x)",
+    "epoch": 19
+  },
+  "manifest": "G:\\vesuvius\\crossres_data\\voxel_balanced_native_v14p2_registered_antialias_softtarget_corpus\\patches.jsonl",
+  "manifest_sha256": "a995787032eb446f71759a4dbd510396273b93c65f65863bac8fe9587e12b714",
+  "rows_requested": 689,
+  "thresholds": [
+    0.10000000149011612,
+    0.15000000596046448,
+    0.20000000298023224,
+    0.25,
+    0.30000001192092896,
+    0.3499999940395355,
+    0.4000000059604645,
+    0.44999998807907104,
+    0.5,
+    0.550000011920929,
+    0.6000000238418579,
+    0.6499999761581421,
+    0.699999988079071,
+    0.75,
+    0.800000011920929,
+    0.8500000238418579,
+    0.8999999761581421
+  ],
+  "tolerances": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "dilations": [
+    1,
+    2,
+    3
+  ],
+  "device": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+  "torch": "2.11.0+cu128",
+  "python": "3.12.9",
+  "argv": [
+    "D:/work/socratic_method/recipes/f0_benchmark_20260924/runtime/patch_benchmark.py",
+    "--family",
+    "engine",
+    "--label",
+    "f0",
+    "--checkpoint",
+    "D:\\work\\socratic_method\\releases\\c3-f0-200k-20260907\\checkpoint_f0_00200000.pt",
+    "--manifest",
+    "G:\\vesuvius\\crossres_data\\voxel_balanced_native_v14p2_registered_antialias_softtarget_corpus\\patches.jsonl",
+    "--work",
+    "D:/work/hercUNet_bench/work/full",
+    "--store",
+    "f0_flat",
+    "f0_tta"
+  ]
+}
