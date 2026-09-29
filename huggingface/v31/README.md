@@ -35,7 +35,7 @@ comparison model, and matches the teacher component count on 15 of 16 locked
 PHerc0139 slices. The remaining rank-26 mismatch is documented as a scalar
 topology exception rather than hidden.
 
-Source repository: <https://github.com/ubc-nvining/socratic_method>
+Source repository: <https://github.com/Hob3rMallow/socratic_method>
 
 ## Model description
 

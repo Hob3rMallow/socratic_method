@@ -18,8 +18,8 @@ dependencies = [
 ]
 
 [project.urls]
-Repository = "https://github.com/ubc-nvining/socratic_method"
-Documentation = "https://github.com/ubc-nvining/socratic_method/tree/main/docs"
+Repository = "https://github.com/Hob3rMallow/socratic_method"
+Documentation = "https://github.com/Hob3rMallow/socratic_method/tree/main/docs"
 
 [project.optional-dependencies]
 zarr = [

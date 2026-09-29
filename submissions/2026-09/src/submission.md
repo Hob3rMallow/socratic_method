@@ -5,7 +5,7 @@
 **Authors:** to be confirmed<br>
 **Affiliations:** to be confirmed<br>
 **Status:** working draft, September 2026<br>
-**Repository:** <https://github.com/ubc-nvining/socratic_method>
+**Repository:** <https://github.com/Hob3rMallow/socratic_method>
 
 > This Markdown file mirrors the canonical LaTeX source under
 > `submissions/2026-09/src/`. The PDF built from `paper.tex` is authoritative.

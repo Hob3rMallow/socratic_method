@@ -43,7 +43,7 @@ is 0.6521 with topology 0.4016 (advisory 0.3776 met); the six-cube PHerc1447
 anti-blob gates and the frontier veto pass at T=0.30, and all 25 checkpoints of
 the run passed the gate at T=0.35.
 
-Source repository: <https://github.com/ubc-nvining/socratic_method>
+Source repository: <https://github.com/Hob3rMallow/socratic_method>
 
 ## Model description
 

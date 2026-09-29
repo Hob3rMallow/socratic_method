@@ -29,7 +29,7 @@ The other rendered figures still show the earlier v31 student and are labelled
 as such in every caption; regenerating them against the shipped weights is
 outstanding release work, listed in the paper's limitations.
 
-Canonical repository: <https://github.com/ubc-nvining/socratic_method>
+Canonical repository: <https://github.com/Hob3rMallow/socratic_method>
 
 The canonical source uses the same anonymous ACM TOG/SIGGRAPH review format as
 the papers under `D:\papers` (`acmtog`, author-year citations, two columns, a

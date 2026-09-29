@@ -1,6 +1,6 @@
 # The Socratic Method
 
-Repository: <https://github.com/ubc-nvining/socratic_method>
+Repository: <https://github.com/Hob3rMallow/socratic_method>
 
 > In the dialogues Socrates presents himself as a simple man who confesses that
 > he has little knowledge. With this ironic approach he manages to confuse the
