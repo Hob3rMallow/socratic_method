@@ -91,3 +91,8 @@ paths.local.json
 # The frozen F0 release weights are tracked via Git LFS (see .gitattributes),
 # so they are exempt from the blanket *.pt rule above.
 !releases/**/*.pt
+
+# Evidence records keep their per-row run counts, which the blanket runs/ and
+# *.npz rules above would otherwise drop; each file is listed in files.json.
+!recipes/*/evidence/runs/
+!recipes/f0_inference_20260909/evidence/audits/*/per_patch_counts.npz
